@@ -32,6 +32,7 @@ function validateEmail(email: string) {
 export const SignInStep = ({
   state,
   changeState,
+  onSkip,
   onAuthenticated,
 }: {
   state: SignInState;
