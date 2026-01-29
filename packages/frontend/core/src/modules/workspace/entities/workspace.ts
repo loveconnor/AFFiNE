@@ -1,5 +1,5 @@
-import type { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import type { Workspace as WorkspaceInterface } from '@blocksuite/lovenotes/store';
+import type { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { Entity, LiveData, yjsGetPath } from '@toeverything/infra';
 import type { Observable } from 'rxjs';
 import { Doc as YDoc, transact } from 'yjs';
@@ -15,6 +15,8 @@ export class Workspace extends Entity {
     public readonly featureFlagService: FeatureFlagService
   ) {
     super();
+    // Force every workspace to be treated as local.
+    this.scope.props.openOptions.metadata.flavour = 'local';
   }
 
   readonly id = this.scope.props.openOptions.metadata.id;
@@ -23,7 +25,9 @@ export class Workspace extends Entity {
 
   readonly meta = this.scope.props.openOptions.metadata;
 
-  readonly flavour = this.meta.flavour;
+  get flavour() {
+    return 'local';
+  }
 
   readonly rootYDoc = new YDoc({ guid: this.openOptions.metadata.id });
 

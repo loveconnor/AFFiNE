@@ -1,5 +1,8 @@
-import type { SubscriptionQuery, SubscriptionRecurring } from '@lovenotes/graphql';
-import { SubscriptionPlan } from '@lovenotes/graphql';
+import type {
+  SubscriptionQuery,
+  SubscriptionRecurring,
+} from '@lovenotes/graphql';
+import { SubscriptionPlan, SubscriptionStatus } from '@lovenotes/graphql';
 import {
   catchErrorInto,
   effect,
@@ -19,6 +22,28 @@ import { SubscriptionStore } from '../stores/subscription';
 export type SubscriptionType = NonNullable<
   SubscriptionQuery['currentUser']
 >['subscriptions'][number];
+
+const createBestWorkspaceSubscription = (): SubscriptionType => {
+  const now = new Date().toISOString();
+  return {
+    __typename: 'SubscriptionType',
+    id: 'best-team',
+    status: SubscriptionStatus.Active,
+    plan: SubscriptionPlan.Team,
+    recurring: SubscriptionRecurring.Lifetime,
+    start: now,
+    end: null,
+    nextBillAt: null,
+    canceledAt: null,
+    variant: null,
+    provider: 'local',
+    iapStore: null,
+    trialStart: null,
+    trialEnd: null,
+    createdAt: now,
+    updatedAt: now,
+  };
+};
 
 export class WorkspaceSubscription extends Entity {
   subscription$ = new LiveData<SubscriptionType | null | undefined>(null);
@@ -97,29 +122,9 @@ export class WorkspaceSubscription extends Entity {
           return undefined; // no subscription if no user
         }
 
-        const serverConfig = await this.server.features$.waitForNonNull(signal);
-
-        if (!serverConfig.payment) {
-          // No payment feature, no subscription
-          return {
-            workspaceId: currentWorkspaceId,
-            subscription: null,
-          };
-        }
-        if (!this.store) {
-          return {
-            workspaceId: currentWorkspaceId,
-            subscription: null,
-          };
-        }
-        const { workspaceId, subscription } =
-          await this.store.fetchWorkspaceSubscriptions(
-            currentWorkspaceId,
-            signal
-          );
         return {
-          workspaceId: workspaceId,
-          subscription: subscription,
+          workspaceId: currentWorkspaceId,
+          subscription: createBestWorkspaceSubscription(),
         };
       }).pipe(
         smartRetry(),

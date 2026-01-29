@@ -1,5 +1,5 @@
-import type { BlobStorage, DocStorage } from '@lovenotes/nbstore';
 import type { Workspace } from '@blocksuite/lovenotes/store';
+import type { BlobStorage, DocStorage } from '@lovenotes/nbstore';
 import { Service } from '@toeverything/infra';
 
 import type { WorkspaceFlavoursService } from './flavours';
@@ -24,10 +24,10 @@ export class WorkspaceFactoryService extends Service {
     ) => Promise<void> = () => Promise.resolve()
   ) => {
     const provider = this.flavoursService.flavours$.value.find(
-      x => x.flavour === flavour
+      x => x.flavour === 'local'
     );
     if (!provider) {
-      throw new Error(`Unknown workspace flavour: ${flavour}`);
+      throw new Error(`Unknown workspace flavour: local`);
     }
     const metadata = await provider.createWorkspace(initial);
     return metadata;

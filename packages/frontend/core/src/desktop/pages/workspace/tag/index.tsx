@@ -70,12 +70,6 @@ export const TagDetail = ({ tagId }: { tagId?: string }) => {
         filters: [
           {
             type: 'system',
-            key: 'empty-journal',
-            method: 'is',
-            value: 'false',
-          },
-          {
-            type: 'system',
             key: 'trash',
             method: 'is',
             value: 'false',

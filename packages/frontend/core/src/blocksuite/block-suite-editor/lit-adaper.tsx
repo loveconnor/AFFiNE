@@ -1,6 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import 'katex/dist/katex.min.css';
 
+import type { DocTitle } from '@blocksuite/lovenotes/fragments/doc-title';
+import type { DocMode } from '@blocksuite/lovenotes/model';
+import type { Store } from '@blocksuite/lovenotes/store';
 import { useConfirmModal, useLitPortalFactory } from '@lovenotes/component';
 import {
   type EdgelessEditor,
@@ -19,14 +22,10 @@ import type {
 } from '@lovenotes/core/modules/doc-info/types';
 import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
-import { JournalService } from '@lovenotes/core/modules/journal';
 import { useInsidePeekView } from '@lovenotes/core/modules/peek-view';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { ServerFeature } from '@lovenotes/graphql';
 import track from '@lovenotes/track';
-import type { DocTitle } from '@blocksuite/lovenotes/fragments/doc-title';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import type { Store } from '@blocksuite/lovenotes/store';
 import {
   useFramework,
   useLiveData,
@@ -48,7 +47,6 @@ import {
   WorkspacePropertiesTable,
 } from '../../components/properties';
 import { DocIconPicker } from './doc-icon-picker';
-import { BlocksuiteEditorJournalDocTitle } from './journal-doc-title';
 import { StarterBar } from './starter-bar';
 import * as styles from './styles.css';
 
@@ -175,8 +173,6 @@ export const BlocksuiteDocEditor = forwardRef<
 ) {
   const titleRef = useRef<DocTitle | null>(null);
   const docRef = useRef<PageEditor | null>(null);
-  const journalService = useService(JournalService);
-  const isJournal = !!useLiveData(journalService.journalDate$(page.id));
 
   const editorSettingService = useService(EditorSettingService);
 
@@ -252,11 +248,7 @@ export const BlocksuiteDocEditor = forwardRef<
         {!BUILD_CONFIG.isMobileEdition ? (
           <DocIconPicker docId={page.id} readonly={readonly || shared} />
         ) : null}
-        {!isJournal ? (
-          <LitDocTitle doc={page} ref={onTitleRef} />
-        ) : (
-          <BlocksuiteEditorJournalDocTitle page={page} />
-        )}
+        <LitDocTitle doc={page} ref={onTitleRef} />
         {!shared && displayDocInfo ? (
           <div className={styles.docPropertiesTableContainer}>
             <WorkspacePropertiesTable

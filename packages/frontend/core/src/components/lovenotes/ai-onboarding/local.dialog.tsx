@@ -1,3 +1,4 @@
+import { AiIcon } from '@blocksuite/icons/rc';
 import { type Notification, notify } from '@lovenotes/component';
 import {
   RouteLogic,
@@ -5,7 +6,6 @@ import {
 } from '@lovenotes/core/components/hooks/use-navigate-helper';
 import { AuthService } from '@lovenotes/core/modules/cloud';
 import { useI18n } from '@lovenotes/i18n';
-import { AiIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { useEffect, useMemo, useRef } from 'react';
@@ -40,15 +40,7 @@ export const AIOnboardingLocal = () => {
   const notSignedIn = loginStatus !== 'authenticated';
 
   const actions = useMemo(() => {
-    const result: NonNullable<Notification['actions']> = [
-      {
-        key: 'learn-more',
-        label: t['com.lovenotes.ai-onboarding.local.action-learn-more'](),
-        onClick: () => {
-          window.open('https://ai.lovenotes.pro', '_blank', 'noreferrer');
-        },
-      },
-    ];
+    const result: NonNullable<Notification['actions']> = [];
     if (notSignedIn) {
       result.push({
         key: 'get-started',

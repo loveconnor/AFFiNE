@@ -1,7 +1,7 @@
+import { InformationFillDuotoneIcon } from '@blocksuite/icons/rc';
 import { useConfirmModal } from '@lovenotes/component';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { type I18nString, useI18n } from '@lovenotes/i18n';
-import { InformationFillDuotoneIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 
@@ -34,30 +34,8 @@ export const QuotaCheck = ({
   const quota = useLiveData(workspaceQuota.quota$);
   const usedPercent = useLiveData(workspaceQuota.percent$);
   const profile = useLiveData(workspaceProfile.profile$);
-  const isOwner = profile?.isOwner;
   const isTeam = profile?.isTeam;
-  const workspaceDialogService = useService(WorkspaceDialogService);
-  const dialog = useLiveData(workspaceDialogService.dialogs$);
   const t = useI18n();
-
-  const onConfirm = useCallback(() => {
-    if (!isOwner) {
-      return;
-    }
-    if (
-      dialog.some(
-        d =>
-          (d.type === 'setting' && d.props.activeTab === 'plans') ||
-          (d.type === 'setting' && d.props.activeTab === 'workspace:license')
-      )
-    ) {
-      return;
-    }
-    workspaceDialogService.open('setting', {
-      activeTab: 'plans',
-      scrollAnchor: 'cloudPricingPlan',
-    });
-  }, [dialog, isOwner, workspaceDialogService]);
 
   useEffect(() => {
     workspaceQuota?.revalidate();
@@ -69,44 +47,11 @@ export const QuotaCheck = ({
     }
     const memberOverflow = quota.overcapacityMemberCount > 0;
     const storageOverflow = usedPercent && usedPercent >= 100;
-    const message = getSyncPausedMessage(
-      !!isOwner,
-      memberOverflow,
-      !!storageOverflow
-    );
-
     if (memberOverflow || storageOverflow) {
-      openConfirmModal({
-        title: <Title title={t.t(message.title)} />,
-        description: t.t(message.description),
-        confirmText: t.t(message.confirmText),
-        cancelText: message.cancelText ? t.t(message.cancelText) : undefined,
-        children: <Tips tips={message.tips} />,
-        childrenContentClassName: styles.modalChildren,
-        onConfirm: onConfirm,
-        confirmButtonOptions: {
-          variant: 'primary',
-        },
-        cancelButtonOptions: {
-          style: {
-            visibility: message.cancelText ? 'visible' : 'hidden',
-          },
-        },
-      });
-      return;
-    } else {
       return;
     }
-  }, [
-    isOwner,
-    isTeam,
-    onConfirm,
-    openConfirmModal,
-    quota,
-    t,
-    usedPercent,
-    workspaceMeta.flavour,
-  ]);
+    return;
+  }, [isTeam, openConfirmModal, quota, usedPercent, workspaceMeta.flavour]);
   return null;
 };
 
@@ -127,7 +72,8 @@ const messages: Record<
     },
     storage: {
       title: 'com.lovenotes.payment.sync-paused.title',
-      description: 'com.lovenotes.payment.sync-paused.owner.storage.description',
+      description:
+        'com.lovenotes.payment.sync-paused.owner.storage.description',
       tips: [
         'com.lovenotes.payment.sync-paused.owner.storage.tips-1',
         'com.lovenotes.payment.sync-paused.owner.storage.tips-2',
@@ -154,12 +100,14 @@ const messages: Record<
     },
     storage: {
       title: 'com.lovenotes.payment.sync-paused.title',
-      description: 'com.lovenotes.payment.sync-paused.member.storage.description',
+      description:
+        'com.lovenotes.payment.sync-paused.member.storage.description',
       confirmText: 'com.lovenotes.payment.sync-paused.member.member.confirm',
     },
     member: {
       title: 'com.lovenotes.payment.sync-paused.title',
-      description: 'com.lovenotes.payment.sync-paused.member.member.description',
+      description:
+        'com.lovenotes.payment.sync-paused.member.member.description',
       confirmText: 'com.lovenotes.payment.sync-paused.member.member.confirm',
     },
   },

@@ -1,4 +1,17 @@
-import { IconButton, notify, toast, useConfirmModal } from '@lovenotes/component';
+import {
+  DeleteIcon,
+  EdgelessIcon,
+  InformationIcon,
+  MoreHorizontalIcon,
+  PageIcon,
+  TocIcon,
+} from '@blocksuite/icons/rc';
+import {
+  IconButton,
+  notify,
+  toast,
+  useConfirmModal,
+} from '@lovenotes/component';
 import {
   MenuSeparator,
   MenuSub,
@@ -16,19 +29,9 @@ import { ViewService } from '@lovenotes/core/modules/workbench/services/view';
 import { preventDefault } from '@lovenotes/core/utils';
 import { useI18n } from '@lovenotes/i18n';
 import { track } from '@lovenotes/track';
-import {
-  DeleteIcon,
-  EdgelessIcon,
-  InformationIcon,
-  MoreHorizontalIcon,
-  PageIcon,
-  TocIcon,
-} from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 
-import { JournalConflictsMenuItem } from './menu/journal-conflicts';
-import { JournalTodayActivityMenuItem } from './menu/journal-today-activity';
 import { EditorModeSwitch } from './menu/mode-switch';
 import * as styles from './page-header-more-button.css';
 
@@ -120,7 +123,6 @@ export const PageHeaderMenuButton = () => {
   const EditMenu = (
     <>
       <EditorModeSwitch />
-      <JournalTodayActivityMenuItem suffix={<MenuSeparator />} />
       <MobileMenuItem
         prefixIcon={primaryMode === 'page' ? <EdgelessIcon /> : <PageIcon />}
         data-testid="editor-option-menu-mode-switch"
@@ -163,7 +165,6 @@ export const PageHeaderMenuButton = () => {
           <span>{t['com.lovenotes.header.option.view-toc']()}</span>
         </MobileMenuItem>
       </MobileMenu>
-      <JournalConflictsMenuItem />
       <Guard docId={docId} permission="Doc_Trash">
         {canMoveToTrash => (
           <MobileMenuItem

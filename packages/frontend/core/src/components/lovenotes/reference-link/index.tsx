@@ -1,12 +1,11 @@
+import type { DocMode } from '@blocksuite/lovenotes/model';
+import type { Workspace } from '@blocksuite/lovenotes/store';
 import { DocsService } from '@lovenotes/core/modules/doc';
 import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
-import { JournalService } from '@lovenotes/core/modules/journal';
 import { PeekViewService } from '@lovenotes/core/modules/peek-view/services/peek-view';
 import { useInsidePeekView } from '@lovenotes/core/modules/peek-view/view/modal-container';
 import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
 import { track } from '@lovenotes/track';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import type { Workspace } from '@blocksuite/lovenotes/store';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
@@ -88,8 +87,7 @@ export function LoveNotesPageReference({
   Icon,
   onClick: userOnClick,
 }: LoveNotesPageReferenceProps) {
-  const journalService = useService(JournalService);
-  const isJournal = !!useLiveData(journalService.journalDate$(pageId));
+  const isJournal = false;
 
   const ref = useRef<HTMLAnchorElement>(null);
 
@@ -169,8 +167,7 @@ export function LoveNotesSharedPageReference({
 }: LoveNotesPageReferenceProps & {
   docCollection: Workspace;
 }) {
-  const journalService = useService(JournalService);
-  const isJournal = !!useLiveData(journalService.journalDate$(pageId));
+  const isJournal = false;
 
   const ref = useRef<HTMLAnchorElement>(null);
 

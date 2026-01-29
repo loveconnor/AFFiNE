@@ -1,9 +1,3 @@
-import type { FilterParams } from '@lovenotes/core/modules/collection-rules';
-import type {
-  WorkspacePropertyFilter,
-  WorkspacePropertyType,
-} from '@lovenotes/core/modules/workspace-property';
-import type { I18nString } from '@lovenotes/i18n';
 import {
   CheckBoxCheckLinearIcon,
   DateTimeIcon,
@@ -17,8 +11,13 @@ import {
   TagIcon,
   TemplateIcon,
   TextIcon,
-  TodayIcon,
 } from '@blocksuite/icons/rc';
+import type { FilterParams } from '@lovenotes/core/modules/collection-rules';
+import type {
+  WorkspacePropertyFilter,
+  WorkspacePropertyType,
+} from '@lovenotes/core/modules/workspace-property';
+import type { I18nString } from '@lovenotes/i18n';
 
 import type { DocListPropertyProps, GroupHeaderProps } from '../explorer/types';
 import type { PropertyValueProps } from '../properties/types';
@@ -64,12 +63,6 @@ import {
   EdgelessThemeGroupHeader,
   EdgelessThemeValue,
 } from './edgeless-theme';
-import {
-  JournalDocListProperty,
-  JournalFilterValue,
-  JournalGroupHeader,
-  JournalValue,
-} from './journal';
 import {
   NumberDocListProperty,
   NumberFilterValue,
@@ -286,7 +279,8 @@ export const WorkspacePropertyTypes = {
     icon: FileIcon,
     value: DocPrimaryModeValue,
     name: 'com.lovenotes.page-properties.property.docPrimaryMode',
-    description: 'com.lovenotes.page-properties.property.docPrimaryMode.tooltips',
+    description:
+      'com.lovenotes.page-properties.property.docPrimaryMode.tooltips',
     allowInGroupBy: true,
     allowInOrderBy: true,
     filterMethod: {
@@ -299,28 +293,12 @@ export const WorkspacePropertyTypes = {
     docListProperty: DocPrimaryModeDocListProperty,
     groupHeader: DocPrimaryModeGroupHeader,
   },
-  journal: {
-    icon: TodayIcon,
-    value: JournalValue,
-    name: 'com.lovenotes.page-properties.property.journal',
-    description: 'com.lovenotes.page-properties.property.journal.tooltips',
-    allowInGroupBy: true,
-    allowInOrderBy: true,
-    filterMethod: {
-      is: 'com.lovenotes.editCollection.rules.include.is',
-      'is-not': 'com.lovenotes.editCollection.rules.include.is-not',
-    },
-    filterValue: JournalFilterValue,
-    defaultFilter: { method: 'is', value: 'true' },
-    showInDocList: 'stack',
-    docListProperty: JournalDocListProperty,
-    groupHeader: JournalGroupHeader,
-  },
   edgelessTheme: {
     icon: EdgelessIcon,
     value: EdgelessThemeValue,
     name: 'com.lovenotes.page-properties.property.edgelessTheme',
-    description: 'com.lovenotes.page-properties.property.edgelessTheme.tooltips',
+    description:
+      'com.lovenotes.page-properties.property.edgelessTheme.tooltips',
     showInDocList: 'stack',
     allowInGroupBy: true,
     allowInOrderBy: true,

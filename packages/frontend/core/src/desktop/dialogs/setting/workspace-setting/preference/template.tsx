@@ -1,3 +1,4 @@
+import { DeleteIcon } from '@blocksuite/icons/rc';
 import {
   MenuItem,
   MenuSeparator,
@@ -13,7 +14,6 @@ import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta'
 import { TemplateDocService } from '@lovenotes/core/modules/template-doc';
 import { TemplateListMenu } from '@lovenotes/core/modules/template-doc/view/template-list-menu';
 import { useI18n } from '@lovenotes/i18n';
-import { DeleteIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
@@ -25,7 +25,6 @@ export const TemplateDocSetting = () => {
 
   const enablePageTemplate = useLiveData(setting.enablePageTemplate$);
   const pageTemplateDocId = useLiveData(setting.pageTemplateDocId$);
-  const journalTemplateDocId = useLiveData(setting.journalTemplateDocId$);
 
   const togglePageTemplate = useCallback(
     (enable: boolean) => {
@@ -41,25 +40,10 @@ export const TemplateDocSetting = () => {
     [setting]
   );
 
-  const updateJournalTemplate = useCallback(
-    (id?: string) => {
-      setting.updateJournalTemplateDocId(id);
-    },
-    [setting]
-  );
-
   return (
-    <SettingWrapper title={t['com.lovenotes.settings.workspace.template.title']()}>
-      <SettingRow
-        name={t['com.lovenotes.settings.workspace.template.journal']()}
-        desc={t['com.lovenotes.settings.workspace.template.journal-desc']()}
-      >
-        <TemplateSelector
-          testId="journal-template-selector"
-          current={journalTemplateDocId}
-          onChange={updateJournalTemplate}
-        />
-      </SettingRow>
+    <SettingWrapper
+      title={t['com.lovenotes.settings.workspace.template.title']()}
+    >
       <SettingRow
         name={t['com.lovenotes.settings.workspace.template.page']()}
         desc={t['com.lovenotes.settings.workspace.template.page-desc']()}

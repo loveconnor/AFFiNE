@@ -1,4 +1,10 @@
 import {
+  CloseIcon,
+  EdgelessIcon,
+  PageIcon,
+  ToggleRightIcon,
+} from '@blocksuite/icons/rc';
+import {
   Button,
   IconButton,
   Masonry,
@@ -17,12 +23,6 @@ import { CollectionRulesService } from '@lovenotes/core/modules/collection-rules
 import { DocsService } from '@lovenotes/core/modules/doc';
 import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import {
-  CloseIcon,
-  EdgelessIcon,
-  PageIcon,
-  ToggleRightIcon,
-} from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
@@ -68,12 +68,6 @@ export const RulesMode = ({
           {
             type: 'system',
             key: 'trash',
-            method: 'is',
-            value: 'false',
-          },
-          {
-            type: 'system',
-            key: 'empty-journal',
             method: 'is',
             value: 'false',
           },
@@ -235,7 +229,9 @@ export const RulesMode = ({
                             ]()}
                           </div>
                           <div className={styles.includeItemContentIs}>
-                            {t['com.lovenotes.editCollection.rules.include.is']()}
+                            {t[
+                              'com.lovenotes.editCollection.rules.include.is'
+                            ]()}
                           </div>
                           <DocTitle id={id} />
                         </div>

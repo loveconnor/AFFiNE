@@ -1,14 +1,3 @@
-import { DocsService } from '@lovenotes/core/modules/doc';
-import {
-  CreationQuickSearchSession,
-  DocsQuickSearchSession,
-  LinksQuickSearchSession,
-  QuickSearchService,
-  RecentDocsQuickSearchSession,
-} from '@lovenotes/core/modules/quicksearch';
-import { ExternalLinksQuickSearchSession } from '@lovenotes/core/modules/quicksearch/impls/external-links';
-import { JournalsQuickSearchSession } from '@lovenotes/core/modules/quicksearch/impls/journals';
-import { track } from '@lovenotes/track';
 import {
   BookmarkSlashMenuConfigIdentifier,
   insertLinkByQuickSearchCommand,
@@ -24,6 +13,16 @@ import type {
   SlashMenuConfig,
   SlashMenuItem,
 } from '@blocksuite/lovenotes/widgets/slash-menu';
+import { DocsService } from '@lovenotes/core/modules/doc';
+import {
+  CreationQuickSearchSession,
+  DocsQuickSearchSession,
+  LinksQuickSearchSession,
+  QuickSearchService,
+  RecentDocsQuickSearchSession,
+} from '@lovenotes/core/modules/quicksearch';
+import { ExternalLinksQuickSearchSession } from '@lovenotes/core/modules/quicksearch/impls/external-links';
+import { track } from '@lovenotes/track';
 import type { FrameworkProvider } from '@toeverything/infra';
 import { pick } from 'lodash-es';
 
@@ -39,7 +38,6 @@ export function patchQuickSearchService(framework: FrameworkProvider) {
             framework.createEntity(DocsQuickSearchSession),
             framework.createEntity(LinksQuickSearchSession),
             framework.createEntity(ExternalLinksQuickSearchSession),
-            framework.createEntity(JournalsQuickSearchSession),
           ],
           result => {
             if (result === null) {

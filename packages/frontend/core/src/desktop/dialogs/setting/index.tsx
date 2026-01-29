@@ -1,3 +1,4 @@
+import { ContactWithUsIcon } from '@blocksuite/icons/rc';
 import { Loading, Scrollable } from '@lovenotes/component';
 import { WorkspaceDetailSkeleton } from '@lovenotes/component/setting-components';
 import type { ModalProps } from '@lovenotes/component/ui/modal';
@@ -16,7 +17,6 @@ import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { createIsland, type Island } from '@lovenotes/core/utils/island';
 import { ServerDeploymentType } from '@lovenotes/graphql';
 import { Trans } from '@lovenotes/i18n';
-import { ContactWithUsIcon } from '@blocksuite/icons/rc';
 import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import { debounce } from 'lodash-es';
 import {
@@ -66,9 +66,17 @@ const SettingModalInner = ({
   onCloseSetting,
   scrollAnchor: initialScrollAnchor,
 }: SettingProps) => {
+  const sanitizeTab = (tab: SettingTab): SettingTab =>
+    tab === 'plans' ||
+    tab === 'billing' ||
+    tab === 'workspace:embedding' ||
+    tab === 'about'
+      ? 'appearance'
+      : tab;
+
   const [subPageIslands, setSubPageIslands] = useState<Island[]>([]);
   const [settingState, setSettingState] = useState<SettingState>({
-    activeTab: initialActiveTab,
+    activeTab: sanitizeTab(initialActiveTab),
     scrollAnchor: initialScrollAnchor,
   });
   const globalContextService = useService(GlobalContextService);
@@ -136,7 +144,7 @@ const SettingModalInner = ({
 
   const onTabChange = useCallback(
     (key: SettingTab) => {
-      setSettingState({ activeTab: key });
+      setSettingState({ activeTab: sanitizeTab(key) });
     },
     [setSettingState]
   );
@@ -171,11 +179,10 @@ const SettingModalInner = ({
 
   useEffect(() => {
     if (
-      isSelfhosted &&
-      (settingState.activeTab === 'plans' ||
-        settingState.activeTab === 'workspace:billing')
+      settingState.activeTab === 'plans' ||
+      settingState.activeTab === 'billing'
     ) {
-      setSettingState({ activeTab: 'workspace:license' });
+      setSettingState({ activeTab: 'appearance' });
     }
   }, [isSelfhosted, settingState.activeTab]);
 
@@ -227,34 +234,8 @@ const SettingModalInner = ({
                   ) : null}
                 </Suspense>
               </div>
-              <div className={style.footer}>
-                <ContactWithUsIcon fontSize={16} />
-                <Trans
-                  i18nKey={'com.lovenotes.settings.suggestion-2'}
-                  components={{
-                    1: (
-                      <span
-                        className={style.link}
-                        onClick={handleOpenStarLoveNotesModal}
-                      />
-                    ),
-                    2: (
-                      <span
-                        className={style.link}
-                        onClick={handleOpenIssueFeedbackModal}
-                      />
-                    ),
-                  }}
-                />
-              </div>
-              <StarLoveNotesModal
-                open={openStarLoveNotesModal}
-                setOpen={setOpenStarLoveNotesModal}
-              />
-              <IssueFeedbackModal
-                open={openIssueFeedbackModal}
-                setOpen={setOpenIssueFeedbackModal}
-              />
+              <div className={style.footer}>{/* footer removed */}</div>
+              {/* footer modals removed */}
             </div>
             <Scrollable.Scrollbar />
           </Scrollable.Viewport>

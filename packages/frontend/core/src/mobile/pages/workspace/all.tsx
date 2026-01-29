@@ -1,10 +1,10 @@
 import { useThemeColorV2, Wrapper } from '@lovenotes/component';
-import { EmptyDocs } from '@lovenotes/core/components/lovenotes/empty';
 import {
   createDocExplorerContext,
   DocExplorerContext,
 } from '@lovenotes/core/components/explorer/context';
 import { DocsExplorer } from '@lovenotes/core/components/explorer/docs-view/docs-list';
+import { EmptyDocs } from '@lovenotes/core/components/lovenotes/empty';
 import { CollectionRulesService } from '@lovenotes/core/modules/collection-rules';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect, useState } from 'react';
@@ -42,12 +42,6 @@ const AllDocs = () => {
         ],
         extraFilters: [
           { type: 'system', key: 'trash', method: 'is', value: 'false' },
-          {
-            type: 'system',
-            key: 'empty-journal',
-            method: 'is',
-            value: 'false',
-          },
         ],
         orderBy: {
           type: 'system',

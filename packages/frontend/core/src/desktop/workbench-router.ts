@@ -38,10 +38,6 @@ export const workbenchRoutes = [
     lazy: () => import('./pages/workspace/attachment/index'),
   },
   {
-    path: '/journals',
-    lazy: () => import('./pages/workspace/journals'),
-  },
-  {
     path: '/settings',
     lazy: () => import('./pages/workspace/settings'),
   },

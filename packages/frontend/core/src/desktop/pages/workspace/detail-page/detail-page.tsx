@@ -1,18 +1,28 @@
+import {
+  AiIcon,
+  CommentIcon,
+  ExportIcon,
+  FrameIcon,
+  PropertyIcon,
+  TocIcon,
+} from '@blocksuite/icons/rc';
+import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
 import { Scrollable } from '@lovenotes/component';
 import { PageDetailLoading } from '@lovenotes/component/page-detail-skeleton';
 import type { AIChatParams } from '@lovenotes/core/blocksuite/ai';
 import { AIProvider } from '@lovenotes/core/blocksuite/ai';
 import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor';
 import { EditorOutlineViewer } from '@lovenotes/core/blocksuite/outline-viewer';
-import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
-// import { PageAIOnboarding } from '@lovenotes/core/components/lovenotes/ai-onboarding';
-import { GlobalPageHistoryModal } from '@lovenotes/core/components/lovenotes/page-history-modal';
 import { CommentSidebar } from '@lovenotes/core/components/comment/sidebar';
 import { useGuard } from '@lovenotes/core/components/guard';
 import { useAppSettingHelper } from '@lovenotes/core/components/hooks/lovenotes/use-app-setting-helper';
 import { useEnableAI } from '@lovenotes/core/components/hooks/lovenotes/use-enable-ai';
 import { useRegisterBlocksuiteEditorCommands } from '@lovenotes/core/components/hooks/lovenotes/use-register-blocksuite-editor-commands';
 import { useActiveBlocksuiteEditor } from '@lovenotes/core/components/hooks/use-block-suite-editor';
+import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
+// import { PageAIOnboarding } from '@lovenotes/core/components/lovenotes/ai-onboarding';
+import { GlobalPageHistoryModal } from '@lovenotes/core/components/lovenotes/page-history-modal';
 import { PageDetailEditor } from '@lovenotes/core/components/page-detail-editor';
 import { WorkspacePropertySidebar } from '@lovenotes/core/components/properties/sidebar';
 import { TrashPageFooter } from '@lovenotes/core/components/pure/trash-page-footer';
@@ -22,7 +32,6 @@ import { DocService } from '@lovenotes/core/modules/doc';
 import { EditorService } from '@lovenotes/core/modules/editor';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { GlobalContextService } from '@lovenotes/core/modules/global-context';
-import { JournalService } from '@lovenotes/core/modules/journal';
 import { PeekViewService } from '@lovenotes/core/modules/peek-view';
 import { RecentDocsService } from '@lovenotes/core/modules/quicksearch';
 import {
@@ -37,19 +46,6 @@ import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { isNewTabTrigger } from '@lovenotes/core/utils';
 import { ServerFeature } from '@lovenotes/graphql';
 import track from '@lovenotes/track';
-import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
-import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
-import { focusBlockEnd } from '@blocksuite/lovenotes/shared/commands';
-import { getLastNoteBlock } from '@blocksuite/lovenotes/shared/utils';
-import {
-  AiIcon,
-  CommentIcon,
-  ExportIcon,
-  FrameIcon,
-  PropertyIcon,
-  TocIcon,
-  TodayIcon,
-} from '@blocksuite/icons/rc';
 import {
   FrameworkScope,
   useLiveData,
@@ -69,7 +65,6 @@ import { DetailPageWrapper } from './detail-page-wrapper';
 import { EditorAdapterPanel } from './tabs/adapter';
 import { EditorChatPanel } from './tabs/chat';
 import { EditorFramePanel } from './tabs/frame';
-import { EditorJournalPanel } from './tabs/journal';
 import { EditorOutlinePanel } from './tabs/outline';
 
 const DetailPageImpl = memo(function DetailPageImpl() {
@@ -186,37 +181,11 @@ const DetailPageImpl = memo(function DetailPageImpl() {
 
   useRegisterBlocksuiteEditorCommands(editor, isActiveView);
 
-  const journalService = useService(JournalService);
-  const isJournal = !!useLiveData(journalService.journalDate$(doc.id));
-
   const onLoad = useCallback(
     (editorContainer: LoveNotesEditorContainer) => {
       const std = editorContainer.std;
       const disposable = new DisposableGroup();
 
-      // Check if journal and handle accordingly to set focus on input block.
-      if (isJournal) {
-        const rafId = requestAnimationFrame(() => {
-          try {
-            if (!editorContainer.isConnected) return;
-            const page = editorContainer.page;
-            const note = getLastNoteBlock(page);
-            const std = editorContainer.std;
-            if (note) {
-              const lastBlock = note.lastChild();
-              if (lastBlock) {
-                const focusBlock = std.view.getBlock(lastBlock.id) ?? undefined;
-                std.command.exec(focusBlockEnd, { focusBlock, force: true });
-                return;
-              }
-            }
-            std.command.exec(focusBlockEnd, { force: true });
-          } catch (error) {
-            console.error('Failed to focus journal body', error);
-          }
-        });
-        disposable.add(() => cancelAnimationFrame(rafId));
-      }
       if (std) {
         const refNodeSlots = std.getOptional(RefNodeSlotsProvider);
         if (refNodeSlots) {
@@ -294,7 +263,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
         disposable.dispose();
       };
     },
-    [editor, workbench, peekView, isJournal]
+    [editor, workbench, peekView]
   );
 
   const [hasScrollTop, setHasScrollTop] = useState(false);
@@ -380,15 +349,6 @@ const DetailPageImpl = memo(function DetailPageImpl() {
         <Scrollable.Root className={styles.sidebarScrollArea}>
           <Scrollable.Viewport>
             <WorkspacePropertySidebar />
-          </Scrollable.Viewport>
-          <Scrollable.Scrollbar />
-        </Scrollable.Root>
-      </ViewSidebarTab>
-
-      <ViewSidebarTab tabId="journal" icon={<TodayIcon />}>
-        <Scrollable.Root className={styles.sidebarScrollArea}>
-          <Scrollable.Viewport>
-            <EditorJournalPanel />
           </Scrollable.Viewport>
           <Scrollable.Scrollbar />
         </Scrollable.Root>

@@ -58,12 +58,6 @@ export class Collection extends Entity<{ id: string }> {
                 method: 'is',
                 value: 'false',
               },
-              {
-                type: 'system',
-                key: 'empty-journal',
-                method: 'is',
-                value: 'false',
-              },
             ],
           })
           .pipe(map(result => result.groups.flatMap(group => group.items)));

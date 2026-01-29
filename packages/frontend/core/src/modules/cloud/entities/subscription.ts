@@ -2,6 +2,7 @@ import {
   SubscriptionPlan,
   type SubscriptionQuery,
   SubscriptionRecurring,
+  SubscriptionStatus,
   SubscriptionVariant,
 } from '@lovenotes/graphql';
 import {
@@ -24,6 +25,48 @@ import type { SubscriptionStore } from '../stores/subscription';
 export type SubscriptionType = NonNullable<
   SubscriptionQuery['currentUser']
 >['subscriptions'][number];
+
+const createBestUserSubscriptions = (): SubscriptionType[] => {
+  const now = new Date().toISOString();
+  return [
+    {
+      __typename: 'SubscriptionType',
+      id: 'best-pro',
+      status: SubscriptionStatus.Active,
+      plan: SubscriptionPlan.Pro,
+      recurring: SubscriptionRecurring.Lifetime,
+      start: now,
+      end: null,
+      nextBillAt: null,
+      canceledAt: null,
+      variant: SubscriptionVariant.Onetime,
+      provider: 'local',
+      iapStore: null,
+      trialStart: null,
+      trialEnd: null,
+      createdAt: now,
+      updatedAt: now,
+    },
+    {
+      __typename: 'SubscriptionType',
+      id: 'best-ai',
+      status: SubscriptionStatus.Active,
+      plan: SubscriptionPlan.AI,
+      recurring: SubscriptionRecurring.Lifetime,
+      start: now,
+      end: null,
+      nextBillAt: null,
+      canceledAt: null,
+      variant: SubscriptionVariant.Onetime,
+      provider: 'local',
+      iapStore: null,
+      trialStart: null,
+      trialEnd: null,
+      createdAt: now,
+      updatedAt: now,
+    },
+  ];
+};
 
 export class Subscription extends Entity {
   // undefined means no user, null means loading
@@ -98,27 +141,9 @@ export class Subscription extends Entity {
             return undefined; // no subscription if no user
           }
 
-          const serverConfig =
-            await this.serverService.server.features$.waitForNonNull(signal);
-
-          if (!serverConfig.payment) {
-            // No payment feature, no subscription
-            return {
-              userId: accountId,
-              subscriptions: [],
-            };
-          }
-          const { userId, subscriptions } =
-            await this.store.fetchSubscriptions(signal);
-          if (userId !== accountId) {
-            // The user has changed, ignore the result
-            this.authService.session.revalidate();
-            await this.authService.session.waitForRevalidation();
-            return null;
-          }
           return {
-            userId: userId,
-            subscriptions: subscriptions,
+            userId: accountId,
+            subscriptions: createBestUserSubscriptions(),
           };
         }).pipe(
           smartRetry(),

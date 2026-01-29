@@ -6,7 +6,6 @@ export type SettingTab =
   | 'shortcuts'
   | 'notifications'
   | 'appearance'
-  | 'about'
   | 'plans'
   | 'billing'
   | 'backup' // electron only
@@ -14,7 +13,7 @@ export type SettingTab =
   | 'editor'
   | 'account'
   | 'meetings'
-  | `workspace:${'preference' | 'properties' | 'members' | 'storage' | 'billing' | 'license' | 'integrations' | 'embedding' | 'search'}`;
+  | `workspace:${'preference' | 'properties' | 'members' | 'storage' | 'billing' | 'integrations' | 'embedding' | 'search'}`;
 
 export type GLOBAL_DIALOG_SCHEMA = {
   'create-workspace': (props: { serverId?: string }) => {

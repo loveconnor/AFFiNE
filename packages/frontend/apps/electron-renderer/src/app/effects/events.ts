@@ -2,7 +2,6 @@ import { DesktopApiService } from '@lovenotes/core/modules/desktop-api';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import type { SettingTab } from '@lovenotes/core/modules/dialogs/constant';
 import { DocsService } from '@lovenotes/core/modules/doc';
-import { JournalService } from '@lovenotes/core/modules/journal';
 import { LifecycleService } from '@lovenotes/core/modules/lifecycle';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { apis, events } from '@lovenotes/electron-api';
@@ -62,18 +61,7 @@ export function setupEvents(frameworkProvider: FrameworkProvider) {
   });
 
   events?.applicationMenu.onOpenJournal(() => {
-    using currentWorkspace = getCurrentWorkspace(frameworkProvider);
-    if (!currentWorkspace) {
-      return;
-    }
-    const { workspace, dispose } = currentWorkspace;
-
-    const workbench = workspace.scope.get(WorkbenchService).workbench;
-    const journalService = workspace.scope.get(JournalService);
-    const docId = journalService.ensureJournalByDate(new Date()).id;
-    workbench.openDoc(docId);
-
-    dispose();
+    // Journal feature removed; keep handler as no-op to avoid menu errors.
   });
 
   setupRecordingEvents(frameworkProvider);

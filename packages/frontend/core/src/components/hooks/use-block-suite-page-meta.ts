@@ -1,11 +1,10 @@
-import { DocsService } from '@lovenotes/core/modules/doc';
 import type { DocMeta, Workspace } from '@blocksuite/lovenotes/store';
+import { DocsService } from '@lovenotes/core/modules/doc';
 import { useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { useAsyncCallback } from './lovenotes-async-hooks';
 import { useAllBlockSuiteDocMeta } from './use-all-block-suite-page-meta';
-import { useJournalInfoHelper } from './use-journal';
 
 /**
  * Get pageMetas excluding journal pages without updatedDate
@@ -14,14 +13,7 @@ import { useJournalInfoHelper } from './use-journal';
  */
 export function useBlockSuiteDocMeta(docCollection: Workspace) {
   const pageMetas = useAllBlockSuiteDocMeta(docCollection);
-  const { isPageJournal } = useJournalInfoHelper();
-  return useMemo(
-    () =>
-      pageMetas.filter(
-        pageMeta => !isPageJournal(pageMeta.id) || !!pageMeta.updatedDate
-      ),
-    [isPageJournal, pageMetas]
-  );
+  return useMemo(() => pageMetas, [pageMetas]);
 }
 
 export function useDocMetaHelper() {

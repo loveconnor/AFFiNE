@@ -1,11 +1,12 @@
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { FlexWrapper } from '@lovenotes/component';
-import { EmptyCollectionDetail } from '@lovenotes/core/components/lovenotes/empty/collection-detail';
 import {
   createDocExplorerContext,
   DocExplorerContext,
 } from '@lovenotes/core/components/explorer/context';
 import { DocsExplorer } from '@lovenotes/core/components/explorer/docs-view/docs-list';
 import type { ExplorerDisplayPreference } from '@lovenotes/core/components/explorer/types';
+import { EmptyCollectionDetail } from '@lovenotes/core/components/lovenotes/empty/collection-detail';
 import {
   type Collection,
   CollectionService,
@@ -15,7 +16,6 @@ import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -69,12 +69,6 @@ export const CollectionDetail = ({
         orderBy,
         extraAllowList: allowList,
         extraFilters: [
-          {
-            type: 'system',
-            key: 'empty-journal',
-            method: 'is',
-            value: 'false',
-          },
           {
             type: 'system',
             key: 'trash',

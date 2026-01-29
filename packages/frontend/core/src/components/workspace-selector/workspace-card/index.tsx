@@ -1,15 +1,3 @@
-import { Button, notify, Skeleton, Tooltip } from '@lovenotes/component';
-import { Loading } from '@lovenotes/component/ui/loading';
-import { useSystemOnline } from '@lovenotes/core/components/hooks/use-system-online';
-import { useWorkspace } from '@lovenotes/core/components/hooks/use-workspace';
-import { useWorkspaceInfo } from '@lovenotes/core/components/hooks/use-workspace-info';
-import {
-  type WorkspaceMetadata,
-  type WorkspaceProfileInfo,
-  WorkspacesService,
-} from '@lovenotes/core/modules/workspace';
-import { UNTITLED_WORKSPACE_NAME } from '@lovenotes/env/constant';
-import { useI18n } from '@lovenotes/i18n';
 import {
   ArrowDownSmallIcon,
   CloudWorkspaceIcon,
@@ -22,6 +10,18 @@ import {
   TeamWorkspaceIcon,
   UnsyncIcon,
 } from '@blocksuite/icons/rc';
+import { Button, notify, Skeleton, Tooltip } from '@lovenotes/component';
+import { Loading } from '@lovenotes/component/ui/loading';
+import { useSystemOnline } from '@lovenotes/core/components/hooks/use-system-online';
+import { useWorkspace } from '@lovenotes/core/components/hooks/use-workspace';
+import { useWorkspaceInfo } from '@lovenotes/core/components/hooks/use-workspace-info';
+import {
+  type WorkspaceMetadata,
+  type WorkspaceProfileInfo,
+  WorkspacesService,
+} from '@lovenotes/core/modules/workspace';
+import { UNTITLED_WORKSPACE_NAME } from '@lovenotes/env/constant';
+import { useI18n } from '@lovenotes/i18n';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
@@ -292,10 +292,6 @@ export const WorkspaceCard = forwardRef<
 
     const name = information?.name ?? UNTITLED_WORKSPACE_NAME;
 
-    const onEnableCloud = useCatchEventCallback(() => {
-      onClickEnableCloud?.(workspaceMetadata);
-    }, [onClickEnableCloud, workspaceMetadata]);
-
     const onRemoveWorkspace = useAsyncCallback(async () => {
       await workspacesService
         .deleteWorkspace(workspaceMetadata)
@@ -358,15 +354,6 @@ export const WorkspaceCard = forwardRef<
             <Button onClick={onRemoveWorkspace}>Remove</Button>
           ) : null}
           <div className={styles.showOnCardHover}>
-            {onClickEnableCloud && workspaceMetadata.flavour === 'local' ? (
-              <Button
-                className={styles.enableCloudButton}
-                onClick={onEnableCloud}
-              >
-                Enable Cloud
-              </Button>
-            ) : null}
-
             {onClickOpenSettings && (
               <div className={styles.settingButton} onClick={onOpenSettings}>
                 <SettingsIcon width={16} height={16} />
@@ -384,7 +371,9 @@ export const WorkspaceCard = forwardRef<
             </Tooltip>
           )}
           {hideTeamWorkspaceIcon || !information?.isTeam ? null : (
-            <Tooltip content={t['com.lovenotes.settings.workspace.state.team']()}>
+            <Tooltip
+              content={t['com.lovenotes.settings.workspace.state.team']()}
+            >
               <TeamWorkspaceIcon className={styles.collaborationIcon} />
             </Tooltip>
           )}

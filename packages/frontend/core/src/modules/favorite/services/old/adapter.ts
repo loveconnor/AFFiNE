@@ -1,6 +1,6 @@
 // the adapter is to bridge the workspace rootdoc & native js bindings
-import type { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { createYProxy } from '@blocksuite/lovenotes/store';
+import type { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { LiveData, Service } from '@toeverything/infra';
 import { defaultsDeep } from 'lodash-es';
 import { Observable } from 'rxjs';
@@ -9,7 +9,6 @@ import type * as Y from 'yjs';
 import type { FavoriteSupportTypeUnion } from '../../constant';
 import type { FavoriteService } from '../favorite';
 import {
-  PagePropertyType,
   PageSystemPropertyId,
   type WorkspaceLoveNotesProperties,
 } from './schema';
@@ -75,12 +74,6 @@ class WorkspacePropertiesAdapter {
         pageProperties: {
           custom: {},
           system: {
-            journal: {
-              id: PageSystemPropertyId.Journal,
-              name: 'Journal',
-              source: 'system',
-              type: PagePropertyType.Date,
-            },
             tags: {
               id: PageSystemPropertyId.Tags,
               name: 'Tags',
@@ -108,10 +101,6 @@ class WorkspacePropertiesAdapter {
       [pageId]: {
         custom: {},
         system: {
-          [PageSystemPropertyId.Journal]: {
-            id: PageSystemPropertyId.Journal,
-            value: false,
-          },
           [PageSystemPropertyId.Tags]: {
             id: PageSystemPropertyId.Tags,
             value: [],
@@ -145,18 +134,6 @@ class WorkspacePropertiesAdapter {
 
   getPageProperties(pageId: string) {
     return this.pageProperties?.[pageId] ?? null;
-  }
-
-  getJournalPageDateString(id: string) {
-    return this.pageProperties?.[id]?.system[PageSystemPropertyId.Journal]
-      ?.value;
-  }
-
-  setJournalPageDateString(id: string, date: string) {
-    this.ensurePageProperties(id);
-    const pageProperties = this.pageProperties?.[id];
-    // oxlint-disable-next-line no-non-null-assertion
-    pageProperties!.system[PageSystemPropertyId.Journal].value = date;
   }
 
   /**

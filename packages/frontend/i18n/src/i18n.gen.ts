@@ -192,10 +192,6 @@ export function useLoveNotesI18N(): {
       */
     ["Enable LoveNotes Cloud Description"](): string;
     /**
-      * `The following functions rely on LoveNotes Cloud. All data is stored on the current device. You can enable LoveNotes Cloud for this workspace to keep data in sync with the cloud.`
-      */
-    ["Enable cloud hint"](): string;
-    /**
       * `Full Backup`
       */
     ["Full Backup"](): string;
@@ -820,10 +816,6 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.ai-onboarding.local.action-get-started"](): string;
     /**
-      * `Learn more`
-      */
-    ["com.lovenotes.ai-onboarding.local.action-learn-more"](): string;
-    /**
       * `Lets you think bigger, create faster, work smarter and save time for every project.`
       */
     ["com.lovenotes.ai-onboarding.local.message"](): string;
@@ -902,10 +894,6 @@ export function useLoveNotesI18N(): {
       * `All docs`
       */
     ["com.lovenotes.all-pages.header"](): string;
-    /**
-      * `Learn more`
-      */
-    ["com.lovenotes.app-sidebar.learn-more"](): string;
     /**
       * `Star us`
       */
@@ -1436,10 +1424,6 @@ export function useLoveNotesI18N(): {
       * `Back`
       */
     ["com.lovenotes.backButton"](): string;
-    /**
-      * `Your local data is stored in the browser and may be lost. Don't risk it - enable cloud now!`
-      */
-    ["com.lovenotes.banner.local-warning"](): string;
     /**
       * `LoveNotes Cloud`
       */
@@ -2078,20 +2062,11 @@ export function useLoveNotesI18N(): {
       * `Cancel`
       */
     ["com.lovenotes.enableLoveNotesCloudModal.button.cancel"](): string;
-    /**
-      * `Enable Cloud for {{workspaceName}}`
-      */
-    ["com.lovenotes.enableLoveNotesCloudModal.custom-server.title"](options: {
-        readonly workspaceName: string;
-    }): string;
+ 
     /**
       * `Choose an instance.`
       */
     ["com.lovenotes.enableLoveNotesCloudModal.custom-server.description"](): string;
-    /**
-      * `Enable Cloud`
-      */
-    ["com.lovenotes.enableLoveNotesCloudModal.custom-server.enable"](): string;
     /**
       * `Hide error`
       */
@@ -2435,10 +2410,6 @@ export function useLoveNotesI18N(): {
         readonly workspace: string;
     }): string;
     /**
-      * `Create doc from Web Clipper`
-      */
-    ["com.lovenotes.import-clipper.dialog.createDocFromClipper"](): string;
-    /**
       * `Failed to import content, please try again.`
       */
     ["com.lovenotes.import-clipper.dialog.errorImport"](): string;
@@ -2559,39 +2530,28 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.issue-feedback.title"](): string;
     /**
-      * `Journals`
       */
-    ["com.lovenotes.journal.app-sidebar-title"](): string;
     /**
       * `{{count}} more articles`
       */
-    ["com.lovenotes.journal.conflict-show-more"](options: {
         readonly count: string;
     }): string;
     /**
       * `Created`
       */
-    ["com.lovenotes.journal.created-today"](): string;
     /**
       * `You haven't created anything yet`
       */
-    ["com.lovenotes.journal.daily-count-created-empty-tips"](): string;
     /**
       * `You haven't updated anything yet`
       */
-    ["com.lovenotes.journal.daily-count-updated-empty-tips"](): string;
     /**
       * `Updated`
       */
-    ["com.lovenotes.journal.updated-today"](): string;
     /**
-      * `No Journal`
       */
-    ["com.lovenotes.journal.placeholder.title"](): string;
     /**
-      * `Create Daily Journal`
       */
-    ["com.lovenotes.journal.placeholder.create"](): string;
     /**
       * `Just now`
       */
@@ -3173,17 +3133,12 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.page-properties.property.text"](): string;
     /**
-      * `Journal`
       */
-    ["com.lovenotes.page-properties.property.journal"](): string;
     /**
       * `Duplicated`
       */
-    ["com.lovenotes.page-properties.property.journal-duplicated"](): string;
     /**
-      * `Remove journal mark`
       */
-    ["com.lovenotes.page-properties.property.journal-remove"](): string;
     /**
       * `Last edited by`
       */
@@ -3213,9 +3168,7 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.page-properties.property.tags.tooltips"](): string;
     /**
-      * `Indicates that this doc is a journal entry or daily note. Facilitates easy capture of ideas, quick logging of thoughts, and ongoing personal reflection.`
       */
-    ["com.lovenotes.page-properties.property.journal.tooltips"](): string;
     /**
       * `Use a checkbox to indicate whether a condition is true or false. Useful for confirming options, toggling features, or tracking task states.`
       */
@@ -5652,10 +5605,6 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.settings.meetings.setting.prompt"](): string;
     /**
-      * `Learn more`
-      */
-    ["com.lovenotes.settings.meetings.setting.welcome.learn-more"](): string;
-    /**
       * `Enable meeting notes`
       */
     ["com.lovenotes.settings.meetings.enable.title"](): string;
@@ -7238,10 +7187,6 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.workspace.cloud.sync"](): string;
     /**
-      * `Failed to enable Cloud, please try again.`
-      */
-    ["com.lovenotes.workspace.enable-cloud.failed"](): string;
-    /**
       * `Local workspaces`
       */
     ["com.lovenotes.workspace.local"](): string;
@@ -7386,13 +7331,9 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.all-docs.group.is-not-template"](): string;
     /**
-      * `Journal`
       */
-    ["com.lovenotes.all-docs.group.is-journal"](): string;
     /**
-      * `Not Journal`
       */
-    ["com.lovenotes.all-docs.group.is-not-journal"](): string;
     /**
       * `Checked`
       */
@@ -7606,11 +7547,8 @@ export function useLoveNotesI18N(): {
     /**
       * `Today's activity`
       */
-    ["com.lovenotes.m.selector.journal-menu.today-activity"](): string;
     /**
-      * `Duplicate Entries in Today's Journal`
       */
-    ["com.lovenotes.m.selector.journal-menu.conflicts"](): string;
     /**
       * `Unable to preview this file`
       */
@@ -7624,9 +7562,7 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.pdf.page.render.error"](): string;
     /**
-      * `Duplicate Entries in Today's Journal`
       */
-    ["com.lovenotes.editor.journal-conflict.title"](): string;
     /**
       * `Search for "{{query}}"`
       */
@@ -7682,9 +7618,7 @@ export function useLoveNotesI18N(): {
         readonly count: string;
     }): string;
     /**
-      * `Journal`
       */
-    ["com.lovenotes.editor.at-menu.journal"](): string;
     /**
       * `Select a specific date`
       */
@@ -7812,9 +7746,7 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.workspace.storage"](): string;
     /**
-      * `Journal`
       */
-    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.journal"](): string;
     /**
       * `Select a specific date`
       */
@@ -7948,25 +7880,18 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.template-list.create-new"](): string;
     /**
-      * `Set a Template for the Journal`
       */
-    ["com.lovenotes.template-journal-onboarding.title"](): string;
     /**
       * `Select`
       */
-    ["com.lovenotes.template-journal-onboarding.select"](): string;
     /**
       * `My Templates`
       */
     ["com.lovenotes.settings.workspace.template.title"](): string;
     /**
-      * `Template for journal`
       */
-    ["com.lovenotes.settings.workspace.template.journal"](): string;
     /**
-      * `Select a template for your journal`
       */
-    ["com.lovenotes.settings.workspace.template.journal-desc"](): string;
     /**
       * `Keep empty`
       */
@@ -8039,14 +7964,6 @@ export function useLoveNotesI18N(): {
       * `Integrations`
       */
     ["com.lovenotes.integration.integrations"](): string;
-    /**
-      * `Web Clipper`
-      */
-    ["com.lovenotes.integration.web-clipper.name"](): string;
-    /**
-      * `Import web pages to LoveNotes`
-      */
-    ["com.lovenotes.integration.web-clipper.desc"](): string;
     /**
       * `Elevate your LoveNotes experience with diverse add-ons and seamless integrations.`
       */
@@ -8254,7 +8171,6 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.integration.calendar.name"](): string;
     /**
-      * `New events will be scheduled in LoveNotes’s journal`
       */
     ["com.lovenotes.integration.calendar.desc"](): string;
     /**
@@ -8290,7 +8206,6 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.integration.calendar.show-events"](): string;
     /**
-      * `Enabling this setting allows you to connect your calendar events to your Journal in LoveNotes`
       */
     ["com.lovenotes.integration.calendar.show-events-desc"](): string;
     /**
@@ -8298,15 +8213,12 @@ export function useLoveNotesI18N(): {
       */
     ["com.lovenotes.integration.calendar.show-all-day-events"](): string;
     /**
-      * `Are you sure you want to unsubscribe "{{name}}"? Unsubscribing this account will remove its data from Journal.`
       */
     ["com.lovenotes.integration.calendar.unsubscribe-content"](options: {
         readonly name: string;
     }): string;
     /**
-      * `No journal page found for {{date}}. Please create a journal page first.`
       */
-    ["com.lovenotes.integration.calendar.no-journal"](options: {
         readonly date: string;
     }): string;
     /**
@@ -9511,13 +9423,7 @@ export const TypedTrans: {
     ["com.lovenotes.settings.editorSettings.general.spell-check.restart-hint"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
-    /**
-      * `Love our app? <1>Star us on GitHub</1> and <2>create issues</2> for your valuable feedback!`
-      */
-    ["com.lovenotes.settings.suggestion-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
-        ["1"]: JSX.Element;
-        ["2"]: JSX.Element;
-    }>>;
+
     /**
       * `Meeting Features Available <strong>Free</strong> in Beta Phase`
       */

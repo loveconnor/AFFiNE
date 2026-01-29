@@ -1,22 +1,17 @@
-import { Button, notify, Switch, Tooltip } from '@lovenotes/component';
+import { Button, notify, Switch } from '@lovenotes/component';
 import {
-  SettingHeader,
   SettingRow,
   SettingWrapper,
 } from '@lovenotes/component/setting-components';
 import { Upload } from '@lovenotes/core/components/pure/file-upload';
-import { EnableCloudPanel } from '@lovenotes/core/desktop/dialogs/setting/workspace-setting/preference/enable-cloud';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { UserFriendlyError } from '@lovenotes/error';
-import { ServerFeature } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
 import track from '@lovenotes/track';
 import { useLiveData, useService } from '@toeverything/infra';
 import type React from 'react';
 import { useCallback, useEffect } from 'react';
 
-import { ServerService } from '../../cloud/services/server';
-import { WorkspaceService } from '../../workspace/services/workspace';
 import { COUNT_PER_PAGE } from '../constants';
 import { EmbeddingService } from '../services/embedding';
 import { Attachments } from './attachments';
@@ -24,10 +19,6 @@ import EmbeddingProgress from './embedding-progress';
 import { IgnoredDocs } from './ignored-docs';
 
 interface EmbeddingSettingsProps {}
-
-const EmbeddingLocal: React.FC<{}> = () => {
-  return <EnableCloudPanel />;
-};
 
 const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
   const t = useI18n();
@@ -281,42 +272,6 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
 };
 
 export const EmbeddingSettings: React.FC<EmbeddingSettingsProps> = () => {
-  const workspaceService = useService(WorkspaceService);
-  const serverService = useService(ServerService);
-  const isLocal = workspaceService.workspace.flavour === 'local';
-  const serverConfig = useLiveData(serverService.server.config$);
-  const isEmbeddingEnabled = serverConfig?.features.includes(
-    ServerFeature.CopilotEmbedding
-  );
-
-  const t = useI18n();
-
-  return (
-    <>
-      <Tooltip
-        content={
-          !isEmbeddingEnabled &&
-          t[
-            'com.lovenotes.settings.workspace.indexer-embedding.embedding.disabled-tooltip'
-          ]()
-        }
-      >
-        <SettingHeader
-          data-testid="workspace-embedding-setting-header"
-          title={t[
-            'com.lovenotes.settings.workspace.indexer-embedding.embedding.title'
-          ]()}
-          subtitle={t[
-            'com.lovenotes.settings.workspace.indexer-embedding.embedding.description'
-          ]()}
-        />
-      </Tooltip>
-
-      {isLocal ? (
-        <EmbeddingLocal />
-      ) : (
-        <EmbeddingCloud disabled={!isEmbeddingEnabled} />
-      )}
-    </>
-  );
+  // Hide embedding settings UI entirely.
+  return null;
 };

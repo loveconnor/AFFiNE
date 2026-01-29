@@ -1,6 +1,6 @@
+import { Logo1Icon, TodayIcon } from '@blocksuite/icons/rc';
 import { IntegrationTypeIcon } from '@lovenotes/core/modules/integration';
 import type { I18nString } from '@lovenotes/i18n';
-import { Logo1Icon, TodayIcon } from '@blocksuite/icons/rc';
 import type { ReactNode } from 'react';
 
 import { CalendarSettingPanel } from './calendar/setting-panel';
@@ -46,13 +46,6 @@ const INTEGRATION_LIST = [
     icon: <img src={MCPIcon} />,
     setting: <McpServerSettingPanel />,
     cloud: true,
-  },
-  {
-    id: 'web-clipper' as const,
-    name: 'com.lovenotes.integration.web-clipper.name',
-    desc: 'com.lovenotes.integration.web-clipper.desc',
-    icon: <Logo1Icon />,
-    link: 'https://chromewebstore.google.com/detail/lovenotes-web-clipper/mpbbkmbdpleomiogkbkkpfoljjpahmoi',
   },
 ] satisfies (IntegrationCard | false)[];
 

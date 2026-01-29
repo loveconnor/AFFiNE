@@ -1,4 +1,3 @@
-import { i18nTime } from '@lovenotes/i18n';
 import {
   AliasIcon as LitAliasIcon,
   BlockLinkIcon as LitBlockLinkIcon,
@@ -22,13 +21,10 @@ import {
   YesterdayIcon,
 } from '@blocksuite/icons/rc';
 import { LiveData, Service } from '@toeverything/infra';
-import type { Dayjs } from 'dayjs';
-import dayjs from 'dayjs';
 
 import type { DocRecord, DocsService } from '../../doc';
 import type { ExplorerIconService } from '../../explorer-icon/services/explorer-icon';
 import type { I18nService } from '../../i18n';
-import type { JournalService } from '../../journal';
 import { getDocIconComponent, getDocIconComponentLit } from './icon';
 
 type IconType = 'rc' | 'lit';
@@ -85,40 +81,11 @@ const icons = { rc: rcIcons, lit: litIcons } as {
 
 export class DocDisplayMetaService extends Service {
   constructor(
-    private readonly journalService: JournalService,
     private readonly docsService: DocsService,
     private readonly i18nService: I18nService,
     private readonly explorerIconService: ExplorerIconService
   ) {
     super();
-  }
-
-  getJournalIcon(
-    journalDate: string | Dayjs,
-    options?: DocDisplayIconOptions<'rc'>
-  ): typeof TodayIcon;
-
-  getJournalIcon(
-    journalDate: string | Dayjs,
-    options?: DocDisplayIconOptions<'lit'>
-  ): typeof LitYesterdayIcon;
-
-  getJournalIcon<T extends IconType = 'rc'>(
-    journalDate: string | Dayjs,
-    options?: DocDisplayIconOptions<T>
-  ): T extends 'rc' ? typeof TodayIcon : typeof LitTodayIcon;
-
-  getJournalIcon<T extends IconType = 'rc'>(
-    journalDate: string | Dayjs,
-    options?: DocDisplayIconOptions<T>
-  ) {
-    const iconSet = icons[options?.type ?? 'rc'];
-    const day = dayjs(journalDate);
-    return day.isBefore(dayjs(), 'day')
-      ? iconSet.YesterdayIcon
-      : day.isAfter(dayjs(), 'day')
-        ? iconSet.TomorrowIcon
-        : iconSet.TodayIcon;
   }
 
   icon$<T extends IconType = 'rc'>(
@@ -133,15 +100,6 @@ export class DocDisplayMetaService extends Service {
       const referenced = !!options?.reference;
       const titleAlias = referenced ? options?.title : undefined;
       // const originalTitle = doc ? get(doc.title$) : '';
-      // link to journal doc
-      const journalDateString = get(this.journalService.journalDate$(docId));
-      const journalIcon = journalDateString
-        ? this.getJournalIcon(journalDateString, options)
-        : undefined;
-      // const journalTitle = journalDateString
-      //   ? i18nTime(journalDateString, { absolute: { accuracy: 'day' } })
-      //   : undefined;
-      // const title = titleAlias ?? journalTitle ?? originalTitle;
       const mode = doc ? get(doc.primaryMode$) : undefined;
       const finalMode = options?.mode ?? mode ?? 'page';
       const referenceToNode = !!(referenced && options.referenceToNode);
@@ -160,8 +118,6 @@ export class DocDisplayMetaService extends Service {
 
       // title alias
       if (titleAlias) return iconSet.AliasIcon;
-
-      if (journalIcon) return journalIcon;
 
       // link to specified block
       if (referenceToNode) return iconSet.BlockLinkIcon;
@@ -185,27 +141,8 @@ export class DocDisplayMetaService extends Service {
       const referenced = !!options?.reference;
       const titleAlias = referenced ? options?.title : undefined;
       const originalTitle = doc ? get(doc.title$) : '';
-      // journal title
-      const journalDateString = get(this.journalService.journalDate$(docId));
-      const journalTitle = journalDateString
-        ? i18nTime(journalDateString, { absolute: { accuracy: 'day' } })
-        : undefined;
-      // const title = titleAlias ?? journalTitle ?? originalTitle;
-
-      // emoji title
-      // if (enableEmojiIcon && title) {
-      //   // When the title has only one emoji character,
-      //   // if it's a journal document, the date should be displayed.
-      //   const journalDateString = get(this.journalService.journalDate$(docId));
-      //   if (journalDateString) {
-      //     return i18nTime(journalDateString, { absolute: { accuracy: 'day' } });
-      //   }
-      // }
-
       // title alias
       if (titleAlias) return titleAlias;
-
-      if (journalTitle) return journalTitle;
 
       // doc not found
       if (!doc) {

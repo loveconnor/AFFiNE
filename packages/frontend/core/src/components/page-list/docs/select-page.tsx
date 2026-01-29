@@ -1,3 +1,4 @@
+import { FilterIcon } from '@blocksuite/icons/rc';
 import { IconButton, Menu } from '@lovenotes/component';
 import {
   CollectionRulesService,
@@ -5,7 +6,6 @@ import {
 } from '@lovenotes/core/modules/collection-rules';
 import { ShareDocsListService } from '@lovenotes/core/modules/share-doc';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { FilterIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { memo, type ReactNode, useCallback, useEffect, useState } from 'react';
 
@@ -123,12 +123,6 @@ export const SelectPage = memo(function SelectPage({
         extraFilters: [
           {
             type: 'system',
-            key: 'empty-journal',
-            method: 'is',
-            value: 'false',
-          },
-          {
-            type: 'system',
             key: 'trash',
             method: 'is',
             value: 'false',
@@ -226,10 +220,16 @@ export const EmptyList = ({ search }: { search?: string }) => {
           className={styles.ellipsis}
           style={{ maxWidth: 300, fontSize: 15, lineHeight: '24px' }}
         >
-          <Trans i18nKey="com.lovenotes.selectPage.empty.tips" values={{ search }}>
+          <Trans
+            i18nKey="com.lovenotes.selectPage.empty.tips"
+            values={{ search }}
+          >
             No page titles contain
             <span
-              style={{ fontWeight: 600, color: 'var(--lovenotes-primary-color)' }}
+              style={{
+                fontWeight: 600,
+                color: 'var(--lovenotes-primary-color)',
+              }}
             >
               search
             </span>

@@ -1,5 +1,12 @@
 // Import is already correct, no changes needed
 import {
+  AiOutlineIcon,
+  AllDocsIcon,
+  ImportIcon,
+  SettingsIcon,
+} from '@blocksuite/icons/rc';
+import type { Store } from '@blocksuite/lovenotes/store';
+import {
   AddPageButton,
   AppSidebar,
   MenuItem,
@@ -8,7 +15,6 @@ import {
   SidebarContainer,
   SidebarScrollableContainer,
 } from '@lovenotes/core/modules/app-sidebar/views';
-import { ExternalMenuLinkItem } from '@lovenotes/core/modules/app-sidebar/views/menu-item/external-menu-link-item';
 import { AuthService, ServerService } from '@lovenotes/core/modules/cloud';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
@@ -16,14 +22,6 @@ import { CMDKQuickSearchService } from '@lovenotes/core/modules/quicksearch/serv
 import type { Workspace } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
 import { track } from '@lovenotes/track';
-import type { Store } from '@blocksuite/lovenotes/store';
-import {
-  AiOutlineIcon,
-  AllDocsIcon,
-  ImportIcon,
-  JournalIcon,
-  SettingsIcon,
-} from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import type { ReactElement } from 'react';
 import { memo, useCallback } from 'react';
@@ -46,7 +44,6 @@ import {
   workspaceWrapper,
 } from './index.css';
 import { InviteMembersButton } from './invite-members-button';
-import { AppSidebarJournalButton } from './journal-button';
 import { NotificationButton } from './notification-button';
 import { SidebarAudioPlayer } from './sidebar-audio-player';
 import { TemplateDocEntrance } from './template-doc-entrance';
@@ -211,7 +208,6 @@ export const RootAppSidebar = memo((): ReactElement => {
           <AddPageButton />
         </div>
         <AllDocsButton />
-        <AppSidebarJournalButton />
         {sessionStatus === 'authenticated' && <NotificationButton />}
         <AIChatButton />
         <MenuItem
@@ -245,11 +241,6 @@ export const RootAppSidebar = memo((): ReactElement => {
           </MenuItem>
           <InviteMembersButton />
           <TemplateDocEntrance />
-          <ExternalMenuLinkItem
-            href="https://lovenotes.pro/blog?tag=Release+Note"
-            icon={<JournalIcon />}
-            label={t['com.lovenotes.app-sidebar.learn-more']()}
-          />
         </CollapsibleSection>
       </SidebarScrollableContainer>
       <SidebarContainer className={bottomContainer}>

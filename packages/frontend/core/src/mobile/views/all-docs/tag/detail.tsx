@@ -1,10 +1,10 @@
 import { Wrapper } from '@lovenotes/component';
-import { EmptyDocs } from '@lovenotes/core/components/lovenotes/empty';
 import {
   createDocExplorerContext,
   DocExplorerContext,
 } from '@lovenotes/core/components/explorer/context';
 import { DocsExplorer } from '@lovenotes/core/components/explorer/docs-view/docs-list';
+import { EmptyDocs } from '@lovenotes/core/components/lovenotes/empty';
 import { Page } from '@lovenotes/core/mobile/components/page';
 import { CollectionRulesService } from '@lovenotes/core/modules/collection-rules';
 import type { Tag } from '@lovenotes/core/modules/tag';
@@ -44,12 +44,6 @@ const TagDocs = ({ tag }: { tag: Tag }) => {
         ],
         extraFilters: [
           { type: 'system', key: 'trash', method: 'is', value: 'false' },
-          {
-            type: 'system',
-            key: 'empty-journal',
-            method: 'is',
-            value: 'false',
-          },
         ],
         orderBy: {
           type: 'system',

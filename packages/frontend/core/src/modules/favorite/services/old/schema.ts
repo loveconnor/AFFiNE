@@ -11,7 +11,6 @@ export type TagOption = z.infer<typeof TagOptionSchema>;
 
 export enum PageSystemPropertyId {
   Tags = 'tags',
-  Journal = 'journal',
 }
 
 export enum PagePropertyType {
@@ -53,7 +52,7 @@ export const PageInfoItemSchema = z.object({
 });
 
 export const PageInfoJournalItemSchema = PageInfoItemSchema.extend({
-  id: z.literal(PageSystemPropertyId.Journal),
+  id: z.literal('journal'), // kept for compatibility but unused
   value: z.union([z.string(), z.literal(false)]),
 });
 
@@ -78,10 +77,6 @@ const WorkspaceLoveNotesPropertiesSchemaSchema = z.object({
   pageProperties: z.object({
     custom: z.record(PageCustomPropertyMetaSchema),
     system: z.object({
-      [PageSystemPropertyId.Journal]: PageSystemPropertyMetaBaseSchema.extend({
-        id: z.literal(PageSystemPropertyId.Journal),
-        type: z.literal(PagePropertyType.Date),
-      }),
       [PageSystemPropertyId.Tags]: PagePropertyMetaBaseSchema.extend({
         id: z.literal(PageSystemPropertyId.Tags),
         type: z.literal(PagePropertyType.Tags),
@@ -98,7 +93,6 @@ const PageInfoCustomPropertyItemSchema = PageInfoItemSchema.extend({
 const WorkspacePagePropertiesSchema = z.object({
   custom: z.record(PageInfoCustomPropertyItemSchema),
   system: z.object({
-    [PageSystemPropertyId.Journal]: PageInfoJournalItemSchema,
     [PageSystemPropertyId.Tags]: PageInfoTagsItemSchema,
   }),
 });

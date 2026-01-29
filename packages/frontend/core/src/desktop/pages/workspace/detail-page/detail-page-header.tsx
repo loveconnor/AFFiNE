@@ -1,3 +1,4 @@
+import type { Store } from '@blocksuite/lovenotes/store';
 import {
   Divider,
   DragHandle,
@@ -7,8 +8,6 @@ import {
 } from '@lovenotes/component';
 import { FavoriteButton } from '@lovenotes/core/blocksuite/block-suite-header/favorite';
 import { InfoButton } from '@lovenotes/core/blocksuite/block-suite-header/info';
-import { JournalWeekDatePicker } from '@lovenotes/core/blocksuite/block-suite-header/journal/date-picker';
-import { JournalTodayButton } from '@lovenotes/core/blocksuite/block-suite-header/journal/today-button';
 import { PageHeaderMenuButton } from '@lovenotes/core/blocksuite/block-suite-header/menu';
 import { DetailPageHeaderPresentButton } from '@lovenotes/core/blocksuite/block-suite-header/present/detail-header-present-button';
 import { BlocksuiteHeaderTitle } from '@lovenotes/core/blocksuite/block-suite-header/title';
@@ -18,7 +17,6 @@ import { HeaderDivider } from '@lovenotes/core/components/pure/header';
 import { DocService } from '@lovenotes/core/modules/doc';
 import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
 import { EditorService } from '@lovenotes/core/modules/editor';
-import { JournalService } from '@lovenotes/core/modules/journal';
 import { SharePageButton } from '@lovenotes/core/modules/share-menu';
 import { TemplateDocService } from '@lovenotes/core/modules/template-doc';
 import { ViewIcon, ViewTitle } from '@lovenotes/core/modules/workbench';
@@ -26,7 +24,6 @@ import type { Workspace } from '@lovenotes/core/modules/workspace';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
 import { track } from '@lovenotes/track';
-import type { Store } from '@blocksuite/lovenotes/store';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
@@ -82,45 +79,7 @@ interface PageHeaderProps {
   workspace: Workspace;
 }
 export function JournalPageHeader({ page, workspace }: PageHeaderProps) {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [containerWidth, setContainerWidth] = useState(0);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    return observeResize(container, entry => {
-      setContainerWidth(entry.contentRect.width);
-    });
-  }, []);
-
-  const { hideShare, hideToday } =
-    useDetailPageHeaderResponsive(containerWidth);
-
-  const docDisplayMetaService = useService(DocDisplayMetaService);
-  const i18n = useI18n();
-  const title = i18n.t(useLiveData(docDisplayMetaService.title$(page.id)));
-
-  return (
-    <Header className={styles.header} ref={containerRef}>
-      <ViewTitle title={title} />
-      <ViewIcon icon="journal" />
-      <EditorModeSwitch />
-      <div className={styles.journalWeekPicker}>
-        <JournalWeekDatePicker page={page} />
-      </div>
-      <TemplateMark className={styles.journalTemplateMark} />
-      {hideToday ? null : <JournalTodayButton />}
-      <HeaderDivider />
-      <PageHeaderMenuButton
-        isJournal
-        page={page}
-        containerWidth={containerWidth}
-      />
-      {page && !hideShare ? (
-        <SharePageButton workspace={workspace} page={page} />
-      ) : null}
-    </Header>
-  );
+  return null;
 }
 
 export function NormalPageHeader({ page, workspace }: PageHeaderProps) {
@@ -195,8 +154,7 @@ export function DetailPageHeader(
   }
 ) {
   const { page, workspace, onDragging } = props;
-  const journalService = useService(JournalService);
-  const isJournal = !!useLiveData(journalService.journalDate$(page.id));
+  const isJournal = false;
   const isInTrash = page.meta?.trash;
 
   useRegisterCopyLinkCommands({

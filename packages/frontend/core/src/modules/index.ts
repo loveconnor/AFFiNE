@@ -90,6 +90,7 @@ export function configureCommonModules(framework: Framework) {
   configurePeekViewModule(framework);
   configureExplorerIconModule(framework);
   configureDocDisplayMetaModule(framework);
+  configureJournalModule(framework);
   configureQuickSearchModule(framework);
   configureDocsSearchModule(framework);
   configureDocLinksModule(framework);
@@ -103,7 +104,6 @@ export function configureCommonModules(framework: Framework) {
   configureImportTemplateModule(framework);
   configureUserspaceModule(framework);
   configureAppSidebarModule(framework);
-  configureJournalModule(framework);
   configureUrlModule(framework);
   configureAppThemeModule(framework);
   configureDialogModule(framework);

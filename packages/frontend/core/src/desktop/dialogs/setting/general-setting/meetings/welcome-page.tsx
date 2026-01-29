@@ -1,7 +1,7 @@
+import { DualLinkIcon } from '@blocksuite/icons/rc';
 import { Button } from '@lovenotes/component';
 import { MeetingSettingsService } from '@lovenotes/core/modules/media/services/meeting-settings';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { DualLinkIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useTheme } from 'next-themes';
 import { useCallback } from 'react';
@@ -48,15 +48,6 @@ export const MeetingsWelcomePage = () => {
               li: <li />,
             }}
           />
-          <a
-            className={styles.learnMoreLink}
-            href="https://discord.com/channels/959027316334407691/1358384103925350542"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {t['com.lovenotes.settings.meetings.setting.welcome.learn-more']()}
-            <DualLinkIcon className={styles.linkIcon} />
-          </a>
           <div className={styles.betaFreePrompt}>
             <Trans
               i18nKey="com.lovenotes.settings.meetings.setting.prompt.2"

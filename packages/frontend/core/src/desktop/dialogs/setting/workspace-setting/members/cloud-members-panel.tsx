@@ -1,3 +1,4 @@
+import { ExportIcon } from '@blocksuite/icons/rc';
 import { Button, Loading, notify, useConfirmModal } from '@lovenotes/component';
 import {
   InviteTeamMemberModal,
@@ -25,7 +26,6 @@ import type { WorkspaceInviteLinkExpireTime } from '@lovenotes/graphql';
 import { ServerDeploymentType, SubscriptionPlan } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
 import { track } from '@lovenotes/track';
-import { ExportIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -106,7 +106,7 @@ export const CloudWorkspaceMembersPanel = ({
   const { openConfirmModal, closeConfirmModal } = useConfirmModal();
   const goToTeamBilling = useCallback(() => {
     onChangeSettingState({
-      activeTab: isSelfhosted ? 'workspace:license' : 'workspace:billing',
+      activeTab: isSelfhosted ? 'plans' : 'workspace:billing',
     });
   }, [isSelfhosted, onChangeSettingState]);
   const [idempotencyKey, setIdempotencyKey] = useState(nanoid());
@@ -256,7 +256,9 @@ export const CloudWorkspaceMembersPanel = ({
     if (!workspaceQuota) return null;
 
     if (isTeam) {
-      return <span>{t['com.lovenotes.payment.member.team.description']()}</span>;
+      return (
+        <span>{t['com.lovenotes.payment.member.team.description']()}</span>
+      );
     }
     return (
       <span>

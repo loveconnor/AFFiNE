@@ -59,10 +59,16 @@ export class Server extends Entity<{
   readonly isConfigRevalidating$ = new LiveData(false);
 
   readonly features$ = this.config$.map(config => {
-    return Array.from(new Set(config.features)).reduce((acc, cur) => {
-      acc[cur.toLowerCase() as LowercaseServerFeature] = true;
-      return acc;
-    }, {} as ServerFeatureRecord);
+    const acc: ServerFeatureRecord = { payment: false } as any;
+    Array.from(new Set(config.features)).forEach(cur => {
+      const key = cur.toLowerCase() as LowercaseServerFeature;
+      if (key === 'payment') {
+        return; // strip payment everywhere
+      }
+      acc[key] = true;
+    });
+    if (!('payment' in acc)) acc.payment = false;
+    return acc;
   });
 
   readonly credentialsRequirement$ = this.config$.map(config => {

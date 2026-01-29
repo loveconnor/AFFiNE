@@ -1,5 +1,3 @@
-import type { ReactToLit } from '@lovenotes/component';
-import { JournalService } from '@lovenotes/core/modules/journal';
 import { EmbedSyncedDocConfigExtension } from '@blocksuite/lovenotes/blocks/embed-doc';
 import { NoteConfigExtension } from '@blocksuite/lovenotes/blocks/note';
 import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/lovenotes/blocks/root';
@@ -9,10 +7,10 @@ import {
   EditPropsStore,
 } from '@blocksuite/lovenotes/shared/services';
 import { GfxControllerIdentifier } from '@blocksuite/lovenotes/std/gfx';
+import type { ReactToLit } from '@lovenotes/component';
 import type { FrameworkProvider } from '@toeverything/infra';
 import { html } from 'lit';
 
-import { BlocksuiteEditorJournalDocTitle } from '../../block-suite-editor/journal-doc-title';
 import { EdgelessEmbedSyncedDocHeader } from './edgeless-embed-synced-doc-header';
 import { EdgelessNoteHeader } from './edgeless-note-header';
 
@@ -25,15 +23,7 @@ export function patchForEdgelessNoteConfig(
     edgelessNoteHeader: ({ note }) =>
       reactToLit(<EdgelessNoteHeader note={note} />),
     pageBlockTitle: ({ note }) => {
-      const journalService = framework.get(JournalService);
-      const isJournal = !!journalService.journalDate$(note.store.id).value;
-      if (isJournal) {
-        return reactToLit(
-          <BlocksuiteEditorJournalDocTitle page={note.store} />
-        );
-      } else {
-        return html`<doc-title .doc=${note.store}></doc-title>`;
-      }
+      return html`<doc-title .doc=${note.store}></doc-title>`;
     },
     pageBlockViewportFitAnimation: insidePeekView
       ? undefined

@@ -193,12 +193,6 @@ export const AllPage = () => {
               extraFilters: [
                 {
                   type: 'system',
-                  key: 'empty-journal',
-                  method: 'is',
-                  value: 'false',
-                },
-                {
-                  type: 'system',
                   key: 'trash',
                   method: 'is',
                   value: 'false',
@@ -221,12 +215,6 @@ export const AllPage = () => {
               groupBy,
               orderBy,
               extraFilters: [
-                {
-                  type: 'system',
-                  key: 'empty-journal',
-                  method: 'is',
-                  value: 'false',
-                },
                 {
                   type: 'system',
                   key: 'trash',

@@ -1,10 +1,3 @@
-import { useWorkspaceInfo } from '@lovenotes/core/components/hooks/use-workspace-info';
-import { ServerService } from '@lovenotes/core/modules/cloud';
-import type { SettingTab } from '@lovenotes/core/modules/dialogs/constant';
-import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { EmbeddingSettings } from '@lovenotes/core/modules/workspace-indexer-embedding';
-import { ServerDeploymentType } from '@lovenotes/graphql';
-import { useI18n } from '@lovenotes/i18n';
 import {
   AiEmbeddingIcon,
   CollaborationIcon,
@@ -14,13 +7,18 @@ import {
   SaveIcon,
   SettingsIcon,
 } from '@blocksuite/icons/rc';
+import { useWorkspaceInfo } from '@lovenotes/core/components/hooks/use-workspace-info';
+import { ServerService } from '@lovenotes/core/modules/cloud';
+import type { SettingTab } from '@lovenotes/core/modules/dialogs/constant';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { ServerDeploymentType } from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useMemo } from 'react';
 
 import type { SettingSidebarItem, SettingState } from '../types';
 import { WorkspaceSettingBilling } from './billing';
 import { IntegrationSetting } from './integration';
-import { WorkspaceSettingLicense } from './license';
 import { MembersPanel } from './members';
 import { WorkspaceSettingDetail } from './preference';
 import { WorkspaceSettingProperties } from './properties';
@@ -51,12 +49,8 @@ export const WorkspaceSetting = ({
       return <WorkspaceSettingBilling />;
     case 'workspace:storage':
       return <WorkspaceSettingStorage onCloseSetting={onCloseSetting} />;
-    case 'workspace:license':
-      return <WorkspaceSettingLicense onCloseSetting={onCloseSetting} />;
     case 'workspace:integrations':
       return <IntegrationSetting />;
-    case 'workspace:embedding':
-      return <EmbeddingSettings />;
     default:
       return null;
   }
@@ -77,7 +71,6 @@ export const useWorkspaceSettingList = (): SettingSidebarItem[] => {
 
   const showBilling =
     !isSelfhosted && information?.isTeam && information?.isOwner;
-  const showLicense = information?.isOwner && isSelfhosted;
   const items = useMemo<SettingSidebarItem[]>(() => {
     return [
       {
@@ -110,29 +103,14 @@ export const useWorkspaceSettingList = (): SettingSidebarItem[] => {
         icon: <SaveIcon />,
         testId: 'workspace-setting:storage',
       },
-      {
-        key: 'workspace:embedding',
-        title:
-          t[
-            'com.lovenotes.settings.workspace.indexer-embedding.embedding.title'
-          ](),
-        icon: <AiEmbeddingIcon />,
-        testId: 'workspace-setting:embedding',
-      },
       showBilling && {
         key: 'workspace:billing' as SettingTab,
         title: t['com.lovenotes.settings.workspace.billing'](),
         icon: <PaymentIcon />,
         testId: 'workspace-setting:billing',
       },
-      showLicense && {
-        key: 'workspace:license' as SettingTab,
-        title: t['com.lovenotes.settings.workspace.license'](),
-        icon: <PaymentIcon />,
-        testId: 'workspace-setting:license',
-      },
     ].filter((item): item is SettingSidebarItem => !!item);
-  }, [showBilling, showLicense, t]);
+  }, [showBilling, t]);
 
   return items;
 };

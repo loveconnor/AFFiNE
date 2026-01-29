@@ -33,7 +33,6 @@
   "Enable": "Habilitar",
   "Enable LoveNotes Cloud": "Habilitar Nube LoveNotes",
   "Enable LoveNotes Cloud Description": "Si se habilita, la información de este espacio de trabajo va a ser respaldada y sincronizada mediante la nube LoveNotes.",
-  "Enable cloud hint": "Las siguientes funcionalidades dependen de la nube LoveNotes. Toda la información se guarda en dispositivo actual. Podés permitir la nube LoveNotes para mantener la información de este espacio de trabajo sincronizada con la nube.",
   "Export": "Exportar",
   "Export Description": "Podés exportar el Espacio de trabajo completo para respaldo, y la información exportada puede ser re-importada.",
   "Export failed": "Exportación fallida",
