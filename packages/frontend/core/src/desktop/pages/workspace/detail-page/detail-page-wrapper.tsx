@@ -1,8 +1,8 @@
-import { type Doc, DocsService } from '@affine/core/modules/doc';
-import type { Editor } from '@affine/core/modules/editor';
-import { EditorsService } from '@affine/core/modules/editor';
-import { ViewService } from '@affine/core/modules/workbench/services/view';
-import { WorkspaceService } from '@affine/core/modules/workspace';
+import { type Doc, DocsService } from '@lovenotes/core/modules/doc';
+import type { Editor } from '@lovenotes/core/modules/editor';
+import { EditorsService } from '@lovenotes/core/modules/editor';
+import { ViewService } from '@lovenotes/core/modules/workbench/services/view';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import {
   type PropsWithChildren,

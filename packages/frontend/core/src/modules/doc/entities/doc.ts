@@ -1,4 +1,5 @@
-import type { DocMode, RootBlockModel } from '@blocksuite/affine/model';
+import type { DocMode, RootBlockModel } from '@blocksuite/lovenotes/model';
+import { Text } from '@blocksuite/lovenotes/store';
 import { Entity } from '@toeverything/infra';
 import { throttle } from 'lodash-es';
 import type { Transaction } from 'yjs';
@@ -136,14 +137,23 @@ export class Doc extends Entity {
   }
 
   changeDocTitle(newTitle: string) {
-    const pageBlock = this.blockSuiteDoc.getBlocksByFlavour('affine:page').at(0)
+    const pageBlock = this.blockSuiteDoc.getBlocksByFlavour('lovenotes:page').at(0)
       ?.model as RootBlockModel | undefined;
     if (pageBlock) {
       this.blockSuiteDoc.transact(() => {
-        pageBlock.props.title.delete(0, pageBlock.props.title.length);
-        pageBlock.props.title.insert(newTitle, 0);
+        const title = pageBlock.props.title;
+        if (!title) {
+          pageBlock.store.updateBlock(pageBlock, {
+            title: new Text(newTitle),
+          });
+          return;
+        }
+        title.delete(0, title.length);
+        title.insert(newTitle, 0);
       });
       this.record.setMeta({ title: newTitle });
+      return;
     }
+    this.record.setMeta({ title: newTitle });
   }
 }

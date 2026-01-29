@@ -12,15 +12,15 @@ import {
   MenuItem,
   useDraggable,
   useDropTarget,
-} from '@affine/component';
-import { Guard } from '@affine/core/components/guard';
-import { AppSidebarService } from '@affine/core/modules/app-sidebar';
-import { ExplorerIconService } from '@affine/core/modules/explorer-icon/services/explorer-icon';
-import type { ExplorerType } from '@affine/core/modules/explorer-icon/store/explorer-icon';
-import type { DocPermissionActions } from '@affine/core/modules/permissions';
-import { WorkbenchLink } from '@affine/core/modules/workbench';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/component';
+import { Guard } from '@lovenotes/core/components/guard';
+import { AppSidebarService } from '@lovenotes/core/modules/app-sidebar';
+import { ExplorerIconService } from '@lovenotes/core/modules/explorer-icon/services/explorer-icon';
+import type { ExplorerType } from '@lovenotes/core/modules/explorer-icon/store/explorer-icon';
+import type { DocPermissionActions } from '@lovenotes/core/modules/permissions';
+import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
+import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
+import { useI18n } from '@lovenotes/i18n';
 import {
   ArrowDownSmallIcon,
   EditIcon,
@@ -49,7 +49,7 @@ import * as styles from './node.css';
 import type { NodeOperation } from './types';
 
 export type NavigationPanelTreeNodeDropEffectData = {
-  source: { data: AffineDNDData['draggable'] };
+  source: { data: LoveNotesDNDData['draggable'] };
   treeInstruction: DropTargetTreeInstruction | null;
 };
 export type NavigationPanelTreeNodeDropEffect = (
@@ -98,10 +98,10 @@ interface WebNavigationPanelTreeNodeProps extends BaseNavigationPanelTreeNodePro
 
   explorerIconConfig?: ExplorerIconConfig | null;
 
-  canDrop?: DropTargetOptions<AffineDNDData>['canDrop'];
+  canDrop?: DropTargetOptions<LoveNotesDNDData>['canDrop'];
   reorderable?: boolean;
-  dndData?: AffineDNDData;
-  onDrop?: (data: DropTargetDropEvent<AffineDNDData>) => void;
+  dndData?: LoveNotesDNDData;
+  onDrop?: (data: DropTargetDropEvent<LoveNotesDNDData>) => void;
   dropEffect?: NavigationPanelTreeNodeDropEffect;
 }
 
@@ -226,7 +226,7 @@ export const NavigationPanelTreeNode = ({
   );
 
   const { dragRef, dragging, CustomDragPreview } = useDraggable<
-    AffineDNDData & { draggable: { __cid: string } }
+    LoveNotesDNDData & { draggable: { __cid: string } }
   >(
     () => ({
       data: { ...dndData?.draggable, __cid: cid },
@@ -234,7 +234,7 @@ export const NavigationPanelTreeNode = ({
     }),
     [cid, dndData]
   );
-  const handleCanDrop = useMemo<DropTargetOptions<AffineDNDData>['canDrop']>(
+  const handleCanDrop = useMemo<DropTargetOptions<LoveNotesDNDData>['canDrop']>(
     () => args => {
       if (!reorderable && args.treeInstruction?.type !== 'make-child') {
         return false;
@@ -250,7 +250,7 @@ export const NavigationPanelTreeNode = ({
     draggedOverDraggable,
     draggedOver,
     draggedOverPosition,
-  } = useDropTarget<AffineDNDData & { draggable: { __cid: string } }>(
+  } = useDropTarget<LoveNotesDNDData & { draggable: { __cid: string } }>(
     () => ({
       data: dndData?.dropTarget,
       treeInstruction: {
@@ -357,7 +357,7 @@ export const NavigationPanelTreeNode = ({
                         onClick={() => setRenaming(true)}
                         disabled={!can}
                       >
-                        {t['com.affine.menu.rename']()}
+                        {t['com.lovenotes.menu.rename']()}
                       </MenuItem>
                     )}
                   </Guard>
@@ -368,7 +368,7 @@ export const NavigationPanelTreeNode = ({
                     prefixIcon={<EditIcon />}
                     onClick={() => setRenaming(true)}
                   >
-                    {t['com.affine.menu.rename']()}
+                    {t['com.lovenotes.menu.rename']()}
                   </MenuItem>
                 ),
               }

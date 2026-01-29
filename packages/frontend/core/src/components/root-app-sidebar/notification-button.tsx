@@ -1,8 +1,8 @@
-import { Menu } from '@affine/component';
-import { MenuItem } from '@affine/core/modules/app-sidebar/views';
-import { NotificationCountService } from '@affine/core/modules/notification';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { Menu } from '@lovenotes/component';
+import { MenuItem } from '@lovenotes/core/modules/app-sidebar/views';
+import { NotificationCountService } from '@lovenotes/core/modules/notification';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
 import { NotificationIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
@@ -60,7 +60,7 @@ export const NotificationButton = () => {
         postfixDisplay="always"
       >
         <span data-testid="notification-button">
-          {t['com.affine.rootAppSidebar.notifications']()}
+          {t['com.lovenotes.rootAppSidebar.notifications']()}
         </span>
       </MenuItem>
     </Menu>

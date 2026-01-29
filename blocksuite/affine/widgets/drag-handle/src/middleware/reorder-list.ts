@@ -1,6 +1,6 @@
-import { correctNumberedListsOrderToPrev } from '@blocksuite/affine-block-list';
-import { ListBlockModel } from '@blocksuite/affine-model';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+import { correctNumberedListsOrderToPrev } from '@blocksuite/lovenotes-block-list';
+import { ListBlockModel } from '@blocksuite/lovenotes-model';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { BlockStdScope } from '@blocksuite/std';
 import type { TransformerMiddleware } from '@blocksuite/store';
 

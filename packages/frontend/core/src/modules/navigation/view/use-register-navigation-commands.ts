@@ -1,8 +1,8 @@
 import {
   PreconditionStrategy,
-  registerAffineCommand,
-} from '@affine/core/commands';
-import { track } from '@affine/track';
+  registerLoveNotesCommand,
+} from '@lovenotes/core/commands';
+import { track } from '@lovenotes/track';
 import { useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 
@@ -14,9 +14,9 @@ export function useRegisterNavigationCommands() {
     const unsubs: Array<() => void> = [];
 
     unsubs.push(
-      registerAffineCommand({
-        id: 'affine:shortcut-history-go-back',
-        category: 'affine:general',
+      registerLoveNotesCommand({
+        id: 'lovenotes:shortcut-history-go-back',
+        category: 'lovenotes:general',
         preconditionStrategy: PreconditionStrategy.Never,
         icon: 'none',
         label: 'go back',
@@ -31,9 +31,9 @@ export function useRegisterNavigationCommands() {
       })
     );
     unsubs.push(
-      registerAffineCommand({
-        id: 'affine:shortcut-history-go-forward',
-        category: 'affine:general',
+      registerLoveNotesCommand({
+        id: 'lovenotes:shortcut-history-go-forward',
+        category: 'lovenotes:general',
         preconditionStrategy: PreconditionStrategy.Never,
         icon: 'none',
         label: 'go forward',

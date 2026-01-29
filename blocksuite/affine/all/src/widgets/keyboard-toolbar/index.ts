@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-widget-keyboard-toolbar';
+export * from '@blocksuite/lovenotes-widget-keyboard-toolbar';

@@ -1,4 +1,4 @@
-import type { Connectable, NoteBlockModel } from '@blocksuite/affine-model';
+import type { Connectable, NoteBlockModel } from '@blocksuite/lovenotes-model';
 import type { GfxModel } from '@blocksuite/std/gfx';
 import type { BlockModel } from '@blocksuite/store';
 
@@ -11,5 +11,5 @@ export function isConnectable(
 export function isNoteBlock(
   element: BlockModel | GfxModel | null
 ): element is NoteBlockModel {
-  return !!element && 'flavour' in element && element.flavour === 'affine:note';
+  return !!element && 'flavour' in element && element.flavour === 'lovenotes:note';
 }

@@ -1,5 +1,5 @@
-import { LatexExtension } from '@blocksuite/affine-inline-latex';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import { LatexExtension } from '@blocksuite/lovenotes-inline-latex';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { InlineMarkdownExtension } from '@blocksuite/std/inline';
 import type { ExtensionType } from '@blocksuite/store';
 
@@ -10,7 +10,7 @@ import type { ExtensionType } from '@blocksuite/store';
 // not convert: ***test *** + space
 // not convert: *** test *** + space
 
-export const BoldItalicMarkdown = InlineMarkdownExtension<AffineTextAttributes>(
+export const BoldItalicMarkdown = InlineMarkdownExtension<LoveNotesTextAttributes>(
   {
     name: 'bolditalic',
     pattern: /.*\*{3}([^\s*][^*]*[^\s*])\*{3}\s$|.*\*{3}([^\s*])\*{3}\s$/,
@@ -60,7 +60,7 @@ export const BoldItalicMarkdown = InlineMarkdownExtension<AffineTextAttributes>(
   }
 );
 
-export const BoldMarkdown = InlineMarkdownExtension<AffineTextAttributes>({
+export const BoldMarkdown = InlineMarkdownExtension<LoveNotesTextAttributes>({
   name: 'bold',
   pattern: /.*\*{2}([^\s][^*]*[^\s*])\*{2}\s$|.*\*{2}([^\s*])\*{2}\s$/,
   action: ({ inlineEditor, prefixText, inlineRange, pattern, undoManager }) => {
@@ -98,7 +98,7 @@ export const BoldMarkdown = InlineMarkdownExtension<AffineTextAttributes>({
   },
 });
 
-export const ItalicExtension = InlineMarkdownExtension<AffineTextAttributes>({
+export const ItalicExtension = InlineMarkdownExtension<LoveNotesTextAttributes>({
   name: 'italic',
   pattern: /.*\*{1}([^\s][^*]*[^\s*])\*{1}\s$|.*\*{1}([^\s*])\*{1}\s$/,
   action: ({ inlineEditor, prefixText, inlineRange, pattern, undoManager }) => {
@@ -137,7 +137,7 @@ export const ItalicExtension = InlineMarkdownExtension<AffineTextAttributes>({
 });
 
 export const StrikethroughExtension =
-  InlineMarkdownExtension<AffineTextAttributes>({
+  InlineMarkdownExtension<LoveNotesTextAttributes>({
     name: 'strikethrough',
     pattern: /.*~{2}([^\s][^~]*[^\s])~{2}\s$|.*~{2}([^\s~])~{2}\s$/,
     action: ({
@@ -186,7 +186,7 @@ export const StrikethroughExtension =
   });
 
 export const UnderthroughExtension =
-  InlineMarkdownExtension<AffineTextAttributes>({
+  InlineMarkdownExtension<LoveNotesTextAttributes>({
     name: 'underthrough',
     pattern: /.*~{1}([^\s][^~]*[^\s~])~{1}\s$|.*~{1}([^\s~])~{1}\s$/,
     action: ({
@@ -234,7 +234,7 @@ export const UnderthroughExtension =
     },
   });
 
-export const CodeExtension = InlineMarkdownExtension<AffineTextAttributes>({
+export const CodeExtension = InlineMarkdownExtension<LoveNotesTextAttributes>({
   name: 'code',
   pattern: /.*`([^\s][^`]*[^\s])`\s$|.*`([^\s`])`\s$/,
   action: ({ inlineEditor, prefixText, inlineRange, pattern, undoManager }) => {

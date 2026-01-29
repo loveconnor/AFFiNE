@@ -1,17 +1,17 @@
-import { DefaultInlineManagerExtension } from '@blocksuite/affine-inline-preset';
-import type { RichText } from '@blocksuite/affine-rich-text';
+import { DefaultInlineManagerExtension } from '@blocksuite/lovenotes-inline-preset';
+import type { RichText } from '@blocksuite/lovenotes-rich-text';
 import {
   ParseDocUrlProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import type {
-  AffineInlineEditor,
-  AffineTextAttributes,
-} from '@blocksuite/affine-shared/types';
+  LoveNotesInlineEditor,
+  LoveNotesTextAttributes,
+} from '@blocksuite/lovenotes-shared/types';
 import {
   getViewportElement,
   isValidUrl,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import {
   BaseCellRenderer,
   createFromBaseCellRenderer,
@@ -33,8 +33,8 @@ import {
 import { richTextPropertyModelConfig } from './define.js';
 
 function toggleStyle(
-  inlineEditor: AffineInlineEditor | null,
-  attrs: AffineTextAttributes
+  inlineEditor: LoveNotesInlineEditor | null,
+  attrs: LoveNotesTextAttributes
 ): void {
   if (!inlineEditor) return;
 
@@ -47,7 +47,7 @@ function toggleStyle(
   }
 
   const deltas = inlineEditor.getDeltasByInlineRange(inlineRange);
-  let oldAttributes: AffineTextAttributes = {};
+  let oldAttributes: LoveNotesTextAttributes = {};
 
   for (const [delta] of deltas) {
     const attributes = delta.attributes;
@@ -70,7 +70,7 @@ function toggleStyle(
         return [k, v];
       }
     })
-  ) as AffineTextAttributes;
+  ) as LoveNotesTextAttributes;
 
   inlineEditor.formatText(inlineRange, newAttributes, {
     mode: 'merge',
@@ -93,7 +93,7 @@ export class RichTextCell extends BaseCellRenderer<Text, string> {
 
   get topContenteditableElement() {
     const databaseBlock =
-      this.closest<DatabaseBlockComponent>('affine-database');
+      this.closest<DatabaseBlockComponent>('lovenotes-database');
     return databaseBlock?.topContenteditableElement;
   }
 
@@ -298,7 +298,7 @@ export class RichTextCell extends BaseCellRenderer<Text, string> {
           module: 'database rich-text cell',
           type: 'paste',
           segment: 'database',
-          parentFlavour: 'affine:database',
+          parentFlavour: 'lovenotes:database',
         });
       } else {
         inlineEditor.insertText(inlineRange, text, {
@@ -400,7 +400,7 @@ export class RichTextCell extends BaseCellRenderer<Text, string> {
     return this.view.serviceGet(EditorHostKey)?.std;
   }
 
-  insertDelta = (delta: DeltaInsert<AffineTextAttributes>) => {
+  insertDelta = (delta: DeltaInsert<LoveNotesTextAttributes>) => {
     const inlineEditor = this.inlineEditor$.value;
     const range = inlineEditor?.getInlineRange();
     if (!range || !delta.insert) {
@@ -416,7 +416,7 @@ export class RichTextCell extends BaseCellRenderer<Text, string> {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-database-rich-text-cell': RichTextCell;
+    'lovenotes-database-rich-text-cell': RichTextCell;
   }
 }
 

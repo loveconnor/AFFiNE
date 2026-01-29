@@ -30,11 +30,11 @@ public class ListCommentChangesQuery: GraphQLQuery {
     "pagination": pagination
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -45,11 +45,11 @@ public class ListCommentChangesQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("commentChanges", CommentChanges.self, arguments: [
@@ -64,11 +64,11 @@ public class ListCommentChangesQuery: GraphQLQuery {
       /// Workspace.CommentChanges
       ///
       /// Parent Type: `PaginatedCommentChangeObjectType`
-      public struct CommentChanges: AffineGraphQL.SelectionSet {
+      public struct CommentChanges: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PaginatedCommentChangeObjectType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PaginatedCommentChangeObjectType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("totalCount", Int.self),
@@ -83,11 +83,11 @@ public class ListCommentChangesQuery: GraphQLQuery {
         /// Workspace.CommentChanges.Edge
         ///
         /// Parent Type: `CommentChangeObjectTypeEdge`
-        public struct Edge: AffineGraphQL.SelectionSet {
+        public struct Edge: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CommentChangeObjectTypeEdge }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CommentChangeObjectTypeEdge }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("cursor", String.self),
@@ -100,36 +100,36 @@ public class ListCommentChangesQuery: GraphQLQuery {
           /// Workspace.CommentChanges.Edge.Node
           ///
           /// Parent Type: `CommentChangeObjectType`
-          public struct Node: AffineGraphQL.SelectionSet {
+          public struct Node: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CommentChangeObjectType }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CommentChangeObjectType }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
-              .field("action", GraphQLEnum<AffineGraphQL.CommentChangeAction>.self),
-              .field("id", AffineGraphQL.ID.self),
-              .field("commentId", AffineGraphQL.ID?.self),
-              .field("item", AffineGraphQL.JSONObject.self),
+              .field("action", GraphQLEnum<LoveNotesGraphQL.CommentChangeAction>.self),
+              .field("id", LoveNotesGraphQL.ID.self),
+              .field("commentId", LoveNotesGraphQL.ID?.self),
+              .field("item", LoveNotesGraphQL.JSONObject.self),
             ] }
 
             /// The action of the comment change
-            public var action: GraphQLEnum<AffineGraphQL.CommentChangeAction> { __data["action"] }
-            public var id: AffineGraphQL.ID { __data["id"] }
-            public var commentId: AffineGraphQL.ID? { __data["commentId"] }
+            public var action: GraphQLEnum<LoveNotesGraphQL.CommentChangeAction> { __data["action"] }
+            public var id: LoveNotesGraphQL.ID { __data["id"] }
+            public var commentId: LoveNotesGraphQL.ID? { __data["commentId"] }
             /// The item of the comment or reply, different types have different fields, see UnionCommentObjectType
-            public var item: AffineGraphQL.JSONObject { __data["item"] }
+            public var item: LoveNotesGraphQL.JSONObject { __data["item"] }
           }
         }
 
         /// Workspace.CommentChanges.PageInfo
         ///
         /// Parent Type: `PageInfo`
-        public struct PageInfo: AffineGraphQL.SelectionSet {
+        public struct PageInfo: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PageInfo }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PageInfo }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("startCursor", String?.self),

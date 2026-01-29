@@ -1,4 +1,4 @@
-import { TestWorkspace } from '@blocksuite/affine/store/test';
+import { TestWorkspace } from '@blocksuite/lovenotes/store/test';
 import { getTestStoreManager } from '@blocksuite/integration-test/store';
 
 export function createEmptyDoc() {
@@ -12,10 +12,10 @@ export function createEmptyDoc() {
     doc,
     init() {
       doc.load();
-      const rootId = store.addBlock('affine:page', {});
-      store.addBlock('affine:surface', {}, rootId);
-      const noteId = store.addBlock('affine:note', {}, rootId);
-      store.addBlock('affine:paragraph', {}, noteId);
+      const rootId = store.addBlock('lovenotes:page', {});
+      store.addBlock('lovenotes:surface', {}, rootId);
+      const noteId = store.addBlock('lovenotes:note', {}, rootId);
+      store.addBlock('lovenotes:paragraph', {}, noteId);
       return store;
     },
   };

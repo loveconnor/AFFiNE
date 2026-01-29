@@ -76,13 +76,13 @@ export class CryptoHelper implements OnModuleInit {
     };
   };
 
-  AFFiNEProPublicKey: Buffer | null = null;
-  AFFiNEProLicenseAESKey: Buffer | null = null;
+  LoveNotesProPublicKey: Buffer | null = null;
+  LoveNotesProLicenseAESKey: Buffer | null = null;
 
   onModuleInit() {
     if (env.selfhosted) {
-      this.AFFiNEProPublicKey = this.loadAFFiNEProPublicKey();
-      this.AFFiNEProLicenseAESKey = this.loadAFFiNEProLicenseAESKey();
+      this.LoveNotesProPublicKey = this.loadLoveNotesProPublicKey();
+      this.LoveNotesProLicenseAESKey = this.loadLoveNotesProLicenseAESKey();
     }
   }
 
@@ -227,21 +227,21 @@ export class CryptoHelper implements OnModuleInit {
     return createHash('sha256').update(data).digest();
   }
 
-  private loadAFFiNEProPublicKey() {
+  private loadLoveNotesProPublicKey() {
     if (AFFINE_PRO_PUBLIC_KEY) {
       return Buffer.from(AFFINE_PRO_PUBLIC_KEY);
     } else {
       this.logger.warn('AFFINE_PRO_PUBLIC_KEY is not set at compile time.');
     }
 
-    if (!env.prod && process.env.AFFiNE_PRO_PUBLIC_KEY) {
-      return Buffer.from(process.env.AFFiNE_PRO_PUBLIC_KEY);
+    if (!env.prod && process.env.LoveNotes_PRO_PUBLIC_KEY) {
+      return Buffer.from(process.env.LoveNotes_PRO_PUBLIC_KEY);
     }
 
     return null;
   }
 
-  private loadAFFiNEProLicenseAESKey() {
+  private loadLoveNotesProLicenseAESKey() {
     if (AFFINE_PRO_LICENSE_AES_KEY) {
       return this.sha256(AFFINE_PRO_LICENSE_AES_KEY);
     } else {
@@ -250,8 +250,8 @@ export class CryptoHelper implements OnModuleInit {
       );
     }
 
-    if (!env.prod && process.env.AFFiNE_PRO_LICENSE_AES_KEY) {
-      return this.sha256(process.env.AFFiNE_PRO_LICENSE_AES_KEY);
+    if (!env.prod && process.env.LoveNotes_PRO_LICENSE_AES_KEY) {
+      return this.sha256(process.env.LoveNotes_PRO_LICENSE_AES_KEY);
     }
 
     return null;

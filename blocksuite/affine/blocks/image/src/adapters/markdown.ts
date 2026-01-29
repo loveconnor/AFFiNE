@@ -1,9 +1,9 @@
-import { ImageBlockSchema } from '@blocksuite/affine-model';
+import { ImageBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { getAssetName } from '@blocksuite/store';
 
 import { processImageNodeToBlock } from './utils';

@@ -1,4 +1,4 @@
-import { GroupElementModel } from '@blocksuite/affine-model';
+import { GroupElementModel } from '@blocksuite/lovenotes-model';
 import { InteractivityExtension } from '@blocksuite/std/gfx';
 
 export class GroupInteractionExtension extends InteractivityExtension {

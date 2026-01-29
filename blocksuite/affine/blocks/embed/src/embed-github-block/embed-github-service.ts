@@ -2,11 +2,11 @@ import {
   EmbedGithubBlockSchema,
   type EmbedGithubModel,
   EmbedGithubStyles,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EmbedOptionConfig,
   LinkPreviewServiceIdentifier,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { BlockService } from '@blocksuite/std';
 
 import { githubUrlRegex } from './embed-github-model.js';

@@ -4,14 +4,14 @@ import {
   NoteBlockModel,
   ParagraphBlockModel,
   StrokeStyle,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   getClosestBlockComponentByPoint,
   handleNativeRangeAtPoint,
   matchModels,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { clamp, Point } from '@blocksuite/global/gfx';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
@@ -102,7 +102,7 @@ export class EdgelessNoteBackground extends SignalWatcher(
     ) {
       const [pId] = this.doc.addSiblingBlocks(
         nearestModel,
-        [{ flavour: 'affine:paragraph' }],
+        [{ flavour: 'lovenotes:paragraph' }],
         insertPos
       );
 

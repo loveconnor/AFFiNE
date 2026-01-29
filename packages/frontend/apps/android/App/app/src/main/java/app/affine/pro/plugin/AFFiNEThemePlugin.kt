@@ -1,4 +1,4 @@
-package app.affine.pro.plugin
+package app.lovenotes.pro.plugin
 
 import com.getcapacitor.JSObject
 import com.getcapacitor.Plugin
@@ -7,8 +7,8 @@ import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
 import timber.log.Timber
 
-@CapacitorPlugin(name = "AffineTheme")
-class AFFiNEThemePlugin : Plugin() {
+@CapacitorPlugin(name = "LoveNotesTheme")
+class LoveNotesThemePlugin : Plugin() {
 
     interface Callback {
         fun onThemeChanged(darkMode: Boolean)

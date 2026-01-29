@@ -1,4 +1,4 @@
-import type { TextBuffer } from '@blocksuite/affine-shared/adapters';
+import type { TextBuffer } from '@blocksuite/lovenotes-shared/adapters';
 import {
   createIdentifier,
   type ServiceIdentifier,

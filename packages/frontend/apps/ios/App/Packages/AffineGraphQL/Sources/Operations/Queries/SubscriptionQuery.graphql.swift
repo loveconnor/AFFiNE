@@ -12,11 +12,11 @@ public class SubscriptionQuery: GraphQLQuery {
 
   public init() {}
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("currentUser", CurrentUser?.self),
     ] }
@@ -27,53 +27,53 @@ public class SubscriptionQuery: GraphQLQuery {
     /// CurrentUser
     ///
     /// Parent Type: `UserType`
-    public struct CurrentUser: AffineGraphQL.SelectionSet {
+    public struct CurrentUser: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", AffineGraphQL.ID.self),
+        .field("id", LoveNotesGraphQL.ID.self),
         .field("subscriptions", [Subscription].self),
       ] }
 
-      public var id: AffineGraphQL.ID { __data["id"] }
+      public var id: LoveNotesGraphQL.ID { __data["id"] }
       public var subscriptions: [Subscription] { __data["subscriptions"] }
 
       /// CurrentUser.Subscription
       ///
       /// Parent Type: `SubscriptionType`
-      public struct Subscription: AffineGraphQL.SelectionSet {
+      public struct Subscription: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.SubscriptionType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.SubscriptionType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", String?.self),
-          .field("status", GraphQLEnum<AffineGraphQL.SubscriptionStatus>.self),
-          .field("plan", GraphQLEnum<AffineGraphQL.SubscriptionPlan>.self),
-          .field("recurring", GraphQLEnum<AffineGraphQL.SubscriptionRecurring>.self),
-          .field("start", AffineGraphQL.DateTime.self),
-          .field("end", AffineGraphQL.DateTime?.self),
-          .field("nextBillAt", AffineGraphQL.DateTime?.self),
-          .field("canceledAt", AffineGraphQL.DateTime?.self),
-          .field("variant", GraphQLEnum<AffineGraphQL.SubscriptionVariant>?.self),
+          .field("status", GraphQLEnum<LoveNotesGraphQL.SubscriptionStatus>.self),
+          .field("plan", GraphQLEnum<LoveNotesGraphQL.SubscriptionPlan>.self),
+          .field("recurring", GraphQLEnum<LoveNotesGraphQL.SubscriptionRecurring>.self),
+          .field("start", LoveNotesGraphQL.DateTime.self),
+          .field("end", LoveNotesGraphQL.DateTime?.self),
+          .field("nextBillAt", LoveNotesGraphQL.DateTime?.self),
+          .field("canceledAt", LoveNotesGraphQL.DateTime?.self),
+          .field("variant", GraphQLEnum<LoveNotesGraphQL.SubscriptionVariant>?.self),
         ] }
 
         @available(*, deprecated, message: "removed")
         public var id: String? { __data["id"] }
-        public var status: GraphQLEnum<AffineGraphQL.SubscriptionStatus> { __data["status"] }
+        public var status: GraphQLEnum<LoveNotesGraphQL.SubscriptionStatus> { __data["status"] }
         /// The 'Free' plan just exists to be a placeholder and for the type convenience of frontend.
         /// There won't actually be a subscription with plan 'Free'
-        public var plan: GraphQLEnum<AffineGraphQL.SubscriptionPlan> { __data["plan"] }
-        public var recurring: GraphQLEnum<AffineGraphQL.SubscriptionRecurring> { __data["recurring"] }
-        public var start: AffineGraphQL.DateTime { __data["start"] }
-        public var end: AffineGraphQL.DateTime? { __data["end"] }
-        public var nextBillAt: AffineGraphQL.DateTime? { __data["nextBillAt"] }
-        public var canceledAt: AffineGraphQL.DateTime? { __data["canceledAt"] }
-        public var variant: GraphQLEnum<AffineGraphQL.SubscriptionVariant>? { __data["variant"] }
+        public var plan: GraphQLEnum<LoveNotesGraphQL.SubscriptionPlan> { __data["plan"] }
+        public var recurring: GraphQLEnum<LoveNotesGraphQL.SubscriptionRecurring> { __data["recurring"] }
+        public var start: LoveNotesGraphQL.DateTime { __data["start"] }
+        public var end: LoveNotesGraphQL.DateTime? { __data["end"] }
+        public var nextBillAt: LoveNotesGraphQL.DateTime? { __data["nextBillAt"] }
+        public var canceledAt: LoveNotesGraphQL.DateTime? { __data["canceledAt"] }
+        public var variant: GraphQLEnum<LoveNotesGraphQL.SubscriptionVariant>? { __data["variant"] }
       }
     }
   }

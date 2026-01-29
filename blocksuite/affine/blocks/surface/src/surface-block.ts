@@ -1,8 +1,8 @@
-import type { Color } from '@blocksuite/affine-model';
+import type { Color } from '@blocksuite/lovenotes-model';
 import {
   FeatureFlagService,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { Bound } from '@blocksuite/global/gfx';
 import type { EditorHost, SurfaceSelection } from '@blocksuite/std';
 import { BlockComponent } from '@blocksuite/std';
@@ -35,13 +35,13 @@ export class SurfaceBlockComponent extends BlockComponent<SurfaceBlockModel> {
   };
 
   static override styles = css`
-    .affine-edgeless-surface-block-container {
+    .lovenotes-edgeless-surface-block-container {
       width: 100%;
       height: 100%;
       position: relative;
     }
 
-    .affine-edgeless-surface-block-container canvas {
+    .lovenotes-edgeless-surface-block-container canvas {
       left: 0;
       top: 0;
       width: 100%;
@@ -57,14 +57,14 @@ export class SurfaceBlockComponent extends BlockComponent<SurfaceBlockModel> {
       overflow: hidden;
       display: block;
       height: 100%;
-      font-family: var(--affine-font-family);
-      font-size: var(--affine-font-base);
-      line-height: var(--affine-line-height);
-      color: var(--affine-text-primary-color);
+      font-family: var(--lovenotes-font-family);
+      font-size: var(--lovenotes-font-base);
+      line-height: var(--lovenotes-line-height);
+      color: var(--lovenotes-text-primary-color);
       font-weight: 400;
     }
 
-    .affine-block-children-container.edgeless {
+    .lovenotes-block-children-container.edgeless {
       padding-left: 0;
       position: relative;
       overflow: hidden;
@@ -76,21 +76,21 @@ export class SurfaceBlockComponent extends BlockComponent<SurfaceBlockModel> {
        * https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
        */
       touch-action: none;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--lovenotes-background-primary-color);
       background-image: radial-gradient(
-        var(--affine-edgeless-grid-color) 1px,
-        var(--affine-background-primary-color) 1px
+        var(--lovenotes-edgeless-grid-color) 1px,
+        var(--lovenotes-background-primary-color) 1px
       );
       z-index: 0;
     }
 
-    .affine-edgeless-block-child {
+    .lovenotes-edgeless-block-child {
       position: absolute;
       transform-origin: center;
       box-sizing: border-box;
-      border: 2px solid var(--affine-white-10);
+      border: 2px solid var(--lovenotes-white-10);
       border-radius: 8px;
-      box-shadow: var(--affine-shadow-3);
+      box-shadow: var(--lovenotes-shadow-3);
       pointer-events: all;
     }
   `;
@@ -238,18 +238,18 @@ export class SurfaceBlockComponent extends BlockComponent<SurfaceBlockModel> {
 
   override render() {
     return html`
-      <div class="affine-edgeless-surface-block-container">
+      <div class="lovenotes-edgeless-surface-block-container">
         <!-- attach canvas later in renderer -->
       </div>
     `;
   }
 
-  @query('.affine-edgeless-surface-block-container')
+  @query('.lovenotes-edgeless-surface-block-container')
   private accessor _surfaceContainer!: HTMLElement;
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-surface': SurfaceBlockComponent;
+    'lovenotes-surface': SurfaceBlockComponent;
   }
 }

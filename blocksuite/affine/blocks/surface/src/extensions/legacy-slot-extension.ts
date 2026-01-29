@@ -1,4 +1,4 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
 import { createIdentifier } from '@blocksuite/global/di';
 import type { ExtensionType } from '@blocksuite/store';
 import { Subject } from 'rxjs';
@@ -17,7 +17,7 @@ export const EdgelessLegacySlotIdentifier = createIdentifier<{
   toggleNoteSlicer: Subject<void>;
 
   toolbarLocked: Subject<boolean>;
-}>('AffineEdgelessLegacySlotService');
+}>('LoveNotesEdgelessLegacySlotService');
 
 export const EdgelessLegacySlotExtension: ExtensionType = {
   setup: di => {

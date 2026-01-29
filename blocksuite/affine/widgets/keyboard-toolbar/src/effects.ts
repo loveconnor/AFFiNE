@@ -1,28 +1,28 @@
 import {
   AFFINE_KEYBOARD_TOOLBAR_WIDGET,
-  AffineKeyboardToolbarWidget,
+  LoveNotesKeyboardToolbarWidget,
 } from './index.js';
 import {
   AFFINE_KEYBOARD_TOOL_PANEL,
-  AffineKeyboardToolPanel,
+  LoveNotesKeyboardToolPanel,
 } from './keyboard-tool-panel.js';
 import {
   AFFINE_KEYBOARD_TOOLBAR,
-  AffineKeyboardToolbar,
+  LoveNotesKeyboardToolbar,
 } from './keyboard-toolbar.js';
 
 export function effects() {
   customElements.define(
     AFFINE_KEYBOARD_TOOLBAR_WIDGET,
-    AffineKeyboardToolbarWidget
+    LoveNotesKeyboardToolbarWidget
   );
-  customElements.define(AFFINE_KEYBOARD_TOOLBAR, AffineKeyboardToolbar);
-  customElements.define(AFFINE_KEYBOARD_TOOL_PANEL, AffineKeyboardToolPanel);
+  customElements.define(AFFINE_KEYBOARD_TOOLBAR, LoveNotesKeyboardToolbar);
+  customElements.define(AFFINE_KEYBOARD_TOOL_PANEL, LoveNotesKeyboardToolPanel);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    [AFFINE_KEYBOARD_TOOLBAR]: AffineKeyboardToolbar;
-    [AFFINE_KEYBOARD_TOOL_PANEL]: AffineKeyboardToolPanel;
+    [AFFINE_KEYBOARD_TOOLBAR]: LoveNotesKeyboardToolbar;
+    [AFFINE_KEYBOARD_TOOL_PANEL]: LoveNotesKeyboardToolPanel;
   }
 }

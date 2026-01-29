@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 import { BlockViewExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 
@@ -9,7 +9,7 @@ import { effects } from './effects';
 import { DividerMarkdownExtension } from './markdown';
 
 export class DividerViewExtension extends ViewExtensionProvider {
-  override name = 'affine-divider-block';
+  override name = 'lovenotes-divider-block';
 
   override effect() {
     super.effect();
@@ -19,7 +19,7 @@ export class DividerViewExtension extends ViewExtensionProvider {
   override setup(context: ViewExtensionContext) {
     super.setup(context);
     context.register([
-      BlockViewExtension('affine:divider', literal`affine-divider`),
+      BlockViewExtension('lovenotes:divider', literal`lovenotes-divider`),
       DividerMarkdownExtension,
     ]);
   }

@@ -12,16 +12,16 @@ public class AppConfigQuery: GraphQLQuery {
 
   public init() {}
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
-      .field("appConfig", AffineGraphQL.JSONObject.self),
+      .field("appConfig", LoveNotesGraphQL.JSONObject.self),
     ] }
 
     /// get the whole app configuration
-    public var appConfig: AffineGraphQL.JSONObject { __data["appConfig"] }
+    public var appConfig: LoveNotesGraphQL.JSONObject { __data["appConfig"] }
   }
 }

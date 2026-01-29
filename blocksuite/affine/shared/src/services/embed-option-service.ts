@@ -1,4 +1,4 @@
-import type { EmbedCardStyle } from '@blocksuite/affine-model';
+import type { EmbedCardStyle } from '@blocksuite/lovenotes-model';
 import type { Container } from '@blocksuite/global/di';
 import { createIdentifier } from '@blocksuite/global/di';
 import { type BlockStdScope, StdIdentifier } from '@blocksuite/std';
@@ -17,11 +17,11 @@ export interface EmbedOptionProvider {
 }
 
 export const EmbedOptionProvider = createIdentifier<EmbedOptionProvider>(
-  'AffineEmbedOptionProvider'
+  'LoveNotesEmbedOptionProvider'
 );
 
 export const EmbedOptionConfigIdentifier = createIdentifier<EmbedOptions>(
-  'AffineEmbedOptionConfig'
+  'LoveNotesEmbedOptionConfig'
 );
 
 export const EmbedOptionConfig = (options: EmbedOptions): ExtensionType => {

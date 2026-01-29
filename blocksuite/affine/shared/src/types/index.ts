@@ -1,19 +1,19 @@
-import type { FootNote, ReferenceInfo } from '@blocksuite/affine-model';
+import type { FootNote, ReferenceInfo } from '@blocksuite/lovenotes-model';
 import type { InlineEditor } from '@blocksuite/std/inline';
 import type { BlockModel } from '@blocksuite/store';
 export * from './uni-component';
 
 export type NoteChildrenFlavour =
-  | 'affine:paragraph'
-  | 'affine:list'
-  | 'affine:code'
-  | 'affine:divider'
-  | 'affine:database'
-  | 'affine:data-view'
-  | 'affine:image'
-  | 'affine:bookmark'
-  | 'affine:attachment'
-  | 'affine:surface-ref';
+  | 'lovenotes:paragraph'
+  | 'lovenotes:list'
+  | 'lovenotes:code'
+  | 'lovenotes:divider'
+  | 'lovenotes:database'
+  | 'lovenotes:data-view'
+  | 'lovenotes:image'
+  | 'lovenotes:bookmark'
+  | 'lovenotes:attachment'
+  | 'lovenotes:surface-ref';
 
 export interface Viewport {
   left: number;
@@ -35,7 +35,7 @@ export type IndentContext = {
   type: 'indent' | 'dedent';
 };
 
-export type AffineTextStyleAttributes = {
+export type LoveNotesTextStyleAttributes = {
   bold?: true | null;
   italic?: true | null;
   underline?: true | null;
@@ -45,7 +45,7 @@ export type AffineTextStyleAttributes = {
   background?: string | null;
 };
 
-export type AffineTextAttributes = AffineTextStyleAttributes & {
+export type LoveNotesTextAttributes = LoveNotesTextStyleAttributes & {
   link?: string | null;
   reference?:
     | ({
@@ -61,7 +61,7 @@ export type AffineTextAttributes = AffineTextStyleAttributes & {
   [key: `comment-${string}`]: boolean | null;
 };
 
-export type AffineInlineEditor = InlineEditor<AffineTextAttributes>;
+export type LoveNotesInlineEditor = InlineEditor<LoveNotesTextAttributes>;
 
 export type SelectedRect = {
   left: number;

@@ -5,7 +5,7 @@ import {
   ImageBlockModel,
   type ParagraphBlockModel,
   type ReferenceInfo,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import {
   BLOCK_ID_ATTR,
@@ -33,7 +33,7 @@ import {
   type ParseDocUrlService,
   TelemetryProvider,
 } from '../../services';
-import type { AffineTextAttributes } from '../../types';
+import type { LoveNotesTextAttributes } from '../../types';
 import { matchModels, referenceToNode } from '../../utils';
 
 function findLastMatchingNode(
@@ -292,7 +292,7 @@ class PasteTr {
     const host = this.std.host;
 
     const cursorBlock =
-      this.pointState.model.flavour === 'affine:code' || !this.lastSnapshot
+      this.pointState.model.flavour === 'lovenotes:code' || !this.lastSnapshot
         ? this.std.store.getBlock(this.pointState.model.id)
         : this.std.store.getBlock(this.lastSnapshot.id);
     if (!cursorBlock) {
@@ -401,7 +401,7 @@ class PasteTr {
           .reduce((a, b) => a + b + 1, -1);
     }
     this.firstSnapshotIsPlainText =
-      this.firstSnapshot.flavour === 'affine:paragraph' &&
+      this.firstSnapshot.flavour === 'lovenotes:paragraph' &&
       this.firstSnapshot.props.type === 'text';
   }
 
@@ -457,7 +457,7 @@ class PasteTr {
         return { ...op };
       }
 
-      const reference: AffineTextAttributes['reference'] = {
+      const reference: LoveNotesTextAttributes['reference'] = {
         pageId,
         type: 'LinkedPage',
       };
@@ -507,7 +507,7 @@ class PasteTr {
       return;
     }
 
-    if (this.pointState.model.flavour === 'affine:code') {
+    if (this.pointState.model.flavour === 'lovenotes:code') {
       this._mergeCode();
       return;
     }
@@ -518,7 +518,7 @@ class PasteTr {
 }
 
 function flatNote(snapshot: SliceSnapshot) {
-  if (snapshot.content[0]?.flavour === 'affine:note') {
+  if (snapshot.content[0]?.flavour === 'lovenotes:note') {
     snapshot.content = snapshot.content[0].children;
   }
 }

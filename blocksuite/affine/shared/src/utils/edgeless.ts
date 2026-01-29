@@ -1,4 +1,4 @@
-import { FrameBlockModel, GroupElementModel } from '@blocksuite/affine-model';
+import { FrameBlockModel, GroupElementModel } from '@blocksuite/lovenotes-model';
 import {
   deserializeXYWH,
   getQuadBoundWithRotation,

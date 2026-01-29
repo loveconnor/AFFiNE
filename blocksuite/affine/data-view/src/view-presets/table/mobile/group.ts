@@ -2,7 +2,7 @@ import {
   menu,
   popFilterableSimpleMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
   PlusIcon,
@@ -46,7 +46,7 @@ const styles = css`
     user-select: none;
     font-size: 12px;
     line-height: 20px;
-    color: var(--affine-text-secondary-color);
+    color: var(--lovenotes-text-secondary-color);
   }
 
   .group-toggle-btn {
@@ -61,7 +61,7 @@ const styles = css`
   }
 
   .group-toggle-btn:hover {
-    background: var(--affine-hover-color);
+    background: var(--lovenotes-hover-color);
   }
 
   .group-toggle-btn svg {
@@ -183,7 +183,7 @@ export class MobileTableGroup extends SignalWatcher(
       <mobile-table-header
         .tableViewManager="${this.view}"
       ></mobile-table-header>
-      <div class="mobile-affine-table-body">
+      <div class="mobile-lovenotes-table-body">
         ${repeat(
           rows,
           row => row.rowId,
@@ -206,7 +206,7 @@ export class MobileTableGroup extends SignalWatcher(
           >
             <div
               class="data-view-table-group-add-row-button dv-icon-16"
-              data-test-id="affine-database-add-row-button"
+              data-test-id="lovenotes-database-add-row-button"
               role="button"
             >
               ${PlusIcon()}<span style="font-size: 12px">New Record</span>

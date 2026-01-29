@@ -1,4 +1,4 @@
-import type { PackageName } from '@affine-tools/utils/workspace';
+import type { PackageName } from '@lovenotes-tools/utils/workspace';
 
 import { Option, PackageSelectorCommand } from './command';
 
@@ -6,14 +6,14 @@ export class DevCommand extends PackageSelectorCommand {
   static override paths = [['dev'], ['d']];
 
   protected override availablePackages: PackageName[] = [
-    '@affine/web',
-    '@affine/server',
-    '@affine/electron',
-    '@affine/electron-renderer',
-    '@affine/mobile',
-    '@affine/ios',
-    '@affine/android',
-    '@affine/admin',
+    '@lovenotes/web',
+    '@lovenotes/server',
+    '@lovenotes/electron',
+    '@lovenotes/electron-renderer',
+    '@lovenotes/mobile',
+    '@lovenotes/ios',
+    '@lovenotes/android',
+    '@lovenotes/admin',
   ];
 
   protected deps = Option.Boolean('--deps', {

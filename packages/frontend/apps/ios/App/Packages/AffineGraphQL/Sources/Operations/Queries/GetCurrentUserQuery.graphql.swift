@@ -12,11 +12,11 @@ public class GetCurrentUserQuery: GraphQLQuery {
 
   public init() {}
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("currentUser", CurrentUser?.self),
     ] }
@@ -27,14 +27,14 @@ public class GetCurrentUserQuery: GraphQLQuery {
     /// CurrentUser
     ///
     /// Parent Type: `UserType`
-    public struct CurrentUser: AffineGraphQL.SelectionSet {
+    public struct CurrentUser: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", AffineGraphQL.ID.self),
+        .field("id", LoveNotesGraphQL.ID.self),
         .field("name", String.self),
         .field("email", String.self),
         .field("emailVerified", Bool.self),
@@ -42,7 +42,7 @@ public class GetCurrentUserQuery: GraphQLQuery {
         .field("token", Token.self),
       ] }
 
-      public var id: AffineGraphQL.ID { __data["id"] }
+      public var id: LoveNotesGraphQL.ID { __data["id"] }
       /// User name
       public var name: String { __data["name"] }
       /// User email
@@ -57,11 +57,11 @@ public class GetCurrentUserQuery: GraphQLQuery {
       /// CurrentUser.Token
       ///
       /// Parent Type: `TokenType`
-      public struct Token: AffineGraphQL.SelectionSet {
+      public struct Token: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.TokenType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.TokenType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("sessionToken", String?.self),

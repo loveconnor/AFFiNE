@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ToggleDownIcon, ToggleRightIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -27,7 +27,7 @@ export class ToggleButton extends WithDisposable(ShadowlessElement) {
     }
 
     .toggle-icon:hover {
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
 
     .toggle-icon[data-collapsed='true'] {
@@ -41,7 +41,7 @@ export class ToggleButton extends WithDisposable(ShadowlessElement) {
     .with-drag-handle .toggle-icon {
       opacity: 1;
     }
-    .with-drag-handle .affine-block-children-container .toggle-icon {
+    .with-drag-handle .lovenotes-block-children-container .toggle-icon {
       opacity: 0;
     }
 

@@ -1,15 +1,15 @@
-import { CodeBlockHighlighter } from '@blocksuite/affine/blocks/code';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { ColorScheme } from '@blocksuite/affine/model';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { type BlockStdScope } from '@blocksuite/affine/std';
+import { CodeBlockHighlighter } from '@blocksuite/lovenotes/blocks/code';
+import { SignalWatcher, WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import { ColorScheme } from '@blocksuite/lovenotes/model';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes/shared/theme';
+import { type BlockStdScope } from '@blocksuite/lovenotes/std';
 import {
   type BlockSnapshot,
   nanoid,
   type SliceSnapshot,
   Text,
-} from '@blocksuite/affine/store';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes/store';
+import type { NotificationService } from '@blocksuite/lovenotes-shared/services';
 import {
   CodeBlockIcon,
   CopyIcon,
@@ -521,7 +521,7 @@ export class CodeArtifactTool extends ArtifactTool<
       const codeBlock: BlockSnapshot = {
         type: 'block',
         id: nanoid(),
-        flavour: 'affine:code',
+        flavour: 'lovenotes:code',
         version: 1,
         props: {
           language: 'html',
@@ -574,12 +574,12 @@ export class CodeArtifactTool extends ArtifactTool<
       try {
         const store = this.std?.store;
         if (!store) return;
-        const notes = store.getBlocksByFlavour('affine:note');
+        const notes = store.getBlocksByFlavour('lovenotes:note');
         const parentId = notes.length > 0 ? notes[0].id : store.root?.id;
         if (!parentId) return;
         const html = preprocessHtml(htmlContent);
         store.addBlock(
-          'affine:code',
+          'lovenotes:code',
           { text: new Text(html), language: 'html', preview: true },
           parentId
         );

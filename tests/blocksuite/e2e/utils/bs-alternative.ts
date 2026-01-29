@@ -52,7 +52,7 @@ export const parseHexToRgba = (hex: string) => {
 export const parseStringToRgba = (value: string) => {
   value = value.trim();
 
-  // Compatible old format: `--affine-palette-transparent`
+  // Compatible old format: `--lovenotes-palette-transparent`
   if (value.endsWith('transparent')) {
     return { r: 1, g: 1, b: 1, a: 0 };
   }

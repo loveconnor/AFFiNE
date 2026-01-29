@@ -1,5 +1,5 @@
-import type { CanvasElementWithText } from '@blocksuite/affine-block-surface';
-import type { PanTool } from '@blocksuite/affine-gfx-pointer';
+import type { CanvasElementWithText } from '@blocksuite/lovenotes-block-surface';
+import type { PanTool } from '@blocksuite/lovenotes-gfx-pointer';
 import {
   type AttachmentBlockModel,
   type Connectable,
@@ -8,8 +8,8 @@ import {
   type ImageBlockModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
-import { isTopLevelBlock } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { isTopLevelBlock } from '@blocksuite/lovenotes-shared/utils';
 import type {
   GfxModel,
   GfxPrimitiveElementModel,
@@ -25,7 +25,7 @@ export function isEdgelessTextBlock(
   return (
     !!element &&
     'flavour' in element &&
-    element.flavour === 'affine:edgeless-text'
+    element.flavour === 'lovenotes:edgeless-text'
   );
 }
 
@@ -33,7 +33,7 @@ export function isImageBlock(
   element: BlockModel | GfxModel | null
 ): element is ImageBlockModel {
   return (
-    !!element && 'flavour' in element && element.flavour === 'affine:image'
+    !!element && 'flavour' in element && element.flavour === 'lovenotes:image'
   );
 }
 
@@ -41,7 +41,7 @@ export function isAttachmentBlock(
   element: BlockModel | GfxModel | null
 ): element is AttachmentBlockModel {
   return (
-    !!element && 'flavour' in element && element.flavour === 'affine:attachment'
+    !!element && 'flavour' in element && element.flavour === 'lovenotes:attachment'
   );
 }
 
@@ -51,7 +51,7 @@ export function isEmbedSyncedDocBlock(
   return (
     !!element &&
     'flavour' in element &&
-    element.flavour === 'affine:embed-synced-doc'
+    element.flavour === 'lovenotes:embed-synced-doc'
   );
 }
 
@@ -94,7 +94,7 @@ export function getCursorMode(edgelessTool: ToolOptionWithType) {
     case 'shape':
     case 'connector':
     case 'frame':
-    case 'affine:note':
+    case 'lovenotes:note':
       return 'crosshair';
     case 'text':
       return 'text';

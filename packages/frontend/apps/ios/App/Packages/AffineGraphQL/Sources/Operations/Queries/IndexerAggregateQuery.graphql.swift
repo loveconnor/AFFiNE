@@ -26,11 +26,11 @@ public class IndexerAggregateQuery: GraphQLQuery {
     "input": input
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("id")]),
     ] }
@@ -41,11 +41,11 @@ public class IndexerAggregateQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("aggregate", Aggregate.self, arguments: ["input": .variable("input")]),
@@ -57,11 +57,11 @@ public class IndexerAggregateQuery: GraphQLQuery {
       /// Workspace.Aggregate
       ///
       /// Parent Type: `AggregateResultObjectType`
-      public struct Aggregate: AffineGraphQL.SelectionSet {
+      public struct Aggregate: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.AggregateResultObjectType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.AggregateResultObjectType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("buckets", [Bucket].self),
@@ -74,11 +74,11 @@ public class IndexerAggregateQuery: GraphQLQuery {
         /// Workspace.Aggregate.Bucket
         ///
         /// Parent Type: `AggregateBucketObjectType`
-        public struct Bucket: AffineGraphQL.SelectionSet {
+        public struct Bucket: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.AggregateBucketObjectType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.AggregateBucketObjectType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("key", String.self),
@@ -94,11 +94,11 @@ public class IndexerAggregateQuery: GraphQLQuery {
           /// Workspace.Aggregate.Bucket.Hits
           ///
           /// Parent Type: `AggregateBucketHitsObjectType`
-          public struct Hits: AffineGraphQL.SelectionSet {
+          public struct Hits: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.AggregateBucketHitsObjectType }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.AggregateBucketHitsObjectType }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("nodes", [Node].self),
@@ -109,21 +109,21 @@ public class IndexerAggregateQuery: GraphQLQuery {
             /// Workspace.Aggregate.Bucket.Hits.Node
             ///
             /// Parent Type: `SearchNodeObjectType`
-            public struct Node: AffineGraphQL.SelectionSet {
+            public struct Node: LoveNotesGraphQL.SelectionSet {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.SearchNodeObjectType }
+              public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.SearchNodeObjectType }
               public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
-                .field("fields", AffineGraphQL.JSONObject.self),
-                .field("highlights", AffineGraphQL.JSONObject?.self),
+                .field("fields", LoveNotesGraphQL.JSONObject.self),
+                .field("highlights", LoveNotesGraphQL.JSONObject?.self),
               ] }
 
               /// The search result fields, see UnionSearchItemObjectType
-              public var fields: AffineGraphQL.JSONObject { __data["fields"] }
+              public var fields: LoveNotesGraphQL.JSONObject { __data["fields"] }
               /// The search result fields, see UnionSearchItemObjectType
-              public var highlights: AffineGraphQL.JSONObject? { __data["highlights"] }
+              public var highlights: LoveNotesGraphQL.JSONObject? { __data["highlights"] }
             }
           }
         }
@@ -131,11 +131,11 @@ public class IndexerAggregateQuery: GraphQLQuery {
         /// Workspace.Aggregate.Pagination
         ///
         /// Parent Type: `SearchResultPagination`
-        public struct Pagination: AffineGraphQL.SelectionSet {
+        public struct Pagination: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.SearchResultPagination }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.SearchResultPagination }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("count", Int.self),

@@ -1,7 +1,7 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import {
   mindmapToMarkdownAdapterMatcher,
@@ -9,7 +9,7 @@ import {
 } from './adapter';
 
 export class MindmapStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-mindmap-gfx';
+  override name = 'lovenotes-mindmap-gfx';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/color-picker';
+export * from '@blocksuite/lovenotes-components/color-picker';

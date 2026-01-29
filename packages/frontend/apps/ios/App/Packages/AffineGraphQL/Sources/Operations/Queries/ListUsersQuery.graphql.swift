@@ -18,11 +18,11 @@ public class ListUsersQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["filter": filter] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("users", [User].self, arguments: ["filter": .variable("filter")]),
       .field("usersCount", Int.self),
@@ -36,24 +36,24 @@ public class ListUsersQuery: GraphQLQuery {
     /// User
     ///
     /// Parent Type: `UserType`
-    public struct User: AffineGraphQL.SelectionSet {
+    public struct User: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", AffineGraphQL.ID.self),
+        .field("id", LoveNotesGraphQL.ID.self),
         .field("name", String.self),
         .field("email", String.self),
         .field("disabled", Bool.self),
-        .field("features", [GraphQLEnum<AffineGraphQL.FeatureType>].self),
+        .field("features", [GraphQLEnum<LoveNotesGraphQL.FeatureType>].self),
         .field("hasPassword", Bool?.self),
         .field("emailVerified", Bool.self),
         .field("avatarUrl", String?.self),
       ] }
 
-      public var id: AffineGraphQL.ID { __data["id"] }
+      public var id: LoveNotesGraphQL.ID { __data["id"] }
       /// User name
       public var name: String { __data["name"] }
       /// User email
@@ -61,7 +61,7 @@ public class ListUsersQuery: GraphQLQuery {
       /// User is disabled
       public var disabled: Bool { __data["disabled"] }
       /// Enabled features of a user
-      public var features: [GraphQLEnum<AffineGraphQL.FeatureType>] { __data["features"] }
+      public var features: [GraphQLEnum<LoveNotesGraphQL.FeatureType>] { __data["features"] }
       /// User password has been set
       public var hasPassword: Bool? { __data["hasPassword"] }
       /// User email verified

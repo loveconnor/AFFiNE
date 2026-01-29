@@ -1,5 +1,5 @@
-import { type CommentId } from '@blocksuite/affine-shared/services';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import { type CommentId } from '@blocksuite/lovenotes-shared/services';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { dynamicSchema, InlineSpecExtension } from '@blocksuite/std/inline';
 import { html, nothing } from 'lit-html';
 import { when } from 'lit-html/directives/when.js';
@@ -13,7 +13,7 @@ function isInlineCommendId(key: string): key is InlineCommendId {
 }
 
 export const CommentInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'comment',
     schema: dynamicSchema(
       isInlineCommendId,
@@ -44,7 +44,7 @@ export const CommentInlineSpecExtension =
   });
 
 export const NullCommentInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'comment',
     schema: dynamicSchema(
       isInlineCommendId,

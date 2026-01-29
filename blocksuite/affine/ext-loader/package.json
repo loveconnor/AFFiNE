@@ -1,6 +1,6 @@
 {
-  "name": "@blocksuite/affine-ext-loader",
-  "description": "Extension loader for affine",
+  "name": "@blocksuite/lovenotes-ext-loader",
+  "description": "Extension loader for lovenotes",
   "type": "module",
   "scripts": {
     "build": "tsc"

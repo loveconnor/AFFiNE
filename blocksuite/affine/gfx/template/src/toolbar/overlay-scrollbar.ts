@@ -2,7 +2,7 @@ import {
   on,
   once,
   requestConnectedFrame,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { css, html, LitElement } from 'lit';
 import { query } from 'lit/decorators.js';

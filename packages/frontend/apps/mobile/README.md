@@ -1,3 +1,3 @@
 # mobile
 
-AFFiNE Mobile Edition Web app.
+LoveNotes Mobile Edition Web app.

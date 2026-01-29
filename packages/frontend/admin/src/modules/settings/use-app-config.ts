@@ -1,13 +1,13 @@
-import { useMutation } from '@affine/admin/use-mutation';
-import { useQuery } from '@affine/admin/use-query';
-import { notify } from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { UserFriendlyError } from '@affine/error';
+import { useMutation } from '@lovenotes/admin/use-mutation';
+import { useQuery } from '@lovenotes/admin/use-query';
+import { notify } from '@lovenotes/component';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { UserFriendlyError } from '@lovenotes/error';
 import {
   appConfigQuery,
   type UpdateAppConfigInput,
   updateAppConfigMutation,
-} from '@affine/graphql';
+} from '@lovenotes/graphql';
 import { cloneDeep, get, merge, set } from 'lodash-es';
 import { useCallback, useState } from 'react';
 

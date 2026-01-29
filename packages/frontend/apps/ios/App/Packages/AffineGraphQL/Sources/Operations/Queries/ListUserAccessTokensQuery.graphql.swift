@@ -12,11 +12,11 @@ public class ListUserAccessTokensQuery: GraphQLQuery {
 
   public init() {}
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("revealedAccessTokens", [RevealedAccessToken].self),
     ] }
@@ -26,24 +26,24 @@ public class ListUserAccessTokensQuery: GraphQLQuery {
     /// RevealedAccessToken
     ///
     /// Parent Type: `RevealedAccessToken`
-    public struct RevealedAccessToken: AffineGraphQL.SelectionSet {
+    public struct RevealedAccessToken: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.RevealedAccessToken }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.RevealedAccessToken }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", String.self),
         .field("name", String.self),
-        .field("createdAt", AffineGraphQL.DateTime.self),
-        .field("expiresAt", AffineGraphQL.DateTime?.self),
+        .field("createdAt", LoveNotesGraphQL.DateTime.self),
+        .field("expiresAt", LoveNotesGraphQL.DateTime?.self),
         .field("token", String.self),
       ] }
 
       public var id: String { __data["id"] }
       public var name: String { __data["name"] }
-      public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
-      public var expiresAt: AffineGraphQL.DateTime? { __data["expiresAt"] }
+      public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
+      public var expiresAt: LoveNotesGraphQL.DateTime? { __data["expiresAt"] }
       public var token: String { __data["token"] }
     }
   }

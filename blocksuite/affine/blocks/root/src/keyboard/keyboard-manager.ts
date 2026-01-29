@@ -3,14 +3,14 @@ import {
   getTitleFromSelectedModels,
   notifyDocCreated,
   promptDocTitle,
-} from '@blocksuite/affine-block-embed';
-import { ParagraphBlockComponent } from '@blocksuite/affine-block-paragraph';
-import { NoteBlockModel, ParagraphBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-embed';
+import { ParagraphBlockComponent } from '@blocksuite/lovenotes-block-paragraph';
+import { NoteBlockModel, ParagraphBlockModel } from '@blocksuite/lovenotes-model';
 import {
   draftSelectedModelsCommand,
   getSelectedModelsCommand,
-} from '@blocksuite/affine-shared/commands';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/commands';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { IS_MAC, IS_WINDOWS } from '@blocksuite/global/env';
 import {
   type BlockComponent,
@@ -134,7 +134,7 @@ export class PageKeyboardManager {
       .run();
     const selectedModels = ctx.selectedModels?.filter(
       block =>
-        !block.flavour.startsWith('affine:embed-') &&
+        !block.flavour.startsWith('lovenotes:embed-') &&
         matchModels(doc.getParent(block), [NoteBlockModel])
     );
 

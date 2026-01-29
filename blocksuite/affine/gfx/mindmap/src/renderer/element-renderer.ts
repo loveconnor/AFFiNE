@@ -1,15 +1,15 @@
 import {
   type ElementRenderer,
   ElementRendererExtension,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   connector as renderConnector,
   ConnectorPathGenerator,
-} from '@blocksuite/affine-gfx-connector';
+} from '@blocksuite/lovenotes-gfx-connector';
 import type {
   MindmapElementModel,
   MindmapNode,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { GfxModel } from '@blocksuite/std/gfx';
 
 export const mindmap: ElementRenderer<MindmapElementModel> = (

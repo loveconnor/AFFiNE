@@ -1,6 +1,6 @@
 import type {
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 
 export type CanvasElementWithText = ShapeElementModel | TextElementModel;

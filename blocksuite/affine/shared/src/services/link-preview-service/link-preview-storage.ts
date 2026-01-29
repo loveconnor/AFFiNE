@@ -1,4 +1,4 @@
-import { LinkPreviewDataSchema } from '@blocksuite/affine-model';
+import { LinkPreviewDataSchema } from '@blocksuite/lovenotes-model';
 import { z } from 'zod';
 
 const _StorageSchema = z.object({

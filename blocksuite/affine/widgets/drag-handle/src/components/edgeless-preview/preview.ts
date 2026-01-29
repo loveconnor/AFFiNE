@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import {
   EmbedIcon,
   FrameIcon,
@@ -22,19 +22,19 @@ const BLOCK_PREVIEW_ICON_MAP: Record<
     icon: ShapeIcon,
     name: 'Edgeless shape',
   },
-  'affine:image': {
+  'lovenotes:image': {
     icon: ImageIcon,
     name: 'Image block',
   },
-  'affine:note': {
+  'lovenotes:note': {
     icon: PageIcon,
     name: 'Note block',
   },
-  'affine:frame': {
+  'lovenotes:frame': {
     icon: FrameIcon,
     name: 'Frame block',
   },
-  'affine:embed-': {
+  'lovenotes:embed-': {
     icon: EmbedIcon,
     name: 'Embed block',
   },
@@ -77,7 +77,7 @@ export class EdgelessDndPreviewElement extends LitElement {
 
       transform-origin: center;
 
-      font-family: var(--affine-font-family);
+      font-family: var(--lovenotes-font-family);
       box-shadow: 0px 0px 0px 0.5px #e3e3e4 inset;
     }
 
@@ -102,8 +102,8 @@ export class EdgelessDndPreviewElement extends LitElement {
       return BLOCK_PREVIEW_ICON_MAP[type];
     }
 
-    if (type.startsWith('affine:embed-')) {
-      return BLOCK_PREVIEW_ICON_MAP['affine:embed-'];
+    if (type.startsWith('lovenotes:embed-')) {
+      return BLOCK_PREVIEW_ICON_MAP['lovenotes:embed-'];
     }
 
     return {

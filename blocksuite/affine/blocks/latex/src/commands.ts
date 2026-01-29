@@ -1,8 +1,8 @@
-import type { LatexProps } from '@blocksuite/affine-model';
+import type { LatexProps } from '@blocksuite/lovenotes-model';
 import {
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import type { Command } from '@blocksuite/std';
 import type { BlockModel } from '@blocksuite/store';
 
@@ -28,9 +28,9 @@ export const insertLatexBlockCommand: Command<
       : selectedModels[selectedModels.length - 1];
 
   const latexBlockProps: Partial<LatexProps> & {
-    flavour: 'affine:latex';
+    flavour: 'lovenotes:latex';
   } = {
-    flavour: 'affine:latex',
+    flavour: 'lovenotes:latex',
     latex: latex ?? '',
   };
 
@@ -54,7 +54,7 @@ export const insertLatexBlockCommand: Command<
           blockComponent.toggleEditor();
 
           const mode = std.get(DocModeProvider).getEditorMode() ?? 'page';
-          const ifEdgelessText = blockComponent.closest('affine-edgeless-text');
+          const ifEdgelessText = blockComponent.closest('lovenotes-edgeless-text');
           std.getOptional(TelemetryProvider)?.track('Latex', {
             from:
               mode === 'page'

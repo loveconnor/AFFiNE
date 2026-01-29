@@ -8,7 +8,7 @@ import type { PhrasingContent } from 'mdast';
 import rehypeParse from 'rehype-parse';
 import { unified } from 'unified';
 
-import type { AffineTextAttributes } from '../../types/index.js';
+import type { LoveNotesTextAttributes } from '../../types/index.js';
 import { HtmlDeltaConverter } from '../html/delta-converter.js';
 import {
   rehypeInlineToBlock,
@@ -147,7 +147,7 @@ export function MarkdownASTToDeltaExtension(
 }
 
 export class MarkdownDeltaConverter extends DeltaASTConverter<
-  AffineTextAttributes,
+  LoveNotesTextAttributes,
   MarkdownAST
 > {
   constructor(
@@ -161,7 +161,7 @@ export class MarkdownDeltaConverter extends DeltaASTConverter<
 
   private _convertHtmlToDelta(
     html: string
-  ): DeltaInsert<AffineTextAttributes>[] {
+  ): DeltaInsert<LoveNotesTextAttributes>[] {
     if (!this.htmlDeltaConverter) {
       return [{ insert: html }];
     }
@@ -178,7 +178,7 @@ export class MarkdownDeltaConverter extends DeltaASTConverter<
   }
 
   applyTextFormatting(
-    delta: DeltaInsert<AffineTextAttributes>
+    delta: DeltaInsert<LoveNotesTextAttributes>
   ): PhrasingContent {
     let mdast: PhrasingContent = {
       type: 'text',
@@ -209,7 +209,7 @@ export class MarkdownDeltaConverter extends DeltaASTConverter<
     startIndex: number
   ): {
     endIndex: number;
-    deltas: DeltaInsert<AffineTextAttributes>[];
+    deltas: DeltaInsert<LoveNotesTextAttributes>[];
   } | null {
     const startNode = children[startIndex];
     if (!isHtmlNode(startNode)) {
@@ -287,8 +287,8 @@ export class MarkdownDeltaConverter extends DeltaASTConverter<
 
   private _astChildrenToDelta(
     children: MarkdownAST[]
-  ): DeltaInsert<AffineTextAttributes>[] {
-    const deltas: DeltaInsert<AffineTextAttributes>[] = [];
+  ): DeltaInsert<LoveNotesTextAttributes>[] {
+    const deltas: DeltaInsert<LoveNotesTextAttributes>[] = [];
     for (let i = 0; i < children.length; i++) {
       const merged = this._mergeInlineHtml(children, i);
       if (merged) {
@@ -302,7 +302,7 @@ export class MarkdownDeltaConverter extends DeltaASTConverter<
     return deltas;
   }
 
-  astToDelta(ast: MarkdownAST): DeltaInsert<AffineTextAttributes>[] {
+  astToDelta(ast: MarkdownAST): DeltaInsert<LoveNotesTextAttributes>[] {
     const context = {
       configs: this.configs,
       options: Object.create(null),
@@ -320,7 +320,7 @@ export class MarkdownDeltaConverter extends DeltaASTConverter<
   }
 
   deltaToAST(
-    deltas: DeltaInsert<AffineTextAttributes>[],
+    deltas: DeltaInsert<LoveNotesTextAttributes>[],
     depth = 0
   ): PhrasingContent[] {
     if (depth > 0) {

@@ -1,5 +1,5 @@
-import { DefaultTheme } from '@blocksuite/affine-model';
-import { NotionTextAdapter } from '@blocksuite/affine-shared/adapters';
+import { DefaultTheme } from '@blocksuite/lovenotes-model';
+import { NotionTextAdapter } from '@blocksuite/lovenotes-shared/adapters';
 import type { SliceSnapshot } from '@blocksuite/store';
 import { describe, expect, test } from 'vitest';
 
@@ -20,7 +20,7 @@ describe('notion-text to snapshot', () => {
         {
           type: 'block',
           id: 'matchesReplaceMap[0]',
-          flavour: 'affine:note',
+          flavour: 'lovenotes:note',
           props: {
             xywh: '[0,0,800,95]',
             background: DefaultTheme.noteBackgrounColor,
@@ -32,7 +32,7 @@ describe('notion-text to snapshot', () => {
             {
               type: 'block',
               id: 'matchesReplaceMap[1]',
-              flavour: 'affine:paragraph',
+              flavour: 'lovenotes:paragraph',
               props: {
                 type: 'text',
                 text: {
@@ -117,7 +117,7 @@ describe('notion-text to snapshot', () => {
         {
           type: 'block',
           id: 'matchesReplaceMap[0]',
-          flavour: 'affine:note',
+          flavour: 'lovenotes:note',
           props: {
             xywh: '[0,0,800,95]',
             background: DefaultTheme.noteBackgrounColor,
@@ -129,7 +129,7 @@ describe('notion-text to snapshot', () => {
             {
               type: 'block',
               id: 'matchesReplaceMap[1]',
-              flavour: 'affine:paragraph',
+              flavour: 'lovenotes:paragraph',
               props: {
                 type: 'text',
                 text: {

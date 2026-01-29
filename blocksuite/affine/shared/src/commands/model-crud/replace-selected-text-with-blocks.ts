@@ -1,4 +1,4 @@
-import type { BlockModel, Store } from '@blocksuite/affine/store';
+import type { BlockModel, Store } from '@blocksuite/lovenotes/store';
 import type { Command, TextSelection } from '@blocksuite/std';
 import { match } from 'ts-pattern';
 
@@ -12,7 +12,7 @@ import { getBlockProps } from '../../utils';
  */
 const canMergeBlocks = (blockA: BlockModel, blockB: BlockModel): boolean => {
   // Paragraphs can always be merged to
-  if (blockB.flavour === 'affine:paragraph') {
+  if (blockB.flavour === 'lovenotes:paragraph') {
     return true;
   }
 
@@ -26,7 +26,7 @@ const canMergeBlocks = (blockA: BlockModel, blockB: BlockModel): boolean => {
  */
 const isMergableBlock = (block: BlockModel): boolean => {
   // Blocks that can potentially be merged
-  const mergableTypes = ['affine:paragraph', 'affine:list'];
+  const mergableTypes = ['lovenotes:paragraph', 'lovenotes:list'];
 
   return mergableTypes.includes(block.flavour);
 };

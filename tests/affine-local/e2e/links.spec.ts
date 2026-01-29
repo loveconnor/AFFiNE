@@ -1,10 +1,10 @@
-import { toolbarButtons } from '@affine-test/kit/bs/linked-toolbar';
-import { waitNextFrame } from '@affine-test/kit/bs/misc';
-import { test } from '@affine-test/kit/playwright';
+import { toolbarButtons } from '@lovenotes-test/kit/bs/linked-toolbar';
+import { waitNextFrame } from '@lovenotes-test/kit/bs/misc';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   locateToolbar,
-} from '@affine-test/kit/utils/editor';
+} from '@lovenotes-test/kit/utils/editor';
 import {
   pasteByKeyboard,
   pressArrowUp,
@@ -12,8 +12,8 @@ import {
   pressEnter,
   selectAllByKeyboard,
   writeTextToClipboard,
-} from '@affine-test/kit/utils/keyboard';
-import { coreUrl, openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/keyboard';
+import { coreUrl, openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   createLinkedPage,
@@ -21,12 +21,12 @@ import {
   getBlockSuiteEditorTitle,
   type,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import {
   confirmExperimentalPrompt,
   openEditorSetting,
   openExperimentalFeaturesPanel,
-} from '@affine-test/kit/utils/setting';
+} from '@lovenotes-test/kit/utils/setting';
 import { expect, type Locator, type Page } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
@@ -76,7 +76,7 @@ test('not allowed to switch to embed view when linking to the same document', as
     toolbarButtons(page);
 
   // Inline
-  const inlineLink = page.locator('affine-reference');
+  const inlineLink = page.locator('lovenotes-reference');
 
   await inlineLink.hover();
   await switchViewBtn.click();
@@ -89,7 +89,7 @@ test('not allowed to switch to embed view when linking to the same document', as
   await cardViewBtn.click();
 
   // Card
-  const cardLink = page.locator('affine-embed-linked-doc-block');
+  const cardLink = page.locator('lovenotes-embed-linked-doc-block');
   await expect(cardLink).toBeVisible();
 
   await cardLink.click();
@@ -123,7 +123,7 @@ test('not allowed to switch to embed view when linking to block', async ({
     toolbarButtons(page);
 
   // Inline
-  const inlineLink = page.locator('affine-reference');
+  const inlineLink = page.locator('lovenotes-reference');
 
   await inlineLink.hover();
   await switchViewBtn.click();
@@ -136,7 +136,7 @@ test('not allowed to switch to embed view when linking to block', async ({
   await cardViewBtn.click();
 
   // Card
-  const cardLink = page.locator('affine-embed-linked-doc-block');
+  const cardLink = page.locator('lovenotes-embed-linked-doc-block');
 
   await cardLink.dblclick();
 
@@ -167,7 +167,7 @@ test('not allowed to switch to embed view when linking to block', async ({
   // Switches to card view
   await cardViewBtn.click();
 
-  const otherCardLink = page.locator('affine-embed-linked-doc-block').nth(1);
+  const otherCardLink = page.locator('lovenotes-embed-linked-doc-block').nth(1);
   await otherCardLink.dblclick();
 
   await expect(peekViewModel).toBeVisible();
@@ -209,7 +209,7 @@ test('allow switching to embed view when linking to the other document without m
     toolbarButtons(page);
 
   // Inline
-  const inlineLink = page.locator('affine-reference');
+  const inlineLink = page.locator('lovenotes-reference');
 
   await inlineLink.hover();
   await switchViewBtn.click();
@@ -222,7 +222,7 @@ test('allow switching to embed view when linking to the other document without m
   await cardViewBtn.click();
 
   // Card
-  const cardLink = page.locator('affine-embed-linked-doc-block');
+  const cardLink = page.locator('lovenotes-embed-linked-doc-block');
   await expect(cardLink).toBeVisible();
 
   await cardLink.click();
@@ -238,7 +238,7 @@ test('allow switching to embed view when linking to the other document without m
   await embedViewBtn.click();
 
   // Embed
-  const embedLink = page.locator('affine-embed-synced-doc-block');
+  const embedLink = page.locator('lovenotes-embed-synced-doc-block');
   await expect(embedLink).toBeVisible();
 
   await embedLink.click();
@@ -253,7 +253,7 @@ test('allow switching to embed view when linking to the other document without m
   // Closes
   await switchViewBtn.click();
   await expect(
-    page.locator('.affine-embed-synced-doc-container.page')
+    page.locator('.lovenotes-embed-synced-doc-container.page')
   ).toBeVisible();
 
   await embedLink.click();
@@ -294,7 +294,7 @@ test('allow switching to embed view when linking to the other document with mode
   const { switchViewBtn, inlineViewBtn, cardViewBtn, embedViewBtn } =
     toolbarButtons(page);
 
-  const inlineLink = page.locator('affine-reference');
+  const inlineLink = page.locator('lovenotes-reference');
 
   await inlineLink.click();
 
@@ -315,7 +315,7 @@ test('allow switching to embed view when linking to the other document with mode
   await cardViewBtn.click();
 
   // Card
-  const cardLink = page.locator('affine-embed-linked-doc-block');
+  const cardLink = page.locator('lovenotes-embed-linked-doc-block');
   await expect(cardLink).toBeVisible();
 
   // refocus
@@ -330,7 +330,7 @@ test('allow switching to embed view when linking to the other document with mode
   await embedViewBtn.click();
 
   // Embed
-  const embedLink = page.locator('affine-embed-synced-doc-block');
+  const embedLink = page.locator('lovenotes-embed-synced-doc-block');
   await expect(embedLink).toBeVisible();
 
   // refocus
@@ -344,7 +344,7 @@ test('allow switching to embed view when linking to the other document with mode
   // Closes
   await switchViewBtn.click();
   await expect(
-    page.locator('.affine-embed-synced-doc-container.edgeless')
+    page.locator('.lovenotes-embed-synced-doc-container.edgeless')
   ).toBeVisible();
 
   // refocus
@@ -389,9 +389,9 @@ test('@ popover should show today menu item', async ({ page }) => {
   await todayMenuItem.click();
   const date = textContent?.trim();
 
-  // a affine-reference should be created with name date
+  // a lovenotes-reference should be created with name date
   await expect(
-    page.locator('affine-reference:has-text("' + date + '")')
+    page.locator('lovenotes-reference:has-text("' + date + '")')
   ).toBeVisible();
 });
 
@@ -409,9 +409,9 @@ test('@ popover with input=tmr', async ({ page }) => {
   const textContent = await tomorrowMenuItem.locator('span').textContent();
   await tomorrowMenuItem.click();
 
-  // a affine-reference should be created with name date
+  // a lovenotes-reference should be created with name date
   await expect(
-    page.locator('affine-reference:has-text("' + textContent + '")')
+    page.locator('lovenotes-reference:has-text("' + textContent + '")')
   ).toBeVisible();
 });
 
@@ -433,9 +433,9 @@ test('@ popover with input=dec should create a reference with a December date', 
     .textContent();
   await decemberMenuItem.click();
 
-  // a affine-reference should be created with name date
+  // a lovenotes-reference should be created with name date
   await expect(
-    page.locator('affine-reference:has-text("' + textContent + '")')
+    page.locator('lovenotes-reference:has-text("' + textContent + '")')
   ).toBeVisible();
 });
 
@@ -458,9 +458,9 @@ test('@ popover with click "select a specific date" should show a date picker', 
   ).toBeVisible();
   await page.locator('[data-is-date-cell][data-is-today=true]').click();
 
-  // a affine-reference should be created with name date
+  // a lovenotes-reference should be created with name date
   await expect(
-    page.locator('affine-reference:has-text("' + date + '")')
+    page.locator('lovenotes-reference:has-text("' + date + '")')
   ).toBeVisible();
 });
 
@@ -490,7 +490,7 @@ test('linked doc should show markdown preview in the backlink section', async ({
   await page.keyboard.press('Enter');
 
   await createLinkedPage(page, 'Test Page');
-  await page.locator('affine-reference:has-text("Test Page")').click();
+  await page.locator('lovenotes-reference:has-text("Test Page")').click();
 
   await expect(getBlockSuiteEditorTitle(page)).toHaveText('Test Page');
   await page
@@ -514,7 +514,7 @@ test('the viewport should be fit when the linked document is with edgeless mode'
 
   await clickEdgelessModeButton(page);
 
-  const note = page.locator('affine-edgeless-note');
+  const note = page.locator('lovenotes-edgeless-note');
   const noteBoundingBox = await note.boundingBox();
   expect(noteBoundingBox).not.toBeNull();
   if (!noteBoundingBox) return;
@@ -533,7 +533,7 @@ test('the viewport should be fit when the linked document is with edgeless mode'
   // create edgeless text
   await page.keyboard.press('t');
   await page.mouse.click(x, y);
-  await page.waitForSelector('affine-edgeless-text');
+  await page.waitForSelector('lovenotes-edgeless-text');
   await page.keyboard.type('Edgeless Text');
 
   const url = new URL(page.url());
@@ -544,18 +544,18 @@ test('the viewport should be fit when the linked document is with edgeless mode'
   await writeTextToClipboard(page, url.toString());
 
   // Inline
-  await page.locator('affine-reference').hover();
+  await page.locator('lovenotes-reference').hover();
   await page.getByLabel('Switch view').click();
   await page.getByTestId('link-to-embed').click();
 
   const viewport = await page
-    .locator('affine-embed-synced-doc-block')
+    .locator('lovenotes-embed-synced-doc-block')
     .boundingBox();
   expect(viewport).not.toBeNull();
   if (!viewport) return;
 
   const edgelessText = await page
-    .locator('affine-embed-synced-doc-block affine-edgeless-text')
+    .locator('lovenotes-embed-synced-doc-block lovenotes-edgeless-text')
     .boundingBox();
   expect(edgelessText).not.toBeNull();
   if (!edgelessText) return;
@@ -578,7 +578,7 @@ test('should show edgeless content when switching card view of linked mode doc i
 
   await clickEdgelessModeButton(page);
 
-  const note = page.locator('affine-edgeless-note');
+  const note = page.locator('lovenotes-edgeless-note');
   const noteBoundingBox = await note.boundingBox();
   expect(noteBoundingBox).not.toBeNull();
   if (!noteBoundingBox) return;
@@ -598,7 +598,7 @@ test('should show edgeless content when switching card view of linked mode doc i
   // create edgeless text
   await page.keyboard.press('t');
   await page.mouse.click(x, y + 100);
-  await page.locator('affine-edgeless-text').waitFor({ state: 'visible' });
+  await page.locator('lovenotes-edgeless-text').waitFor({ state: 'visible' });
   await page.keyboard.type('Edgeless Text');
 
   const url = new URL(page.url());
@@ -614,19 +614,19 @@ test('should show edgeless content when switching card view of linked mode doc i
   await writeTextToClipboard(page, url.toString(), false);
 
   // Inline
-  const embed = page.locator('affine-embed-edgeless-linked-doc-block');
+  const embed = page.locator('lovenotes-embed-edgeless-linked-doc-block');
   await expect(embed).toBeVisible();
   await page.getByLabel('Switch view').click();
   await page.getByTestId('link-to-embed').click();
 
   const viewport = await page
-    .locator('affine-embed-edgeless-synced-doc-block')
+    .locator('lovenotes-embed-edgeless-synced-doc-block')
     .boundingBox();
   expect(viewport).not.toBeNull();
   if (!viewport) return;
 
   const edgelessText = await page
-    .locator('affine-embed-edgeless-synced-doc-block affine-edgeless-text')
+    .locator('lovenotes-embed-edgeless-synced-doc-block lovenotes-edgeless-text')
     .boundingBox();
   expect(edgelessText).not.toBeNull();
   if (!edgelessText) return;
@@ -649,10 +649,10 @@ test.describe('Customize linked doc title and description', () => {
     await page.keyboard.press('Enter');
     await createLinkedPage(page, 'Test Page');
 
-    const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+    const toolbar = page.locator('lovenotes-toolbar-widget editor-toolbar');
 
-    const link = page.locator('affine-reference');
-    const title = link.locator('.affine-reference-title');
+    const link = page.locator('lovenotes-reference');
+    const title = link.locator('.lovenotes-reference-title');
 
     await link.hover();
     await expect(toolbar).toBeVisible();
@@ -714,7 +714,7 @@ test.describe('Customize linked doc title and description', () => {
     const { toolbar, switchViewBtn, inlineViewBtn, cardViewBtn } =
       toolbarButtons(page);
 
-    const inlineLink = page.locator('affine-reference');
+    const inlineLink = page.locator('lovenotes-reference');
     await inlineLink.hover();
 
     // Copies link
@@ -742,12 +742,12 @@ test.describe('Customize linked doc title and description', () => {
     await switchViewBtn.click();
     await cardViewBtn.click();
 
-    const cardLink = page.locator('affine-embed-linked-doc-block');
+    const cardLink = page.locator('lovenotes-embed-linked-doc-block');
     const cardTitle = cardLink.locator(
-      '.affine-embed-linked-doc-content-title-text'
+      '.lovenotes-embed-linked-doc-content-title-text'
     );
     const cardDescription = cardLink.locator(
-      '.affine-embed-linked-doc-content-note.alias'
+      '.lovenotes-embed-linked-doc-content-note.alias'
     );
 
     await cardLink.click();
@@ -801,7 +801,7 @@ test.describe('Customize linked doc title and description', () => {
 
       await inlineLink.hover();
 
-      const title = inlineLink.locator('.affine-reference-title');
+      const title = inlineLink.locator('.lovenotes-reference-title');
       await expect(title).toHaveText('Test Page Alias Again');
 
       // Switches to card view
@@ -831,9 +831,9 @@ test.describe('Customize linked doc title and description', () => {
   //   await page.keyboard.press('Enter');
   //   await createLinkedPage(page, 'Test Page');
 
-  //   const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  //   const toolbar = page.locator('lovenotes-toolbar-widget editor-toolbar');
 
-  //   const inlineLink = page.locator('affine-reference');
+  //   const inlineLink = page.locator('lovenotes-reference');
   //   await inlineLink.hover();
 
   //   // Edits title
@@ -847,7 +847,7 @@ test.describe('Customize linked doc title and description', () => {
 
   //   await expect(a).toHaveText('🦀hello');
   //   await expect(a.locator('svg')).toBeHidden();
-  //   await expect(a.locator('.affine-reference-title')).toHaveText('hello');
+  //   await expect(a.locator('.lovenotes-reference-title')).toHaveText('hello');
   // });
 
   //   test('should show emoji doc icon in journal document', async ({ page }) => {
@@ -860,9 +860,9 @@ test.describe('Customize linked doc title and description', () => {
   //     await page.keyboard.press('Enter');
   //     await createTodayPage(page);
 
-  //     const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  //     const toolbar = page.locator('lovenotes-toolbar-widget editor-toolbar');
 
-  //     const inlineLink = page.locator('affine-reference');
+  //     const inlineLink = page.locator('lovenotes-reference');
   //     await inlineLink.hover();
 
   //     // Edits title
@@ -877,7 +877,7 @@ test.describe('Customize linked doc title and description', () => {
   //     const year = String(new Date().getFullYear());
   //     await expect(a).toContainText('🦀');
   //     await expect(a.locator('svg')).toBeHidden();
-  //     await expect(a.locator('.affine-reference-title')).toContainText(year);
+  //     await expect(a.locator('.lovenotes-reference-title')).toContainText(year);
   //   });
 });
 
@@ -894,7 +894,7 @@ test('should save open doc mode of internal links', async ({ page }) => {
   const { toolbar, switchViewBtn, inlineViewBtn, cardViewBtn, embedViewBtn } =
     toolbarButtons(page);
 
-  const inlineLink = page.locator('affine-reference');
+  const inlineLink = page.locator('lovenotes-reference');
   await inlineLink.hover();
 
   const recentOpenModeBtn = toolbar.locator(
@@ -971,11 +971,11 @@ test('should save open doc mode of internal links', async ({ page }) => {
 test('should show full email address', async ({ page }) => {
   await page.keyboard.press('Enter');
 
-  await writeTextToClipboard(page, 'dev@affine.pro');
+  await writeTextToClipboard(page, 'dev@lovenotes.pro');
 
-  const inlineLink = page.locator('affine-link');
+  const inlineLink = page.locator('lovenotes-link');
 
-  await expect(inlineLink).toHaveText('dev@affine.pro');
+  await expect(inlineLink).toHaveText('dev@lovenotes.pro');
 
   await inlineLink.hover();
 
@@ -984,8 +984,8 @@ test('should show full email address', async ({ page }) => {
   await expect(toolbar).toBeVisible();
   await expect(switchViewBtn).toBeHidden();
 
-  await expect(toolbar.locator('affine-link-preview')).toHaveText(
-    'dev@affine.pro'
+  await expect(toolbar.locator('lovenotes-link-preview')).toHaveText(
+    'dev@lovenotes.pro'
   );
 });
 
@@ -994,11 +994,11 @@ test('should not show view toggle button when protocol of link is not http(s)', 
 }) => {
   await page.keyboard.press('Enter');
 
-  await writeTextToClipboard(page, 'ftp://affine.pro/blocksuite.pdf');
+  await writeTextToClipboard(page, 'ftp://lovenotes.pro/blocksuite.pdf');
 
-  const inlineLink = page.locator('affine-link');
+  const inlineLink = page.locator('lovenotes-link');
 
-  await expect(inlineLink).toHaveText('ftp://affine.pro/blocksuite.pdf');
+  await expect(inlineLink).toHaveText('ftp://lovenotes.pro/blocksuite.pdf');
 
   await inlineLink.hover();
 
@@ -1007,10 +1007,10 @@ test('should not show view toggle button when protocol of link is not http(s)', 
   await expect(toolbar).toBeVisible();
   await expect(switchViewBtn).toBeHidden();
 
-  await expect(toolbar.locator('affine-link-preview')).toHaveText('affine.pro');
+  await expect(toolbar.locator('lovenotes-link-preview')).toHaveText('lovenotes.pro');
 });
 
-test('should reach target block when clicking affine-link multiple times', async ({
+test('should reach target block when clicking lovenotes-link multiple times', async ({
   page,
 }) => {
   await page.keyboard.press('Enter');
@@ -1029,23 +1029,23 @@ test('should reach target block when clicking affine-link multiple times', async
   await toolbar.getByLabel('More menu').click();
   await toolbar.getByLabel('Copy link to block').click();
 
-  const paragraph = page.locator('affine-paragraph').nth(0);
+  const paragraph = page.locator('lovenotes-paragraph').nth(0);
   await paragraph.click();
 
   await selectAllByKeyboard(page);
 
   await toolbar.getByLabel(/^Link$/).click();
 
-  await page.waitForSelector('.affine-link-popover');
+  await page.waitForSelector('.lovenotes-link-popover');
 
   await pasteByKeyboard(page);
 
-  await page.locator('.affine-confirm-button').click();
+  await page.locator('.lovenotes-confirm-button').click();
 
-  const scrollAnchoringWidget = page.locator('affine-scroll-anchoring-widget');
+  const scrollAnchoringWidget = page.locator('lovenotes-scroll-anchoring-widget');
   const highlight = scrollAnchoringWidget.locator('.highlight');
 
-  const inlineLink = page.locator('affine-link');
+  const inlineLink = page.locator('lovenotes-link');
 
   await inlineLink.click();
   await expect(highlight).toBeVisible();
@@ -1076,9 +1076,9 @@ test('should display date as the original title of journal', async ({
 
   const { toolbar, switchViewBtn, cardViewBtn } = toolbarButtons(page);
 
-  const linkedDocTitle = toolbar.locator('affine-linked-doc-title .label');
+  const linkedDocTitle = toolbar.locator('lovenotes-linked-doc-title .label');
 
-  const inlineLink = page.locator('affine-reference');
+  const inlineLink = page.locator('lovenotes-reference');
   await inlineLink.hover();
 
   await expect(toolbar).toBeVisible();
@@ -1110,7 +1110,7 @@ test('should display date as the original title of journal', async ({
   await switchViewBtn.click();
   await cardViewBtn.click();
 
-  const cardLink = page.locator('affine-embed-linked-doc-block');
+  const cardLink = page.locator('lovenotes-embed-linked-doc-block');
   await expect(cardLink).toBeVisible();
 
   await expect(toolbar).toBeVisible();
@@ -1139,15 +1139,15 @@ test('should add HTTP protocol into link automatically', async ({ page }) => {
   await page.keyboard.type('/');
   await page.keyboard.type('toeverything');
   await page.keyboard.type('/');
-  await page.keyboard.type('affine');
+  await page.keyboard.type('lovenotes');
 
   await page.keyboard.press('Space');
 
-  const link = 'https://github.com/toeverything/affine';
+  const link = 'https://github.com/toeverything/lovenotes';
 
   const { toolbar, switchViewBtn, cardViewBtn } = toolbarButtons(page);
 
-  const inlineLink = page.locator('affine-link');
+  const inlineLink = page.locator('lovenotes-link');
 
   await expect(inlineLink).toBeVisible();
 
@@ -1156,7 +1156,7 @@ test('should add HTTP protocol into link automatically', async ({ page }) => {
 
   await inlineLink.hover();
 
-  const linkPreview = toolbar.locator('affine-link-preview');
+  const linkPreview = toolbar.locator('lovenotes-link-preview');
 
   url = await linkPreview.locator('a').getAttribute('href');
   expect(url).toBe(link);
@@ -1164,7 +1164,7 @@ test('should add HTTP protocol into link automatically', async ({ page }) => {
   await switchViewBtn.click();
   await cardViewBtn.click();
 
-  const cardLink = page.locator('affine-bookmark');
+  const cardLink = page.locator('lovenotes-bookmark');
 
   await expect(cardLink).toBeVisible();
 
@@ -1184,7 +1184,7 @@ test('should open link in new tab when middle clicking on link', async ({
     await selectAllByKeyboard(page);
     const toolbar = locateToolbar(page);
     await toolbar.getByTestId('link').click();
-    const input = page.locator('.affine-link-popover-input');
+    const input = page.locator('.lovenotes-link-popover-input');
 
     const externalUrl = new URL('https://github.com/').toString();
     await input.fill(externalUrl);
@@ -1192,7 +1192,7 @@ test('should open link in new tab when middle clicking on link', async ({
 
     const newTabPromise = context.waitForEvent('page');
 
-    await page.locator('affine-link').click({ button: 'middle' });
+    await page.locator('lovenotes-link').click({ button: 'middle' });
 
     const newTab = await newTabPromise;
     await expect(newTab).toHaveURL(externalUrl);
@@ -1209,13 +1209,13 @@ test('should open link in new tab when middle clicking on link', async ({
     await selectAllByKeyboard(page);
     const toolbar = locateToolbar(page);
     await toolbar.getByTestId('link').click();
-    const input = page.locator('.affine-link-popover-input');
+    const input = page.locator('.lovenotes-link-popover-input');
     await input.fill(url);
     await pressEnter(page);
 
     const newTabPromise = context.waitForEvent('page');
 
-    await page.locator('affine-link').click({ button: 'middle' });
+    await page.locator('lovenotes-link').click({ button: 'middle' });
 
     const newTab = await newTabPromise;
     // there is a refreshKey in the url
@@ -1236,7 +1236,7 @@ test('should open link in new tab when middle clicking on link', async ({
 
     const newTabPromise = context.waitForEvent('page');
 
-    await page.locator('affine-reference').click({ button: 'middle' });
+    await page.locator('lovenotes-reference').click({ button: 'middle' });
 
     const newTab = await newTabPromise;
     expect(newTab.url()).toContain(page.url());

@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import { ShapeElementRendererExtension } from './element-renderer';
@@ -11,7 +11,7 @@ import { ShapeTool } from './shape-tool';
 import { shapeSeniorTool, shapeToolbarExtension } from './toolbar';
 
 export class ShapeViewExtension extends ViewExtensionProvider {
-  override name = 'affine-shape-gfx';
+  override name = 'lovenotes-shape-gfx';
 
   override effect(): void {
     super.effect();

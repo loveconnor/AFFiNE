@@ -2,17 +2,17 @@ import {
   type AttachmentBlockModel,
   type ImageBlockProps,
   MAX_IMAGE_WIDTH,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
-import { FileSizeLimitProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/consts';
+import { FileSizeLimitProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   readImageSize,
   transformModel,
   withTempBlobData,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { Container } from '@blocksuite/global/di';
 import { createIdentifier } from '@blocksuite/global/di';
 import { Bound } from '@blocksuite/global/gfx';
@@ -60,7 +60,7 @@ export type AttachmentEmbedConfig = {
 // Single embed config.
 export const AttachmentEmbedConfigIdentifier =
   createIdentifier<AttachmentEmbedConfig>(
-    'AffineAttachmentEmbedConfigIdentifier'
+    'LoveNotesAttachmentEmbedConfigIdentifier'
   );
 
 export function AttachmentEmbedConfigExtension(
@@ -78,10 +78,10 @@ export function AttachmentEmbedConfigExtension(
 // A embed config map.
 export const AttachmentEmbedConfigMapIdentifier = createIdentifier<
   Map<string, AttachmentEmbedConfig>
->('AffineAttachmentEmbedConfigMapIdentifier');
+>('LoveNotesAttachmentEmbedConfigMapIdentifier');
 
 export const AttachmentEmbedProvider = createIdentifier<AttachmentEmbedService>(
-  'AffineAttachmentEmbedProvider'
+  'LoveNotesAttachmentEmbedProvider'
 );
 
 export class AttachmentEmbedService extends Extension {
@@ -161,7 +161,7 @@ const embedConfig: AttachmentEmbedConfig[] = [
     name: 'image',
     shouldBeConverted: true,
     check: model =>
-      model.store.schema.flavourSchemaMap.has('affine:image') &&
+      model.store.schema.flavourSchemaMap.has('lovenotes:image') &&
       model.props.type.startsWith('image/'),
     async action(model, std) {
       const component = std.view.getBlock(model.id);
@@ -205,7 +205,7 @@ const embedConfig: AttachmentEmbedConfig[] = [
           type="application/pdf"
           credentialless
         ></iframe>
-        <div class="affine-attachment-embed-event-mask"></div>
+        <div class="lovenotes-attachment-embed-event-mask"></div>
       `;
     },
   },
@@ -256,7 +256,7 @@ const embedConfig: AttachmentEmbedConfig[] = [
  * Turn the attachment block into an image block.
  */
 async function turnIntoImageBlock(model: AttachmentBlockModel) {
-  if (!model.store.schema.flavourSchemaMap.has('affine:image')) {
+  if (!model.store.schema.flavourSchemaMap.has('lovenotes:image')) {
     console.error('The image flavour is not supported!');
     return;
   }
@@ -301,5 +301,5 @@ async function turnIntoImageBlock(model: AttachmentBlockModel) {
     ...imageSize,
     ...others,
   };
-  transformModel(model, 'affine:image', imageProp);
+  transformModel(model, 'lovenotes:image', imageProp);
 }

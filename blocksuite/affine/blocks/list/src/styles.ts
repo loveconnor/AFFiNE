@@ -1,68 +1,68 @@
 import { css } from 'lit';
 
 export const listPrefix = css`
-  .affine-list-block__prefix {
+  .lovenotes-list-block__prefix {
     display: flex;
-    color: var(--affine-blue-700);
-    font-size: var(--affine-font-sm);
+    color: var(--lovenotes-blue-700);
+    font-size: var(--lovenotes-font-sm);
     user-select: none;
     position: relative;
   }
 
-  .affine-list-block__numbered {
+  .lovenotes-list-block__numbered {
     min-width: 22px;
     height: 24px;
     margin-left: 2px;
   }
 
-  .affine-list-block__todo-prefix {
+  .lovenotes-list-block__todo-prefix {
     display: flex;
     align-items: center;
     cursor: pointer;
     width: 24px;
     height: 24px;
-    color: var(--affine-icon-color);
+    color: var(--lovenotes-icon-color);
   }
 
-  .affine-list-block__todo-prefix.readonly {
+  .lovenotes-list-block__todo-prefix.readonly {
     cursor: default;
   }
 
-  .affine-list-block__todo-prefix > svg {
+  .lovenotes-list-block__todo-prefix > svg {
     width: 20px;
     height: 20px;
   }
 `;
 
 export const listBlockStyles = css`
-  affine-list {
+  lovenotes-list {
     display: block;
-    font-size: var(--affine-font-base);
+    font-size: var(--lovenotes-font-base);
   }
 
-  affine-list code {
-    font-size: calc(var(--affine-font-base) - 3px);
+  lovenotes-list code {
+    font-size: calc(var(--lovenotes-font-base) - 3px);
     padding: 0px 4px 2px;
   }
 
-  .affine-list-block-container {
+  .lovenotes-list-block-container {
     box-sizing: border-box;
     border-radius: 4px;
     position: relative;
   }
-  .affine-list-block-container .affine-list-block-container {
+  .lovenotes-list-block-container .lovenotes-list-block-container {
     margin-top: 0;
   }
-  .affine-list-rich-text-wrapper {
+  .lovenotes-list-rich-text-wrapper {
     position: relative;
     display: flex;
   }
-  .affine-list-rich-text-wrapper rich-text {
+  .lovenotes-list-rich-text-wrapper rich-text {
     flex: 1;
   }
 
-  .affine-list--checked {
-    color: var(--affine-text-secondary-color);
+  .lovenotes-list--checked {
+    color: var(--lovenotes-text-secondary-color);
   }
 
   ${listPrefix}

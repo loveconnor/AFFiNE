@@ -1,8 +1,8 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { Input } from '@affine/admin/components/ui/input';
-import { Label } from '@affine/admin/components/ui/label';
-import { Separator } from '@affine/admin/components/ui/separator';
-import type { FeatureType } from '@affine/graphql';
+import { Button } from '@lovenotes/admin/components/ui/button';
+import { Input } from '@lovenotes/admin/components/ui/input';
+import { Label } from '@lovenotes/admin/components/ui/label';
+import { Separator } from '@lovenotes/admin/components/ui/separator';
+import type { FeatureType } from '@lovenotes/graphql';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { ChevronRightIcon } from 'lucide-react';
 import type { ChangeEvent } from 'react';

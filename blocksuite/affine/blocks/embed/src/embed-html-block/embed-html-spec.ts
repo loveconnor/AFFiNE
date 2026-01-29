@@ -1,4 +1,4 @@
-import { EmbedHtmlBlockSchema } from '@blocksuite/affine-model';
+import { EmbedHtmlBlockSchema } from '@blocksuite/lovenotes-model';
 import { BlockViewExtension } from '@blocksuite/std';
 import type { ExtensionType } from '@blocksuite/store';
 import { literal } from 'lit/static-html.js';
@@ -10,9 +10,9 @@ const flavour = EmbedHtmlBlockSchema.model.flavour;
 
 export const EmbedHtmlViewExtensions: ExtensionType[] = [
   BlockViewExtension(flavour, model => {
-    return model.parent?.flavour === 'affine:surface'
-      ? literal`affine-embed-edgeless-html-block`
-      : literal`affine-embed-html-block`;
+    return model.parent?.flavour === 'lovenotes:surface'
+      ? literal`lovenotes-embed-edgeless-html-block`
+      : literal`lovenotes-embed-html-block`;
   }),
   createBuiltinToolbarConfigExtension(flavour),
   EmbedEdgelessHtmlBlockInteraction,

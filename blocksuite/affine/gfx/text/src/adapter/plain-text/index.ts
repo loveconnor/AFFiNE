@@ -1,4 +1,4 @@
-import { ElementToPlainTextAdapterExtension } from '@blocksuite/affine-block-surface';
+import { ElementToPlainTextAdapterExtension } from '@blocksuite/lovenotes-block-surface';
 
 import { getTextElementText } from '../text';
 

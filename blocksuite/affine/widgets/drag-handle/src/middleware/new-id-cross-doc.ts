@@ -1,5 +1,5 @@
-import { DatabaseBlockModel } from '@blocksuite/affine-model';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+import { DatabaseBlockModel } from '@blocksuite/lovenotes-model';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { BlockStdScope } from '@blocksuite/std';
 import type { TransformerMiddleware } from '@blocksuite/store';
 

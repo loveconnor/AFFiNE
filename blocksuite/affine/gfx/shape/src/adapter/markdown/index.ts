@@ -1,5 +1,5 @@
-import { ElementToMarkdownAdapterExtension } from '@blocksuite/affine-block-surface';
-import type { MindMapTreeNode } from '@blocksuite/affine-model';
+import { ElementToMarkdownAdapterExtension } from '@blocksuite/lovenotes-block-surface';
+import type { MindMapTreeNode } from '@blocksuite/lovenotes-model';
 
 import { getShapeText, getShapeType } from '../utils';
 

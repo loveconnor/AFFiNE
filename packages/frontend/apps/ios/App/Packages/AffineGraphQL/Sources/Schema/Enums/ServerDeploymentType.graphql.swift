@@ -4,6 +4,6 @@
 import ApolloAPI
 
 public enum ServerDeploymentType: String, EnumType {
-  case affine = "Affine"
+  case lovenotes = "LoveNotes"
   case selfhosted = "Selfhosted"
 }

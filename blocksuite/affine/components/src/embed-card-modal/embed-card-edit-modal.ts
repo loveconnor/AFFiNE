@@ -1,20 +1,20 @@
-import type { AliasInfo, LinkableEmbedModel } from '@blocksuite/affine-model';
+import type { AliasInfo, LinkableEmbedModel } from '@blocksuite/lovenotes-model';
 import {
   EmbedLinkedDocModel,
   EmbedSyncedDocModel,
   isInternalEmbedModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   type LinkEventType,
   type TelemetryEvent,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { fontSMStyle, fontXSStyle } from '@blocksuite/affine-shared/styles';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-shared/services';
+import { fontSMStyle, fontXSStyle } from '@blocksuite/lovenotes-shared/styles';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import {
   listenClickAway,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { nextTick } from '@blocksuite/global/utils';
 import {
@@ -41,11 +41,11 @@ export class EmbedCardEditModal extends SignalWatcher(
       position: absolute;
       top: 0;
       left: 0;
-      z-index: var(--affine-z-index-popover);
-      animation: affine-popover-fade-in 0.2s ease;
+      z-index: var(--lovenotes-z-index-popover);
+      animation: lovenotes-popover-fade-in 0.2s ease;
     }
 
-    @keyframes affine-popover-fade-in {
+    @keyframes lovenotes-popover-fade-in {
       from {
         opacity: 0;
         transform: translateY(-3px);
@@ -65,8 +65,8 @@ export class EmbedCardEditModal extends SignalWatcher(
       gap: 12px;
       width: 421px;
 
-      color: var(--affine-icon-color);
-      box-shadow: var(--affine-overlay-shadow);
+      color: var(--lovenotes-icon-color);
+      box-shadow: var(--lovenotes-overlay-shadow);
       background: ${unsafeCSSVarV2('layer/background/overlayPanel')};
       border-radius: 4px;
       border: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
@@ -89,11 +89,11 @@ export class EmbedCardEditModal extends SignalWatcher(
       user-select: none;
       background: transparent;
       border: 1px solid ${unsafeCSSVarV2('input/border/default')};
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
     }
     ${fontSMStyle('.row .input')}
     .input::placeholder {
-      color: var(--affine-placeholder-color);
+      color: var(--lovenotes-placeholder-color);
     }
     .input:focus {
       border-color: ${unsafeCSSVarV2('input/border/active')};

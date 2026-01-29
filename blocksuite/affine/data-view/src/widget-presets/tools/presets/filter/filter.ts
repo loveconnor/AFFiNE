@@ -1,4 +1,4 @@
-import { popupTargetFromElement } from '@blocksuite/affine-components/context-menu';
+import { popupTargetFromElement } from '@blocksuite/lovenotes-components/context-menu';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { FilterIcon } from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
@@ -17,7 +17,7 @@ import {
 } from '../../../quick-setting-bar/context.js';
 
 const styles = css`
-  .affine-database-filter-button {
+  .lovenotes-database-filter-button {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -28,12 +28,12 @@ const styles = css`
     font-size: 20px;
   }
 
-  .affine-database-filter-button:hover,
-  .affine-database-filter-button.active {
-    background-color: var(--affine-hover-color);
+  .lovenotes-database-filter-button:hover,
+  .lovenotes-database-filter-button.active {
+    background-color: var(--lovenotes-hover-color);
   }
 
-  .affine-database-filter-button {
+  .lovenotes-database-filter-button {
   }
 `;
 
@@ -97,7 +97,7 @@ export class DataViewHeaderToolsFilter extends WidgetBase {
     return html` <div
       @click="${this.clickFilter}"
       style="${style}"
-      class="affine-database-filter-button"
+      class="lovenotes-database-filter-button"
     >
       ${FilterIcon()}
     </div>`;

@@ -1,10 +1,10 @@
-import { SurfaceBlockModel } from '@blocksuite/affine-block-surface';
+import { SurfaceBlockModel } from '@blocksuite/lovenotes-block-surface';
 import {
   CaptionedBlockComponent,
   SelectedStyle,
-} from '@blocksuite/affine-components/caption';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
-import type { EmbedIframeBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-components/caption';
+import { createLitPortal } from '@blocksuite/lovenotes-components/portal';
+import type { EmbedIframeBlockModel } from '@blocksuite/lovenotes-model';
 import {
   type EmbedIframeData,
   EmbedIframeService,
@@ -12,8 +12,8 @@ import {
   LinkPreviewServiceIdentifier,
   NotificationProvider,
   VirtualKeyboardProvider,
-} from '@blocksuite/affine-shared/services';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import { BlockSelection } from '@blocksuite/std';
 import { flip, offset, shift } from '@floating-ui/dom';
@@ -364,7 +364,7 @@ export class EmbedIframeBlockComponent extends CaptionedBlockComponent<EmbedIfra
         style=${ifDefined(style)}
       ></iframe>
       ${sourceHost
-        ? html`<div class="affine-embed-iframe-source">${sourceHost}</div>`
+        ? html`<div class="lovenotes-embed-iframe-source">${sourceHost}</div>`
         : nothing}`;
   };
 
@@ -475,7 +475,7 @@ export class EmbedIframeBlockComponent extends CaptionedBlockComponent<EmbedIfra
 
   override renderBlock() {
     const containerClasses = classMap({
-      'affine-embed-iframe-block-container': true,
+      'lovenotes-embed-iframe-block-container': true,
       ...this.selectedStyle$?.value,
       'in-surface': this.inSurface,
     });
@@ -484,7 +484,7 @@ export class EmbedIframeBlockComponent extends CaptionedBlockComponent<EmbedIfra
     });
 
     const overlayClasses = classMap({
-      'affine-embed-iframe-block-overlay': true,
+      'lovenotes-embed-iframe-block-overlay': true,
       show: this.showOverlay$.value,
     });
 
@@ -523,6 +523,6 @@ export class EmbedIframeBlockComponent extends CaptionedBlockComponent<EmbedIfra
 
   override accessor selectedStyle = SelectedStyle.Border;
 
-  @query('.affine-embed-iframe-block-container')
+  @query('.lovenotes-embed-iframe-block-container')
   accessor _blockContainer: HTMLElement | null = null;
 }

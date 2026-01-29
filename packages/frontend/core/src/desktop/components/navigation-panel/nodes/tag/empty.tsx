@@ -1,13 +1,13 @@
-import { type DropTargetDropEvent, useDropTarget } from '@affine/component';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
+import { type DropTargetDropEvent, useDropTarget } from '@lovenotes/component';
+import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
+import { useI18n } from '@lovenotes/i18n';
 
 import { EmptyNodeChildren } from '../../layouts/empty-node-children';
 
 export const Empty = ({
   onDrop,
 }: {
-  onDrop: (data: DropTargetDropEvent<AffineDNDData>) => void;
+  onDrop: (data: DropTargetDropEvent<LoveNotesDNDData>) => void;
 }) => {
   const { dropTargetRef } = useDropTarget(
     () => ({
@@ -18,7 +18,7 @@ export const Empty = ({
   const t = useI18n();
   return (
     <EmptyNodeChildren ref={dropTargetRef}>
-      {t['com.affine.rootAppSidebar.tags.no-doc']()}
+      {t['com.lovenotes.rootAppSidebar.tags.no-doc']()}
     </EmptyNodeChildren>
   );
 };

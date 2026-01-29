@@ -1,11 +1,11 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { StdIdentifier } from '@blocksuite/std';
 import { InlineSpecExtension } from '@blocksuite/std/inline';
 import { html } from 'lit';
 import { z } from 'zod';
 
 export const LatexInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>('latex', provider => {
+  InlineSpecExtension<LoveNotesTextAttributes>('latex', provider => {
     const std = provider.get(StdIdentifier);
     return {
       name: 'latex',
@@ -14,21 +14,21 @@ export const LatexInlineSpecExtension =
       }),
       match: delta => typeof delta.attributes?.latex === 'string',
       renderer: ({ delta, selected, editor, startOffset, endOffset }) => {
-        return html`<affine-latex-node
+        return html`<lovenotes-latex-node
           .std=${std}
           .delta=${delta}
           .selected=${selected}
           .editor=${editor}
           .startOffset=${startOffset}
           .endOffset=${endOffset}
-        ></affine-latex-node>`;
+        ></lovenotes-latex-node>`;
       },
       embed: true,
     };
   });
 
 export const LatexEditorUnitSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'latex-editor-unit',
     schema: z.object({
       'latex-editor-unit': z.undefined(),

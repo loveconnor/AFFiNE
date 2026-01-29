@@ -1,15 +1,15 @@
-import { usePromptModal } from '@affine/component';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
+import { usePromptModal } from '@lovenotes/component';
+import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
 import {
   CollectionListHeader,
   VirtualizedCollectionList,
-} from '@affine/core/components/page-list';
+} from '@lovenotes/core/components/page-list';
 import {
   ViewIcon,
   ViewTitle,
-} from '@affine/core/modules/workbench/view/view-meta';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/workbench/view/view-meta';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
@@ -33,18 +33,18 @@ export const AllCollection = () => {
 
   const handleCreateCollection = useCallback(() => {
     openPromptModal({
-      title: t['com.affine.editCollection.saveCollection'](),
-      label: t['com.affine.editCollectionName.name'](),
+      title: t['com.lovenotes.editCollection.saveCollection'](),
+      label: t['com.lovenotes.editCollectionName.name'](),
       inputOptions: {
-        placeholder: t['com.affine.editCollectionName.name.placeholder'](),
+        placeholder: t['com.lovenotes.editCollectionName.name.placeholder'](),
       },
       children: (
         <div className={styles.createTips}>
-          {t['com.affine.editCollectionName.createTips']()}
+          {t['com.lovenotes.editCollectionName.createTips']()}
         </div>
       ),
-      confirmText: t['com.affine.editCollection.save'](),
-      cancelText: t['com.affine.editCollection.button.cancel'](),
+      confirmText: t['com.lovenotes.editCollection.save'](),
+      cancelText: t['com.lovenotes.editCollection.button.cancel'](),
       confirmButtonOptions: {
         variant: 'primary',
       },

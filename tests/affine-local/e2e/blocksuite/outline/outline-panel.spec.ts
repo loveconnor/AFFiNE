@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   clickPageModeButton,
@@ -9,26 +9,26 @@ import {
   getViewportCenter,
   locateToolbar,
   setViewportCenter,
-} from '@affine-test/kit/utils/editor';
+} from '@lovenotes-test/kit/utils/editor';
 import {
   pressBackspace,
   pressEnter,
   pressEscape,
   selectAllByKeyboard,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/keyboard';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import {
   closeSettingModal,
   confirmExperimentalPrompt,
   openExperimentalFeaturesPanel,
   openSettingModal,
-} from '@affine-test/kit/utils/setting';
-import { openRightSideBar } from '@affine-test/kit/utils/sidebar';
+} from '@lovenotes-test/kit/utils/setting';
+import { openRightSideBar } from '@lovenotes-test/kit/utils/sidebar';
 import { expect, type Locator, type Page } from '@playwright/test';
 
 import {
@@ -38,7 +38,7 @@ import {
 } from './utils';
 
 async function openTocPanel(page: Page) {
-  const toc = page.locator('affine-outline-panel');
+  const toc = page.locator('lovenotes-outline-panel');
   if (await toc.isVisible()) return toc;
 
   await openRightSideBar(page, 'outline');
@@ -53,7 +53,7 @@ function getTocHeading(panel: Locator, level: number) {
 // locate cards in outline panel
 // ! Please note that when any card mode changed, the locator will be mutated
 function locateCards(toc: Locator, mode?: 'both' | 'page' | 'edgeless') {
-  const cards = toc.locator('affine-outline-note-card');
+  const cards = toc.locator('lovenotes-outline-note-card');
   return mode
     ? cards.locator(`>div[data-visibility="${mode}"]`)
     : cards.locator('>div');
@@ -214,7 +214,7 @@ test.describe('TOC display', () => {
     const card = locateCards(toc, 'edgeless');
     await changeNoteDisplayMode(card, 'doc');
 
-    const notification = toc.getByTestId('affine-outline-notice');
+    const notification = toc.getByTestId('lovenotes-outline-notice');
     await expect(notification).toBeHidden();
 
     const sortingButton = locateSortingButton(toc);
@@ -250,7 +250,7 @@ test.describe('TOC and editor scroll', () => {
     );
 
     const activeHeadingContainer = toc.locator(
-      'affine-outline-panel-body .active'
+      'lovenotes-outline-panel-body .active'
     );
 
     await title.click();
@@ -272,7 +272,7 @@ test.describe('TOC and editor scroll', () => {
     const toc = await openTocPanel(page);
 
     const activeHeadingContainer = toc.locator(
-      'affine-outline-panel-body .active'
+      'lovenotes-outline-panel-body .active'
     );
 
     const headingsInPanel = Array.from({ length: 6 }, (_, i) =>
@@ -439,7 +439,7 @@ test.describe('drag and drop note in outline panel', () => {
 
     await clickPageModeButton(page);
     const paragraphs = page
-      .locator('affine-paragraph')
+      .locator('lovenotes-paragraph')
       .locator('[data-v-text="true"]');
     await expect(paragraphs).toHaveCount(4);
     await expect(paragraphs.nth(0)).toContainText('0');
@@ -470,7 +470,7 @@ test.describe('drag and drop note in outline panel', () => {
     await clickPageModeButton(page);
 
     const paragraphs = page
-      .locator('affine-paragraph')
+      .locator('lovenotes-paragraph')
       .locator('[data-v-text="true"]');
 
     await expect(paragraphs).toHaveCount(4);

@@ -3,8 +3,8 @@ import {
   type Options,
   Overlay,
   type RoughCanvas,
-} from '@blocksuite/affine-block-surface';
-import { type Shape, ShapeFactory } from '@blocksuite/affine-gfx-shape';
+} from '@blocksuite/lovenotes-block-surface';
+import { type Shape, ShapeFactory } from '@blocksuite/lovenotes-gfx-shape';
 import {
   type Connection,
   getShapeRadius,
@@ -14,7 +14,7 @@ import {
   ShapeElementModel,
   type ShapeName,
   type ShapeStyle,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import { Bound, normalizeDegAngle, type XYWH } from '@blocksuite/global/gfx';
 import { assertType } from '@blocksuite/global/utils';
@@ -296,7 +296,7 @@ export function createEdgelessElement(
   } else {
     const { store } = edgeless;
     id = store.addBlock(
-      'affine:note',
+      'lovenotes:note',
       {
         background: current.props.background,
         displayMode: current.props.displayMode,
@@ -316,7 +316,7 @@ export function createEdgelessElement(
     store.updateBlock(note, () => {
       note.props.edgeless.collapse = true;
     });
-    store.addBlock('affine:paragraph', {}, note.id);
+    store.addBlock('lovenotes:paragraph', {}, note.id);
 
     element = note;
   }

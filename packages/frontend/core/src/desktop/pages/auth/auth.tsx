@@ -1,4 +1,4 @@
-import { notify } from '@affine/component';
+import { notify } from '@lovenotes/component';
 import {
   ChangeEmailPage,
   ChangePasswordPage,
@@ -6,12 +6,12 @@ import {
   SetPasswordPage,
   SignInSuccessPage,
   SignUpPage,
-} from '@affine/component/auth-components';
+} from '@lovenotes/component/auth-components';
 import {
   changePasswordMutation,
   sendVerifyChangeEmailMutation,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 import type { LoaderFunction } from 'react-router-dom';
@@ -73,11 +73,11 @@ export const Component = () => {
       // FIXME: There is not notification
       if (res?.sendVerifyChangeEmail) {
         notify.success({
-          title: t['com.affine.auth.sent.verify.email.hint'](),
+          title: t['com.lovenotes.auth.sent.verify.email.hint'](),
         });
       } else {
         notify.error({
-          title: t['com.affine.auth.sent.change.email.fail'](),
+          title: t['com.lovenotes.auth.sent.change.email.fail'](),
         });
       }
 
@@ -96,7 +96,7 @@ export const Component = () => {
     },
     [changePassword, searchParams]
   );
-  const onOpenAffine = useCallback(() => {
+  const onOpenLoveNotes = useCallback(() => {
     jumpToIndex(RouteLogic.REPLACE);
   }, [jumpToIndex]);
 
@@ -107,7 +107,7 @@ export const Component = () => {
   switch (authType) {
     case 'onboarding':
       return (
-        account && <OnboardingPage user={account} onOpenAffine={onOpenAffine} />
+        account && <OnboardingPage user={account} onOpenLoveNotes={onOpenLoveNotes} />
       );
     case 'signUp': {
       return (
@@ -116,20 +116,20 @@ export const Component = () => {
             user={account}
             passwordLimits={passwordLimits}
             onSetPassword={onSetPassword}
-            onOpenAffine={onOpenAffine}
+            onOpenLoveNotes={onOpenLoveNotes}
           />
         )
       );
     }
     case 'signIn': {
-      return <SignInSuccessPage onOpenAffine={onOpenAffine} />;
+      return <SignInSuccessPage onOpenLoveNotes={onOpenLoveNotes} />;
     }
     case 'changePassword': {
       return (
         <ChangePasswordPage
           passwordLimits={passwordLimits}
           onSetPassword={onSetPassword}
-          onOpenAffine={onOpenAffine}
+          onOpenLoveNotes={onOpenLoveNotes}
         />
       );
     }
@@ -138,7 +138,7 @@ export const Component = () => {
         <SetPasswordPage
           passwordLimits={passwordLimits}
           onSetPassword={onSetPassword}
-          onOpenAffine={onOpenAffine}
+          onOpenLoveNotes={onOpenLoveNotes}
         />
       );
     }
@@ -146,15 +146,15 @@ export const Component = () => {
       return (
         <ChangeEmailPage
           onChangeEmail={onSendVerifyChangeEmail}
-          onOpenAffine={onOpenAffine}
+          onOpenLoveNotes={onOpenLoveNotes}
         />
       );
     }
     case 'confirm-change-email': {
-      return <ConfirmChangeEmail onOpenAffine={onOpenAffine} />;
+      return <ConfirmChangeEmail onOpenLoveNotes={onOpenLoveNotes} />;
     }
     case 'verify-email': {
-      return <ConfirmVerifiedEmail onOpenAffine={onOpenAffine} />;
+      return <ConfirmVerifiedEmail onOpenLoveNotes={onOpenLoveNotes} />;
     }
   }
   return null;

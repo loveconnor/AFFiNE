@@ -1,19 +1,19 @@
-import { Button, usePromptModal } from '@affine/component';
+import { Button, usePromptModal } from '@lovenotes/component';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@affine/core/components/explorer/context';
-import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
-import type { ExplorerDisplayPreference } from '@affine/core/components/explorer/types';
-import { Filters } from '@affine/core/components/filter';
+} from '@lovenotes/core/components/explorer/context';
+import { DocsExplorer } from '@lovenotes/core/components/explorer/docs-view/docs-list';
+import type { ExplorerDisplayPreference } from '@lovenotes/core/components/explorer/types';
+import { Filters } from '@lovenotes/core/components/filter';
 import {
   CollectionService,
   PinnedCollectionService,
-} from '@affine/core/modules/collection';
-import { CollectionRulesService } from '@affine/core/modules/collection-rules';
-import type { FilterParams } from '@affine/core/modules/collection-rules/types';
-import { WorkspaceLocalState } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/collection';
+import { CollectionRulesService } from '@lovenotes/core/modules/collection-rules';
+import type { FilterParams } from '@lovenotes/core/modules/collection-rules/types';
+import { WorkspaceLocalState } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -298,14 +298,14 @@ export const AllPage = () => {
       setTempFilters(null);
     } else {
       openPromptModal({
-        title: t['com.affine.editCollection.saveCollection'](),
-        label: t['com.affine.editCollectionName.name'](),
+        title: t['com.lovenotes.editCollection.saveCollection'](),
+        label: t['com.lovenotes.editCollectionName.name'](),
         inputOptions: {
-          placeholder: t['com.affine.editCollectionName.name.placeholder'](),
+          placeholder: t['com.lovenotes.editCollectionName.name.placeholder'](),
         },
-        children: t['com.affine.editCollectionName.createTips'](),
-        confirmText: t['com.affine.editCollection.save'](),
-        cancelText: t['com.affine.editCollection.button.cancel'](),
+        children: t['com.lovenotes.editCollectionName.createTips'](),
+        confirmText: t['com.lovenotes.editCollection.save'](),
+        cancelText: t['com.lovenotes.editCollection.button.cancel'](),
         confirmButtonOptions: {
           variant: 'primary',
         },

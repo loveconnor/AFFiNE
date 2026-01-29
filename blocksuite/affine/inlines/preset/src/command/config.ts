@@ -5,8 +5,8 @@ import {
   LinkIcon,
   StrikethroughIcon,
   UnderlineIcon,
-} from '@blocksuite/affine-components/icons';
-import { toggleLink } from '@blocksuite/affine-inline-link';
+} from '@blocksuite/lovenotes-components/icons';
+import { toggleLink } from '@blocksuite/lovenotes-inline-link';
 import { type EditorHost, TextSelection } from '@blocksuite/std';
 import type { TemplateResult } from 'lit';
 

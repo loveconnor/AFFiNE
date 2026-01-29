@@ -1,10 +1,10 @@
-import type { MenuOptions } from '@blocksuite/affine-components/context-menu';
+import type { MenuOptions } from '@blocksuite/lovenotes-components/context-menu';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { DatabaseBlockModel } from '@blocksuite/affine-model';
-import { SlashMenuConfigExtension } from '@blocksuite/affine-widget-slash-menu';
+} from '@blocksuite/lovenotes-ext-loader';
+import { DatabaseBlockModel } from '@blocksuite/lovenotes-model';
+import { SlashMenuConfigExtension } from '@blocksuite/lovenotes-widget-slash-menu';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 import { z } from 'zod';
@@ -23,7 +23,7 @@ const optionsSchema = z.object({
 export type DatabaseViewExtensionOptions = z.infer<typeof optionsSchema>;
 
 export class DatabaseViewExtension extends ViewExtensionProvider<DatabaseViewExtensionOptions> {
-  override name = 'affine-database-block';
+  override name = 'lovenotes-database-block';
 
   override schema = optionsSchema;
 
@@ -38,9 +38,9 @@ export class DatabaseViewExtension extends ViewExtensionProvider<DatabaseViewExt
   ) {
     super.setup(context);
     context.register([
-      FlavourExtension('affine:database'),
-      BlockViewExtension('affine:database', literal`affine-database`),
-      SlashMenuConfigExtension('affine:database', databaseSlashMenuConfig),
+      FlavourExtension('lovenotes:database'),
+      BlockViewExtension('lovenotes:database', literal`lovenotes-database`),
+      SlashMenuConfigExtension('lovenotes:database', databaseSlashMenuConfig),
     ]);
     if (options) {
       context.register(

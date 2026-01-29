@@ -1,4 +1,4 @@
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
+import { stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { type BlockComponent, TextSelection } from '@blocksuite/std';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -19,10 +19,10 @@ export class BlockZeroWidth extends LitElement {
     stopPropagation(e);
     if (this.block.store.readonly) return;
     const nextBlock = this.block.store.getNext(this.block.model);
-    if (nextBlock?.flavour !== 'affine:paragraph') {
+    if (nextBlock?.flavour !== 'lovenotes:paragraph') {
       const [paragraphId] = this.block.store.addSiblingBlocks(
         this.block.model,
-        [{ flavour: 'affine:paragraph' }]
+        [{ flavour: 'lovenotes:paragraph' }]
       );
       const std = this.block.std;
       std.selection.setGroup('note', [

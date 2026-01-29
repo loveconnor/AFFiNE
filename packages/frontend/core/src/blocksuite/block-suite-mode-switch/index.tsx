@@ -1,10 +1,10 @@
-import { RadioGroup, type RadioItem } from '@affine/component';
-import { registerAffineCommand } from '@affine/core/commands';
-import { EditorService } from '@affine/core/modules/editor';
-import { ViewService, WorkbenchService } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
-import type { DocMode } from '@blocksuite/affine/model';
+import { RadioGroup, type RadioItem } from '@lovenotes/component';
+import { registerLoveNotesCommand } from '@lovenotes/core/commands';
+import { EditorService } from '@lovenotes/core/modules/editor';
+import { ViewService, WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
@@ -75,13 +75,13 @@ export const EditorModeSwitch = () => {
   useEffect(() => {
     if (trash || isSharedMode || currentMode === undefined || !isActiveView)
       return;
-    return registerAffineCommand({
-      id: 'affine:doc-mode-switch',
+    return registerLoveNotesCommand({
+      id: 'lovenotes:doc-mode-switch',
       category: 'editor:page',
       label:
         currentMode === 'page'
-          ? t['com.affine.cmdk.switch-to-edgeless']()
-          : t['com.affine.cmdk.switch-to-page'](),
+          ? t['com.lovenotes.cmdk.switch-to-edgeless']()
+          : t['com.lovenotes.cmdk.switch-to-page'](),
       icon: currentMode === 'page' ? <EdgelessIcon /> : <PageIcon />,
       keyBinding: {
         binding: 'Alt+KeyS',

@@ -1,7 +1,7 @@
 import {
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import type { BlockStdScope } from '@blocksuite/std';
 
 /**

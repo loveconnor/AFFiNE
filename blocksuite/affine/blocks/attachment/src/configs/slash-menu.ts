@@ -1,5 +1,5 @@
-import { openSingleFileWith } from '@blocksuite/affine-shared/utils';
-import { type SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
+import { openSingleFileWith } from '@blocksuite/lovenotes-shared/utils';
+import { type SlashMenuConfig } from '@blocksuite/lovenotes-widget-slash-menu';
 import { ExportToPdfIcon, FileIcon } from '@blocksuite/icons/lit';
 
 import { addSiblingAttachmentBlocks } from '../utils';
@@ -18,7 +18,7 @@ export const attachmentSlashMenuConfig: SlashMenuConfig = {
       searchAlias: ['file'],
       group: '4_Content & Media@3',
       when: ({ model }) =>
-        model.store.schema.flavourSchemaMap.has('affine:attachment'),
+        model.store.schema.flavourSchemaMap.has('lovenotes:attachment'),
       action: ({ std, model }) => {
         (async () => {
           const file = await openSingleFileWith();
@@ -41,7 +41,7 @@ export const attachmentSlashMenuConfig: SlashMenuConfig = {
       },
       group: '4_Content & Media@4',
       when: ({ model }) =>
-        model.store.schema.flavourSchemaMap.has('affine:attachment'),
+        model.store.schema.flavourSchemaMap.has('lovenotes:attachment'),
       action: ({ std, model }) => {
         (async () => {
           const file = await openSingleFileWith();

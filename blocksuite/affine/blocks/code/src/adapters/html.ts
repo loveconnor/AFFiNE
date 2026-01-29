@@ -1,17 +1,17 @@
-import { CodeBlockSchema } from '@blocksuite/affine-model';
+import { CodeBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   CODE_BLOCK_WRAP_KEY,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert } from '@blocksuite/store';
 import { nanoid } from '@blocksuite/store';
 
 export const codeBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
   flavour: CodeBlockSchema.model.flavour,
   toMatch: o => HastUtils.isElement(o.node) && o.node.tagName === 'pre',
-  fromMatch: o => o.node.flavour === 'affine:code',
+  fromMatch: o => o.node.flavour === 'lovenotes:code',
   toBlockSnapshot: {
     enter: (o, context) => {
       if (!HastUtils.isElement(o.node)) {
@@ -44,7 +44,7 @@ export const codeBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
           {
             type: 'block',
             id: nanoid(),
-            flavour: 'affine:code',
+            flavour: 'lovenotes:code',
             props: {
               language: codeLang ?? 'Plain Text',
               wrap,

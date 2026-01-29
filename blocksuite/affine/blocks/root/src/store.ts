@@ -1,13 +1,13 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { RootBlockSchemaExtension } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-ext-loader';
+import { RootBlockSchemaExtension } from '@blocksuite/lovenotes-model';
 
 import { RootBlockAdapterExtensions } from './adapters/extension';
 
 export class RootStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-root-block';
+  override name = 'lovenotes-root-block';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

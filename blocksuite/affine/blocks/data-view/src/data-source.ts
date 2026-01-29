@@ -1,12 +1,12 @@
 import {
   DatabaseBlockDataSource,
   databasePropertyConverts,
-} from '@blocksuite/affine-block-database';
-import type { ColumnDataType } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-database';
+import type { ColumnDataType } from '@blocksuite/lovenotes-model';
 import {
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { DataSourceBase, type PropertyMetaConfig } from '@blocksuite/data-view';
 import { propertyPresets } from '@blocksuite/data-view/property-presets';
 import { BlockSuiteError } from '@blocksuite/global/exceptions';

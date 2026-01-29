@@ -1,7 +1,7 @@
-import { LoadingIcon, OpenIcon } from '@blocksuite/affine-components/icons';
-import type { EmbedLoomModel, EmbedLoomStyles } from '@blocksuite/affine-model';
-import { ImageProxyService } from '@blocksuite/affine-shared/adapters';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+import { LoadingIcon, OpenIcon } from '@blocksuite/lovenotes-components/icons';
+import type { EmbedLoomModel, EmbedLoomStyles } from '@blocksuite/lovenotes-model';
+import { ImageProxyService } from '@blocksuite/lovenotes-shared/adapters';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import { BlockSelection } from '@blocksuite/std';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -107,7 +107,7 @@ export class EmbedLoomBlockComponent extends EmbedBlockComponent<
       () => html`
         <div
           class=${classMap({
-            'affine-embed-loom-block': true,
+            'lovenotes-embed-loom-block': true,
             loading,
             selected: this.selected$.value,
           })}
@@ -117,10 +117,10 @@ export class EmbedLoomBlockComponent extends EmbedBlockComponent<
           @click=${this._handleClick}
           @dblclick=${this._handleDoubleClick}
         >
-          <div class="affine-embed-loom-video">
+          <div class="lovenotes-embed-loom-video">
             ${videoId
               ? html`
-                  <div class="affine-embed-loom-video-iframe-container">
+                  <div class="lovenotes-embed-loom-video-iframe-container">
                     <iframe
                       src=${`https://www.loom.com/embed/${videoId}?hide_title=true`}
                       frameborder="0"
@@ -133,7 +133,7 @@ export class EmbedLoomBlockComponent extends EmbedBlockComponent<
                     <!-- overlay to prevent the iframe from capturing pointer events -->
                     <div
                       class=${classMap({
-                        'affine-embed-loom-video-iframe-overlay': true,
+                        'lovenotes-embed-loom-video-iframe-overlay': true,
                         hide: !this.showOverlay$.value,
                       })}
                     ></div>
@@ -141,25 +141,25 @@ export class EmbedLoomBlockComponent extends EmbedBlockComponent<
                 `
               : bannerImage}
           </div>
-          <div class="affine-embed-loom-content">
-            <div class="affine-embed-loom-content-header">
-              <div class="affine-embed-loom-content-title-icon">
+          <div class="lovenotes-embed-loom-content">
+            <div class="lovenotes-embed-loom-content-header">
+              <div class="lovenotes-embed-loom-content-title-icon">
                 ${titleIcon}
               </div>
 
-              <div class="affine-embed-loom-content-title-text">
+              <div class="lovenotes-embed-loom-content-title-text">
                 ${titleText}
               </div>
             </div>
 
-            <div class="affine-embed-loom-content-description">
+            <div class="lovenotes-embed-loom-content-description">
               ${descriptionText}
             </div>
 
-            <div class="affine-embed-loom-content-url" @click=${this.open}>
+            <div class="lovenotes-embed-loom-content-url" @click=${this.open}>
               <span>loom.com</span>
 
-              <div class="affine-embed-loom-content-url-icon">${OpenIcon}</div>
+              <div class="lovenotes-embed-loom-content-url-icon">${OpenIcon}</div>
             </div>
           </div>
         </div>

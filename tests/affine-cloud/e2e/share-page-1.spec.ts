@@ -1,17 +1,17 @@
-import { skipOnboarding, test } from '@affine-test/kit/playwright';
+import { skipOnboarding, test } from '@lovenotes-test/kit/playwright';
 import {
   createRandomUser,
   enableCloudWorkspaceFromShareButton,
   enableShare,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
-import { clickEdgelessModeButton } from '@affine-test/kit/utils/editor';
-import { importImage } from '@affine-test/kit/utils/image';
+} from '@lovenotes-test/kit/utils/cloud';
+import { clickEdgelessModeButton } from '@lovenotes-test/kit/utils/editor';
+import { importImage } from '@lovenotes-test/kit/utils/image';
 import {
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 let user: {
@@ -60,7 +60,7 @@ test('can enable share page', async ({ page, browser }) => {
     await waitForEditorLoad(page2);
     const title = getBlockSuiteEditorTitle(page2);
     await expect(title).toContainText('TEST TITLE');
-    await expect(page2.locator('affine-paragraph').first()).toContainText(
+    await expect(page2.locator('lovenotes-paragraph').first()).toContainText(
       'TEST CONTENT'
     );
   }
@@ -104,14 +104,14 @@ test('share page should have toc', async ({ page, browser }) => {
     await waitForEditorLoad(page2);
 
     const tocIndicators = page2.locator(
-      'affine-outline-viewer .outline-viewer-indicator'
+      'lovenotes-outline-viewer .outline-viewer-indicator'
     );
     await expect(tocIndicators).toHaveCount(3);
     await expect(tocIndicators.nth(0)).toBeVisible();
     await expect(tocIndicators.nth(1)).toBeVisible();
     await expect(tocIndicators.nth(2)).toBeVisible();
 
-    const viewer = page2.locator('affine-outline-viewer');
+    const viewer = page2.locator('lovenotes-outline-viewer');
     await tocIndicators.first().hover({ force: true });
     await expect(viewer).toBeVisible();
 
@@ -155,7 +155,7 @@ test('append paragraph should be disabled in shared mode', async ({
     await page2.goto(url);
     await waitForEditorLoad(page2);
 
-    const paragraph = page2.locator('affine-paragraph');
+    const paragraph = page2.locator('lovenotes-paragraph');
     const numParagraphs = await paragraph.count();
 
     let error = null;
@@ -187,7 +187,7 @@ test('share page with default edgeless', async ({ page, browser }) => {
   await page.keyboard.press('Enter', { delay: 50 });
   await page.keyboard.type('TEST CONTENT', { delay: 50 });
   await clickEdgelessModeButton(page);
-  await expect(page.locator('affine-edgeless-root')).toBeVisible({
+  await expect(page.locator('lovenotes-edgeless-root')).toBeVisible({
     timeout: 1000,
   });
 
@@ -206,10 +206,10 @@ test('share page with default edgeless', async ({ page, browser }) => {
     const page2 = await context.newPage();
     await page2.goto(url);
     await waitForEditorLoad(page2);
-    await expect(page.locator('affine-edgeless-root')).toBeVisible({
+    await expect(page.locator('lovenotes-edgeless-root')).toBeVisible({
       timeout: 1000,
     });
-    await expect(page2.locator('affine-paragraph').first()).toContainText(
+    await expect(page2.locator('lovenotes-paragraph').first()).toContainText(
       'TEST CONTENT'
     );
   }
@@ -246,7 +246,7 @@ test('image preview should be shown', async ({ page, browser }) => {
     await page2.goto(url);
     await waitForEditorLoad(page2);
 
-    await page.locator('affine-page-image').first().dblclick();
+    await page.locator('lovenotes-page-image').first().dblclick();
     const locator = page.getByTestId('image-preview-modal');
     await expect(locator).toBeVisible();
     await page.getByTestId('image-preview-close-button').first().click();

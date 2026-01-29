@@ -1,16 +1,16 @@
-import type { CanvasRenderer } from '@blocksuite/affine-block-surface';
-import { ViewExtensionManagerIdentifier } from '@blocksuite/affine-ext-loader';
-import type { NoteBlockModel } from '@blocksuite/affine-model';
+import type { CanvasRenderer } from '@blocksuite/lovenotes-block-surface';
+import { ViewExtensionManagerIdentifier } from '@blocksuite/lovenotes-ext-loader';
+import type { NoteBlockModel } from '@blocksuite/lovenotes-model';
 import {
   DefaultTheme,
   NoteDisplayMode,
   NoteShadow,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EDGELESS_BLOCK_CHILD_BORDER_WIDTH,
   EDGELESS_BLOCK_CHILD_PADDING,
-} from '@blocksuite/affine-shared/consts';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/consts';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import { deserializeXYWH } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';
 import {
@@ -89,7 +89,7 @@ export class SurfaceRefNotePortal extends WithDisposable(ShadowlessElement) {
           : undefined,
       transform: `translate(${modelX}px, ${modelY}px)`,
       padding: `${EDGELESS_BLOCK_CHILD_PADDING}px`,
-      border: `${EDGELESS_BLOCK_CHILD_BORDER_WIDTH}px none var(--affine-black-10)`,
+      border: `${EDGELESS_BLOCK_CHILD_BORDER_WIDTH}px none var(--lovenotes-black-10)`,
       backgroundColor,
       boxShadow: `var(${NoteShadow.Sticker})`,
       position: 'absolute',

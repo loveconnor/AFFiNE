@@ -9,11 +9,11 @@ import { Flags } from './flags';
 import type { ToolbarModule } from './module';
 
 export const ToolbarModuleIdentifier = createIdentifier<ToolbarModule>(
-  'AffineToolbarModuleIdentifier'
+  'LoveNotesToolbarModuleIdentifier'
 );
 
 export const ToolbarRegistryIdentifier =
-  createIdentifier<ToolbarRegistryExtension>('AffineToolbarRegistryIdentifier');
+  createIdentifier<ToolbarRegistryExtension>('LoveNotesToolbarRegistryIdentifier');
 
 export function ToolbarModuleExtension(module: ToolbarModule): ExtensionType {
   return {
@@ -24,7 +24,7 @@ export function ToolbarModuleExtension(module: ToolbarModule): ExtensionType {
 }
 
 export class ToolbarRegistryExtension extends Extension {
-  flavour$ = signal<string>('affine:note');
+  flavour$ = signal<string>('lovenotes:note');
 
   elementsMap$ = signal<Map<string, GfxModel[]>>(new Map());
 

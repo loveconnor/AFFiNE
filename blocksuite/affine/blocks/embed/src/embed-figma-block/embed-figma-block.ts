@@ -1,8 +1,8 @@
-import { OpenIcon } from '@blocksuite/affine-components/icons';
+import { OpenIcon } from '@blocksuite/lovenotes-components/icons';
 import type {
   EmbedFigmaModel,
   EmbedFigmaStyles,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { BlockSelection } from '@blocksuite/std';
 import { html, nothing } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
@@ -72,14 +72,14 @@ export class EmbedFigmaBlockComponent extends EmbedBlockComponent<EmbedFigmaMode
       () => html`
         <div
           class=${classMap({
-            'affine-embed-figma-block': true,
+            'lovenotes-embed-figma-block': true,
             selected: this.selected$.value,
           })}
           @click=${this._handleClick}
           @dblclick=${this._handleDoubleClick}
         >
-          <div class="affine-embed-figma">
-            <div class="affine-embed-figma-iframe-container">
+          <div class="lovenotes-embed-figma">
+            <div class="lovenotes-embed-figma-iframe-container">
               <iframe
                 src=${`https://www.figma.com/embed?embed_host=blocksuite&url=${url}`}
                 sandbox="allow-same-origin allow-scripts allow-presentation"
@@ -91,33 +91,33 @@ export class EmbedFigmaBlockComponent extends EmbedBlockComponent<EmbedFigmaMode
               <!-- overlay to prevent the iframe from capturing pointer events -->
               <div
                 class=${classMap({
-                  'affine-embed-figma-iframe-overlay': true,
+                  'lovenotes-embed-figma-iframe-overlay': true,
                   hide: !this.showOverlay$.value,
                 })}
               ></div>
             </div>
           </div>
-          <div class="affine-embed-figma-content">
-            <div class="affine-embed-figma-content-header">
-              <div class="affine-embed-figma-content-title-icon">
+          <div class="lovenotes-embed-figma-content">
+            <div class="lovenotes-embed-figma-content-header">
+              <div class="lovenotes-embed-figma-content-title-icon">
                 ${FigmaIcon}
               </div>
 
-              <div class="affine-embed-figma-content-title-text">
+              <div class="lovenotes-embed-figma-content-title-text">
                 ${titleText}
               </div>
             </div>
 
             ${description
-              ? html`<div class="affine-embed-figma-content-description">
+              ? html`<div class="lovenotes-embed-figma-content-description">
                   ${description}
                 </div>`
               : nothing}
 
-            <div class="affine-embed-figma-content-url" @click=${this.open}>
+            <div class="lovenotes-embed-figma-content-url" @click=${this.open}>
               <span>www.figma.com</span>
 
-              <div class="affine-embed-figma-content-url-icon">${OpenIcon}</div>
+              <div class="lovenotes-embed-figma-content-url-icon">${OpenIcon}</div>
             </div>
           </div>
         </div>

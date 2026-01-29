@@ -1,4 +1,4 @@
-import { Modal, toast } from '@affine/component';
+import { Modal, toast } from '@lovenotes/component';
 import {
   collectionHeaderColsDef,
   CollectionListItemRenderer,
@@ -6,17 +6,17 @@ import {
   type ListItem,
   ListTableHeader,
   VirtualizedList,
-} from '@affine/core/components/page-list';
-import { SelectorLayout } from '@affine/core/components/page-list/selector/selector-layout';
+} from '@lovenotes/core/components/page-list';
+import { SelectorLayout } from '@lovenotes/core/components/page-list/selector/selector-layout';
 import {
   type CollectionMeta,
   CollectionService,
-} from '@affine/core/modules/collection';
-import type { DialogComponentProps } from '@affine/core/modules/dialogs';
-import type { WORKSPACE_DIALOG_SCHEMA } from '@affine/core/modules/dialogs/constant';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/collection';
+import type { DialogComponentProps } from '@lovenotes/core/modules/dialogs';
+import type { WORKSPACE_DIALOG_SCHEMA } from '@lovenotes/core/modules/dialogs/constant';
+import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useMemo, useState } from 'react';
@@ -32,8 +32,8 @@ const FavoriteOperation = ({ collection }: { collection: ListItem }) => {
     favAdapter.toggle(collection.id, 'collection');
     toast(
       isFavorite
-        ? t['com.affine.toastMessage.removedFavorites']()
-        : t['com.affine.toastMessage.addedFavorites']()
+        ? t['com.lovenotes.toastMessage.removedFavorites']()
+        : t['com.lovenotes.toastMessage.addedFavorites']()
     );
   }, [collection.id, favAdapter, isFavorite, t]);
 
@@ -95,7 +95,7 @@ export const CollectionSelectorDialog = ({
     >
       <SelectorLayout
         searchPlaceholder={t[
-          'com.affine.selector-collection.search.placeholder'
+          'com.lovenotes.selector-collection.search.placeholder'
         ]()}
         selectedCount={selection.length}
         onSearch={setKeyword}

@@ -2,16 +2,16 @@ import type {
   BlockLayout,
   BlockLayoutPainter,
   WorkerToHostMessage,
-} from '@blocksuite/affine-gfx-turbo-renderer';
-import { BlockLayoutPainterExtension } from '@blocksuite/affine-gfx-turbo-renderer/painter';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer';
+import { BlockLayoutPainterExtension } from '@blocksuite/lovenotes-gfx-turbo-renderer/painter';
 
 export interface NoteLayout extends BlockLayout {
-  type: 'affine:note';
+  type: 'lovenotes:note';
   background?: string;
 }
 
 function isNoteLayout(layout: BlockLayout): layout is NoteLayout {
-  return layout.type === 'affine:note';
+  return layout.type === 'lovenotes:note';
 }
 
 class NoteLayoutPainter implements BlockLayoutPainter {
@@ -25,7 +25,7 @@ class NoteLayoutPainter implements BlockLayoutPainter {
       const message: WorkerToHostMessage = {
         type: 'paintError',
         error: 'Invalid layout format',
-        blockType: 'affine:note',
+        blockType: 'lovenotes:note',
       };
       self.postMessage(message);
       return;
@@ -44,6 +44,6 @@ class NoteLayoutPainter implements BlockLayoutPainter {
 }
 
 export const NoteLayoutPainterExtension = BlockLayoutPainterExtension(
-  'affine:note',
+  'lovenotes:note',
   NoteLayoutPainter
 );

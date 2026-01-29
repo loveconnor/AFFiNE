@@ -1,15 +1,15 @@
 import {
   TranscriptionBlockFlavour,
   type TranscriptionBlockModel,
-} from '@affine/core/blocksuite/ai/blocks/transcription-block/model';
-import { insertFromMarkdown } from '@affine/core/blocksuite/utils';
-import { encodeAudioBlobToOpusSlices } from '@affine/core/utils/opus-encoding';
-import { DebugLogger } from '@affine/debug';
-import { AiJobStatus } from '@affine/graphql';
-import track from '@affine/track';
-import type { AttachmentBlockModel } from '@blocksuite/affine/model';
-import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
-import { type DeltaInsert, Text } from '@blocksuite/affine/store';
+} from '@lovenotes/core/blocksuite/ai/blocks/transcription-block/model';
+import { insertFromMarkdown } from '@lovenotes/core/blocksuite/utils';
+import { encodeAudioBlobToOpusSlices } from '@lovenotes/core/utils/opus-encoding';
+import { DebugLogger } from '@lovenotes/debug';
+import { AiJobStatus } from '@lovenotes/graphql';
+import track from '@lovenotes/track';
+import type { AttachmentBlockModel } from '@blocksuite/lovenotes/model';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes/shared/types';
+import { type DeltaInsert, Text } from '@blocksuite/lovenotes/store';
 import { computed } from '@preact/signals-core';
 import { Entity, LiveData } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
@@ -114,7 +114,7 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
     if (!transcriptionBlockProps) {
       // transcription block is not created yet, we need to create it
       this.props.store.addBlock(
-        'affine:transcription',
+        'lovenotes:transcription',
         {
           transcription: {},
         },
@@ -180,14 +180,14 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
       collapsed: boolean = false
     ) => {
       const calloutId = this.props.store.addBlock(
-        'affine:callout',
+        'lovenotes:callout',
         {
           emoji,
         },
         this.transcriptionBlock$.value?.id
       );
       this.props.store.addBlock(
-        'affine:paragraph',
+        'lovenotes:paragraph',
         {
           type: 'h6',
           collapsed,
@@ -211,7 +211,7 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
           color = colorOptions[speakerToColors.size % colorOptions.length];
           speakerToColors.set(segment.speaker, color);
         }
-        const deltaInserts: DeltaInsert<AffineTextAttributes>[] = [
+        const deltaInserts: DeltaInsert<LoveNotesTextAttributes>[] = [
           {
             insert: sanitizeText(segment.start + ' ' + segment.speaker),
             attributes: {
@@ -224,7 +224,7 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
           },
         ];
         this.props.store.addBlock(
-          'affine:paragraph',
+          'lovenotes:paragraph',
           {
             text: new Text(deltaInserts),
           },

@@ -1,5 +1,5 @@
-import { type NoteBlockModel, NoteDisplayMode } from '@blocksuite/affine-model';
-import { createButtonPopper } from '@blocksuite/affine-shared/utils';
+import { type NoteBlockModel, NoteDisplayMode } from '@blocksuite/lovenotes-model';
+import { createButtonPopper } from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { ArrowDownSmallIcon, InvisibleIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -16,7 +16,7 @@ import type { SelectEvent } from '../utils/custom-events';
 import type { NoteCardEntity, NoteDropPayload } from '../utils/drag';
 import * as styles from './outline-card.css';
 
-export const AFFINE_OUTLINE_NOTE_CARD = 'affine-outline-note-card';
+export const AFFINE_OUTLINE_NOTE_CARD = 'lovenotes-outline-note-card';
 
 export class OutlineNoteCard extends SignalWatcher(
   WithDisposable(ShadowlessElement)
@@ -232,7 +232,7 @@ export class OutlineNoteCard extends SignalWatcher(
         </div>`}
           <div class=${styles.cardContent}>
             ${children.map(block => {
-              return html`<affine-outline-block-preview
+              return html`<lovenotes-outline-block-preview
                 class=${classMap({ active: this.activeHeadingId === block.id })}
                 .block=${block}
                 .disabledIcon=${invisible}
@@ -240,7 +240,7 @@ export class OutlineNoteCard extends SignalWatcher(
                   if (invisible) return;
                   this._dispatchClickBlockEvent(block);
                 }}
-              ></affine-outline-block-preview>`;
+              ></lovenotes-outline-block-preview>`;
             })}
             </div>
           </div>

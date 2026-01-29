@@ -1,10 +1,10 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@lovenotes/debug';
 import {
   type BlobStorage,
   type DocStorage,
   type ListedBlobRecord,
   universalId,
-} from '@affine/nbstore';
+} from '@lovenotes/nbstore';
 import {
   IndexedDBBlobStorage,
   IndexedDBBlobSyncStorage,
@@ -12,11 +12,11 @@ import {
   IndexedDBDocSyncStorage,
   IndexedDBIndexerStorage,
   IndexedDBIndexerSyncStorage,
-} from '@affine/nbstore/idb';
+} from '@lovenotes/nbstore/idb';
 import {
   IndexedDBV1BlobStorage,
   IndexedDBV1DocStorage,
-} from '@affine/nbstore/idb/v1';
+} from '@lovenotes/nbstore/idb/v1';
 import {
   SqliteBlobStorage,
   SqliteBlobSyncStorage,
@@ -24,12 +24,12 @@ import {
   SqliteDocSyncStorage,
   SqliteIndexerStorage,
   SqliteIndexerSyncStorage,
-} from '@affine/nbstore/sqlite';
+} from '@lovenotes/nbstore/sqlite';
 import {
   SqliteV1BlobStorage,
   SqliteV1DocStorage,
-} from '@affine/nbstore/sqlite/v1';
-import type { WorkerInitOptions } from '@affine/nbstore/worker/client';
+} from '@lovenotes/nbstore/sqlite/v1';
+import type { WorkerInitOptions } from '@lovenotes/nbstore/worker/client';
 import type { FrameworkProvider } from '@toeverything/infra';
 import { LiveData, Service } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
@@ -47,9 +47,9 @@ import type {
 import { WorkspaceImpl } from '../../workspace/impls/workspace';
 import { getWorkspaceProfileWorker } from './out-worker';
 
-export const LOCAL_WORKSPACE_LOCAL_STORAGE_KEY = 'affine-local-workspace';
+export const LOCAL_WORKSPACE_LOCAL_STORAGE_KEY = 'lovenotes-local-workspace';
 const LOCAL_WORKSPACE_CHANGED_BROADCAST_CHANNEL_KEY =
-  'affine-local-workspace-changed';
+  'lovenotes-local-workspace-changed';
 
 const logger = new DebugLogger('local-workspace');
 

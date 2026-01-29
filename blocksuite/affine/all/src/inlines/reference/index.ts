@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-inline-reference';
+export * from '@blocksuite/lovenotes-inline-reference';

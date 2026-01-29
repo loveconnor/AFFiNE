@@ -2,7 +2,7 @@ import {
   domToOffsets,
   getAreaByOffsets,
   getTargetIndexByDraggingOffset,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import type { UIEventStateContext } from '@blocksuite/std';
 import { computed } from '@preact/signals-core';
@@ -324,7 +324,7 @@ export class SelectionController implements ReactiveController {
             ${row
               .map(
                 cell => `
-              <td style="border: 1px solid var(--affine-border-color); padding: 8px 12px; min-width: ${DefaultColumnWidth}px; min-height: 22px;">${cell}</td>
+              <td style="border: 1px solid var(--lovenotes-border-color); padding: 8px 12px; min-width: ${DefaultColumnWidth}px; min-height: 22px;">${cell}</td>
             `
               )
               .join('')}
@@ -461,14 +461,14 @@ export class SelectionController implements ReactiveController {
     const startX = event.clientX;
     const startY = event.clientY;
     let selected = false;
-    const initCell = target.closest('affine-table-cell');
+    const initCell = target.closest('lovenotes-table-cell');
     if (!initCell) {
       selected = true;
     }
     const onMove = (event: MouseEvent) => {
       const target = event.target;
       if (target instanceof HTMLElement) {
-        const cell = target.closest('affine-table-cell');
+        const cell = target.closest('lovenotes-table-cell');
         if (!selected && initCell === cell) {
           return;
         }

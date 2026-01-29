@@ -26,11 +26,11 @@ public class AddWorkspaceEmbeddingFilesMutation: GraphQLMutation {
     "blob": blob
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("addWorkspaceEmbeddingFiles", AddWorkspaceEmbeddingFiles.self, arguments: [
         "workspaceId": .variable("workspaceId"),
@@ -44,27 +44,27 @@ public class AddWorkspaceEmbeddingFilesMutation: GraphQLMutation {
     /// AddWorkspaceEmbeddingFiles
     ///
     /// Parent Type: `CopilotWorkspaceFile`
-    public struct AddWorkspaceEmbeddingFiles: AffineGraphQL.SelectionSet {
+    public struct AddWorkspaceEmbeddingFiles: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotWorkspaceFile }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotWorkspaceFile }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("fileId", String.self),
         .field("fileName", String.self),
         .field("blobId", String.self),
         .field("mimeType", String.self),
-        .field("size", AffineGraphQL.SafeInt.self),
-        .field("createdAt", AffineGraphQL.DateTime.self),
+        .field("size", LoveNotesGraphQL.SafeInt.self),
+        .field("createdAt", LoveNotesGraphQL.DateTime.self),
       ] }
 
       public var fileId: String { __data["fileId"] }
       public var fileName: String { __data["fileName"] }
       public var blobId: String { __data["blobId"] }
       public var mimeType: String { __data["mimeType"] }
-      public var size: AffineGraphQL.SafeInt { __data["size"] }
-      public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
+      public var size: LoveNotesGraphQL.SafeInt { __data["size"] }
+      public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
     }
   }
 }

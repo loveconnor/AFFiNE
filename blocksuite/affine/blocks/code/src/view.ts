@@ -1,8 +1,8 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { SlashMenuConfigExtension } from '@blocksuite/affine-widget-slash-menu';
+} from '@blocksuite/lovenotes-ext-loader';
+import { SlashMenuConfigExtension } from '@blocksuite/lovenotes-widget-slash-menu';
 import {
   BlockViewExtension,
   FlavourExtension,
@@ -24,13 +24,13 @@ import { effects } from './effects.js';
 import { CodeBlockMarkdownExtension } from './markdown.js';
 
 const codeToolbarWidget = WidgetViewExtension(
-  'affine:code',
+  'lovenotes:code',
   AFFINE_CODE_TOOLBAR_WIDGET,
   literal`${unsafeStatic(AFFINE_CODE_TOOLBAR_WIDGET)}`
 );
 
 export class CodeBlockViewExtension extends ViewExtensionProvider {
-  override name = 'affine-code-block';
+  override name = 'lovenotes-code-block';
 
   override effect() {
     super.effect();
@@ -40,10 +40,10 @@ export class CodeBlockViewExtension extends ViewExtensionProvider {
   override setup(context: ViewExtensionContext) {
     super.setup(context);
     context.register([
-      FlavourExtension('affine:code'),
+      FlavourExtension('lovenotes:code'),
       CodeBlockHighlighter,
-      BlockViewExtension('affine:code', literal`affine-code`),
-      SlashMenuConfigExtension('affine:code', codeSlashMenuConfig),
+      BlockViewExtension('lovenotes:code', literal`lovenotes-code`),
+      SlashMenuConfigExtension('lovenotes:code', codeSlashMenuConfig),
       CodeKeymapExtension,
       CodeBlockMarkdownExtension,
       ...getCodeClipboardExtensions(),

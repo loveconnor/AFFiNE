@@ -1,5 +1,5 @@
-import type { ColumnDataType } from '@blocksuite/affine-model';
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { ColumnDataType } from '@blocksuite/lovenotes-model';
+import type { InsertToPosition } from '@blocksuite/lovenotes-shared/utils';
 import {
   Container,
   createScope,

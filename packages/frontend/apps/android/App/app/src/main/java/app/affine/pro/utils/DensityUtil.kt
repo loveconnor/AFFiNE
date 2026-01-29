@@ -1,4 +1,4 @@
-package app.affine.pro.utils
+package app.lovenotes.pro.utils
 
 import android.content.Context
 import android.util.TypedValue

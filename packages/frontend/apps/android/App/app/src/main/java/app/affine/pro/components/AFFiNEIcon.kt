@@ -1,4 +1,4 @@
-package app.affine.pro.components
+package app.lovenotes.pro.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -12,13 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import app.affine.pro.theme.AFFiNETheme
+import app.lovenotes.pro.theme.LoveNotesTheme
 
 @Composable
-fun AFFiNEIcon(
+fun LoveNotesIcon(
     @DrawableRes resId: Int,
     modifier: Modifier = Modifier,
-    tint: Color = AFFiNETheme.colors.iconPrimary,
+    tint: Color = LoveNotesTheme.colors.iconPrimary,
     contentDescription: String? = null,
 ) {
     Icon(
@@ -30,18 +30,18 @@ fun AFFiNEIcon(
 }
 
 @Composable
-fun AFFiNEIconButton(
+fun LoveNotesIconButton(
     @DrawableRes resId: Int,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     colors: IconButtonColors = IconButtonDefaults.iconButtonColors().copy(
-        contentColor = AFFiNETheme.colors.iconPrimary,
-        disabledContentColor = AFFiNETheme.colors.iconDisable,
+        contentColor = LoveNotesTheme.colors.iconPrimary,
+        disabledContentColor = LoveNotesTheme.colors.iconDisable,
     ),
     interactionSource: MutableInteractionSource? = null,
 ) {
     IconButton(onClick, modifier.size(24.dp), enabled, colors, interactionSource) {
-        AFFiNEIcon(resId)
+        LoveNotesIcon(resId)
     }
 }

@@ -1,5 +1,5 @@
-import { EmbedIframeBlockSchema } from '@blocksuite/affine-model';
-import { BlockPlainTextAdapterExtension } from '@blocksuite/affine-shared/adapters';
+import { EmbedIframeBlockSchema } from '@blocksuite/lovenotes-model';
+import { BlockPlainTextAdapterExtension } from '@blocksuite/lovenotes-shared/adapters';
 
 import { createEmbedBlockPlainTextAdapterMatcher } from '../../common/adapters/plain-text';
 

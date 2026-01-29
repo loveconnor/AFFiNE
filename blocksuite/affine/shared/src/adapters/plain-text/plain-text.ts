@@ -1,4 +1,4 @@
-import { DefaultTheme, NoteDisplayMode } from '@blocksuite/affine-model';
+import { DefaultTheme, NoteDisplayMode } from '@blocksuite/lovenotes-model';
 import type { ServiceProvider } from '@blocksuite/global/di';
 import {
   type AssetsManager,
@@ -165,7 +165,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
     return {
       type: 'block',
       id: nanoid(),
-      flavour: 'affine:note',
+      flavour: 'lovenotes:note',
       props: {
         xywh: '[0,0,800,95]',
         background: DefaultTheme.noteBackgrounColor,
@@ -177,7 +177,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
         return {
           type: 'block',
           id: nanoid(),
-          flavour: 'affine:paragraph',
+          flavour: 'lovenotes:paragraph',
           props: {
             type: 'text',
             text: {
@@ -208,7 +208,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
       blocks: {
         type: 'block',
         id: nanoid(),
-        flavour: 'affine:page',
+        flavour: 'lovenotes:page',
         props: {
           title: {
             '$blocksuite:internal:text$': true,
@@ -223,7 +223,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
           {
             type: 'block',
             id: nanoid(),
-            flavour: 'affine:surface',
+            flavour: 'lovenotes:surface',
             props: {
               elements: {},
             },
@@ -232,7 +232,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
           {
             type: 'block',
             id: nanoid(),
-            flavour: 'affine:note',
+            flavour: 'lovenotes:note',
             props: {
               xywh: '[0,0,800,95]',
               background: DefaultTheme.noteBackgrounColor,
@@ -244,7 +244,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
               return {
                 type: 'block',
                 id: nanoid(),
-                flavour: 'affine:paragraph',
+                flavour: 'lovenotes:paragraph',
                 props: {
                   type: 'text',
                   text: {
@@ -275,7 +275,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
     const contentSlice = {
       type: 'block',
       id: nanoid(),
-      flavour: 'affine:note',
+      flavour: 'lovenotes:note',
       props: {
         xywh: '[0,0,800,95]',
         background: DefaultTheme.noteBackgrounColor,
@@ -287,7 +287,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
         return {
           type: 'block',
           id: nanoid(),
-          flavour: 'affine:paragraph',
+          flavour: 'lovenotes:paragraph',
           props: {
             type: 'text',
             text: {

@@ -1,5 +1,5 @@
-import { getSelectedModelsCommand } from '@blocksuite/affine-shared/commands';
-import { type SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
+import { getSelectedModelsCommand } from '@blocksuite/lovenotes-shared/commands';
+import { type SlashMenuConfig } from '@blocksuite/lovenotes-widget-slash-menu';
 import { ImageIcon } from '@blocksuite/icons/lit';
 
 import { insertImagesCommand } from '../commands';
@@ -17,7 +17,7 @@ export const imageSlashMenuConfig: SlashMenuConfig = {
       },
       group: '4_Content & Media@1',
       when: ({ model }) =>
-        model.store.schema.flavourSchemaMap.has('affine:image'),
+        model.store.schema.flavourSchemaMap.has('lovenotes:image'),
       action: ({ std }) => {
         const [success, ctx] = std.command
           .chain()

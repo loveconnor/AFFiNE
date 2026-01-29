@@ -5,8 +5,8 @@ import {
   popMenu,
   type PopupTarget,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import {
   ArrowRightSmallIcon,
   DeleteIcon,
@@ -43,7 +43,7 @@ import { popFilterRoot } from '../../../quick-setting-bar/filter/root-panel-view
 import { popSortRoot } from '../../../quick-setting-bar/sort/root-panel.js';
 
 const styles = css`
-  .affine-database-toolbar-item.more-action {
+  .lovenotes-database-toolbar-item.more-action {
     padding: 2px;
     border-radius: 4px;
     display: flex;
@@ -51,17 +51,17 @@ const styles = css`
     cursor: pointer;
   }
 
-  .affine-database-toolbar-item.more-action:hover {
-    background: var(--affine-hover-color);
+  .lovenotes-database-toolbar-item.more-action:hover {
+    background: var(--lovenotes-hover-color);
   }
 
-  .affine-database-toolbar-item.more-action {
+  .lovenotes-database-toolbar-item.more-action {
     font-size: 20px;
     color: ${unsafeCSSVarV2('icon/primary')};
   }
 
   .more-action.active {
-    background: var(--affine-hover-color);
+    background: var(--lovenotes-hover-color);
   }
 `;
 
@@ -82,7 +82,7 @@ export class DataViewHeaderToolsViewOptions extends WidgetBase {
       return;
     }
     return html` <div
-      class="affine-database-toolbar-item more-action"
+      class="lovenotes-database-toolbar-item more-action"
       @click="${this.clickMoreAction}"
     >
       ${MoreHorizontalIcon()}
@@ -369,20 +369,20 @@ export const popViewOptions = (
                 const iconStyle = styleMap({
                   fontSize: '24px',
                   color: isSelected
-                    ? 'var(--affine-text-emphasis-color)'
-                    : 'var(--affine-icon-secondary)',
+                    ? 'var(--lovenotes-text-emphasis-color)'
+                    : 'var(--lovenotes-icon-secondary)',
                 });
                 const textStyle = styleMap({
                   fontSize: '14px',
                   lineHeight: '22px',
                   color: isSelected
-                    ? 'var(--affine-text-emphasis-color)'
-                    : 'var(--affine-text-secondary-color)',
+                    ? 'var(--lovenotes-text-emphasis-color)'
+                    : 'var(--lovenotes-text-secondary-color)',
                 });
                 const data: MenuButtonData = {
                   content: () => html`
                     <div
-                      style="color:var(--affine-text-emphasis-color);width:100%;display: flex;flex-direction: column;align-items: center;justify-content: center;padding: 6px 16px;white-space: nowrap"
+                      style="color:var(--lovenotes-text-emphasis-color);width:100%;display: flex;flex-direction: column;align-items: center;justify-content: center;padding: 6px 16px;white-space: nowrap"
                     >
                       <div style="${iconStyle}">
                         ${renderUniLit(meta.renderer.icon)}
@@ -403,11 +403,11 @@ export const popViewOptions = (
                 const containerStyle = styleMap({
                   flex: '1',
                 });
-                return html` <affine-menu-button
+                return html` <lovenotes-menu-button
                   style="${containerStyle}"
                   .data="${data}"
                   .menu="${menu}"
-                ></affine-menu-button>`;
+                ></lovenotes-menu-button>`;
               };
             });
             const subHandler = popMenu(target, {

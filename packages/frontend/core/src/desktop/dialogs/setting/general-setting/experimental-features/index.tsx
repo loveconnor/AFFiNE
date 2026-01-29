@@ -1,12 +1,12 @@
-import { Button, Checkbox, Loading, Switch, Tooltip } from '@affine/component';
-import { SettingHeader } from '@affine/component/setting-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { Button, Checkbox, Loading, Switch, Tooltip } from '@lovenotes/component';
+import { SettingHeader } from '@lovenotes/component/setting-components';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import {
   AFFINE_FLAGS,
   FeatureFlagService,
   type Flag,
-} from '@affine/core/modules/feature-flag';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/feature-flag';
+import { useI18n } from '@lovenotes/i18n';
 import {
   ArrowRightSmallIcon,
   DiscordIcon,
@@ -40,7 +40,7 @@ const ExperimentalFeaturesPrompt = ({
     <div className={styles.promptRoot} data-testid="experimental-prompt">
       <div className={styles.promptTitle}>
         {t[
-          'com.affine.settings.workspace.experimental-features.prompt-header'
+          'com.lovenotes.settings.workspace.experimental-features.prompt-header'
         ]()}
       </div>
       <div className={styles.promptArt}>
@@ -49,11 +49,11 @@ const ExperimentalFeaturesPrompt = ({
       <div className={styles.promptWarning}>
         <div className={styles.promptWarningTitle}>
           {t[
-            'com.affine.settings.workspace.experimental-features.prompt-warning-title'
+            'com.lovenotes.settings.workspace.experimental-features.prompt-warning-title'
           ]()}
         </div>
         {t[
-          'com.affine.settings.workspace.experimental-features.prompt-warning'
+          'com.lovenotes.settings.workspace.experimental-features.prompt-warning'
         ]()}
       </div>
 
@@ -66,7 +66,7 @@ const ExperimentalFeaturesPrompt = ({
           data-testid="experimental-prompt-disclaimer"
         />
         {t[
-          'com.affine.settings.workspace.experimental-features.prompt-disclaimer'
+          'com.lovenotes.settings.workspace.experimental-features.prompt-disclaimer'
         ]()}
       </label>
 
@@ -78,7 +78,7 @@ const ExperimentalFeaturesPrompt = ({
           data-testid="experimental-confirm-button"
         >
           {t[
-            'com.affine.settings.workspace.experimental-features.get-started'
+            'com.lovenotes.settings.workspace.experimental-features.get-started'
           ]()}
         </Button>
       </div>
@@ -102,7 +102,7 @@ const FeedbackIcon = ({ type }: { type: Flag['feedbackType'] }) => {
 const feedbackLink: Record<NonNullable<Flag['feedbackType']>, string> = {
   discord: BUILD_CONFIG.discordUrl,
   email: 'mailto:support@toeverything.info',
-  github: 'https://github.com/toeverything/AFFiNE/issues',
+  github: 'https://github.com/toeverything/LoveNotes/issues',
 };
 
 const ExperimentalFeaturesItem = ({
@@ -168,10 +168,10 @@ const ExperimentalFeaturesMain = () => {
     <>
       <SettingHeader
         title={t[
-          'com.affine.settings.workspace.experimental-features.header.plugins'
+          'com.lovenotes.settings.workspace.experimental-features.header.plugins'
         ]()}
         subtitle={t[
-          'com.affine.settings.workspace.experimental-features.header.subtitle'
+          'com.lovenotes.settings.workspace.experimental-features.header.subtitle'
         ]()}
       />
       <div
@@ -192,7 +192,7 @@ const ExperimentalFeaturesMain = () => {
 
 // TODO(@Peng): save to workspace meta instead?
 const experimentalFeaturesDisclaimerAtom = atomWithStorage(
-  'affine:experimental-features-disclaimer',
+  'lovenotes:experimental-features-disclaimer',
   false
 );
 

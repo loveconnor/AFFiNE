@@ -3,11 +3,11 @@ import type {
   BlockLayoutPainter,
   TextRect,
   WorkerToHostMessage,
-} from '@blocksuite/affine-gfx-turbo-renderer';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import {
   BlockLayoutPainterExtension,
   getBaseline,
-} from '@blocksuite/affine-gfx-turbo-renderer/painter';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer/painter';
 
 interface ListItemLayout {
   text: string;
@@ -20,14 +20,14 @@ interface ListItemLayout {
 }
 
 export interface ListLayout extends BlockLayout {
-  type: 'affine:list';
+  type: 'lovenotes:list';
   items: ListItemLayout[];
 }
 
 const debugListBorder = false;
 
 function isListLayout(layout: BlockLayout): layout is ListLayout {
-  return layout.type === 'affine:list';
+  return layout.type === 'lovenotes:list';
 }
 
 class ListLayoutPainter implements BlockLayoutPainter {
@@ -71,7 +71,7 @@ class ListLayoutPainter implements BlockLayoutPainter {
       const message: WorkerToHostMessage = {
         type: 'paintError',
         error: 'Font not loaded',
-        blockType: 'affine:list',
+        blockType: 'lovenotes:list',
       };
       self.postMessage(message);
       return;
@@ -114,6 +114,6 @@ class ListLayoutPainter implements BlockLayoutPainter {
 }
 
 export const ListLayoutPainterExtension = BlockLayoutPainterExtension(
-  'affine:list',
+  'lovenotes:list',
   ListLayoutPainter
 );

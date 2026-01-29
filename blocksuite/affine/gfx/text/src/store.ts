@@ -1,7 +1,7 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import {
   textToMarkdownAdapterMatcher,
@@ -9,7 +9,7 @@ import {
 } from './adapter';
 
 export class TextStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-text-gfx';
+  override name = 'lovenotes-text-gfx';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

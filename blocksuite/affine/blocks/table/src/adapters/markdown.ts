@@ -2,12 +2,12 @@ import {
   type TableBlockPropsSerialized,
   TableBlockSchema,
   TableModelFlavour,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 import type { TableRow } from 'mdast';
 

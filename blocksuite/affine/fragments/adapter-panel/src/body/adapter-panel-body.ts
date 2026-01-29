@@ -1,5 +1,5 @@
-import { scrollbarStyle } from '@blocksuite/affine-shared/styles';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { scrollbarStyle } from '@blocksuite/lovenotes-shared/styles';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import { consume } from '@lit/context';
 import { css, html, LitElement } from 'lit';
@@ -12,7 +12,7 @@ import {
   ADAPTERS,
 } from '../config';
 
-export const AFFINE_ADAPTER_PANEL_BODY = 'affine-adapter-panel-body';
+export const AFFINE_ADAPTER_PANEL_BODY = 'lovenotes-adapter-panel-body';
 
 export class AdapterPanelBody extends SignalWatcher(LitElement) {
   static override styles = css`
@@ -30,8 +30,8 @@ export class AdapterPanelBody extends SignalWatcher(LitElement) {
       width: 100%;
       height: 100%;
       white-space: pre-wrap;
-      color: var(--affine-text-primary-color);
-      font-size: var(--affine-font-sm);
+      color: var(--lovenotes-text-primary-color);
+      font-size: var(--lovenotes-font-sm);
       box-sizing: border-box;
     }
 
@@ -48,7 +48,7 @@ export class AdapterPanelBody extends SignalWatcher(LitElement) {
       flex: 1 0 0;
       border: none;
       box-sizing: border-box;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
       overflow: auto;
     }
 

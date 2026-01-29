@@ -1,7 +1,7 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 import {
   HtmlAdapterFactoryExtension,
   ImageProxyService,
@@ -10,12 +10,12 @@ import {
   NotionHtmlAdapterFactoryExtension,
   NotionTextAdapterFactoryExtension,
   PlainTextAdapterFactoryExtension,
-} from '@blocksuite/affine-shared/adapters';
-import { HighlightSelectionExtension } from '@blocksuite/affine-shared/selection';
+} from '@blocksuite/lovenotes-shared/adapters';
+import { HighlightSelectionExtension } from '@blocksuite/lovenotes-shared/selection';
 import {
   BlockMetaService,
   FeatureFlagService,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   BlockSelectionExtension,
   CursorSelectionExtension,

@@ -1,5 +1,5 @@
-import { NoteBlockModel, RootBlockModel } from '@blocksuite/affine-model';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+import { NoteBlockModel, RootBlockModel } from '@blocksuite/lovenotes-model';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import {
   BLOCK_ID_ATTR,
   type BlockComponent,

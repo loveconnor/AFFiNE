@@ -1,13 +1,13 @@
 import {
   type NavigatorMode,
   PresentTool,
-} from '@blocksuite/affine-block-frame';
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-frame';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   DocModeProvider,
   EditPropsStore,
-} from '@blocksuite/affine-shared/services';
-import { createButtonPopper } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { createButtonPopper } from '@blocksuite/lovenotes-shared/utils';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { PresentationIcon, SettingsIcon } from '@blocksuite/icons/lit';
@@ -43,18 +43,18 @@ const styles = css`
   }
 
   .all-frames-setting-button svg {
-    color: var(--affine-icon-secondary);
+    color: var(--lovenotes-icon-secondary);
   }
 
   .all-frames-setting-button:hover svg,
   .all-frames-setting-button.active svg {
-    color: var(--affine-icon-color);
+    color: var(--lovenotes-icon-color);
   }
 
   .all-frames-setting-label {
     width: 68px;
     height: 22px;
-    font-size: var(--affine-font-sm);
+    font-size: var(--lovenotes-font-sm);
     font-weight: 500;
     line-height: 22px;
     color: var(--light-text-color-text-secondary-color, #8e8d91);
@@ -64,8 +64,8 @@ const styles = css`
     display: none;
     justify-content: center;
     align-items: center;
-    background: var(--affine-background-overlay-panel-color);
-    box-shadow: var(--affine-shadow-2);
+    background: var(--lovenotes-background-overlay-panel-color);
+    box-shadow: var(--lovenotes-shadow-2);
     border-radius: 8px;
   }
 
@@ -83,17 +83,17 @@ const styles = css`
     padding: 4px 8px;
     border-radius: 8px;
     margin: 4px 0;
-    border: 1px solid var(--affine-border-color);
-    background: var(--affine-white);
+    border: 1px solid var(--lovenotes-border-color);
+    background: var(--lovenotes-white);
   }
 
   .presentation-button:hover {
-    background: var(--affine-hover-color);
+    background: var(--lovenotes-hover-color);
     cursor: pointer;
   }
 
   .presentation-button svg {
-    fill: var(--affine-icon-color);
+    fill: var(--lovenotes-icon-color);
     margin-right: 4px;
   }
 
@@ -104,7 +104,7 @@ const styles = css`
   }
 `;
 
-export const AFFINE_FRAME_PANEL_HEADER = 'affine-frame-panel-header';
+export const AFFINE_FRAME_PANEL_HEADER = 'lovenotes-frame-panel-header';
 
 export class FramePanelHeader extends WithDisposable(LitElement) {
   static override styles = styles;
@@ -204,9 +204,9 @@ export class FramePanelHeader extends WithDisposable(LitElement) {
         </edgeless-tool-icon-button>
       </div>
       <div class="frames-setting-container">
-        <affine-frames-setting-menu
+        <lovenotes-frames-setting-menu
           .editorHost=${this.editorHost}
-        ></affine-frames-setting-menu>
+        ></lovenotes-frames-setting-menu>
       </div>
       <div class="presentation-button" @click=${this._enterPresentationMode}>
         ${PresentationIcon({ width: '16px', height: '16px' })}<span

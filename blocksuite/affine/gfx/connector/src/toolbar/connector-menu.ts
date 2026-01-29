@@ -2,14 +2,14 @@ import {
   ConnectorMode,
   DefaultTheme,
   type LineWidth,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   FeatureFlagService,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import type { ColorEvent } from '@blocksuite/affine-shared/utils';
-import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-shared/services';
+import type { ColorEvent } from '@blocksuite/lovenotes-shared/utils';
+import { EdgelessToolbarToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import {
   ConnectorCIcon,
@@ -89,14 +89,14 @@ export class EdgelessConnectorMenu extends EdgelessToolbarToolMixin(
     }
 
     .connector-mode-button-group > edgeless-tool-icon-button svg {
-      fill: var(--affine-icon-color);
+      fill: var(--lovenotes-icon-color);
     }
 
     .submenu-divider {
       width: 1px;
       height: 24px;
       margin: 0 16px;
-      background-color: var(--affine-border-color);
+      background-color: var(--lovenotes-border-color);
       display: inline-block;
     }
   `;

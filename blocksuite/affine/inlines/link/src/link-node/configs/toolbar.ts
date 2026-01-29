@@ -1,4 +1,4 @@
-import { toast } from '@blocksuite/affine-components/toast';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import {
   ActionPlacement,
   EmbedIframeService,
@@ -6,7 +6,7 @@ import {
   type ToolbarAction,
   type ToolbarActionGroup,
   type ToolbarModuleConfig,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   CopyIcon,
   DeleteIcon,
@@ -18,7 +18,7 @@ import { signal } from '@preact/signals-core';
 import { html } from 'lit-html';
 import { keyed } from 'lit-html/directives/keyed.js';
 
-import { AffineLink } from '../affine-link';
+import { LoveNotesLink } from '../lovenotes-link';
 import { toggleLinkPopup } from '../link-popup/toggle-link-popup';
 
 const trackBaseProps = {
@@ -35,12 +35,12 @@ export const builtinInlineLinkToolbarConfig = {
       id: 'a.preview',
       content(cx) {
         const target = cx.message$.peek()?.element;
-        if (!(target instanceof AffineLink)) return null;
+        if (!(target instanceof LoveNotesLink)) return null;
 
         const { link } = target;
         if (!link) return null;
 
-        return html`<affine-link-preview .url=${link}></affine-link-preview>`;
+        return html`<lovenotes-link-preview .url=${link}></lovenotes-link-preview>`;
       },
     },
     {
@@ -52,7 +52,7 @@ export const builtinInlineLinkToolbarConfig = {
           icon: CopyIcon(),
           run(ctx) {
             const target = ctx.message$.peek()?.element;
-            if (!(target instanceof AffineLink)) return;
+            if (!(target instanceof LoveNotesLink)) return;
 
             const { link } = target;
 
@@ -76,7 +76,7 @@ export const builtinInlineLinkToolbarConfig = {
           icon: EditIcon(),
           run(ctx) {
             const target = ctx.message$.peek()?.element;
-            if (!(target instanceof AffineLink)) return;
+            if (!(target instanceof LoveNotesLink)) return;
 
             const { inlineEditor, selfInlineRange } = target;
 
@@ -113,7 +113,7 @@ export const builtinInlineLinkToolbarConfig = {
           label: 'Card view',
           run(ctx) {
             const target = ctx.message$.peek()?.element;
-            if (!(target instanceof AffineLink)) return;
+            if (!(target instanceof LoveNotesLink)) return;
             if (!target.block) return;
 
             const url = target.link;
@@ -142,7 +142,7 @@ export const builtinInlineLinkToolbarConfig = {
             const flavour =
               options?.viewType === 'card'
                 ? options.flavour
-                : 'affine:bookmark';
+                : 'lovenotes:bookmark';
             const index = parent.children.indexOf(model);
             const props = {
               url,
@@ -180,7 +180,7 @@ export const builtinInlineLinkToolbarConfig = {
           label: 'Embed view',
           when(ctx) {
             const target = ctx.message$.peek()?.element;
-            if (!(target instanceof AffineLink)) return false;
+            if (!(target instanceof LoveNotesLink)) return false;
             if (!target.block) return false;
 
             const url = target.link;
@@ -206,7 +206,7 @@ export const builtinInlineLinkToolbarConfig = {
           },
           run(ctx) {
             const target = ctx.message$.peek()?.element;
-            if (!(target instanceof AffineLink)) return;
+            if (!(target instanceof LoveNotesLink)) return;
             if (!target.block) return;
 
             const url = target.link;
@@ -268,7 +268,7 @@ export const builtinInlineLinkToolbarConfig = {
       ],
       content(ctx) {
         const target = ctx.message$.peek()?.element;
-        if (!(target instanceof AffineLink)) return null;
+        if (!(target instanceof LoveNotesLink)) return null;
 
         const actions = this.actions.map(action => ({ ...action }));
         const viewType$ = signal(actions[0].label);
@@ -284,23 +284,23 @@ export const builtinInlineLinkToolbarConfig = {
 
         return html`${keyed(
           target,
-          html`<affine-view-dropdown-menu
+          html`<lovenotes-view-dropdown-menu
             .actions=${actions}
             .context=${ctx}
             .onToggle=${onToggle}
             .viewType$=${viewType$}
-          ></affine-view-dropdown-menu>`
+          ></lovenotes-view-dropdown-menu>`
         )}`;
       },
       when(ctx) {
         const target = ctx.message$.peek()?.element;
-        if (!(target instanceof AffineLink)) return false;
+        if (!(target instanceof LoveNotesLink)) return false;
         if (!target.block) return false;
 
         if (ctx.flags.isNative()) return false;
         if (
-          target.block.closest('affine-database') ||
-          target.block.closest('affine-table')
+          target.block.closest('lovenotes-database') ||
+          target.block.closest('lovenotes-table')
         )
           return false;
 
@@ -311,7 +311,7 @@ export const builtinInlineLinkToolbarConfig = {
         if (!parent) return false;
 
         const schema = ctx.store.schema;
-        const bookmarkSchema = schema.flavourSchemaMap.get('affine:bookmark');
+        const bookmarkSchema = schema.flavourSchemaMap.get('lovenotes:bookmark');
         if (!bookmarkSchema) return false;
 
         const parentSchema = schema.flavourSchemaMap.get(parent.flavour);
@@ -333,7 +333,7 @@ export const builtinInlineLinkToolbarConfig = {
       icon: UnlinkIcon(),
       run(ctx) {
         const target = ctx.message$.peek()?.element;
-        if (!(target instanceof AffineLink)) return;
+        if (!(target instanceof LoveNotesLink)) return;
 
         const { inlineEditor, selfInlineRange } = target;
         if (!inlineEditor || !selfInlineRange) return;
@@ -351,7 +351,7 @@ export const builtinInlineLinkToolbarConfig = {
       variant: 'destructive',
       run(ctx) {
         const target = ctx.message$.peek()?.element;
-        if (!(target instanceof AffineLink)) return;
+        if (!(target instanceof LoveNotesLink)) return;
 
         const { inlineEditor, selfInlineRange } = target;
         if (!inlineEditor || !selfInlineRange) return;

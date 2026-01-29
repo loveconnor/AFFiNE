@@ -1,9 +1,9 @@
-import { EdgelessClipboardConfig } from '@blocksuite/affine-block-surface';
-import { ReferenceInfoSchema } from '@blocksuite/affine-model';
+import { EdgelessClipboardConfig } from '@blocksuite/lovenotes-block-surface';
+import { ReferenceInfoSchema } from '@blocksuite/lovenotes-model';
 import { type BlockSnapshot } from '@blocksuite/store';
 
 export class EdgelessClipboardEmbedLinkedDocConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:embed-linked-doc';
+  static override readonly key = 'lovenotes:embed-linked-doc';
 
   override createBlock(linkedDocEmbed: BlockSnapshot): string | null {
     if (!this.surface) return null;
@@ -18,7 +18,7 @@ export class EdgelessClipboardEmbedLinkedDocConfig extends EdgelessClipboardConf
     });
 
     return this.crud.addBlock(
-      'affine:embed-linked-doc',
+      'lovenotes:embed-linked-doc',
       {
         xywh,
         style,

@@ -1,8 +1,8 @@
 import {
   EmbedFigmaBlockSchema,
   EmbedFigmaStyles,
-} from '@blocksuite/affine-model';
-import { EmbedOptionConfig } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { EmbedOptionConfig } from '@blocksuite/lovenotes-shared/services';
 
 import { figmaUrlRegex } from './embed-figma-model.js';
 

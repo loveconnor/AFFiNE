@@ -1,9 +1,9 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { SurfaceRefBlockSchema } from '@blocksuite/affine-model';
-import { ToolbarModuleExtension } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-ext-loader';
+import { SurfaceRefBlockSchema } from '@blocksuite/lovenotes-model';
+import { ToolbarModuleExtension } from '@blocksuite/lovenotes-shared/services';
 import {
   BlockFlavourIdentifier,
   BlockViewExtension,
@@ -18,7 +18,7 @@ import { effects } from './effects';
 const flavour = SurfaceRefBlockSchema.model.flavour;
 
 export class SurfaceRefViewExtension extends ViewExtensionProvider {
-  override name = 'affine-surface-ref-block';
+  override name = 'lovenotes-surface-ref-block';
 
   override effect(): void {
     super.effect();
@@ -34,11 +34,11 @@ export class SurfaceRefViewExtension extends ViewExtensionProvider {
     const isEdgeless = this.isEdgeless(context.scope);
     if (isEdgeless) {
       context.register([
-        BlockViewExtension(flavour, literal`affine-edgeless-surface-ref`),
+        BlockViewExtension(flavour, literal`lovenotes-edgeless-surface-ref`),
       ]);
     } else {
       context.register([
-        BlockViewExtension(flavour, literal`affine-surface-ref`),
+        BlockViewExtension(flavour, literal`lovenotes-surface-ref`),
         ToolbarModuleExtension({
           id: BlockFlavourIdentifier(flavour),
           config: surfaceRefToolbarModuleConfig,

@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   clickView,
@@ -6,12 +6,12 @@ import {
   locateEditorContainer,
   locateToolbar,
   setEdgelessTool,
-} from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/editor';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
@@ -37,7 +37,7 @@ test('should add highlighter', async ({ page }) => {
   await expect(toolbar).toBeVisible();
 
   const lineWidthButton = toolbar
-    .locator('affine-slider')
+    .locator('lovenotes-slider')
     .locator('.point-button[data-selected]')
     .last();
   const defaultLineWidth = await lineWidthButton.getAttribute('aria-label');

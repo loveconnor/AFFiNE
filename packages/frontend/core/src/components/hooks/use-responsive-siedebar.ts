@@ -1,6 +1,6 @@
-import { observeResize } from '@affine/component';
-import { AppSidebarService } from '@affine/core/modules/app-sidebar';
-import { WorkbenchService } from '@affine/core/modules/workbench';
+import { observeResize } from '@lovenotes/component';
+import { AppSidebarService } from '@lovenotes/core/modules/app-sidebar';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { useService } from '@toeverything/infra';
 import { useCallback, useEffect, useRef } from 'react';
 

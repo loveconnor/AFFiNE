@@ -1,5 +1,5 @@
-import { getInlineEditorByModel } from '@blocksuite/affine-rich-text';
-import type { AffineInlineEditor } from '@blocksuite/affine-shared/types';
+import { getInlineEditorByModel } from '@blocksuite/lovenotes-rich-text';
+import type { LoveNotesInlineEditor } from '@blocksuite/lovenotes-shared/types';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import type { UIEventStateContext } from '@blocksuite/std';
 import { TextSelection, WidgetComponent } from '@blocksuite/std';
@@ -58,14 +58,14 @@ const showSlashMenu = debounce(
   { leading: true }
 );
 
-export class AffineSlashMenuWidget extends WidgetComponent {
+export class LoveNotesSlashMenuWidget extends WidgetComponent {
   private readonly _getInlineEditor = (
     evt: KeyboardEvent | CompositionEvent
   ) => {
     if (evt.target instanceof HTMLElement) {
       const editor = (
         evt.target.closest('.inline-editor') as {
-          inlineEditor?: AffineInlineEditor;
+          inlineEditor?: LoveNotesInlineEditor;
         }
       )?.inlineEditor;
       if (editor instanceof InlineEditor) {
@@ -100,7 +100,7 @@ export class AffineSlashMenuWidget extends WidgetComponent {
       }
     };
 
-    if (this.block?.model.flavour !== 'affine:page') {
+    if (this.block?.model.flavour !== 'lovenotes:page') {
       console.error('SlashMenuWidget should be used in RootBlock');
       return;
     }

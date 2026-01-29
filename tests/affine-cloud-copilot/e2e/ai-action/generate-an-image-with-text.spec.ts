@@ -71,7 +71,7 @@ test.describe('AIAction/GenerateAnImageWithText', () => {
     const { answer } = await generateImage();
     const insert = answer.getByTestId('answer-insert-below');
     await insert.click();
-    await page.waitForSelector('.affine-image-container');
+    await page.waitForSelector('.lovenotes-image-container');
     await page.reload();
 
     await utils.chatPanel.waitForHistory(page, [

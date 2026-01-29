@@ -3,7 +3,7 @@ import {
   embedSyncedDocMiddleware,
   PdfAdapter,
   titleMiddleware,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { Store } from '@blocksuite/store';
 
 import { download } from './utils.js';

@@ -3,13 +3,13 @@ import {
   createTable,
   getCellText,
   inputToCell,
-} from '@affine-test/kit/bs/table';
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/bs/table';
+import { test } from '@lovenotes-test/kit/playwright';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test('should table collab work', async ({ page: pageA, context }) => {
@@ -23,7 +23,7 @@ test('should table collab work', async ({ page: pageA, context }) => {
    * | Cell3 | Cell4 |
    */
   await createTable(pageA);
-  const cellsInA = pageA.locator('affine-table-cell');
+  const cellsInA = pageA.locator('lovenotes-table-cell');
   const cellCountInA = await cellsInA.count();
   expect(cellCountInA).toBe(4);
 
@@ -34,9 +34,9 @@ test('should table collab work', async ({ page: pageA, context }) => {
   await waitForEditorLoad(pageB);
   await pageB.keyboard.press('Enter');
 
-  const tableInB = pageB.locator('affine-table');
+  const tableInB = pageB.locator('lovenotes-table');
   await expect(tableInB).toBeVisible();
-  const cellsInB = tableInB.locator('affine-table-cell');
+  const cellsInB = tableInB.locator('lovenotes-table-cell');
   expect(await cellsInB.count()).toBe(cellCountInA);
 
   expect(await getCellText(pageB, 0)).toBe('Cell1');

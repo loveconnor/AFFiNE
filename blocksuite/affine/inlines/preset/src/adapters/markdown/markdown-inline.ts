@@ -1,4 +1,4 @@
-import { MarkdownASTToDeltaExtension } from '@blocksuite/affine-shared/adapters';
+import { MarkdownASTToDeltaExtension } from '@blocksuite/lovenotes-shared/adapters';
 
 export const markdownTextToDeltaMatcher = MarkdownASTToDeltaExtension({
   name: 'text',

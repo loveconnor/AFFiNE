@@ -1,11 +1,11 @@
-import type { WeekDatePickerHandle } from '@affine/component';
-import { WeekDatePicker } from '@affine/component';
+import type { WeekDatePickerHandle } from '@lovenotes/component';
+import { WeekDatePicker } from '@lovenotes/component';
 import {
   JOURNAL_DATE_FORMAT,
   JournalService,
-} from '@affine/core/modules/journal';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import type { Store } from '@blocksuite/affine/store';
+} from '@lovenotes/core/modules/journal';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import type { Store } from '@blocksuite/lovenotes/store';
 import { useLiveData, useService } from '@toeverything/infra';
 import dayjs from 'dayjs';
 import { useCallback, useEffect, useRef, useState } from 'react';

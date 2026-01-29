@@ -1,9 +1,9 @@
-import { clearMarksOnDiscontinuousInput } from '@blocksuite/affine-rich-text';
-import { getSelectedBlocksCommand } from '@blocksuite/affine-shared/commands';
+import { clearMarksOnDiscontinuousInput } from '@blocksuite/lovenotes-rich-text';
+import { getSelectedBlocksCommand } from '@blocksuite/lovenotes-shared/commands';
 import type {
-  AffineTextAttributes,
-  AffineTextStyleAttributes,
-} from '@blocksuite/affine-shared/types';
+  LoveNotesTextAttributes,
+  LoveNotesTextStyleAttributes,
+} from '@blocksuite/lovenotes-shared/types';
 import type { Command, TextSelection } from '@blocksuite/std';
 import {
   INLINE_ROOT_ATTR,
@@ -16,7 +16,7 @@ import { FORMAT_TEXT_SUPPORT_FLAVOURS } from './consts.js';
 export const formatTextCommand: Command<{
   currentTextSelection?: TextSelection;
   textSelection?: TextSelection;
-  styles: AffineTextStyleAttributes;
+  styles: LoveNotesTextStyleAttributes;
   mode?: 'replace' | 'merge';
 }> = (ctx, next) => {
   const { styles, mode = 'merge' } = ctx;
@@ -37,7 +37,7 @@ export const formatTextCommand: Command<{
 
       const selectedInlineEditors = selectedBlocks.flatMap(el => {
         const inlineRoot = el.querySelector<
-          InlineRootElement<AffineTextAttributes>
+          InlineRootElement<LoveNotesTextAttributes>
         >(`[${INLINE_ROOT_ATTR}]`);
         if (inlineRoot && inlineRoot.inlineEditor.getInlineRange()) {
           return inlineRoot.inlineEditor;
@@ -60,10 +60,10 @@ export const formatTextCommand: Command<{
                   return [
                     key,
                     (inlineEditor.marks &&
-                      inlineEditor.marks[key as keyof AffineTextAttributes]) ||
+                      inlineEditor.marks[key as keyof LoveNotesTextAttributes]) ||
                     (delta &&
                       delta.attributes &&
-                      delta.attributes[key as keyof AffineTextAttributes])
+                      delta.attributes[key as keyof LoveNotesTextAttributes])
                       ? null
                       : value,
                   ];

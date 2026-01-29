@@ -26,11 +26,11 @@ public class GetDocDefaultRoleQuery: GraphQLQuery {
     "docId": docId
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -41,11 +41,11 @@ public class GetDocDefaultRoleQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("doc", Doc.self, arguments: ["docId": .variable("docId")]),
@@ -57,17 +57,17 @@ public class GetDocDefaultRoleQuery: GraphQLQuery {
       /// Workspace.Doc
       ///
       /// Parent Type: `DocType`
-      public struct Doc: AffineGraphQL.SelectionSet {
+      public struct Doc: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.DocType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.DocType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("defaultRole", GraphQLEnum<AffineGraphQL.DocRole>.self),
+          .field("defaultRole", GraphQLEnum<LoveNotesGraphQL.DocRole>.self),
         ] }
 
-        public var defaultRole: GraphQLEnum<AffineGraphQL.DocRole> { __data["defaultRole"] }
+        public var defaultRole: GraphQLEnum<LoveNotesGraphQL.DocRole> { __data["defaultRole"] }
       }
     }
   }

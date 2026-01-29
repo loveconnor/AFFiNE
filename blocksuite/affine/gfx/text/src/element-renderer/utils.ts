@@ -1,10 +1,10 @@
-import { TextUtils } from '@blocksuite/affine-block-surface';
+import { TextUtils } from '@blocksuite/lovenotes-block-surface';
 import type {
   FontFamily,
   FontStyle,
   FontWeight,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { Bound } from '@blocksuite/global/gfx';
 import {
   getPointsFromBoundWithRotation,

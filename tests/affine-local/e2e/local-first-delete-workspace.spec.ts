@@ -1,11 +1,11 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
+import { test } from '@lovenotes-test/kit/playwright';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@lovenotes-test/kit/utils/page-logic';
 import {
   openSettingModal,
   openWorkspaceSettingPanel,
-} from '@affine-test/kit/utils/setting';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@lovenotes-test/kit/utils/setting';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 test('Create new workspace, then delete it', async ({ page, workspace }) => {
@@ -21,7 +21,7 @@ test('Create new workspace, then delete it', async ({ page, workspace }) => {
   await openWorkspaceSettingPanel(page);
   await page.getByTestId('delete-workspace-button').click();
   await expect(
-    page.locator('.affine-notification-center').first()
+    page.locator('.lovenotes-notification-center').first()
   ).not.toBeVisible();
   const workspaceNameDom = page.getByTestId('workspace-name');
   const currentWorkspaceName = (await workspaceNameDom.evaluate(
@@ -32,7 +32,7 @@ test('Create new workspace, then delete it', async ({ page, workspace }) => {
     .getByTestId('delete-workspace-input')
     .pressSequentially(currentWorkspaceName);
   const promise = page
-    .locator('.affine-notification-center')
+    .locator('.lovenotes-notification-center')
     .first()
     .waitFor({ state: 'attached' });
   await page.getByTestId('delete-workspace-confirm-button').click();

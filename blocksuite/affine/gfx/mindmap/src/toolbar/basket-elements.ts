@@ -1,23 +1,23 @@
-import { addAttachments } from '@blocksuite/affine-block-attachment';
-import { addImages } from '@blocksuite/affine-block-image';
+import { addAttachments } from '@blocksuite/lovenotes-block-attachment';
+import { addImages } from '@blocksuite/lovenotes-block-image';
 import {
   CanvasElementType,
   EdgelessCRUDIdentifier,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   insertEdgelessTextCommand,
   mountTextElementEditor,
-} from '@blocksuite/affine-gfx-text';
+} from '@blocksuite/lovenotes-gfx-text';
 import {
   MAX_IMAGE_WIDTH,
   type MindmapStyle,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   FeatureFlagService,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { openSingleFileWith } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { openSingleFileWith } from '@blocksuite/lovenotes-shared/utils';
 import { Bound, type IVec } from '@blocksuite/global/gfx';
 import type { BlockComponent } from '@blocksuite/std';
 import type { TemplateResult } from 'lit';

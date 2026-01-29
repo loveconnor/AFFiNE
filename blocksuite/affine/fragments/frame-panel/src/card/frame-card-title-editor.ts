@@ -1,5 +1,5 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
-import type { RichText } from '@blocksuite/affine-rich-text';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
+import type { RichText } from '@blocksuite/lovenotes-rich-text';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { css, html } from 'lit';
@@ -12,7 +12,7 @@ const styles = css`
   }
 `;
 
-export const AFFINE_FRAME_TITLE_EDITOR = 'affine-frame-card-title-editor';
+export const AFFINE_FRAME_TITLE_EDITOR = 'lovenotes-frame-card-title-editor';
 
 export class FrameCardTitleEditor extends WithDisposable(ShadowlessElement) {
   static override styles = styles;
@@ -80,15 +80,15 @@ export class FrameCardTitleEditor extends WithDisposable(ShadowlessElement) {
       maxHeight: '20px',
       width: 'fit-content',
       height: '20px',
-      fontSize: 'var(--affine-font-sm)',
+      fontSize: 'var(--lovenotes-font-sm)',
       lineHeight: '20px',
       position: 'absolute',
       left: `${this.left}px`,
       top: '0px',
       minWidth: '8px',
-      background: 'var(--affine-background-primary-color)',
-      border: '1px solid var(--affine-primary-color)',
-      color: 'var(--affine-text-primary-color)',
+      background: 'var(--lovenotes-background-primary-color)',
+      border: '1px solid var(--lovenotes-primary-color)',
+      color: 'var(--lovenotes-text-primary-color)',
       boxShadow: '0px 0px 0px 2px rgba(30, 150, 235, 0.30)',
       zIndex: '1',
       display: 'block',

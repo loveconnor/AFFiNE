@@ -1,12 +1,12 @@
-import { test } from '@affine-test/kit/playwright';
-import { getPagesCount } from '@affine-test/kit/utils/filter';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+import { test } from '@lovenotes-test/kit/playwright';
+import { getPagesCount } from '@lovenotes-test/kit/utils/filter';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@lovenotes-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@lovenotes-test/kit/utils/sidebar';
 import {
   createLocalWorkspace,
   openWorkspaceListModal,
-} from '@affine-test/kit/utils/workspace';
+} from '@lovenotes-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 test('just one item in the workspace list at first', async ({
@@ -140,7 +140,7 @@ test.skip('create multi workspace in the workspace list', async ({
   await page.getByTestId('draggable-item').nth(2).click();
   await page.evaluate(async () => {
     await new Promise(resolve => {
-      window.addEventListener('affine:workspace:change', resolve, {
+      window.addEventListener('lovenotes:workspace:change', resolve, {
         once: true,
       });
     });

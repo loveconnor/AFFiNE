@@ -26,11 +26,11 @@ public class GetDocCreatedByUpdatedByListQuery: GraphQLQuery {
     "pagination": pagination
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -41,11 +41,11 @@ public class GetDocCreatedByUpdatedByListQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("docs", Docs.self, arguments: ["pagination": .variable("pagination")]),
@@ -56,11 +56,11 @@ public class GetDocCreatedByUpdatedByListQuery: GraphQLQuery {
       /// Workspace.Docs
       ///
       /// Parent Type: `PaginatedDocType`
-      public struct Docs: AffineGraphQL.SelectionSet {
+      public struct Docs: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PaginatedDocType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PaginatedDocType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("totalCount", Int.self),
@@ -75,11 +75,11 @@ public class GetDocCreatedByUpdatedByListQuery: GraphQLQuery {
         /// Workspace.Docs.PageInfo
         ///
         /// Parent Type: `PageInfo`
-        public struct PageInfo: AffineGraphQL.SelectionSet {
+        public struct PageInfo: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PageInfo }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PageInfo }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("endCursor", String?.self),
@@ -93,11 +93,11 @@ public class GetDocCreatedByUpdatedByListQuery: GraphQLQuery {
         /// Workspace.Docs.Edge
         ///
         /// Parent Type: `DocTypeEdge`
-        public struct Edge: AffineGraphQL.SelectionSet {
+        public struct Edge: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.DocTypeEdge }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.DocTypeEdge }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("node", Node.self),
@@ -108,11 +108,11 @@ public class GetDocCreatedByUpdatedByListQuery: GraphQLQuery {
           /// Workspace.Docs.Edge.Node
           ///
           /// Parent Type: `DocType`
-          public struct Node: AffineGraphQL.SelectionSet {
+          public struct Node: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.DocType }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.DocType }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("id", String.self),

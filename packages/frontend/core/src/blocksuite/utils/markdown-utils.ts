@@ -1,5 +1,5 @@
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { WorkspaceImpl } from '@affine/core/modules/workspace/impls/workspace';
+import type { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { WorkspaceImpl } from '@lovenotes/core/modules/workspace/impls/workspace';
 import {
   defaultImageProxyMiddleware,
   embedSyncedDocMiddleware,
@@ -7,13 +7,13 @@ import {
   pasteMiddleware,
   PlainTextAdapter,
   titleMiddleware,
-} from '@blocksuite/affine/shared/adapters';
+} from '@blocksuite/lovenotes/shared/adapters';
 import {
   BlockStdScope,
   type EditorHost,
   type TextRangePoint,
   TextSelection,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/lovenotes/std';
 import type {
   BlockModel,
   BlockSnapshot,
@@ -22,8 +22,8 @@ import type {
   SliceSnapshot,
   Store,
   TransformerMiddleware,
-} from '@blocksuite/affine/store';
-import { toDraftModel, Transformer } from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/store';
+import { toDraftModel, Transformer } from '@blocksuite/lovenotes/store';
 import { Doc as YDoc } from 'yjs';
 
 import { getStoreManager } from '../manager/store';
@@ -162,7 +162,7 @@ export const markdownToSnapshot = async (
         type: 'slice',
         content: [
           pageSnapshot.blocks.children.find(
-            b => b.flavour === 'affine:note'
+            b => b.flavour === 'lovenotes:note'
           ) as BlockSnapshot,
         ],
         workspaceId: payload.workspaceId,
@@ -242,9 +242,9 @@ export async function replaceFromMarkdown(
 export async function markDownToDoc(
   answer: string,
   middlewares?: TransformerMiddleware[],
-  affineFeatureFlagService?: FeatureFlagService
+  lovenotesFeatureFlagService?: FeatureFlagService
 ) {
-  const { collection, std } = getMarkdownWorkspace(affineFeatureFlagService);
+  const { collection, std } = getMarkdownWorkspace(lovenotesFeatureFlagService);
 
   const transformer = new Transformer({
     schema: std.store.schema,

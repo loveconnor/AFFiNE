@@ -1,10 +1,10 @@
-package app.affine.pro.utils.logger
+package app.lovenotes.pro.utils.logger
 
 import android.content.Context
 import android.net.Uri
 import android.util.Log
-import app.affine.pro.BuildConfig
-import app.affine.pro.service.CookieStore
+import app.lovenotes.pro.BuildConfig
+import app.lovenotes.pro.service.CookieStore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers

@@ -1,8 +1,8 @@
 import {
   EdgelessLegacySlotIdentifier,
   OverlayIdentifier,
-} from '@blocksuite/affine-block-surface';
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { ConnectorElementModel } from '@blocksuite/lovenotes-model';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { Vec } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';
@@ -32,8 +32,8 @@ export class EdgelessConnectorHandle extends WithDisposable(LitElement) {
       height: ${SIZE}px;
       box-sizing: border-box;
       border-radius: 50%;
-      border: 2px solid var(--affine-text-emphasis-color);
-      background-color: var(--affine-background-primary-color);
+      border: 2px solid var(--lovenotes-text-emphasis-color);
+      background-color: var(--lovenotes-background-primary-color);
       cursor: pointer;
       z-index: 10;
       pointer-events: all;

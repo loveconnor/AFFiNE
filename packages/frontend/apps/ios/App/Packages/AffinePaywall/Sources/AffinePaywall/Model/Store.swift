@@ -1,6 +1,6 @@
 //
 //  Store.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/24/25.
 //
@@ -30,7 +30,7 @@ final nonisolated class Store: ObservableObject, Sendable {
       for: identifiers.map { .init($0) }
     )
     if products.count != identifiers.count {
-      throw NSError(domain: "AffinePaywall", code: -1, userInfo: [
+      throw NSError(domain: "LoveNotesPaywall", code: -1, userInfo: [
         NSLocalizedDescriptionKey: String(localized: "Failed to fetch all products from App Store."),
       ])
     }

@@ -1,8 +1,8 @@
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import type { ColorScheme } from '@blocksuite/affine/model';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { ExtensionType } from '@blocksuite/affine/store';
+import type { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import type { ColorScheme } from '@blocksuite/lovenotes/model';
+import { ShadowlessElement } from '@blocksuite/lovenotes/std';
+import type { ExtensionType } from '@blocksuite/lovenotes/store';
 import type { Signal } from '@preact/signals-core';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -20,7 +20,7 @@ export class ChatContentRichText extends WithDisposable(ShadowlessElement) {
   accessor extensions!: ExtensionType[];
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor lovenotesFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
   accessor theme!: Signal<ColorScheme>;
@@ -30,7 +30,7 @@ export class ChatContentRichText extends WithDisposable(ShadowlessElement) {
     return html`${createTextRenderer({
       customHeading: true,
       extensions: this.extensions,
-      affineFeatureFlagService: this.affineFeatureFlagService,
+      lovenotesFeatureFlagService: this.lovenotesFeatureFlagService,
       theme: this.theme,
     })(text, this.state)}`;
   }

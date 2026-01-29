@@ -1,9 +1,9 @@
-import type { RoughCanvas } from '@blocksuite/affine-block-surface';
+import type { RoughCanvas } from '@blocksuite/lovenotes-block-surface';
 import {
   type ConnectorElementModel,
   ConnectorMode,
   type LocalConnectorElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type {
   BezierCurveParameters,
   IVec,

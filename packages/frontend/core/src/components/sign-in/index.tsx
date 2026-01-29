@@ -1,5 +1,5 @@
-import { DefaultServerService, type Server } from '@affine/core/modules/cloud';
-import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
+import { DefaultServerService, type Server } from '@lovenotes/core/modules/cloud';
+import type { AuthSessionStatus } from '@lovenotes/core/modules/cloud/entities/session';
 import { FrameworkScope, useService } from '@toeverything/infra';
 import { useState } from 'react';
 

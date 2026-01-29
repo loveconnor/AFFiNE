@@ -1,13 +1,13 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { dragHandleWidget } from '.';
 import { effects } from './effects';
 
 export class DragHandleViewExtension extends ViewExtensionProvider {
-  override name = 'affine-drag-handle-widget';
+  override name = 'lovenotes-drag-handle-widget';
 
   override effect() {
     super.effect();

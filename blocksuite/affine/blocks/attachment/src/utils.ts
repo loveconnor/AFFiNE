@@ -1,19 +1,19 @@
-import { toast } from '@blocksuite/affine-components/toast';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import {
   type AttachmentBlockModel,
   type AttachmentBlockProps,
   AttachmentBlockSchema,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   type AttachmentUploadedEvent,
   FileSizeLimitProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { formatSize } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { formatSize } from '@blocksuite/lovenotes-shared/utils';
 import { Bound, type IVec, Vec } from '@blocksuite/global/gfx';
 import type { BlockStdScope } from '@blocksuite/std';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';

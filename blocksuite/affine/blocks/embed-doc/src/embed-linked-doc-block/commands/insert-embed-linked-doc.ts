@@ -1,16 +1,16 @@
-import { insertEmbedCard } from '@blocksuite/affine-block-embed';
-import type { EmbedCardStyle, ReferenceParams } from '@blocksuite/affine-model';
+import { insertEmbedCard } from '@blocksuite/lovenotes-block-embed';
+import type { EmbedCardStyle, ReferenceParams } from '@blocksuite/lovenotes-model';
 import type { Command } from '@blocksuite/std';
 
 export type LinkableFlavour =
-  | 'affine:bookmark'
-  | 'affine:embed-linked-doc'
-  | 'affine:embed-synced-doc'
-  | 'affine:embed-iframe'
-  | 'affine:embed-figma'
-  | 'affine:embed-github'
-  | 'affine:embed-loom'
-  | 'affine:embed-youtube';
+  | 'lovenotes:bookmark'
+  | 'lovenotes:embed-linked-doc'
+  | 'lovenotes:embed-synced-doc'
+  | 'lovenotes:embed-iframe'
+  | 'lovenotes:embed-figma'
+  | 'lovenotes:embed-github'
+  | 'lovenotes:embed-loom'
+  | 'lovenotes:embed-youtube';
 
 export type InsertedLinkType = {
   flavour: LinkableFlavour;
@@ -24,7 +24,7 @@ export const insertEmbedLinkedDocCommand: Command<
   { blockId: string }
 > = (ctx, next) => {
   const { docId, params, std } = ctx;
-  const flavour = 'affine:embed-linked-doc';
+  const flavour = 'lovenotes:embed-linked-doc';
   const targetStyle: EmbedCardStyle = 'vertical';
   const props: Record<string, unknown> = { pageId: docId };
   if (params) props.params = params;

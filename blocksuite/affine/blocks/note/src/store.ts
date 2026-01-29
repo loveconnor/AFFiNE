@@ -1,8 +1,8 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { NoteBlockSchemaExtension } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-ext-loader';
+import { NoteBlockSchemaExtension } from '@blocksuite/lovenotes-model';
 import { z } from 'zod';
 
 import {
@@ -17,7 +17,7 @@ const optionsSchema = z.object({
 export class NoteStoreExtension extends StoreExtensionProvider<
   z.infer<typeof optionsSchema>
 > {
-  override name = 'affine-note-block';
+  override name = 'lovenotes-note-block';
 
   override schema = optionsSchema;
 

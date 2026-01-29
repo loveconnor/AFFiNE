@@ -26,11 +26,11 @@ public class IndexerSearchDocsQuery: GraphQLQuery {
     "input": input
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("id")]),
     ] }
@@ -41,11 +41,11 @@ public class IndexerSearchDocsQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("searchDocs", [SearchDoc].self, arguments: ["input": .variable("input")]),
@@ -57,19 +57,19 @@ public class IndexerSearchDocsQuery: GraphQLQuery {
       /// Workspace.SearchDoc
       ///
       /// Parent Type: `SearchDocObjectType`
-      public struct SearchDoc: AffineGraphQL.SelectionSet {
+      public struct SearchDoc: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.SearchDocObjectType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.SearchDocObjectType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("docId", String.self),
           .field("title", String.self),
           .field("blockId", String.self),
           .field("highlight", String.self),
-          .field("createdAt", AffineGraphQL.DateTime.self),
-          .field("updatedAt", AffineGraphQL.DateTime.self),
+          .field("createdAt", LoveNotesGraphQL.DateTime.self),
+          .field("updatedAt", LoveNotesGraphQL.DateTime.self),
           .field("createdByUser", CreatedByUser?.self),
           .field("updatedByUser", UpdatedByUser?.self),
         ] }
@@ -78,19 +78,19 @@ public class IndexerSearchDocsQuery: GraphQLQuery {
         public var title: String { __data["title"] }
         public var blockId: String { __data["blockId"] }
         public var highlight: String { __data["highlight"] }
-        public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
-        public var updatedAt: AffineGraphQL.DateTime { __data["updatedAt"] }
+        public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
+        public var updatedAt: LoveNotesGraphQL.DateTime { __data["updatedAt"] }
         public var createdByUser: CreatedByUser? { __data["createdByUser"] }
         public var updatedByUser: UpdatedByUser? { __data["updatedByUser"] }
 
         /// Workspace.SearchDoc.CreatedByUser
         ///
         /// Parent Type: `PublicUserType`
-        public struct CreatedByUser: AffineGraphQL.SelectionSet {
+        public struct CreatedByUser: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PublicUserType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PublicUserType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("id", String.self),
@@ -106,11 +106,11 @@ public class IndexerSearchDocsQuery: GraphQLQuery {
         /// Workspace.SearchDoc.UpdatedByUser
         ///
         /// Parent Type: `PublicUserType`
-        public struct UpdatedByUser: AffineGraphQL.SelectionSet {
+        public struct UpdatedByUser: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PublicUserType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PublicUserType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("id", String.self),

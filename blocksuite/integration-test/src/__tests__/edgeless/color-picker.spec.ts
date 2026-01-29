@@ -1,10 +1,10 @@
 import '@toeverything/theme/style.css';
-import '@blocksuite/affine/gfx/pointer';
+import '@blocksuite/lovenotes/gfx/pointer';
 
-import type { EdgelessRootBlockComponent } from '@blocksuite/affine/blocks/root';
-import { DefaultTool } from '@blocksuite/affine/blocks/surface';
-import { ColorScheme } from '@blocksuite/affine/model';
-import { ThemeProvider } from '@blocksuite/affine/shared/services';
+import type { EdgelessRootBlockComponent } from '@blocksuite/lovenotes/blocks/root';
+import { DefaultTool } from '@blocksuite/lovenotes/blocks/surface';
+import { ColorScheme } from '@blocksuite/lovenotes/model';
+import { ThemeProvider } from '@blocksuite/lovenotes/shared/services';
 import { beforeEach, describe, expect, test } from 'vitest';
 
 import { getDocRootBlock } from '../utils/edgeless.js';
@@ -41,11 +41,11 @@ describe('theme service', () => {
     const themeService = edgeless.gfx.std.get(ThemeProvider);
     expect(themeService.theme).toBe(ColorScheme.Light);
 
-    expect(themeService.generateColorProperty('--affine-hover-color')).toBe(
-      'var(--affine-hover-color)'
+    expect(themeService.generateColorProperty('--lovenotes-hover-color')).toBe(
+      'var(--lovenotes-hover-color)'
     );
 
-    expect(themeService.generateColorProperty('--affine-transparent')).toBe(
+    expect(themeService.generateColorProperty('--lovenotes-transparent')).toBe(
       'transparent'
     );
 
@@ -73,17 +73,17 @@ describe('theme service', () => {
     const themeService = edgeless.gfx.std.get(ThemeProvider);
     expect(themeService.theme).toBe(ColorScheme.Light);
 
-    expect(themeService.getColorValue('--affine-transparent')).toBe(
-      '--affine-transparent'
+    expect(themeService.getColorValue('--lovenotes-transparent')).toBe(
+      '--lovenotes-transparent'
     );
     expect(
-      themeService.getColorValue('--affine-transparent', 'transparent', true)
+      themeService.getColorValue('--lovenotes-transparent', 'transparent', true)
     ).toBe('transparent');
     expect(
-      themeService.getColorValue('--affine-hover-color', 'transparent', true)
+      themeService.getColorValue('--lovenotes-hover-color', 'transparent', true)
     ).toBe('rgba(0, 0, 0, 0.04)');
     expect(
-      themeService.getColorValue('--affine-tooltip', undefined, true)
+      themeService.getColorValue('--lovenotes-tooltip', undefined, true)
     ).toBe('rgba(0, 0, 0, 1)');
 
     expect(
@@ -104,10 +104,10 @@ describe('theme service', () => {
     expect(themeService.theme).toBe(ColorScheme.Dark);
 
     expect(
-      themeService.getColorValue('--affine-hover-color', 'transparent', true)
+      themeService.getColorValue('--lovenotes-hover-color', 'transparent', true)
     ).toEqual('rgba(255, 255, 255, 0.1)');
     expect(
-      themeService.getColorValue('--affine-tooltip', undefined, true)
+      themeService.getColorValue('--lovenotes-tooltip', undefined, true)
     ).toEqual('rgba(234, 234, 234, 1)'); // #eaeaea
   });
 });

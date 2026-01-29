@@ -1,17 +1,17 @@
-import { Scrollable } from '@affine/component';
-import { PageDetailLoading } from '@affine/component/page-detail-skeleton';
-import { type AIChatParams, AIProvider } from '@affine/core/blocksuite/ai';
-import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
-import { EditorOutlineViewer } from '@affine/core/blocksuite/outline-viewer';
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-import { useGuard } from '@affine/core/components/guard';
-import { PageNotFound } from '@affine/core/desktop/pages/404';
-import { EditorService } from '@affine/core/modules/editor';
-import { DebugLogger } from '@affine/debug';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { Bound } from '@blocksuite/affine/global/gfx';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
+import { Scrollable } from '@lovenotes/component';
+import { PageDetailLoading } from '@lovenotes/component/page-detail-skeleton';
+import { type AIChatParams, AIProvider } from '@lovenotes/core/blocksuite/ai';
+import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor';
+import { EditorOutlineViewer } from '@lovenotes/core/blocksuite/outline-viewer';
+import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
+import { useGuard } from '@lovenotes/core/components/guard';
+import { PageNotFound } from '@lovenotes/core/desktop/pages/404';
+import { EditorService } from '@lovenotes/core/modules/editor';
+import { DebugLogger } from '@lovenotes/debug';
+import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
+import { Bound } from '@blocksuite/lovenotes/global/gfx';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
+import { GfxControllerIdentifier } from '@blocksuite/lovenotes/std/gfx';
 import {
   FrameworkScope,
   useLiveData,
@@ -32,13 +32,13 @@ const logger = new DebugLogger('doc-peek-view');
 
 // Lazy load BlockSuiteEditor to break circular dependency
 const BlockSuiteEditor = lazy(() =>
-  import('@affine/core/blocksuite/block-suite-editor').then(module => ({
+  import('@lovenotes/core/blocksuite/block-suite-editor').then(module => ({
     default: module.BlockSuiteEditor,
   }))
 );
 
 function fitViewport(
-  editor: AffineEditorContainer,
+  editor: LoveNotesEditorContainer,
   xywh?: `[${number},${number},${number},${number}]`
 ) {
   try {
@@ -90,7 +90,7 @@ function DocPeekPreviewEditor({
   const isInTrash = useLiveData(doc.record.trash$);
 
   const handleOnEditorReady = useCallback(
-    (editorContainer: AffineEditorContainer) => {
+    (editorContainer: LoveNotesEditorContainer) => {
       const disposableGroup = new DisposableGroup();
       const refNodeSlots =
         editorContainer.std.getOptional(RefNodeSlotsProvider);
@@ -158,10 +158,10 @@ function DocPeekPreviewEditor({
   const readonly = !canEdit || isInTrash;
 
   return (
-    <AffineErrorBoundary>
+    <LoveNotesErrorBoundary>
       <Scrollable.Root>
         <Scrollable.Viewport
-          className={clsx('affine-page-viewport', styles.affineDocViewport)}
+          className={clsx('lovenotes-page-viewport', styles.lovenotesDocViewport)}
         >
           <Suspense fallback={<PageDetailLoading />}>
             <BlockSuiteEditor
@@ -183,7 +183,7 @@ function DocPeekPreviewEditor({
           openOutlinePanel={openOutlinePanel}
         />
       ) : null}
-    </AffineErrorBoundary>
+    </LoveNotesErrorBoundary>
   );
 }
 

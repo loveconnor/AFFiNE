@@ -1,4 +1,4 @@
-import type { GetWorkspacePageByIdQuery, PublicDocMode } from '@affine/graphql';
+import type { GetWorkspacePageByIdQuery, PublicDocMode } from '@lovenotes/graphql';
 import {
   catchErrorInto,
   effect,

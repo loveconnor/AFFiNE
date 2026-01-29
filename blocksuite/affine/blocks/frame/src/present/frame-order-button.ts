@@ -1,5 +1,5 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
-import { createButtonPopper } from '@blocksuite/affine-shared/utils';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
+import { createButtonPopper } from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { LayerIcon } from '@blocksuite/icons/lit';
 import type { BlockComponent } from '@blocksuite/std';
@@ -42,7 +42,7 @@ export class EdgelessFrameOrderButton extends WithDisposable(LitElement) {
     return html`
       <style>
         .edgeless-frame-order-button svg {
-          color: ${readonly ? 'var(--affine-text-disable-color)' : 'inherit'};
+          color: ${readonly ? 'var(--lovenotes-text-disable-color)' : 'inherit'};
         }
       </style>
       <edgeless-tool-icon-button

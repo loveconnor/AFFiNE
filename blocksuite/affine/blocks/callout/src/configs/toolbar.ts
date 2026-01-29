@@ -1,9 +1,9 @@
 import {
   createPopup,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { EditorChevronDown } from '@blocksuite/affine-components/toolbar';
-import { CalloutBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { EditorChevronDown } from '@blocksuite/lovenotes-components/toolbar';
+import { CalloutBlockModel } from '@blocksuite/lovenotes-model';
 import {
   ActionPlacement,
   type IconData,
@@ -12,7 +12,7 @@ import {
   type ToolbarActionGroup,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { DeleteIcon, PaletteIcon, SmileIcon } from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@blocksuite/std';
 import type { ExtensionType } from '@blocksuite/store';
@@ -69,7 +69,7 @@ const backgroundColorAction = {
             const isDefault = color === 'default';
             const value = isDefault
               ? null
-              : `var(--affine-text-highlight-${color})`;
+              : `var(--lovenotes-text-highlight-${color})`;
             const displayName = `${color} Background`;
 
             return html`
@@ -77,12 +77,12 @@ const backgroundColorAction = {
                 data-testid="background-${color}"
                 @click=${() => updateBackground(color)}
               >
-                <affine-text-duotone-icon
+                <lovenotes-text-duotone-icon
                   style=${styleMap({
-                    '--color': 'var(--affine-text-primary-color)',
+                    '--color': 'var(--lovenotes-text-primary-color)',
                     '--background': value ?? 'transparent',
                   })}
-                ></affine-text-duotone-icon>
+                ></lovenotes-text-duotone-icon>
                 <span class="label capitalize">${displayName}</span>
               </editor-menu-action>
             `;
@@ -136,7 +136,7 @@ const iconPickerAction = {
       wrapper.props = props;
       wrapper.style.position = 'absolute';
       wrapper.style.backgroundColor = cssVarV2.layer.background.overlayPanel;
-      wrapper.style.boxShadow = 'var(--affine-menu-shadow)';
+      wrapper.style.boxShadow = 'var(--lovenotes-menu-shadow)';
       wrapper.style.borderRadius = '8px';
 
       // Create popup target from the clicked element

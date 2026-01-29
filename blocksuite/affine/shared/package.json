@@ -1,5 +1,5 @@
 {
-  "name": "@blocksuite/affine-shared",
+  "name": "@blocksuite/lovenotes-shared",
   "description": "Default BlockSuite editable blocks.",
   "type": "module",
   "scripts": {
@@ -10,9 +10,9 @@
   "author": "toeverything",
   "license": "MIT",
   "dependencies": {
-    "@blocksuite/affine-model": "workspace:*",
     "@blocksuite/global": "workspace:*",
     "@blocksuite/icons": "^2.2.17",
+    "@blocksuite/lovenotes-model": "workspace:*",
     "@blocksuite/std": "workspace:*",
     "@blocksuite/store": "workspace:*",
     "@floating-ui/dom": "^1.6.13",

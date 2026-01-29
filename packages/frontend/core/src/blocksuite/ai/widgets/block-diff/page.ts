@@ -1,6 +1,6 @@
-import { track } from '@affine/track';
-import { WidgetComponent, WidgetViewExtension } from '@blocksuite/affine/std';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { track } from '@lovenotes/track';
+import { WidgetComponent, WidgetViewExtension } from '@blocksuite/lovenotes/std';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import {
   ArrowDownSmallIcon,
   ArrowUpSmallIcon,
@@ -14,9 +14,9 @@ import { literal, unsafeStatic } from 'lit/static-html.js';
 import { BlockDiffProvider } from '../../services/block-diff';
 
 export const AFFINE_BLOCK_DIFF_WIDGET_FOR_PAGE =
-  'affine-block-diff-widget-for-page';
+  'lovenotes-block-diff-widget-for-page';
 
-export class AffineBlockDiffWidgetForPage extends WidgetComponent {
+export class LoveNotesBlockDiffWidgetForPage extends WidgetComponent {
   static override styles = css`
     .ai-block-diff-scroller-container {
       position: fixed;
@@ -66,7 +66,7 @@ export class AffineBlockDiffWidgetForPage extends WidgetComponent {
     const total = this.diffService.getTotalDiffs();
 
     const diffWidgets = Array.from(
-      this.std.host.querySelectorAll('affine-block-diff-widget-for-block')
+      this.std.host.querySelectorAll('lovenotes-block-diff-widget-for-block')
     );
     const diffs = diffWidgets.reduce<Element[]>((acc, widget) => {
       const aiDiffs = widget.shadowRoot?.querySelectorAll('.ai-block-diff');
@@ -161,7 +161,7 @@ export class AffineBlockDiffWidgetForPage extends WidgetComponent {
 }
 
 export const blockDiffWidgetForPage = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   AFFINE_BLOCK_DIFF_WIDGET_FOR_PAGE,
   literal`${unsafeStatic(AFFINE_BLOCK_DIFF_WIDGET_FOR_PAGE)}`
 );

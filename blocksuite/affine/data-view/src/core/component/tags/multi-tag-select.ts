@@ -4,9 +4,9 @@ import {
   popMenu,
   type PopupTarget,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { rangeWrap } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import { rangeWrap } from '@blocksuite/lovenotes-shared/utils';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
@@ -475,7 +475,7 @@ export class MultiTagSelect extends SignalWatcher(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-multi-tag-select': MultiTagSelect;
+    'lovenotes-multi-tag-select': MultiTagSelect;
   }
 }
 

@@ -1,3 +1,3 @@
-export * from './affine-mention';
+export * from './lovenotes-mention';
 export * from './effects';
 export * from './inline-spec';

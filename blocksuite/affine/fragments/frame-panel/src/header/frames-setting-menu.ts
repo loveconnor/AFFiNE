@@ -1,8 +1,8 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   DocModeProvider,
   EditPropsStore,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { WithDisposable } from '@blocksuite/global/lit';
 import type { EditorHost } from '@blocksuite/std';
 import { css, html, LitElement, type PropertyValues } from 'lit';
@@ -36,7 +36,7 @@ const styles = css`
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
-    color: var(--affine-text-secondary-color);
+    color: var(--lovenotes-text-secondary-color);
     padding: 0 4px;
   }
 
@@ -44,7 +44,7 @@ const styles = css`
     width: 100%;
     height: 1px;
     box-sizing: border-box;
-    background: var(--affine-border-color);
+    background: var(--lovenotes-border-color);
     margin: 8px 0;
   }
 
@@ -59,7 +59,7 @@ const styles = css`
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
-    color: var(--affine-text-primary-color);
+    color: var(--lovenotes-text-primary-color);
   }
 
   .frames-setting-menu-item .toggle-button {
@@ -71,7 +71,7 @@ const styles = css`
   }
 `;
 
-export const AFFINE_FRAMES_SETTING_MENU = 'affine-frames-setting-menu';
+export const AFFINE_FRAMES_SETTING_MENU = 'lovenotes-frames-setting-menu';
 
 export class FramesSettingMenu extends WithDisposable(LitElement) {
   static override styles = styles;

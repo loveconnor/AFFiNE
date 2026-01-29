@@ -1,9 +1,9 @@
-import { AuthService } from '@affine/core/modules/cloud';
+import { AuthService } from '@lovenotes/core/modules/cloud';
 import type {
   DialogComponentProps,
   WORKSPACE_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/dialogs';
+import { useI18n } from '@lovenotes/i18n';
 import { useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 
@@ -41,7 +41,7 @@ export const SettingDialog = ({
 
   return (
     <SwipeDialog
-      title={t['com.affine.mobile.setting.header-title']()}
+      title={t['com.lovenotes.mobile.setting.header-title']()}
       open
       onOpenChange={() => close()}
     >
@@ -51,7 +51,7 @@ export const SettingDialog = ({
 
   // return (
   //   <ConfigModal
-  //     title={t['com.affine.mobile.setting.header-title']()}
+  //     title={t['com.lovenotes.mobile.setting.header-title']()}
   //     open
   //     onOpenChange={() => close()}
   //     onBack={close}

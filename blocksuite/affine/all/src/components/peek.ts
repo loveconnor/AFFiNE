@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/peek';
+export * from '@blocksuite/lovenotes-components/peek';

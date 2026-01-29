@@ -1,7 +1,7 @@
 import type {
-  AffineInlineEditor,
-  AffineTextAttributes,
-} from '@blocksuite/affine-shared/types';
+  LoveNotesInlineEditor,
+  LoveNotesTextAttributes,
+} from '@blocksuite/lovenotes-shared/types';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import {
@@ -60,7 +60,15 @@ export class RichText extends WithDisposable(ShadowlessElement) {
 
   #verticalScrollContainer: HTMLElement | null = null;
 
-  private readonly _inlineEditor$ = signal<AffineInlineEditor | null>(null);
+  private readonly _inlineEditor$ = signal<LoveNotesInlineEditor | null>(null);
+
+  private _activated = false;
+
+  private _pendingInit = false;
+
+  private _loggedMissingYText = false;
+
+  private _loggedMissingDoc = false;
 
   private readonly _onCopy = (e: ClipboardEvent) => {
     const inlineEditor = this.inlineEditor;
@@ -165,7 +173,7 @@ export class RichText extends WithDisposable(ShadowlessElement) {
     }
 
     // init inline editor
-    this._inlineEditor$.value = new InlineEditor<AffineTextAttributes>(
+    this._inlineEditor$.value = new InlineEditor<LoveNotesTextAttributes>(
       this._yText,
       {
         isEmbed: delta => this.embedChecker(delta),
@@ -322,67 +330,95 @@ export class RichText extends WithDisposable(ShadowlessElement) {
     this._inlineEditor$.value = null;
   }
 
-  override connectedCallback() {
-    super.connectedCallback();
+  private _setupIfReady() {
+    const yText = this._yText;
+    if (!yText) {
+      if (!this._loggedMissingYText) {
+        console.error('rich-text need yText to init.');
+        this._loggedMissingYText = true;
+      }
+      return false;
+    }
 
-    if (!this._yText) {
-      console.error('rich-text need yText to init.');
-      return;
+    if (!yText.doc) {
+      if (!this._loggedMissingDoc) {
+        console.error('yText should be bind to yDoc.');
+        this._loggedMissingDoc = true;
+      }
+      return false;
     }
-    if (!this._yText.doc) {
-      console.error('yText should be bind to yDoc.');
-      return;
-    }
+
+    this._loggedMissingYText = false;
+    this._loggedMissingDoc = false;
 
     if (!this.undoManager) {
-      this.undoManager = new Y.UndoManager(this._yText, {
-        trackedOrigins: new Set([this._yText.doc.clientID]),
+      this.undoManager = new Y.UndoManager(yText, {
+        trackedOrigins: new Set([yText.doc.clientID]),
       });
     }
 
-    if (this.enableUndoRedo) {
-      this.disposables.addFromEvent(this, 'keydown', (e: KeyboardEvent) => {
-        // eslint-disable-next-line sonarjs/no-collapsible-if
-        if (e.ctrlKey || e.metaKey) {
-          if (e.key === 'z' || e.key === 'Z') {
-            if (e.shiftKey) {
-              this.undoManager.redo();
-            } else {
-              this.undoManager.undo();
+    if (!this._activated) {
+      this._activated = true;
+
+      if (this.enableUndoRedo) {
+        this.disposables.addFromEvent(this, 'keydown', (e: KeyboardEvent) => {
+          // eslint-disable-next-line sonarjs/no-collapsible-if
+          if (e.ctrlKey || e.metaKey) {
+            if (e.key === 'z' || e.key === 'Z') {
+              if (e.shiftKey) {
+                this.undoManager.redo();
+              } else {
+                this.undoManager.undo();
+              }
+              e.stopPropagation();
             }
-            e.stopPropagation();
           }
-        }
-      });
+        });
 
-      this.undoManager.on('stack-item-added', this._onStackItemAdded);
-      this.undoManager.on('stack-item-popped', this._onStackItemPopped);
-      this.disposables.add({
-        dispose: () => {
-          this.undoManager.off('stack-item-added', this._onStackItemAdded);
-          this.undoManager.off('stack-item-popped', this._onStackItemPopped);
-        },
-      });
-    }
-
-    if (this.enableClipboard) {
-      this.disposables.addFromEvent(this, 'copy', this._onCopy);
-      this.disposables.addFromEvent(this, 'cut', this._onCut);
-      this.disposables.addFromEvent(this, 'paste', this._onPaste);
-    }
-
-    this.updateComplete
-      .then(() => {
-        this._unmount();
-        this._init();
-
+        this.undoManager.on('stack-item-added', this._onStackItemAdded);
+        this.undoManager.on('stack-item-popped', this._onStackItemPopped);
         this.disposables.add({
           dispose: () => {
-            this._unmount();
+            this.undoManager.off('stack-item-added', this._onStackItemAdded);
+            this.undoManager.off('stack-item-popped', this._onStackItemPopped);
           },
         });
-      })
-      .catch(console.error);
+      }
+
+      if (this.enableClipboard) {
+        this.disposables.addFromEvent(this, 'copy', this._onCopy);
+        this.disposables.addFromEvent(this, 'cut', this._onCut);
+        this.disposables.addFromEvent(this, 'paste', this._onPaste);
+      }
+    }
+
+    if (!this.inlineEditor && !this._pendingInit) {
+      this._pendingInit = true;
+      this.updateComplete
+        .then(() => {
+          this._pendingInit = false;
+          if (!this._yText || !this._yText.doc) return;
+          this._unmount();
+          this._init();
+
+          this.disposables.add({
+            dispose: () => {
+              this._unmount();
+            },
+          });
+        })
+        .catch(err => {
+          this._pendingInit = false;
+          console.error(err);
+        });
+    }
+
+    return true;
+  }
+
+  override connectedCallback() {
+    super.connectedCallback();
+    this._setupIfReady();
   }
 
   override async getUpdateComplete(): Promise<boolean> {
@@ -406,6 +442,8 @@ export class RichText extends WithDisposable(ShadowlessElement) {
   }
 
   override updated(changedProperties: Map<string | number | symbol, unknown>) {
+    this._setupIfReady();
+
     const inlineEditor = this.inlineEditor;
     if (inlineEditor && this._yText && this._yText !== inlineEditor.yText) {
       this._unmount();
@@ -428,7 +466,7 @@ export class RichText extends WithDisposable(ShadowlessElement) {
 
   @property({ attribute: false })
   accessor embedChecker: <
-    TextAttributes extends AffineTextAttributes = AffineTextAttributes,
+    TextAttributes extends LoveNotesTextAttributes = LoveNotesTextAttributes,
   >(
     delta: DeltaInsert<TextAttributes>
   ) => boolean = () => false;
@@ -455,7 +493,7 @@ export class RichText extends WithDisposable(ShadowlessElement) {
   accessor inlineRangeProvider: InlineRangeProvider | undefined = undefined;
 
   @property({ attribute: false })
-  accessor markdownMatches: InlineMarkdownMatch<AffineTextAttributes>[] = [];
+  accessor markdownMatches: InlineMarkdownMatch<LoveNotesTextAttributes>[] = [];
 
   @property({ attribute: false })
   accessor readonly = false;

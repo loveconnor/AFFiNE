@@ -1,8 +1,8 @@
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { scrollbarStyle } from '@blocksuite/affine/shared/styles';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+import type { CopilotChatHistoryFragment } from '@lovenotes/graphql';
+import { WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import { scrollbarStyle } from '@blocksuite/lovenotes/shared/styles';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes/shared/theme';
+import { ShadowlessElement } from '@blocksuite/lovenotes/std';
 import { DeleteIcon } from '@blocksuite/icons/lit';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
@@ -41,8 +41,8 @@ export class AISessionHistory extends WithDisposable(ShadowlessElement) {
       .loading-title,
       .empty-title {
         font-weight: 600;
-        font-size: var(--affine-font-sm);
-        color: var(--affine-text-secondary-color);
+        font-size: var(--lovenotes-font-sm);
+        color: var(--lovenotes-text-secondary-color);
       }
 
       .ai-session-group {
@@ -301,9 +301,9 @@ export class AISessionHistory extends WithDisposable(ShadowlessElement) {
             >
               <div class="ai-session-title">
                 ${session.title || 'New chat'}
-                <affine-tooltip .offsetX=${60}>
+                <lovenotes-tooltip .offsetX=${60}>
                   Click to open this chat
-                </affine-tooltip>
+                </lovenotes-tooltip>
               </div>
               ${session.docId
                 ? this.renderSessionDoc(session.docId, session.sessionId)
@@ -316,7 +316,7 @@ export class AISessionHistory extends WithDisposable(ShadowlessElement) {
                 }}
               >
                 ${DeleteIcon()}
-                <affine-tooltip>Delete</affine-tooltip>
+                <lovenotes-tooltip>Delete</lovenotes-tooltip>
               </div>
             </div>
           `;
@@ -337,7 +337,7 @@ export class AISessionHistory extends WithDisposable(ShadowlessElement) {
     >
       ${docIcon}
       <span class="doc-title"> ${this.docDisplayConfig.getTitle(docId)} </span>
-      <affine-tooltip>Open this doc</affine-tooltip>
+      <lovenotes-tooltip>Open this doc</lovenotes-tooltip>
     </div>`;
   }
 

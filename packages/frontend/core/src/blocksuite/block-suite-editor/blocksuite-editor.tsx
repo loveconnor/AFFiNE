@@ -1,29 +1,29 @@
-import { EditorLoading } from '@affine/component/page-detail-skeleton';
+import { EditorLoading } from '@lovenotes/component/page-detail-skeleton';
 import type {
   EdgelessEditor,
   PageEditor,
-} from '@affine/core/blocksuite/editors';
-import { ServerService } from '@affine/core/modules/cloud';
+} from '@lovenotes/core/blocksuite/editors';
+import { ServerService } from '@lovenotes/core/modules/cloud';
 import {
   EditorSettingService,
   fontStyleOptions,
-} from '@affine/core/modules/editor-setting';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import track from '@affine/track';
-import { appendParagraphCommand } from '@blocksuite/affine/blocks/paragraph';
-import type { DocTitle } from '@blocksuite/affine/fragments/doc-title';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { IS_LINUX } from '@blocksuite/affine/global/env';
-import type { DocMode, RootBlockModel } from '@blocksuite/affine/model';
+} from '@lovenotes/core/modules/editor-setting';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import track from '@lovenotes/track';
+import { appendParagraphCommand } from '@blocksuite/lovenotes/blocks/paragraph';
+import type { DocTitle } from '@blocksuite/lovenotes/fragments/doc-title';
+import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
+import { IS_LINUX } from '@blocksuite/lovenotes/global/env';
+import type { DocMode, RootBlockModel } from '@blocksuite/lovenotes/model';
 import {
   customImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/affine/shared/adapters';
-import { focusBlockEnd } from '@blocksuite/affine/shared/commands';
-import { getLastNoteBlock } from '@blocksuite/affine/shared/utils';
-import type { BlockStdScope, EditorHost } from '@blocksuite/affine/std';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/shared/adapters';
+import { focusBlockEnd } from '@blocksuite/lovenotes/shared/commands';
+import { getLastNoteBlock } from '@blocksuite/lovenotes/shared/utils';
+import type { BlockStdScope, EditorHost } from '@blocksuite/lovenotes/std';
+import { Text, type Store } from '@blocksuite/lovenotes/store';
 import { Slot } from '@radix-ui/react-slot';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
@@ -32,10 +32,11 @@ import type { CSSProperties, HTMLAttributes } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { DefaultOpenProperty } from '../../components/properties';
+import { initDocFromProps } from '../initialization';
 import { BlocksuiteDocEditor, BlocksuiteEdgelessEditor } from './lit-adaper';
 import * as styles from './styles.css';
 
-export interface AffineEditorContainer extends HTMLElement {
+export interface LoveNotesEditorContainer extends HTMLElement {
   page: Store;
   doc: Store;
   docTitle: DocTitle;
@@ -54,7 +55,7 @@ export interface EditorProps extends HTMLAttributes<HTMLDivElement> {
   readonly?: boolean;
   defaultOpenProperty?: DefaultOpenProperty;
   // on Editor ready
-  onEditorReady?: (editor: AffineEditorContainer) => (() => void) | void;
+  onEditorReady?: (editor: LoveNotesEditorContainer) => (() => void) | void;
 }
 
 const BlockSuiteEditorImpl = ({
@@ -84,9 +85,9 @@ const BlockSuiteEditorImpl = ({
   );
 
   /**
-   * mimic an AffineEditorContainer using proxy
+   * mimic an LoveNotesEditorContainer using proxy
    */
-  const affineEditorContainerProxy = useMemo(() => {
+  const lovenotesEditorContainerProxy = useMemo(() => {
     const api = {
       get page() {
         return page;
@@ -144,14 +145,14 @@ const BlockSuiteEditorImpl = ({
         }
         return undefined;
       },
-    }) as AffineEditorContainer;
+    }) as LoveNotesEditorContainer;
 
     return proxy;
   }, [mode, page]);
 
   const handleClickPageModeBlank = useCallback(() => {
     if (shared || readonly || page.readonly) return;
-    const std = affineEditorContainerProxy.host?.std;
+    const std = lovenotesEditorContainerProxy.host?.std;
     if (!std) {
       return;
     }
@@ -160,7 +161,7 @@ const BlockSuiteEditorImpl = ({
       const lastBlock = note.lastChild();
       if (
         lastBlock &&
-        lastBlock.flavour === 'affine:paragraph' &&
+        lastBlock.flavour === 'lovenotes:paragraph' &&
         lastBlock.text?.length === 0
       ) {
         const focusBlock = std.view.getBlock(lastBlock.id) ?? undefined;
@@ -173,7 +174,7 @@ const BlockSuiteEditorImpl = ({
     }
 
     std.command.exec(appendParagraphCommand);
-  }, [affineEditorContainerProxy.host?.std, page, readonly, shared]);
+  }, [lovenotesEditorContainerProxy.host?.std, page, readonly, shared]);
 
   useEffect(() => {
     const editorContainer = rootRef.current;
@@ -181,8 +182,8 @@ const BlockSuiteEditorImpl = ({
       const handleMiddleClick = (e: MouseEvent) => {
         if (
           e.target instanceof HTMLElement &&
-          (e.target.closest('affine-reference') ||
-            e.target.closest('affine-link'))
+          (e.target.closest('lovenotes-reference') ||
+            e.target.closest('lovenotes-link'))
         ) {
           return;
         }
@@ -209,7 +210,7 @@ const BlockSuiteEditorImpl = ({
   }, [enableMiddleClickPaste]);
 
   useEffect(() => {
-    const editor = affineEditorContainerProxy;
+    const editor = lovenotesEditorContainerProxy;
     globalThis.currentEditor = editor;
     const disposableGroup = new DisposableGroup();
     let canceled = false;
@@ -240,7 +241,7 @@ const BlockSuiteEditorImpl = ({
       canceled = true;
       disposableGroup.dispose();
     };
-  }, [affineEditorContainerProxy, onEditorReady, page, server]);
+  }, [lovenotesEditorContainerProxy, onEditorReady, page, server]);
 
   return (
     <div
@@ -253,7 +254,7 @@ const BlockSuiteEditorImpl = ({
         className
       )}
       style={style}
-      data-affine-editor-container
+      data-lovenotes-editor-container
       ref={rootRef}
     >
       {mode === 'page' ? (
@@ -282,6 +283,7 @@ export const BlockSuiteEditor = (props: EditorProps) => {
   const [longerLoading, setLongerLoading] = useState(false);
   const [loadStartTime] = useState(Date.now());
   const workspaceService = useService(WorkspaceService);
+  const triedRecoverRef = useRef(false);
 
   const editorSetting = useService(EditorSettingService).editorSetting;
   const settings = useLiveData(
@@ -344,6 +346,48 @@ export const BlockSuiteEditor = (props: EditorProps) => {
   }, [isLoading, loadStartTime, props.page]);
 
   useEffect(() => {
+    if (!isLoading || !longerLoading || triedRecoverRef.current) {
+      return;
+    }
+    triedRecoverRef.current = true;
+    let cancelled = false;
+
+    const recover = async () => {
+      try {
+        await workspaceService.workspace.engine.doc.waitForSynced(
+          props.page.id
+        );
+        if (cancelled || props.page.root) {
+          return;
+        }
+
+        const blocks = props.page.spaceDoc.getMap('blocks');
+        const hasPageBlock = Array.from(blocks.values()).some(
+          block => block.get('sys:flavour') === 'lovenotes:page'
+        );
+
+        if (blocks.size === 0 || !hasPageBlock) {
+          if (!props.page.readonly) {
+            initDocFromProps(props.page, {
+              page: { title: new Text('') },
+            });
+          }
+        } else {
+          props.page.load(() => {});
+        }
+      } catch (error) {
+        console.error('Failed to recover missing page root', error);
+      }
+    };
+
+    recover();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isLoading, longerLoading, props.page, workspaceService]);
+
+  useEffect(() => {
     workspaceService.workspace.engine.doc
       .waitForDocLoaded(props.page.id)
       .then(() => {
@@ -365,7 +409,7 @@ export const BlockSuiteEditor = (props: EditorProps) => {
   }, [loadStartTime, props.page, workspaceService]);
 
   return (
-    <Slot style={{ '--affine-font-family': fontFamily } as CSSProperties}>
+    <Slot style={{ '--lovenotes-font-family': fontFamily } as CSSProperties}>
       {isLoading ? (
         <EditorLoading longerLoading={longerLoading} />
       ) : (

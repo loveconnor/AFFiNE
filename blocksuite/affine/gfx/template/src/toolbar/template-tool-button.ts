@@ -1,7 +1,7 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import { ArrowDownSmallIcon } from '@blocksuite/affine-components/icons';
-import { once } from '@blocksuite/affine-shared/utils';
-import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import { ArrowDownSmallIcon } from '@blocksuite/lovenotes-components/icons';
+import { once } from '@blocksuite/lovenotes-shared/utils';
+import { EdgelessToolbarToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import type { ToolOptionWithType } from '@blocksuite/std/gfx';
 import {
   arrow,
@@ -55,7 +55,7 @@ export class EdgelessTemplateButton extends EdgelessToolbarToolMixin(
 
     .arrow-icon {
       --y: 17px;
-      background: var(--affine-black-10);
+      background: var(--lovenotes-black-10);
       width: 24px;
       height: 24px;
       border-radius: 50%;
@@ -64,7 +64,7 @@ export class EdgelessTemplateButton extends EdgelessToolbarToolMixin(
       align-items: center;
     }
     .arrow-icon > svg {
-      color: var(--affine-icon-color);
+      color: var(--lovenotes-icon-color);
       fill: currentColor;
       width: 20px;
       height: 20px;

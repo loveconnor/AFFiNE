@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-inline-mention/view';
+export * from '@blocksuite/lovenotes-inline-mention/view';

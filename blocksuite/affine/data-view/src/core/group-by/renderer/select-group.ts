@@ -2,7 +2,7 @@ import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { css, html } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
@@ -86,7 +86,7 @@ export class SelectGroupView extends BaseGroup<
     if (!tag) {
       const displayName = `No ${this.group.property.name$.value}`;
       return html` <div
-        style="font-size: 14px;color: var(--affine-text-primary-color);line-height: 22px;"
+        style="font-size: 14px;color: var(--lovenotes-text-primary-color);line-height: 22px;"
       >
         ${displayName}
       </div>`;

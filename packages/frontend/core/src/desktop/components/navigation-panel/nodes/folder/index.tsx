@@ -8,21 +8,21 @@ import {
   MenuSeparator,
   MenuSub,
   notify,
-} from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
+} from '@lovenotes/component';
+import { usePageHelper } from '@lovenotes/core/blocksuite/block-suite-page-list/utils';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
 import {
   type FolderNode,
   OrganizeService,
-} from '@affine/core/modules/organize';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { Unreachable } from '@affine/env/constant';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@lovenotes/core/modules/organize';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
+import { Unreachable } from '@lovenotes/env/constant';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
 import {
   DeleteIcon,
   FolderIcon,
@@ -62,7 +62,7 @@ export const NavigationPanelFolderNode = ({
 }: {
   defaultRenaming?: boolean;
   nodeId: string;
-  onDrop?: (data: DropTargetDropEvent<AffineDNDData>, node: FolderNode) => void;
+  onDrop?: (data: DropTargetDropEvent<LoveNotesDNDData>, node: FolderNode) => void;
   operations?:
     | NodeOperation[]
     | ((type: string, node: FolderNode) => NodeOperation[]);
@@ -74,7 +74,7 @@ export const NavigationPanelFolderNode = ({
   const type = useLiveData(node?.type$);
   const data = useLiveData(node?.data$);
   const handleDrop = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>) => {
+    (data: DropTargetDropEvent<LoveNotesDNDData>) => {
       if (!node) {
         return;
       }
@@ -223,10 +223,10 @@ const NavigationPanelFolderNodeFolder = ({
       type: 'folder',
     });
     notify.success({
-      title: t['com.affine.rootAppSidebar.organize.delete.notify-title']({
+      title: t['com.lovenotes.rootAppSidebar.organize.delete.notify-title']({
         name,
       }),
-      message: t['com.affine.rootAppSidebar.organize.delete.notify-message'](),
+      message: t['com.lovenotes.rootAppSidebar.organize.delete.notify-message'](),
     });
   }, [name, node, t]);
 
@@ -247,7 +247,7 @@ const NavigationPanelFolderNodeFolder = ({
       dropTarget: {
         at: 'navigation-panel:organize:folder',
       },
-    } satisfies AffineDNDData;
+    } satisfies LoveNotesDNDData;
   }, [location, node.id]);
 
   const handleRename = useCallback(
@@ -258,7 +258,7 @@ const NavigationPanelFolderNodeFolder = ({
   );
 
   const handleDropOnFolder = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>) => {
+    (data: DropTargetDropEvent<LoveNotesDNDData>) => {
       if (data.source.data.entity?.type) {
         track.$.navigationPanel.folders.drop({
           type: data.source.data.entity.type,
@@ -338,7 +338,7 @@ const NavigationPanelFolderNodeFolder = ({
   );
 
   const handleDropOnPlaceholder = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>) => {
+    (data: DropTargetDropEvent<LoveNotesDNDData>) => {
       if (data.source.data.entity?.type) {
         track.$.navigationPanel.folders.drop({
           type: data.source.data.entity.type,
@@ -382,7 +382,7 @@ const NavigationPanelFolderNodeFolder = ({
   );
 
   const handleDropOnChildren = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>, dropAtNode?: FolderNode) => {
+    (data: DropTargetDropEvent<LoveNotesDNDData>, dropAtNode?: FolderNode) => {
       if (!dropAtNode || !dropAtNode.id) {
         return;
       }
@@ -521,7 +521,7 @@ const NavigationPanelFolderNodeFolder = ({
       [dropEffect, node]
     );
 
-  const handleCanDrop = useMemo<DropTargetOptions<AffineDNDData>['canDrop']>(
+  const handleCanDrop = useMemo<DropTargetOptions<LoveNotesDNDData>['canDrop']>(
     () => args => {
       const entityType = args.source.data.entity?.type;
       if (args.treeInstruction && args.treeInstruction?.type !== 'make-child') {
@@ -555,7 +555,7 @@ const NavigationPanelFolderNodeFolder = ({
   );
 
   const handleChildrenCanDrop = useMemo<
-    DropTargetOptions<AffineDNDData>['canDrop']
+    DropTargetOptions<LoveNotesDNDData>['canDrop']
   >(
     () => args => {
       const entityType = args.source.data.entity?.type;
@@ -597,7 +597,7 @@ const NavigationPanelFolderNodeFolder = ({
 
   const handleCreateSubfolder = useCallback(() => {
     const newFolderId = node.createFolder(
-      t['com.affine.rootAppSidebar.organize.new-folders'](),
+      t['com.lovenotes.rootAppSidebar.organize.new-folders'](),
       node.indexAt('before')
     );
     track.$.navigationPanel.organize.createOrganizeItem({ type: 'folder' });
@@ -659,7 +659,7 @@ const NavigationPanelFolderNodeFolder = ({
             size="16"
             onClick={handleNewDoc}
             tooltip={t[
-              'com.affine.rootAppSidebar.explorer.organize-add-tooltip'
+              'com.lovenotes.rootAppSidebar.explorer.organize-add-tooltip'
             ]()}
           >
             <PlusIcon />
@@ -670,7 +670,7 @@ const NavigationPanelFolderNodeFolder = ({
         index: 100,
         view: (
           <MenuItem prefixIcon={<FolderIcon />} onClick={handleCreateSubfolder}>
-            {t['com.affine.rootAppSidebar.organize.folder.create-subfolder']()}
+            {t['com.lovenotes.rootAppSidebar.organize.folder.create-subfolder']()}
           </MenuItem>
         ),
       },
@@ -681,7 +681,7 @@ const NavigationPanelFolderNodeFolder = ({
             prefixIcon={<PageIcon />}
             onClick={() => handleAddToFolder('doc')}
           >
-            {t['com.affine.rootAppSidebar.organize.folder.add-docs']()}
+            {t['com.lovenotes.rootAppSidebar.organize.folder.add-docs']()}
           </MenuItem>
         ),
       },
@@ -698,20 +698,20 @@ const NavigationPanelFolderNodeFolder = ({
                   onClick={() => handleAddToFolder('tag')}
                   prefixIcon={<TagsIcon />}
                 >
-                  {t['com.affine.rootAppSidebar.organize.folder.add-tags']()}
+                  {t['com.lovenotes.rootAppSidebar.organize.folder.add-tags']()}
                 </MenuItem>
                 <MenuItem
                   onClick={() => handleAddToFolder('collection')}
                   prefixIcon={<AnimatedCollectionsIcon closed={false} />}
                 >
                   {t[
-                    'com.affine.rootAppSidebar.organize.folder.add-collections'
+                    'com.lovenotes.rootAppSidebar.organize.folder.add-collections'
                   ]()}
                 </MenuItem>
               </>
             }
           >
-            {t['com.affine.rootAppSidebar.organize.folder.add-others']()}
+            {t['com.lovenotes.rootAppSidebar.organize.folder.add-others']()}
           </MenuSub>
         ),
       },
@@ -733,7 +733,7 @@ const NavigationPanelFolderNodeFolder = ({
             prefixIcon={<DeleteIcon />}
             onClick={handleDelete}
           >
-            {t['com.affine.rootAppSidebar.organize.delete']()}
+            {t['com.lovenotes.rootAppSidebar.organize.delete']()}
           </MenuItem>
         ),
       },
@@ -768,7 +768,7 @@ const NavigationPanelFolderNodeFolder = ({
                 data-event-args-type={node.type$.value}
                 onClick={() => node.delete()}
               >
-                {t['com.affine.rootAppSidebar.organize.delete-from-folder']()}
+                {t['com.lovenotes.rootAppSidebar.organize.delete-from-folder']()}
               </MenuItem>
             ),
           },

@@ -1,4 +1,4 @@
-import { cssVarV2 } from '@blocksuite/affine-shared/theme';
+import { cssVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { effect } from '@preact/signals-core';

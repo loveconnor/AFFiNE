@@ -1,4 +1,4 @@
-package app.affine.pro.theme
+package app.lovenotes.pro.theme
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -7,7 +7,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 @Immutable
-data class AFFiNETypography(
+data class LoveNotesTypography(
     val body: TextStyle,
     val h1: TextStyle,
     val h2: TextStyle,
@@ -17,7 +17,7 @@ data class AFFiNETypography(
     val h6: TextStyle,
 )
 
-val affineTypography = AFFiNETypography(
+val lovenotesTypography = LoveNotesTypography(
     body = TextStyle(
         fontSize = 16.sp,
         lineHeight = 21.sp,
@@ -55,4 +55,4 @@ val affineTypography = AFFiNETypography(
     ),
 )
 
-val LocalAFFiNETypography = staticCompositionLocalOf { affineTypography }
+val LocalLoveNotesTypography = staticCompositionLocalOf { lovenotesTypography }

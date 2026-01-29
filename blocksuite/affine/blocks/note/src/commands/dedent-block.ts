@@ -1,8 +1,8 @@
-import { ParagraphBlockModel } from '@blocksuite/affine-model';
+import { ParagraphBlockModel } from '@blocksuite/lovenotes-model';
 import {
   calculateCollapsedSiblings,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { Command } from '@blocksuite/std';
 
 /**

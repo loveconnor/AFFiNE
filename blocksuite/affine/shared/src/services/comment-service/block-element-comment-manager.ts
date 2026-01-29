@@ -1,4 +1,4 @@
-import { DividerBlockModel } from '@blocksuite/affine-model';
+import { DividerBlockModel } from '@blocksuite/lovenotes-model';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import {
   BlockSelection,

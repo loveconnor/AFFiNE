@@ -1,8 +1,8 @@
-import { DefaultTheme, NoteDisplayMode } from '@blocksuite/affine-model';
+import { DefaultTheme, NoteDisplayMode } from '@blocksuite/lovenotes-model';
 import {
   embedSyncedDocMiddleware,
   PlainTextAdapter,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type {
   BlockSnapshot,
   DocSnapshot,
@@ -20,7 +20,7 @@ describe('snapshot to plain text', () => {
     const blockSnapshot: BlockSnapshot = {
       type: 'block',
       id: 'block:vu6SK6WJpW',
-      flavour: 'affine:page',
+      flavour: 'lovenotes:page',
       props: {
         title: {
           '$blocksuite:internal:text$': true,
@@ -31,7 +31,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:Tk4gSPocAt',
-          flavour: 'affine:surface',
+          flavour: 'lovenotes:surface',
           props: {
             elements: {},
           },
@@ -40,7 +40,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:WfnS5ZDCJT',
-          flavour: 'affine:note',
+          flavour: 'lovenotes:note',
           props: {
             xywh: '[0,0,800,95]',
             background: DefaultTheme.noteBackgrounColor,
@@ -52,7 +52,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'block:Bdn8Yvqcny',
-              flavour: 'affine:paragraph',
+              flavour: 'lovenotes:paragraph',
               props: {
                 type: 'text',
                 text: {
@@ -80,7 +80,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'block:72SMa5mdLy',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: 'text',
                     text: {
@@ -100,7 +100,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'block:f-Z6nRrGK_',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: 'text',
                     text: {
@@ -120,7 +120,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'block:I0Fmz5Nv02',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: 'text',
                     text: {
@@ -139,7 +139,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'block:12lDwMD7ec',
-              flavour: 'affine:paragraph',
+              flavour: 'lovenotes:paragraph',
               props: {
                 type: 'text',
                 text: {
@@ -170,7 +170,7 @@ describe('snapshot to plain text', () => {
     const blockSnapshot: BlockSnapshot = {
       type: 'block',
       id: 'block:m5hvdXHXS2',
-      flavour: 'affine:page',
+      flavour: 'lovenotes:page',
       version: 2,
       props: {
         title: {
@@ -182,7 +182,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:Y4J-oO9h9d',
-          flavour: 'affine:surface',
+          flavour: 'lovenotes:surface',
           version: 5,
           props: {
             elements: {},
@@ -192,7 +192,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:1Ll22zT992',
-          flavour: 'affine:note',
+          flavour: 'lovenotes:note',
           version: 1,
           props: {
             xywh: '[0,0,800,95]',
@@ -205,7 +205,7 @@ describe('snapshot to plain text', () => {
                 borderRadius: 8,
                 borderSize: 4,
                 borderStyle: 'solid',
-                shadowType: '--affine-note-shadow-box',
+                shadowType: '--lovenotes-note-shadow-box',
               },
             },
           },
@@ -213,7 +213,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'block:Fd0ZCYB7a4',
-              flavour: 'affine:list',
+              flavour: 'lovenotes:list',
               version: 1,
               props: {
                 type: 'numbered',
@@ -232,7 +232,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'block:8-GeKDc06x',
-                  flavour: 'affine:list',
+                  flavour: 'lovenotes:list',
                   version: 1,
                   props: {
                     type: 'numbered',
@@ -252,7 +252,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'block:f0c-9xKaEL',
-                  flavour: 'affine:list',
+                  flavour: 'lovenotes:list',
                   version: 1,
                   props: {
                     type: 'bulleted',
@@ -272,7 +272,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'block:f0c-9xKaEL',
-                  flavour: 'affine:list',
+                  flavour: 'lovenotes:list',
                   version: 1,
                   props: {
                     type: 'numbered',
@@ -294,7 +294,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'block:Fd0ZCYB7a5',
-              flavour: 'affine:list',
+              flavour: 'lovenotes:list',
               version: 1,
               props: {
                 type: 'numbered',
@@ -329,7 +329,7 @@ describe('snapshot to plain text', () => {
     const blockSnapshot: BlockSnapshot = {
       type: 'block',
       id: 'block:vu6SK6WJpW',
-      flavour: 'affine:page',
+      flavour: 'lovenotes:page',
       props: {
         title: {
           '$blocksuite:internal:text$': true,
@@ -340,7 +340,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:Tk4gSPocAt',
-          flavour: 'affine:surface',
+          flavour: 'lovenotes:surface',
           props: {
             elements: {},
           },
@@ -349,7 +349,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:WfnS5ZDCJT',
-          flavour: 'affine:note',
+          flavour: 'lovenotes:note',
           props: {
             xywh: '[0,0,800,95]',
             background: DefaultTheme.noteBackgrounColor,
@@ -361,7 +361,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'block:Bdn8Yvqcny',
-              flavour: 'affine:paragraph',
+              flavour: 'lovenotes:paragraph',
               props: {
                 type: 'text',
                 text: {
@@ -378,7 +378,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'block:12lDwMD7ec',
-              flavour: 'affine:divider',
+              flavour: 'lovenotes:divider',
               props: {},
               children: [],
             },
@@ -399,7 +399,7 @@ describe('snapshot to plain text', () => {
     const blockSnapshot: BlockSnapshot = {
       type: 'block',
       id: 'block:vu6SK6WJpW',
-      flavour: 'affine:page',
+      flavour: 'lovenotes:page',
       props: {
         title: {
           '$blocksuite:internal:text$': true,
@@ -410,7 +410,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:Tk4gSPocAt',
-          flavour: 'affine:surface',
+          flavour: 'lovenotes:surface',
           props: {
             elements: {},
           },
@@ -419,7 +419,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:WfnS5ZDCJT',
-          flavour: 'affine:note',
+          flavour: 'lovenotes:note',
           props: {
             xywh: '[0,0,800,95]',
             background: DefaultTheme.noteBackgrounColor,
@@ -431,7 +431,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'block:8hOLxad5Fv',
-              flavour: 'affine:code',
+              flavour: 'lovenotes:code',
               props: {
                 language: 'python',
                 text: {
@@ -462,7 +462,7 @@ describe('snapshot to plain text', () => {
     const blockSnapshot: BlockSnapshot = {
       type: 'block',
       id: 'block:vu6SK6WJpW',
-      flavour: 'affine:page',
+      flavour: 'lovenotes:page',
       props: {
         title: {
           '$blocksuite:internal:text$': true,
@@ -473,7 +473,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:Tk4gSPocAt',
-          flavour: 'affine:surface',
+          flavour: 'lovenotes:surface',
           props: {
             elements: {},
           },
@@ -482,7 +482,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:WfnS5ZDCJT',
-          flavour: 'affine:note',
+          flavour: 'lovenotes:note',
           props: {
             xywh: '[0,0,800,95]',
             background: DefaultTheme.noteBackgrounColor,
@@ -494,7 +494,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'block:Bdn8Yvqcny',
-              flavour: 'affine:paragraph',
+              flavour: 'lovenotes:paragraph',
               props: {
                 type: 'text',
                 text: {
@@ -503,7 +503,7 @@ describe('snapshot to plain text', () => {
                     {
                       insert: 'aaa',
                       attributes: {
-                        link: 'https://affine.pro/',
+                        link: 'https://lovenotes.pro/',
                       },
                     },
                   ],
@@ -513,7 +513,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'block:72SMa5mdLy',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: 'text',
                     text: {
@@ -543,7 +543,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'block:f-Z6nRrGK_',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: 'text',
                     text: {
@@ -576,7 +576,7 @@ describe('snapshot to plain text', () => {
     );
 
     const plainText =
-      'aaa: https://affine.pro/\ntest: https://example.com/deadbeef?mode=page&blockIds=abc%2C123&elementIds=def%2C456&databaseId=deadbeef&databaseRowId=123\nE=mc^2\n';
+      'aaa: https://lovenotes.pro/\ntest: https://example.com/deadbeef?mode=page&blockIds=abc%2C123&elementIds=def%2C456&databaseId=deadbeef&databaseRowId=123\nE=mc^2\n';
     const target = await plainTextAdapter.fromBlockSnapshot({
       snapshot: blockSnapshot,
     });
@@ -587,14 +587,14 @@ describe('snapshot to plain text', () => {
     const embedTestCases = [
       {
         name: 'bookmark',
-        flavour: 'affine:bookmark',
+        flavour: 'lovenotes:bookmark',
         url: 'https://example.com',
         title: 'example',
         plainText: '[example](https://example.com)\n',
       },
       {
         name: 'embed github',
-        flavour: 'affine:embed-github',
+        flavour: 'lovenotes:embed-github',
         url: 'https://github.com/toeverything/blocksuite/pull/66666',
         title: 'example github pr title',
         plainText:
@@ -602,7 +602,7 @@ describe('snapshot to plain text', () => {
       },
       {
         name: 'embed figma',
-        flavour: 'affine:embed-figma',
+        flavour: 'lovenotes:embed-figma',
         url: 'https://www.figma.com/file/1234567890',
         title: 'example figma title',
         plainText:
@@ -610,7 +610,7 @@ describe('snapshot to plain text', () => {
       },
       {
         name: 'embed youtube',
-        flavour: 'affine:embed-youtube',
+        flavour: 'lovenotes:embed-youtube',
         url: 'https://www.youtube.com/watch?v=1234567890',
         title: 'example youtube title',
         plainText:
@@ -618,7 +618,7 @@ describe('snapshot to plain text', () => {
       },
       {
         name: 'embed loom',
-        flavour: 'affine:embed-loom',
+        flavour: 'lovenotes:embed-loom',
         url: 'https://www.loom.com/share/1234567890',
         title: 'example loom title',
         plainText:
@@ -631,7 +631,7 @@ describe('snapshot to plain text', () => {
         const blockSnapshot: BlockSnapshot = {
           type: 'block',
           id: 'block:vu6SK6WJpW',
-          flavour: 'affine:page',
+          flavour: 'lovenotes:page',
           props: {
             title: {
               '$blocksuite:internal:text$': true,
@@ -642,7 +642,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'block:Tk4gSPocAt',
-              flavour: 'affine:surface',
+              flavour: 'lovenotes:surface',
               props: {
                 elements: {},
               },
@@ -651,7 +651,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'block:WfnS5ZDCJT',
-              flavour: 'affine:note',
+              flavour: 'lovenotes:note',
               props: {
                 xywh: '[0,0,800,95]',
                 background: DefaultTheme.noteBackgrounColor,
@@ -687,7 +687,7 @@ describe('snapshot to plain text', () => {
       const blockSnapShot: BlockSnapshot = {
         type: 'block',
         id: 'VChAZIX7DM',
-        flavour: 'affine:page',
+        flavour: 'lovenotes:page',
         version: 2,
         props: {
           title: {
@@ -703,7 +703,7 @@ describe('snapshot to plain text', () => {
           {
             type: 'block',
             id: 'uRj8gejH4d',
-            flavour: 'affine:surface',
+            flavour: 'lovenotes:surface',
             version: 5,
             props: {
               elements: {},
@@ -713,7 +713,7 @@ describe('snapshot to plain text', () => {
           {
             type: 'block',
             id: 'AqFoVDUoW9',
-            flavour: 'affine:note',
+            flavour: 'lovenotes:note',
             version: 1,
             props: {
               xywh: '[0,0,800,95]',
@@ -726,7 +726,7 @@ describe('snapshot to plain text', () => {
               {
                 type: 'block',
                 id: 'C0sH2Ee6cz-MysVNLNrBt',
-                flavour: 'affine:embed-linked-doc',
+                flavour: 'lovenotes:embed-linked-doc',
                 props: {
                   index: 'a0',
                   xywh: '[0,0,0,0]',
@@ -780,7 +780,7 @@ describe('snapshot to plain text', () => {
         blocks: {
           type: 'block',
           id: '8WdJmN5FTT',
-          flavour: 'affine:page',
+          flavour: 'lovenotes:page',
           version: 2,
           props: {
             title: {
@@ -796,7 +796,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'zVN1EZFuZe',
-              flavour: 'affine:surface',
+              flavour: 'lovenotes:surface',
               version: 5,
               props: {
                 elements: {},
@@ -806,7 +806,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: '2s9sJlphLH',
-              flavour: 'affine:note',
+              flavour: 'lovenotes:note',
               version: 1,
               props: {
                 xywh: '[0,0,800,95]',
@@ -819,7 +819,7 @@ describe('snapshot to plain text', () => {
                     borderRadius: 8,
                     borderSize: 4,
                     borderStyle: 'solid',
-                    shadowType: '--affine-note-shadow-box',
+                    shadowType: '--lovenotes-note-shadow-box',
                   },
                 },
               },
@@ -827,7 +827,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'vNp5XrR5yw',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   version: 1,
                   props: {
                     type: 'text',
@@ -841,7 +841,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'JTdfSl1ygZ',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   version: 1,
                   props: {
                     type: 'text',
@@ -873,7 +873,7 @@ describe('snapshot to plain text', () => {
         blocks: {
           type: 'block',
           id: 'AGOahFisBN',
-          flavour: 'affine:page',
+          flavour: 'lovenotes:page',
           version: 2,
           props: {
             title: {
@@ -889,7 +889,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'gfVzx5tGpB',
-              flavour: 'affine:surface',
+              flavour: 'lovenotes:surface',
               version: 5,
               props: {
                 elements: {},
@@ -899,11 +899,11 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'CzEfaUret4',
-              flavour: 'affine:note',
+              flavour: 'lovenotes:note',
               version: 1,
               props: {
                 xywh: '[0,0,800,95]',
-                background: '--affine-note-background-blue',
+                background: '--lovenotes-note-background-blue',
                 index: 'a0',
                 hidden: false,
                 displayMode: 'both',
@@ -912,7 +912,7 @@ describe('snapshot to plain text', () => {
                     borderRadius: 0,
                     borderSize: 4,
                     borderStyle: 'none',
-                    shadowType: '--affine-note-shadow-sticker',
+                    shadowType: '--lovenotes-note-shadow-sticker',
                   },
                 },
               },
@@ -920,7 +920,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'yFlNufsgke',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   version: 1,
                   props: {
                     type: 'h1',
@@ -938,7 +938,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'oMuLcD6XS3',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   version: 1,
                   props: {
                     type: 'h2',
@@ -956,7 +956,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'PQ8FhGV6VM',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   version: 1,
                   props: {
                     type: 'text',
@@ -974,7 +974,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'sA9paSrdEN',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   version: 1,
                   props: {
                     type: 'text',
@@ -995,7 +995,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'DF26giFpKX',
-                  flavour: 'affine:code',
+                  flavour: 'lovenotes:code',
                   version: 1,
                   props: {
                     text: {
@@ -1015,7 +1015,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: '-3bbVQTvI2',
-                  flavour: 'affine:embed-synced-doc',
+                  flavour: 'lovenotes:embed-synced-doc',
                   version: 1,
                   props: {
                     index: 'a0',
@@ -1046,7 +1046,7 @@ describe('snapshot to plain text', () => {
         blocks: {
           type: 'block',
           id: 'VChAZIX7DM',
-          flavour: 'affine:page',
+          flavour: 'lovenotes:page',
           version: 2,
           props: {
             title: {
@@ -1062,7 +1062,7 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'uRj8gejH4d',
-              flavour: 'affine:surface',
+              flavour: 'lovenotes:surface',
               version: 5,
               props: {
                 elements: {},
@@ -1072,11 +1072,11 @@ describe('snapshot to plain text', () => {
             {
               type: 'block',
               id: 'AqFoVDUoW9',
-              flavour: 'affine:note',
+              flavour: 'lovenotes:note',
               version: 1,
               props: {
                 xywh: '[0,0,800,95]',
-                background: '--affine-note-background-blue',
+                background: '--lovenotes-note-background-blue',
                 index: 'a0',
                 hidden: false,
                 displayMode: 'both',
@@ -1085,7 +1085,7 @@ describe('snapshot to plain text', () => {
                     borderRadius: 0,
                     borderSize: 4,
                     borderStyle: 'none',
-                    shadowType: '--affine-note-shadow-sticker',
+                    shadowType: '--lovenotes-note-shadow-sticker',
                   },
                 },
               },
@@ -1093,7 +1093,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'cWBI4UGTqh',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   version: 1,
                   props: {
                     type: 'text',
@@ -1111,7 +1111,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'AqFoVxas19',
-                  flavour: 'affine:embed-synced-doc',
+                  flavour: 'lovenotes:embed-synced-doc',
                   version: 1,
                   props: {
                     index: 'a0',
@@ -1125,7 +1125,7 @@ describe('snapshot to plain text', () => {
                 {
                   type: 'block',
                   id: 'Db976U9v18',
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   version: 1,
                   props: {
                     type: 'text',
@@ -1166,7 +1166,7 @@ describe('snapshot to plain text', () => {
     const blockSnapshot: BlockSnapshot = {
       type: 'block',
       id: 'matchesReplaceMap[0]',
-      flavour: 'affine:note',
+      flavour: 'lovenotes:note',
       props: {
         xywh: '[0,0,800,95]',
         background: DefaultTheme.noteBackgrounColor,
@@ -1178,7 +1178,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'matchesReplaceMap[1]',
-          flavour: 'affine:latex',
+          flavour: 'lovenotes:latex',
           props: {
             latex: 'E=mc^2',
           },
@@ -1199,7 +1199,7 @@ describe('snapshot to plain text', () => {
     const blockSnapshot: BlockSnapshot = {
       type: 'block',
       id: 'block:8Wb7CSJ9Qe',
-      flavour: 'affine:database',
+      flavour: 'lovenotes:database',
       props: {
         cells: {
           'block:P_-Wg7Rg9O': {
@@ -1293,17 +1293,17 @@ describe('snapshot to plain text', () => {
               options: [
                 {
                   id: 'TKip9uc7Yx',
-                  color: 'var(--affine-tag-white)',
+                  color: 'var(--lovenotes-tag-white)',
                   value: 'TODO',
                 },
                 {
                   id: 'F2bgsaE3X2',
-                  color: 'var(--affine-tag-green)',
+                  color: 'var(--lovenotes-tag-green)',
                   value: 'In Progress',
                 },
                 {
                   id: 'y3O1A2IHHu',
-                  color: 'var(--affine-tag-gray)',
+                  color: 'var(--lovenotes-tag-gray)',
                   value: 'Done',
                 },
               ],
@@ -1338,12 +1338,12 @@ describe('snapshot to plain text', () => {
                 {
                   id: '73UrEZWaKk',
                   value: 'test2',
-                  color: 'var(--affine-tag-purple)',
+                  color: 'var(--lovenotes-tag-purple)',
                 },
                 {
                   id: '-2_QD3GZT1',
                   value: 'test1',
-                  color: 'var(--affine-tag-teal)',
+                  color: 'var(--lovenotes-tag-teal)',
                 },
               ],
             },
@@ -1373,7 +1373,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:P_-Wg7Rg9O',
-          flavour: 'affine:paragraph',
+          flavour: 'lovenotes:paragraph',
           props: {
             type: 'text',
             text: {
@@ -1390,7 +1390,7 @@ describe('snapshot to plain text', () => {
         {
           type: 'block',
           id: 'block:0vhfgcHtPF',
-          flavour: 'affine:paragraph',
+          flavour: 'lovenotes:paragraph',
           props: {
             type: 'text',
             text: {

@@ -1,20 +1,20 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   locateEditorContainer,
   locateToolbar,
-} from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/editor';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect, type Locator } from '@playwright/test';
 
 function getEdgelessTextColor(text: Locator) {
   return text
-    .locator('.affine-block-children-container')
+    .locator('.lovenotes-block-children-container')
     .first()
     .evaluate(e => e.style.getPropertyValue('--edgeless-text-color'));
 }
@@ -34,14 +34,14 @@ test('should update color of edgeless text when switching theme', async ({
   const container = locateEditorContainer(page);
   await container.dblclick();
 
-  await page.waitForSelector('affine-edgeless-text');
+  await page.waitForSelector('lovenotes-edgeless-text');
 
   await type(page, 'text color');
 
   await page.keyboard.press('Escape');
   await page.keyboard.press('Escape');
 
-  const text = page.locator('affine-edgeless-text');
+  const text = page.locator('lovenotes-edgeless-text');
 
   await text.click();
 

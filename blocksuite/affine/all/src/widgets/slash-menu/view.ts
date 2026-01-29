@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-widget-slash-menu/view';
+export * from '@blocksuite/lovenotes-widget-slash-menu/view';

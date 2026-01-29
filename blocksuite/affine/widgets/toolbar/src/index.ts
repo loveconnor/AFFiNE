@@ -6,7 +6,7 @@ import { AFFINE_TOOLBAR_WIDGET } from './toolbar';
 export * from './toolbar';
 
 export const toolbarWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   AFFINE_TOOLBAR_WIDGET,
   literal`${unsafeStatic(AFFINE_TOOLBAR_WIDGET)}`
 );

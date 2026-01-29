@@ -1,4 +1,4 @@
-import type { NoteBlockModel } from '@blocksuite/affine-model';
+import type { NoteBlockModel } from '@blocksuite/lovenotes-model';
 import { type BlockStdScope, ConfigExtensionFactory } from '@blocksuite/std';
 import type { TemplateResult } from 'lit';
 
@@ -17,4 +17,4 @@ export type NoteConfig = {
 };
 
 export const NoteConfigExtension =
-  ConfigExtensionFactory<NoteConfig>('affine:note');
+  ConfigExtensionFactory<NoteConfig>('lovenotes:note');

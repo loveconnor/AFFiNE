@@ -1,4 +1,4 @@
-package app.affine.pro
+package app.lovenotes.pro
 
 import android.content.res.ColorStateList
 import android.os.Bundle
@@ -13,17 +13,17 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateMargins
 import androidx.lifecycle.lifecycleScope
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
-import app.affine.pro.ai.AIActivity
-import app.affine.pro.plugin.AIButtonPlugin
-import app.affine.pro.plugin.AFFiNEThemePlugin
-import app.affine.pro.plugin.AuthPlugin
-import app.affine.pro.plugin.HashCashPlugin
-import app.affine.pro.plugin.NbStorePlugin
-import app.affine.pro.service.GraphQLService
-import app.affine.pro.service.SSEService
-import app.affine.pro.service.WebService
-import app.affine.pro.utils.px2dp
-import app.affine.pro.utils.dp2px
+import app.lovenotes.pro.ai.AIActivity
+import app.lovenotes.pro.plugin.AIButtonPlugin
+import app.lovenotes.pro.plugin.LoveNotesThemePlugin
+import app.lovenotes.pro.plugin.AuthPlugin
+import app.lovenotes.pro.plugin.HashCashPlugin
+import app.lovenotes.pro.plugin.NbStorePlugin
+import app.lovenotes.pro.service.GraphQLService
+import app.lovenotes.pro.service.SSEService
+import app.lovenotes.pro.service.WebService
+import app.lovenotes.pro.utils.px2dp
+import app.lovenotes.pro.utils.dp2px
 import com.getcapacitor.BridgeActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +32,7 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class MainActivity : BridgeActivity(), AIButtonPlugin.Callback, AFFiNEThemePlugin.Callback,
+class MainActivity : BridgeActivity(), AIButtonPlugin.Callback, LoveNotesThemePlugin.Callback,
     View.OnClickListener {
 
     @Inject
@@ -47,7 +47,7 @@ class MainActivity : BridgeActivity(), AIButtonPlugin.Callback, AFFiNEThemePlugi
     init {
         registerPlugins(
             listOf(
-                AFFiNEThemePlugin::class.java,
+                LoveNotesThemePlugin::class.java,
                 AIButtonPlugin::class.java,
                 AuthPlugin::class.java,
                 HashCashPlugin::class.java,
@@ -69,7 +69,7 @@ class MainActivity : BridgeActivity(), AIButtonPlugin.Callback, AFFiNEThemePlugi
                 VectorDrawableCompat.create(resources, R.drawable.ic_ai, theme)?.apply {
                     DrawableCompat.setTint(
                         this,
-                        ContextCompat.getColor(context, R.color.affine_primary)
+                        ContextCompat.getColor(context, R.color.lovenotes_primary)
                     )
                 })
             setOnClickListener(this@MainActivity)

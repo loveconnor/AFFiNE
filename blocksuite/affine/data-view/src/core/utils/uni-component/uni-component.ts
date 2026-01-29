@@ -1,7 +1,7 @@
 import type {
   UniComponent,
   UniComponentReturn,
-} from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-shared/types';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import type { Signal } from '@preact/signals-core';

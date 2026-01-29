@@ -3,9 +3,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@affine/admin/components/ui/accordion';
-import { buttonVariants } from '@affine/admin/components/ui/button';
-import { cn } from '@affine/admin/utils';
+} from '@lovenotes/admin/components/ui/accordion';
+import { buttonVariants } from '@lovenotes/admin/components/ui/button';
+import { cn } from '@lovenotes/admin/utils';
 import { SettingsIcon } from '@blocksuite/icons/rc';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';

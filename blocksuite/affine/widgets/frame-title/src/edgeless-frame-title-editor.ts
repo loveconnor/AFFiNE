@@ -1,5 +1,5 @@
-import { FrameBlockModel } from '@blocksuite/affine-model';
-import type { RichText } from '@blocksuite/affine-rich-text';
+import { FrameBlockModel } from '@blocksuite/lovenotes-model';
+import type { RichText } from '@blocksuite/lovenotes-rich-text';
 import { Bound } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { type BlockComponent, ShadowlessElement } from '@blocksuite/std';
@@ -12,9 +12,9 @@ import { styleMap } from 'lit/directives/style-map.js';
 
 import {
   AFFINE_FRAME_TITLE_WIDGET,
-  type AffineFrameTitleWidget,
-} from './affine-frame-title-widget';
-import type { AffineFrameTitle } from './frame-title';
+  type LoveNotesFrameTitleWidget,
+} from './lovenotes-frame-title-widget';
+import type { LoveNotesFrameTitle } from './frame-title';
 import { frameTitleStyleVars } from './styles';
 
 export class EdgelessFrameTitleEditor extends WithDisposable(
@@ -30,10 +30,10 @@ export class EdgelessFrameTitleEditor extends WithDisposable(
       padding: 0 4px;
       outline: none;
       z-index: 1;
-      border: 1px solid var(--affine-primary-color);
+      border: 1px solid var(--lovenotes-primary-color);
       box-shadow: 0px 0px 0px 2px rgba(30, 150, 235, 0.3);
       overflow: hidden;
-      font-family: var(--affine-font-family);
+      font-family: var(--lovenotes-font-family);
     }
   `;
 
@@ -137,16 +137,16 @@ export class EdgelessFrameTitleEditor extends WithDisposable(
     const frameTitleWidget = this.edgeless.std.view.getWidget(
       AFFINE_FRAME_TITLE_WIDGET,
       this.frameModel.id
-    ) as AffineFrameTitleWidget | null;
+    ) as LoveNotesFrameTitleWidget | null;
 
     if (!frameTitleWidget) return nothing;
 
     const frameTitle =
-      frameTitleWidget.querySelector<AffineFrameTitle>('affine-frame-title');
+      frameTitleWidget.querySelector<LoveNotesFrameTitle>('lovenotes-frame-title');
 
     const colors = frameTitle?.colors ?? {
       background: cssVarV2('edgeless/frame/background/white'),
-      text: 'var(--affine-text-primary-color)',
+      text: 'var(--lovenotes-text-primary-color)',
     };
 
     const inlineEditorStyle = styleMap({

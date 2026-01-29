@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/card-style-dropdown-menu';
+export * from '@blocksuite/lovenotes-components/card-style-dropdown-menu';

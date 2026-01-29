@@ -18,11 +18,11 @@ public class GetPromptModelsQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["promptName": promptName] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("currentUser", CurrentUser?.self),
     ] }
@@ -33,11 +33,11 @@ public class GetPromptModelsQuery: GraphQLQuery {
     /// CurrentUser
     ///
     /// Parent Type: `UserType`
-    public struct CurrentUser: AffineGraphQL.SelectionSet {
+    public struct CurrentUser: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("copilot", Copilot.self),
@@ -48,11 +48,11 @@ public class GetPromptModelsQuery: GraphQLQuery {
       /// CurrentUser.Copilot
       ///
       /// Parent Type: `Copilot`
-      public struct Copilot: AffineGraphQL.SelectionSet {
+      public struct Copilot: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Copilot }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Copilot }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("models", Models.self, arguments: ["promptName": .variable("promptName")]),
@@ -64,11 +64,11 @@ public class GetPromptModelsQuery: GraphQLQuery {
         /// CurrentUser.Copilot.Models
         ///
         /// Parent Type: `CopilotModelsType`
-        public struct Models: AffineGraphQL.SelectionSet {
+        public struct Models: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotModelsType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotModelsType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("defaultModel", String.self),
@@ -83,11 +83,11 @@ public class GetPromptModelsQuery: GraphQLQuery {
           /// CurrentUser.Copilot.Models.OptionalModel
           ///
           /// Parent Type: `CopilotModelType`
-          public struct OptionalModel: AffineGraphQL.SelectionSet {
+          public struct OptionalModel: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotModelType }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotModelType }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("id", String.self),
@@ -101,11 +101,11 @@ public class GetPromptModelsQuery: GraphQLQuery {
           /// CurrentUser.Copilot.Models.ProModel
           ///
           /// Parent Type: `CopilotModelType`
-          public struct ProModel: AffineGraphQL.SelectionSet {
+          public struct ProModel: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotModelType }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotModelType }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("id", String.self),

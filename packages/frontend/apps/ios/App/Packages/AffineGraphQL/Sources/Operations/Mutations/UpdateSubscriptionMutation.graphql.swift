@@ -30,11 +30,11 @@ public class UpdateSubscriptionMutation: GraphQLMutation {
     "workspaceId": workspaceId
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("updateSubscriptionRecurring", UpdateSubscriptionRecurring.self, arguments: [
         "plan": .variable("plan"),
@@ -48,26 +48,26 @@ public class UpdateSubscriptionMutation: GraphQLMutation {
     /// UpdateSubscriptionRecurring
     ///
     /// Parent Type: `SubscriptionType`
-    public struct UpdateSubscriptionRecurring: AffineGraphQL.SelectionSet {
+    public struct UpdateSubscriptionRecurring: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.SubscriptionType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.SubscriptionType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", String?.self),
-        .field("plan", GraphQLEnum<AffineGraphQL.SubscriptionPlan>.self),
-        .field("recurring", GraphQLEnum<AffineGraphQL.SubscriptionRecurring>.self),
-        .field("nextBillAt", AffineGraphQL.DateTime?.self),
+        .field("plan", GraphQLEnum<LoveNotesGraphQL.SubscriptionPlan>.self),
+        .field("recurring", GraphQLEnum<LoveNotesGraphQL.SubscriptionRecurring>.self),
+        .field("nextBillAt", LoveNotesGraphQL.DateTime?.self),
       ] }
 
       @available(*, deprecated, message: "removed")
       public var id: String? { __data["id"] }
       /// The 'Free' plan just exists to be a placeholder and for the type convenience of frontend.
       /// There won't actually be a subscription with plan 'Free'
-      public var plan: GraphQLEnum<AffineGraphQL.SubscriptionPlan> { __data["plan"] }
-      public var recurring: GraphQLEnum<AffineGraphQL.SubscriptionRecurring> { __data["recurring"] }
-      public var nextBillAt: AffineGraphQL.DateTime? { __data["nextBillAt"] }
+      public var plan: GraphQLEnum<LoveNotesGraphQL.SubscriptionPlan> { __data["plan"] }
+      public var recurring: GraphQLEnum<LoveNotesGraphQL.SubscriptionRecurring> { __data["recurring"] }
+      public var nextBillAt: LoveNotesGraphQL.DateTime? { __data["nextBillAt"] }
     }
   }
 }

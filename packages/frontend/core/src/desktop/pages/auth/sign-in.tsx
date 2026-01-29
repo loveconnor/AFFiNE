@@ -1,10 +1,9 @@
-import { notify } from '@affine/component';
-import { AffineOtherPageLayout } from '@affine/component/affine-other-page-layout';
-import { SignInPageContainer } from '@affine/component/auth-components';
-import { SignInPanel } from '@affine/core/components/sign-in';
-import { SignInBackgroundArts } from '@affine/core/components/sign-in/background-arts';
-import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
-import { useI18n } from '@affine/i18n';
+import { notify } from '@lovenotes/component';
+import { LoveNotesOtherPageLayout } from '@lovenotes/component/lovenotes-other-page-layout';
+import { SignInPageContainer } from '@lovenotes/component/auth-components';
+import { SignInPanel } from '@lovenotes/core/components/sign-in';
+import type { AuthSessionStatus } from '@lovenotes/core/modules/cloud/entities/session';
+import { useI18n } from '@lovenotes/i18n';
 import { useCallback, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -30,7 +29,7 @@ export const SignIn = ({
   useEffect(() => {
     if (error) {
       notify.error({
-        title: t['com.affine.auth.toast.title.failed'](),
+        title: t['com.lovenotes.auth.toast.title.failed'](),
         message: error,
       });
     }
@@ -78,9 +77,8 @@ export const SignIn = ({
 
 export const Component = () => {
   return (
-    <AffineOtherPageLayout>
-      <SignInBackgroundArts />
+    <LoveNotesOtherPageLayout hideHeader>
       <SignIn />
-    </AffineOtherPageLayout>
+    </LoveNotesOtherPageLayout>
   );
 };

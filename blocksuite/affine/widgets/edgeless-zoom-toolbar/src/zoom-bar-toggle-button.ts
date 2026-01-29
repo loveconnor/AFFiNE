@@ -1,6 +1,6 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
+import { createLitPortal } from '@blocksuite/lovenotes-components/portal';
+import { stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import type { BlockStdScope } from '@blocksuite/std';

@@ -2,8 +2,8 @@ import { z } from 'zod';
 
 export const supportedClient = z.enum([
   'web',
-  'affine',
-  'affine-canary',
-  'affine-beta',
-  ...(BUILD_CONFIG.debug ? ['affine-dev'] : []),
+  'lovenotes',
+  'lovenotes-canary',
+  'lovenotes-beta',
+  ...(BUILD_CONFIG.debug ? ['lovenotes-dev'] : []),
 ]);

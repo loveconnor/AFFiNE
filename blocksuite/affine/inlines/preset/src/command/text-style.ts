@@ -1,11 +1,11 @@
 import {
   getBlockSelectionsCommand,
   getTextSelectionCommand,
-} from '@blocksuite/affine-shared/commands';
+} from '@blocksuite/lovenotes-shared/commands';
 import type {
-  AffineTextAttributes,
-  AffineTextStyleAttributes,
-} from '@blocksuite/affine-shared/types';
+  LoveNotesTextAttributes,
+  LoveNotesTextStyleAttributes,
+} from '@blocksuite/lovenotes-shared/types';
 import type { Command } from '@blocksuite/std';
 
 import { formatBlockCommand } from './format-block.js';
@@ -15,7 +15,7 @@ import { getCombinedTextAttributes } from './utils.js';
 
 export const toggleTextStyleCommand: Command<{
   key: Extract<
-    keyof AffineTextStyleAttributes,
+    keyof LoveNotesTextStyleAttributes,
     'bold' | 'italic' | 'underline' | 'strike' | 'code'
   >;
 }> = (ctx, next) => {
@@ -26,7 +26,7 @@ export const toggleTextStyleCommand: Command<{
     .run();
 
   const payload: {
-    styles: AffineTextStyleAttributes;
+    styles: LoveNotesTextStyleAttributes;
     mode?: 'replace' | 'merge';
   } = {
     styles: {
@@ -52,7 +52,7 @@ export const toggleTextStyleCommand: Command<{
 
 const toggleTextStyleCommandWrapper = (
   key: Extract<
-    keyof AffineTextStyleAttributes,
+    keyof LoveNotesTextStyleAttributes,
     'bold' | 'italic' | 'underline' | 'strike' | 'code'
   >
 ): Command => {
@@ -74,7 +74,7 @@ export const toggleCode = toggleTextStyleCommandWrapper('code');
 
 export const getTextAttributes: Command<
   {},
-  { textAttributes: AffineTextAttributes }
+  { textAttributes: LoveNotesTextAttributes }
 > = (ctx, next) => {
   const [result, innerCtx] = getCombinedTextAttributes(
     ctx.std.command.chain()
@@ -87,7 +87,7 @@ export const getTextAttributes: Command<
 };
 
 export const isTextAttributeActive: Command<{
-  key: keyof AffineTextAttributes;
+  key: keyof LoveNotesTextAttributes;
 }> = (ctx, next) => {
   const key = ctx.key;
   const [result] = getCombinedTextAttributes(ctx.std.command.chain())

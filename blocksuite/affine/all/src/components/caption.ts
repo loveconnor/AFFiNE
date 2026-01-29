@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/caption';
+export * from '@blocksuite/lovenotes-components/caption';

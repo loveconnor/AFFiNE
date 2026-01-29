@@ -1,4 +1,4 @@
-import type { IconData } from '@blocksuite/affine-shared/services';
+import type { IconData } from '@blocksuite/lovenotes-shared/services';
 import {
   BlockModel,
   BlockSchemaExtension,
@@ -15,7 +15,7 @@ export type CalloutProps = {
 } & BlockMeta;
 
 export const CalloutBlockSchema = defineBlockSchema({
-  flavour: 'affine:callout',
+  flavour: 'lovenotes:callout',
   props: (internal): CalloutProps => ({
     icon: { type: 'emoji', unicode: '💡' } as IconData,
     text: internal.Text(),
@@ -29,14 +29,14 @@ export const CalloutBlockSchema = defineBlockSchema({
     version: 1,
     role: 'hub',
     parent: [
-      'affine:note',
-      'affine:database',
-      'affine:paragraph',
-      'affine:list',
-      'affine:edgeless-text',
-      'affine:transcription',
+      'lovenotes:note',
+      'lovenotes:database',
+      'lovenotes:paragraph',
+      'lovenotes:list',
+      'lovenotes:edgeless-text',
+      'lovenotes:transcription',
     ],
-    children: ['affine:paragraph', 'affine:list'],
+    children: ['lovenotes:paragraph', 'lovenotes:list'],
   },
   toModel: () => new CalloutBlockModel(),
 });

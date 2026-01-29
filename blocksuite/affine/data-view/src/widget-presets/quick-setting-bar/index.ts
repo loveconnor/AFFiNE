@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { html, nothing } from 'lit';
 

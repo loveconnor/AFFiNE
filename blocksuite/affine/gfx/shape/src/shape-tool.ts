@@ -3,19 +3,19 @@ import {
   DefaultTool,
   EXCLUDING_MOUSE_OUT_CLASS_LIST,
   type SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
-import type { ShapeElementModel, ShapeName } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { ShapeElementModel, ShapeName } from '@blocksuite/lovenotes-model';
 import {
   DefaultTheme,
   getShapeType,
   ShapeType,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   TelemetryProvider,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { hasClassNameInList } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { hasClassNameInList } from '@blocksuite/lovenotes-shared/utils';
 import type { IBound } from '@blocksuite/global/gfx';
 import { Bound } from '@blocksuite/global/gfx';
 import type { PointerEventState } from '@blocksuite/std';

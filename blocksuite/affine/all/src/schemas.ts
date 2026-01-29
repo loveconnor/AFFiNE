@@ -1,6 +1,6 @@
 // Import models only, the bundled file should not include anything else.
-import { DataViewBlockSchema } from '@blocksuite/affine-block-data-view';
-import { SurfaceBlockSchema } from '@blocksuite/affine-block-surface';
+import { DataViewBlockSchema } from '@blocksuite/lovenotes-block-data-view';
+import { SurfaceBlockSchema } from '@blocksuite/lovenotes-block-surface';
 import {
   AttachmentBlockSchema,
   BookmarkBlockSchema,
@@ -25,12 +25,12 @@ import {
   RootBlockSchema,
   SurfaceRefBlockSchema,
   TableBlockSchema,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { BlockSchema } from '@blocksuite/store';
 import type { z } from 'zod';
 
-/** Built-in first party block models built for affine */
-export const AffineSchemas: z.infer<typeof BlockSchema>[] = [
+/** Built-in first party block models built for lovenotes */
+export const LoveNotesSchemas: z.infer<typeof BlockSchema>[] = [
   CodeBlockSchema,
   ParagraphBlockSchema,
   RootBlockSchema,

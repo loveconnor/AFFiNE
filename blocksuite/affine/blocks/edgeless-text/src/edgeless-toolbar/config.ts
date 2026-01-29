@@ -1,9 +1,9 @@
-import { createTextActions } from '@blocksuite/affine-gfx-text';
-import { EdgelessTextBlockModel } from '@blocksuite/affine-model';
+import { createTextActions } from '@blocksuite/lovenotes-gfx-text';
+import { EdgelessTextBlockModel } from '@blocksuite/lovenotes-model';
 import {
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { BlockFlavourIdentifier } from '@blocksuite/std';
 
 export const edgelessTextToolbarConfig = {
@@ -14,6 +14,6 @@ export const edgelessTextToolbarConfig = {
 } as const satisfies ToolbarModuleConfig;
 
 export const edgelessTextToolbarExtension = ToolbarModuleExtension({
-  id: BlockFlavourIdentifier('affine:surface:edgeless-text'),
+  id: BlockFlavourIdentifier('lovenotes:surface:edgeless-text'),
   config: edgelessTextToolbarConfig,
 });

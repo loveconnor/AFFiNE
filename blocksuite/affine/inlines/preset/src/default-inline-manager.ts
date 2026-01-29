@@ -1,10 +1,10 @@
-import { CommentInlineSpecExtension } from '@blocksuite/affine-inline-comment';
-import { FootNoteInlineSpecExtension } from '@blocksuite/affine-inline-footnote';
-import { LatexInlineSpecExtension } from '@blocksuite/affine-inline-latex';
-import { LinkInlineSpecExtension } from '@blocksuite/affine-inline-link';
-import { MentionInlineSpecExtension } from '@blocksuite/affine-inline-mention';
-import { ReferenceInlineSpecExtension } from '@blocksuite/affine-inline-reference';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import { CommentInlineSpecExtension } from '@blocksuite/lovenotes-inline-comment';
+import { FootNoteInlineSpecExtension } from '@blocksuite/lovenotes-inline-footnote';
+import { LatexInlineSpecExtension } from '@blocksuite/lovenotes-inline-latex';
+import { LinkInlineSpecExtension } from '@blocksuite/lovenotes-inline-link';
+import { MentionInlineSpecExtension } from '@blocksuite/lovenotes-inline-mention';
+import { ReferenceInlineSpecExtension } from '@blocksuite/lovenotes-inline-reference';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { InlineManagerExtension } from '@blocksuite/std/inline';
 
 import {
@@ -18,7 +18,7 @@ import {
 } from './inline-spec';
 
 export const DefaultInlineManagerExtension =
-  InlineManagerExtension<AffineTextAttributes>({
+  InlineManagerExtension<LoveNotesTextAttributes>({
     id: 'DefaultInlineManager',
     specs: [
       BoldInlineSpecExtension.identifier,

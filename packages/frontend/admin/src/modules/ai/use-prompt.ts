@@ -1,10 +1,10 @@
 import {
   useMutateQueryResource,
   useMutation,
-} from '@affine/admin/use-mutation';
-import { useQuery } from '@affine/admin/use-query';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { getPromptsQuery, updatePromptMutation } from '@affine/graphql';
+} from '@lovenotes/admin/use-mutation';
+import { useQuery } from '@lovenotes/admin/use-query';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { getPromptsQuery, updatePromptMutation } from '@lovenotes/graphql';
 import { toast } from 'sonner';
 
 import type { Prompt } from './prompts';

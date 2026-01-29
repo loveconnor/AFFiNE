@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/size-dropdown-menu';
+export * from '@blocksuite/lovenotes-components/size-dropdown-menu';

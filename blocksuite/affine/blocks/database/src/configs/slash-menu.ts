@@ -1,7 +1,7 @@
-import { getSelectedModelsCommand } from '@blocksuite/affine-shared/commands';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { isInsideBlockByFlavour } from '@blocksuite/affine-shared/utils';
-import { type SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
+import { getSelectedModelsCommand } from '@blocksuite/lovenotes-shared/commands';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
+import { isInsideBlockByFlavour } from '@blocksuite/lovenotes-shared/utils';
+import { type SlashMenuConfig } from '@blocksuite/lovenotes-widget-slash-menu';
 import { viewPresets } from '@blocksuite/data-view/view-presets';
 import {
   DatabaseKanbanViewIcon,
@@ -12,7 +12,7 @@ import { insertDatabaseBlockCommand } from '../commands';
 import { KanbanViewTooltip, TableViewTooltip } from './tooltips';
 
 export const databaseSlashMenuConfig: SlashMenuConfig = {
-  disableWhen: ({ model }) => model.flavour === 'affine:database',
+  disableWhen: ({ model }) => model.flavour === 'lovenotes:database',
   items: [
     {
       name: 'Table View',
@@ -25,7 +25,7 @@ export const databaseSlashMenuConfig: SlashMenuConfig = {
       },
       group: '7_Database@0',
       when: ({ model }) =>
-        !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text'),
+        !isInsideBlockByFlavour(model.store, model, 'lovenotes:edgeless-text'),
       action: ({ std }) => {
         std.command
           .chain()
@@ -39,7 +39,7 @@ export const databaseSlashMenuConfig: SlashMenuConfig = {
             if (insertedDatabaseBlockId) {
               const telemetry = std.getOptional(TelemetryProvider);
               telemetry?.track('BlockCreated', {
-                blockType: 'affine:database',
+                blockType: 'lovenotes:database',
               });
             }
           })
@@ -58,7 +58,7 @@ export const databaseSlashMenuConfig: SlashMenuConfig = {
       },
       group: '7_Database@2',
       when: ({ model }) =>
-        !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text'),
+        !isInsideBlockByFlavour(model.store, model, 'lovenotes:edgeless-text'),
       action: ({ std }) => {
         std.command
           .chain()
@@ -72,7 +72,7 @@ export const databaseSlashMenuConfig: SlashMenuConfig = {
             if (insertedDatabaseBlockId) {
               const telemetry = std.getOptional(TelemetryProvider);
               telemetry?.track('BlockCreated', {
-                blockType: 'affine:database',
+                blockType: 'lovenotes:database',
               });
             }
           })

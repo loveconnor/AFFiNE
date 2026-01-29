@@ -1,13 +1,13 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { CalloutBlockSchemaExtension } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-ext-loader';
+import { CalloutBlockSchemaExtension } from '@blocksuite/lovenotes-model';
 
 import { CalloutBlockMarkdownAdapterExtension } from './adapters/markdown';
 
 export class CalloutStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-callout-block';
+  override name = 'lovenotes-callout-block';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

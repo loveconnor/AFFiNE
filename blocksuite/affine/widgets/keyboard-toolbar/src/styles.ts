@@ -1,9 +1,9 @@
-import { scrollbarStyle } from '@blocksuite/affine-shared/styles';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { scrollbarStyle } from '@blocksuite/lovenotes-shared/styles';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { css } from 'lit';
 
 export const keyboardToolbarStyles = css`
-  affine-keyboard-toolbar {
+  lovenotes-keyboard-toolbar {
     position: fixed;
     display: block;
     width: 100vw;
@@ -18,7 +18,7 @@ export const keyboardToolbarStyles = css`
     padding: 0px 8px;
     box-sizing: border-box;
     gap: 8px;
-    z-index: var(--affine-z-index-popover);
+    z-index: var(--lovenotes-z-index-popover);
 
     background-color: ${unsafeCSSVarV2('layer/background/primary')};
     border-top: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
@@ -60,14 +60,14 @@ export const keyboardToolbarStyles = css`
 `;
 
 export const keyboardToolPanelStyles = css`
-  affine-keyboard-tool-panel {
+  lovenotes-keyboard-tool-panel {
     display: block;
     overflow-y: auto;
     box-sizing: border-box;
     background-color: ${unsafeCSSVarV2('layer/background/primary')};
   }
 
-  .affine-keyboard-tool-panel-container {
+  .lovenotes-keyboard-tool-panel-container {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -75,7 +75,7 @@ export const keyboardToolPanelStyles = css`
     padding: 16px 4px 8px 8px;
   }
 
-  ${scrollbarStyle('affine-keyboard-tool-panel')}
+  ${scrollbarStyle('lovenotes-keyboard-tool-panel')}
 
   .keyboard-tool-panel-group {
     display: flex;

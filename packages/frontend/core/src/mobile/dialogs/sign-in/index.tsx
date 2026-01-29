@@ -1,9 +1,9 @@
-import { IconButton, Modal, SafeArea } from '@affine/component';
-import type { SignInStep } from '@affine/core/components/sign-in';
+import { IconButton, Modal, SafeArea } from '@lovenotes/component';
+import type { SignInStep } from '@lovenotes/core/components/sign-in';
 import type {
   DialogComponentProps,
   GLOBAL_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs';
+} from '@lovenotes/core/modules/dialogs';
 import { CloseIcon } from '@blocksuite/icons/rc';
 import { cssVarV2 } from '@toeverything/theme/v2';
 

@@ -1,4 +1,4 @@
-import { testResultDir } from '@affine-test/kit/playwright';
+import { testResultDir } from '@lovenotes-test/kit/playwright';
 import type {
   PlaywrightTestConfig,
   PlaywrightWorkerOptions,
@@ -28,7 +28,7 @@ const config: PlaywrightTestConfig = {
   reporter: process.env.CI ? 'github' : 'list',
   webServer: [
     {
-      command: 'yarn run -T affine dev -p @affine/web',
+      command: 'yarn run -T lovenotes dev -p @lovenotes/web',
       stdout: 'ignore',
       stderr: 'ignore',
       timeout: 120 * 1000,
@@ -39,7 +39,7 @@ const config: PlaywrightTestConfig = {
       url: 'http://localhost:8080',
     },
     {
-      command: 'yarn run -T affine dev -p @affine/server',
+      command: 'yarn run -T lovenotes dev -p @lovenotes/server',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       stdout: 'ignore',
@@ -47,17 +47,17 @@ const config: PlaywrightTestConfig = {
       env: {
         DATABASE_URL:
           process.env.DATABASE_URL ??
-          'postgresql://affine:affine@localhost:5432/affine',
+          'postgresql://lovenotes:lovenotes@localhost:5432/lovenotes',
         NODE_ENV: 'test',
         AFFINE_ENV: process.env.AFFINE_ENV ?? 'dev',
-        DEBUG: 'affine:*',
+        DEBUG: 'lovenotes:*',
         FORCE_COLOR: 'true',
         DEBUG_COLORS: 'true',
         MAILER_HOST: '0.0.0.0',
         MAILER_PORT: '1025',
         MAILER_SENDER: 'noreply@toeverything.info',
         MAILER_USER: 'noreply@toeverything.info',
-        MAILER_PASSWORD: 'affine',
+        MAILER_PASSWORD: 'lovenotes',
       },
       url: 'http://localhost:3010/graphql',
     },

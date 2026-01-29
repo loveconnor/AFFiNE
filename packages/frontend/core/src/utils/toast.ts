@@ -1,5 +1,5 @@
-import type { ToastOptions } from '@affine/component';
-import { toast as basicToast } from '@affine/component';
+import type { ToastOptions } from '@lovenotes/component';
+import { toast as basicToast } from '@lovenotes/component';
 
 export const toast = (message: string, options?: ToastOptions) => {
   const modal = document.querySelector<HTMLDivElement>('[role=presentation]');
@@ -15,7 +15,7 @@ export const toast = (message: string, options?: ToastOptions) => {
 declare global {
   // global Events
   interface WindowEventMap {
-    'affine-toast:emit': CustomEvent<{
+    'lovenotes-toast:emit': CustomEvent<{
       message: string;
     }>;
   }

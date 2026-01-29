@@ -13,16 +13,16 @@ import { TableViewUI } from './table-view-ui-logic.js';
 
 export function pcEffects() {
   customElements.define('dv-table-view-ui', TableViewUI);
-  customElements.define('affine-data-view-table-group', TableGroup);
+  customElements.define('lovenotes-data-view-table-group', TableGroup);
   customElements.define('dv-table-view-cell-container', TableViewCellContainer);
-  customElements.define('affine-database-column-header', DatabaseColumnHeader);
+  customElements.define('lovenotes-database-column-header', DatabaseColumnHeader);
   customElements.define(
-    'affine-data-view-column-preview',
+    'lovenotes-data-view-column-preview',
     DataViewColumnPreview
   );
-  customElements.define('affine-database-header-column', DatabaseHeaderColumn);
+  customElements.define('lovenotes-database-header-column', DatabaseHeaderColumn);
   customElements.define(
-    'affine-database-number-format-bar',
+    'lovenotes-database-number-format-bar',
     DatabaseNumberFormatBar
   );
   customElements.define('data-view-table-row', TableRowView);

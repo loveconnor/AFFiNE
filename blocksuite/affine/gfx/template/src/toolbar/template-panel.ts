@@ -1,17 +1,17 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
 import {
   darkToolbarStyles,
   lightToolbarStyles,
-} from '@blocksuite/affine-components/toolbar';
+} from '@blocksuite/lovenotes-components/toolbar';
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   requestConnectedFrame,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
-import { EdgelessDraggableElementController } from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-shared/utils';
+import { EdgelessDraggableElementController } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import type { Bound } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';
 import type { BlockComponent } from '@blocksuite/std';
@@ -41,7 +41,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       width: 467px;
       height: 568px;
       border-radius: 12px;
-      background-color: var(--affine-background-overlay-panel-color);
+      background-color: var(--lovenotes-background-overlay-panel-color);
       box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.2);
 
       display: flex;
@@ -53,15 +53,15 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     .search-bar {
       padding: 21px 24px;
       font-size: 18px;
-      color: var(--affine-secondary);
-      border-bottom: 1px solid var(--affine-divider-color);
+      color: var(--lovenotes-secondary);
+      border-bottom: 1px solid var(--lovenotes-divider-color);
 
       flex-shrink: 0;
     }
 
     .search-input {
       border: 0;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
       font-size: 20px;
       background-color: inherit;
       outline: none;
@@ -69,7 +69,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     }
 
     .search-input::placeholder {
-      color: var(--affine-text-secondary-color);
+      color: var(--lovenotes-text-secondary-color);
     }
 
     .template-categories {
@@ -82,7 +82,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
     }
 
     .category-entry {
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
       font-size: 12px;
       font-weight: 600;
       line-height: 20px;
@@ -96,8 +96,8 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
 
     .category-entry.selected,
     .category-entry:hover {
-      color: var(--affine-text-primary-color);
-      background-color: var(--affine-background-tertiary-color);
+      color: var(--lovenotes-text-primary-color);
+      background-color: var(--lovenotes-background-tertiary-color);
     }
 
     .template-viewport {
@@ -125,7 +125,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       width: 135px;
       height: 80px;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.02);
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--lovenotes-background-primary-color);
       border-radius: 4px;
       cursor: pointer;
     }
@@ -135,7 +135,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       margin: 0 auto;
       width: 135px;
       height: 80px;
-      color: var(--affine-background-primary-color);
+      color: var(--lovenotes-background-primary-color);
     }
 
     /* .template-item:hover::before {
@@ -153,8 +153,8 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       text-align: center;
       font-size: 12px;
 
-      background-color: var(--affine-primary-color);
-      color: var(--affine-white);
+      background-color: var(--lovenotes-primary-color);
+      color: var(--lovenotes-white);
     } */
 
     .template-item:hover::after {
@@ -165,16 +165,16 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       width: 100%;
       height: 100%;
       box-sizing: border-box;
-      border: 1px solid var(--affine-black-10);
+      border: 1px solid var(--lovenotes-black-10);
       border-radius: 4px;
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
 
     .template-item.loading::before {
       display: none;
     }
 
-    .template-item.loading > affine-template-loading {
+    .template-item.loading > lovenotes-template-loading {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -192,7 +192,7 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
       bottom: 0;
       position: absolute;
       transform: translateY(20px);
-      color: var(--affine-background-overlay-panel-color);
+      color: var(--lovenotes-background-overlay-panel-color);
     }
   `;
 
@@ -420,13 +420,13 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
           <div class="template-scrollcontent" data-scrollable>
             <div class="template-list">
               ${this._loading
-                ? html`<affine-template-loading
+                ? html`<lovenotes-template-loading
                     style=${styleMap({
                       position: 'absolute',
                       left: '50%',
                       top: '50%',
                     })}
-                  ></affine-template-loading>`
+                  ></lovenotes-template-loading>`
                 : repeat(
                     _templates,
                     template => template.name,
@@ -467,16 +467,16 @@ export class EdgelessTemplatePanel extends WithDisposable(LitElement) {
                         >
                           ${preview}
                           ${template === this._loadingTemplate
-                            ? html`<affine-template-loading></affine-template-loading>`
+                            ? html`<lovenotes-template-loading></lovenotes-template-loading>`
                             : nothing}
                           ${template.name
-                            ? html`<affine-tooltip
+                            ? html`<lovenotes-tooltip
                                 .offset=${12}
                                 .autoHide=${true}
                                 tip-position="top"
                               >
                                 ${template.name}
-                              </affine-tooltip>`
+                              </lovenotes-tooltip>`
                             : nothing}
                         </div>
                       `;

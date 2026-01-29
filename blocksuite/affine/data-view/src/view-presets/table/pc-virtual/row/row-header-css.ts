@@ -18,7 +18,7 @@ export const dragHandler = css({
   alignItems: 'center',
   justifyContent: 'center',
   cursor: 'grab',
-  backgroundColor: 'var(--affine-background-primary-color)',
+  backgroundColor: 'var(--lovenotes-background-primary-color)',
   opacity: 0,
 });
 
@@ -29,14 +29,14 @@ export const checkboxWrapper = css({
 });
 
 export const rowSelectedBg = css({
-  backgroundColor: 'var(--affine-primary-color-04)',
+  backgroundColor: 'var(--lovenotes-primary-color-04)',
 });
 
 export const dragHandlerIndicator = css({
   width: '4px',
   borderRadius: '2px',
   height: '12px',
-  backgroundColor: 'var(--affine-placeholder-color)',
+  backgroundColor: 'var(--lovenotes-placeholder-color)',
 });
 
 export const show = css({

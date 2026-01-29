@@ -92,7 +92,7 @@ class TrayState implements Disposable {
     .resize({ width: 18, height: 18 });
 
   // tray's tooltip
-  tooltip: string = 'AFFiNE';
+  tooltip: string = 'LoveNotes';
 
   constructor() {
     this.icon.setTemplateImage(true);
@@ -246,15 +246,15 @@ class TrayState implements Disposable {
       key: 'secondary',
       getConfig: () => [
         {
-          label: 'Open AFFiNE',
+          label: 'Open LoveNotes',
           click: () => {
-            logger.info('User action: Open AFFiNE');
+            logger.info('User action: Open LoveNotes');
             getMainWindow()
               .then(w => {
                 w.show();
               })
               .catch(err => {
-                logger.error('Failed to open AFFiNE:', err);
+                logger.error('Failed to open LoveNotes:', err);
               });
           },
         },
@@ -279,9 +279,9 @@ class TrayState implements Disposable {
         },
         'separator',
         {
-          label: 'Quit AFFiNE Completely...',
+          label: 'Quit LoveNotes Completely...',
           click: () => {
-            logger.info('User action: Quit AFFiNE Completely');
+            logger.info('User action: Quit LoveNotes Completely');
             app.quit();
           },
         },

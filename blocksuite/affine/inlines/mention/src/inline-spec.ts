@@ -1,11 +1,11 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { StdIdentifier } from '@blocksuite/std';
 import { InlineSpecExtension } from '@blocksuite/std/inline';
 import { html } from 'lit';
 import { z } from 'zod';
 
 export const MentionInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>('mention', provider => {
+  InlineSpecExtension<LoveNotesTextAttributes>('mention', provider => {
     const std = provider.get(StdIdentifier);
     return {
       name: 'mention',
@@ -23,11 +23,11 @@ export const MentionInlineSpecExtension =
         return !!delta.attributes?.mention?.member;
       },
       renderer: ({ delta, selected }) => {
-        return html`<affine-mention
+        return html`<lovenotes-mention
           .delta=${delta}
           .std=${std}
           .selected=${selected}
-        ></affine-mention>`;
+        ></lovenotes-mention>`;
       },
       embed: true,
     };

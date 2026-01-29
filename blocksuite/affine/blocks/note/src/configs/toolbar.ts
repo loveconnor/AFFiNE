@@ -1,5 +1,5 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
-import { NoteBlockModel, NoteDisplayMode } from '@blocksuite/affine-model';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
+import { NoteBlockModel, NoteDisplayMode } from '@blocksuite/lovenotes-model';
 import {
   NotificationProvider,
   SidebarExtensionIdentifier,
@@ -7,7 +7,7 @@ import {
   type ToolbarContext,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   AutoHeightIcon,
@@ -95,7 +95,7 @@ const builtinSurfaceToolbarConfig = {
             page: 'whiteboard editor',
             module: 'toolbar',
             segment: 'toolbar',
-            blockType: 'affine:note',
+            blockType: 'lovenotes:note',
             control: 'toolbar:general',
             other: `display in page: ${newMode === NoteDisplayMode.EdgelessOnly ? 'off' : 'on'}`,
           });
@@ -148,10 +148,10 @@ const builtinSurfaceToolbarConfig = {
       id: 'e.slicer',
       label: 'Slicer',
       icon: ScissorsIcon(),
-      tooltip: html`<affine-tooltip-content-with-shortcut
+      tooltip: html`<lovenotes-tooltip-content-with-shortcut
         data-tip="${'Cutting mode'}"
         data-shortcut="${'-'}"
-      ></affine-tooltip-content-with-shortcut>`,
+      ></lovenotes-tooltip-content-with-shortcut>`,
       active: false,
       when(ctx) {
         return (
@@ -269,12 +269,12 @@ const builtinSurfaceToolbarConfig = {
         };
         const format = (value: number) => `${value}%`;
 
-        return html`<affine-size-dropdown-menu
+        return html`<lovenotes-size-dropdown-menu
           @select=${onSelect}
           @toggle=${onToggle}
           .format=${format}
           .size$=${scale$}
-        ></affine-size-dropdown-menu>`;
+        ></lovenotes-size-dropdown-menu>`;
       },
     },
   ],
@@ -343,7 +343,7 @@ export const createBuiltinToolbarConfigExtension = (
 
   return [
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier(`affine:surface:${name}`),
+      id: BlockFlavourIdentifier(`lovenotes:surface:${name}`),
       config: builtinSurfaceToolbarConfig,
     }),
   ];

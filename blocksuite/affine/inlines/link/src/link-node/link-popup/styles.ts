@@ -1,8 +1,8 @@
-import { fontSMStyle, panelBaseStyle } from '@blocksuite/affine-shared/styles';
+import { fontSMStyle, panelBaseStyle } from '@blocksuite/lovenotes-shared/styles';
 import { css } from 'lit';
 
 const editLinkStyle = css`
-  .affine-link-edit-popover {
+  .lovenotes-link-edit-popover {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: repeat(2, 1fr);
@@ -17,33 +17,33 @@ const editLinkStyle = css`
     box-sizing: content-box;
   }
 
-  ${fontSMStyle('.affine-link-edit-popover label')}
-  .affine-link-edit-popover label {
+  ${fontSMStyle('.lovenotes-link-edit-popover label')}
+  .lovenotes-link-edit-popover label {
     box-sizing: border-box;
-    color: var(--affine-icon-color);
+    color: var(--lovenotes-icon-color);
     font-weight: 400;
   }
 
-  ${fontSMStyle('.affine-link-edit-popover input')}
-  .affine-link-edit-popover input {
+  ${fontSMStyle('.lovenotes-link-edit-popover input')}
+  .lovenotes-link-edit-popover input {
     color: inherit;
     padding: 0;
     border: none;
     background: transparent;
-    color: var(--affine-text-primary-color);
+    color: var(--lovenotes-text-primary-color);
   }
-  .affine-link-edit-popover input::placeholder {
-    color: var(--affine-placeholder-color);
+  .lovenotes-link-edit-popover input::placeholder {
+    color: var(--lovenotes-placeholder-color);
   }
   input:focus {
     outline: none;
   }
-  .affine-link-edit-popover input:focus ~ label,
-  .affine-link-edit-popover input:active ~ label {
-    color: var(--affine-primary-color);
+  .lovenotes-link-edit-popover input:focus ~ label,
+  .lovenotes-link-edit-popover input:active ~ label {
+    color: var(--lovenotes-primary-color);
   }
 
-  .affine-edit-area {
+  .lovenotes-edit-area {
     width: 280px;
     padding: 4px 10px;
     display: grid;
@@ -54,35 +54,35 @@ const editLinkStyle = css`
     user-select: none;
     box-sizing: border-box;
 
-    border: 1px solid var(--affine-border-color);
+    border: 1px solid var(--lovenotes-border-color);
     box-sizing: border-box;
 
     outline: none;
     border-radius: 4px;
     background: transparent;
   }
-  .affine-edit-area:focus-within {
-    border-color: var(--affine-blue-700);
-    box-shadow: var(--affine-active-shadow);
+  .lovenotes-edit-area:focus-within {
+    border-color: var(--lovenotes-blue-700);
+    box-shadow: var(--lovenotes-active-shadow);
   }
 
-  .affine-edit-area.text {
+  .lovenotes-edit-area.text {
     grid-area: text-area;
   }
 
-  .affine-edit-area.link {
+  .lovenotes-edit-area.link {
     grid-area: link-area;
   }
 
-  .affine-edit-label {
+  .lovenotes-edit-label {
     grid-area: label;
   }
 
-  .affine-edit-input {
+  .lovenotes-edit-input {
     grid-area: input;
   }
 
-  .affine-confirm-button {
+  .lovenotes-confirm-button {
     grid-area: btn;
     user-select: none;
   }
@@ -100,12 +100,12 @@ export const linkPopupStyle = css`
 
   ${panelBaseStyle('.popover-container')}
   .popover-container {
-    z-index: var(--affine-z-index-popover);
-    animation: affine-popover-fade-in 0.2s ease;
+    z-index: var(--lovenotes-z-index-popover);
+    animation: lovenotes-popover-fade-in 0.2s ease;
     position: absolute;
   }
 
-  @keyframes affine-popover-fade-in {
+  @keyframes lovenotes-popover-fade-in {
     from {
       opacity: 0;
       transform: translateY(-3px);
@@ -122,40 +122,40 @@ export const linkPopupStyle = css`
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: var(--affine-z-index-popover);
+    z-index: var(--lovenotes-z-index-popover);
   }
 
   .mock-selection-container {
     pointer-events: none;
   }
 
-  .affine-link-popover.create {
+  .lovenotes-link-popover.create {
     display: flex;
     gap: 12px;
     padding: 8px;
 
-    color: var(--affine-text-primary-color);
+    color: var(--lovenotes-text-primary-color);
   }
 
-  .affine-link-popover-input {
+  .lovenotes-link-popover-input {
     min-width: 280px;
     height: 30px;
     box-sizing: border-box;
     padding: 4px 10px;
-    background: var(--affine-white-10);
+    background: var(--lovenotes-white-10);
     border-radius: 4px;
     border-width: 1px;
     border-style: solid;
-    border-color: var(--affine-border-color);
-    color: var(--affine-text-primary-color);
+    border-color: var(--lovenotes-border-color);
+    color: var(--lovenotes-text-primary-color);
   }
-  ${fontSMStyle('.affine-link-popover-input')}
-  .affine-link-popover-input::placeholder {
-    color: var(--affine-placeholder-color);
+  ${fontSMStyle('.lovenotes-link-popover-input')}
+  .lovenotes-link-popover-input::placeholder {
+    color: var(--lovenotes-placeholder-color);
   }
-  .affine-link-popover-input:focus {
-    border-color: var(--affine-blue-700);
-    box-shadow: var(--affine-active-shadow);
+  .lovenotes-link-popover-input:focus {
+    border-color: var(--lovenotes-blue-700);
+    box-shadow: var(--lovenotes-active-shadow);
   }
 
   ${editLinkStyle}

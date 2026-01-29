@@ -1,4 +1,4 @@
-import { EmbedLinkedDocBlockSchema } from '@blocksuite/affine-model';
+import { EmbedLinkedDocBlockSchema } from '@blocksuite/lovenotes-model';
 import { BlockViewExtension } from '@blocksuite/std';
 import type { ExtensionType } from '@blocksuite/store';
 import { literal } from 'lit/static-html.js';
@@ -11,9 +11,9 @@ const flavour = EmbedLinkedDocBlockSchema.model.flavour;
 
 export const EmbedLinkedDocViewExtensions: ExtensionType[] = [
   BlockViewExtension(flavour, model => {
-    return model.parent?.flavour === 'affine:surface'
-      ? literal`affine-embed-edgeless-linked-doc-block`
-      : literal`affine-embed-linked-doc-block`;
+    return model.parent?.flavour === 'lovenotes:surface'
+      ? literal`lovenotes-embed-edgeless-linked-doc-block`
+      : literal`lovenotes-embed-linked-doc-block`;
   }),
   createBuiltinToolbarConfigExtension(flavour),
   EmbedLinkedDocInteraction,

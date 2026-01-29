@@ -2,22 +2,22 @@ import {
   CanvasElementType,
   DefaultTool,
   EdgelessCRUDIdentifier,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   getShapeRadius,
   getShapeType,
   ShapeType,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   TelemetryProvider,
   ThemeProvider,
   ViewportElementProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   EdgelessDraggableElementController,
   EdgelessToolbarToolMixin,
-} from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

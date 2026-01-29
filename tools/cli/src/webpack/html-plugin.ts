@@ -1,7 +1,7 @@
 import { execSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 
-import { Path, ProjectRoot } from '@affine-tools/utils/path';
+import { Path, ProjectRoot } from '@lovenotes-tools/utils/path';
 import { Repository } from '@napi-rs/simple-git';
 import HTMLPlugin from 'html-webpack-plugin';
 import { once } from 'lodash-es';
@@ -25,15 +25,15 @@ export const getPublicPath = (BUILD_CONFIG: BUILD_CONFIG_TYPE) => {
 
   switch (BUILD_TYPE) {
     case 'stable':
-      return 'https://prod.affineassets.com/';
+      return 'https://prod.lovenotesassets.com/';
     case 'beta':
-      return 'https://beta.affineassets.com/';
+      return 'https://beta.lovenotesassets.com/';
     default:
-      return 'https://dev.affineassets.com/';
+      return 'https://dev.lovenotesassets.com/';
   }
 };
 
-const DESCRIPTION = `There can be more than Notion and Miro. AFFiNE is a next-gen knowledge base that brings planning, sorting and creating all together.`;
+const DESCRIPTION = `There can be more than Notion and Miro. LoveNotes is a next-gen knowledge base that brings planning, sorting and creating all together.`;
 
 const gitShortHash = once(() => {
   const { GITHUB_SHA } = process.env;

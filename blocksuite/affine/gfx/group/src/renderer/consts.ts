@@ -1,4 +1,4 @@
-import { FontFamily } from '@blocksuite/affine-model';
+import { FontFamily } from '@blocksuite/lovenotes-model';
 
 export const GROUP_TITLE_FONT = FontFamily.Inter;
 export const GROUP_TITLE_FONT_SIZE = 12;

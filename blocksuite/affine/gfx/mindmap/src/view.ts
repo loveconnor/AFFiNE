@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import { MindMapIndicatorOverlay } from './indicator-overlay';
@@ -18,7 +18,7 @@ import { mindMapSeniorTool } from './toolbar/senior-tool';
 import { MindMapInteraction, MindMapView } from './view/view';
 
 export class MindmapViewExtension extends ViewExtensionProvider {
-  override name = 'affine-mindmap-gfx';
+  override name = 'lovenotes-mindmap-gfx';
 
   override effect(): void {
     super.effect();

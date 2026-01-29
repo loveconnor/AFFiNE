@@ -1,14 +1,14 @@
 import {
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   EDGELESS_TEXT_BLOCK_MIN_HEIGHT,
   EDGELESS_TEXT_BLOCK_MIN_WIDTH,
   EdgelessTextBlockModel,
-} from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import type { Command } from '@blocksuite/std';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
@@ -35,7 +35,7 @@ export const insertEdgelessTextCommand: Command<
   const selection = gfx.selection;
 
   const textId = std.get(EdgelessCRUDIdentifier).addBlock(
-    'affine:edgeless-text',
+    'lovenotes:edgeless-text',
     {
       xywh: new Bound(
         x - (EDGELESS_TEXT_BLOCK_MIN_WIDTH * zoom) / 2,
@@ -47,7 +47,7 @@ export const insertEdgelessTextCommand: Command<
     surface.id
   );
 
-  const blockId = doc.addBlock('affine:paragraph', { type: 'text' }, textId);
+  const blockId = doc.addBlock('lovenotes:paragraph', { type: 'text' }, textId);
   host.updateComplete
     .then(() => {
       selection.set({

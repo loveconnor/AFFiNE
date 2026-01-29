@@ -2,14 +2,14 @@ import {
   getAttachmentFileIcon,
   LoadingIcon,
   WebIcon16,
-} from '@blocksuite/affine-components/icons';
-import type { FootNote } from '@blocksuite/affine-model';
-import { ImageProxyService } from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-components/icons';
+import type { FootNote } from '@blocksuite/lovenotes-model';
+import { ImageProxyService } from '@blocksuite/lovenotes-shared/adapters';
 import {
   DocDisplayMetaProvider,
   LinkPreviewServiceIdentifier,
-} from '@blocksuite/affine-shared/services';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import type { BlockStdScope } from '@blocksuite/std';
 import { computed, signal } from '@preact/signals-core';
@@ -40,7 +40,7 @@ export class FootNotePopup extends SignalWatcher(WithDisposable(LitElement)) {
       text-overflow: ellipsis;
       white-space: nowrap;
       font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-      font-size: var(--affine-font-xs);
+      font-size: var(--lovenotes-font-xs);
       font-style: normal;
       font-weight: 400;
       line-height: 20px;

@@ -1,7 +1,7 @@
-import { Button, notify } from '@affine/component';
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { IntegrationService } from '@affine/core/modules/integration';
-import { useI18n } from '@affine/i18n';
+import { Button, notify } from '@lovenotes/component';
+import { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
+import { IntegrationService } from '@lovenotes/core/modules/integration';
+import { useI18n } from '@lovenotes/i18n';
 import { TodayIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -76,7 +76,7 @@ export const CalendarSettingPanel = () => {
       await calendar.updateWorkspaceCalendars(items);
     } catch (error) {
       notify.error({
-        title: t['com.affine.integration.calendar.save-error'](),
+        title: t['com.lovenotes.integration.calendar.save-error'](),
       });
     } finally {
       setSaving(false);
@@ -89,8 +89,8 @@ export const CalendarSettingPanel = () => {
     <>
       <IntegrationSettingHeader
         icon={<TodayIcon />}
-        name={t['com.affine.integration.calendar.name']()}
-        desc={t['com.affine.integration.calendar.desc']()}
+        name={t['com.lovenotes.integration.calendar.name']()}
+        desc={t['com.lovenotes.integration.calendar.desc']()}
         divider={false}
       />
       <div className={styles.list}>
@@ -111,7 +111,7 @@ export const CalendarSettingPanel = () => {
                 </div>
                 <div className={styles.groupMeta}>
                   {calendars.length}{' '}
-                  {t['com.affine.integration.calendar.name']()}
+                  {t['com.lovenotes.integration.calendar.name']()}
                 </div>
               </div>
               <div className={styles.groupList}>
@@ -129,7 +129,7 @@ export const CalendarSettingPanel = () => {
         })}
         {!hasCalendars ? (
           <div className={styles.empty}>
-            {t['com.affine.integration.calendar.no-calendar']()}
+            {t['com.lovenotes.integration.calendar.no-calendar']()}
           </div>
         ) : null}
       </div>
@@ -140,7 +140,7 @@ export const CalendarSettingPanel = () => {
           disabled={!hasChanges || saving}
           loading={saving}
         >
-          {t['com.affine.editCollection.save']()}
+          {t['com.lovenotes.editCollection.save']()}
         </Button>
       </div>
     </>

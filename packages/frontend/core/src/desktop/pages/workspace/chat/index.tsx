@@ -1,37 +1,37 @@
-import { observeResize, useConfirmModal } from '@affine/component';
-import { CopilotClient } from '@affine/core/blocksuite/ai';
+import { observeResize, useConfirmModal } from '@lovenotes/component';
+import { CopilotClient } from '@lovenotes/core/blocksuite/ai';
 import {
   AIChatContent,
   type ChatContextValue,
-} from '@affine/core/blocksuite/ai/components/ai-chat-content';
-import type { ChatStatus } from '@affine/core/blocksuite/ai/components/ai-chat-messages';
+} from '@lovenotes/core/blocksuite/ai/components/ai-chat-content';
+import type { ChatStatus } from '@lovenotes/core/blocksuite/ai/components/ai-chat-messages';
 import {
   AIChatToolbar,
   configureAIChatToolbar,
   getOrCreateAIChatToolbar,
-} from '@affine/core/blocksuite/ai/components/ai-chat-toolbar';
-import type { PromptKey } from '@affine/core/blocksuite/ai/provider/prompt';
-import { getViewManager } from '@affine/core/blocksuite/manager/view';
-import { NotificationServiceImpl } from '@affine/core/blocksuite/view-extensions/editor-view/notification-service';
-import { useAIChatConfig } from '@affine/core/components/hooks/affine/use-ai-chat-config';
-import { useAISpecs } from '@affine/core/components/hooks/affine/use-ai-specs';
-import { useAISubscribe } from '@affine/core/components/hooks/affine/use-ai-subscribe';
+} from '@lovenotes/core/blocksuite/ai/components/ai-chat-toolbar';
+import type { PromptKey } from '@lovenotes/core/blocksuite/ai/provider/prompt';
+import { getViewManager } from '@lovenotes/core/blocksuite/manager/view';
+import { NotificationServiceImpl } from '@lovenotes/core/blocksuite/view-extensions/editor-view/notification-service';
+import { useAIChatConfig } from '@lovenotes/core/components/hooks/lovenotes/use-ai-chat-config';
+import { useAISpecs } from '@lovenotes/core/components/hooks/lovenotes/use-ai-specs';
+import { useAISubscribe } from '@lovenotes/core/components/hooks/lovenotes/use-ai-subscribe';
 import {
   AIDraftService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
-import { AIModelService } from '@affine/core/modules/ai-button/services/models';
+} from '@lovenotes/core/modules/ai-button';
+import { AIModelService } from '@lovenotes/core/modules/ai-button/services/models';
 import {
   EventSourceService,
   FetchService,
   GraphQLService,
   ServerService,
   SubscriptionService,
-} from '@affine/core/modules/cloud';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { PeekViewService } from '@affine/core/modules/peek-view';
-import { AppThemeService } from '@affine/core/modules/theme';
+} from '@lovenotes/core/modules/cloud';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { PeekViewService } from '@lovenotes/core/modules/peek-view';
+import { AppThemeService } from '@lovenotes/core/modules/theme';
 import {
   ViewBody,
   ViewHeader,
@@ -39,12 +39,12 @@ import {
   ViewService,
   ViewTitle,
   WorkbenchService,
-} from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { BlockStdScope } from '@blocksuite/affine/std';
-import type { Workspace } from '@blocksuite/affine/store';
+} from '@lovenotes/core/modules/workbench';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
+import { BlockStdScope } from '@blocksuite/lovenotes/std';
+import type { Workspace } from '@blocksuite/lovenotes/store';
 import { type Signal, signal } from '@preact/signals-core';
 import { useFramework, useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
@@ -124,7 +124,7 @@ export const Component = () => {
       }
       const sessionId = await client.createSession({
         workspaceId,
-        promptName: 'Chat With AFFiNE AI' satisfies PromptKey,
+        promptName: 'Chat With LoveNotes AI' satisfies PromptKey,
         reuseLatestChat: false,
         ...options,
       });
@@ -260,12 +260,12 @@ export const Component = () => {
     content.searchMenuConfig = searchMenuConfig;
     content.reasoningConfig = reasoningConfig;
     content.onContextChange = onContextChange;
-    content.affineFeatureFlagService = framework.get(FeatureFlagService);
-    content.affineWorkspaceDialogService = framework.get(
+    content.lovenotesFeatureFlagService = framework.get(FeatureFlagService);
+    content.lovenotesWorkspaceDialogService = framework.get(
       WorkspaceDialogService
     );
     content.peekViewService = framework.get(PeekViewService);
-    content.affineThemeService = framework.get(AppThemeService);
+    content.lovenotesThemeService = framework.get(AppThemeService);
     content.notificationService = notificationService;
     content.aiDraftService = framework.get(AIDraftService);
     content.aiToolsConfigService = framework.get(AIToolsConfigService);
@@ -425,7 +425,7 @@ export const Component = () => {
 
   return (
     <>
-      <ViewTitle title={t['com.affine.workspaceSubPath.chat']()} />
+      <ViewTitle title={t['com.lovenotes.workspaceSubPath.chat']()} />
       <ViewIcon icon="ai" />
       <ViewHeader>
         <div className={styles.chatHeader}>

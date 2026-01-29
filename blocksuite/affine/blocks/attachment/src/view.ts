@@ -1,9 +1,9 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { AttachmentBlockSchema } from '@blocksuite/affine-model';
-import { SlashMenuConfigExtension } from '@blocksuite/affine-widget-slash-menu';
+} from '@blocksuite/lovenotes-ext-loader';
+import { AttachmentBlockSchema } from '@blocksuite/lovenotes-model';
+import { SlashMenuConfigExtension } from '@blocksuite/lovenotes-widget-slash-menu';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 
@@ -21,7 +21,7 @@ import {
 const flavour = AttachmentBlockSchema.model.flavour;
 
 export class AttachmentViewExtension extends ViewExtensionProvider {
-  override name = 'affine-attachment-block';
+  override name = 'lovenotes-attachment-block';
 
   override effect() {
     super.effect();
@@ -33,9 +33,9 @@ export class AttachmentViewExtension extends ViewExtensionProvider {
     context.register([
       FlavourExtension(flavour),
       BlockViewExtension(flavour, model => {
-        return model.parent?.flavour === 'affine:surface'
-          ? literal`affine-edgeless-attachment`
-          : literal`affine-attachment`;
+        return model.parent?.flavour === 'lovenotes:surface'
+          ? literal`lovenotes-edgeless-attachment`
+          : literal`lovenotes-attachment`;
       }),
       AttachmentDropOption,
       AttachmentEmbedConfigExtension(),

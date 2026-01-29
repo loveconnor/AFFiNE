@@ -1,9 +1,9 @@
-import type { ShapeName } from '@blocksuite/affine-model';
+import type { ShapeName } from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   ThemeProvider,
   ViewportElementProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { Bound } from '@blocksuite/global/gfx';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 import {

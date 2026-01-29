@@ -1,4 +1,4 @@
-import { QuickToolExtension } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { QuickToolExtension } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { html } from 'lit';
 
 import { buildLinkDenseMenu } from './toolbar/link-dense-menu';

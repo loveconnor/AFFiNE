@@ -2,13 +2,13 @@ import {
   CanvasRenderer,
   OverlayIdentifier,
   type SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   type LayoutType,
   type LocalConnectorElementModel,
   MindmapElementModel,
   type MindmapNode,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { Bound, IVec } from '@blocksuite/global/gfx';
 import {
   type DragExtensionInitializeContext,

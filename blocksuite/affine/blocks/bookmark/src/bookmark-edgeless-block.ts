@@ -1,8 +1,8 @@
-import { BookmarkBlockSchema } from '@blocksuite/affine-model';
+import { BookmarkBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import { toGfxBlockComponent } from '@blocksuite/std';
 import { GfxViewInteractionExtension } from '@blocksuite/std/gfx';
 import { type StyleInfo, styleMap } from 'lit/directives/style-map.js';
@@ -83,6 +83,6 @@ export const BookmarkBlockInteraction = GfxViewInteractionExtension(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-edgeless-bookmark': BookmarkEdgelessBlockComponent;
+    'lovenotes-edgeless-bookmark': BookmarkEdgelessBlockComponent;
   }
 }

@@ -1,7 +1,7 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import {
   groupToMarkdownAdapterMatcher,
@@ -10,7 +10,7 @@ import {
 import { groupRelationWatcherExtension } from './group-watcher';
 
 export class GroupStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-group-gfx';
+  override name = 'lovenotes-group-gfx';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

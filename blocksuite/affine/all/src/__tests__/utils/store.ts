@@ -1,4 +1,4 @@
-import { StoreExtensionManager } from '@blocksuite/affine-ext-loader';
+import { StoreExtensionManager } from '@blocksuite/lovenotes-ext-loader';
 
 import { getInternalStoreExtensions } from '../../extensions/store';
 

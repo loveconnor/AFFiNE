@@ -1,4 +1,4 @@
-import { focusDocTitle } from '@affine-test/kit/utils/editor';
+import { focusDocTitle } from '@lovenotes-test/kit/utils/editor';
 import { expect } from '@playwright/test';
 
 import { test } from '../base/base-test';
@@ -75,7 +75,7 @@ test.describe('AIInsertion/Insert', () => {
 
     // Focus to Hello
     // - Hello<cursor />
-    await page.locator('affine-edgeless-note').dblclick();
+    await page.locator('lovenotes-edgeless-note').dblclick();
     await page.getByText('Hello Block').click();
 
     const { actions } = await utils.chatPanel.getLatestAssistantMessage(page);
@@ -169,7 +169,7 @@ test.describe('AIInsertion/Insert', () => {
     await utils.editor.switchToEdgelessMode(page);
 
     // Delete default note
-    await (await page.waitForSelector('affine-edgeless-note')).click();
+    await (await page.waitForSelector('lovenotes-edgeless-note')).click();
     await page.keyboard.press('Delete');
 
     await utils.chatPanel.openChatPanel(page);

@@ -1,26 +1,26 @@
-import { EdgelessFrameManagerIdentifier } from '@blocksuite/affine-block-frame';
+import { EdgelessFrameManagerIdentifier } from '@blocksuite/lovenotes-block-frame';
 import {
   CanvasElementType,
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
   getSurfaceComponent,
-} from '@blocksuite/affine-block-surface';
-import { FontFamilyIcon } from '@blocksuite/affine-components/icons';
+} from '@blocksuite/lovenotes-block-surface';
+import { FontFamilyIcon } from '@blocksuite/lovenotes-components/icons';
 import {
   mountShapeTextEditor,
   SHAPE_OVERLAY_HEIGHT,
   SHAPE_OVERLAY_WIDTH,
   ShapeComponentConfig,
-} from '@blocksuite/affine-gfx-shape';
+} from '@blocksuite/lovenotes-gfx-shape';
 import {
   insertEdgelessTextCommand,
   mountTextElementEditor,
-} from '@blocksuite/affine-gfx-text';
+} from '@blocksuite/lovenotes-gfx-text';
 import type {
   Connection,
   ConnectorElementModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   DEFAULT_NOTE_WIDTH,
   DefaultTheme,
@@ -32,16 +32,16 @@ import {
   NoteBlockModel,
   ShapeStyle,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   FeatureFlagService,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   captureEventTarget,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { XYWH } from '@blocksuite/global/gfx';
 import {
   Bound,
@@ -97,8 +97,8 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
       padding: 8px 0;
       gap: 8px;
       border-radius: 8px;
-      background: var(--affine-background-overlay-panel-color);
-      box-shadow: var(--affine-shadow-2);
+      background: var(--lovenotes-background-overlay-panel-color);
+      box-shadow: var(--lovenotes-shadow-2);
       z-index: 1;
     }
 
@@ -115,7 +115,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
       font-size: 12px;
       font-style: normal;
       font-weight: 500;
-      border: 1px solid var(--affine-border-color, #e3e2e4);
+      border: 1px solid var(--lovenotes-border-color, #e3e2e4);
       box-sizing: border-box;
     }
   `;
@@ -168,12 +168,12 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
     if (!surfaceBlockModel) return;
     const frameMgr = this.std.get(EdgelessFrameManagerIdentifier);
     const frameIndex = frameMgr.frames.length + 1;
-    const props = this.std.get(EditPropsStore).applyLastProps('affine:frame', {
+    const props = this.std.get(EditPropsStore).applyLastProps('lovenotes:frame', {
       title: new Y.Text(`Frame ${frameIndex}`),
       xywh: serializeXYWH(...xywh),
       presentationIndex: frameMgr.generatePresentationIndex(),
     });
-    const id = this.crud.addBlock('affine:frame', props, surfaceBlockModel);
+    const id = this.crud.addBlock('lovenotes:frame', props, surfaceBlockModel);
     edgeless.store.captureSync();
     const frame = this.crud.getElementById(id);
     if (!frame) return;
@@ -199,7 +199,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
 
     const { xywh, position } = target;
     const id = this.crud.addBlock(
-      'affine:note',
+      'lovenotes:note',
       {
         xywh: serializeXYWH(...xywh),
       },
@@ -209,7 +209,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
     if (!matchModels(note, [NoteBlockModel])) {
       return;
     }
-    store.addBlock('affine:paragraph', { type: 'text' }, id);
+    store.addBlock('lovenotes:paragraph', { type: 'text' }, id);
     const group = this.currentSource.group;
 
     if (group instanceof GroupElementModel) {
@@ -473,7 +473,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
 
     const strokeColor = this.std
       .get(ThemeProvider)
-      .getCssVariableColor('--affine-black-30');
+      .getCssVariableColor('--lovenotes-black-30');
     this._overlay = new AutoCompleteFrameOverlay(this.gfx, xywh, strokeColor);
     this.surface.renderer.addOverlay(this._overlay);
   }
@@ -489,7 +489,7 @@ export class EdgelessAutoCompletePanel extends WithDisposable(LitElement) {
     const background = this.edgeless.std
       .get(ThemeProvider)
       .getColorValue(
-        this.edgeless.std.get(EditPropsStore).lastProps$.value['affine:note']
+        this.edgeless.std.get(EditPropsStore).lastProps$.value['lovenotes:note']
           .background,
         DefaultTheme.noteBackgrounColor,
         true

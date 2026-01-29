@@ -1,28 +1,28 @@
-import { createReactComponentFromLit } from '@affine/component';
-import { getViewManager } from '@affine/core/blocksuite/manager/view';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { PeekViewProvider } from '@blocksuite/affine/components/peek';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import type { ColorScheme } from '@blocksuite/affine/model';
+import { createReactComponentFromLit } from '@lovenotes/component';
+import { getViewManager } from '@lovenotes/core/blocksuite/manager/view';
+import type { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { PeekViewProvider } from '@blocksuite/lovenotes/components/peek';
+import { SignalWatcher, WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
+import type { ColorScheme } from '@blocksuite/lovenotes/model';
 import {
   codeBlockWrapMiddleware,
   defaultImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/affine/shared/adapters';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
+} from '@blocksuite/lovenotes/shared/adapters';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes/shared/theme';
 import {
   BlockStdScope,
   BlockViewIdentifier,
   type EditorHost,
   ShadowlessElement,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/lovenotes/std';
 import type {
   ExtensionType,
   Query,
   Store,
   TransformerMiddleware,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/store';
 import type { Signal } from '@preact/signals-core';
 import {
   darkCssVariablesV2,
@@ -37,7 +37,7 @@ import React from 'react';
 import { filter } from 'rxjs/operators';
 
 import { markDownToDoc } from '../../utils';
-import type { AffineAIPanelState } from '../widgets/ai-panel/type';
+import type { LoveNotesAIPanelState } from '../widgets/ai-panel/type';
 
 export const getCustomPageEditorBlockSpecs: () => ExtensionType[] = () => {
   const manager = getViewManager().config.init().value;
@@ -46,8 +46,8 @@ export const getCustomPageEditorBlockSpecs: () => ExtensionType[] = () => {
     {
       setup: di => {
         di.override(
-          BlockViewIdentifier('affine:page'),
-          () => literal`affine-page-root`
+          BlockViewIdentifier('lovenotes:page'),
+          () => literal`lovenotes-page-root`
         );
       },
     },
@@ -57,39 +57,39 @@ export const getCustomPageEditorBlockSpecs: () => ExtensionType[] = () => {
 const customHeadingStyles = css`
   .custom-heading {
     .h1 {
-      font-size: calc(var(--affine-font-h-1) - 2px);
+      font-size: calc(var(--lovenotes-font-h-1) - 2px);
       code {
-        font-size: calc(var(--affine-font-base) + 6px);
+        font-size: calc(var(--lovenotes-font-base) + 6px);
       }
     }
     .h2 {
-      font-size: calc(var(--affine-font-h-2) - 2px);
+      font-size: calc(var(--lovenotes-font-h-2) - 2px);
       code {
-        font-size: calc(var(--affine-font-base) + 4px);
+        font-size: calc(var(--lovenotes-font-base) + 4px);
       }
     }
     .h3 {
-      font-size: calc(var(--affine-font-h-3) - 2px);
+      font-size: calc(var(--lovenotes-font-h-3) - 2px);
       code {
-        font-size: calc(var(--affine-font-base) + 2px);
+        font-size: calc(var(--lovenotes-font-base) + 2px);
       }
     }
     .h4 {
-      font-size: calc(var(--affine-font-h-4) - 2px);
+      font-size: calc(var(--lovenotes-font-h-4) - 2px);
       code {
-        font-size: var(--affine-font-base);
+        font-size: var(--lovenotes-font-base);
       }
     }
     .h5 {
-      font-size: calc(var(--affine-font-h-5) - 2px);
+      font-size: calc(var(--lovenotes-font-h-5) - 2px);
       code {
-        font-size: calc(var(--affine-font-base) - 2px);
+        font-size: calc(var(--lovenotes-font-base) - 2px);
       }
     }
     .h6 {
-      font-size: calc(var(--affine-font-h-6) - 2px);
+      font-size: calc(var(--lovenotes-font-h-6) - 2px);
       code {
-        font-size: calc(var(--affine-font-base) - 4px);
+        font-size: calc(var(--lovenotes-font-base) - 4px);
       }
     }
   }
@@ -100,7 +100,7 @@ export type TextRendererOptions = {
   extensions?: ExtensionType[];
   additionalMiddlewares?: TransformerMiddleware[];
   testId?: string;
-  affineFeatureFlagService?: FeatureFlagService;
+  lovenotesFeatureFlagService?: FeatureFlagService;
   theme?: Signal<ColorScheme>;
 };
 
@@ -109,26 +109,26 @@ export class TextRenderer extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = css`
-    .ai-answer-text-editor.affine-page-viewport {
+    .ai-answer-text-editor.lovenotes-page-viewport {
       background: transparent;
-      font-family: var(--affine-font-family);
+      font-family: var(--lovenotes-font-family);
       margin-top: 0;
       margin-bottom: 0;
     }
 
-    .ai-answer-text-editor .affine-page-root-block-container {
+    .ai-answer-text-editor .lovenotes-page-root-block-container {
       padding: 0;
       margin: 0;
-      line-height: var(--affine-line-height);
+      line-height: var(--lovenotes-line-height);
       color: ${unsafeCSSVarV2('text/primary')};
       font-weight: 400;
     }
 
     .ai-answer-text-editor {
-      .affine-note-block-container {
-        > .affine-block-children-container {
-          > :first-child:not(affine-callout),
-          > :first-child:not(affine-callout) * {
+      .lovenotes-note-block-container {
+        > .lovenotes-block-children-container {
+          > :first-child:not(lovenotes-callout),
+          > :first-child:not(lovenotes-callout) * {
             margin-top: 0 !important;
           }
           > :last-child,
@@ -138,13 +138,13 @@ export class TextRenderer extends SignalWatcher(
         }
       }
 
-      .affine-paragraph-block-container {
+      .lovenotes-paragraph-block-container {
         line-height: 22px;
 
         .h6 {
           padding-left: 16px;
           color: ${unsafeCSSVarV2('text/link')};
-          font-size: var(--affine-font-base);
+          font-size: var(--lovenotes-font-base);
 
           .toggle-icon {
             transform: translateX(0);
@@ -170,7 +170,7 @@ export class TextRenderer extends SignalWatcher(
       border-radius: 20px;
     }
     .text-renderer-container.show-scrollbar:hover::-webkit-scrollbar-thumb {
-      background-color: var(--affine-black-30);
+      background-color: var(--lovenotes-black-30);
     }
     .text-renderer-container.show-scrollbar::-webkit-scrollbar-corner {
       display: none;
@@ -193,14 +193,14 @@ export class TextRenderer extends SignalWatcher(
     }
 
     .text-renderer-container[data-app-theme='dark'] {
-      .ai-answer-text-editor .affine-page-root-block-container {
-        color: ${unsafeCSS(darkCssVariablesV2['--affine-v2-text-primary'])};
+      .ai-answer-text-editor .lovenotes-page-root-block-container {
+        color: ${unsafeCSS(darkCssVariablesV2['--lovenotes-v2-text-primary'])};
       }
     }
 
     .text-renderer-container[data-app-theme='light'] {
-      .ai-answer-text-editor .affine-page-root-block-container {
-        color: ${unsafeCSS(lightCssVariablesV2['--affine-v2-text-primary'])};
+      .ai-answer-text-editor .lovenotes-page-root-block-container {
+        color: ${unsafeCSS(lightCssVariablesV2['--lovenotes-v2-text-primary'])};
       }
     }
 
@@ -225,19 +225,19 @@ export class TextRenderer extends SignalWatcher(
   private readonly _query: Query = {
     mode: 'strict',
     match: [
-      'affine:page',
-      'affine:note',
-      'affine:table',
-      'affine:surface',
-      'affine:paragraph',
-      'affine:callout',
-      'affine:code',
-      'affine:list',
-      'affine:divider',
-      'affine:latex',
-      'affine:bookmark',
-      'affine:attachment',
-      'affine:embed-linked-doc',
+      'lovenotes:page',
+      'lovenotes:note',
+      'lovenotes:table',
+      'lovenotes:surface',
+      'lovenotes:paragraph',
+      'lovenotes:callout',
+      'lovenotes:code',
+      'lovenotes:list',
+      'lovenotes:divider',
+      'lovenotes:latex',
+      'lovenotes:bookmark',
+      'lovenotes:attachment',
+      'lovenotes:embed-linked-doc',
     ].map(flavour => ({ flavour, viewType: 'display' })),
   };
 
@@ -278,7 +278,7 @@ export class TextRenderer extends SignalWatcher(
         markDownToDoc(
           latestAnswer,
           middlewares,
-          this.options.affineFeatureFlagService
+          this.options.lovenotesFeatureFlagService
         )
           .then(doc => {
             this.disposeDoc();
@@ -352,7 +352,7 @@ export class TextRenderer extends SignalWatcher(
       >
         ${keyed(
           this._doc,
-          html`<div class="ai-answer-text-editor affine-page-viewport">
+          html`<div class="ai-answer-text-editor lovenotes-page-viewport">
             ${this._host}
           </div>`
         )}
@@ -403,11 +403,11 @@ export class TextRenderer extends SignalWatcher(
   accessor options!: TextRendererOptions;
 
   @property({ attribute: false })
-  accessor state: AffineAIPanelState | undefined = undefined;
+  accessor state: LoveNotesAIPanelState | undefined = undefined;
 }
 
 export const createTextRenderer = (options: TextRendererOptions) => {
-  return (answer: string, state?: AffineAIPanelState) => {
+  return (answer: string, state?: LoveNotesAIPanelState) => {
     return html`<text-renderer
       contenteditable="false"
       .answer=${answer}

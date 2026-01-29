@@ -1,17 +1,17 @@
-import { toolbarButtons } from '@affine-test/kit/bs/linked-toolbar';
-import { test } from '@affine-test/kit/playwright';
+import { toolbarButtons } from '@lovenotes-test/kit/bs/linked-toolbar';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   pressArrowUp,
   pressEnter,
   pressTab,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/keyboard';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   createLinkedPage,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
@@ -28,7 +28,7 @@ test.describe('split list', () => {
     await pressTab(page);
     await pressArrowUp(page, 2);
 
-    const listLocator = page.locator('affine-list');
+    const listLocator = page.locator('lovenotes-list');
 
     /**
      * 1. |aaa
@@ -41,15 +41,15 @@ test.describe('split list', () => {
       'bbb',
     ]);
     await expect(
-      listLocator.nth(0).locator('.affine-list-block__numbered')
+      listLocator.nth(0).locator('.lovenotes-list-block__numbered')
     ).toHaveText(['1.', 'a.']);
     await expect(listLocator.nth(2).locator('rich-text')).toHaveText('ccc');
     await expect(
-      listLocator.nth(2).locator('.affine-list-block__numbered')
+      listLocator.nth(2).locator('.lovenotes-list-block__numbered')
     ).toHaveText('2.');
     await expect(listLocator.nth(3).locator('rich-text')).toHaveText('ddd');
     await expect(
-      listLocator.nth(3).locator('.affine-list-block__numbered')
+      listLocator.nth(3).locator('.lovenotes-list-block__numbered')
     ).toHaveText('3.');
 
     await pressEnter(page);
@@ -61,22 +61,22 @@ test.describe('split list', () => {
      * 4. ddd
      */
     await expect(
-      listLocator.nth(0).locator('.affine-list-block__numbered')
+      listLocator.nth(0).locator('.lovenotes-list-block__numbered')
     ).toHaveText('1.');
     await expect(listLocator.nth(1).locator('rich-text')).toHaveText([
       'aaa',
       'bbb',
     ]);
     await expect(
-      listLocator.nth(1).locator('.affine-list-block__numbered')
+      listLocator.nth(1).locator('.lovenotes-list-block__numbered')
     ).toHaveText(['2.', 'a.']);
     await expect(listLocator.nth(3).locator('rich-text')).toHaveText('ccc');
     await expect(
-      listLocator.nth(3).locator('.affine-list-block__numbered')
+      listLocator.nth(3).locator('.lovenotes-list-block__numbered')
     ).toHaveText('3.');
     await expect(listLocator.nth(4).locator('rich-text')).toHaveText('ddd');
     await expect(
-      listLocator.nth(4).locator('.affine-list-block__numbered')
+      listLocator.nth(4).locator('.lovenotes-list-block__numbered')
     ).toHaveText('4.');
   });
 
@@ -86,10 +86,10 @@ test.describe('split list', () => {
     await page.keyboard.press('Enter');
     await page.keyboard.press('Tab');
     await createLinkedPage(page, 'Test Page');
-    const inlineLink = page.locator('affine-reference');
+    const inlineLink = page.locator('lovenotes-reference');
     const { switchViewBtn, cardViewBtn } = toolbarButtons(page);
-    const list = page.locator('affine-list');
-    const card = page.locator('affine-embed-linked-doc-block');
+    const list = page.locator('lovenotes-list');
+    const card = page.locator('lovenotes-embed-linked-doc-block');
 
     const pressWithCount = async (key: string, count: number) => {
       for (let i = 0; i < count; i++) {

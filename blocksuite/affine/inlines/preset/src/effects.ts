@@ -1,11 +1,11 @@
-import { AffineText } from './nodes/affine-text';
+import { LoveNotesText } from './nodes/lovenotes-text';
 
 export function effects() {
-  customElements.define('affine-text', AffineText);
+  customElements.define('lovenotes-text', LoveNotesText);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-text': AffineText;
+    'lovenotes-text': LoveNotesText;
   }
 }

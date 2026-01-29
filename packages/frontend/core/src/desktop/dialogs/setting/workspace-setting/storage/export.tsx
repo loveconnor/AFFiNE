@@ -1,12 +1,12 @@
-import { notify } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { Button } from '@affine/component/ui/button';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
-import type { Workspace } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { universalId } from '@affine/nbstore';
-import track from '@affine/track';
+import { notify } from '@lovenotes/component';
+import { SettingRow } from '@lovenotes/component/setting-components';
+import { Button } from '@lovenotes/component/ui/button';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { DesktopApiService } from '@lovenotes/core/modules/desktop-api';
+import type { Workspace } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
+import { universalId } from '@lovenotes/nbstore';
+import track from '@lovenotes/track';
 import { ExportIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useState } from 'react';
@@ -70,7 +70,7 @@ export const DesktopExportPanel = ({ workspace }: ExportPanelProps) => {
       >
         <Button
           variant="primary"
-          data-testid="export-affine-backup"
+          data-testid="export-lovenotes-backup"
           onClick={onExport}
           disabled={saving}
         >
@@ -90,7 +90,7 @@ export const DesktopExportPanel = ({ workspace }: ExportPanelProps) => {
       >
         <Button
           variant="primary"
-          data-testid="export-affine-full-sync"
+          data-testid="export-lovenotes-full-sync"
           onClick={fullSync}
           loading={fullSyncing}
           disabled={fullSyncing}
@@ -104,7 +104,7 @@ export const DesktopExportPanel = ({ workspace }: ExportPanelProps) => {
         desc={t['Quick Export Description']()}
       >
         <Button
-          data-testid="export-affine-backup"
+          data-testid="export-lovenotes-backup"
           onClick={onExport}
           disabled={saving}
         >

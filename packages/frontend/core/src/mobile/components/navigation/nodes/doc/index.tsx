@@ -1,15 +1,15 @@
-import { Loading } from '@affine/component';
-import { Guard } from '@affine/core/components/guard';
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { DocsService } from '@affine/core/modules/doc';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { DocsSearchService } from '@affine/core/modules/docs-search';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { Loading } from '@lovenotes/component';
+import { Guard } from '@lovenotes/core/components/guard';
+import type { NodeOperation } from '@lovenotes/core/desktop/components/navigation-panel';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { DocsService } from '@lovenotes/core/modules/doc';
+import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
+import { DocsSearchService } from '@lovenotes/core/modules/docs-search';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { GlobalContextService } from '@lovenotes/core/modules/global-context';
+import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
 import {
   LiveData,
   MANUALLY_STOP,
@@ -187,7 +187,7 @@ export const NavigationPanelDocNode = ({
         {canEdit =>
           canEdit ? (
             <AddItemPlaceholder
-              label={t['com.affine.rootAppSidebar.explorer.doc-add-tooltip']()}
+              label={t['com.lovenotes.rootAppSidebar.explorer.doc-add-tooltip']()}
               onClick={handleAddLinkedPage}
             />
           ) : null

@@ -1,7 +1,7 @@
-import type { Color, ColorScheme, Palette } from '@blocksuite/affine-model';
-import { DefaultTheme, resolveColor } from '@blocksuite/affine-model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { ColorEvent } from '@blocksuite/affine-shared/utils';
+import type { Color, ColorScheme, Palette } from '@blocksuite/lovenotes-model';
+import { DefaultTheme, resolveColor } from '@blocksuite/lovenotes-model';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import { ColorEvent } from '@blocksuite/lovenotes-shared/utils';
 import { css, html, LitElement, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
@@ -77,7 +77,7 @@ export class EdgelessColorButton extends LitElement {
     }
 
     :host([active])::after {
-      border: 1.5px solid var(--affine-primary-color);
+      border: 1.5px solid var(--lovenotes-primary-color);
     }
   `;
 
@@ -131,7 +131,7 @@ export class EdgelessColorPanel extends LitElement {
       padding: 0 2px;
       gap: 14px;
       box-sizing: border-box;
-      background: var(--affine-background-overlay-panel-color);
+      background: var(--lovenotes-background-overlay-panel-color);
     }
 
     :host(.one-way.small) {

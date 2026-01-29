@@ -657,6 +657,34 @@ export class Store {
         return;
       }
 
+      const sysId = yBlock.get('sys:id');
+      const sysFlavour = yBlock.get('sys:flavour');
+      const sysChildren = yBlock.get('sys:children');
+      if (
+        typeof sysId !== 'string' ||
+        typeof sysFlavour !== 'string' ||
+        !(sysChildren instanceof Y.Array)
+      ) {
+        console.warn(
+          'Removing invalid block from store:',
+          JSON.stringify({
+            id,
+            sysId,
+            sysFlavour,
+            hasChildren: sysChildren instanceof Y.Array,
+          })
+        );
+        const removeInvalid = () => {
+          this._yBlocks.delete(id);
+        };
+        if (isLocal) {
+          removeInvalid();
+        } else {
+          queueMicrotask(removeInvalid);
+        }
+        return;
+      }
+
       const options: BlockOptions = {
         onChange: (block, key, isLocal) => {
           if (key) {

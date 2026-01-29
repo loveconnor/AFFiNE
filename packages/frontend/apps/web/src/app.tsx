@@ -1,20 +1,20 @@
-import { AffineContext } from '@affine/core/components/context';
-import { AppContainer } from '@affine/core/desktop/components/app-container';
-import { router } from '@affine/core/desktop/router';
-import { configureCommonModules } from '@affine/core/modules';
-import { I18nProvider } from '@affine/core/modules/i18n';
-import { LifecycleService } from '@affine/core/modules/lifecycle';
+import { LoveNotesContext } from '@lovenotes/core/components/context';
+import { AppContainer } from '@lovenotes/core/desktop/components/app-container';
+import { router } from '@lovenotes/core/desktop/router';
+import { configureCommonModules } from '@lovenotes/core/modules';
+import { I18nProvider } from '@lovenotes/core/modules/i18n';
+import { LifecycleService } from '@lovenotes/core/modules/lifecycle';
 import {
   configureLocalStorageStateStorageImpls,
   NbstoreProvider,
-} from '@affine/core/modules/storage';
-import { PopupWindowProvider } from '@affine/core/modules/url';
-import { configureBrowserWorkbenchModule } from '@affine/core/modules/workbench';
-import { configureBrowserWorkspaceFlavours } from '@affine/core/modules/workspace-engine';
-import createEmotionCache from '@affine/core/utils/create-emotion-cache';
-import { getWorkerUrl } from '@affine/env/worker';
-import { StoreManagerClient } from '@affine/nbstore/worker/client';
-import { setTelemetryTransport } from '@affine/track';
+} from '@lovenotes/core/modules/storage';
+import { PopupWindowProvider } from '@lovenotes/core/modules/url';
+import { configureBrowserWorkbenchModule } from '@lovenotes/core/modules/workbench';
+import { configureBrowserWorkspaceFlavours } from '@lovenotes/core/modules/workspace-engine';
+import createEmotionCache from '@lovenotes/core/utils/create-emotion-cache';
+import { getWorkerUrl } from '@lovenotes/env/worker';
+import { StoreManagerClient } from '@lovenotes/nbstore/worker/client';
+import { setTelemetryTransport } from '@lovenotes/track';
 import { CacheProvider } from '@emotion/react';
 import { Framework, FrameworkRoot, getCurrentStore } from '@toeverything/infra';
 import { OpClient } from '@toeverything/infra/op';
@@ -32,7 +32,7 @@ if (
   localStorage.getItem('disableSharedWorker') !== 'true'
 ) {
   const worker = new SharedWorker(workerUrl, {
-    name: 'affine-shared-worker',
+    name: 'lovenotes-shared-worker',
   });
   storeManagerClient = new StoreManagerClient(new OpClient(worker.port));
 } else {
@@ -100,13 +100,13 @@ export function App() {
       <FrameworkRoot framework={frameworkProvider}>
         <CacheProvider value={cache}>
           <I18nProvider>
-            <AffineContext store={getCurrentStore()}>
+            <LoveNotesContext store={getCurrentStore()}>
               <RouterProvider
                 fallbackElement={<AppContainer fallback />}
                 router={router}
                 future={future}
               />
-            </AffineContext>
+            </LoveNotesContext>
           </I18nProvider>
         </CacheProvider>
       </FrameworkRoot>

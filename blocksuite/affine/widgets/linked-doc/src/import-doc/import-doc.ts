@@ -5,11 +5,11 @@ import {
   HelpIcon,
   NewIcon,
   NotionIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@blocksuite/lovenotes-components/icons';
 import {
   openFilesWith,
   openSingleFileWith,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import type { ExtensionType, Schema, Workspace } from '@blocksuite/store';
 import { html, LitElement, type PropertyValues } from 'lit';
@@ -181,7 +181,7 @@ export class ImportDoc extends WithDisposable(LitElement) {
   private _openLearnImportLink(event: MouseEvent) {
     event.stopPropagation();
     window.open(
-      'https://affine.pro/blog/import-your-data-from-notion-into-affine',
+      'https://lovenotes.pro/blog/import-your-data-from-notion-into-lovenotes',
       '_blank'
     );
   }
@@ -219,9 +219,9 @@ export class ImportDoc extends WithDisposable(LitElement) {
           <div>Import</div>
         </header>
         <div>
-          AFFiNE will gradually support more file formats for import.
+          LoveNotes will gradually support more file formats for import.
           <a
-            href="https://community.affine.pro/c/feature-requests/import-export"
+            href="https://community.lovenotes.pro/c/feature-requests/import-export"
             target="_blank"
             >Provide feedback.</a
           >
@@ -255,9 +255,9 @@ export class ImportDoc extends WithDisposable(LitElement) {
               @click="${this._openLearnImportLink}"
             >
               ${HelpIcon}
-              <affine-tooltip>
-                Learn how to Import your Notion pages into AFFiNE.
-              </affine-tooltip>
+              <lovenotes-tooltip>
+                Learn how to Import your Notion pages into LoveNotes.
+              </lovenotes-tooltip>
             </div>
           </icon-button>
           <icon-button class="button-item" text="Coming soon..." disabled>
@@ -265,7 +265,7 @@ export class ImportDoc extends WithDisposable(LitElement) {
           </icon-button>
         </div>
         <!-- <div class="footer">
-        <div>Migrate from other versions of AFFiNE?</div>
+        <div>Migrate from other versions of LoveNotes?</div>
       </div> -->
       </div>
     `;

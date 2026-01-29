@@ -1,5 +1,5 @@
-import { EmbedIframeBlockSchema } from '@blocksuite/affine-model';
-import { BlockMarkdownAdapterExtension } from '@blocksuite/affine-shared/adapters';
+import { EmbedIframeBlockSchema } from '@blocksuite/lovenotes-model';
+import { BlockMarkdownAdapterExtension } from '@blocksuite/lovenotes-shared/adapters';
 
 import { createEmbedBlockMarkdownAdapterMatcher } from '../../common/adapters/markdown.js';
 

@@ -6,7 +6,7 @@ import {
   getCell,
   getProperty,
   updateCell,
-} from '@blocksuite/affine-block-database';
+} from '@blocksuite/lovenotes-block-database';
 import {
   type CellDataType,
   type ColumnDataType,
@@ -15,7 +15,7 @@ import {
   NoteBlockSchemaExtension,
   ParagraphBlockSchemaExtension,
   RootBlockSchemaExtension,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { propertyModelPresets } from '@blocksuite/data-view/property-pure-presets';
 import type { BlockModel, Store } from '@blocksuite/store';
 import { Text } from '@blocksuite/store';
@@ -60,21 +60,21 @@ describe('DatabaseManager', () => {
   let col3: ColumnDataType['id'];
 
   const selection = [
-    { id: '1', value: 'Done', color: 'var(--affine-tag-white)' },
-    { id: '2', value: 'TODO', color: 'var(--affine-tag-pink)' },
-    { id: '3', value: 'WIP', color: 'var(--affine-tag-blue)' },
+    { id: '1', value: 'Done', color: 'var(--lovenotes-tag-white)' },
+    { id: '2', value: 'TODO', color: 'var(--lovenotes-tag-pink)' },
+    { id: '3', value: 'WIP', color: 'var(--lovenotes-tag-blue)' },
   ];
 
   beforeEach(() => {
     doc = createTestDoc();
 
-    rootId = doc.addBlock('affine:page', {
+    rootId = doc.addBlock('lovenotes:page', {
       title: new Text('database test'),
     });
-    noteBlockId = doc.addBlock('affine:note', {}, rootId);
+    noteBlockId = doc.addBlock('lovenotes:note', {}, rootId);
 
     databaseBlockId = doc.addBlock(
-      'affine:database',
+      'lovenotes:database',
       {
         columns: [],
         titleColumn: 'Title',
@@ -110,14 +110,14 @@ describe('DatabaseManager', () => {
     });
 
     p1 = doc.addBlock(
-      'affine:paragraph',
+      'lovenotes:paragraph',
       {
         text: new Text('text1'),
       },
       databaseBlockId
     );
     p2 = doc.addBlock(
-      'affine:paragraph',
+      'lovenotes:paragraph',
       {
         text: new Text('text2'),
       },
@@ -169,7 +169,7 @@ describe('DatabaseManager', () => {
 
   test('getCell', () => {
     const modelId = doc.addBlock(
-      'affine:paragraph',
+      'lovenotes:paragraph',
       {
         text: new Text('paragraph'),
       },
@@ -197,7 +197,7 @@ describe('DatabaseManager', () => {
 
   test('updateCell', () => {
     const newRowId = doc.addBlock(
-      'affine:paragraph',
+      'lovenotes:paragraph',
       {
         text: new Text('text3'),
       },

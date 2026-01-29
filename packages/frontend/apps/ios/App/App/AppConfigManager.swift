@@ -2,19 +2,19 @@ import Foundation
 
 final class AppConfigManager {
   struct AppConfig: Decodable {
-    let affineVersion: String
+    let lovenotesVersion: String
   }
 
-  static var affineVersion: String?
+  static var lovenotesVersion: String?
 
-  static func getAffineVersion() -> String {
-    if affineVersion == nil {
+  static func getLoveNotesVersion() -> String {
+    if lovenotesVersion == nil {
       let file = Bundle(for: AppConfigManager.self).url(forResource: "capacitor.config", withExtension: "json")!
       let data = try! Data(contentsOf: file)
       let config = try! JSONDecoder().decode(AppConfig.self, from: data)
-      affineVersion = config.affineVersion
+      lovenotesVersion = config.lovenotesVersion
     }
 
-    return affineVersion!
+    return lovenotesVersion!
   }
 }

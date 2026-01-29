@@ -1,8 +1,8 @@
-import { WorkspaceImpl } from '@affine/core/modules/workspace/impls/workspace';
-import { ViewExtensionManagerIdentifier } from '@blocksuite/affine/ext-loader';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { BlockStdScope, type EditorHost } from '@blocksuite/affine/std';
-import type { Store } from '@blocksuite/affine/store';
+import { WorkspaceImpl } from '@lovenotes/core/modules/workspace/impls/workspace';
+import { ViewExtensionManagerIdentifier } from '@blocksuite/lovenotes/ext-loader';
+import { WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import { BlockStdScope, type EditorHost } from '@blocksuite/lovenotes/std';
+import type { Store } from '@blocksuite/lovenotes/store';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { createRef, type Ref, ref } from 'lit/directives/ref.js';
@@ -11,12 +11,12 @@ import { Doc as YDoc } from 'yjs';
 import { PPTBuilder } from '../slides/index';
 import { getAIPanelWidget } from '../utils/ai-widgets';
 import type { AIContext } from '../utils/context';
-import type { AffineAIPanelWidgetConfig } from '../widgets/ai-panel/type';
+import type { LoveNotesAIPanelWidgetConfig } from '../widgets/ai-panel/type';
 
 export const createSlidesRenderer: (
   host: EditorHost,
   ctx: AIContext
-) => AffineAIPanelWidgetConfig['answerRenderer'] = (host, ctx) => {
+) => LoveNotesAIPanelWidgetConfig['answerRenderer'] = (host, ctx) => {
   return (answer, state) => {
     if (state === 'generating') {
       const panel = getAIPanelWidget(host);
@@ -110,7 +110,7 @@ export class AISlidesRenderer extends WithDisposable(LitElement) {
           width: 100%;
           height: 100%;
           border-radius: 4px;
-          border: 1px solid var(--affine-border-color);
+          border: 1px solid var(--lovenotes-border-color);
         }
 
         .mask {
@@ -123,7 +123,7 @@ export class AISlidesRenderer extends WithDisposable(LitElement) {
           height: 100%;
         }
 
-        .edgeless-container affine-edgeless-zoom-toolbar-widget,
+        .edgeless-container lovenotes-edgeless-zoom-toolbar-widget,
         edgeless-toolbar {
           display: none;
         }
@@ -132,7 +132,7 @@ export class AISlidesRenderer extends WithDisposable(LitElement) {
           box-sizing: border-box;
         }
 
-        .affine-edgeless-viewport {
+        .lovenotes-edgeless-viewport {
           display: block;
           height: 100%;
           position: relative;
@@ -141,13 +141,13 @@ export class AISlidesRenderer extends WithDisposable(LitElement) {
           container-type: inline-size;
         }
 
-        .affine-edgeless-surface-block-container {
+        .lovenotes-edgeless-surface-block-container {
           position: absolute;
           width: 100%;
           height: 100%;
         }
 
-        .affine-edgeless-surface-block-container canvas {
+        .lovenotes-edgeless-surface-block-container canvas {
           width: 100%;
           height: 100%;
           position: relative;
@@ -161,44 +161,44 @@ export class AISlidesRenderer extends WithDisposable(LitElement) {
           overflow: hidden;
           display: block;
           height: 100%;
-          font-family: var(--affine-font-family);
-          font-size: var(--affine-font-base);
-          line-height: var(--affine-line-height);
-          color: var(--affine-text-primary-color);
+          font-family: var(--lovenotes-font-family);
+          font-size: var(--lovenotes-font-base);
+          line-height: var(--lovenotes-line-height);
+          color: var(--lovenotes-text-primary-color);
           font-weight: 400;
         }
 
-        .affine-block-children-container.edgeless {
+        .lovenotes-block-children-container.edgeless {
           padding-left: 0;
           position: relative;
           overflow: hidden;
           height: 100%;
           touch-action: none;
-          background-color: var(--affine-background-primary-color);
+          background-color: var(--lovenotes-background-primary-color);
           background-image: radial-gradient(
-            var(--affine-edgeless-grid-color) 1px,
-            var(--affine-background-primary-color) 1px
+            var(--lovenotes-edgeless-grid-color) 1px,
+            var(--lovenotes-background-primary-color) 1px
           );
           z-index: 0;
         }
 
-        .affine-edgeless-block-child {
+        .lovenotes-edgeless-block-child {
           position: absolute;
           transform-origin: center;
           box-sizing: border-box;
-          border: 2px solid var(--affine-white-10);
+          border: 2px solid var(--lovenotes-white-10);
           border-radius: 8px;
-          box-shadow: var(--affine-shadow-3);
+          box-shadow: var(--lovenotes-shadow-3);
           pointer-events: all;
         }
 
-        affine-edgeless-image .resizable-img,
-        affine-edgeless-image .resizable-img img {
+        lovenotes-edgeless-image .resizable-img,
+        lovenotes-edgeless-image .resizable-img img {
           width: 100%;
           height: 100%;
         }
 
-        .affine-edgeless-layer {
+        .lovenotes-edgeless-layer {
           position: absolute;
           top: 0;
           left: 0;
@@ -207,7 +207,7 @@ export class AISlidesRenderer extends WithDisposable(LitElement) {
       </style>
       <div class="slides-container">
         <div
-          class="edgeless-container affine-edgeless-viewport"
+          class="edgeless-container lovenotes-edgeless-viewport"
           ${ref(this._editorContainer)}
         >
           ${new BlockStdScope({
@@ -230,8 +230,8 @@ export class AISlidesRenderer extends WithDisposable(LitElement) {
     const doc = collection.createDoc().getStore();
 
     doc.load(() => {
-      const pageBlockId = doc.addBlock('affine:page', {});
-      doc.addBlock('affine:surface', {}, pageBlockId);
+      const pageBlockId = doc.addBlock('lovenotes:page', {});
+      doc.addBlock('lovenotes:surface', {}, pageBlockId);
     });
 
     doc.resetHistory();

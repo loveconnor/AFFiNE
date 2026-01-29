@@ -12,11 +12,11 @@ public class GetPromptsQuery: GraphQLQuery {
 
   public init() {}
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("listCopilotPrompts", [ListCopilotPrompt].self),
     ] }
@@ -27,11 +27,11 @@ public class GetPromptsQuery: GraphQLQuery {
     /// ListCopilotPrompt
     ///
     /// Parent Type: `CopilotPromptType`
-    public struct ListCopilotPrompt: AffineGraphQL.SelectionSet {
+    public struct ListCopilotPrompt: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotPromptType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotPromptType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("name", String.self),
@@ -50,11 +50,11 @@ public class GetPromptsQuery: GraphQLQuery {
       /// ListCopilotPrompt.Config
       ///
       /// Parent Type: `CopilotPromptConfigType`
-      public struct Config: AffineGraphQL.SelectionSet {
+      public struct Config: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotPromptConfigType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotPromptConfigType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("frequencyPenalty", Double?.self),
@@ -72,21 +72,21 @@ public class GetPromptsQuery: GraphQLQuery {
       /// ListCopilotPrompt.Message
       ///
       /// Parent Type: `CopilotPromptMessageType`
-      public struct Message: AffineGraphQL.SelectionSet {
+      public struct Message: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotPromptMessageType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotPromptMessageType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("role", GraphQLEnum<AffineGraphQL.CopilotPromptMessageRole>.self),
+          .field("role", GraphQLEnum<LoveNotesGraphQL.CopilotPromptMessageRole>.self),
           .field("content", String.self),
-          .field("params", AffineGraphQL.JSON?.self),
+          .field("params", LoveNotesGraphQL.JSON?.self),
         ] }
 
-        public var role: GraphQLEnum<AffineGraphQL.CopilotPromptMessageRole> { __data["role"] }
+        public var role: GraphQLEnum<LoveNotesGraphQL.CopilotPromptMessageRole> { __data["role"] }
         public var content: String { __data["content"] }
-        public var params: AffineGraphQL.JSON? { __data["params"] }
+        public var params: LoveNotesGraphQL.JSON? { __data["params"] }
       }
     }
   }

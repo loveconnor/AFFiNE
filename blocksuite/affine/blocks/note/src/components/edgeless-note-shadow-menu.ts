@@ -1,5 +1,5 @@
-import { ColorScheme, NoteShadow } from '@blocksuite/affine-model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { ColorScheme, NoteShadow } from '@blocksuite/lovenotes-model';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { css, html, LitElement, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -140,11 +140,11 @@ export class EdgelessNoteShadowMenu extends LitElement {
     }
 
     .item:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
 
     .item[data-selected] {
-      border: 1px solid var(--affine-brand-color);
+      border: 1px solid var(--lovenotes-brand-color);
     }
   `;
 

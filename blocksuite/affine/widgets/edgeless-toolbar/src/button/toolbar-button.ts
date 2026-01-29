@@ -10,16 +10,16 @@ export class EdgelessToolbarButton extends EdgelessToolIconButton {
       align-items: center;
       justify-content: center;
       padding: 0;
-      color: var(--affine-icon-color);
+      color: var(--lovenotes-icon-color);
       cursor: pointer;
     }
 
     .icon-container.active-mode-color[active] {
-      color: var(--affine-primary-color);
+      color: var(--lovenotes-primary-color);
     }
 
     .icon-container.active-mode-background[active] {
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
 
     .icon-container[disabled] {
@@ -29,7 +29,7 @@ export class EdgelessToolbarButton extends EdgelessToolIconButton {
 
     .icon-container[coming] {
       cursor: not-allowed;
-      color: var(--affine-text-disable-color);
+      color: var(--lovenotes-text-disable-color);
     }
   `;
 

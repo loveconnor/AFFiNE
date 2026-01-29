@@ -1,6 +1,6 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { createButtonPopper } from '@blocksuite/affine-shared/utils';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
+import { EditPropsStore } from '@blocksuite/lovenotes-shared/services';
+import { createButtonPopper } from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { SettingsIcon } from '@blocksuite/icons/lit';
 import type { BlockComponent } from '@blocksuite/std';
@@ -15,9 +15,9 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
       border-radius: 8px;
       font-size: 12px;
       font-weight: 500;
-      background-color: var(--affine-background-overlay-panel-color);
-      box-shadow: var(--affine-menu-shadow);
-      color: var(--affine-text-primary-color);
+      background-color: var(--lovenotes-background-overlay-panel-color);
+      box-shadow: var(--lovenotes-menu-shadow);
+      color: var(--lovenotes-text-primary-color);
     }
 
     .navigator-setting-menu[data-show] {
@@ -42,15 +42,15 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
     .text {
       padding: 0px 4px;
       line-height: 22px;
-      font-size: var(--affine-font-sm);
-      color: var(--affine-text-primary-color);
+      font-size: var(--lovenotes-font-sm);
+      color: var(--lovenotes-text-primary-color);
     }
 
     .text.title {
       font-weight: 500;
       line-height: 20px;
-      font-size: var(--affine-font-xs);
-      color: var(--affine-text-secondary-color);
+      font-size: var(--lovenotes-font-xs);
+      color: var(--lovenotes-text-secondary-color);
     }
 
     .divider {
@@ -63,7 +63,7 @@ export class EdgelessNavigatorSettingButton extends WithDisposable(LitElement) {
       content: '';
       width: 100%;
       height: 1px;
-      background: var(--affine-border-color);
+      background: var(--lovenotes-border-color);
     }
   `;
 

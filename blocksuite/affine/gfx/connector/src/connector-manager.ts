@@ -1,4 +1,4 @@
-import { AStarRunner, Overlay } from '@blocksuite/affine-block-surface';
+import { AStarRunner, Overlay } from '@blocksuite/lovenotes-block-surface';
 import {
   type BrushElementModel,
   type Connection,
@@ -6,8 +6,8 @@ import {
   ConnectorMode,
   GroupElementModel,
   type LocalConnectorElementModel,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import { BlockSuiteError } from '@blocksuite/global/exceptions';
 import type { IBound, IVec, IVec3 } from '@blocksuite/global/gfx';
 import {
@@ -877,7 +877,7 @@ export class ConnectionOverlay extends Overlay {
 
   private _getEmphasisColor(): string {
     return getComputedStyle(this.gfx.std.host).getPropertyValue(
-      '--affine-text-emphasis-color'
+      '--lovenotes-text-emphasis-color'
     );
   }
 

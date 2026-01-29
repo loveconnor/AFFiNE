@@ -1,5 +1,5 @@
-import { buttonVariants } from '@affine/admin/components/ui/button';
-import { cn } from '@affine/admin/utils';
+import { buttonVariants } from '@lovenotes/admin/components/ui/button';
+import { cn } from '@lovenotes/admin/utils';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { NavLink } from 'react-router-dom';
 

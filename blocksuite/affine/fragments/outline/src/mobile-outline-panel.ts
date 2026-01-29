@@ -2,10 +2,10 @@ import {
   NoteDisplayMode,
   ParagraphBlockModel,
   RootBlockModel,
-} from '@blocksuite/affine-model';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
   type EditorHost,
@@ -25,7 +25,7 @@ import {
   scrollToBlockWithHighlight,
 } from './utils/scroll.js';
 
-export const AFFINE_MOBILE_OUTLINE_MENU = 'affine-mobile-outline-menu';
+export const AFFINE_MOBILE_OUTLINE_MENU = 'lovenotes-mobile-outline-menu';
 
 @requiredProperties({
   editor: PropTypes.object,
@@ -71,7 +71,7 @@ export class MobileOutlineMenu extends SignalWatcher(
     }
 
     .outline-menu-item:active {
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
 
     .outline-menu-item.title,

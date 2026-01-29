@@ -2,11 +2,11 @@ import {
   EditorHostKey,
   propertyType,
   t,
-} from '@blocksuite/affine/blocks/database';
+} from '@blocksuite/lovenotes/blocks/database';
 import {
   UserListProvider,
   UserProvider,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/lovenotes/shared/services';
 import zod from 'zod';
 
 export const createdByColumnType = propertyType('created-by');

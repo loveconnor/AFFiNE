@@ -1,19 +1,19 @@
 import {
   CaptionedBlockComponent,
   SelectedStyle,
-} from '@blocksuite/affine-components/caption';
-import type { EmbedCardStyle, EmbedProps } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-components/caption';
+import type { EmbedCardStyle, EmbedProps } from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_MIN_WIDTH,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   BlockElementCommentManager,
   DocModeProvider,
-} from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { findAncestorModel } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import { findAncestorModel } from '@blocksuite/lovenotes-shared/utils';
 import type { BlockService } from '@blocksuite/std';
 import {
   GfxViewInteractionExtension,
@@ -80,7 +80,7 @@ export class EmbedBlockComponent<
 
       const insideNote = findAncestorModel(
         this.model,
-        m => m.flavour === 'affine:note'
+        m => m.flavour === 'lovenotes:note'
       );
 
       if (

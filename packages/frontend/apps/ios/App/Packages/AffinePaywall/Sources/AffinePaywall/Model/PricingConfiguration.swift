@@ -1,6 +1,6 @@
 //
 //  PricingConfiguration.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by Claude Code on 9/29/25.
 //
@@ -9,23 +9,23 @@ import Foundation
 
 enum PricingConfiguration {
   static let proMonthly = ProductConfiguration(
-    productIdentifier: "app.affine.pro.Monthly",
-    revenueCatIdentifier: "app.affine.pro.Monthly",
+    productIdentifier: "app.lovenotes.pro.Monthly",
+    revenueCatIdentifier: "app.lovenotes.pro.Monthly",
     description: "Monthly",
     isDefaultSelected: false
   )
 
   static let proAnnual = ProductConfiguration(
-    productIdentifier: "app.affine.pro.Annual",
-    revenueCatIdentifier: "app.affine.pro.Annual",
+    productIdentifier: "app.lovenotes.pro.Annual",
+    revenueCatIdentifier: "app.lovenotes.pro.Annual",
     description: "Annual",
     badge: "Save 15%",
     isDefaultSelected: true
   )
 
   static let aiAnnual = ProductConfiguration(
-    productIdentifier: "app.affine.pro.ai.Annual",
-    revenueCatIdentifier: "app.affine.pro.ai.Annual",
+    productIdentifier: "app.lovenotes.pro.ai.Annual",
+    revenueCatIdentifier: "app.lovenotes.pro.ai.Annual",
     description: "",
     isDefaultSelected: true
   )

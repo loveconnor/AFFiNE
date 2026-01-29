@@ -17,7 +17,7 @@ export class SlashMenuExtension extends Extension {
 
   static override setup(di: Container) {
     WidgetViewExtension(
-      'affine:page',
+      'lovenotes:page',
       AFFINE_SLASH_MENU_WIDGET,
       literal`${unsafeStatic(AFFINE_SLASH_MENU_WIDGET)}`
     ).setup(di);

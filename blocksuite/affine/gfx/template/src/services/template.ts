@@ -2,8 +2,8 @@ import {
   getSurfaceBlock,
   type SurfaceBlockModel,
   type SurfaceBlockTransformer,
-} from '@blocksuite/affine-block-surface';
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { ConnectorElementModel } from '@blocksuite/lovenotes-model';
 import { BlockSuiteError } from '@blocksuite/global/exceptions';
 import { Bound, getCommonBound } from '@blocksuite/global/gfx';
 import { assertType } from '@blocksuite/global/utils';
@@ -31,16 +31,16 @@ import {
  * should defer the loading
  */
 const DEFERED_BLOCK = [
-  'affine:surface',
-  'affine:surface-ref',
-  'affine:frame',
+  'lovenotes:surface',
+  'lovenotes:surface-ref',
+  'lovenotes:frame',
 ] as const;
 
 /**
  * Those block should not be inserted directly
  * it should be merged with current existing block
  */
-const MERGE_BLOCK = ['affine:surface', 'affine:page'] as const;
+const MERGE_BLOCK = ['lovenotes:surface', 'lovenotes:page'] as const;
 
 type MergeBlockFlavour = (typeof MERGE_BLOCK)[number];
 
@@ -117,9 +117,9 @@ export class TemplateJob {
 
   private _getMergeBlockId(modelData: BlockSnapshot) {
     switch (modelData.flavour as MergeBlockFlavour) {
-      case 'affine:page':
+      case 'lovenotes:page':
         return this.model.store.root!.id;
-      case 'affine:surface':
+      case 'lovenotes:surface':
         return this.model.id;
     }
   }
@@ -132,7 +132,7 @@ export class TemplateJob {
         bounds.push(Bound.deserialize(block.props['xywh'] as string));
       }
 
-      if (block.flavour === 'affine:surface') {
+      if (block.flavour === 'lovenotes:surface') {
         const ignoreType = new Set(['connector', 'group']);
 
         Object.entries(
@@ -305,9 +305,9 @@ export class TemplateJob {
 
   private _mergeProps(from: BlockSnapshot, to: BlockModel) {
     switch (from.flavour as MergeBlockFlavour) {
-      case 'affine:page':
+      case 'lovenotes:page':
         break;
-      case 'affine:surface':
+      case 'lovenotes:surface':
         this._mergeSurfaceElements(
           from.props.elements as Record<string, Record<string, unknown>>,
           (to as SurfaceBlockModel).elements.getValue()!
@@ -320,7 +320,7 @@ export class TemplateJob {
     from: Record<string, Record<string, unknown>>,
     to: Y.Map<Y.Map<unknown>>
   ) {
-    const schema = this.model.store.schema.get('affine:surface');
+    const schema = this.model.store.schema.get('lovenotes:surface');
     const surfaceTransformer = schema?.transformer?.(
       new Map()
     ) as SurfaceBlockTransformer;

@@ -1,10 +1,10 @@
-import { ListBlockSchema } from '@blocksuite/affine-model';
+import { ListBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   AdapterTextUtils,
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert } from '@blocksuite/store';
 import { nanoid } from '@blocksuite/store';
 import type { List } from 'mdast';
@@ -28,7 +28,7 @@ export const listBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
           {
             type: 'block',
             id: nanoid(),
-            flavour: 'affine:list',
+            flavour: 'lovenotes:list',
             props: {
               type:
                 o.node.checked !== null
@@ -72,7 +72,7 @@ export const listBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
       const currentTNode = walkerContext.currentNode();
       // check if the list is of the same type
       if (
-        walkerContext.getNodeContext('affine:list:parent') === o.parent &&
+        walkerContext.getNodeContext('lovenotes:list:parent') === o.parent &&
         currentTNode.type === 'list' &&
         currentTNode.ordered === (o.node.props.type === 'numbered') &&
         AdapterTextUtils.isNullish(currentTNode.children[0].checked) ===
@@ -95,7 +95,7 @@ export const listBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
             },
             'children'
           )
-          .setNodeContext('affine:list:parent', o.parent);
+          .setNodeContext('lovenotes:list:parent', o.parent);
       }
       walkerContext
         .openNode(
@@ -124,7 +124,7 @@ export const listBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
       const currentTNode = walkerContext.currentNode();
       const previousTNode = walkerContext.previousNode();
       if (
-        walkerContext.getPreviousNodeContext('affine:list:parent') ===
+        walkerContext.getPreviousNodeContext('lovenotes:list:parent') ===
           o.parent &&
         currentTNode.type === 'listItem' &&
         previousTNode?.type === 'list' &&
@@ -138,7 +138,7 @@ export const listBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
       ) {
         walkerContext.closeNode();
         if (
-          o.next?.flavour !== 'affine:list' ||
+          o.next?.flavour !== 'lovenotes:list' ||
           o.next.props.type !== o.node.props.type
         ) {
           // If the next node is not a list or different type of list, close the list

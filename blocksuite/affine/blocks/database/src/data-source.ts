@@ -3,13 +3,13 @@ import type {
   ColumnUpdater,
   DatabaseBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { getSelectedModelsCommand } from '@blocksuite/affine-shared/commands';
-import { FeatureFlagService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { getSelectedModelsCommand } from '@blocksuite/lovenotes-shared/commands';
+import { FeatureFlagService } from '@blocksuite/lovenotes-shared/services';
 import {
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import {
   type DatabaseFlags,
   DataSourceBase,
@@ -546,7 +546,7 @@ export class DatabaseBlockDataSource extends DataSourceBase {
       typeof insertPosition === 'number'
         ? insertPosition
         : insertPositionToIndex(insertPosition, this._model.children);
-    return this.doc.addBlock('affine:paragraph', {}, this._model.id, index);
+    return this.doc.addBlock('lovenotes:paragraph', {}, this._model.id, index);
   }
 
   rowDelete(ids: string[]): void {
@@ -649,7 +649,7 @@ export const convertToDatabase = (host: EditorHost, viewType: string) => {
   }
 
   const id = host.store.addBlock(
-    'affine:database',
+    'lovenotes:database',
     {},
     parentModel,
     parentModel.children.indexOf(firstModel)

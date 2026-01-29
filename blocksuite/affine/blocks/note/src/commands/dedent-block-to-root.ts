@@ -1,5 +1,5 @@
-import { NoteBlockModel } from '@blocksuite/affine-model';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+import { NoteBlockModel } from '@blocksuite/lovenotes-model';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { Command } from '@blocksuite/std';
 
 import { dedentBlock } from './dedent-block';

@@ -17,19 +17,19 @@ const TABLE_ORDER_WIDTH: usize = 6;
 
 pub(super) fn block_version(flavour: &str) -> i32 {
   match flavour {
-    "affine:page" => 2,
-    "affine:surface" => 5,
-    "affine:note" => 1,
-    "affine:paragraph" => 1,
-    "affine:list" => 1,
-    "affine:code" => 1,
-    "affine:divider" => 1,
-    "affine:image" => 1,
-    "affine:table" => 1,
-    "affine:bookmark" => 1,
-    "affine:embed-youtube" => 1,
-    "affine:embed-iframe" => 1,
-    "affine:callout" => 1,
+    "lovenotes:page" => 2,
+    "lovenotes:surface" => 5,
+    "lovenotes:note" => 1,
+    "lovenotes:paragraph" => 1,
+    "lovenotes:list" => 1,
+    "lovenotes:code" => 1,
+    "lovenotes:divider" => 1,
+    "lovenotes:image" => 1,
+    "lovenotes:table" => 1,
+    "lovenotes:bookmark" => 1,
+    "lovenotes:embed-youtube" => 1,
+    "lovenotes:embed-iframe" => 1,
+    "lovenotes:callout" => 1,
     _ => 1,
   }
 }

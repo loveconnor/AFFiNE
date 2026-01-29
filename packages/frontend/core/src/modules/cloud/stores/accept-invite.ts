@@ -1,4 +1,4 @@
-import { acceptInviteByInviteIdMutation } from '@affine/graphql';
+import { acceptInviteByInviteIdMutation } from '@lovenotes/graphql';
 import { Store } from '@toeverything/infra';
 
 import type { GraphQLService } from '../services/graphql';

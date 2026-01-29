@@ -4,7 +4,7 @@ import {
   NOTE_MIN_HEIGHT,
   NOTE_MIN_WIDTH,
   NoteBlockModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { Bound, clamp } from '@blocksuite/global/gfx';
 import {
   type GfxGroupCompatibleInterface,

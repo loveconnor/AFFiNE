@@ -1,6 +1,6 @@
-import { test } from '@affine-test/kit/playwright';
-import { importFile } from '@affine-test/kit/utils/attachment';
-import { pasteContent } from '@affine-test/kit/utils/clipboard';
+import { test } from '@lovenotes-test/kit/playwright';
+import { importFile } from '@lovenotes-test/kit/utils/attachment';
+import { pasteContent } from '@lovenotes-test/kit/utils/clipboard';
 import {
   clickEdgelessModeButton,
   clickPageModeButton,
@@ -9,29 +9,29 @@ import {
   getParagraphIds,
   locateEditorContainer,
   toViewCoord,
-} from '@affine-test/kit/utils/editor';
+} from '@lovenotes-test/kit/utils/editor';
 import {
   copyByKeyboard,
   cutByKeyboard,
   pasteByKeyboard,
   pressEnter,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/keyboard';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   addCodeBlock,
   clickNewPageButton,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { setSelection } from '@affine-test/kit/utils/selection';
-import type { CodeBlockComponent } from '@blocksuite/affine-block-code';
-import type { ParagraphBlockComponent } from '@blocksuite/affine-block-paragraph';
-import type { PageRootBlockComponent } from '@blocksuite/affine-block-root';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { setSelection } from '@lovenotes-test/kit/utils/selection';
+import type { CodeBlockComponent } from '@blocksuite/lovenotes-block-code';
+import type { ParagraphBlockComponent } from '@blocksuite/lovenotes-block-paragraph';
+import type { PageRootBlockComponent } from '@blocksuite/lovenotes-block-root';
 import type { BlockComponent } from '@blocksuite/std';
 import { expect, type Page } from '@playwright/test';
 
-const paragraphLocator = 'affine-note affine-paragraph';
-const codeBlockLocator = 'affine-note affine-code';
+const paragraphLocator = 'lovenotes-note lovenotes-paragraph';
+const codeBlockLocator = 'lovenotes-note lovenotes-code';
 
 // Helper function to create paragraph blocks with text
 async function createParagraphBlocks(page: Page, texts: string[]) {
@@ -195,11 +195,11 @@ test.describe('surface-ref block', () => {
     await page.waitForTimeout(50);
 
     // click on the frame title to trigger the change frame button toolbar
-    const frameTitle = page.locator('affine-frame-title');
+    const frameTitle = page.locator('lovenotes-frame-title');
     await frameTitle.click();
     await page.waitForTimeout(50);
 
-    const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+    const toolbar = page.locator('lovenotes-toolbar-widget editor-toolbar');
     const insertIntoPageButton = toolbar.getByLabel('Insert into Page');
     await insertIntoPageButton.click();
 
@@ -216,9 +216,9 @@ test.describe('surface-ref block', () => {
     await setupSurfaceRefBlock(page);
 
     // copy surface-ref block
-    const surfaceRefBlock = page.locator('affine-surface-ref');
+    const surfaceRefBlock = page.locator('lovenotes-surface-ref');
     await surfaceRefBlock.click();
-    await page.waitForSelector('affine-surface-ref .focused');
+    await page.waitForSelector('lovenotes-surface-ref .focused');
     await copyByKeyboard(page);
 
     // paste to another doc
@@ -229,10 +229,10 @@ test.describe('surface-ref block', () => {
     await pasteByKeyboard(page);
     await page.waitForTimeout(50);
 
-    const embedLinkedDocBlock = page.locator('affine-embed-linked-doc-block');
+    const embedLinkedDocBlock = page.locator('lovenotes-embed-linked-doc-block');
     await expect(embedLinkedDocBlock).toBeVisible();
     const embedLinkedDocBlockTitle = embedLinkedDocBlock.locator(
-      '.affine-embed-linked-doc-content-title-text'
+      '.lovenotes-embed-linked-doc-content-title-text'
     );
     await expect(embedLinkedDocBlockTitle).toHaveText('Clipboard Test');
   });
@@ -243,9 +243,9 @@ test.describe('surface-ref block', () => {
     const { container } = await setupSurfaceRefBlock(page);
 
     // cut surface-ref block
-    const surfaceRefBlock = page.locator('affine-surface-ref');
+    const surfaceRefBlock = page.locator('lovenotes-surface-ref');
     await surfaceRefBlock.click();
-    await page.waitForSelector('affine-surface-ref .focused');
+    await page.waitForSelector('lovenotes-surface-ref .focused');
     await cutByKeyboard(page);
 
     // focus on the editor
@@ -449,7 +449,7 @@ test.describe('paste in readonly mode', () => {
 
     await page.evaluate(() => {
       const pageRoot = document.querySelector(
-        'affine-page-root'
+        'lovenotes-page-root'
       ) as PageRootBlockComponent;
       pageRoot.store.readonly = true;
     });
@@ -564,7 +564,7 @@ test('should copy single image from edgeless and paste to page', async ({
     await clickView(page, [100, 250]);
   });
 
-  const image = page.locator('affine-edgeless-image').first();
+  const image = page.locator('lovenotes-edgeless-image').first();
   await image.click();
 
   await copyByKeyboard(page);
@@ -577,5 +577,5 @@ test('should copy single image from edgeless and paste to page', async ({
 
   await pasteByKeyboard(page);
 
-  await expect(page.locator('affine-page-image')).toBeVisible();
+  await expect(page.locator('lovenotes-page-image')).toBeVisible();
 });

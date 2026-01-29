@@ -1,9 +1,9 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@lovenotes/debug';
 // @ts-expect-error upstream type is wrong
 import { createKeybindingsHandler } from 'tinykeys';
 
-import type { AffineCommand, AffineCommandOptions } from './command';
-import { createAffineCommand } from './command';
+import type { LoveNotesCommand, LoveNotesCommandOptions } from './command';
+import { createLoveNotesCommand } from './command';
 
 const commandLogger = new DebugLogger('command:registry');
 
@@ -45,15 +45,15 @@ const bindKeys = (
   };
 };
 
-export const AffineCommandRegistry = new (class {
-  readonly commands: Map<string, AffineCommand> = new Map();
+export const LoveNotesCommandRegistry = new (class {
+  readonly commands: Map<string, LoveNotesCommand> = new Map();
 
-  register(options: AffineCommandOptions) {
+  register(options: LoveNotesCommandOptions) {
     if (this.commands.has(options.id)) {
       commandLogger.warn(`Command ${options.id} already registered.`);
       return () => {};
     }
-    const command = createAffineCommand(options);
+    const command = createLoveNotesCommand(options);
     this.commands.set(command.id, command);
 
     let unsubKb: (() => void) | undefined;
@@ -88,7 +88,7 @@ export const AffineCommandRegistry = new (class {
     };
   }
 
-  get(id: string): AffineCommand | undefined {
+  get(id: string): LoveNotesCommand | undefined {
     if (!this.commands.has(id)) {
       commandLogger.warn(`Command ${id} not registered.`);
       return undefined;
@@ -96,11 +96,11 @@ export const AffineCommandRegistry = new (class {
     return this.commands.get(id);
   }
 
-  getAll(): AffineCommand[] {
+  getAll(): LoveNotesCommand[] {
     return Array.from(this.commands.values());
   }
 })();
 
-export function registerAffineCommand(options: AffineCommandOptions) {
-  return AffineCommandRegistry.register(options);
+export function registerLoveNotesCommand(options: LoveNotesCommandOptions) {
+  return LoveNotesCommandRegistry.register(options);
 }

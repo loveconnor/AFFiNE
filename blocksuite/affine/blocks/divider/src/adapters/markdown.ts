@@ -1,9 +1,9 @@
-import { DividerBlockSchema } from '@blocksuite/affine-model';
+import { DividerBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 import type { ThematicBreak } from 'mdast';
 
@@ -22,7 +22,7 @@ export const dividerBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
           {
             type: 'block',
             id: nanoid(),
-            flavour: 'affine:divider',
+            flavour: 'lovenotes:divider',
             props: {},
             children: [],
           },

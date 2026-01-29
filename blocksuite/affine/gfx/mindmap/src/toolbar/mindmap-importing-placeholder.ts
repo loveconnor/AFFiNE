@@ -1,5 +1,5 @@
-import { LoadingIcon } from '@blocksuite/affine-components/icons';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { LoadingIcon } from '@blocksuite/lovenotes-components/icons';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { ShadowlessElement } from '@blocksuite/std';
 import { css, html } from 'lit';
 

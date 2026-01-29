@@ -1,16 +1,16 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   createRandomUser,
   deleteUser,
   enableCloudWorkspace,
   loginUser,
   runPrisma,
-} from '@affine-test/kit/utils/cloud';
+} from '@lovenotes-test/kit/utils/cloud';
 import {
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import type { Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 

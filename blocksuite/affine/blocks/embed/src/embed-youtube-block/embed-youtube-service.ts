@@ -2,11 +2,11 @@ import {
   EmbedYoutubeBlockSchema,
   type EmbedYoutubeModel,
   EmbedYoutubeStyles,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EmbedOptionConfig,
   LinkPreviewServiceIdentifier,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { BlockService } from '@blocksuite/std';
 
 import { youtubeUrlRegex } from './embed-youtube-model.js';

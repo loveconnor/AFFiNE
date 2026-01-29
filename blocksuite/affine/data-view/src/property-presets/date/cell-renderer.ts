@@ -1,9 +1,9 @@
 import {
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { DatePicker } from '@blocksuite/affine-components/date-picker';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { DatePicker } from '@blocksuite/lovenotes-components/date-picker';
+import { createLitPortal } from '@blocksuite/lovenotes-components/portal';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { flip, offset } from '@floating-ui/dom';
 import { computed, signal } from '@preact/signals-core';
@@ -106,7 +106,7 @@ export class DateCell extends BaseCellRenderer<number, number> {
       // TODO: use z-index from variable,
       //       for now the slide-layout-modal's z-index is `1001`
       //       the z-index of popover should be higher than it
-      // root.style.zIndex = 'var(--affine-z-index-popover)';
+      // root.style.zIndex = 'var(--lovenotes-z-index-popover)';
       portal.style.zIndex = '1002';
     }
   };

@@ -1,4 +1,4 @@
-import { ColorScheme, MindmapStyle } from '@blocksuite/affine-model';
+import { ColorScheme, MindmapStyle } from '@blocksuite/lovenotes-model';
 import type { TemplateResult } from 'lit';
 
 import { type DraggableTool, getMindmapRender } from './basket-elements.js';

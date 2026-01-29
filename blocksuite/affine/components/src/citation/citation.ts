@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { baseTheme } from '@toeverything/theme';
 import {
@@ -62,7 +62,7 @@ export class CitationCard extends SignalWatcher(WithDisposable(LitElement)) {
         text-align: left;
         line-height: 22px;
         color: ${unsafeCSSVarV2('text/primary')};
-        font-size: var(--affine-font-sm);
+        font-size: var(--lovenotes-font-sm);
         font-weight: 500;
       }
 
@@ -100,7 +100,7 @@ export class CitationCard extends SignalWatcher(WithDisposable(LitElement)) {
         'clig' off;
       text-overflow: ellipsis;
       white-space: nowrap;
-      font-size: var(--affine-font-xs);
+      font-size: var(--lovenotes-font-xs);
       font-style: normal;
       font-weight: 400;
       line-height: 20px; /* 166.667% */

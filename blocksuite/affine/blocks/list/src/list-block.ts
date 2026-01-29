@@ -1,17 +1,17 @@
-import '@blocksuite/affine-shared/commands';
+import '@blocksuite/lovenotes-shared/commands';
 
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
-import { playCheckAnimation } from '@blocksuite/affine-components/icons';
-import { TOGGLE_BUTTON_PARENT_CLASS } from '@blocksuite/affine-components/toggle-button';
-import { DefaultInlineManagerExtension } from '@blocksuite/affine-inline-preset';
-import type { ListBlockModel } from '@blocksuite/affine-model';
-import type { RichText } from '@blocksuite/affine-rich-text';
+import { CaptionedBlockComponent } from '@blocksuite/lovenotes-components/caption';
+import { playCheckAnimation } from '@blocksuite/lovenotes-components/icons';
+import { TOGGLE_BUTTON_PARENT_CLASS } from '@blocksuite/lovenotes-components/toggle-button';
+import { DefaultInlineManagerExtension } from '@blocksuite/lovenotes-inline-preset';
+import type { ListBlockModel } from '@blocksuite/lovenotes-model';
+import type { RichText } from '@blocksuite/lovenotes-rich-text';
 import {
   BLOCK_CHILDREN_CONTAINER_PADDING_LEFT,
   EDGELESS_TOP_CONTENTEDITABLE_SELECTOR,
-} from '@blocksuite/affine-shared/consts';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
-import { getViewportElement } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/consts';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
+import { getViewportElement } from '@blocksuite/lovenotes-shared/utils';
 import type { BlockComponent } from '@blocksuite/std';
 import { BlockSelection, TextSelection } from '@blocksuite/std';
 import {
@@ -57,7 +57,7 @@ export class ListBlockComponent extends CaptionedBlockComponent<ListBlockModel> 
       const checkedPropObj = { checked: !this.model.props.checked };
       this.store.updateBlock(this.model, checkedPropObj);
       if (this.model.props.checked) {
-        const checkEl = this.querySelector('.affine-list-block__todo-prefix');
+        const checkEl = this.querySelector('.lovenotes-list-block__todo-prefix');
         if (checkEl) {
           playCheckAnimation(checkEl).catch(console.error);
         }
@@ -155,7 +155,7 @@ export class ListBlockComponent extends CaptionedBlockComponent<ListBlockModel> 
     });
 
     const children = html`<div
-      class="affine-block-children-container"
+      class="lovenotes-block-children-container"
       style=${styleMap({
         paddingLeft: `${BLOCK_CHILDREN_CONTAINER_PADDING_LEFT}px`,
         display: collapsed ? 'none' : undefined,
@@ -165,11 +165,11 @@ export class ListBlockComponent extends CaptionedBlockComponent<ListBlockModel> 
     </div>`;
 
     return html`
-      <div class=${'affine-list-block-container'} style="${textAlignStyle}">
+      <div class=${'lovenotes-list-block-container'} style="${textAlignStyle}">
         <div
           class=${classMap({
-            'affine-list-rich-text-wrapper': true,
-            'affine-list--checked':
+            'lovenotes-list-rich-text-wrapper': true,
+            'lovenotes-list--checked':
               this.model.props.type === 'todo' && this.model.props.checked,
             [TOGGLE_BUTTON_PARENT_CLASS]: true,
           })}
@@ -221,6 +221,6 @@ export class ListBlockComponent extends CaptionedBlockComponent<ListBlockModel> 
   private accessor _richTextElement: RichText | null = null;
 
   override accessor blockContainerStyles = {
-    margin: 'var(--affine-list-margin, 10px 0)',
+    margin: 'var(--lovenotes-list-margin, 10px 0)',
   };
 }

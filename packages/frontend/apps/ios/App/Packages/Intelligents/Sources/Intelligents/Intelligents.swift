@@ -1,7 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-import AffineGraphQL
+import LoveNotesGraphQL
 import Apollo
 import Foundation
 

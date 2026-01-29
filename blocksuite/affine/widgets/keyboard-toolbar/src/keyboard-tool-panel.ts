@@ -17,12 +17,12 @@ import type {
 } from './config.js';
 import { keyboardToolPanelStyles } from './styles.js';
 
-export const AFFINE_KEYBOARD_TOOL_PANEL = 'affine-keyboard-tool-panel';
+export const AFFINE_KEYBOARD_TOOL_PANEL = 'lovenotes-keyboard-tool-panel';
 
 @requiredProperties({
   context: PropTypes.object,
 })
-export class AffineKeyboardToolPanel extends SignalWatcher(
+export class LoveNotesKeyboardToolPanel extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = keyboardToolPanelStyles;
@@ -71,7 +71,7 @@ export class AffineKeyboardToolPanel extends SignalWatcher(
       .map(group => (typeof group === 'function' ? group(this.context) : group))
       .filter((group): group is KeyboardToolPanelGroup => group !== null);
 
-    return html`<div class="affine-keyboard-tool-panel-container">
+    return html`<div class="lovenotes-keyboard-tool-panel-container">
       ${repeat(
         groups,
         group => group.name,

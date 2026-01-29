@@ -3,11 +3,11 @@ import {
   getTitleFromSelectedModels,
   notifyDocCreated,
   promptDocTitle,
-} from '@blocksuite/affine-block-embed';
+} from '@blocksuite/lovenotes-block-embed';
 import {
   draftSelectedModelsCommand,
   getSelectedModelsCommand,
-} from '@blocksuite/affine-shared/commands';
+} from '@blocksuite/lovenotes-shared/commands';
 import type { BlockStdScope } from '@blocksuite/std';
 import { toDraftModel } from '@blocksuite/store';
 

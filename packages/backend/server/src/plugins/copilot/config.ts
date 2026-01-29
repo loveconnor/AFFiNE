@@ -42,7 +42,7 @@ declare global {
 
 defineModuleConfig('copilot', {
   enabled: {
-    desc: 'Whether to enable the copilot plugin. <br> Document: <a href="https://docs.affine.pro/self-host-affine/administer/ai" target="_blank">https://docs.affine.pro/self-host-affine/administer/ai</a>',
+    desc: 'Whether to enable the copilot plugin. <br> Document: <a href="https://docs.lovenotes.pro/self-host-lovenotes/administer/ai" target="_blank">https://docs.lovenotes.pro/self-host-lovenotes/administer/ai</a>',
     default: false,
   },
   scenarios: {
@@ -50,16 +50,16 @@ defineModuleConfig('copilot', {
     default: {
       override_enabled: false,
       scenarios: {
-        audio_transcribing: 'gemini-2.5-flash',
-        chat: 'gemini-2.5-flash',
+        audio_transcribing: 'gpt-5',
+        chat: 'gpt-5',
         embedding: 'gemini-embedding-001',
         image: 'gpt-image-1',
         rerank: 'gpt-4.1',
         coding: 'claude-sonnet-4-5@20250929',
         complex_text_generation: 'gpt-4o-2024-08-06',
         quick_decision_making: 'gpt-5-mini',
-        quick_text_generation: 'gemini-2.5-flash',
-        polish_and_summarize: 'gemini-2.5-flash',
+        quick_text_generation: 'gpt-5',
+        polish_and_summarize: 'gpt-5',
       },
     },
   },
@@ -129,7 +129,7 @@ defineModuleConfig('copilot', {
       provider: 'fs',
       bucket: 'copilot',
       config: {
-        path: '~/.affine/storage',
+        path: '~/.lovenotes/storage',
       },
     },
     schema: StorageJSONSchema,

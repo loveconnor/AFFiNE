@@ -1,6 +1,6 @@
-import type { QuickSearchItem } from '@affine/core/modules/quicksearch';
-import { HighlightText } from '@affine/core/modules/quicksearch/views/highlight-text';
-import { isI18nString, useI18n } from '@affine/i18n';
+import type { QuickSearchItem } from '@lovenotes/core/modules/quicksearch';
+import { HighlightText } from '@lovenotes/core/modules/quicksearch/views/highlight-text';
+import { isI18nString, useI18n } from '@lovenotes/i18n';
 
 export interface SearchResLabelProps {
   item: QuickSearchItem;

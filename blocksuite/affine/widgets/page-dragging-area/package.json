@@ -1,6 +1,6 @@
 {
-  "name": "@blocksuite/affine-widget-page-dragging-area",
-  "description": "Affine page dragging area widget.",
+  "name": "@blocksuite/lovenotes-widget-page-dragging-area",
+  "description": "LoveNotes page dragging area widget.",
   "type": "module",
   "scripts": {
     "build": "tsc"
@@ -10,12 +10,12 @@
   "author": "toeverything",
   "license": "MIT",
   "dependencies": {
-    "@blocksuite/affine-components": "workspace:*",
-    "@blocksuite/affine-ext-loader": "workspace:*",
-    "@blocksuite/affine-model": "workspace:*",
-    "@blocksuite/affine-shared": "workspace:*",
     "@blocksuite/global": "workspace:*",
     "@blocksuite/icons": "^2.2.17",
+    "@blocksuite/lovenotes-components": "workspace:*",
+    "@blocksuite/lovenotes-ext-loader": "workspace:*",
+    "@blocksuite/lovenotes-model": "workspace:*",
+    "@blocksuite/lovenotes-shared": "workspace:*",
     "@blocksuite/std": "workspace:*",
     "@blocksuite/store": "workspace:*",
     "@lit/context": "^1.1.2",

@@ -34,7 +34,7 @@ function createProxy(initValue: (key: string) => any) {
         },
     });
 }
-export function useAFFiNEI18N(): {
+export function useLoveNotesI18N(): {
     /**
       * `Back to my Content`
       */
@@ -48,9 +48,9 @@ export function useAFFiNEI18N(): {
       */
     ["404.signOut"](): string;
     /**
-      * `AFFiNE Cloud`
+      * `LoveNotes Cloud`
       */
-    ["AFFiNE Cloud"](): string;
+    ["LoveNotes Cloud"](): string;
     /**
       * `All docs`
       */
@@ -184,15 +184,15 @@ export function useAFFiNEI18N(): {
       */
     Enable(): string;
     /**
-      * `Enable AFFiNE Cloud`
+      * `Enable LoveNotes Cloud`
       */
-    ["Enable AFFiNE Cloud"](): string;
+    ["Enable LoveNotes Cloud"](): string;
     /**
-      * `If enabled, the data in this workspace will be backed up and synchronised via AFFiNE Cloud.`
+      * `If enabled, the data in this workspace will be backed up and synchronised via LoveNotes Cloud.`
       */
-    ["Enable AFFiNE Cloud Description"](): string;
+    ["Enable LoveNotes Cloud Description"](): string;
     /**
-      * `The following functions rely on AFFiNE Cloud. All data is stored on the current device. You can enable AFFiNE Cloud for this workspace to keep data in sync with the cloud.`
+      * `The following functions rely on LoveNotes Cloud. All data is stored on the current device. You can enable LoveNotes Cloud for this workspace to keep data in sync with the cloud.`
       */
     ["Enable cloud hint"](): string;
     /**
@@ -482,9 +482,9 @@ export function useAFFiNEI18N(): {
       */
     Sync(): string;
     /**
-      * `Synced with AFFiNE Cloud`
+      * `Synced with LoveNotes Cloud`
       */
-    ["Synced with AFFiNE Cloud"](): string;
+    ["Synced with LoveNotes Cloud"](): string;
     /**
       * `Tags`
       */
@@ -612,4020 +612,4020 @@ export function useAFFiNEI18N(): {
     /**
       * `Automatically check for new updates periodically.`
       */
-    ["com.affine.aboutAFFiNE.autoCheckUpdate.description"](): string;
+    ["com.lovenotes.aboutLoveNotes.autoCheckUpdate.description"](): string;
     /**
       * `Check for updates automatically`
       */
-    ["com.affine.aboutAFFiNE.autoCheckUpdate.title"](): string;
+    ["com.lovenotes.aboutLoveNotes.autoCheckUpdate.title"](): string;
     /**
       * `Automatically download updates (to this device).`
       */
-    ["com.affine.aboutAFFiNE.autoDownloadUpdate.description"](): string;
+    ["com.lovenotes.aboutLoveNotes.autoDownloadUpdate.description"](): string;
     /**
       * `Download updates automatically`
       */
-    ["com.affine.aboutAFFiNE.autoDownloadUpdate.title"](): string;
+    ["com.lovenotes.aboutLoveNotes.autoDownloadUpdate.title"](): string;
     /**
-      * `View the AFFiNE Changelog.`
+      * `View the LoveNotes Changelog.`
       */
-    ["com.affine.aboutAFFiNE.changelog.description"](): string;
+    ["com.lovenotes.aboutLoveNotes.changelog.description"](): string;
     /**
       * `Discover what's new`
       */
-    ["com.affine.aboutAFFiNE.changelog.title"](): string;
+    ["com.lovenotes.aboutLoveNotes.changelog.title"](): string;
     /**
       * `Check for update`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.button.check"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.button.check"](): string;
     /**
       * `Download update`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.button.download"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.button.download"](): string;
     /**
       * `Restart to update`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.button.restart"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.button.restart"](): string;
     /**
       * `Retry`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.button.retry"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.button.retry"](): string;
     /**
       * `New version is ready`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.description"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.description"](): string;
     /**
       * `Manually check for updates.`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.check"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.subtitle.check"](): string;
     /**
       * `Checking for updates...`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.checking"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.subtitle.checking"](): string;
     /**
       * `Downloading the latest version...`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.downloading"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.subtitle.downloading"](): string;
     /**
       * `Unable to connect to the update server.`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.error"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.subtitle.error"](): string;
     /**
-      * `You've got the latest version of AFFiNE.`
+      * `You've got the latest version of LoveNotes.`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.latest"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.subtitle.latest"](): string;
     /**
       * `Restart to apply update.`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.restart"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.subtitle.restart"](): string;
     /**
       * `New update available ({{version}})`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.update-available"](options: {
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.subtitle.update-available"](options: {
         readonly version: string;
     }): string;
     /**
       * `Check for updates`
       */
-    ["com.affine.aboutAFFiNE.checkUpdate.title"](): string;
+    ["com.lovenotes.aboutLoveNotes.checkUpdate.title"](): string;
     /**
       * `Communities`
       */
-    ["com.affine.aboutAFFiNE.community.title"](): string;
+    ["com.lovenotes.aboutLoveNotes.community.title"](): string;
     /**
-      * `AFFiNE community`
+      * `LoveNotes community`
       */
-    ["com.affine.aboutAFFiNE.contact.community"](): string;
+    ["com.lovenotes.aboutLoveNotes.contact.community"](): string;
     /**
       * `Contact us`
       */
-    ["com.affine.aboutAFFiNE.contact.title"](): string;
+    ["com.lovenotes.aboutLoveNotes.contact.title"](): string;
     /**
       * `Official website`
       */
-    ["com.affine.aboutAFFiNE.contact.website"](): string;
+    ["com.lovenotes.aboutLoveNotes.contact.website"](): string;
     /**
       * `Privacy`
       */
-    ["com.affine.aboutAFFiNE.legal.privacy"](): string;
+    ["com.lovenotes.aboutLoveNotes.legal.privacy"](): string;
     /**
       * `Legal Info`
       */
-    ["com.affine.aboutAFFiNE.legal.title"](): string;
+    ["com.lovenotes.aboutLoveNotes.legal.title"](): string;
     /**
       * `Terms of use`
       */
-    ["com.affine.aboutAFFiNE.legal.tos"](): string;
+    ["com.lovenotes.aboutLoveNotes.legal.tos"](): string;
     /**
-      * `Information about AFFiNE`
+      * `Information about LoveNotes`
       */
-    ["com.affine.aboutAFFiNE.subtitle"](): string;
+    ["com.lovenotes.aboutLoveNotes.subtitle"](): string;
     /**
-      * `About AFFiNE`
+      * `About LoveNotes`
       */
-    ["com.affine.aboutAFFiNE.title"](): string;
+    ["com.lovenotes.aboutLoveNotes.title"](): string;
     /**
       * `App version`
       */
-    ["com.affine.aboutAFFiNE.version.app"](): string;
+    ["com.lovenotes.aboutLoveNotes.version.app"](): string;
     /**
       * `Editor version`
       */
-    ["com.affine.aboutAFFiNE.version.editor.title"](): string;
+    ["com.lovenotes.aboutLoveNotes.version.editor.title"](): string;
     /**
       * `Version`
       */
-    ["com.affine.aboutAFFiNE.version.title"](): string;
+    ["com.lovenotes.aboutLoveNotes.version.title"](): string;
     /**
       * `Get started`
       */
-    ["com.affine.ai-onboarding.edgeless.get-started"](): string;
+    ["com.lovenotes.ai-onboarding.edgeless.get-started"](): string;
     /**
       * `Lets you think bigger, create faster, work smarter and save time for every project.`
       */
-    ["com.affine.ai-onboarding.edgeless.message"](): string;
+    ["com.lovenotes.ai-onboarding.edgeless.message"](): string;
     /**
       * `Upgrade to unlimited usage`
       */
-    ["com.affine.ai-onboarding.edgeless.purchase"](): string;
+    ["com.lovenotes.ai-onboarding.edgeless.purchase"](): string;
     /**
       * `Right-clicking to select content AI`
       */
-    ["com.affine.ai-onboarding.edgeless.title"](): string;
+    ["com.lovenotes.ai-onboarding.edgeless.title"](): string;
     /**
       * `Lets you think bigger, create faster, work smarter and save time for every project.`
       */
-    ["com.affine.ai-onboarding.general.1.description"](): string;
+    ["com.lovenotes.ai-onboarding.general.1.description"](): string;
     /**
-      * `Meet AFFiNE AI`
+      * `Meet LoveNotes AI`
       */
-    ["com.affine.ai-onboarding.general.1.title"](): string;
+    ["com.lovenotes.ai-onboarding.general.1.title"](): string;
     /**
-      * `Answer questions, draft docs, visualize ideas - AFFiNE AI can save you time at every possible step. Powered by GPT's most powerful model.`
+      * `Answer questions, draft docs, visualize ideas - LoveNotes AI can save you time at every possible step. Powered by GPT's most powerful model.`
       */
-    ["com.affine.ai-onboarding.general.2.description"](): string;
+    ["com.lovenotes.ai-onboarding.general.2.description"](): string;
     /**
-      * `Chat with AFFiNE AI`
+      * `Chat with LoveNotes AI`
       */
-    ["com.affine.ai-onboarding.general.2.title"](): string;
+    ["com.lovenotes.ai-onboarding.general.2.title"](): string;
     /**
       * `Get insightful answer to any question, instantly.`
       */
-    ["com.affine.ai-onboarding.general.3.description"](): string;
+    ["com.lovenotes.ai-onboarding.general.3.description"](): string;
     /**
-      * `Edit inline with AFFiNE AI`
+      * `Edit inline with LoveNotes AI`
       */
-    ["com.affine.ai-onboarding.general.3.title"](): string;
+    ["com.lovenotes.ai-onboarding.general.3.title"](): string;
     /**
       * `Expand thinking. Untangle complexity. Breakdown and visualise your content with crafted mindmap and presentable slides with one click.`
       */
-    ["com.affine.ai-onboarding.general.4.description"](): string;
+    ["com.lovenotes.ai-onboarding.general.4.description"](): string;
     /**
       * `Make mind-map and presents with AI`
       */
-    ["com.affine.ai-onboarding.general.4.title"](): string;
+    ["com.lovenotes.ai-onboarding.general.4.title"](): string;
     /**
-      * `AFFiNE AI is ready`
+      * `LoveNotes AI is ready`
       */
-    ["com.affine.ai-onboarding.general.5.title"](): string;
+    ["com.lovenotes.ai-onboarding.general.5.title"](): string;
     /**
       * `Get started`
       */
-    ["com.affine.ai-onboarding.general.get-started"](): string;
+    ["com.lovenotes.ai-onboarding.general.get-started"](): string;
     /**
       * `Next`
       */
-    ["com.affine.ai-onboarding.general.next"](): string;
+    ["com.lovenotes.ai-onboarding.general.next"](): string;
     /**
       * `Back`
       */
-    ["com.affine.ai-onboarding.general.prev"](): string;
+    ["com.lovenotes.ai-onboarding.general.prev"](): string;
     /**
       * `Get unlimited usage`
       */
-    ["com.affine.ai-onboarding.general.purchase"](): string;
+    ["com.lovenotes.ai-onboarding.general.purchase"](): string;
     /**
       * `Remind me later`
       */
-    ["com.affine.ai-onboarding.general.skip"](): string;
+    ["com.lovenotes.ai-onboarding.general.skip"](): string;
     /**
       * `Try for free`
       */
-    ["com.affine.ai-onboarding.general.try-for-free"](): string;
+    ["com.lovenotes.ai-onboarding.general.try-for-free"](): string;
     /**
       * `Dismiss`
       */
-    ["com.affine.ai-onboarding.local.action-dismiss"](): string;
+    ["com.lovenotes.ai-onboarding.local.action-dismiss"](): string;
     /**
       * `Get started`
       */
-    ["com.affine.ai-onboarding.local.action-get-started"](): string;
+    ["com.lovenotes.ai-onboarding.local.action-get-started"](): string;
     /**
       * `Learn more`
       */
-    ["com.affine.ai-onboarding.local.action-learn-more"](): string;
+    ["com.lovenotes.ai-onboarding.local.action-learn-more"](): string;
     /**
       * `Lets you think bigger, create faster, work smarter and save time for every project.`
       */
-    ["com.affine.ai-onboarding.local.message"](): string;
+    ["com.lovenotes.ai-onboarding.local.message"](): string;
     /**
-      * `Meet AFFiNE AI`
+      * `Meet LoveNotes AI`
       */
-    ["com.affine.ai-onboarding.local.title"](): string;
+    ["com.lovenotes.ai-onboarding.local.title"](): string;
     /**
       * `New`
       */
-    ["com.affine.ai-scroll-tip.tag"](): string;
+    ["com.lovenotes.ai-scroll-tip.tag"](): string;
     /**
-      * `Meet AFFiNE AI`
+      * `Meet LoveNotes AI`
       */
-    ["com.affine.ai-scroll-tip.title"](): string;
+    ["com.lovenotes.ai-scroll-tip.title"](): string;
     /**
       * `View`
       */
-    ["com.affine.ai-scroll-tip.view"](): string;
+    ["com.lovenotes.ai-scroll-tip.view"](): string;
     /**
       * `Please switch to edgeless mode`
       */
-    ["com.affine.ai.action.edgeless-only.dialog-title"](): string;
+    ["com.lovenotes.ai.action.edgeless-only.dialog-title"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.ai.login-required.dialog-cancel"](): string;
+    ["com.lovenotes.ai.login-required.dialog-cancel"](): string;
     /**
       * `Sign in`
       */
-    ["com.affine.ai.login-required.dialog-confirm"](): string;
+    ["com.lovenotes.ai.login-required.dialog-confirm"](): string;
     /**
-      * `To use AFFiNE AI, please sign in to your AFFiNE Cloud account.`
+      * `To use LoveNotes AI, please sign in to your LoveNotes Cloud account.`
       */
-    ["com.affine.ai.login-required.dialog-content"](): string;
+    ["com.lovenotes.ai.login-required.dialog-content"](): string;
     /**
       * `Sign in to continue`
       */
-    ["com.affine.ai.login-required.dialog-title"](): string;
+    ["com.lovenotes.ai.login-required.dialog-title"](): string;
     /**
       * `Failed to insert template, please try again.`
       */
-    ["com.affine.ai.template-insert.failed"](): string;
+    ["com.lovenotes.ai.template-insert.failed"](): string;
     /**
-      * `AFFiNE AI`
+      * `LoveNotes AI`
       */
-    ["com.affine.ai.chat-panel.title"](): string;
+    ["com.lovenotes.ai.chat-panel.title"](): string;
     /**
-      * `AFFiNE AI is loading history...`
+      * `LoveNotes AI is loading history...`
       */
-    ["com.affine.ai.chat-panel.loading-history"](): string;
+    ["com.lovenotes.ai.chat-panel.loading-history"](): string;
     /**
       * `Embedding {{done}}/{{total}}`
       */
-    ["com.affine.ai.chat-panel.embedding-progress"](options: Readonly<{
+    ["com.lovenotes.ai.chat-panel.embedding-progress"](options: Readonly<{
         done: string;
         total: string;
     }>): string;
     /**
       * `Delete this history?`
       */
-    ["com.affine.ai.chat-panel.session.delete.confirm.title"](): string;
+    ["com.lovenotes.ai.chat-panel.session.delete.confirm.title"](): string;
     /**
       * `Do you want to delete this AI conversation history? Once deleted, it cannot be recovered.`
       */
-    ["com.affine.ai.chat-panel.session.delete.confirm.message"](): string;
+    ["com.lovenotes.ai.chat-panel.session.delete.confirm.message"](): string;
     /**
       * `History deleted`
       */
-    ["com.affine.ai.chat-panel.session.delete.toast.success"](): string;
+    ["com.lovenotes.ai.chat-panel.session.delete.toast.success"](): string;
     /**
       * `Failed to delete history`
       */
-    ["com.affine.ai.chat-panel.session.delete.toast.failed"](): string;
+    ["com.lovenotes.ai.chat-panel.session.delete.toast.failed"](): string;
     /**
       * `All docs`
       */
-    ["com.affine.all-pages.header"](): string;
+    ["com.lovenotes.all-pages.header"](): string;
     /**
       * `Learn more`
       */
-    ["com.affine.app-sidebar.learn-more"](): string;
+    ["com.lovenotes.app-sidebar.learn-more"](): string;
     /**
       * `Star us`
       */
-    ["com.affine.app-sidebar.star-us"](): string;
+    ["com.lovenotes.app-sidebar.star-us"](): string;
     /**
       * `Download update`
       */
-    ["com.affine.appUpdater.downloadUpdate"](): string;
+    ["com.lovenotes.appUpdater.downloadUpdate"](): string;
     /**
       * `Downloading`
       */
-    ["com.affine.appUpdater.downloading"](): string;
+    ["com.lovenotes.appUpdater.downloading"](): string;
     /**
       * `Restart to install update`
       */
-    ["com.affine.appUpdater.installUpdate"](): string;
+    ["com.lovenotes.appUpdater.installUpdate"](): string;
     /**
       * `Open download page`
       */
-    ["com.affine.appUpdater.openDownloadPage"](): string;
+    ["com.lovenotes.appUpdater.openDownloadPage"](): string;
     /**
       * `Update available`
       */
-    ["com.affine.appUpdater.updateAvailable"](): string;
+    ["com.lovenotes.appUpdater.updateAvailable"](): string;
     /**
       * `Discover what's new!`
       */
-    ["com.affine.appUpdater.whatsNew"](): string;
+    ["com.lovenotes.appUpdater.whatsNew"](): string;
     /**
       * `Customise the appearance of the client.`
       */
-    ["com.affine.appearanceSettings.clientBorder.description"](): string;
+    ["com.lovenotes.appearanceSettings.clientBorder.description"](): string;
     /**
       * `Client border style`
       */
-    ["com.affine.appearanceSettings.clientBorder.title"](): string;
+    ["com.lovenotes.appearanceSettings.clientBorder.title"](): string;
     /**
       * `Choose your colour mode`
       */
-    ["com.affine.appearanceSettings.color.description"](): string;
+    ["com.lovenotes.appearanceSettings.color.description"](): string;
     /**
       * `Colour mode`
       */
-    ["com.affine.appearanceSettings.color.title"](): string;
+    ["com.lovenotes.appearanceSettings.color.title"](): string;
     /**
-      * `Edit all AFFiNE theme variables here`
+      * `Edit all LoveNotes theme variables here`
       */
-    ["com.affine.appearanceSettings.customize-theme.description"](): string;
+    ["com.lovenotes.appearanceSettings.customize-theme.description"](): string;
     /**
       * `Customize Theme`
       */
-    ["com.affine.appearanceSettings.customize-theme.title"](): string;
+    ["com.lovenotes.appearanceSettings.customize-theme.title"](): string;
     /**
       * `Images`
       */
-    ["com.affine.appearanceSettings.images.title"](): string;
+    ["com.lovenotes.appearanceSettings.images.title"](): string;
     /**
       * `Smooth image rendering`
       */
-    ["com.affine.appearanceSettings.images.antialiasing.title"](): string;
+    ["com.lovenotes.appearanceSettings.images.antialiasing.title"](): string;
     /**
       * `When disabled, images are rendered using nearest-neighbor scaling for crisp pixels.`
       */
-    ["com.affine.appearanceSettings.images.antialiasing.description"](): string;
+    ["com.lovenotes.appearanceSettings.images.antialiasing.description"](): string;
     /**
       * `Reset all`
       */
-    ["com.affine.appearanceSettings.customize-theme.reset"](): string;
+    ["com.lovenotes.appearanceSettings.customize-theme.reset"](): string;
     /**
       * `Open Theme Editor`
       */
-    ["com.affine.appearanceSettings.customize-theme.open"](): string;
+    ["com.lovenotes.appearanceSettings.customize-theme.open"](): string;
     /**
       * `Choose your font style`
       */
-    ["com.affine.appearanceSettings.font.description"](): string;
+    ["com.lovenotes.appearanceSettings.font.description"](): string;
     /**
       * `Font style`
       */
-    ["com.affine.appearanceSettings.font.title"](): string;
+    ["com.lovenotes.appearanceSettings.font.title"](): string;
     /**
       * `Mono`
       */
-    ["com.affine.appearanceSettings.fontStyle.mono"](): string;
+    ["com.lovenotes.appearanceSettings.fontStyle.mono"](): string;
     /**
       * `Sans`
       */
-    ["com.affine.appearanceSettings.fontStyle.sans"](): string;
+    ["com.lovenotes.appearanceSettings.fontStyle.sans"](): string;
     /**
       * `Serif`
       */
-    ["com.affine.appearanceSettings.fontStyle.serif"](): string;
+    ["com.lovenotes.appearanceSettings.fontStyle.serif"](): string;
     /**
       * `Select the language for the interface.`
       */
-    ["com.affine.appearanceSettings.language.description"](): string;
+    ["com.lovenotes.appearanceSettings.language.description"](): string;
     /**
       * `Display language`
       */
-    ["com.affine.appearanceSettings.language.title"](): string;
+    ["com.lovenotes.appearanceSettings.language.title"](): string;
     /**
       * `Use background noise effect on the sidebar.`
       */
-    ["com.affine.appearanceSettings.noisyBackground.description"](): string;
+    ["com.lovenotes.appearanceSettings.noisyBackground.description"](): string;
     /**
       * `Noise background on the sidebar`
       */
-    ["com.affine.appearanceSettings.noisyBackground.title"](): string;
+    ["com.lovenotes.appearanceSettings.noisyBackground.title"](): string;
     /**
       * `Sidebar`
       */
-    ["com.affine.appearanceSettings.sidebar.title"](): string;
+    ["com.lovenotes.appearanceSettings.sidebar.title"](): string;
     /**
-      * `Customize your AFFiNE appearance`
+      * `Customize your LoveNotes appearance`
       */
-    ["com.affine.appearanceSettings.subtitle"](): string;
+    ["com.lovenotes.appearanceSettings.subtitle"](): string;
     /**
       * `Menubar`
       */
-    ["com.affine.appearanceSettings.menubar.title"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.title"](): string;
     /**
       * `Enable menubar app`
       */
-    ["com.affine.appearanceSettings.menubar.toggle"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.toggle"](): string;
     /**
-      * `Display the menubar app in the tray for quick access to AFFiNE or meeting recordings.`
+      * `Display the menubar app in the tray for quick access to LoveNotes or meeting recordings.`
       */
-    ["com.affine.appearanceSettings.menubar.description"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.description"](): string;
     /**
       * `Window behavior`
       */
-    ["com.affine.appearanceSettings.menubar.windowBehavior.title"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.windowBehavior.title"](): string;
     /**
       * `Quick open from tray icon`
       */
-    ["com.affine.appearanceSettings.menubar.windowBehavior.openOnLeftClick.toggle"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.windowBehavior.openOnLeftClick.toggle"](): string;
     /**
-      * `Open AFFiNE when left‑clicking the tray icon.`
+      * `Open LoveNotes when left‑clicking the tray icon.`
       */
-    ["com.affine.appearanceSettings.menubar.windowBehavior.openOnLeftClick.description"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.windowBehavior.openOnLeftClick.description"](): string;
     /**
       * `Minimize to tray`
       */
-    ["com.affine.appearanceSettings.menubar.windowBehavior.minimizeToTray.toggle"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.windowBehavior.minimizeToTray.toggle"](): string;
     /**
-      * `Minimize AFFiNE to the system tray.`
+      * `Minimize LoveNotes to the system tray.`
       */
-    ["com.affine.appearanceSettings.menubar.windowBehavior.minimizeToTray.description"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.windowBehavior.minimizeToTray.description"](): string;
     /**
       * `Close to tray`
       */
-    ["com.affine.appearanceSettings.menubar.windowBehavior.closeToTray.toggle"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.windowBehavior.closeToTray.toggle"](): string;
     /**
-      * `Close AFFiNE to the system tray.`
+      * `Close LoveNotes to the system tray.`
       */
-    ["com.affine.appearanceSettings.menubar.windowBehavior.closeToTray.description"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.windowBehavior.closeToTray.description"](): string;
     /**
       * `Start minimized`
       */
-    ["com.affine.appearanceSettings.menubar.windowBehavior.startMinimized.toggle"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.windowBehavior.startMinimized.toggle"](): string;
     /**
-      * `Start AFFiNE minimized to the system tray.`
+      * `Start LoveNotes minimized to the system tray.`
       */
-    ["com.affine.appearanceSettings.menubar.windowBehavior.startMinimized.description"](): string;
+    ["com.lovenotes.appearanceSettings.menubar.windowBehavior.startMinimized.description"](): string;
     /**
       * `Theme`
       */
-    ["com.affine.appearanceSettings.theme.title"](): string;
+    ["com.lovenotes.appearanceSettings.theme.title"](): string;
     /**
       * `Appearance settings`
       */
-    ["com.affine.appearanceSettings.title"](): string;
+    ["com.lovenotes.appearanceSettings.title"](): string;
     /**
       * `Use transparency effect on the sidebar.`
       */
-    ["com.affine.appearanceSettings.translucentUI.description"](): string;
+    ["com.lovenotes.appearanceSettings.translucentUI.description"](): string;
     /**
       * `Translucent UI on the sidebar`
       */
-    ["com.affine.appearanceSettings.translucentUI.title"](): string;
+    ["com.lovenotes.appearanceSettings.translucentUI.title"](): string;
     /**
       * `Show linked doc in sidebar`
       */
-    ["com.affine.appearanceSettings.showLinkedDocInSidebar.title"](): string;
+    ["com.lovenotes.appearanceSettings.showLinkedDocInSidebar.title"](): string;
     /**
       * `Control whether to show the structure of linked docs in the sidebar.`
       */
-    ["com.affine.appearanceSettings.showLinkedDocInSidebar.description"](): string;
+    ["com.lovenotes.appearanceSettings.showLinkedDocInSidebar.description"](): string;
     /**
       * `Your current email is {{email}}. We'll send a temporary verification link to this email.`
       */
-    ["com.affine.auth.change.email.message"](options: {
+    ["com.lovenotes.auth.change.email.message"](options: {
         readonly email: string;
     }): string;
     /**
       * `Please enter your new email address below. We will send a verification link to this email address to complete the process.`
       */
-    ["com.affine.auth.change.email.page.subtitle"](): string;
+    ["com.lovenotes.auth.change.email.page.subtitle"](): string;
     /**
-      * `Congratulations! You have successfully updated the email address associated with your AFFiNE Cloud account.`
+      * `Congratulations! You have successfully updated the email address associated with your LoveNotes Cloud account.`
       */
-    ["com.affine.auth.change.email.page.success.subtitle"](): string;
+    ["com.lovenotes.auth.change.email.page.success.subtitle"](): string;
     /**
       * `Email address updated!`
       */
-    ["com.affine.auth.change.email.page.success.title"](): string;
+    ["com.lovenotes.auth.change.email.page.success.title"](): string;
     /**
       * `Change email address`
       */
-    ["com.affine.auth.change.email.page.title"](): string;
+    ["com.lovenotes.auth.change.email.page.title"](): string;
     /**
       * `Forgot password`
       */
-    ["com.affine.auth.forget"](): string;
+    ["com.lovenotes.auth.forget"](): string;
     /**
       * `Later`
       */
-    ["com.affine.auth.later"](): string;
+    ["com.lovenotes.auth.later"](): string;
     /**
-      * `Open AFFiNE`
+      * `Open LoveNotes`
       */
-    ["com.affine.auth.open.affine"](): string;
+    ["com.lovenotes.auth.open.lovenotes"](): string;
     /**
       * `Download app`
       */
-    ["com.affine.auth.open.affine.download-app"](): string;
+    ["com.lovenotes.auth.open.lovenotes.download-app"](): string;
     /**
       * `Try again`
       */
-    ["com.affine.auth.open.affine.try-again"](): string;
+    ["com.lovenotes.auth.open.lovenotes.try-again"](): string;
     /**
       * `Still have problems?`
       */
-    ["com.affine.auth.open.affine.still-have-problems"](): string;
+    ["com.lovenotes.auth.open.lovenotes.still-have-problems"](): string;
     /**
       * `Continue with Browser`
       */
-    ["com.affine.auth.open.affine.continue-with-browser"](): string;
+    ["com.lovenotes.auth.open.lovenotes.continue-with-browser"](): string;
     /**
       * `Download Latest Client`
       */
-    ["com.affine.auth.open.affine.download-latest-client"](): string;
+    ["com.lovenotes.auth.open.lovenotes.download-latest-client"](): string;
     /**
       * `Open here instead`
       */
-    ["com.affine.auth.open.affine.doc.open-here"](): string;
+    ["com.lovenotes.auth.open.lovenotes.doc.open-here"](): string;
     /**
       * `Edit settings`
       */
-    ["com.affine.auth.open.affine.doc.edit-settings"](): string;
+    ["com.lovenotes.auth.open.lovenotes.doc.edit-settings"](): string;
     /**
-      * `Requires AFFiNE desktop app version 0.18 or later.`
+      * `Requires LoveNotes desktop app version 0.18 or later.`
       */
-    ["com.affine.auth.open.affine.doc.footer-text"](): string;
+    ["com.lovenotes.auth.open.lovenotes.doc.footer-text"](): string;
     /**
       * `Please set a password of {{min}}-{{max}} characters with both letters and numbers to continue signing up with `
       */
-    ["com.affine.auth.page.sent.email.subtitle"](options: Readonly<{
+    ["com.lovenotes.auth.page.sent.email.subtitle"](options: Readonly<{
         min: string;
         max: string;
     }>): string;
     /**
-      * `Welcome to AFFiNE Cloud, you are almost there!`
+      * `Welcome to LoveNotes Cloud, you are almost there!`
       */
-    ["com.affine.auth.page.sent.email.title"](): string;
+    ["com.lovenotes.auth.page.sent.email.title"](): string;
     /**
       * `Password`
       */
-    ["com.affine.auth.password"](): string;
+    ["com.lovenotes.auth.password"](): string;
     /**
       * `Invalid password`
       */
-    ["com.affine.auth.password.error"](): string;
+    ["com.lovenotes.auth.password.error"](): string;
     /**
       * `Set password failed`
       */
-    ["com.affine.auth.password.set-failed"](): string;
+    ["com.lovenotes.auth.password.set-failed"](): string;
     /**
       * `Reset password`
       */
-    ["com.affine.auth.reset.password"](): string;
+    ["com.lovenotes.auth.reset.password"](): string;
     /**
       * `You will receive an email with a link to reset your password. Please check your inbox.`
       */
-    ["com.affine.auth.reset.password.message"](): string;
+    ["com.lovenotes.auth.reset.password.message"](): string;
     /**
       * `Password reset successful`
       */
-    ["com.affine.auth.reset.password.page.success"](): string;
+    ["com.lovenotes.auth.reset.password.page.success"](): string;
     /**
-      * `Reset your AFFiNE Cloud password`
+      * `Reset your LoveNotes Cloud password`
       */
-    ["com.affine.auth.reset.password.page.title"](): string;
+    ["com.lovenotes.auth.reset.password.page.title"](): string;
     /**
       * `Send reset link`
       */
-    ["com.affine.auth.send.reset.password.link"](): string;
+    ["com.lovenotes.auth.send.reset.password.link"](): string;
     /**
       * `Send set link`
       */
-    ["com.affine.auth.send.set.password.link"](): string;
+    ["com.lovenotes.auth.send.set.password.link"](): string;
     /**
       * `Send verification link`
       */
-    ["com.affine.auth.send.verify.email.hint"](): string;
+    ["com.lovenotes.auth.send.verify.email.hint"](): string;
     /**
       * `Verification code`
       */
-    ["com.affine.auth.sign.auth.code"](): string;
+    ["com.lovenotes.auth.sign.auth.code"](): string;
     /**
       * `Invalid verification code`
       */
-    ["com.affine.auth.sign.auth.code.invalid"](): string;
+    ["com.lovenotes.auth.sign.auth.code.invalid"](): string;
     /**
       * `Continue with code`
       */
-    ["com.affine.auth.sign.auth.code.continue"](): string;
+    ["com.lovenotes.auth.sign.auth.code.continue"](): string;
     /**
       * `Resend code`
       */
-    ["com.affine.auth.sign.auth.code.resend"](): string;
+    ["com.lovenotes.auth.sign.auth.code.resend"](): string;
     /**
       * `Resend in {{second}}s`
       */
-    ["com.affine.auth.sign.auth.code.resend.hint"](options: {
+    ["com.lovenotes.auth.sign.auth.code.resend.hint"](options: {
         readonly second: string;
     }): string;
     /**
       * `Sent`
       */
-    ["com.affine.auth.sent"](): string;
+    ["com.lovenotes.auth.sent"](): string;
     /**
       * `The verification link failed to be sent, please try again later.`
       */
-    ["com.affine.auth.sent.change.email.fail"](): string;
+    ["com.lovenotes.auth.sent.change.email.fail"](): string;
     /**
       * `Verification link has been sent.`
       */
-    ["com.affine.auth.sent.change.email.hint"](): string;
+    ["com.lovenotes.auth.sent.change.email.hint"](): string;
     /**
       * `Reset password link has been sent.`
       */
-    ["com.affine.auth.sent.change.password.hint"](): string;
+    ["com.lovenotes.auth.sent.change.password.hint"](): string;
     /**
-      * `Your password has been updated! You can sign in AFFiNE Cloud with new password!`
+      * `Your password has been updated! You can sign in LoveNotes Cloud with new password!`
       */
-    ["com.affine.auth.sent.reset.password.success.message"](): string;
+    ["com.lovenotes.auth.sent.reset.password.success.message"](): string;
     /**
       * `Set password link has been sent.`
       */
-    ["com.affine.auth.sent.set.password.hint"](): string;
+    ["com.lovenotes.auth.sent.set.password.hint"](): string;
     /**
-      * `Your password has saved! You can sign in AFFiNE Cloud with email and password!`
+      * `Your password has saved! You can sign in LoveNotes Cloud with email and password!`
       */
-    ["com.affine.auth.sent.set.password.success.message"](): string;
+    ["com.lovenotes.auth.sent.set.password.success.message"](): string;
     /**
       * `Verification link has been sent.`
       */
-    ["com.affine.auth.sent.verify.email.hint"](): string;
+    ["com.lovenotes.auth.sent.verify.email.hint"](): string;
     /**
       * `Save Email`
       */
-    ["com.affine.auth.set.email.save"](): string;
+    ["com.lovenotes.auth.set.email.save"](): string;
     /**
       * `Set password`
       */
-    ["com.affine.auth.set.password"](): string;
+    ["com.lovenotes.auth.set.password"](): string;
     /**
       * `Please set a password of {{min}}-{{max}} characters with both letters and numbers to continue signing up with `
       */
-    ["com.affine.auth.set.password.message"](options: Readonly<{
+    ["com.lovenotes.auth.set.password.message"](options: Readonly<{
         min: string;
         max: string;
     }>): string;
     /**
       * `Maximum {{max}} characters`
       */
-    ["com.affine.auth.set.password.message.maxlength"](options: {
+    ["com.lovenotes.auth.set.password.message.maxlength"](options: {
         readonly max: string;
     }): string;
     /**
       * `Minimum {{min}} characters`
       */
-    ["com.affine.auth.set.password.message.minlength"](options: {
+    ["com.lovenotes.auth.set.password.message.minlength"](options: {
         readonly min: string;
     }): string;
     /**
       * `Password set successful`
       */
-    ["com.affine.auth.set.password.page.success"](): string;
+    ["com.lovenotes.auth.set.password.page.success"](): string;
     /**
-      * `Set your AFFiNE Cloud password`
+      * `Set your LoveNotes Cloud password`
       */
-    ["com.affine.auth.set.password.page.title"](): string;
+    ["com.lovenotes.auth.set.password.page.title"](): string;
     /**
       * `Set a password at least {{min}} letters long`
       */
-    ["com.affine.auth.set.password.placeholder"](options: {
+    ["com.lovenotes.auth.set.password.placeholder"](options: {
         readonly min: string;
     }): string;
     /**
       * `Confirm password`
       */
-    ["com.affine.auth.set.password.placeholder.confirm"](): string;
+    ["com.lovenotes.auth.set.password.placeholder.confirm"](): string;
     /**
       * `Save password`
       */
-    ["com.affine.auth.set.password.save"](): string;
+    ["com.lovenotes.auth.set.password.save"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.auth.sign-out.confirm-modal.cancel"](): string;
+    ["com.lovenotes.auth.sign-out.confirm-modal.cancel"](): string;
     /**
       * `Sign Out`
       */
-    ["com.affine.auth.sign-out.confirm-modal.confirm"](): string;
+    ["com.lovenotes.auth.sign-out.confirm-modal.confirm"](): string;
     /**
       * `After signing out, the Cloud Workspaces associated with this account will be removed from the current device, and signing in again will add them back.`
       */
-    ["com.affine.auth.sign-out.confirm-modal.description"](): string;
+    ["com.lovenotes.auth.sign-out.confirm-modal.description"](): string;
     /**
       * `Sign out?`
       */
-    ["com.affine.auth.sign-out.confirm-modal.title"](): string;
+    ["com.lovenotes.auth.sign-out.confirm-modal.title"](): string;
     /**
       * `If you haven't received the email, please check your spam folder.`
       */
-    ["com.affine.auth.sign.auth.code.message"](): string;
+    ["com.lovenotes.auth.sign.auth.code.message"](): string;
     /**
       * `Sign in with magic link`
       */
-    ["com.affine.auth.sign.auth.code.send-email.sign-in"](): string;
+    ["com.lovenotes.auth.sign.auth.code.send-email.sign-in"](): string;
     /**
       * `Terms of conditions`
       */
-    ["com.affine.auth.sign.condition"](): string;
+    ["com.lovenotes.auth.sign.condition"](): string;
     /**
       * `Continue with email`
       */
-    ["com.affine.auth.sign.email.continue"](): string;
+    ["com.lovenotes.auth.sign.email.continue"](): string;
     /**
       * `Invalid email`
       */
-    ["com.affine.auth.sign.email.error"](): string;
+    ["com.lovenotes.auth.sign.email.error"](): string;
     /**
       * `Enter your email address`
       */
-    ["com.affine.auth.sign.email.placeholder"](): string;
+    ["com.lovenotes.auth.sign.email.placeholder"](): string;
     /**
       * `Sign in`
       */
-    ["com.affine.auth.sign.in"](): string;
+    ["com.lovenotes.auth.sign.in"](): string;
     /**
       * `Confirm your email`
       */
-    ["com.affine.auth.sign.in.sent.email.subtitle"](): string;
+    ["com.lovenotes.auth.sign.in.sent.email.subtitle"](): string;
     /**
       * `Self-Hosted`
       */
-    ["com.affine.auth.sign.add-selfhosted.title"](): string;
+    ["com.lovenotes.auth.sign.add-selfhosted.title"](): string;
     /**
       * `Connect to a Self-Hosted Instance`
       */
-    ["com.affine.auth.sign.add-selfhosted"](): string;
+    ["com.lovenotes.auth.sign.add-selfhosted"](): string;
     /**
       * `Server URL`
       */
-    ["com.affine.auth.sign.add-selfhosted.baseurl"](): string;
+    ["com.lovenotes.auth.sign.add-selfhosted.baseurl"](): string;
     /**
       * `Connect`
       */
-    ["com.affine.auth.sign.add-selfhosted.connect-button"](): string;
+    ["com.lovenotes.auth.sign.add-selfhosted.connect-button"](): string;
     /**
       * `Unable to connect to the server.`
       */
-    ["com.affine.auth.sign.add-selfhosted.error"](): string;
+    ["com.lovenotes.auth.sign.add-selfhosted.error"](): string;
     /**
       * `Privacy policy`
       */
-    ["com.affine.auth.sign.policy"](): string;
+    ["com.lovenotes.auth.sign.policy"](): string;
     /**
       * `Sign up`
       */
-    ["com.affine.auth.sign.up"](): string;
+    ["com.lovenotes.auth.sign.up"](): string;
     /**
       * `Create your account`
       */
-    ["com.affine.auth.sign.up.sent.email.subtitle"](): string;
+    ["com.lovenotes.auth.sign.up.sent.email.subtitle"](): string;
     /**
-      * `The app will automatically open or redirect to the web version. If you encounter any issues, you can also click the button below to manually open the AFFiNE app.`
+      * `The app will automatically open or redirect to the web version. If you encounter any issues, you can also click the button below to manually open the LoveNotes app.`
       */
-    ["com.affine.auth.sign.up.success.subtitle"](): string;
+    ["com.lovenotes.auth.sign.up.success.subtitle"](): string;
     /**
       * `Your account has been created and you're now signed in!`
       */
-    ["com.affine.auth.sign.up.success.title"](): string;
+    ["com.lovenotes.auth.sign.up.success.title"](): string;
     /**
-      * `You have successfully signed in. The app will automatically open or redirect to the web version. if you encounter any issues, you can also click the button below to  manually open the AFFiNE app.`
+      * `You have successfully signed in. The app will automatically open or redirect to the web version. if you encounter any issues, you can also click the button below to  manually open the LoveNotes app.`
       */
-    ["com.affine.auth.signed.success.subtitle"](): string;
+    ["com.lovenotes.auth.signed.success.subtitle"](): string;
     /**
       * `You're almost there!`
       */
-    ["com.affine.auth.signed.success.title"](): string;
+    ["com.lovenotes.auth.signed.success.title"](): string;
     /**
       * `Server error, please try again later.`
       */
-    ["com.affine.auth.toast.message.failed"](): string;
+    ["com.lovenotes.auth.toast.message.failed"](): string;
     /**
-      * `You have been signed in, start to sync your data with AFFiNE Cloud!`
+      * `You have been signed in, start to sync your data with LoveNotes Cloud!`
       */
-    ["com.affine.auth.toast.message.signed-in"](): string;
+    ["com.lovenotes.auth.toast.message.signed-in"](): string;
     /**
       * `Unable to sign in`
       */
-    ["com.affine.auth.toast.title.failed"](): string;
+    ["com.lovenotes.auth.toast.title.failed"](): string;
     /**
       * `Signed in`
       */
-    ["com.affine.auth.toast.title.signed-in"](): string;
+    ["com.lovenotes.auth.toast.title.signed-in"](): string;
     /**
       * `Your current email is {{email}}. We'll send a temporary verification link to this email.`
       */
-    ["com.affine.auth.verify.email.message"](options: {
+    ["com.lovenotes.auth.verify.email.message"](options: {
         readonly email: string;
     }): string;
     /**
       * `Back`
       */
-    ["com.affine.backButton"](): string;
+    ["com.lovenotes.backButton"](): string;
     /**
       * `Your local data is stored in the browser and may be lost. Don't risk it - enable cloud now!`
       */
-    ["com.affine.banner.local-warning"](): string;
+    ["com.lovenotes.banner.local-warning"](): string;
     /**
-      * `AFFiNE Cloud`
+      * `LoveNotes Cloud`
       */
-    ["com.affine.brand.affineCloud"](): string;
+    ["com.lovenotes.brand.lovenotesCloud"](): string;
     /**
       * `Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec`
       */
-    ["com.affine.calendar-date-picker.month-names"](): string;
+    ["com.lovenotes.calendar-date-picker.month-names"](): string;
     /**
       * `Today`
       */
-    ["com.affine.calendar-date-picker.today"](): string;
+    ["com.lovenotes.calendar-date-picker.today"](): string;
     /**
       * `Su,Mo,Tu,We,Th,Fr,Sa`
       */
-    ["com.affine.calendar-date-picker.week-days"](): string;
+    ["com.lovenotes.calendar-date-picker.week-days"](): string;
     /**
-      * `Host by AFFiNE.Pro, Save, sync, and backup all your data.`
+      * `Host by LoveNotes.Pro, Save, sync, and backup all your data.`
       */
-    ["com.affine.cloud-scroll-tip.caption"](): string;
+    ["com.lovenotes.cloud-scroll-tip.caption"](): string;
     /**
-      * `AFFiNE Cloud`
+      * `LoveNotes Cloud`
       */
-    ["com.affine.cloud-scroll-tip.title"](): string;
+    ["com.lovenotes.cloud-scroll-tip.title"](): string;
     /**
       * `Collections`
       */
-    ["com.affine.cmdk.affine.category.affine.collections"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.collections"](): string;
     /**
       * `Create`
       */
-    ["com.affine.cmdk.affine.category.affine.creation"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.creation"](): string;
     /**
       * `Edgeless`
       */
-    ["com.affine.cmdk.affine.category.affine.edgeless"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.edgeless"](): string;
     /**
       * `General`
       */
-    ["com.affine.cmdk.affine.category.affine.general"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.general"](): string;
     /**
       * `Help`
       */
-    ["com.affine.cmdk.affine.category.affine.help"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.help"](): string;
     /**
       * `Layout controls`
       */
-    ["com.affine.cmdk.affine.category.affine.layout"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.layout"](): string;
     /**
       * `Navigation`
       */
-    ["com.affine.cmdk.affine.category.affine.navigation"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.navigation"](): string;
     /**
       * `Docs`
       */
-    ["com.affine.cmdk.affine.category.affine.pages"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.pages"](): string;
     /**
       * `Recent`
       */
-    ["com.affine.cmdk.affine.category.affine.recent"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.recent"](): string;
     /**
       * `Settings`
       */
-    ["com.affine.cmdk.affine.category.affine.settings"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.settings"](): string;
     /**
       * `Tags`
       */
-    ["com.affine.cmdk.affine.category.affine.tags"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.tags"](): string;
     /**
       * `Updates`
       */
-    ["com.affine.cmdk.affine.category.affine.updates"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.updates"](): string;
     /**
       * `Edgeless commands`
       */
-    ["com.affine.cmdk.affine.category.editor.edgeless"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.editor.edgeless"](): string;
     /**
       * `Insert object`
       */
-    ["com.affine.cmdk.affine.category.editor.insert-object"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.editor.insert-object"](): string;
     /**
       * `Doc Commands`
       */
-    ["com.affine.cmdk.affine.category.editor.page"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.editor.page"](): string;
     /**
       * `Results`
       */
-    ["com.affine.cmdk.affine.category.results"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.results"](): string;
     /**
       * `Change client border style to`
       */
-    ["com.affine.cmdk.affine.client-border-style.to"](): string;
+    ["com.lovenotes.cmdk.lovenotes.client-border-style.to"](): string;
     /**
       * `Change colour mode to`
       */
-    ["com.affine.cmdk.affine.color-mode.to"](): string;
+    ["com.lovenotes.cmdk.lovenotes.color-mode.to"](): string;
     /**
       * `Contact us`
       */
-    ["com.affine.cmdk.affine.contact-us"](): string;
+    ["com.lovenotes.cmdk.lovenotes.contact-us"](): string;
     /**
       * `Create "{{keyWord}}" doc and insert`
       */
-    ["com.affine.cmdk.affine.create-new-doc-and-insert"](options: {
+    ["com.lovenotes.cmdk.lovenotes.create-new-doc-and-insert"](options: {
         readonly keyWord: string;
     }): string;
     /**
       * `New "{{keyWord}}" edgeless`
       */
-    ["com.affine.cmdk.affine.create-new-edgeless-as"](options: {
+    ["com.lovenotes.cmdk.lovenotes.create-new-edgeless-as"](options: {
         readonly keyWord: string;
     }): string;
     /**
       * `New "{{keyWord}}" page`
       */
-    ["com.affine.cmdk.affine.create-new-page-as"](options: {
+    ["com.lovenotes.cmdk.lovenotes.create-new-page-as"](options: {
         readonly keyWord: string;
     }): string;
     /**
       * `Change display language to`
       */
-    ["com.affine.cmdk.affine.display-language.to"](): string;
+    ["com.lovenotes.cmdk.lovenotes.display-language.to"](): string;
     /**
       * `Add to favourites`
       */
-    ["com.affine.cmdk.affine.editor.add-to-favourites"](): string;
+    ["com.lovenotes.cmdk.lovenotes.editor.add-to-favourites"](): string;
     /**
       * `Start presentation`
       */
-    ["com.affine.cmdk.affine.editor.edgeless.presentation-start"](): string;
+    ["com.lovenotes.cmdk.lovenotes.editor.edgeless.presentation-start"](): string;
     /**
       * `Remove from favourites`
       */
-    ["com.affine.cmdk.affine.editor.remove-from-favourites"](): string;
+    ["com.lovenotes.cmdk.lovenotes.editor.remove-from-favourites"](): string;
     /**
       * `Restore from trash`
       */
-    ["com.affine.cmdk.affine.editor.restore-from-trash"](): string;
+    ["com.lovenotes.cmdk.lovenotes.editor.restore-from-trash"](): string;
     /**
       * `Reveal doc history modal`
       */
-    ["com.affine.cmdk.affine.editor.reveal-page-history-modal"](): string;
+    ["com.lovenotes.cmdk.lovenotes.editor.reveal-page-history-modal"](): string;
     /**
       * `This doc has been moved to the trash, you can either restore or permanently delete it.`
       */
-    ["com.affine.cmdk.affine.editor.trash-footer-hint"](): string;
+    ["com.lovenotes.cmdk.lovenotes.editor.trash-footer-hint"](): string;
     /**
       * `Change font style to`
       */
-    ["com.affine.cmdk.affine.font-style.to"](): string;
+    ["com.lovenotes.cmdk.lovenotes.font-style.to"](): string;
     /**
       * `Change full width layout to`
       */
-    ["com.affine.cmdk.affine.full-width-layout.to"](): string;
+    ["com.lovenotes.cmdk.lovenotes.full-width-layout.to"](): string;
     /**
       * `Change default width for new pages in to standard`
       */
-    ["com.affine.cmdk.affine.default-page-width-layout.standard"](): string;
+    ["com.lovenotes.cmdk.lovenotes.default-page-width-layout.standard"](): string;
     /**
       * `Change default width for new pages in to full width`
       */
-    ["com.affine.cmdk.affine.default-page-width-layout.full-width"](): string;
+    ["com.lovenotes.cmdk.lovenotes.default-page-width-layout.full-width"](): string;
     /**
       * `Change current page width to standard`
       */
-    ["com.affine.cmdk.affine.current-page-width-layout.standard"](): string;
+    ["com.lovenotes.cmdk.lovenotes.current-page-width-layout.standard"](): string;
     /**
       * `Change current page width to full width`
       */
-    ["com.affine.cmdk.affine.current-page-width-layout.full-width"](): string;
+    ["com.lovenotes.cmdk.lovenotes.current-page-width-layout.full-width"](): string;
     /**
       * `Getting started`
       */
-    ["com.affine.cmdk.affine.getting-started"](): string;
+    ["com.lovenotes.cmdk.lovenotes.getting-started"](): string;
     /**
       * `Import workspace`
       */
-    ["com.affine.cmdk.affine.import-workspace"](): string;
+    ["com.lovenotes.cmdk.lovenotes.import-workspace"](): string;
     /**
       * `Insert this link to the current doc`
       */
-    ["com.affine.cmdk.affine.insert-link"](): string;
+    ["com.lovenotes.cmdk.lovenotes.insert-link"](): string;
     /**
       * `Collapse left sidebar`
       */
-    ["com.affine.cmdk.affine.left-sidebar.collapse"](): string;
+    ["com.lovenotes.cmdk.lovenotes.left-sidebar.collapse"](): string;
     /**
       * `Expand left sidebar`
       */
-    ["com.affine.cmdk.affine.left-sidebar.expand"](): string;
+    ["com.lovenotes.cmdk.lovenotes.left-sidebar.expand"](): string;
     /**
       * `Go to all docs`
       */
-    ["com.affine.cmdk.affine.navigation.goto-all-pages"](): string;
+    ["com.lovenotes.cmdk.lovenotes.navigation.goto-all-pages"](): string;
     /**
       * `Go to edgeless list`
       */
-    ["com.affine.cmdk.affine.navigation.goto-edgeless-list"](): string;
+    ["com.lovenotes.cmdk.lovenotes.navigation.goto-edgeless-list"](): string;
     /**
       * `Go to page list`
       */
-    ["com.affine.cmdk.affine.navigation.goto-page-list"](): string;
+    ["com.lovenotes.cmdk.lovenotes.navigation.goto-page-list"](): string;
     /**
       * `Go to trash`
       */
-    ["com.affine.cmdk.affine.navigation.goto-trash"](): string;
+    ["com.lovenotes.cmdk.lovenotes.navigation.goto-trash"](): string;
     /**
       * `Go to workspace`
       */
-    ["com.affine.cmdk.affine.navigation.goto-workspace"](): string;
+    ["com.lovenotes.cmdk.lovenotes.navigation.goto-workspace"](): string;
     /**
       * `Go to account settings`
       */
-    ["com.affine.cmdk.affine.navigation.open-account-settings"](): string;
+    ["com.lovenotes.cmdk.lovenotes.navigation.open-account-settings"](): string;
     /**
       * `Go to Settings`
       */
-    ["com.affine.cmdk.affine.navigation.open-settings"](): string;
+    ["com.lovenotes.cmdk.lovenotes.navigation.open-settings"](): string;
     /**
       * `New edgeless`
       */
-    ["com.affine.cmdk.affine.new-edgeless-page"](): string;
+    ["com.lovenotes.cmdk.lovenotes.new-edgeless-page"](): string;
     /**
       * `New page`
       */
-    ["com.affine.cmdk.affine.new-page"](): string;
+    ["com.lovenotes.cmdk.lovenotes.new-page"](): string;
     /**
       * `New workspace`
       */
-    ["com.affine.cmdk.affine.new-workspace"](): string;
+    ["com.lovenotes.cmdk.lovenotes.new-workspace"](): string;
     /**
       * `Change noise background on the sidebar to`
       */
-    ["com.affine.cmdk.affine.noise-background-on-the-sidebar.to"](): string;
+    ["com.lovenotes.cmdk.lovenotes.noise-background-on-the-sidebar.to"](): string;
     /**
       * `Restart to upgrade`
       */
-    ["com.affine.cmdk.affine.restart-to-upgrade"](): string;
+    ["com.lovenotes.cmdk.lovenotes.restart-to-upgrade"](): string;
     /**
       * `OFF`
       */
-    ["com.affine.cmdk.affine.switch-state.off"](): string;
+    ["com.lovenotes.cmdk.lovenotes.switch-state.off"](): string;
     /**
       * `ON`
       */
-    ["com.affine.cmdk.affine.switch-state.on"](): string;
+    ["com.lovenotes.cmdk.lovenotes.switch-state.on"](): string;
     /**
       * `Change translucent UI on the sidebar to`
       */
-    ["com.affine.cmdk.affine.translucent-ui-on-the-sidebar.to"](): string;
+    ["com.lovenotes.cmdk.lovenotes.translucent-ui-on-the-sidebar.to"](): string;
     /**
       * `What's new`
       */
-    ["com.affine.cmdk.affine.whats-new"](): string;
+    ["com.lovenotes.cmdk.lovenotes.whats-new"](): string;
     /**
       * `Search docs or paste link...`
       */
-    ["com.affine.cmdk.docs.placeholder"](): string;
+    ["com.lovenotes.cmdk.docs.placeholder"](): string;
     /**
       * `Insert links`
       */
-    ["com.affine.cmdk.insert-links"](): string;
+    ["com.lovenotes.cmdk.insert-links"](): string;
     /**
       * `No results found`
       */
-    ["com.affine.cmdk.no-results"](): string;
+    ["com.lovenotes.cmdk.no-results"](): string;
     /**
       * `No results found for`
       */
-    ["com.affine.cmdk.no-results-for"](): string;
+    ["com.lovenotes.cmdk.no-results-for"](): string;
     /**
       * `Type a command or search anything...`
       */
-    ["com.affine.cmdk.placeholder"](): string;
+    ["com.lovenotes.cmdk.placeholder"](): string;
     /**
-      * `Switch to $t(com.affine.edgelessMode)`
+      * `Switch to $t(com.lovenotes.edgelessMode)`
       */
-    ["com.affine.cmdk.switch-to-edgeless"](): string;
+    ["com.lovenotes.cmdk.switch-to-edgeless"](): string;
     /**
-      * `Switch to $t(com.affine.pageMode)`
+      * `Switch to $t(com.lovenotes.pageMode)`
       */
-    ["com.affine.cmdk.switch-to-page"](): string;
+    ["com.lovenotes.cmdk.switch-to-page"](): string;
     /**
       * `Delete`
       */
-    ["com.affine.collection-bar.action.tooltip.delete"](): string;
+    ["com.lovenotes.collection-bar.action.tooltip.delete"](): string;
     /**
       * `Edit`
       */
-    ["com.affine.collection-bar.action.tooltip.edit"](): string;
+    ["com.lovenotes.collection-bar.action.tooltip.edit"](): string;
     /**
       * `Pin to sidebar`
       */
-    ["com.affine.collection-bar.action.tooltip.pin"](): string;
+    ["com.lovenotes.collection-bar.action.tooltip.pin"](): string;
     /**
       * `Unpin`
       */
-    ["com.affine.collection-bar.action.tooltip.unpin"](): string;
+    ["com.lovenotes.collection-bar.action.tooltip.unpin"](): string;
     /**
       * `Do you want to add a document to the current collection? If it is filtered based on rules, this will add a set of included rules.`
       */
-    ["com.affine.collection.add-doc.confirm.description"](): string;
+    ["com.lovenotes.collection.add-doc.confirm.description"](): string;
     /**
       * `Add new doc to this collection`
       */
-    ["com.affine.collection.add-doc.confirm.title"](): string;
+    ["com.lovenotes.collection.add-doc.confirm.title"](): string;
     /**
       * `Doc already exists`
       */
-    ["com.affine.collection.addPage.alreadyExists"](): string;
+    ["com.lovenotes.collection.addPage.alreadyExists"](): string;
     /**
       * `Added successfully`
       */
-    ["com.affine.collection.addPage.success"](): string;
+    ["com.lovenotes.collection.addPage.success"](): string;
     /**
       * `Add docs`
       */
-    ["com.affine.collection.addPages"](): string;
+    ["com.lovenotes.collection.addPages"](): string;
     /**
       * `Add rules`
       */
-    ["com.affine.collection.addRules"](): string;
+    ["com.lovenotes.collection.addRules"](): string;
     /**
       * `All collections`
       */
-    ["com.affine.collection.allCollections"](): string;
+    ["com.lovenotes.collection.allCollections"](): string;
     /**
       * `Empty collection`
       */
-    ["com.affine.collection.emptyCollection"](): string;
+    ["com.lovenotes.collection.emptyCollection"](): string;
     /**
       * `Collection is a smart folder where you can manually add docs or automatically add docs through rules.`
       */
-    ["com.affine.collection.emptyCollectionDescription"](): string;
+    ["com.lovenotes.collection.emptyCollectionDescription"](): string;
     /**
       * `HELP INFO`
       */
-    ["com.affine.collection.helpInfo"](): string;
+    ["com.lovenotes.collection.helpInfo"](): string;
     /**
       * `Edit collection`
       */
-    ["com.affine.collection.menu.edit"](): string;
+    ["com.lovenotes.collection.menu.edit"](): string;
     /**
       * `Rename`
       */
-    ["com.affine.collection.menu.rename"](): string;
+    ["com.lovenotes.collection.menu.rename"](): string;
     /**
       * `Removed successfully`
       */
-    ["com.affine.collection.removePage.success"](): string;
+    ["com.lovenotes.collection.removePage.success"](): string;
     /**
       * `No collections`
       */
-    ["com.affine.collections.empty.message"](): string;
+    ["com.lovenotes.collections.empty.message"](): string;
     /**
       * `New collection`
       */
-    ["com.affine.collections.empty.new-collection-button"](): string;
+    ["com.lovenotes.collections.empty.new-collection-button"](): string;
     /**
       * `Collections`
       */
-    ["com.affine.collections.header"](): string;
+    ["com.lovenotes.collections.header"](): string;
     /**
       * `Couldn't copy image`
       */
-    ["com.affine.copy.asImage.notAvailable.title"](): string;
+    ["com.lovenotes.copy.asImage.notAvailable.title"](): string;
     /**
       * `The 'Copy as image' feature is only available on our desktop app. Please download and install the client to access this feature.`
       */
-    ["com.affine.copy.asImage.notAvailable.message"](): string;
+    ["com.lovenotes.copy.asImage.notAvailable.message"](): string;
     /**
       * `Download Client`
       */
-    ["com.affine.copy.asImage.notAvailable.action"](): string;
+    ["com.lovenotes.copy.asImage.notAvailable.action"](): string;
     /**
       * `Image copied`
       */
-    ["com.affine.copy.asImage.success"](): string;
+    ["com.lovenotes.copy.asImage.success"](): string;
     /**
       * `Image copy failed`
       */
-    ["com.affine.copy.asImage.failed"](): string;
+    ["com.lovenotes.copy.asImage.failed"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.confirmModal.button.cancel"](): string;
+    ["com.lovenotes.confirmModal.button.cancel"](): string;
     /**
       * `Ok`
       */
-    ["com.affine.confirmModal.button.ok"](): string;
+    ["com.lovenotes.confirmModal.button.ok"](): string;
     /**
       * `Current year`
       */
-    ["com.affine.currentYear"](): string;
+    ["com.lovenotes.currentYear"](): string;
     /**
       * `Deleting {{count}} tags cannot be undone, please proceed with caution.`
       */
-    ["com.affine.delete-tags.confirm.multi-tag-description"](options: {
+    ["com.lovenotes.delete-tags.confirm.multi-tag-description"](options: {
         readonly count: string;
     }): string;
     /**
       * `Delete tag?`
       */
-    ["com.affine.delete-tags.confirm.title"](): string;
+    ["com.lovenotes.delete-tags.confirm.title"](): string;
     /**
       * `{{count}} tag deleted`
     
-      * - com.affine.delete-tags.count_one: `{{count}} tag deleted`
+      * - com.lovenotes.delete-tags.count_one: `{{count}} tag deleted`
     
-      * - com.affine.delete-tags.count_other: `{{count}} tags deleted`
+      * - com.lovenotes.delete-tags.count_other: `{{count}} tags deleted`
       */
-    ["com.affine.delete-tags.count"](options: {
+    ["com.lovenotes.delete-tags.count"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `{{count}} tag deleted`
       */
-    ["com.affine.delete-tags.count_one"](options: {
+    ["com.lovenotes.delete-tags.count_one"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `{{count}} tags deleted`
       */
-    ["com.affine.delete-tags.count_other"](options: {
+    ["com.lovenotes.delete-tags.count_other"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `Delete workspace from this device and optionally delete all data.`
       */
-    ["com.affine.deleteLeaveWorkspace.description"](): string;
+    ["com.lovenotes.deleteLeaveWorkspace.description"](): string;
     /**
       * `Leave workspace`
       */
-    ["com.affine.deleteLeaveWorkspace.leave"](): string;
+    ["com.lovenotes.deleteLeaveWorkspace.leave"](): string;
     /**
       * `After you leave, you will not be able to access content within this workspace.`
       */
-    ["com.affine.deleteLeaveWorkspace.leaveDescription"](): string;
+    ["com.lovenotes.deleteLeaveWorkspace.leaveDescription"](): string;
     /**
       * `Docs`
       */
-    ["com.affine.docs.header"](): string;
+    ["com.lovenotes.docs.header"](): string;
     /**
       * `Draw with a blank whiteboard`
       */
-    ["com.affine.draw_with_a_blank_whiteboard"](): string;
+    ["com.lovenotes.draw_with_a_blank_whiteboard"](): string;
     /**
       * `Earlier`
       */
-    ["com.affine.earlier"](): string;
+    ["com.lovenotes.earlier"](): string;
     /**
       * `Edgeless mode`
       */
-    ["com.affine.edgelessMode"](): string;
+    ["com.lovenotes.edgelessMode"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.editCollection.button.cancel"](): string;
+    ["com.lovenotes.editCollection.button.cancel"](): string;
     /**
       * `Create`
       */
-    ["com.affine.editCollection.button.create"](): string;
+    ["com.lovenotes.editCollection.button.create"](): string;
     /**
       * `Create collection`
       */
-    ["com.affine.editCollection.createCollection"](): string;
+    ["com.lovenotes.editCollection.createCollection"](): string;
     /**
       * `Filters`
       */
-    ["com.affine.editCollection.filters"](): string;
+    ["com.lovenotes.editCollection.filters"](): string;
     /**
       * `Docs`
       */
-    ["com.affine.editCollection.pages"](): string;
+    ["com.lovenotes.editCollection.pages"](): string;
     /**
       * `Clear selected`
       */
-    ["com.affine.editCollection.pages.clear"](): string;
+    ["com.lovenotes.editCollection.pages.clear"](): string;
     /**
       * `Rename collection`
       */
-    ["com.affine.editCollection.renameCollection"](): string;
+    ["com.lovenotes.editCollection.renameCollection"](): string;
     /**
       * `Rules`
       */
-    ["com.affine.editCollection.rules"](): string;
+    ["com.lovenotes.editCollection.rules"](): string;
     /**
       * `No results`
       */
-    ["com.affine.editCollection.rules.empty.noResults"](): string;
+    ["com.lovenotes.editCollection.rules.empty.noResults"](): string;
     /**
       * `No docs meet the filtering rules`
       */
-    ["com.affine.editCollection.rules.empty.noResults.tips"](): string;
+    ["com.lovenotes.editCollection.rules.empty.noResults.tips"](): string;
     /**
       * `No rules`
       */
-    ["com.affine.editCollection.rules.empty.noRules"](): string;
+    ["com.lovenotes.editCollection.rules.empty.noRules"](): string;
     /**
       * `Add selected doc`
       */
-    ["com.affine.editCollection.rules.include.add"](): string;
+    ["com.lovenotes.editCollection.rules.include.add"](): string;
     /**
       * `is`
       */
-    ["com.affine.editCollection.rules.include.is"](): string;
+    ["com.lovenotes.editCollection.rules.include.is"](): string;
     /**
       * `is-not`
       */
-    ["com.affine.editCollection.rules.include.is-not"](): string;
+    ["com.lovenotes.editCollection.rules.include.is-not"](): string;
     /**
       * `Doc`
       */
-    ["com.affine.editCollection.rules.include.page"](): string;
+    ["com.lovenotes.editCollection.rules.include.page"](): string;
     /**
       * `“Selected docs” refers to manually adding docs rather than automatically adding them through rule matching. You can manually add docs through the “Add selected docs” option or by dragging and dropping.`
       */
-    ["com.affine.editCollection.rules.include.tips"](): string;
+    ["com.lovenotes.editCollection.rules.include.tips"](): string;
     /**
       * `What is "Selected docs"？`
       */
-    ["com.affine.editCollection.rules.include.tipsTitle"](): string;
+    ["com.lovenotes.editCollection.rules.include.tipsTitle"](): string;
     /**
       * `Selected docs`
       */
-    ["com.affine.editCollection.rules.include.title"](): string;
+    ["com.lovenotes.editCollection.rules.include.title"](): string;
     /**
       * `Preview`
       */
-    ["com.affine.editCollection.rules.preview"](): string;
+    ["com.lovenotes.editCollection.rules.preview"](): string;
     /**
       * `Reset`
       */
-    ["com.affine.editCollection.rules.reset"](): string;
+    ["com.lovenotes.editCollection.rules.reset"](): string;
     /**
       * `automatically`
       */
-    ["com.affine.editCollection.rules.tips.highlight"](): string;
+    ["com.lovenotes.editCollection.rules.tips.highlight"](): string;
     /**
       * `Save`
       */
-    ["com.affine.editCollection.save"](): string;
+    ["com.lovenotes.editCollection.save"](): string;
     /**
       * `Save as new collection`
       */
-    ["com.affine.editCollection.saveCollection"](): string;
+    ["com.lovenotes.editCollection.saveCollection"](): string;
     /**
       * `Search doc...`
       */
-    ["com.affine.editCollection.search.placeholder"](): string;
+    ["com.lovenotes.editCollection.search.placeholder"](): string;
     /**
       * `Untitled collection`
       */
-    ["com.affine.editCollection.untitledCollection"](): string;
+    ["com.lovenotes.editCollection.untitledCollection"](): string;
     /**
       * `Update collection`
       */
-    ["com.affine.editCollection.updateCollection"](): string;
+    ["com.lovenotes.editCollection.updateCollection"](): string;
     /**
       * `Collection is a smart folder where you can manually add docs or automatically add docs through rules.`
       */
-    ["com.affine.editCollectionName.createTips"](): string;
+    ["com.lovenotes.editCollectionName.createTips"](): string;
     /**
       * `Name`
       */
-    ["com.affine.editCollectionName.name"](): string;
+    ["com.lovenotes.editCollectionName.name"](): string;
     /**
       * `Collection name`
       */
-    ["com.affine.editCollectionName.name.placeholder"](): string;
+    ["com.lovenotes.editCollectionName.name.placeholder"](): string;
     /**
       * `Default to Edgeless mode`
       */
-    ["com.affine.editorDefaultMode.edgeless"](): string;
+    ["com.lovenotes.editorDefaultMode.edgeless"](): string;
     /**
       * `Default to Page mode`
       */
-    ["com.affine.editorDefaultMode.page"](): string;
+    ["com.lovenotes.editorDefaultMode.page"](): string;
     /**
       * `Add docs`
       */
-    ["com.affine.empty.collection-detail.action.add-doc"](): string;
+    ["com.lovenotes.empty.collection-detail.action.add-doc"](): string;
     /**
       * `Add rules`
       */
-    ["com.affine.empty.collection-detail.action.add-rule"](): string;
+    ["com.lovenotes.empty.collection-detail.action.add-rule"](): string;
     /**
       * `Collection is a smart folder where you can manually add docs or automatically add docs through rules.`
       */
-    ["com.affine.empty.collection-detail.description"](): string;
+    ["com.lovenotes.empty.collection-detail.description"](): string;
     /**
       * `Empty collection`
       */
-    ["com.affine.empty.collection-detail.title"](): string;
+    ["com.lovenotes.empty.collection-detail.title"](): string;
     /**
       * `Add collection`
       */
-    ["com.affine.empty.collections.action.new-collection"](): string;
+    ["com.lovenotes.empty.collections.action.new-collection"](): string;
     /**
       * `Create your first collection here.`
       */
-    ["com.affine.empty.collections.description"](): string;
+    ["com.lovenotes.empty.collections.description"](): string;
     /**
       * `Collection management`
       */
-    ["com.affine.empty.collections.title"](): string;
+    ["com.lovenotes.empty.collections.title"](): string;
     /**
       * `New doc`
       */
-    ["com.affine.empty.docs.action.new-doc"](): string;
+    ["com.lovenotes.empty.docs.action.new-doc"](): string;
     /**
       * `Create your first doc here.`
       */
-    ["com.affine.empty.docs.all-description"](): string;
+    ["com.lovenotes.empty.docs.all-description"](): string;
     /**
       * `Docs management`
       */
-    ["com.affine.empty.docs.title"](): string;
+    ["com.lovenotes.empty.docs.title"](): string;
     /**
       * `Deleted docs will appear here.`
       */
-    ["com.affine.empty.docs.trash-description"](): string;
+    ["com.lovenotes.empty.docs.trash-description"](): string;
     /**
       * `Create a new tag for your documents.`
       */
-    ["com.affine.empty.tags.description"](): string;
+    ["com.lovenotes.empty.tags.description"](): string;
     /**
       * `Tag management`
       */
-    ["com.affine.empty.tags.title"](): string;
+    ["com.lovenotes.empty.tags.title"](): string;
     /**
       * `There's no doc here yet`
       */
-    ["com.affine.emptyDesc"](): string;
+    ["com.lovenotes.emptyDesc"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.enableAffineCloudModal.button.cancel"](): string;
+    ["com.lovenotes.enableLoveNotesCloudModal.button.cancel"](): string;
     /**
       * `Enable Cloud for {{workspaceName}}`
       */
-    ["com.affine.enableAffineCloudModal.custom-server.title"](options: {
+    ["com.lovenotes.enableLoveNotesCloudModal.custom-server.title"](options: {
         readonly workspaceName: string;
     }): string;
     /**
       * `Choose an instance.`
       */
-    ["com.affine.enableAffineCloudModal.custom-server.description"](): string;
+    ["com.lovenotes.enableLoveNotesCloudModal.custom-server.description"](): string;
     /**
       * `Enable Cloud`
       */
-    ["com.affine.enableAffineCloudModal.custom-server.enable"](): string;
+    ["com.lovenotes.enableLoveNotesCloudModal.custom-server.enable"](): string;
     /**
       * `Hide error`
       */
-    ["com.affine.error.hide-error"](): string;
+    ["com.lovenotes.error.hide-error"](): string;
     /**
       * `Doc content is missing`
       */
-    ["com.affine.error.no-page-root.title"](): string;
+    ["com.lovenotes.error.no-page-root.title"](): string;
     /**
       * `It takes longer to load the doc content.`
       */
-    ["com.affine.error.loading-timeout-error"](): string;
+    ["com.lovenotes.error.loading-timeout-error"](): string;
     /**
       * `Refetch`
       */
-    ["com.affine.error.refetch"](): string;
+    ["com.lovenotes.error.refetch"](): string;
     /**
-      * `Reload AFFiNE`
+      * `Reload LoveNotes`
       */
-    ["com.affine.error.reload"](): string;
+    ["com.lovenotes.error.reload"](): string;
     /**
       * `Refresh`
       */
-    ["com.affine.error.retry"](): string;
+    ["com.lovenotes.error.retry"](): string;
     /**
       * `Something is wrong...`
       */
-    ["com.affine.error.unexpected-error.title"](): string;
+    ["com.lovenotes.error.unexpected-error.title"](): string;
     /**
       * `Please request a new reset password link.`
       */
-    ["com.affine.expired.page.subtitle"](): string;
+    ["com.lovenotes.expired.page.subtitle"](): string;
     /**
       * `Please request a new link.`
       */
-    ["com.affine.expired.page.new-subtitle"](): string;
+    ["com.lovenotes.expired.page.new-subtitle"](): string;
     /**
       * `This link has expired...`
       */
-    ["com.affine.expired.page.title"](): string;
+    ["com.lovenotes.expired.page.title"](): string;
     /**
       * `Please try it again later.`
       */
-    ["com.affine.export.error.message"](): string;
+    ["com.lovenotes.export.error.message"](): string;
     /**
       * `Export failed due to an unexpected error`
       */
-    ["com.affine.export.error.title"](): string;
+    ["com.lovenotes.export.error.title"](): string;
     /**
       * `Print`
       */
-    ["com.affine.export.print"](): string;
+    ["com.lovenotes.export.print"](): string;
     /**
       * `Please open the download folder to check.`
       */
-    ["com.affine.export.success.message"](): string;
+    ["com.lovenotes.export.success.message"](): string;
     /**
       * `Exported successfully`
       */
-    ["com.affine.export.success.title"](): string;
+    ["com.lovenotes.export.success.title"](): string;
     /**
       * `Add to favourites`
       */
-    ["com.affine.favoritePageOperation.add"](): string;
+    ["com.lovenotes.favoritePageOperation.add"](): string;
     /**
       * `Remove from favourites`
       */
-    ["com.affine.favoritePageOperation.remove"](): string;
+    ["com.lovenotes.favoritePageOperation.remove"](): string;
     /**
       * `Filter`
       */
-    ["com.affine.filter"](): string;
+    ["com.lovenotes.filter"](): string;
     /**
       * `Add Filter Rule`
       */
-    ["com.affine.filter.add-filter"](): string;
+    ["com.lovenotes.filter.add-filter"](): string;
     /**
       * `after`
       */
-    ["com.affine.filter.after"](): string;
+    ["com.lovenotes.filter.after"](): string;
     /**
       * `before`
       */
-    ["com.affine.filter.before"](): string;
+    ["com.lovenotes.filter.before"](): string;
     /**
       * `contains all`
       */
-    ["com.affine.filter.contains all"](): string;
+    ["com.lovenotes.filter.contains all"](): string;
     /**
       * `contains one of`
       */
-    ["com.affine.filter.contains one of"](): string;
+    ["com.lovenotes.filter.contains one of"](): string;
     /**
       * `does not contains all`
       */
-    ["com.affine.filter.does not contains all"](): string;
+    ["com.lovenotes.filter.does not contains all"](): string;
     /**
       * `does not contains one of`
       */
-    ["com.affine.filter.does not contains one of"](): string;
+    ["com.lovenotes.filter.does not contains one of"](): string;
     /**
       * `Empty`
       */
-    ["com.affine.filter.empty-tag"](): string;
+    ["com.lovenotes.filter.empty-tag"](): string;
     /**
       * `Empty`
       */
-    ["com.affine.filter.empty"](): string;
+    ["com.lovenotes.filter.empty"](): string;
     /**
       * `false`
       */
-    ["com.affine.filter.false"](): string;
+    ["com.lovenotes.filter.false"](): string;
     /**
       * `is`
       */
-    ["com.affine.filter.is"](): string;
+    ["com.lovenotes.filter.is"](): string;
     /**
       * `is empty`
       */
-    ["com.affine.filter.is empty"](): string;
+    ["com.lovenotes.filter.is empty"](): string;
     /**
       * `is not empty`
       */
-    ["com.affine.filter.is not empty"](): string;
+    ["com.lovenotes.filter.is not empty"](): string;
     /**
       * `Favourited`
       */
-    ["com.affine.filter.is-favourited"](): string;
+    ["com.lovenotes.filter.is-favourited"](): string;
     /**
       * `Shared`
       */
-    ["com.affine.filter.is-public"](): string;
+    ["com.lovenotes.filter.is-public"](): string;
     /**
       * `between`
       */
-    ["com.affine.filter.between"](): string;
+    ["com.lovenotes.filter.between"](): string;
     /**
       * `last 3 days`
       */
-    ["com.affine.filter.last 3 days"](): string;
+    ["com.lovenotes.filter.last 3 days"](): string;
     /**
       * `last 7 days`
       */
-    ["com.affine.filter.last 7 days"](): string;
+    ["com.lovenotes.filter.last 7 days"](): string;
     /**
       * `last 15 days`
       */
-    ["com.affine.filter.last 15 days"](): string;
+    ["com.lovenotes.filter.last 15 days"](): string;
     /**
       * `last 30 days`
       */
-    ["com.affine.filter.last 30 days"](): string;
+    ["com.lovenotes.filter.last 30 days"](): string;
     /**
       * `this week`
       */
-    ["com.affine.filter.this week"](): string;
+    ["com.lovenotes.filter.this week"](): string;
     /**
       * `this month`
       */
-    ["com.affine.filter.this month"](): string;
+    ["com.lovenotes.filter.this month"](): string;
     /**
       * `this quarter`
       */
-    ["com.affine.filter.this quarter"](): string;
+    ["com.lovenotes.filter.this quarter"](): string;
     /**
       * `this year`
       */
-    ["com.affine.filter.this year"](): string;
+    ["com.lovenotes.filter.this year"](): string;
     /**
       * `last`
       */
-    ["com.affine.filter.last"](): string;
+    ["com.lovenotes.filter.last"](): string;
     /**
       * `Save view`
       */
-    ["com.affine.filter.save-view"](): string;
+    ["com.lovenotes.filter.save-view"](): string;
     /**
       * `true`
       */
-    ["com.affine.filter.true"](): string;
+    ["com.lovenotes.filter.true"](): string;
     /**
       * `Add filter`
       */
-    ["com.affine.filterList.button.add"](): string;
+    ["com.lovenotes.filterList.button.add"](): string;
     /**
       * `Display`
       */
-    ["com.affine.explorer.display-menu.button"](): string;
+    ["com.lovenotes.explorer.display-menu.button"](): string;
     /**
       * `Grouping`
       */
-    ["com.affine.explorer.display-menu.grouping"](): string;
+    ["com.lovenotes.explorer.display-menu.grouping"](): string;
     /**
       * `Remove group`
       */
-    ["com.affine.explorer.display-menu.grouping.remove"](): string;
+    ["com.lovenotes.explorer.display-menu.grouping.remove"](): string;
     /**
       * `Ordering`
       */
-    ["com.affine.explorer.display-menu.ordering"](): string;
+    ["com.lovenotes.explorer.display-menu.ordering"](): string;
     /**
       * `View in Page mode`
       */
-    ["com.affine.header.mode-switch.page"](): string;
+    ["com.lovenotes.header.mode-switch.page"](): string;
     /**
       * `View in Edgeless Canvas`
       */
-    ["com.affine.header.mode-switch.edgeless"](): string;
+    ["com.lovenotes.header.mode-switch.edgeless"](): string;
     /**
       * `Add tag`
       */
-    ["com.affine.header.option.add-tag"](): string;
+    ["com.lovenotes.header.option.add-tag"](): string;
     /**
       * `Duplicate`
       */
-    ["com.affine.header.option.duplicate"](): string;
+    ["com.lovenotes.header.option.duplicate"](): string;
     /**
       * `Open in desktop app`
       */
-    ["com.affine.header.option.open-in-desktop"](): string;
+    ["com.lovenotes.header.option.open-in-desktop"](): string;
     /**
       * `View all frames`
       */
-    ["com.affine.header.option.view-frame"](): string;
+    ["com.lovenotes.header.option.view-frame"](): string;
     /**
       * `View table of contents`
       */
-    ["com.affine.header.option.view-toc"](): string;
+    ["com.lovenotes.header.option.view-toc"](): string;
     /**
       * `Table of contents`
       */
-    ["com.affine.header.menu.toc"](): string;
+    ["com.lovenotes.header.menu.toc"](): string;
     /**
       * `Contact us`
       */
-    ["com.affine.helpIsland.contactUs"](): string;
+    ["com.lovenotes.helpIsland.contactUs"](): string;
     /**
       * `Getting started`
       */
-    ["com.affine.helpIsland.gettingStarted"](): string;
+    ["com.lovenotes.helpIsland.gettingStarted"](): string;
     /**
       * `Help and feedback`
       */
-    ["com.affine.helpIsland.helpAndFeedback"](): string;
+    ["com.lovenotes.helpIsland.helpAndFeedback"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.history-vision.tips-modal.cancel"](): string;
+    ["com.lovenotes.history-vision.tips-modal.cancel"](): string;
     /**
-      * `Enable AFFiNE Cloud`
+      * `Enable LoveNotes Cloud`
       */
-    ["com.affine.history-vision.tips-modal.confirm"](): string;
+    ["com.lovenotes.history-vision.tips-modal.confirm"](): string;
     /**
-      * `The current workspace is a local workspace, and we do not support version history for it at the moment. You can enable AFFiNE Cloud. This will sync the workspace with the Cloud, allowing you to use this feature.`
+      * `The current workspace is a local workspace, and we do not support version history for it at the moment. You can enable LoveNotes Cloud. This will sync the workspace with the Cloud, allowing you to use this feature.`
       */
-    ["com.affine.history-vision.tips-modal.description"](): string;
+    ["com.lovenotes.history-vision.tips-modal.description"](): string;
     /**
-      * `History vision needs AFFiNE Cloud`
+      * `History vision needs LoveNotes Cloud`
       */
-    ["com.affine.history-vision.tips-modal.title"](): string;
+    ["com.lovenotes.history-vision.tips-modal.title"](): string;
     /**
       * `Back to doc`
       */
-    ["com.affine.history.back-to-page"](): string;
+    ["com.lovenotes.history.back-to-page"](): string;
     /**
       * `You are about to restore the current version of the doc to the latest version available. This action will overwrite any changes made prior to the latest version.`
       */
-    ["com.affine.history.confirm-restore-modal.hint"](): string;
+    ["com.lovenotes.history.confirm-restore-modal.hint"](): string;
     /**
       * `Load more`
       */
-    ["com.affine.history.confirm-restore-modal.load-more"](): string;
+    ["com.lovenotes.history.confirm-restore-modal.load-more"](): string;
     /**
       * `LIMITED DOC HISTORY`
       */
-    ["com.affine.history.confirm-restore-modal.plan-prompt.limited-title"](): string;
+    ["com.lovenotes.history.confirm-restore-modal.plan-prompt.limited-title"](): string;
     /**
       * `HELP INFO`
       */
-    ["com.affine.history.confirm-restore-modal.plan-prompt.title"](): string;
+    ["com.lovenotes.history.confirm-restore-modal.plan-prompt.title"](): string;
     /**
       * `Upgrade`
       */
-    ["com.affine.history.confirm-restore-modal.pro-plan-prompt.upgrade"](): string;
+    ["com.lovenotes.history.confirm-restore-modal.pro-plan-prompt.upgrade"](): string;
     /**
       * `Restore`
       */
-    ["com.affine.history.confirm-restore-modal.restore"](): string;
+    ["com.lovenotes.history.confirm-restore-modal.restore"](): string;
     /**
       * `This document is such a spring chicken, it hasn't sprouted a single historical sprig yet!`
       */
-    ["com.affine.history.empty-prompt.description"](): string;
+    ["com.lovenotes.history.empty-prompt.description"](): string;
     /**
       * `Empty`
       */
-    ["com.affine.history.empty-prompt.title"](): string;
+    ["com.lovenotes.history.empty-prompt.title"](): string;
     /**
       * `Restore current version`
       */
-    ["com.affine.history.restore-current-version"](): string;
+    ["com.lovenotes.history.restore-current-version"](): string;
     /**
       * `Version history`
       */
-    ["com.affine.history.version-history"](): string;
+    ["com.lovenotes.history.version-history"](): string;
     /**
       * `View history version`
       */
-    ["com.affine.history.view-history-version"](): string;
+    ["com.lovenotes.history.view-history-version"](): string;
     /**
       * `Create into a New Workspace`
       */
-    ["com.affine.import-template.dialog.createDocToNewWorkspace"](): string;
+    ["com.lovenotes.import-template.dialog.createDocToNewWorkspace"](): string;
     /**
       * `Create doc to "{{workspace}}"`
       */
-    ["com.affine.import-template.dialog.createDocToWorkspace"](options: {
+    ["com.lovenotes.import-template.dialog.createDocToWorkspace"](options: {
         readonly workspace: string;
     }): string;
     /**
       * `Create doc with "{{templateName}}" template`
       */
-    ["com.affine.import-template.dialog.createDocWithTemplate"](options: {
+    ["com.lovenotes.import-template.dialog.createDocWithTemplate"](options: {
         readonly templateName: string;
     }): string;
     /**
       * `Failed to import template, please try again.`
       */
-    ["com.affine.import-template.dialog.errorImport"](): string;
+    ["com.lovenotes.import-template.dialog.errorImport"](): string;
     /**
       * `Failed to load template, please try again.`
       */
-    ["com.affine.import-template.dialog.errorLoad"](): string;
+    ["com.lovenotes.import-template.dialog.errorLoad"](): string;
     /**
       * `Create into a New Workspace`
       */
-    ["com.affine.import-clipper.dialog.createDocToNewWorkspace"](): string;
+    ["com.lovenotes.import-clipper.dialog.createDocToNewWorkspace"](): string;
     /**
       * `Create doc to "{{workspace}}"`
       */
-    ["com.affine.import-clipper.dialog.createDocToWorkspace"](options: {
+    ["com.lovenotes.import-clipper.dialog.createDocToWorkspace"](options: {
         readonly workspace: string;
     }): string;
     /**
       * `Create doc from Web Clipper`
       */
-    ["com.affine.import-clipper.dialog.createDocFromClipper"](): string;
+    ["com.lovenotes.import-clipper.dialog.createDocFromClipper"](): string;
     /**
       * `Failed to import content, please try again.`
       */
-    ["com.affine.import-clipper.dialog.errorImport"](): string;
+    ["com.lovenotes.import-clipper.dialog.errorImport"](): string;
     /**
       * `Failed to load content, please try again.`
       */
-    ["com.affine.import-clipper.dialog.errorLoad"](): string;
+    ["com.lovenotes.import-clipper.dialog.errorLoad"](): string;
     /**
       * `Support Markdown/Notion`
       */
-    ["com.affine.import_file"](): string;
+    ["com.lovenotes.import_file"](): string;
     /**
-      * `AFFiNE workspace data`
+      * `LoveNotes workspace data`
       */
-    ["com.affine.import.affine-workspace-data"](): string;
+    ["com.lovenotes.import.lovenotes-workspace-data"](): string;
     /**
       * `Docx`
       */
-    ["com.affine.import.docx"](): string;
+    ["com.lovenotes.import.docx"](): string;
     /**
       * `Import your .docx file.`
       */
-    ["com.affine.import.docx.tooltip"](): string;
+    ["com.lovenotes.import.docx.tooltip"](): string;
     /**
       * `HTML`
       */
-    ["com.affine.import.html-files"](): string;
+    ["com.lovenotes.import.html-files"](): string;
     /**
       * `This is an experimental feature that is not perfect and may cause your data to be missing after import.`
       */
-    ["com.affine.import.html-files.tooltip"](): string;
+    ["com.lovenotes.import.html-files.tooltip"](): string;
     /**
       * `Markdown files (.md)`
       */
-    ["com.affine.import.markdown-files"](): string;
+    ["com.lovenotes.import.markdown-files"](): string;
     /**
       * `Markdown with media files (.zip)`
       */
-    ["com.affine.import.markdown-with-media-files"](): string;
+    ["com.lovenotes.import.markdown-with-media-files"](): string;
     /**
       * `Please upload a markdown zip file with attachments, experimental function, there may be data loss.`
       */
-    ["com.affine.import.markdown-with-media-files.tooltip"](): string;
+    ["com.lovenotes.import.markdown-with-media-files.tooltip"](): string;
     /**
       * `If you'd like to request support for additional file types, feel free to let us know on`
       */
-    ["com.affine.import.modal.tip"](): string;
+    ["com.lovenotes.import.modal.tip"](): string;
     /**
       * `Notion`
       */
-    ["com.affine.import.notion"](): string;
+    ["com.lovenotes.import.notion"](): string;
     /**
       * `Import your Notion data. Supported import formats: HTML with subpages.`
       */
-    ["com.affine.import.notion.tooltip"](): string;
+    ["com.lovenotes.import.notion.tooltip"](): string;
     /**
       * `Snapshot`
       */
-    ["com.affine.import.snapshot"](): string;
+    ["com.lovenotes.import.snapshot"](): string;
     /**
-      * `Import your AFFiNE workspace and page snapshot file.`
+      * `Import your LoveNotes workspace and page snapshot file.`
       */
-    ["com.affine.import.snapshot.tooltip"](): string;
+    ["com.lovenotes.import.snapshot.tooltip"](): string;
     /**
-      * `.affine file`
+      * `.lovenotes file`
       */
-    ["com.affine.import.dotaffinefile"](): string;
+    ["com.lovenotes.import.dotlovenotesfile"](): string;
     /**
-      * `Import your AFFiNE db file (.affine)`
+      * `Import your LoveNotes db file (.lovenotes)`
       */
-    ["com.affine.import.dotaffinefile.tooltip"](): string;
+    ["com.lovenotes.import.dotlovenotesfile.tooltip"](): string;
     /**
       * `Import failed, please try again.`
       */
-    ["com.affine.import.status.failed.message"](): string;
+    ["com.lovenotes.import.status.failed.message"](): string;
     /**
       * `No file selected`
       */
-    ["com.affine.import.status.failed.message.no-file-selected"](): string;
+    ["com.lovenotes.import.status.failed.message.no-file-selected"](): string;
     /**
       * `Import failure`
       */
-    ["com.affine.import.status.failed.title"](): string;
+    ["com.lovenotes.import.status.failed.title"](): string;
     /**
       * `Importing your workspace data, please wait patiently.`
       */
-    ["com.affine.import.status.importing.message"](): string;
+    ["com.lovenotes.import.status.importing.message"](): string;
     /**
       * `Importing...`
       */
-    ["com.affine.import.status.importing.title"](): string;
+    ["com.lovenotes.import.status.importing.title"](): string;
     /**
-      * `Your document has been imported successfully, thank you for choosing AFFiNE. Any questions please feel free to feedback to us`
+      * `Your document has been imported successfully, thank you for choosing LoveNotes. Any questions please feel free to feedback to us`
       */
-    ["com.affine.import.status.success.message"](): string;
+    ["com.lovenotes.import.status.success.message"](): string;
     /**
       * `Import completed`
       */
-    ["com.affine.import.status.success.title"](): string;
+    ["com.lovenotes.import.status.success.title"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.inviteModal.button.cancel"](): string;
+    ["com.lovenotes.inviteModal.button.cancel"](): string;
     /**
       * `Maybe later`
       */
-    ["com.affine.issue-feedback.cancel"](): string;
+    ["com.lovenotes.issue-feedback.cancel"](): string;
     /**
       * `Create issue on GitHub`
       */
-    ["com.affine.issue-feedback.confirm"](): string;
+    ["com.lovenotes.issue-feedback.confirm"](): string;
     /**
       * `Got feedback? We're all ears! Create an issue on GitHub to let us know your thoughts and suggestions`
       */
-    ["com.affine.issue-feedback.description"](): string;
+    ["com.lovenotes.issue-feedback.description"](): string;
     /**
       * `Share your feedback on GitHub`
       */
-    ["com.affine.issue-feedback.title"](): string;
+    ["com.lovenotes.issue-feedback.title"](): string;
     /**
       * `Journals`
       */
-    ["com.affine.journal.app-sidebar-title"](): string;
+    ["com.lovenotes.journal.app-sidebar-title"](): string;
     /**
       * `{{count}} more articles`
       */
-    ["com.affine.journal.conflict-show-more"](options: {
+    ["com.lovenotes.journal.conflict-show-more"](options: {
         readonly count: string;
     }): string;
     /**
       * `Created`
       */
-    ["com.affine.journal.created-today"](): string;
+    ["com.lovenotes.journal.created-today"](): string;
     /**
       * `You haven't created anything yet`
       */
-    ["com.affine.journal.daily-count-created-empty-tips"](): string;
+    ["com.lovenotes.journal.daily-count-created-empty-tips"](): string;
     /**
       * `You haven't updated anything yet`
       */
-    ["com.affine.journal.daily-count-updated-empty-tips"](): string;
+    ["com.lovenotes.journal.daily-count-updated-empty-tips"](): string;
     /**
       * `Updated`
       */
-    ["com.affine.journal.updated-today"](): string;
+    ["com.lovenotes.journal.updated-today"](): string;
     /**
       * `No Journal`
       */
-    ["com.affine.journal.placeholder.title"](): string;
+    ["com.lovenotes.journal.placeholder.title"](): string;
     /**
       * `Create Daily Journal`
       */
-    ["com.affine.journal.placeholder.create"](): string;
+    ["com.lovenotes.journal.placeholder.create"](): string;
     /**
       * `Just now`
       */
-    ["com.affine.just-now"](): string;
+    ["com.lovenotes.just-now"](): string;
     /**
       * `Align center`
       */
-    ["com.affine.keyboardShortcuts.alignCenter"](): string;
+    ["com.lovenotes.keyboardShortcuts.alignCenter"](): string;
     /**
       * `Align left`
       */
-    ["com.affine.keyboardShortcuts.alignLeft"](): string;
+    ["com.lovenotes.keyboardShortcuts.alignLeft"](): string;
     /**
       * `Align right`
       */
-    ["com.affine.keyboardShortcuts.alignRight"](): string;
+    ["com.lovenotes.keyboardShortcuts.alignRight"](): string;
     /**
       * `Append to daily note`
       */
-    ["com.affine.keyboardShortcuts.appendDailyNote"](): string;
+    ["com.lovenotes.keyboardShortcuts.appendDailyNote"](): string;
     /**
       * `Body text`
       */
-    ["com.affine.keyboardShortcuts.bodyText"](): string;
+    ["com.lovenotes.keyboardShortcuts.bodyText"](): string;
     /**
       * `Bold`
       */
-    ["com.affine.keyboardShortcuts.bold"](): string;
+    ["com.lovenotes.keyboardShortcuts.bold"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.keyboardShortcuts.cancel"](): string;
+    ["com.lovenotes.keyboardShortcuts.cancel"](): string;
     /**
       * `Code block`
       */
-    ["com.affine.keyboardShortcuts.codeBlock"](): string;
+    ["com.lovenotes.keyboardShortcuts.codeBlock"](): string;
     /**
       * `Copy private link`
       */
-    ["com.affine.keyboardShortcuts.copy-private-link"](): string;
+    ["com.lovenotes.keyboardShortcuts.copy-private-link"](): string;
     /**
       * `Connector`
       */
-    ["com.affine.keyboardShortcuts.connector"](): string;
+    ["com.lovenotes.keyboardShortcuts.connector"](): string;
     /**
       * `Divider`
       */
-    ["com.affine.keyboardShortcuts.divider"](): string;
+    ["com.lovenotes.keyboardShortcuts.divider"](): string;
     /**
       * `Expand/collapse sidebar`
       */
-    ["com.affine.keyboardShortcuts.expandOrCollapseSidebar"](): string;
+    ["com.lovenotes.keyboardShortcuts.expandOrCollapseSidebar"](): string;
     /**
       * `Go back`
       */
-    ["com.affine.keyboardShortcuts.goBack"](): string;
+    ["com.lovenotes.keyboardShortcuts.goBack"](): string;
     /**
       * `Go forward`
       */
-    ["com.affine.keyboardShortcuts.goForward"](): string;
+    ["com.lovenotes.keyboardShortcuts.goForward"](): string;
     /**
       * `Group`
       */
-    ["com.affine.keyboardShortcuts.group"](): string;
+    ["com.lovenotes.keyboardShortcuts.group"](): string;
     /**
       * `Group as database`
       */
-    ["com.affine.keyboardShortcuts.groupDatabase"](): string;
+    ["com.lovenotes.keyboardShortcuts.groupDatabase"](): string;
     /**
       * `Hand`
       */
-    ["com.affine.keyboardShortcuts.hand"](): string;
+    ["com.lovenotes.keyboardShortcuts.hand"](): string;
     /**
       * `Heading {{number}}`
       */
-    ["com.affine.keyboardShortcuts.heading"](options: {
+    ["com.lovenotes.keyboardShortcuts.heading"](options: {
         readonly number: string;
     }): string;
     /**
       * `Image`
       */
-    ["com.affine.keyboardShortcuts.image"](): string;
+    ["com.lovenotes.keyboardShortcuts.image"](): string;
     /**
       * `Increase indent`
       */
-    ["com.affine.keyboardShortcuts.increaseIndent"](): string;
+    ["com.lovenotes.keyboardShortcuts.increaseIndent"](): string;
     /**
       * `Inline code`
       */
-    ["com.affine.keyboardShortcuts.inlineCode"](): string;
+    ["com.lovenotes.keyboardShortcuts.inlineCode"](): string;
     /**
       * `Italic`
       */
-    ["com.affine.keyboardShortcuts.italic"](): string;
+    ["com.lovenotes.keyboardShortcuts.italic"](): string;
     /**
       * `Hyperlink (with selected text)`
       */
-    ["com.affine.keyboardShortcuts.link"](): string;
+    ["com.lovenotes.keyboardShortcuts.link"](): string;
     /**
       * `Move down`
       */
-    ["com.affine.keyboardShortcuts.moveDown"](): string;
+    ["com.lovenotes.keyboardShortcuts.moveDown"](): string;
     /**
       * `Move up`
       */
-    ["com.affine.keyboardShortcuts.moveUp"](): string;
+    ["com.lovenotes.keyboardShortcuts.moveUp"](): string;
     /**
       * `New doc`
       */
-    ["com.affine.keyboardShortcuts.newPage"](): string;
+    ["com.lovenotes.keyboardShortcuts.newPage"](): string;
     /**
       * `Note`
       */
-    ["com.affine.keyboardShortcuts.note"](): string;
+    ["com.lovenotes.keyboardShortcuts.note"](): string;
     /**
       * `Pen`
       */
-    ["com.affine.keyboardShortcuts.pen"](): string;
+    ["com.lovenotes.keyboardShortcuts.pen"](): string;
     /**
       * `Quick search`
       */
-    ["com.affine.keyboardShortcuts.quickSearch"](): string;
+    ["com.lovenotes.keyboardShortcuts.quickSearch"](): string;
     /**
       * `Redo`
       */
-    ["com.affine.keyboardShortcuts.redo"](): string;
+    ["com.lovenotes.keyboardShortcuts.redo"](): string;
     /**
       * `Reduce indent`
       */
-    ["com.affine.keyboardShortcuts.reduceIndent"](): string;
+    ["com.lovenotes.keyboardShortcuts.reduceIndent"](): string;
     /**
       * `Select`
       */
-    ["com.affine.keyboardShortcuts.select"](): string;
+    ["com.lovenotes.keyboardShortcuts.select"](): string;
     /**
       * `Select all`
       */
-    ["com.affine.keyboardShortcuts.selectAll"](): string;
+    ["com.lovenotes.keyboardShortcuts.selectAll"](): string;
     /**
       * `Shape`
       */
-    ["com.affine.keyboardShortcuts.shape"](): string;
+    ["com.lovenotes.keyboardShortcuts.shape"](): string;
     /**
       * `Strikethrough`
       */
-    ["com.affine.keyboardShortcuts.strikethrough"](): string;
+    ["com.lovenotes.keyboardShortcuts.strikethrough"](): string;
     /**
       * `Check keyboard shortcuts quickly`
       */
-    ["com.affine.keyboardShortcuts.subtitle"](): string;
+    ["com.lovenotes.keyboardShortcuts.subtitle"](): string;
     /**
       * `Switch view`
       */
-    ["com.affine.keyboardShortcuts.switch"](): string;
+    ["com.lovenotes.keyboardShortcuts.switch"](): string;
     /**
       * `Text`
       */
-    ["com.affine.keyboardShortcuts.text"](): string;
+    ["com.lovenotes.keyboardShortcuts.text"](): string;
     /**
       * `Keyboard shortcuts`
       */
-    ["com.affine.keyboardShortcuts.title"](): string;
+    ["com.lovenotes.keyboardShortcuts.title"](): string;
     /**
       * `Ungroup`
       */
-    ["com.affine.keyboardShortcuts.unGroup"](): string;
+    ["com.lovenotes.keyboardShortcuts.unGroup"](): string;
     /**
       * `Underline`
       */
-    ["com.affine.keyboardShortcuts.underline"](): string;
+    ["com.lovenotes.keyboardShortcuts.underline"](): string;
     /**
       * `Undo`
       */
-    ["com.affine.keyboardShortcuts.undo"](): string;
+    ["com.lovenotes.keyboardShortcuts.undo"](): string;
     /**
       * `Zoom in`
       */
-    ["com.affine.keyboardShortcuts.zoomIn"](): string;
+    ["com.lovenotes.keyboardShortcuts.zoomIn"](): string;
     /**
       * `Zoom out`
       */
-    ["com.affine.keyboardShortcuts.zoomOut"](): string;
+    ["com.lovenotes.keyboardShortcuts.zoomOut"](): string;
     /**
       * `Zoom to 100%`
       */
-    ["com.affine.keyboardShortcuts.zoomTo100"](): string;
+    ["com.lovenotes.keyboardShortcuts.zoomTo100"](): string;
     /**
       * `Zoom to fit`
       */
-    ["com.affine.keyboardShortcuts.zoomToFit"](): string;
+    ["com.lovenotes.keyboardShortcuts.zoomToFit"](): string;
     /**
       * `Zoom to selection`
       */
-    ["com.affine.keyboardShortcuts.zoomToSelection"](): string;
+    ["com.lovenotes.keyboardShortcuts.zoomToSelection"](): string;
     /**
       * `Last 30 days`
       */
-    ["com.affine.last30Days"](): string;
+    ["com.lovenotes.last30Days"](): string;
     /**
       * `Last 7 days`
       */
-    ["com.affine.last7Days"](): string;
+    ["com.lovenotes.last7Days"](): string;
     /**
       * `Last month`
       */
-    ["com.affine.lastMonth"](): string;
+    ["com.lovenotes.lastMonth"](): string;
     /**
       * `Last week`
       */
-    ["com.affine.lastWeek"](): string;
+    ["com.lovenotes.lastWeek"](): string;
     /**
       * `Last year`
       */
-    ["com.affine.lastYear"](): string;
+    ["com.lovenotes.lastYear"](): string;
     /**
       * `Loading`
       */
-    ["com.affine.loading"](): string;
+    ["com.lovenotes.loading"](): string;
     /**
       * `Loading document content, please wait a moment.`
       */
-    ["com.affine.loading.description"](): string;
+    ["com.lovenotes.loading.description"](): string;
     /**
       * `Rename`
       */
-    ["com.affine.menu.rename"](): string;
+    ["com.lovenotes.menu.rename"](): string;
     /**
       * `No results found`
       */
-    ["com.affine.mobile.search.empty"](): string;
+    ["com.lovenotes.mobile.search.empty"](): string;
     /**
       * `App version`
       */
-    ["com.affine.mobile.setting.about.appVersion"](): string;
+    ["com.lovenotes.mobile.setting.about.appVersion"](): string;
     /**
       * `Editor version`
       */
-    ["com.affine.mobile.setting.about.editorVersion"](): string;
+    ["com.lovenotes.mobile.setting.about.editorVersion"](): string;
     /**
       * `About`
       */
-    ["com.affine.mobile.setting.about.title"](): string;
+    ["com.lovenotes.mobile.setting.about.title"](): string;
     /**
       * `Font style`
       */
-    ["com.affine.mobile.setting.appearance.font"](): string;
+    ["com.lovenotes.mobile.setting.appearance.font"](): string;
     /**
       * `Display language`
       */
-    ["com.affine.mobile.setting.appearance.language"](): string;
+    ["com.lovenotes.mobile.setting.appearance.language"](): string;
     /**
       * `Color mode`
       */
-    ["com.affine.mobile.setting.appearance.theme"](): string;
+    ["com.lovenotes.mobile.setting.appearance.theme"](): string;
     /**
       * `Appearance`
       */
-    ["com.affine.mobile.setting.appearance.title"](): string;
+    ["com.lovenotes.mobile.setting.appearance.title"](): string;
     /**
       * `Settings`
       */
-    ["com.affine.mobile.setting.header-title"](): string;
+    ["com.lovenotes.mobile.setting.header-title"](): string;
     /**
       * `Star us on GitHub`
       */
-    ["com.affine.mobile.setting.others.github"](): string;
+    ["com.lovenotes.mobile.setting.others.github"](): string;
     /**
       * `Discord Group`
       */
-    ["com.affine.mobile.setting.others.discord"](): string;
+    ["com.lovenotes.mobile.setting.others.discord"](): string;
     /**
       * `Privacy`
       */
-    ["com.affine.mobile.setting.others.privacy"](): string;
+    ["com.lovenotes.mobile.setting.others.privacy"](): string;
     /**
       * `Terms of use`
       */
-    ["com.affine.mobile.setting.others.terms"](): string;
+    ["com.lovenotes.mobile.setting.others.terms"](): string;
     /**
       * `Privacy & others`
       */
-    ["com.affine.mobile.setting.others.title"](): string;
+    ["com.lovenotes.mobile.setting.others.title"](): string;
     /**
       * `Official website`
       */
-    ["com.affine.mobile.setting.others.website"](): string;
+    ["com.lovenotes.mobile.setting.others.website"](): string;
     /**
       * `Delete my account`
       */
-    ["com.affine.mobile.setting.others.delete-account"](): string;
+    ["com.lovenotes.mobile.setting.others.delete-account"](): string;
     /**
       * `Want to keep data local?`
       */
-    ["com.affine.mobile.sign-in.skip.hint"](): string;
+    ["com.lovenotes.mobile.sign-in.skip.hint"](): string;
     /**
-      * `Start AFFiNE without an account`
+      * `Start LoveNotes without an account`
       */
-    ["com.affine.mobile.sign-in.skip.link"](): string;
+    ["com.lovenotes.mobile.sign-in.skip.link"](): string;
     /**
       * `Older than a month`
       */
-    ["com.affine.moreThan30Days"](): string;
+    ["com.lovenotes.moreThan30Days"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.moveToTrash.confirmModal.cancel"](): string;
+    ["com.lovenotes.moveToTrash.confirmModal.cancel"](): string;
     /**
       * `Delete`
       */
-    ["com.affine.moveToTrash.confirmModal.confirm"](): string;
+    ["com.lovenotes.moveToTrash.confirmModal.confirm"](): string;
     /**
       * `{{title}} will be moved to trash`
       */
-    ["com.affine.moveToTrash.confirmModal.description"](options: {
+    ["com.lovenotes.moveToTrash.confirmModal.description"](options: {
         readonly title: string;
     }): string;
     /**
       * `{{ number }} docs will be moved to Trash`
       */
-    ["com.affine.moveToTrash.confirmModal.description.multiple"](options: {
+    ["com.lovenotes.moveToTrash.confirmModal.description.multiple"](options: {
         readonly number: string;
     }): string;
     /**
       * `Delete doc?`
       */
-    ["com.affine.moveToTrash.confirmModal.title"](): string;
+    ["com.lovenotes.moveToTrash.confirmModal.title"](): string;
     /**
       * `Delete {{ number }} docs?`
       */
-    ["com.affine.moveToTrash.confirmModal.title.multiple"](options: {
+    ["com.lovenotes.moveToTrash.confirmModal.title.multiple"](options: {
         readonly number: string;
     }): string;
     /**
       * `Move to trash`
       */
-    ["com.affine.moveToTrash.title"](): string;
+    ["com.lovenotes.moveToTrash.title"](): string;
     /**
       * `New tab`
       */
-    ["com.affine.multi-tab.new-tab"](): string;
+    ["com.lovenotes.multi-tab.new-tab"](): string;
     /**
-      * `Enabling AFFiNE Cloud allows you to synchronise and backup data, as well as support multi-user collaboration and content publishing.`
+      * `Enabling LoveNotes Cloud allows you to synchronise and backup data, as well as support multi-user collaboration and content publishing.`
       */
-    ["com.affine.nameWorkspace.affine-cloud.description"](): string;
+    ["com.lovenotes.nameWorkspace.lovenotes-cloud.description"](): string;
     /**
-      * `Sync across devices with AFFiNE Cloud`
+      * `Sync across devices with LoveNotes Cloud`
       */
-    ["com.affine.nameWorkspace.affine-cloud.title"](): string;
+    ["com.lovenotes.nameWorkspace.lovenotes-cloud.title"](): string;
     /**
       * `If you want the workspace to be stored locally, you can download the desktop client.`
       */
-    ["com.affine.nameWorkspace.affine-cloud.web-tips"](): string;
+    ["com.lovenotes.nameWorkspace.lovenotes-cloud.web-tips"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.nameWorkspace.button.cancel"](): string;
+    ["com.lovenotes.nameWorkspace.button.cancel"](): string;
     /**
       * `Create`
       */
-    ["com.affine.nameWorkspace.button.create"](): string;
+    ["com.lovenotes.nameWorkspace.button.create"](): string;
     /**
       * `A workspace is your virtual space to capture, create and plan as just one person or together as a team.`
       */
-    ["com.affine.nameWorkspace.description"](): string;
+    ["com.lovenotes.nameWorkspace.description"](): string;
     /**
       * `Set a workspace name`
       */
-    ["com.affine.nameWorkspace.placeholder"](): string;
+    ["com.lovenotes.nameWorkspace.placeholder"](): string;
     /**
       * `Workspace name`
       */
-    ["com.affine.nameWorkspace.subtitle.workspace-name"](): string;
+    ["com.lovenotes.nameWorkspace.subtitle.workspace-name"](): string;
     /**
       * `Workspace type`
       */
-    ["com.affine.nameWorkspace.subtitle.workspace-type"](): string;
+    ["com.lovenotes.nameWorkspace.subtitle.workspace-type"](): string;
     /**
       * `Name your workspace`
       */
-    ["com.affine.nameWorkspace.title"](): string;
+    ["com.lovenotes.nameWorkspace.title"](): string;
     /**
       * `New page`
       */
-    ["com.affine.new.page-mode"](): string;
+    ["com.lovenotes.new.page-mode"](): string;
     /**
       * `New edgeless`
       */
-    ["com.affine.new_edgeless"](): string;
+    ["com.lovenotes.new_edgeless"](): string;
     /**
       * `Import`
       */
-    ["com.affine.new_import"](): string;
+    ["com.lovenotes.new_import"](): string;
     /**
       * `Next week`
       */
-    ["com.affine.nextWeek"](): string;
+    ["com.lovenotes.nextWeek"](): string;
     /**
       * `Back home`
       */
-    ["com.affine.notFoundPage.backButton"](): string;
+    ["com.lovenotes.notFoundPage.backButton"](): string;
     /**
       * `Page not found`
       */
-    ["com.affine.notFoundPage.title"](): string;
+    ["com.lovenotes.notFoundPage.title"](): string;
     /**
-      * `AFFiNE Community`
+      * `LoveNotes Community`
       */
-    ["com.affine.other-page.nav.affine-community"](): string;
+    ["com.lovenotes.other-page.nav.lovenotes-community"](): string;
     /**
       * `Blog`
       */
-    ["com.affine.other-page.nav.blog"](): string;
+    ["com.lovenotes.other-page.nav.blog"](): string;
     /**
       * `Contact us`
       */
-    ["com.affine.other-page.nav.contact-us"](): string;
+    ["com.lovenotes.other-page.nav.contact-us"](): string;
     /**
       * `Download app`
       */
-    ["com.affine.other-page.nav.download-app"](): string;
+    ["com.lovenotes.other-page.nav.download-app"](): string;
     /**
       * `Official website`
       */
-    ["com.affine.other-page.nav.official-website"](): string;
+    ["com.lovenotes.other-page.nav.official-website"](): string;
     /**
-      * `Open AFFiNE`
+      * `Open LoveNotes`
       */
-    ["com.affine.other-page.nav.open-affine"](): string;
+    ["com.lovenotes.other-page.nav.open-lovenotes"](): string;
     /**
       * `Add linked doc`
       */
-    ["com.affine.page-operation.add-linked-page"](): string;
+    ["com.lovenotes.page-operation.add-linked-page"](): string;
     /**
       * `{{ count }} more properties`
       */
-    ["com.affine.page-properties.more-property.more"](options: {
+    ["com.lovenotes.page-properties.more-property.more"](options: {
         readonly count: string;
     }): string;
     /**
       * `{{ count }} more property`
       */
-    ["com.affine.page-properties.more-property.one"](options: {
+    ["com.lovenotes.page-properties.more-property.one"](options: {
         readonly count: string;
     }): string;
     /**
       * `hide {{ count }} property`
       */
-    ["com.affine.page-properties.hide-property.one"](options: {
+    ["com.lovenotes.page-properties.hide-property.one"](options: {
         readonly count: string;
     }): string;
     /**
       * `hide {{ count }} properties`
       */
-    ["com.affine.page-properties.hide-property.more"](options: {
+    ["com.lovenotes.page-properties.hide-property.more"](options: {
         readonly count: string;
     }): string;
     /**
       * `Add property`
       */
-    ["com.affine.page-properties.add-property"](): string;
+    ["com.lovenotes.page-properties.add-property"](): string;
     /**
       * `Create property`
       */
-    ["com.affine.page-properties.add-property.menu.create"](): string;
+    ["com.lovenotes.page-properties.add-property.menu.create"](): string;
     /**
       * `Properties`
       */
-    ["com.affine.page-properties.add-property.menu.header"](): string;
+    ["com.lovenotes.page-properties.add-property.menu.header"](): string;
     /**
       * `Config properties`
       */
-    ["com.affine.page-properties.config-properties"](): string;
+    ["com.lovenotes.page-properties.config-properties"](): string;
     /**
       * `Backlinks`
       */
-    ["com.affine.page-properties.backlinks"](): string;
+    ["com.lovenotes.page-properties.backlinks"](): string;
     /**
       * `Type`
       */
-    ["com.affine.page-properties.create-property.menu.header"](): string;
+    ["com.lovenotes.page-properties.create-property.menu.header"](): string;
     /**
       * `Added`
       */
-    ["com.affine.page-properties.create-property.added"](): string;
+    ["com.lovenotes.page-properties.create-property.added"](): string;
     /**
       * `Icons`
       */
-    ["com.affine.page-properties.icons"](): string;
+    ["com.lovenotes.page-properties.icons"](): string;
     /**
       * `Local user`
       */
-    ["com.affine.page-properties.local-user"](): string;
+    ["com.lovenotes.page-properties.local-user"](): string;
     /**
       * `Outgoing links`
       */
-    ["com.affine.page-properties.outgoing-links"](): string;
+    ["com.lovenotes.page-properties.outgoing-links"](): string;
     /**
       * `Info`
       */
-    ["com.affine.page-properties.page-info"](): string;
+    ["com.lovenotes.page-properties.page-info"](): string;
     /**
       * `View Info`
       */
-    ["com.affine.page-properties.page-info.view"](): string;
+    ["com.lovenotes.page-properties.page-info.view"](): string;
     /**
       * `No Record`
       */
-    ["com.affine.page-properties.property-user-avatar-no-record"](): string;
+    ["com.lovenotes.page-properties.property-user-avatar-no-record"](): string;
     /**
       * `Local User`
       */
-    ["com.affine.page-properties.property-user-local"](): string;
+    ["com.lovenotes.page-properties.property-user-local"](): string;
     /**
       * `Empty`
       */
-    ["com.affine.page-properties.property-value-placeholder"](): string;
+    ["com.lovenotes.page-properties.property-value-placeholder"](): string;
     /**
       * `Always hide`
       */
-    ["com.affine.page-properties.property.always-hide"](): string;
+    ["com.lovenotes.page-properties.property.always-hide"](): string;
     /**
       * `Always show`
       */
-    ["com.affine.page-properties.property.always-show"](): string;
+    ["com.lovenotes.page-properties.property.always-show"](): string;
     /**
       * `Checkbox`
       */
-    ["com.affine.page-properties.property.checkbox"](): string;
+    ["com.lovenotes.page-properties.property.checkbox"](): string;
     /**
       * `Created by`
       */
-    ["com.affine.page-properties.property.createdBy"](): string;
+    ["com.lovenotes.page-properties.property.createdBy"](): string;
     /**
       * `Date`
       */
-    ["com.affine.page-properties.property.date"](): string;
+    ["com.lovenotes.page-properties.property.date"](): string;
     /**
       * `Hide in view`
       */
-    ["com.affine.page-properties.property.hide-in-view"](): string;
+    ["com.lovenotes.page-properties.property.hide-in-view"](): string;
     /**
       * `Hide in view when empty`
       */
-    ["com.affine.page-properties.property.hide-in-view-when-empty"](): string;
+    ["com.lovenotes.page-properties.property.hide-in-view-when-empty"](): string;
     /**
       * `Hide when empty`
       */
-    ["com.affine.page-properties.property.hide-when-empty"](): string;
+    ["com.lovenotes.page-properties.property.hide-when-empty"](): string;
     /**
       * `Number`
       */
-    ["com.affine.page-properties.property.number"](): string;
+    ["com.lovenotes.page-properties.property.number"](): string;
     /**
       * `Progress`
       */
-    ["com.affine.page-properties.property.progress"](): string;
+    ["com.lovenotes.page-properties.property.progress"](): string;
     /**
       * `Remove property`
       */
-    ["com.affine.page-properties.property.remove-property"](): string;
+    ["com.lovenotes.page-properties.property.remove-property"](): string;
     /**
       * `Required`
       */
-    ["com.affine.page-properties.property.required"](): string;
+    ["com.lovenotes.page-properties.property.required"](): string;
     /**
       * `Show in view`
       */
-    ["com.affine.page-properties.property.show-in-view"](): string;
+    ["com.lovenotes.page-properties.property.show-in-view"](): string;
     /**
       * `Tags`
       */
-    ["com.affine.page-properties.property.tags"](): string;
+    ["com.lovenotes.page-properties.property.tags"](): string;
     /**
       * `Doc mode`
       */
-    ["com.affine.page-properties.property.docPrimaryMode"](): string;
+    ["com.lovenotes.page-properties.property.docPrimaryMode"](): string;
     /**
       * `Text`
       */
-    ["com.affine.page-properties.property.text"](): string;
+    ["com.lovenotes.page-properties.property.text"](): string;
     /**
       * `Journal`
       */
-    ["com.affine.page-properties.property.journal"](): string;
+    ["com.lovenotes.page-properties.property.journal"](): string;
     /**
       * `Duplicated`
       */
-    ["com.affine.page-properties.property.journal-duplicated"](): string;
+    ["com.lovenotes.page-properties.property.journal-duplicated"](): string;
     /**
       * `Remove journal mark`
       */
-    ["com.affine.page-properties.property.journal-remove"](): string;
+    ["com.lovenotes.page-properties.property.journal-remove"](): string;
     /**
       * `Last edited by`
       */
-    ["com.affine.page-properties.property.updatedBy"](): string;
+    ["com.lovenotes.page-properties.property.updatedBy"](): string;
     /**
       * `Created`
       */
-    ["com.affine.page-properties.property.createdAt"](): string;
+    ["com.lovenotes.page-properties.property.createdAt"](): string;
     /**
       * `Updated`
       */
-    ["com.affine.page-properties.property.updatedAt"](): string;
+    ["com.lovenotes.page-properties.property.updatedAt"](): string;
     /**
       * `Edgeless theme`
       */
-    ["com.affine.page-properties.property.edgelessTheme"](): string;
+    ["com.lovenotes.page-properties.property.edgelessTheme"](): string;
     /**
       * `Page width`
       */
-    ["com.affine.page-properties.property.pageWidth"](): string;
+    ["com.lovenotes.page-properties.property.pageWidth"](): string;
     /**
       * `Template`
       */
-    ["com.affine.page-properties.property.template"](): string;
+    ["com.lovenotes.page-properties.property.template"](): string;
     /**
       * `Add relevant identifiers or categories to the doc. Useful for organizing content, improving searchability, and grouping related docs together.`
       */
-    ["com.affine.page-properties.property.tags.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.tags.tooltips"](): string;
     /**
       * `Indicates that this doc is a journal entry or daily note. Facilitates easy capture of ideas, quick logging of thoughts, and ongoing personal reflection.`
       */
-    ["com.affine.page-properties.property.journal.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.journal.tooltips"](): string;
     /**
       * `Use a checkbox to indicate whether a condition is true or false. Useful for confirming options, toggling features, or tracking task states.`
       */
-    ["com.affine.page-properties.property.checkbox.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.checkbox.tooltips"](): string;
     /**
       * `Use a date field to select or display a specific date. Useful for scheduling, setting deadlines, or recording important events.`
       */
-    ["com.affine.page-properties.property.date.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.date.tooltips"](): string;
     /**
       * `Upload images to display or manage them. Useful for showcasing visual content, adding illustrations, or organizing a gallery.`
       */
-    ["com.affine.page-properties.property.image.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.image.tooltips"](): string;
     /**
       * `Select one or more options. Useful for categorizing items, filtering data, or managing tags.`
       */
-    ["com.affine.page-properties.property.multiSelect.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.multiSelect.tooltips"](): string;
     /**
       * `Enter a numeric value. Useful for quantities, measurements, or ranking items.`
       */
-    ["com.affine.page-properties.property.number.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.number.tooltips"](): string;
     /**
       * `Set a progress value between 0 and 100. Useful for tracking completion status, visualizing progress, or managing goals.`
       */
-    ["com.affine.page-properties.property.progress.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.progress.tooltips"](): string;
     /**
       * `Choose one option. Useful for selecting a single preference, categorizing items, or making decisions.`
       */
-    ["com.affine.page-properties.property.select.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.select.tooltips"](): string;
     /**
-      * `Enter a link to websites or AFFiNE docs. Useful for connecting to external resources and referencing internal docs.`
+      * `Enter a link to websites or LoveNotes docs. Useful for connecting to external resources and referencing internal docs.`
       */
-    ["com.affine.page-properties.property.link.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.link.tooltips"](): string;
     /**
       * `Enter text. Useful for descriptions, comments, notes, or any other free-form text input.`
       */
-    ["com.affine.page-properties.property.text.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.text.tooltips"](): string;
     /**
       * `Displays the author of the current doc. Useful for tracking doc ownership, accountability, and collaboration.`
       */
-    ["com.affine.page-properties.property.createdBy.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.createdBy.tooltips"](): string;
     /**
       * `Displays the last editor of the current doc. Useful for tracking recent changes.`
       */
-    ["com.affine.page-properties.property.updatedBy.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.updatedBy.tooltips"](): string;
     /**
       * `Record the last modification timestamp. Useful for tracking changes, identifying recent updates, or monitoring content freshness.`
       */
-    ["com.affine.page-properties.property.updatedAt.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.updatedAt.tooltips"](): string;
     /**
       * `Track when a doc was first created. Useful for maintaining record history, sorting by creation date, or auditing content chronologically.`
       */
-    ["com.affine.page-properties.property.createdAt.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.createdAt.tooltips"](): string;
     /**
       * `Select the doc mode from Page Mode, Edgeless Mode, or Auto. Useful for choosing the best display for your content.`
       */
-    ["com.affine.page-properties.property.docPrimaryMode.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.docPrimaryMode.tooltips"](): string;
     /**
       * `Select the doc theme from Light, Dark, or System. Useful for precise control over content viewing style.`
       */
-    ["com.affine.page-properties.property.edgelessTheme.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.edgelessTheme.tooltips"](): string;
     /**
       * `Control the width of this page to fit content display needs.`
       */
-    ["com.affine.page-properties.property.pageWidth.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.pageWidth.tooltips"](): string;
     /**
       * `Mark this doc as a template, which can be used to create new docs.`
       */
-    ["com.affine.page-properties.property.template.tooltips"](): string;
+    ["com.lovenotes.page-properties.property.template.tooltips"](): string;
     /**
       * `Created by {{userName}}`
       */
-    ["com.affine.page-properties.property.createdBy.tip"](options: {
+    ["com.lovenotes.page-properties.property.createdBy.tip"](options: {
         readonly userName: string;
     }): string;
     /**
       * `Last edited by {{userName}}`
       */
-    ["com.affine.page-properties.property.updatedBy.tip"](options: {
+    ["com.lovenotes.page-properties.property.updatedBy.tip"](options: {
         readonly userName: string;
     }): string;
     /**
       * `Properties`
       */
-    ["com.affine.propertySidebar.property-list.section"](): string;
+    ["com.lovenotes.propertySidebar.property-list.section"](): string;
     /**
       * `Add more properties`
       */
-    ["com.affine.propertySidebar.add-more.section"](): string;
+    ["com.lovenotes.propertySidebar.add-more.section"](): string;
     /**
       * `customize properties`
       */
-    ["com.affine.page-properties.settings.title"](): string;
+    ["com.lovenotes.page-properties.settings.title"](): string;
     /**
       * `Open tag page`
       */
-    ["com.affine.page-properties.tags.open-tags-page"](): string;
+    ["com.lovenotes.page-properties.tags.open-tags-page"](): string;
     /**
       * `Select tag or create one`
       */
-    ["com.affine.page-properties.tags.selector-header-title"](): string;
+    ["com.lovenotes.page-properties.tags.selector-header-title"](): string;
     /**
       * `Display`
       */
-    ["com.affine.page.display"](): string;
+    ["com.lovenotes.page.display"](): string;
     /**
       * `Display properties`
       */
-    ["com.affine.page.display.display-properties"](): string;
+    ["com.lovenotes.page.display.display-properties"](): string;
     /**
       * `Body notes`
       */
-    ["com.affine.page.display.display-properties.body-notes"](): string;
+    ["com.lovenotes.page.display.display-properties.body-notes"](): string;
     /**
       * `Grouping`
       */
-    ["com.affine.page.display.grouping"](): string;
+    ["com.lovenotes.page.display.grouping"](): string;
     /**
       * `Favourites`
       */
-    ["com.affine.page.display.grouping.group-by-favourites"](): string;
+    ["com.lovenotes.page.display.grouping.group-by-favourites"](): string;
     /**
       * `Tag`
       */
-    ["com.affine.page.display.grouping.group-by-tag"](): string;
+    ["com.lovenotes.page.display.grouping.group-by-tag"](): string;
     /**
       * `Untagged`
       */
-    ["com.affine.page.display.grouping.group-by-tag.untagged"](): string;
+    ["com.lovenotes.page.display.grouping.group-by-tag.untagged"](): string;
     /**
       * `No grouping`
       */
-    ["com.affine.page.display.grouping.no-grouping"](): string;
+    ["com.lovenotes.page.display.grouping.no-grouping"](): string;
     /**
       * `List option`
       */
-    ["com.affine.page.display.list-option"](): string;
+    ["com.lovenotes.page.display.list-option"](): string;
     /**
       * `Clear selection`
       */
-    ["com.affine.page.group-header.clear"](): string;
+    ["com.lovenotes.page.group-header.clear"](): string;
     /**
       * `Favourited`
       */
-    ["com.affine.page.group-header.favourited"](): string;
+    ["com.lovenotes.page.group-header.favourited"](): string;
     /**
       * `Not favourited`
       */
-    ["com.affine.page.group-header.not-favourited"](): string;
+    ["com.lovenotes.page.group-header.not-favourited"](): string;
     /**
       * `Select all`
       */
-    ["com.affine.page.group-header.select-all"](): string;
+    ["com.lovenotes.page.group-header.select-all"](): string;
     /**
       * `Created by {{name}}`
       */
-    ["com.affine.page.toolbar.created_by"](options: {
+    ["com.lovenotes.page.toolbar.created_by"](options: {
         readonly name: string;
     }): string;
     /**
       * `Doc mode`
       */
-    ["com.affine.pageMode"](): string;
+    ["com.lovenotes.pageMode"](): string;
     /**
       * `all`
       */
-    ["com.affine.pageMode.all"](): string;
+    ["com.lovenotes.pageMode.all"](): string;
     /**
       * `Edgeless`
       */
-    ["com.affine.pageMode.edgeless"](): string;
+    ["com.lovenotes.pageMode.edgeless"](): string;
     /**
       * `Page`
       */
-    ["com.affine.pageMode.page"](): string;
+    ["com.lovenotes.pageMode.page"](): string;
     /**
-      * `Congratulations on your successful purchase of AFFiNE AI! You're now empowered to refine your content, generate images, and craft comprehensive mindmaps directly within AFFiNE AI, dramatically enhancing your productivity.`
+      * `Congratulations on your successful purchase of LoveNotes AI! You're now empowered to refine your content, generate images, and craft comprehensive mindmaps directly within LoveNotes AI, dramatically enhancing your productivity.`
       */
-    ["com.affine.payment.ai-upgrade-success-page.text"](): string;
+    ["com.lovenotes.payment.ai-upgrade-success-page.text"](): string;
     /**
       * `Purchase successful!`
       */
-    ["com.affine.payment.ai-upgrade-success-page.title"](): string;
+    ["com.lovenotes.payment.ai-upgrade-success-page.title"](): string;
     /**
       * `Cancel subscription`
       */
-    ["com.affine.payment.ai.action.cancel.button-label"](): string;
+    ["com.lovenotes.payment.ai.action.cancel.button-label"](): string;
     /**
-      * `Keep AFFiNE AI`
+      * `Keep LoveNotes AI`
       */
-    ["com.affine.payment.ai.action.cancel.confirm.cancel-text"](): string;
-    /**
-      * `Cancel subscription`
-      */
-    ["com.affine.payment.ai.action.cancel.confirm.confirm-text"](): string;
-    /**
-      * `If you end your subscription now, you can still use AFFiNE AI until the end of this billing period.`
-      */
-    ["com.affine.payment.ai.action.cancel.confirm.description"](): string;
+    ["com.lovenotes.payment.ai.action.cancel.confirm.cancel-text"](): string;
     /**
       * `Cancel subscription`
       */
-    ["com.affine.payment.ai.action.cancel.confirm.title"](): string;
+    ["com.lovenotes.payment.ai.action.cancel.confirm.confirm-text"](): string;
+    /**
+      * `If you end your subscription now, you can still use LoveNotes AI until the end of this billing period.`
+      */
+    ["com.lovenotes.payment.ai.action.cancel.confirm.description"](): string;
+    /**
+      * `Cancel subscription`
+      */
+    ["com.lovenotes.payment.ai.action.cancel.confirm.title"](): string;
     /**
       * `Login`
       */
-    ["com.affine.payment.ai.action.login.button-label"](): string;
+    ["com.lovenotes.payment.ai.action.login.button-label"](): string;
     /**
       * `Resume`
       */
-    ["com.affine.payment.ai.action.resume.button-label"](): string;
+    ["com.lovenotes.payment.ai.action.resume.button-label"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.payment.ai.action.resume.confirm.cancel-text"](): string;
+    ["com.lovenotes.payment.ai.action.resume.confirm.cancel-text"](): string;
     /**
       * `Confirm`
       */
-    ["com.affine.payment.ai.action.resume.confirm.confirm-text"](): string;
+    ["com.lovenotes.payment.ai.action.resume.confirm.confirm-text"](): string;
     /**
-      * `Are you sure you want to resume the subscription for AFFiNE AI? This means your payment method will be charged automatically at the end of each billing cycle, starting from the next billing cycle.`
+      * `Are you sure you want to resume the subscription for LoveNotes AI? This means your payment method will be charged automatically at the end of each billing cycle, starting from the next billing cycle.`
       */
-    ["com.affine.payment.ai.action.resume.confirm.description"](): string;
+    ["com.lovenotes.payment.ai.action.resume.confirm.description"](): string;
     /**
       * `You will be charged in the next billing cycle.`
       */
-    ["com.affine.payment.ai.action.resume.confirm.notify.msg"](): string;
+    ["com.lovenotes.payment.ai.action.resume.confirm.notify.msg"](): string;
     /**
       * `Subscription updated`
       */
-    ["com.affine.payment.ai.action.resume.confirm.notify.title"](): string;
+    ["com.lovenotes.payment.ai.action.resume.confirm.notify.title"](): string;
     /**
       * `Resume auto-renewal?`
       */
-    ["com.affine.payment.ai.action.resume.confirm.title"](): string;
+    ["com.lovenotes.payment.ai.action.resume.confirm.title"](): string;
     /**
       * `Write with you`
       */
-    ["com.affine.payment.ai.benefit.g1"](): string;
+    ["com.lovenotes.payment.ai.benefit.g1"](): string;
     /**
       * `Create quality content from sentences to articles on topics you need`
       */
-    ["com.affine.payment.ai.benefit.g1-1"](): string;
+    ["com.lovenotes.payment.ai.benefit.g1-1"](): string;
     /**
       * `Rewrite like the professionals`
       */
-    ["com.affine.payment.ai.benefit.g1-2"](): string;
+    ["com.lovenotes.payment.ai.benefit.g1-2"](): string;
     /**
       * `Change the tones / fix spelling & grammar`
       */
-    ["com.affine.payment.ai.benefit.g1-3"](): string;
+    ["com.lovenotes.payment.ai.benefit.g1-3"](): string;
     /**
       * `Draw with you`
       */
-    ["com.affine.payment.ai.benefit.g2"](): string;
+    ["com.lovenotes.payment.ai.benefit.g2"](): string;
     /**
       * `Visualize your mind, magically`
       */
-    ["com.affine.payment.ai.benefit.g2-1"](): string;
+    ["com.lovenotes.payment.ai.benefit.g2-1"](): string;
     /**
       * `Turn your outline into beautiful, engaging presentations`
       */
-    ["com.affine.payment.ai.benefit.g2-2"](): string;
+    ["com.lovenotes.payment.ai.benefit.g2-2"](): string;
     /**
       * `Summarize your content into structured mind-map`
       */
-    ["com.affine.payment.ai.benefit.g2-3"](): string;
+    ["com.lovenotes.payment.ai.benefit.g2-3"](): string;
     /**
       * `Plan with you`
       */
-    ["com.affine.payment.ai.benefit.g3"](): string;
+    ["com.lovenotes.payment.ai.benefit.g3"](): string;
     /**
       * `Memorize and tidy up your knowledge`
       */
-    ["com.affine.payment.ai.benefit.g3-1"](): string;
+    ["com.lovenotes.payment.ai.benefit.g3-1"](): string;
     /**
       * `Auto-sorting and auto-tagging`
       */
-    ["com.affine.payment.ai.benefit.g3-2"](): string;
+    ["com.lovenotes.payment.ai.benefit.g3-2"](): string;
     /**
       * `Open source & Privacy ensured`
       */
-    ["com.affine.payment.ai.benefit.g3-3"](): string;
+    ["com.lovenotes.payment.ai.benefit.g3-3"](): string;
     /**
-      * `You have purchased AFFiNE AI. The expiration date is {{end}}.`
+      * `You have purchased LoveNotes AI. The expiration date is {{end}}.`
       */
-    ["com.affine.payment.ai.billing-tip.end-at"](options: {
+    ["com.lovenotes.payment.ai.billing-tip.end-at"](options: {
         readonly end: string;
     }): string;
     /**
-      * `You have purchased AFFiNE AI. The next payment date is {{due}}.`
+      * `You have purchased LoveNotes AI. The next payment date is {{due}}.`
       */
-    ["com.affine.payment.ai.billing-tip.next-bill-at"](options: {
+    ["com.lovenotes.payment.ai.billing-tip.next-bill-at"](options: {
         readonly due: string;
     }): string;
     /**
       * `Your recent payment failed, the next payment date is {{due}}.`
       */
-    ["com.affine.payment.billing-tip.past-due"](options: {
+    ["com.lovenotes.payment.billing-tip.past-due"](options: {
         readonly due: string;
     }): string;
     /**
       * `You are currently on the Free plan.`
       */
-    ["com.affine.payment.ai.pricing-plan.caption-free"](): string;
+    ["com.lovenotes.payment.ai.pricing-plan.caption-free"](): string;
     /**
-      * `You have purchased AFFiNE AI`
+      * `You have purchased LoveNotes AI`
       */
-    ["com.affine.payment.ai.pricing-plan.caption-purchased"](): string;
+    ["com.lovenotes.payment.ai.pricing-plan.caption-purchased"](): string;
     /**
-      * `Learn about AFFiNE AI`
+      * `Learn about LoveNotes AI`
       */
-    ["com.affine.payment.ai.pricing-plan.learn"](): string;
+    ["com.lovenotes.payment.ai.pricing-plan.learn"](): string;
     /**
-      * `AFFiNE AI`
+      * `LoveNotes AI`
       */
-    ["com.affine.payment.ai.pricing-plan.title"](): string;
+    ["com.lovenotes.payment.ai.pricing-plan.title"](): string;
     /**
       * `Turn all your ideas into reality`
       */
-    ["com.affine.payment.ai.pricing-plan.title-caption-1"](): string;
+    ["com.lovenotes.payment.ai.pricing-plan.title-caption-1"](): string;
     /**
       * `A true multimodal AI copilot.`
       */
-    ["com.affine.payment.ai.pricing-plan.title-caption-2"](): string;
+    ["com.lovenotes.payment.ai.pricing-plan.title-caption-2"](): string;
     /**
       * `Billed annually`
       */
-    ["com.affine.payment.ai.subscribe.billed-annually"](): string;
+    ["com.lovenotes.payment.ai.subscribe.billed-annually"](): string;
     /**
-      * `You have purchased AFFiNE AI.`
+      * `You have purchased LoveNotes AI.`
       */
-    ["com.affine.payment.ai.usage-description-purchased"](): string;
+    ["com.lovenotes.payment.ai.usage-description-purchased"](): string;
     /**
-      * `AFFiNE AI usage`
+      * `LoveNotes AI usage`
       */
-    ["com.affine.payment.ai.usage-title"](): string;
+    ["com.lovenotes.payment.ai.usage-title"](): string;
     /**
       * `Change plan`
       */
-    ["com.affine.payment.ai.usage.change-button-label"](): string;
+    ["com.lovenotes.payment.ai.usage.change-button-label"](): string;
     /**
       * `Purchase`
       */
-    ["com.affine.payment.ai.usage.purchase-button-label"](): string;
+    ["com.lovenotes.payment.ai.usage.purchase-button-label"](): string;
     /**
       * `Times used`
       */
-    ["com.affine.payment.ai.usage.used-caption"](): string;
+    ["com.lovenotes.payment.ai.usage.used-caption"](): string;
     /**
       * `{{used}}/{{limit}} times`
       */
-    ["com.affine.payment.ai.usage.used-detail"](options: Readonly<{
+    ["com.lovenotes.payment.ai.usage.used-detail"](options: Readonly<{
         used: string;
         limit: string;
     }>): string;
     /**
       * `Active`
       */
-    ["com.affine.payment.subscription-status.active"](): string;
+    ["com.lovenotes.payment.subscription-status.active"](): string;
     /**
       * `Past-due bill`
       */
-    ["com.affine.payment.subscription-status.past-due"](): string;
+    ["com.lovenotes.payment.subscription-status.past-due"](): string;
     /**
       * `Trialing`
       */
-    ["com.affine.payment.subscription-status.trialing"](): string;
+    ["com.lovenotes.payment.subscription-status.trialing"](): string;
     /**
       * `Unlimited local workspaces`
       */
-    ["com.affine.payment.benefit-1"](): string;
+    ["com.lovenotes.payment.benefit-1"](): string;
     /**
       * `Unlimited login devices`
       */
-    ["com.affine.payment.benefit-2"](): string;
+    ["com.lovenotes.payment.benefit-2"](): string;
     /**
       * `Unlimited blocks`
       */
-    ["com.affine.payment.benefit-3"](): string;
+    ["com.lovenotes.payment.benefit-3"](): string;
     /**
       * `{{capacity}} of cloud storage`
       */
-    ["com.affine.payment.benefit-4"](options: {
+    ["com.lovenotes.payment.benefit-4"](options: {
         readonly capacity: string;
     }): string;
     /**
       * `{{capacity}} of maximum file size`
       */
-    ["com.affine.payment.benefit-5"](options: {
+    ["com.lovenotes.payment.benefit-5"](options: {
         readonly capacity: string;
     }): string;
     /**
       * `Number of members per workspace ≤ {{capacity}}`
       */
-    ["com.affine.payment.benefit-6"](options: {
+    ["com.lovenotes.payment.benefit-6"](options: {
         readonly capacity: string;
     }): string;
     /**
       * `{{capacity}}-days version history`
       */
-    ["com.affine.payment.benefit-7"](options: {
+    ["com.lovenotes.payment.benefit-7"](options: {
         readonly capacity: string;
     }): string;
     /**
-      * `AFFiNE AI`
+      * `LoveNotes AI`
       */
-    ["com.affine.payment.billing-setting.ai-plan"](): string;
+    ["com.lovenotes.payment.billing-setting.ai-plan"](): string;
     /**
       * `Purchase`
       */
-    ["com.affine.payment.billing-setting.ai.purchase"](): string;
+    ["com.lovenotes.payment.billing-setting.ai.purchase"](): string;
     /**
       * `Start free trial`
       */
-    ["com.affine.payment.billing-setting.ai.start-free-trial"](): string;
+    ["com.lovenotes.payment.billing-setting.ai.start-free-trial"](): string;
     /**
       * `One-time payment`
       */
-    ["com.affine.payment.billing-setting.believer.price-caption"](): string;
+    ["com.lovenotes.payment.billing-setting.believer.price-caption"](): string;
     /**
-      * `AFFiNE Cloud`
+      * `LoveNotes Cloud`
       */
-    ["com.affine.payment.billing-setting.believer.title"](): string;
+    ["com.lovenotes.payment.billing-setting.believer.title"](): string;
     /**
       * `Cancel subscription`
       */
-    ["com.affine.payment.billing-setting.cancel-subscription"](): string;
+    ["com.lovenotes.payment.billing-setting.cancel-subscription"](): string;
     /**
       * `Once you canceled subscription you will no longer enjoy the plan benefits.`
       */
-    ["com.affine.payment.billing-setting.cancel-subscription.description"](): string;
+    ["com.lovenotes.payment.billing-setting.cancel-subscription.description"](): string;
     /**
       * `Change plan`
       */
-    ["com.affine.payment.billing-setting.change-plan"](): string;
+    ["com.lovenotes.payment.billing-setting.change-plan"](): string;
     /**
-      * `AFFiNE Cloud`
+      * `LoveNotes Cloud`
       */
-    ["com.affine.payment.billing-setting.current-plan"](): string;
+    ["com.lovenotes.payment.billing-setting.current-plan"](): string;
     /**
       * `Expiration date`
       */
-    ["com.affine.payment.billing-setting.expiration-date"](): string;
+    ["com.lovenotes.payment.billing-setting.expiration-date"](): string;
     /**
       * `Your subscription is valid until {{expirationDate}}`
       */
-    ["com.affine.payment.billing-setting.expiration-date.description"](options: {
+    ["com.lovenotes.payment.billing-setting.expiration-date.description"](options: {
         readonly expirationDate: string;
     }): string;
     /**
       * `Billing history`
       */
-    ["com.affine.payment.billing-setting.history"](): string;
+    ["com.lovenotes.payment.billing-setting.history"](): string;
     /**
       * `Information`
       */
-    ["com.affine.payment.billing-setting.information"](): string;
+    ["com.lovenotes.payment.billing-setting.information"](): string;
     /**
       * `month`
       */
-    ["com.affine.payment.billing-setting.month"](): string;
+    ["com.lovenotes.payment.billing-setting.month"](): string;
     /**
       * `There are no invoices to display.`
       */
-    ["com.affine.payment.billing-setting.no-invoice"](): string;
+    ["com.lovenotes.payment.billing-setting.no-invoice"](): string;
     /**
       * `Paid`
       */
-    ["com.affine.payment.billing-setting.paid"](): string;
+    ["com.lovenotes.payment.billing-setting.paid"](): string;
     /**
       * `Manage payment details`
       */
-    ["com.affine.payment.billing-setting.payment-method"](): string;
+    ["com.lovenotes.payment.billing-setting.payment-method"](): string;
     /**
       * `View future and past invoices, update billing information, and change payment methods. Provided by Stripe.`
       */
-    ["com.affine.payment.billing-setting.payment-method.description"](): string;
+    ["com.lovenotes.payment.billing-setting.payment-method.description"](): string;
     /**
       * `Go`
       */
-    ["com.affine.payment.billing-setting.payment-method.go"](): string;
+    ["com.lovenotes.payment.billing-setting.payment-method.go"](): string;
     /**
       * `Renew date`
       */
-    ["com.affine.payment.billing-setting.renew-date"](): string;
+    ["com.lovenotes.payment.billing-setting.renew-date"](): string;
     /**
       * `Next billing date: {{renewDate}}`
       */
-    ["com.affine.payment.billing-setting.renew-date.description"](options: {
+    ["com.lovenotes.payment.billing-setting.renew-date.description"](options: {
         readonly renewDate: string;
     }): string;
     /**
       * `Due date`
       */
-    ["com.affine.payment.billing-setting.due-date"](): string;
+    ["com.lovenotes.payment.billing-setting.due-date"](): string;
     /**
       * `Your subscription will end on {{dueDate}}`
       */
-    ["com.affine.payment.billing-setting.due-date.description"](options: {
+    ["com.lovenotes.payment.billing-setting.due-date.description"](options: {
         readonly dueDate: string;
     }): string;
     /**
       * `Resume`
       */
-    ["com.affine.payment.billing-setting.resume-subscription"](): string;
+    ["com.lovenotes.payment.billing-setting.resume-subscription"](): string;
     /**
       * `Manage your billing information and invoices`
       */
-    ["com.affine.payment.billing-setting.subtitle"](): string;
+    ["com.lovenotes.payment.billing-setting.subtitle"](): string;
     /**
       * `Billing`
       */
-    ["com.affine.payment.billing-setting.title"](): string;
+    ["com.lovenotes.payment.billing-setting.title"](): string;
     /**
       * `Update`
       */
-    ["com.affine.payment.billing-setting.update"](): string;
+    ["com.lovenotes.payment.billing-setting.update"](): string;
     /**
       * `Upgrade`
       */
-    ["com.affine.payment.billing-setting.upgrade"](): string;
+    ["com.lovenotes.payment.billing-setting.upgrade"](): string;
     /**
       * `View invoice`
       */
-    ["com.affine.payment.billing-setting.view-invoice"](): string;
+    ["com.lovenotes.payment.billing-setting.view-invoice"](): string;
     /**
       * `year`
       */
-    ["com.affine.payment.billing-setting.year"](): string;
+    ["com.lovenotes.payment.billing-setting.year"](): string;
     /**
-      * `Please tell us more about your use case, to make AFFiNE better.`
+      * `Please tell us more about your use case, to make LoveNotes better.`
       */
-    ["com.affine.payment.billing-type-form.description"](): string;
+    ["com.lovenotes.payment.billing-type-form.description"](): string;
     /**
       * `Go`
       */
-    ["com.affine.payment.billing-type-form.go"](): string;
+    ["com.lovenotes.payment.billing-type-form.go"](): string;
     /**
       * `Tell us your use case`
       */
-    ["com.affine.payment.billing-type-form.title"](): string;
+    ["com.lovenotes.payment.billing-type-form.title"](): string;
     /**
       * `You have reached the limit`
       */
-    ["com.affine.payment.blob-limit.title"](): string;
+    ["com.lovenotes.payment.blob-limit.title"](): string;
     /**
       * `Book a demo`
       */
-    ["com.affine.payment.book-a-demo"](): string;
+    ["com.lovenotes.payment.book-a-demo"](): string;
     /**
       * `Buy Pro`
       */
-    ["com.affine.payment.buy-pro"](): string;
+    ["com.lovenotes.payment.buy-pro"](): string;
     /**
       * `Change to {{to}} Billing`
       */
-    ["com.affine.payment.change-to"](options: {
+    ["com.lovenotes.payment.change-to"](options: {
         readonly to: string;
     }): string;
     /**
       * `Include in FOSS`
       */
-    ["com.affine.payment.cloud.free.benefit.g1"](): string;
+    ["com.lovenotes.payment.cloud.free.benefit.g1"](): string;
     /**
       * `Unlimited local workspaces`
       */
-    ["com.affine.payment.cloud.free.benefit.g1-1"](): string;
+    ["com.lovenotes.payment.cloud.free.benefit.g1-1"](): string;
     /**
       * `Unlimited use and customization`
       */
-    ["com.affine.payment.cloud.free.benefit.g1-2"](): string;
+    ["com.lovenotes.payment.cloud.free.benefit.g1-2"](): string;
     /**
       * `Unlimited doc and edgeless editing`
       */
-    ["com.affine.payment.cloud.free.benefit.g1-3"](): string;
+    ["com.lovenotes.payment.cloud.free.benefit.g1-3"](): string;
     /**
       * `Include in Basic`
       */
-    ["com.affine.payment.cloud.free.benefit.g2"](): string;
+    ["com.lovenotes.payment.cloud.free.benefit.g2"](): string;
     /**
       * `10 GB of cloud storage.`
       */
-    ["com.affine.payment.cloud.free.benefit.g2-1"](): string;
+    ["com.lovenotes.payment.cloud.free.benefit.g2-1"](): string;
     /**
       * `10 MB of maximum file size.`
       */
-    ["com.affine.payment.cloud.free.benefit.g2-2"](): string;
+    ["com.lovenotes.payment.cloud.free.benefit.g2-2"](): string;
     /**
       * `Up to 3 members per workspace.`
       */
-    ["com.affine.payment.cloud.free.benefit.g2-3"](): string;
+    ["com.lovenotes.payment.cloud.free.benefit.g2-3"](): string;
     /**
       * `7-days cloud time machine file version history.`
       */
-    ["com.affine.payment.cloud.free.benefit.g2-4"](): string;
+    ["com.lovenotes.payment.cloud.free.benefit.g2-4"](): string;
     /**
       * `Up to 3 login devices.`
       */
-    ["com.affine.payment.cloud.free.benefit.g2-5"](): string;
+    ["com.lovenotes.payment.cloud.free.benefit.g2-5"](): string;
     /**
       * `Local Editor under MIT license.`
       */
-    ["com.affine.payment.cloud.free.description"](): string;
+    ["com.lovenotes.payment.cloud.free.description"](): string;
     /**
       * `Local FOSS + Cloud Basic`
       */
-    ["com.affine.payment.cloud.free.name"](): string;
+    ["com.lovenotes.payment.cloud.free.name"](): string;
     /**
       * `Free forever`
       */
-    ["com.affine.payment.cloud.free.title"](): string;
+    ["com.lovenotes.payment.cloud.free.title"](): string;
     /**
       * `Included in Pro plan`
       */
-    ["com.affine.payment.cloud.onetime.included"](): string;
+    ["com.lovenotes.payment.cloud.onetime.included"](): string;
     /**
       * `Included in Believer plan`
       */
-    ["com.affine.payment.cloud.lifetime.included"](): string;
+    ["com.lovenotes.payment.cloud.lifetime.included"](): string;
     /**
       * `We host, no technical setup required.`
       */
-    ["com.affine.payment.cloud.pricing-plan.select.caption"](): string;
+    ["com.lovenotes.payment.cloud.pricing-plan.select.caption"](): string;
     /**
-      * `Hosted by AFFiNE.Pro`
+      * `Hosted by LoveNotes.Pro`
       */
-    ["com.affine.payment.cloud.pricing-plan.select.title"](): string;
+    ["com.lovenotes.payment.cloud.pricing-plan.select.title"](): string;
     /**
       * `Billed annually`
       */
-    ["com.affine.payment.cloud.pricing-plan.toggle-billed-yearly"](): string;
+    ["com.lovenotes.payment.cloud.pricing-plan.toggle-billed-yearly"](): string;
     /**
       * `Saving {{discount}}%`
       */
-    ["com.affine.payment.cloud.pricing-plan.toggle-discount"](options: {
+    ["com.lovenotes.payment.cloud.pricing-plan.toggle-discount"](options: {
         readonly discount: string;
     }): string;
     /**
       * `Annually`
       */
-    ["com.affine.payment.cloud.pricing-plan.toggle-yearly"](): string;
+    ["com.lovenotes.payment.cloud.pricing-plan.toggle-yearly"](): string;
     /**
       * `Include in Pro`
       */
-    ["com.affine.payment.cloud.pro.benefit.g1"](): string;
+    ["com.lovenotes.payment.cloud.pro.benefit.g1"](): string;
     /**
-      * `Everything in AFFiNE FOSS & Basic.`
+      * `Everything in LoveNotes FOSS & Basic.`
       */
-    ["com.affine.payment.cloud.pro.benefit.g1-1"](): string;
+    ["com.lovenotes.payment.cloud.pro.benefit.g1-1"](): string;
     /**
       * `100 GB of cloud storage.`
       */
-    ["com.affine.payment.cloud.pro.benefit.g1-2"](): string;
+    ["com.lovenotes.payment.cloud.pro.benefit.g1-2"](): string;
     /**
       * `100 MB of maximum file size.`
       */
-    ["com.affine.payment.cloud.pro.benefit.g1-3"](): string;
+    ["com.lovenotes.payment.cloud.pro.benefit.g1-3"](): string;
     /**
       * `Up to 10 members per workspace.`
       */
-    ["com.affine.payment.cloud.pro.benefit.g1-4"](): string;
+    ["com.lovenotes.payment.cloud.pro.benefit.g1-4"](): string;
     /**
       * `30-days cloud time machine file version history.`
       */
-    ["com.affine.payment.cloud.pro.benefit.g1-5"](): string;
+    ["com.lovenotes.payment.cloud.pro.benefit.g1-5"](): string;
     /**
       * `Add comments on Doc and Edgeless.`
       */
-    ["com.affine.payment.cloud.pro.benefit.g1-6"](): string;
+    ["com.lovenotes.payment.cloud.pro.benefit.g1-6"](): string;
     /**
       * `Community support.`
       */
-    ["com.affine.payment.cloud.pro.benefit.g1-7"](): string;
+    ["com.lovenotes.payment.cloud.pro.benefit.g1-7"](): string;
     /**
       * `Real-time syncing & collaboration for more people.`
       */
-    ["com.affine.payment.cloud.pro.benefit.g1-8"](): string;
+    ["com.lovenotes.payment.cloud.pro.benefit.g1-8"](): string;
     /**
       * `Granular edit access to docs.`
       */
-    ["com.affine.payment.cloud.pro.benefit.g1-9"](): string;
+    ["com.lovenotes.payment.cloud.pro.benefit.g1-9"](): string;
     /**
       * `For family and small teams.`
       */
-    ["com.affine.payment.cloud.pro.description"](): string;
+    ["com.lovenotes.payment.cloud.pro.description"](): string;
     /**
       * `Pro`
       */
-    ["com.affine.payment.cloud.pro.name"](): string;
+    ["com.lovenotes.payment.cloud.pro.name"](): string;
     /**
       * `annually`
       */
-    ["com.affine.payment.cloud.pro.title.billed-yearly"](): string;
+    ["com.lovenotes.payment.cloud.pro.title.billed-yearly"](): string;
     /**
       * `{{price}} per month`
       */
-    ["com.affine.payment.cloud.pro.title.price-monthly"](options: {
+    ["com.lovenotes.payment.cloud.pro.title.price-monthly"](options: {
         readonly price: string;
     }): string;
     /**
       * `Include in Team Workspace`
       */
-    ["com.affine.payment.cloud.team-workspace.benefit.g1"](): string;
+    ["com.lovenotes.payment.cloud.team-workspace.benefit.g1"](): string;
     /**
-      * `Everything in AFFiNE Pro.`
+      * `Everything in LoveNotes Pro.`
       */
-    ["com.affine.payment.cloud.team-workspace.benefit.g1-1"](): string;
+    ["com.lovenotes.payment.cloud.team-workspace.benefit.g1-1"](): string;
     /**
       * `100 GB initial storage + 20 GB per seat.`
       */
-    ["com.affine.payment.cloud.team-workspace.benefit.g1-2"](): string;
+    ["com.lovenotes.payment.cloud.team-workspace.benefit.g1-2"](): string;
     /**
       * `500 MB of maximum file size.`
       */
-    ["com.affine.payment.cloud.team-workspace.benefit.g1-3"](): string;
+    ["com.lovenotes.payment.cloud.team-workspace.benefit.g1-3"](): string;
     /**
       * `Unlimited team members (10+ seats).`
       */
-    ["com.affine.payment.cloud.team-workspace.benefit.g1-4"](): string;
+    ["com.lovenotes.payment.cloud.team-workspace.benefit.g1-4"](): string;
     /**
       * `Multiple admin roles.`
       */
-    ["com.affine.payment.cloud.team-workspace.benefit.g1-5"](): string;
+    ["com.lovenotes.payment.cloud.team-workspace.benefit.g1-5"](): string;
     /**
       * `Priority customer support.`
       */
-    ["com.affine.payment.cloud.team-workspace.benefit.g1-6"](): string;
+    ["com.lovenotes.payment.cloud.team-workspace.benefit.g1-6"](): string;
     /**
       * `Best for scalable teams.`
       */
-    ["com.affine.payment.cloud.team-workspace.description"](): string;
+    ["com.lovenotes.payment.cloud.team-workspace.description"](): string;
     /**
       * `Team`
       */
-    ["com.affine.payment.cloud.team-workspace.name"](): string;
+    ["com.lovenotes.payment.cloud.team-workspace.name"](): string;
     /**
       * `annually`
       */
-    ["com.affine.payment.cloud.team-workspace.title.billed-yearly"](): string;
+    ["com.lovenotes.payment.cloud.team-workspace.title.billed-yearly"](): string;
     /**
       * `{{price}} per seat/month`
       */
-    ["com.affine.payment.cloud.team-workspace.title.price-monthly"](options: {
+    ["com.lovenotes.payment.cloud.team-workspace.title.price-monthly"](options: {
         readonly price: string;
     }): string;
     /**
       * `Contact sales`
       */
-    ["com.affine.payment.contact-sales"](): string;
+    ["com.lovenotes.payment.contact-sales"](): string;
     /**
       * `Current plan`
       */
-    ["com.affine.payment.current-plan"](): string;
+    ["com.lovenotes.payment.current-plan"](): string;
     /**
       * `Start 14-day free trial`
       */
-    ["com.affine.payment.start-free-trial"](): string;
+    ["com.lovenotes.payment.start-free-trial"](): string;
     /**
       * `{{amount}}% off`
       */
-    ["com.affine.payment.discount-amount"](options: {
+    ["com.lovenotes.payment.discount-amount"](options: {
         readonly amount: string;
     }): string;
     /**
       * `Downgrade`
       */
-    ["com.affine.payment.downgrade"](): string;
+    ["com.lovenotes.payment.downgrade"](): string;
     /**
-      * `We'd like to hear more about where we fall short, so that we can make AFFiNE better.`
+      * `We'd like to hear more about where we fall short, so that we can make LoveNotes better.`
       */
-    ["com.affine.payment.downgraded-notify.content"](): string;
+    ["com.lovenotes.payment.downgraded-notify.content"](): string;
     /**
       * `Later`
       */
-    ["com.affine.payment.downgraded-notify.later"](): string;
+    ["com.lovenotes.payment.downgraded-notify.later"](): string;
     /**
       * `Sure, Open in browser`
       */
-    ["com.affine.payment.downgraded-notify.ok-client"](): string;
+    ["com.lovenotes.payment.downgraded-notify.ok-client"](): string;
     /**
       * `Sure, Open in new tab`
       */
-    ["com.affine.payment.downgraded-notify.ok-web"](): string;
+    ["com.lovenotes.payment.downgraded-notify.ok-web"](): string;
     /**
       * `Sorry to see you go`
       */
-    ["com.affine.payment.downgraded-notify.title"](): string;
+    ["com.lovenotes.payment.downgraded-notify.title"](): string;
     /**
       * `You have successfully downgraded. After the current billing period ends, your account will automatically switch to the Free plan.`
       */
-    ["com.affine.payment.downgraded-tooltip"](): string;
+    ["com.lovenotes.payment.downgraded-tooltip"](): string;
     /**
       * `Best team workspace for collaboration and knowledge distilling.`
       */
-    ["com.affine.payment.dynamic-benefit-1"](): string;
+    ["com.lovenotes.payment.dynamic-benefit-1"](): string;
     /**
       * `Focusing on what really matters with team project management and automation.`
       */
-    ["com.affine.payment.dynamic-benefit-2"](): string;
+    ["com.lovenotes.payment.dynamic-benefit-2"](): string;
     /**
       * `Pay for seats, fits all team size.`
       */
-    ["com.affine.payment.dynamic-benefit-3"](): string;
+    ["com.lovenotes.payment.dynamic-benefit-3"](): string;
     /**
       * `Solutions & best practices for dedicated needs.`
       */
-    ["com.affine.payment.dynamic-benefit-4"](): string;
+    ["com.lovenotes.payment.dynamic-benefit-4"](): string;
     /**
       * `Embedable & interrogations with IT support.`
       */
-    ["com.affine.payment.dynamic-benefit-5"](): string;
+    ["com.lovenotes.payment.dynamic-benefit-5"](): string;
     /**
-      * `Everything in AFFiNE Pro`
+      * `Everything in LoveNotes Pro`
       */
-    ["com.affine.payment.lifetime.benefit-1"](): string;
+    ["com.lovenotes.payment.lifetime.benefit-1"](): string;
     /**
       * `Life-time personal usage`
       */
-    ["com.affine.payment.lifetime.benefit-2"](): string;
+    ["com.lovenotes.payment.lifetime.benefit-2"](): string;
     /**
       * `{{capacity}} Cloud Storage`
       */
-    ["com.affine.payment.lifetime.benefit-3"](options: {
+    ["com.lovenotes.payment.lifetime.benefit-3"](options: {
         readonly capacity: string;
     }): string;
     /**
-      * `Dedicated Discord support with AFFiNE makers`
+      * `Dedicated Discord support with LoveNotes makers`
       */
-    ["com.affine.payment.lifetime.benefit-4"](): string;
+    ["com.lovenotes.payment.lifetime.benefit-4"](): string;
     /**
       * `Become a Life-time supporter?`
       */
-    ["com.affine.payment.lifetime.caption-1"](): string;
+    ["com.lovenotes.payment.lifetime.caption-1"](): string;
     /**
       * `Purchase`
       */
-    ["com.affine.payment.lifetime.purchase"](): string;
+    ["com.lovenotes.payment.lifetime.purchase"](): string;
     /**
       * `Purchased`
       */
-    ["com.affine.payment.lifetime.purchased"](): string;
+    ["com.lovenotes.payment.lifetime.purchased"](): string;
     /**
       * `Believer Plan`
       */
-    ["com.affine.payment.lifetime.title"](): string;
+    ["com.lovenotes.payment.lifetime.title"](): string;
     /**
       * `Upgrade`
       */
-    ["com.affine.payment.member-limit.free.confirm"](): string;
+    ["com.lovenotes.payment.member-limit.free.confirm"](): string;
     /**
       * `Workspaces created by {{planName}} users are limited to {{quota}} members. To add more collaborators, you can:`
       */
-    ["com.affine.payment.member-limit.description"](options: Readonly<{
+    ["com.lovenotes.payment.member-limit.description"](options: Readonly<{
         planName: string;
         quota: string;
     }>): string;
     /**
-      * `Upgrade to AFFiNE Pro for expanded member capacity`
+      * `Upgrade to LoveNotes Pro for expanded member capacity`
       */
-    ["com.affine.payment.member-limit.description.tips-for-free-plan"](): string;
+    ["com.lovenotes.payment.member-limit.description.tips-for-free-plan"](): string;
     /**
       * `Convert to a Team Workspace for unlimited collaboration`
       */
-    ["com.affine.payment.member-limit.description.tips-1"](): string;
+    ["com.lovenotes.payment.member-limit.description.tips-1"](): string;
     /**
       * `Or create a new workspace`
       */
-    ["com.affine.payment.member-limit.description.tips-2"](): string;
+    ["com.lovenotes.payment.member-limit.description.tips-2"](): string;
     /**
       * `Got it`
       */
-    ["com.affine.payment.member-limit.pro.confirm"](): string;
+    ["com.lovenotes.payment.member-limit.pro.confirm"](): string;
     /**
       * `You have reached the limit`
       */
-    ["com.affine.payment.member-limit.title"](): string;
+    ["com.lovenotes.payment.member-limit.title"](): string;
     /**
       * `Manage members here. {{planName}} users can invite up to {{memberLimit}}`
       */
-    ["com.affine.payment.member.description"](options: Readonly<{
+    ["com.lovenotes.payment.member.description"](options: Readonly<{
         planName: string;
         memberLimit: string;
     }>): string;
     /**
       * `Choose your plan`
       */
-    ["com.affine.payment.member.description.choose-plan"](): string;
+    ["com.lovenotes.payment.member.description.choose-plan"](): string;
     /**
       * `go upgrade`
       */
-    ["com.affine.payment.member.description.go-upgrade"](): string;
+    ["com.lovenotes.payment.member.description.go-upgrade"](): string;
     /**
       * `Looking to collaborate with more people?`
       */
-    ["com.affine.payment.member.description2"](): string;
+    ["com.lovenotes.payment.member.description2"](): string;
     /**
       * `Work together with unlimited team members.`
       */
-    ["com.affine.payment.member.team.description"](): string;
+    ["com.lovenotes.payment.member.team.description"](): string;
     /**
       * `Invite team members`
       */
-    ["com.affine.payment.member.team.invite.title"](): string;
+    ["com.lovenotes.payment.member.team.invite.title"](): string;
     /**
       * `Invite new members to join your workspace via email or share an invite link`
       */
-    ["com.affine.payment.member.team.invite.description"](): string;
+    ["com.lovenotes.payment.member.team.invite.description"](): string;
     /**
       * `Email Invite`
       */
-    ["com.affine.payment.member.team.invite.email-invite"](): string;
+    ["com.lovenotes.payment.member.team.invite.email-invite"](): string;
     /**
       * `Invite Link`
       */
-    ["com.affine.payment.member.team.invite.invite-link"](): string;
+    ["com.lovenotes.payment.member.team.invite.invite-link"](): string;
     /**
       * `Email addresses`
       */
-    ["com.affine.payment.member.team.invite.email-addresses"](): string;
+    ["com.lovenotes.payment.member.team.invite.email-addresses"](): string;
     /**
       * `Enter email addresses (separated by commas)`
       */
-    ["com.affine.payment.member.team.invite.email-placeholder"](): string;
+    ["com.lovenotes.payment.member.team.invite.email-placeholder"](): string;
     /**
       * `Import CSV`
       */
-    ["com.affine.payment.member.team.invite.import-csv"](): string;
+    ["com.lovenotes.payment.member.team.invite.import-csv"](): string;
     /**
       * `Send Invites`
       */
-    ["com.affine.payment.member.team.invite.send-invites"](): string;
+    ["com.lovenotes.payment.member.team.invite.send-invites"](): string;
     /**
       * `Link expiration`
       */
-    ["com.affine.payment.member.team.invite.link-expiration"](): string;
+    ["com.lovenotes.payment.member.team.invite.link-expiration"](): string;
     /**
       * `{{number}} days`
       */
-    ["com.affine.payment.member.team.invite.expiration-date"](options: {
+    ["com.lovenotes.payment.member.team.invite.expiration-date"](options: {
         readonly number: string;
     }): string;
     /**
       * `To expire at: {{expireTime}}`
       */
-    ["com.affine.payment.member.team.invite.expire-at"](options: {
+    ["com.lovenotes.payment.member.team.invite.expire-at"](options: {
         readonly expireTime: string;
     }): string;
     /**
       * `Invitation link`
       */
-    ["com.affine.payment.member.team.invite.invitation-link"](): string;
+    ["com.lovenotes.payment.member.team.invite.invitation-link"](): string;
     /**
       * `Generate a link to invite members to your workspace`
       */
-    ["com.affine.payment.member.team.invite.invitation-link.description"](): string;
+    ["com.lovenotes.payment.member.team.invite.invitation-link.description"](): string;
     /**
       * `Generate`
       */
-    ["com.affine.payment.member.team.invite.generate"](): string;
+    ["com.lovenotes.payment.member.team.invite.generate"](): string;
     /**
       * `Copy`
       */
-    ["com.affine.payment.member.team.invite.copy"](): string;
+    ["com.lovenotes.payment.member.team.invite.copy"](): string;
     /**
       * `Done`
       */
-    ["com.affine.payment.member.team.invite.done"](): string;
+    ["com.lovenotes.payment.member.team.invite.done"](): string;
     /**
       * `Invitation sent,{{successCount}} successful, {{failedCount}} failed`
       */
-    ["com.affine.payment.member.team.invite.notify.title"](options: Readonly<{
+    ["com.lovenotes.payment.member.team.invite.notify.title"](options: Readonly<{
         successCount: string;
         failedCount: string;
     }>): string;
     /**
       * `These email addresses have already been invited:`
       */
-    ["com.affine.payment.member.team.invite.notify.fail-message"](): string;
+    ["com.lovenotes.payment.member.team.invite.notify.fail-message"](): string;
     /**
       * `Revoke invitation`
       */
-    ["com.affine.payment.member.team.revoke"](): string;
+    ["com.lovenotes.payment.member.team.revoke"](): string;
     /**
       * `Approve`
       */
-    ["com.affine.payment.member.team.approve"](): string;
+    ["com.lovenotes.payment.member.team.approve"](): string;
     /**
       * `Decline`
       */
-    ["com.affine.payment.member.team.decline"](): string;
+    ["com.lovenotes.payment.member.team.decline"](): string;
     /**
       * `Remove member`
       */
-    ["com.affine.payment.member.team.remove"](): string;
+    ["com.lovenotes.payment.member.team.remove"](): string;
     /**
       * `Retry payment`
       */
-    ["com.affine.payment.member.team.retry-payment"](): string;
+    ["com.lovenotes.payment.member.team.retry-payment"](): string;
     /**
       * `Change role to admin`
       */
-    ["com.affine.payment.member.team.change.admin"](): string;
+    ["com.lovenotes.payment.member.team.change.admin"](): string;
     /**
       * `Change role to collaborator`
       */
-    ["com.affine.payment.member.team.change.collaborator"](): string;
+    ["com.lovenotes.payment.member.team.change.collaborator"](): string;
     /**
       * `Assign as owner`
       */
-    ["com.affine.payment.member.team.assign"](): string;
+    ["com.lovenotes.payment.member.team.assign"](): string;
     /**
       * `Insufficient Team Seats`
       */
-    ["com.affine.payment.member.team.retry-payment.title"](): string;
+    ["com.lovenotes.payment.member.team.retry-payment.title"](): string;
     /**
       * `The payment for adding new team members has failed. To add more seats, please update your payment method and process unpaid invoices.`
       */
-    ["com.affine.payment.member.team.retry-payment.owner.description"](): string;
+    ["com.lovenotes.payment.member.team.retry-payment.owner.description"](): string;
     /**
       * `The payment for adding new team members has failed. Please contact your workspace owner to update the payment method and process unpaid invoices.`
       */
-    ["com.affine.payment.member.team.retry-payment.admin.description"](): string;
+    ["com.lovenotes.payment.member.team.retry-payment.admin.description"](): string;
     /**
       * `Update Payment`
       */
-    ["com.affine.payment.member.team.retry-payment.update-payment"](): string;
+    ["com.lovenotes.payment.member.team.retry-payment.update-payment"](): string;
     /**
       * `Subscription has been disabled for your team workspace. To add more seats, you'll need to resume subscription first.`
       */
-    ["com.affine.payment.member.team.disabled-subscription.owner.description"](): string;
+    ["com.lovenotes.payment.member.team.disabled-subscription.owner.description"](): string;
     /**
       * `Your team workspace has subscription disabled, which prevents adding more seats. Please contact your workspace owner to enable subscription.`
       */
-    ["com.affine.payment.member.team.disabled-subscription.admin.description"](): string;
+    ["com.lovenotes.payment.member.team.disabled-subscription.admin.description"](): string;
     /**
       * `Resume Subscription`
       */
-    ["com.affine.payment.member.team.disabled-subscription.resume-subscription"](): string;
+    ["com.lovenotes.payment.member.team.disabled-subscription.resume-subscription"](): string;
     /**
       * `Invitation Revoked`
       */
-    ["com.affine.payment.member.team.revoke.notify.title"](): string;
+    ["com.lovenotes.payment.member.team.revoke.notify.title"](): string;
     /**
       * `You have canceled the invitation for {{name}}`
       */
-    ["com.affine.payment.member.team.revoke.notify.message"](options: {
+    ["com.lovenotes.payment.member.team.revoke.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Request approved`
       */
-    ["com.affine.payment.member.team.approve.notify.title"](): string;
+    ["com.lovenotes.payment.member.team.approve.notify.title"](): string;
     /**
       * `You have approved the {{name}}’s request to join this workspace`
       */
-    ["com.affine.payment.member.team.approve.notify.message"](options: {
+    ["com.lovenotes.payment.member.team.approve.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Request declined`
       */
-    ["com.affine.payment.member.team.decline.notify.title"](): string;
+    ["com.lovenotes.payment.member.team.decline.notify.title"](): string;
     /**
       * `You have declined the {{name}}’s request to join this workspace`
       */
-    ["com.affine.payment.member.team.decline.notify.message"](options: {
+    ["com.lovenotes.payment.member.team.decline.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Member removed`
       */
-    ["com.affine.payment.member.team.remove.notify.title"](): string;
+    ["com.lovenotes.payment.member.team.remove.notify.title"](): string;
     /**
       * `You have removed {{name}} from this workspace`
       */
-    ["com.affine.payment.member.team.remove.notify.message"](options: {
+    ["com.lovenotes.payment.member.team.remove.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Role Updated`
       */
-    ["com.affine.payment.member.team.change.notify.title"](): string;
+    ["com.lovenotes.payment.member.team.change.notify.title"](): string;
     /**
       * `You have successfully promoted {{name}} to Admin.`
       */
-    ["com.affine.payment.member.team.change.admin.notify.message"](options: {
+    ["com.lovenotes.payment.member.team.change.admin.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `You have successfully changed {{name}} s role to collaborator.`
       */
-    ["com.affine.payment.member.team.change.collaborator.notify.message"](options: {
+    ["com.lovenotes.payment.member.team.change.collaborator.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Owner assigned`
       */
-    ["com.affine.payment.member.team.assign.notify.title"](): string;
+    ["com.lovenotes.payment.member.team.assign.notify.title"](): string;
     /**
       * `You have successfully assigned {{name}} as the owner of this workspace.`
       */
-    ["com.affine.payment.member.team.assign.notify.message"](options: {
+    ["com.lovenotes.payment.member.team.assign.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Confirm new workspace owner`
       */
-    ["com.affine.payment.member.team.assign.confirm.title"](): string;
+    ["com.lovenotes.payment.member.team.assign.confirm.title"](): string;
     /**
       * `You are about to transfer workspace ownership to {{name}}. Please review the following changes carefully:`
       */
-    ["com.affine.payment.member.team.assign.confirm.description"](options: {
+    ["com.lovenotes.payment.member.team.assign.confirm.description"](options: {
         readonly name: string;
     }): string;
     /**
       * `This action cannot be undone`
       */
-    ["com.affine.payment.member.team.assign.confirm.description-1"](): string;
+    ["com.lovenotes.payment.member.team.assign.confirm.description-1"](): string;
     /**
       * `Your role will be changed to Admin`
       */
-    ["com.affine.payment.member.team.assign.confirm.description-2"](): string;
+    ["com.lovenotes.payment.member.team.assign.confirm.description-2"](): string;
     /**
       * `You will lose ownership rights to the entire workspace`
       */
-    ["com.affine.payment.member.team.assign.confirm.description-3"](): string;
+    ["com.lovenotes.payment.member.team.assign.confirm.description-3"](): string;
     /**
       * `To confirm this transfer, please type the workspace name`
       */
-    ["com.affine.payment.member.team.assign.confirm.description-4"](): string;
+    ["com.lovenotes.payment.member.team.assign.confirm.description-4"](): string;
     /**
       * `Type workspace name to confirm`
       */
-    ["com.affine.payment.member.team.assign.confirm.placeholder"](): string;
+    ["com.lovenotes.payment.member.team.assign.confirm.placeholder"](): string;
     /**
       * `Transfer Ownership`
       */
-    ["com.affine.payment.member.team.assign.confirm.button"](): string;
+    ["com.lovenotes.payment.member.team.assign.confirm.button"](): string;
     /**
       * `Remove member from workspace?`
       */
-    ["com.affine.payment.member.team.remove.confirm.title"](): string;
+    ["com.lovenotes.payment.member.team.remove.confirm.title"](): string;
     /**
       * `This action will revoke their access to all workspace resources immediately.`
       */
-    ["com.affine.payment.member.team.remove.confirm.description"](): string;
+    ["com.lovenotes.payment.member.team.remove.confirm.description"](): string;
     /**
       * `Remove Member`
       */
-    ["com.affine.payment.member.team.remove.confirm.confirm-button"](): string;
+    ["com.lovenotes.payment.member.team.remove.confirm.confirm-button"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.payment.member.team.remove.confirm.cancel"](): string;
+    ["com.lovenotes.payment.member.team.remove.confirm.cancel"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.payment.modal.change.cancel"](): string;
+    ["com.lovenotes.payment.modal.change.cancel"](): string;
     /**
       * `Change`
       */
-    ["com.affine.payment.modal.change.confirm"](): string;
+    ["com.lovenotes.payment.modal.change.confirm"](): string;
     /**
       * `Change your subscription`
       */
-    ["com.affine.payment.modal.change.title"](): string;
+    ["com.lovenotes.payment.modal.change.title"](): string;
     /**
       * `Cancel subscription`
       */
-    ["com.affine.payment.modal.downgrade.cancel"](): string;
+    ["com.lovenotes.payment.modal.downgrade.cancel"](): string;
     /**
-      * `You can still use AFFiNE Cloud Pro until the end of this billing period :)`
+      * `You can still use LoveNotes Cloud Pro until the end of this billing period :)`
       */
-    ["com.affine.payment.modal.downgrade.caption"](): string;
+    ["com.lovenotes.payment.modal.downgrade.caption"](): string;
     /**
-      * `Keep AFFiNE Cloud Pro`
+      * `Keep LoveNotes Cloud Pro`
       */
-    ["com.affine.payment.modal.downgrade.confirm"](): string;
+    ["com.lovenotes.payment.modal.downgrade.confirm"](): string;
     /**
       * `Keep Team plan`
       */
-    ["com.affine.payment.modal.downgrade.team-confirm"](): string;
+    ["com.lovenotes.payment.modal.downgrade.team-confirm"](): string;
     /**
       * `We're sorry to see you go, but we're always working to improve, and your feedback is welcome. We hope to see you return in the future.`
       */
-    ["com.affine.payment.modal.downgrade.content"](): string;
+    ["com.lovenotes.payment.modal.downgrade.content"](): string;
     /**
       * `Are you sure?`
       */
-    ["com.affine.payment.modal.downgrade.title"](): string;
+    ["com.lovenotes.payment.modal.downgrade.title"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.payment.modal.resume.cancel"](): string;
+    ["com.lovenotes.payment.modal.resume.cancel"](): string;
     /**
       * `Confirm`
       */
-    ["com.affine.payment.modal.resume.confirm"](): string;
+    ["com.lovenotes.payment.modal.resume.confirm"](): string;
     /**
       * `Are you sure you want to resume the subscription for your pro account? This means your payment method will be charged automatically at the end of each billing cycle, starting from the next billing cycle.`
       */
-    ["com.affine.payment.modal.resume.content"](): string;
+    ["com.lovenotes.payment.modal.resume.content"](): string;
     /**
       * `Resume auto-renewal?`
       */
-    ["com.affine.payment.modal.resume.title"](): string;
+    ["com.lovenotes.payment.modal.resume.title"](): string;
     /**
       * `Refresh`
       */
-    ["com.affine.payment.plans-error-retry"](): string;
+    ["com.lovenotes.payment.plans-error-retry"](): string;
     /**
       * `Unable to load pricing plans, please check your network. `
       */
-    ["com.affine.payment.plans-error-tip"](): string;
+    ["com.lovenotes.payment.plans-error-tip"](): string;
     /**
       * `monthly`
       */
-    ["com.affine.payment.recurring-monthly"](): string;
+    ["com.lovenotes.payment.recurring-monthly"](): string;
     /**
       * `annually`
       */
-    ["com.affine.payment.recurring-yearly"](): string;
+    ["com.lovenotes.payment.recurring-yearly"](): string;
     /**
       * `Resume`
       */
-    ["com.affine.payment.resume"](): string;
+    ["com.lovenotes.payment.resume"](): string;
     /**
       * `Subscription Resumed`
       */
-    ["com.affine.payment.resume.success.title"](): string;
+    ["com.lovenotes.payment.resume.success.title"](): string;
     /**
       * `Your team workspace subscription has been enabled successfully. Changes will take effect immediately.`
       */
-    ["com.affine.payment.resume.success.team.message"](): string;
+    ["com.lovenotes.payment.resume.success.team.message"](): string;
     /**
       * `Resume auto-renewal`
       */
-    ["com.affine.payment.resume-renewal"](): string;
+    ["com.lovenotes.payment.resume-renewal"](): string;
     /**
       * `See all plans`
       */
-    ["com.affine.payment.see-all-plans"](): string;
+    ["com.lovenotes.payment.see-all-plans"](): string;
     /**
       * `Sign up free`
       */
-    ["com.affine.payment.sign-up-free"](): string;
+    ["com.lovenotes.payment.sign-up-free"](): string;
     /**
       * `Cloud storage is insufficient. Please contact the owner of that workspace.`
       */
-    ["com.affine.payment.storage-limit.description.member"](): string;
+    ["com.lovenotes.payment.storage-limit.description.member"](): string;
     /**
       * `Cloud storage is insufficient. You can upgrade your account to unlock more cloud storage.`
       */
-    ["com.affine.payment.storage-limit.description.owner"](): string;
+    ["com.lovenotes.payment.storage-limit.description.owner"](): string;
     /**
       * `Unable to sync due to insufficient storage space. You can remove excess content, upgrade your account, or increase your workspace storage to resolve this issue.`
       */
-    ["com.affine.payment.storage-limit.new-description.owner"](): string;
+    ["com.lovenotes.payment.storage-limit.new-description.owner"](): string;
     /**
       * `Sync failed due to storage space limit`
       */
-    ["com.affine.payment.storage-limit.new-title"](): string;
+    ["com.lovenotes.payment.storage-limit.new-title"](): string;
     /**
       * `View`
       */
-    ["com.affine.payment.storage-limit.view"](): string;
+    ["com.lovenotes.payment.storage-limit.view"](): string;
     /**
       * `You are currently on the {{plan}} plan. After the current billing period ends, your account will automatically switch to the Free plan.`
       */
-    ["com.affine.payment.subtitle-canceled"](options: {
+    ["com.lovenotes.payment.subtitle-canceled"](options: {
         readonly plan: string;
     }): string;
     /**
-      * `This is the pricing plans of AFFiNE Cloud. You can sign up or sign in to your account first.`
+      * `This is the pricing plans of LoveNotes Cloud. You can sign up or sign in to your account first.`
       */
-    ["com.affine.payment.subtitle-not-signed-in"](): string;
+    ["com.lovenotes.payment.subtitle-not-signed-in"](): string;
     /**
       * `See all plans`
       */
-    ["com.affine.payment.tag-tooltips"](): string;
+    ["com.lovenotes.payment.tag-tooltips"](): string;
     /**
       * `Tell us your use case`
       */
-    ["com.affine.payment.tell-us-use-case"](): string;
+    ["com.lovenotes.payment.tell-us-use-case"](): string;
     /**
       * `Pricing plans`
       */
-    ["com.affine.payment.title"](): string;
+    ["com.lovenotes.payment.title"](): string;
     /**
       * `You have changed your plan to {{plan}} billing.`
       */
-    ["com.affine.payment.updated-notify-msg"](options: {
+    ["com.lovenotes.payment.updated-notify-msg"](options: {
         readonly plan: string;
     }): string;
     /**
       * `Subscription updated`
       */
-    ["com.affine.payment.updated-notify-title"](): string;
+    ["com.lovenotes.payment.updated-notify-title"](): string;
     /**
       * `Upgrade`
       */
-    ["com.affine.payment.upgrade"](): string;
+    ["com.lovenotes.payment.upgrade"](): string;
     /**
       * `Redeem code`
       */
-    ["com.affine.payment.redeem-code"](): string;
+    ["com.lovenotes.payment.redeem-code"](): string;
     /**
-      * `We'd like to hear more about your use case, so that we can make AFFiNE better.`
+      * `We'd like to hear more about your use case, so that we can make LoveNotes better.`
       */
-    ["com.affine.payment.upgrade-success-notify.content"](): string;
+    ["com.lovenotes.payment.upgrade-success-notify.content"](): string;
     /**
       * `Later`
       */
-    ["com.affine.payment.upgrade-success-notify.later"](): string;
+    ["com.lovenotes.payment.upgrade-success-notify.later"](): string;
     /**
       * `Sure, open in browser`
       */
-    ["com.affine.payment.upgrade-success-notify.ok-client"](): string;
+    ["com.lovenotes.payment.upgrade-success-notify.ok-client"](): string;
     /**
       * `Sure, open in new tab`
       */
-    ["com.affine.payment.upgrade-success-notify.ok-web"](): string;
+    ["com.lovenotes.payment.upgrade-success-notify.ok-web"](): string;
     /**
       * `Thanks for subscribing!`
       */
-    ["com.affine.payment.upgrade-success-notify.title"](): string;
+    ["com.lovenotes.payment.upgrade-success-notify.title"](): string;
     /**
-      * `Congratulations! Your AFFiNE account has been successfully upgraded to a Pro account.`
+      * `Congratulations! Your LoveNotes account has been successfully upgraded to a Pro account.`
       */
-    ["com.affine.payment.upgrade-success-page.text"](): string;
+    ["com.lovenotes.payment.upgrade-success-page.text"](): string;
     /**
       * `Upgrade successful!`
       */
-    ["com.affine.payment.upgrade-success-page.title"](): string;
+    ["com.lovenotes.payment.upgrade-success-page.title"](): string;
     /**
       * `Congratulations! Your workspace has been successfully upgraded to a Team Workspace. Now you can invite unlimited members to collaborate in this workspace.`
       */
-    ["com.affine.payment.upgrade-success-page.team.text-1"](): string;
+    ["com.lovenotes.payment.upgrade-success-page.team.text-1"](): string;
     /**
       * `Thank you for your purchase!`
       */
-    ["com.affine.payment.license-success.title"](): string;
+    ["com.lovenotes.payment.license-success.title"](): string;
     /**
-      * `Thank you for purchasing the AFFiNE self-hosted license.`
+      * `Thank you for purchasing the LoveNotes self-hosted license.`
       */
-    ["com.affine.payment.license-success.text-1"](): string;
+    ["com.lovenotes.payment.license-success.text-1"](): string;
     /**
       * `You can use this key to upgrade in Settings > Workspace > License > Use purchased key`
       */
-    ["com.affine.payment.license-success.hint"](): string;
+    ["com.lovenotes.payment.license-success.hint"](): string;
     /**
-      * `Open AFFiNE`
+      * `Open LoveNotes`
       */
-    ["com.affine.payment.license-success.open-affine"](): string;
+    ["com.lovenotes.payment.license-success.open-lovenotes"](): string;
     /**
       * `Copied key to clipboard`
       */
-    ["com.affine.payment.license-success.copy"](): string;
+    ["com.lovenotes.payment.license-success.copy"](): string;
     /**
       * `Close`
       */
-    ["com.affine.peek-view-controls.close"](): string;
+    ["com.lovenotes.peek-view-controls.close"](): string;
     /**
       * `Open this doc`
       */
-    ["com.affine.peek-view-controls.open-doc"](): string;
+    ["com.lovenotes.peek-view-controls.open-doc"](): string;
     /**
       * `Open in edgeless`
       */
-    ["com.affine.peek-view-controls.open-doc-in-edgeless"](): string;
+    ["com.lovenotes.peek-view-controls.open-doc-in-edgeless"](): string;
     /**
       * `Open in new tab`
       */
-    ["com.affine.peek-view-controls.open-doc-in-new-tab"](): string;
+    ["com.lovenotes.peek-view-controls.open-doc-in-new-tab"](): string;
     /**
       * `Open in split view`
       */
-    ["com.affine.peek-view-controls.open-doc-in-split-view"](): string;
+    ["com.lovenotes.peek-view-controls.open-doc-in-split-view"](): string;
     /**
       * `Open doc info`
       */
-    ["com.affine.peek-view-controls.open-info"](): string;
+    ["com.lovenotes.peek-view-controls.open-info"](): string;
     /**
       * `Open this attachment`
       */
-    ["com.affine.peek-view-controls.open-attachment"](): string;
+    ["com.lovenotes.peek-view-controls.open-attachment"](): string;
     /**
       * `Open in new tab`
       */
-    ["com.affine.peek-view-controls.open-attachment-in-new-tab"](): string;
+    ["com.lovenotes.peek-view-controls.open-attachment-in-new-tab"](): string;
     /**
       * `Open in split view`
       */
-    ["com.affine.peek-view-controls.open-attachment-in-split-view"](): string;
+    ["com.lovenotes.peek-view-controls.open-attachment-in-split-view"](): string;
     /**
       * `Open in center peek`
       */
-    ["com.affine.peek-view-controls.open-doc-in-center-peek"](): string;
+    ["com.lovenotes.peek-view-controls.open-doc-in-center-peek"](): string;
     /**
       * `Copy link`
       */
-    ["com.affine.peek-view-controls.copy-link"](): string;
+    ["com.lovenotes.peek-view-controls.copy-link"](): string;
     /**
       * `Click or drag`
       */
-    ["com.affine.split-view-drag-handle.tooltip"](): string;
+    ["com.lovenotes.split-view-drag-handle.tooltip"](): string;
     /**
       * `Split view does not support folders.`
       */
-    ["com.affine.split-view-folder-warning.description"](): string;
+    ["com.lovenotes.split-view-folder-warning.description"](): string;
     /**
       * `Do not show this again`
       */
@@ -4633,2084 +4633,2084 @@ export function useAFFiNEI18N(): {
     /**
       * `New`
       */
-    ["com.affine.quicksearch.group.creation"](): string;
+    ["com.lovenotes.quicksearch.group.creation"](): string;
     /**
       * `Search locally`
       */
-    ["com.affine.quicksearch.search-locally"](): string;
+    ["com.lovenotes.quicksearch.search-locally"](): string;
     /**
       * `Search for "{{query}}"`
       */
-    ["com.affine.quicksearch.group.searchfor"](options: {
+    ["com.lovenotes.quicksearch.group.searchfor"](options: {
         readonly query: string;
     }): string;
     /**
       * `Search for "{{query}}" (locally)`
       */
-    ["com.affine.quicksearch.group.searchfor-locally"](options: {
+    ["com.lovenotes.quicksearch.group.searchfor-locally"](options: {
         readonly query: string;
     }): string;
     /**
       * `Reset sync`
       */
-    ["com.affine.resetSyncStatus.button"](): string;
+    ["com.lovenotes.resetSyncStatus.button"](): string;
     /**
       * `This operation may fix some synchronization issues.`
       */
-    ["com.affine.resetSyncStatus.description"](): string;
+    ["com.lovenotes.resetSyncStatus.description"](): string;
     /**
       * `Collections`
       */
-    ["com.affine.rootAppSidebar.collections"](): string;
+    ["com.lovenotes.rootAppSidebar.collections"](): string;
     /**
       * `Notifications`
       */
-    ["com.affine.rootAppSidebar.notifications"](): string;
+    ["com.lovenotes.rootAppSidebar.notifications"](): string;
     /**
       * `Only doc can be placed on here`
       */
-    ["com.affine.rootAppSidebar.doc.link-doc-only"](): string;
+    ["com.lovenotes.rootAppSidebar.doc.link-doc-only"](): string;
     /**
       * `No linked docs`
       */
-    ["com.affine.rootAppSidebar.docs.no-subdoc"](): string;
+    ["com.lovenotes.rootAppSidebar.docs.no-subdoc"](): string;
     /**
       * `Loading linked docs...`
       */
-    ["com.affine.rootAppSidebar.docs.references-loading"](): string;
+    ["com.lovenotes.rootAppSidebar.docs.references-loading"](): string;
     /**
       * `New doc`
       */
-    ["com.affine.rootAppSidebar.explorer.collection-add-tooltip"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.collection-add-tooltip"](): string;
     /**
       * `New collection`
       */
-    ["com.affine.rootAppSidebar.explorer.collection-section-add-tooltip"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.collection-section-add-tooltip"](): string;
     /**
       * `New linked doc`
       */
-    ["com.affine.rootAppSidebar.explorer.doc-add-tooltip"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.doc-add-tooltip"](): string;
     /**
       * `Copy`
       */
-    ["com.affine.rootAppSidebar.explorer.drop-effect.copy"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.drop-effect.copy"](): string;
     /**
       * `Link`
       */
-    ["com.affine.rootAppSidebar.explorer.drop-effect.link"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.drop-effect.link"](): string;
     /**
       * `Move`
       */
-    ["com.affine.rootAppSidebar.explorer.drop-effect.move"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.drop-effect.move"](): string;
     /**
       * `New doc`
       */
-    ["com.affine.rootAppSidebar.explorer.fav-section-add-tooltip"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.fav-section-add-tooltip"](): string;
     /**
       * `New doc`
       */
-    ["com.affine.rootAppSidebar.explorer.organize-add-tooltip"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.organize-add-tooltip"](): string;
     /**
       * `New folder`
       */
-    ["com.affine.rootAppSidebar.explorer.organize-section-add-tooltip"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.organize-section-add-tooltip"](): string;
     /**
       * `New doc`
       */
-    ["com.affine.rootAppSidebar.explorer.tag-add-tooltip"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.tag-add-tooltip"](): string;
     /**
       * `New tag`
       */
-    ["com.affine.rootAppSidebar.explorer.tag-section-add-tooltip"](): string;
+    ["com.lovenotes.rootAppSidebar.explorer.tag-section-add-tooltip"](): string;
     /**
       * `Favorites`
       */
-    ["com.affine.rootAppSidebar.favorites"](): string;
+    ["com.lovenotes.rootAppSidebar.favorites"](): string;
     /**
       * `No favorites`
       */
-    ["com.affine.rootAppSidebar.favorites.empty"](): string;
+    ["com.lovenotes.rootAppSidebar.favorites.empty"](): string;
     /**
       * `Migration data`
       */
-    ["com.affine.rootAppSidebar.migration-data"](): string;
+    ["com.lovenotes.rootAppSidebar.migration-data"](): string;
     /**
       * `Empty the old favorites`
       */
-    ["com.affine.rootAppSidebar.migration-data.clean-all"](): string;
+    ["com.lovenotes.rootAppSidebar.migration-data.clean-all"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.rootAppSidebar.migration-data.clean-all.cancel"](): string;
+    ["com.lovenotes.rootAppSidebar.migration-data.clean-all.cancel"](): string;
     /**
       * `OK`
       */
-    ["com.affine.rootAppSidebar.migration-data.clean-all.confirm"](): string;
+    ["com.lovenotes.rootAppSidebar.migration-data.clean-all.confirm"](): string;
     /**
       * `The old "Favorites" will be replaced`
       */
-    ["com.affine.rootAppSidebar.migration-data.help"](): string;
+    ["com.lovenotes.rootAppSidebar.migration-data.help"](): string;
     /**
       * `Empty the old favorites`
       */
-    ["com.affine.rootAppSidebar.migration-data.help.clean-all"](): string;
+    ["com.lovenotes.rootAppSidebar.migration-data.help.clean-all"](): string;
     /**
       * `OK`
       */
-    ["com.affine.rootAppSidebar.migration-data.help.confirm"](): string;
+    ["com.lovenotes.rootAppSidebar.migration-data.help.confirm"](): string;
     /**
       * `Organize`
       */
-    ["com.affine.rootAppSidebar.organize"](): string;
+    ["com.lovenotes.rootAppSidebar.organize"](): string;
     /**
       * `Delete`
       */
-    ["com.affine.rootAppSidebar.organize.delete"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.delete"](): string;
     /**
       * `Remove from folder`
       */
-    ["com.affine.rootAppSidebar.organize.delete-from-folder"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.delete-from-folder"](): string;
     /**
       * `Delete the folder will not delete any docs, tags, or collections.`
       */
-    ["com.affine.rootAppSidebar.organize.delete.notify-message"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.delete.notify-message"](): string;
     /**
       * `Delete {{name}}`
       */
-    ["com.affine.rootAppSidebar.organize.delete.notify-title"](options: {
+    ["com.lovenotes.rootAppSidebar.organize.delete.notify-title"](options: {
         readonly name: string;
     }): string;
     /**
       * `No folders`
       */
-    ["com.affine.rootAppSidebar.organize.empty"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.empty"](): string;
     /**
       * `Empty folder`
       */
-    ["com.affine.rootAppSidebar.organize.empty-folder"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.empty-folder"](): string;
     /**
       * `Add pages`
       */
-    ["com.affine.rootAppSidebar.organize.empty-folder.add-pages"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.empty-folder.add-pages"](): string;
     /**
       * `New folder`
       */
-    ["com.affine.rootAppSidebar.organize.empty.new-folders-button"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.empty.new-folders-button"](): string;
     /**
       * `Add to favorites`
       */
-    ["com.affine.rootAppSidebar.organize.folder-add-favorite"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.folder-add-favorite"](): string;
     /**
       * `Remove from favorites`
       */
-    ["com.affine.rootAppSidebar.organize.folder-rm-favorite"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.folder-rm-favorite"](): string;
     /**
       * `Add Collections`
       */
-    ["com.affine.rootAppSidebar.organize.folder.add-collections"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.folder.add-collections"](): string;
     /**
       * `New doc`
       */
-    ["com.affine.rootAppSidebar.organize.folder.new-doc"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.folder.new-doc"](): string;
     /**
       * `Add docs`
       */
-    ["com.affine.rootAppSidebar.organize.folder.add-docs"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.folder.add-docs"](): string;
     /**
       * `Add others`
       */
-    ["com.affine.rootAppSidebar.organize.folder.add-others"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.folder.add-others"](): string;
     /**
       * `Add tags`
       */
-    ["com.affine.rootAppSidebar.organize.folder.add-tags"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.folder.add-tags"](): string;
     /**
       * `Create a subfolder`
       */
-    ["com.affine.rootAppSidebar.organize.folder.create-subfolder"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.folder.create-subfolder"](): string;
     /**
       * `New folder`
       */
-    ["com.affine.rootAppSidebar.organize.new-folders"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.new-folders"](): string;
     /**
       * `Only folder can be placed on here`
       */
-    ["com.affine.rootAppSidebar.organize.root-folder-only"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.root-folder-only"](): string;
     /**
       * `Add More`
       */
-    ["com.affine.rootAppSidebar.organize.add-more"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.add-more"](): string;
     /**
       * `Add Folder`
       */
-    ["com.affine.rootAppSidebar.organize.add-folder"](): string;
+    ["com.lovenotes.rootAppSidebar.organize.add-folder"](): string;
     /**
       * `New Collection`
       */
-    ["com.affine.rootAppSidebar.collection.new"](): string;
+    ["com.lovenotes.rootAppSidebar.collection.new"](): string;
     /**
       * `Others`
       */
-    ["com.affine.rootAppSidebar.others"](): string;
+    ["com.lovenotes.rootAppSidebar.others"](): string;
     /**
       * `Only doc can be placed on here`
       */
-    ["com.affine.rootAppSidebar.tag.doc-only"](): string;
+    ["com.lovenotes.rootAppSidebar.tag.doc-only"](): string;
     /**
       * `Tags`
       */
-    ["com.affine.rootAppSidebar.tags"](): string;
+    ["com.lovenotes.rootAppSidebar.tags"](): string;
     /**
       * `No tags`
       */
-    ["com.affine.rootAppSidebar.tags.empty"](): string;
+    ["com.lovenotes.rootAppSidebar.tags.empty"](): string;
     /**
       * `New tag`
       */
-    ["com.affine.rootAppSidebar.tags.empty.new-tag-button"](): string;
+    ["com.lovenotes.rootAppSidebar.tags.empty.new-tag-button"](): string;
     /**
       * `New tag`
       */
-    ["com.affine.rootAppSidebar.tags.new-tag"](): string;
+    ["com.lovenotes.rootAppSidebar.tags.new-tag"](): string;
     /**
       * `No docs`
       */
-    ["com.affine.rootAppSidebar.tags.no-doc"](): string;
+    ["com.lovenotes.rootAppSidebar.tags.no-doc"](): string;
     /**
       * `Drag to resize`
       */
-    ["com.affine.rootAppSidebar.resize-handle.tooltip.drag"](): string;
+    ["com.lovenotes.rootAppSidebar.resize-handle.tooltip.drag"](): string;
     /**
       * `Click to collapse`
       */
-    ["com.affine.rootAppSidebar.resize-handle.tooltip.click"](): string;
+    ["com.lovenotes.rootAppSidebar.resize-handle.tooltip.click"](): string;
     /**
       * `Type here ...`
       */
-    ["com.affine.search-tags.placeholder"](): string;
+    ["com.lovenotes.search-tags.placeholder"](): string;
     /**
       * `Empty`
       */
-    ["com.affine.selectPage.empty"](): string;
+    ["com.lovenotes.selectPage.empty"](): string;
     /**
       * `Selected`
       */
-    ["com.affine.selectPage.selected"](): string;
+    ["com.lovenotes.selectPage.selected"](): string;
     /**
       * `Add include doc`
       */
-    ["com.affine.selectPage.title"](): string;
+    ["com.lovenotes.selectPage.title"](): string;
     /**
       * `Search collections...`
       */
-    ["com.affine.selector-collection.search.placeholder"](): string;
+    ["com.lovenotes.selector-collection.search.placeholder"](): string;
     /**
       * `Search tags...`
       */
-    ["com.affine.selector-tag.search.placeholder"](): string;
+    ["com.lovenotes.selector-tag.search.placeholder"](): string;
     /**
       * `Notifications`
       */
-    ["com.affine.setting.notifications"](): string;
+    ["com.lovenotes.setting.notifications"](): string;
     /**
       * `Notifications`
       */
-    ["com.affine.setting.notifications.header.title"](): string;
+    ["com.lovenotes.setting.notifications.header.title"](): string;
     /**
       * `Choose the types of updates you want to receive and where to get them.`
       */
-    ["com.affine.setting.notifications.header.description"](): string;
+    ["com.lovenotes.setting.notifications.header.description"](): string;
     /**
       * `Email notifications`
       */
-    ["com.affine.setting.notifications.email.title"](): string;
+    ["com.lovenotes.setting.notifications.email.title"](): string;
     /**
       * `Mention`
       */
-    ["com.affine.setting.notifications.email.mention.title"](): string;
+    ["com.lovenotes.setting.notifications.email.mention.title"](): string;
     /**
       * `You will be notified through email when other members of the workspace @ you.`
       */
-    ["com.affine.setting.notifications.email.mention.subtitle"](): string;
+    ["com.lovenotes.setting.notifications.email.mention.subtitle"](): string;
     /**
       * `Invites`
       */
-    ["com.affine.setting.notifications.email.invites.title"](): string;
+    ["com.lovenotes.setting.notifications.email.invites.title"](): string;
     /**
       * `Invitation related messages will be sent through emails.`
       */
-    ["com.affine.setting.notifications.email.invites.subtitle"](): string;
+    ["com.lovenotes.setting.notifications.email.invites.subtitle"](): string;
     /**
       * `Comments`
       */
-    ["com.affine.setting.notifications.email.comments.title"](): string;
+    ["com.lovenotes.setting.notifications.email.comments.title"](): string;
     /**
       * `You will be notified through email when other members of the workspace comment on your docs.`
       */
-    ["com.affine.setting.notifications.email.comments.subtitle"](): string;
+    ["com.lovenotes.setting.notifications.email.comments.subtitle"](): string;
     /**
       * `Account settings`
       */
-    ["com.affine.setting.account"](): string;
+    ["com.lovenotes.setting.account"](): string;
     /**
       * `Delete your account from {{server}}`
       */
-    ["com.affine.setting.account.delete-from-server"](options: {
+    ["com.lovenotes.setting.account.delete-from-server"](options: {
         readonly server: string;
     }): string;
     /**
       * `Once deleted, your account will no longer be accessible, and all data in your personal cloud space will be permanently deleted.`
       */
-    ["com.affine.setting.account.delete.message"](): string;
+    ["com.lovenotes.setting.account.delete.message"](): string;
     /**
       * `Cannot delete account`
       */
-    ["com.affine.setting.account.delete.team-warning-title"](): string;
+    ["com.lovenotes.setting.account.delete.team-warning-title"](): string;
     /**
       * `You’re the owner of a team workspace. To delete your account, please delete the workspace or transfer ownership first.`
       */
-    ["com.affine.setting.account.delete.team-warning-description"](): string;
+    ["com.lovenotes.setting.account.delete.team-warning-description"](): string;
     /**
       * `Delete your account?`
       */
-    ["com.affine.setting.account.delete.confirm-title"](): string;
+    ["com.lovenotes.setting.account.delete.confirm-title"](): string;
     /**
       * `Please type your email to confirm`
       */
-    ["com.affine.setting.account.delete.input-placeholder"](): string;
+    ["com.lovenotes.setting.account.delete.input-placeholder"](): string;
     /**
       * `Delete`
       */
-    ["com.affine.setting.account.delete.confirm-button"](): string;
+    ["com.lovenotes.setting.account.delete.confirm-button"](): string;
     /**
       * `Account deleted`
       */
-    ["com.affine.setting.account.delete.success-title"](): string;
+    ["com.lovenotes.setting.account.delete.success-title"](): string;
     /**
       * `Your account and cloud data have been deleted.`
       */
-    ["com.affine.setting.account.delete.success-description-1"](): string;
+    ["com.lovenotes.setting.account.delete.success-description-1"](): string;
     /**
       * `Local data can be deleted by uninstalling app and clearing browser data.`
       */
-    ["com.affine.setting.account.delete.success-description-2"](): string;
+    ["com.lovenotes.setting.account.delete.success-description-2"](): string;
     /**
       * `Your personal information`
       */
-    ["com.affine.setting.account.message"](): string;
+    ["com.lovenotes.setting.account.message"](): string;
     /**
-      * `Sync with AFFiNE Cloud`
+      * `Sync with LoveNotes Cloud`
       */
-    ["com.affine.setting.sign.message"](): string;
+    ["com.lovenotes.setting.sign.message"](): string;
     /**
       * `Securely sign out of your account.`
       */
-    ["com.affine.setting.sign.out.message"](): string;
+    ["com.lovenotes.setting.sign.out.message"](): string;
     /**
       * `General`
       */
-    ["com.affine.settingSidebar.settings.general"](): string;
+    ["com.lovenotes.settingSidebar.settings.general"](): string;
     /**
       * `Workspace`
       */
-    ["com.affine.settingSidebar.settings.workspace"](): string;
+    ["com.lovenotes.settingSidebar.settings.workspace"](): string;
     /**
       * `Settings`
       */
-    ["com.affine.settingSidebar.title"](): string;
+    ["com.lovenotes.settingSidebar.title"](): string;
     /**
       * `Appearance`
       */
-    ["com.affine.settings.appearance"](): string;
+    ["com.lovenotes.settings.appearance"](): string;
     /**
       * `Customise the appearance of the client.`
       */
-    ["com.affine.settings.appearance.border-style-description"](): string;
+    ["com.lovenotes.settings.appearance.border-style-description"](): string;
     /**
       * `Customise your date style.`
       */
-    ["com.affine.settings.appearance.date-format-description"](): string;
+    ["com.lovenotes.settings.appearance.date-format-description"](): string;
     /**
       * `Maximum display of content within a doc.`
       */
-    ["com.affine.settings.appearance.full-width-description"](): string;
+    ["com.lovenotes.settings.appearance.full-width-description"](): string;
     /**
       * `Select the language for the interface.`
       */
-    ["com.affine.settings.appearance.language-description"](): string;
+    ["com.lovenotes.settings.appearance.language-description"](): string;
     /**
       * `By default, the week starts on Sunday.`
       */
-    ["com.affine.settings.appearance.start-week-description"](): string;
+    ["com.lovenotes.settings.appearance.start-week-description"](): string;
     /**
       * `Customise appearance of Windows Client.`
       */
-    ["com.affine.settings.appearance.window-frame-description"](): string;
+    ["com.lovenotes.settings.appearance.window-frame-description"](): string;
     /**
       * `Links`
       */
-    ["com.affine.setting.appearance.links"](): string;
+    ["com.lovenotes.setting.appearance.links"](): string;
     /**
-      * `Open AFFiNE links`
+      * `Open LoveNotes links`
       */
-    ["com.affine.setting.appearance.open-in-app"](): string;
+    ["com.lovenotes.setting.appearance.open-in-app"](): string;
     /**
       * `You can choose to open the link in the desktop app or directly in the browser.`
       */
-    ["com.affine.setting.appearance.open-in-app.hint"](): string;
+    ["com.lovenotes.setting.appearance.open-in-app.hint"](): string;
     /**
       * `Ask me each time`
       */
-    ["com.affine.setting.appearance.open-in-app.always-ask"](): string;
+    ["com.lovenotes.setting.appearance.open-in-app.always-ask"](): string;
     /**
       * `Open links in desktop app`
       */
-    ["com.affine.setting.appearance.open-in-app.open-in-desktop-app"](): string;
+    ["com.lovenotes.setting.appearance.open-in-app.open-in-desktop-app"](): string;
     /**
       * `Open links in browser`
       */
-    ["com.affine.setting.appearance.open-in-app.open-in-web"](): string;
+    ["com.lovenotes.setting.appearance.open-in-app.open-in-web"](): string;
     /**
-      * `Open AFFiNE links`
+      * `Open LoveNotes links`
       */
-    ["com.affine.setting.appearance.open-in-app.title"](): string;
+    ["com.lovenotes.setting.appearance.open-in-app.title"](): string;
     /**
-      * `Open this doc in AFFiNE app`
+      * `Open this doc in LoveNotes app`
       */
-    ["com.affine.open-in-app.card.title"](): string;
+    ["com.lovenotes.open-in-app.card.title"](): string;
     /**
       * `Open in app`
       */
-    ["com.affine.open-in-app.card.button.open"](): string;
+    ["com.lovenotes.open-in-app.card.button.open"](): string;
     /**
       * `Dismiss`
       */
-    ["com.affine.open-in-app.card.button.dismiss"](): string;
+    ["com.lovenotes.open-in-app.card.button.dismiss"](): string;
     /**
       * `Remember choice`
       */
-    ["com.affine.open-in-app.card.remember"](): string;
+    ["com.lovenotes.open-in-app.card.remember"](): string;
     /**
       * `Download desktop app`
       */
-    ["com.affine.open-in-app.card.download"](): string;
+    ["com.lovenotes.open-in-app.card.download"](): string;
     /**
       * `If enabled, it will automatically check for new versions at regular intervals.`
       */
-    ["com.affine.settings.auto-check-description"](): string;
+    ["com.lovenotes.settings.auto-check-description"](): string;
     /**
       * `If enabled, new versions will be automatically downloaded to the current device.`
       */
-    ["com.affine.settings.auto-download-description"](): string;
+    ["com.lovenotes.settings.auto-download-description"](): string;
     /**
       * `Editor`
       */
-    ["com.affine.settings.editorSettings"](): string;
+    ["com.lovenotes.settings.editorSettings"](): string;
     /**
       * `Edgeless`
       */
-    ["com.affine.settings.editorSettings.edgeless"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless"](): string;
     /**
       * `Connector`
       */
-    ["com.affine.settings.editorSettings.edgeless.connecter"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.connecter"](): string;
     /**
       * `Border style`
       */
-    ["com.affine.settings.editorSettings.edgeless.connecter.border-style"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.connecter.border-style"](): string;
     /**
       * `Border thickness`
       */
-    ["com.affine.settings.editorSettings.edgeless.connecter.border-thickness"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.connecter.border-thickness"](): string;
     /**
       * `Color`
       */
-    ["com.affine.settings.editorSettings.edgeless.connecter.color"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.connecter.color"](): string;
     /**
       * `Connector shape`
       */
-    ["com.affine.settings.editorSettings.edgeless.connecter.connector-shape"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.connecter.connector-shape"](): string;
     /**
       * `Curve`
       */
-    ["com.affine.settings.editorSettings.edgeless.connecter.connector-shape.curve"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.connecter.connector-shape.curve"](): string;
     /**
       * `Elbowed`
       */
-    ["com.affine.settings.editorSettings.edgeless.connecter.connector-shape.elbowed"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.connecter.connector-shape.elbowed"](): string;
     /**
       * `Straight`
       */
-    ["com.affine.settings.editorSettings.edgeless.connecter.connector-shape.straight"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.connecter.connector-shape.straight"](): string;
     /**
       * `End endpoint`
       */
-    ["com.affine.settings.editorSettings.edgeless.connecter.end-endpoint"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.connecter.end-endpoint"](): string;
     /**
       * `Start endpoint`
       */
-    ["com.affine.settings.editorSettings.edgeless.connecter.start-endpoint"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.connecter.start-endpoint"](): string;
     /**
       * `Custom`
       */
-    ["com.affine.settings.editorSettings.edgeless.custom"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.custom"](): string;
     /**
       * `Mind Map`
       */
-    ["com.affine.settings.editorSettings.edgeless.mind-map"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.mind-map"](): string;
     /**
       * `Layout`
       */
-    ["com.affine.settings.editorSettings.edgeless.mind-map.layout"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.mind-map.layout"](): string;
     /**
       * `Left`
       */
-    ["com.affine.settings.editorSettings.edgeless.mind-map.layout.left"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.mind-map.layout.left"](): string;
     /**
       * `Radial`
       */
-    ["com.affine.settings.editorSettings.edgeless.mind-map.layout.radial"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.mind-map.layout.radial"](): string;
     /**
       * `Right`
       */
-    ["com.affine.settings.editorSettings.edgeless.mind-map.layout.right"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.mind-map.layout.right"](): string;
     /**
       * `Note`
       */
-    ["com.affine.settings.editorSettings.edgeless.note"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.note"](): string;
     /**
       * `Background`
       */
-    ["com.affine.settings.editorSettings.edgeless.note.background"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.note.background"](): string;
     /**
       * `Border style`
       */
-    ["com.affine.settings.editorSettings.edgeless.note.border"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.note.border"](): string;
     /**
       * `Border thickness`
       */
-    ["com.affine.settings.editorSettings.edgeless.note.border-thickness"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.note.border-thickness"](): string;
     /**
       * `Dash`
       */
-    ["com.affine.settings.editorSettings.edgeless.note.border.dash"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.note.border.dash"](): string;
     /**
       * `None`
       */
-    ["com.affine.settings.editorSettings.edgeless.note.border.none"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.note.border.none"](): string;
     /**
       * `Solid`
       */
-    ["com.affine.settings.editorSettings.edgeless.note.border.solid"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.note.border.solid"](): string;
     /**
       * `Corners`
       */
-    ["com.affine.settings.editorSettings.edgeless.note.corners"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.note.corners"](): string;
     /**
       * `Shadow style`
       */
-    ["com.affine.settings.editorSettings.edgeless.note.shadow"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.note.shadow"](): string;
     /**
       * `Pen`
       */
-    ["com.affine.settings.editorSettings.edgeless.pen"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.pen"](): string;
     /**
       * `Color`
       */
-    ["com.affine.settings.editorSettings.edgeless.pen.color"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.pen.color"](): string;
     /**
       * `Thickness`
       */
-    ["com.affine.settings.editorSettings.edgeless.pen.thickness"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.pen.thickness"](): string;
     /**
       * `Shape`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape"](): string;
     /**
       * `Border color`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.border-color"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.border-color"](): string;
     /**
       * `Border style`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.border-style"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.border-style"](): string;
     /**
       * `Border thickness`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.border-thickness"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.border-thickness"](): string;
     /**
       * `Diamond`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.diamond"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.diamond"](): string;
     /**
       * `Ellipse`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.ellipse"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.ellipse"](): string;
     /**
       * `Fill color`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.fill-color"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.fill-color"](): string;
     /**
       * `Flow`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.flow"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.flow"](): string;
     /**
       * `Font`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.font"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.font"](): string;
     /**
       * `Font size`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.font-size"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.font-size"](): string;
     /**
       * `Font style`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.font-style"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.font-style"](): string;
     /**
       * `List`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.list"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.list"](): string;
     /**
       * `Rounded Rectangle`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.rounded-rectangle"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.rounded-rectangle"](): string;
     /**
       * `Square`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.square"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.square"](): string;
     /**
       * `Text alignment`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.text-alignment"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.text-alignment"](): string;
     /**
       * `Text color`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.text-color"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.text-color"](): string;
     /**
       * `Triangle`
       */
-    ["com.affine.settings.editorSettings.edgeless.shape.triangle"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.shape.triangle"](): string;
     /**
       * `Frame`
       */
-    ["com.affine.settings.editorSettings.edgeless.frame"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.frame"](): string;
     /**
       * `Background`
       */
-    ["com.affine.settings.editorSettings.edgeless.frame.background"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.frame.background"](): string;
     /**
       * `Style`
       */
-    ["com.affine.settings.editorSettings.edgeless.style"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.style"](): string;
     /**
       * `General`
       */
-    ["com.affine.settings.editorSettings.edgeless.style.general"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.style.general"](): string;
     /**
       * `Scribbled`
       */
-    ["com.affine.settings.editorSettings.edgeless.style.scribbled"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.style.scribbled"](): string;
     /**
       * `Text`
       */
-    ["com.affine.settings.editorSettings.edgeless.text"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text"](): string;
     /**
       * `Alignment`
       */
-    ["com.affine.settings.editorSettings.edgeless.text.alignment"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text.alignment"](): string;
     /**
       * `Center`
       */
-    ["com.affine.settings.editorSettings.edgeless.text.alignment.center"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text.alignment.center"](): string;
     /**
       * `Left`
       */
-    ["com.affine.settings.editorSettings.edgeless.text.alignment.left"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text.alignment.left"](): string;
     /**
       * `Right`
       */
-    ["com.affine.settings.editorSettings.edgeless.text.alignment.right"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text.alignment.right"](): string;
     /**
       * `Text color`
       */
-    ["com.affine.settings.editorSettings.edgeless.text.color"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text.color"](): string;
     /**
       * `Font`
       */
-    ["com.affine.settings.editorSettings.edgeless.text.font"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text.font"](): string;
     /**
       * `Font family`
       */
-    ["com.affine.settings.editorSettings.edgeless.text.font-family"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text.font-family"](): string;
     /**
       * `Font size`
       */
-    ["com.affine.settings.editorSettings.edgeless.text.font-size"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text.font-size"](): string;
     /**
       * `Font style`
       */
-    ["com.affine.settings.editorSettings.edgeless.text.font-style"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text.font-style"](): string;
     /**
       * `Font weight`
       */
-    ["com.affine.settings.editorSettings.edgeless.text.font-weight"](): string;
+    ["com.lovenotes.settings.editorSettings.edgeless.text.font-weight"](): string;
     /**
       * `General`
       */
-    ["com.affine.settings.editorSettings.general"](): string;
+    ["com.lovenotes.settings.editorSettings.general"](): string;
     /**
-      * `Enable the powerful AI assistant, AFFiNE AI.`
+      * `Enable the powerful AI assistant, LoveNotes AI.`
       */
-    ["com.affine.settings.editorSettings.general.ai.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.ai.description"](): string;
     /**
       * `Disable AI and Reload`
       */
-    ["com.affine.settings.editorSettings.general.ai.disable.confirm"](): string;
+    ["com.lovenotes.settings.editorSettings.general.ai.disable.confirm"](): string;
     /**
       * `Are you sure you want to disable AI? We value your productivity and our AI can enhance it. Please think again!`
       */
-    ["com.affine.settings.editorSettings.general.ai.disable.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.ai.disable.description"](): string;
     /**
       * `Disable AI?`
       */
-    ["com.affine.settings.editorSettings.general.ai.disable.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.ai.disable.title"](): string;
     /**
       * `Enable AI and Reload`
       */
-    ["com.affine.settings.editorSettings.general.ai.enable.confirm"](): string;
+    ["com.lovenotes.settings.editorSettings.general.ai.enable.confirm"](): string;
     /**
       * `Do you want to enable AI? Our AI assistant is ready to enhance your productivity and provide smart assistance. Let's get started! We need reload page to make this change.`
       */
-    ["com.affine.settings.editorSettings.general.ai.enable.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.ai.enable.description"](): string;
     /**
       * `Enable AI?`
       */
-    ["com.affine.settings.editorSettings.general.ai.enable.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.ai.enable.title"](): string;
     /**
-      * `AFFiNE AI`
+      * `LoveNotes AI`
       */
-    ["com.affine.settings.editorSettings.general.ai.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.ai.title"](): string;
     /**
       * `Set a default programming language.`
       */
-    ["com.affine.settings.editorSettings.general.default-code-block.language.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.default-code-block.language.description"](): string;
     /**
       * `Code blocks default language`
       */
-    ["com.affine.settings.editorSettings.general.default-code-block.language.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.default-code-block.language.title"](): string;
     /**
       * `Encapsulate code snippets for better readability.`
       */
-    ["com.affine.settings.editorSettings.general.default-code-block.wrap.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.default-code-block.wrap.description"](): string;
     /**
       * `Wrap code in code blocks`
       */
-    ["com.affine.settings.editorSettings.general.default-code-block.wrap.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.default-code-block.wrap.title"](): string;
     /**
       * `Default mode for new doc.`
       */
-    ["com.affine.settings.editorSettings.general.default-new-doc.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.default-new-doc.description"](): string;
     /**
       * `New doc default mode`
       */
-    ["com.affine.settings.editorSettings.general.default-new-doc.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.default-new-doc.title"](): string;
     /**
       * `Customize your text experience.`
       */
-    ["com.affine.settings.editorSettings.general.font-family.custom.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.font-family.custom.description"](): string;
     /**
       * `Custom font family`
       */
-    ["com.affine.settings.editorSettings.general.font-family.custom.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.font-family.custom.title"](): string;
     /**
       * `Choose your editor's font family.`
       */
-    ["com.affine.settings.editorSettings.general.font-family.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.font-family.description"](): string;
     /**
       * `Font family`
       */
-    ["com.affine.settings.editorSettings.general.font-family.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.font-family.title"](): string;
     /**
       * `Adjust the base font size for better readability.`
       */
-    ["com.affine.settings.editorSettings.general.font-size.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.font-size.description"](): string;
     /**
       * `Font size`
       */
-    ["com.affine.settings.editorSettings.general.font-size.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.font-size.title"](): string;
     /**
       * `Automatically detect and correct spelling errors.`
       */
-    ["com.affine.settings.editorSettings.general.spell-check.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.spell-check.description"](): string;
     /**
       * `Spell check`
       */
-    ["com.affine.settings.editorSettings.general.spell-check.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.spell-check.title"](): string;
     /**
       * `Page`
       */
-    ["com.affine.settings.editorSettings.page"](): string;
+    ["com.lovenotes.settings.editorSettings.page"](): string;
     /**
       * `Middle click paste`
       */
-    ["com.affine.settings.editorSettings.general.middle-click-paste.title"](): string;
+    ["com.lovenotes.settings.editorSettings.general.middle-click-paste.title"](): string;
     /**
       * `Enable default middle click paste behavior on Linux.`
       */
-    ["com.affine.settings.editorSettings.general.middle-click-paste.description"](): string;
+    ["com.lovenotes.settings.editorSettings.general.middle-click-paste.description"](): string;
     /**
       * `Display bi-directional links on the doc.`
       */
-    ["com.affine.settings.editorSettings.page.display-bi-link.description"](): string;
+    ["com.lovenotes.settings.editorSettings.page.display-bi-link.description"](): string;
     /**
       * `Display bi-directional links`
       */
-    ["com.affine.settings.editorSettings.page.display-bi-link.title"](): string;
+    ["com.lovenotes.settings.editorSettings.page.display-bi-link.title"](): string;
     /**
       * `Display document information on the doc.`
       */
-    ["com.affine.settings.editorSettings.page.display-doc-info.description"](): string;
+    ["com.lovenotes.settings.editorSettings.page.display-doc-info.description"](): string;
     /**
       * `Display doc info`
       */
-    ["com.affine.settings.editorSettings.page.display-doc-info.title"](): string;
+    ["com.lovenotes.settings.editorSettings.page.display-doc-info.title"](): string;
     /**
       * `Maximise display of content within a page.`
       */
-    ["com.affine.settings.editorSettings.page.full-width.description"](): string;
+    ["com.lovenotes.settings.editorSettings.page.full-width.description"](): string;
     /**
       * `Full width layout`
       */
-    ["com.affine.settings.editorSettings.page.full-width.title"](): string;
+    ["com.lovenotes.settings.editorSettings.page.full-width.title"](): string;
     /**
       * `Default page width`
       */
-    ["com.affine.settings.editorSettings.page.default-page-width.title"](): string;
+    ["com.lovenotes.settings.editorSettings.page.default-page-width.title"](): string;
     /**
       * `Set default width for new pages, individual pages can override.`
       */
-    ["com.affine.settings.editorSettings.page.default-page-width.description"](): string;
+    ["com.lovenotes.settings.editorSettings.page.default-page-width.description"](): string;
     /**
       * `Standard`
       */
-    ["com.affine.settings.editorSettings.page.default-page-width.standard"](): string;
+    ["com.lovenotes.settings.editorSettings.page.default-page-width.standard"](): string;
     /**
       * `Full width`
       */
-    ["com.affine.settings.editorSettings.page.default-page-width.full-width"](): string;
+    ["com.lovenotes.settings.editorSettings.page.default-page-width.full-width"](): string;
     /**
       * `Set edgeless default color scheme.`
       */
-    ["com.affine.settings.editorSettings.page.edgeless-default-theme.description"](): string;
+    ["com.lovenotes.settings.editorSettings.page.edgeless-default-theme.description"](): string;
     /**
       * `Edgeless default theme`
       */
-    ["com.affine.settings.editorSettings.page.edgeless-default-theme.title"](): string;
+    ["com.lovenotes.settings.editorSettings.page.edgeless-default-theme.title"](): string;
     /**
       * `Specified by current color mode`
       */
-    ["com.affine.settings.editorSettings.page.edgeless-default-theme.specified"](): string;
+    ["com.lovenotes.settings.editorSettings.page.edgeless-default-theme.specified"](): string;
     /**
       * `Scroll wheel zoom`
       */
-    ["com.affine.settings.editorSettings.page.edgeless-scroll-wheel-zoom.title"](): string;
+    ["com.lovenotes.settings.editorSettings.page.edgeless-scroll-wheel-zoom.title"](): string;
     /**
       * `Use the scroll wheel to zoom in and out.`
       */
-    ["com.affine.settings.editorSettings.page.edgeless-scroll-wheel-zoom.description"](): string;
+    ["com.lovenotes.settings.editorSettings.page.edgeless-scroll-wheel-zoom.description"](): string;
     /**
       * `Preferences`
       */
-    ["com.affine.settings.editorSettings.preferences"](): string;
+    ["com.lovenotes.settings.editorSettings.preferences"](): string;
     /**
       * `You can export the entire preferences data for backup, and the exported data can be re-imported.`
       */
-    ["com.affine.settings.editorSettings.preferences.export.description"](): string;
+    ["com.lovenotes.settings.editorSettings.preferences.export.description"](): string;
     /**
       * `Export Settings`
       */
-    ["com.affine.settings.editorSettings.preferences.export.title"](): string;
+    ["com.lovenotes.settings.editorSettings.preferences.export.title"](): string;
     /**
       * `You can import previously exported preferences data for restoration.`
       */
-    ["com.affine.settings.editorSettings.preferences.import.description"](): string;
+    ["com.lovenotes.settings.editorSettings.preferences.import.description"](): string;
     /**
       * `Import Settings`
       */
-    ["com.affine.settings.editorSettings.preferences.import.title"](): string;
+    ["com.lovenotes.settings.editorSettings.preferences.import.title"](): string;
     /**
       * `Configure your own editor`
       */
-    ["com.affine.settings.editorSettings.subtitle"](): string;
+    ["com.lovenotes.settings.editorSettings.subtitle"](): string;
     /**
       * `Editor settings`
       */
-    ["com.affine.settings.editorSettings.title"](): string;
+    ["com.lovenotes.settings.editorSettings.title"](): string;
     /**
       * `Ask me every time`
       */
-    ["com.affine.settings.editorSettings.ask-me-every-time"](): string;
+    ["com.lovenotes.settings.editorSettings.ask-me-every-time"](): string;
     /**
       * `Email`
       */
-    ["com.affine.settings.email"](): string;
+    ["com.lovenotes.settings.email"](): string;
     /**
       * `Change email`
       */
-    ["com.affine.settings.email.action"](): string;
+    ["com.lovenotes.settings.email.action"](): string;
     /**
       * `Change email`
       */
-    ["com.affine.settings.email.action.change"](): string;
+    ["com.lovenotes.settings.email.action.change"](): string;
     /**
       * `Verify email`
       */
-    ["com.affine.settings.email.action.verify"](): string;
+    ["com.lovenotes.settings.email.action.verify"](): string;
     /**
-      * `Enable AFFiNE Cloud to collaborate with others`
+      * `Enable LoveNotes Cloud to collaborate with others`
       */
-    ["com.affine.settings.member-tooltip"](): string;
+    ["com.lovenotes.settings.member-tooltip"](): string;
     /**
       * `Loading member list...`
       */
-    ["com.affine.settings.member.loading"](): string;
+    ["com.lovenotes.settings.member.loading"](): string;
     /**
       * `Noise background on the sidebar`
       */
-    ["com.affine.settings.noise-style"](): string;
+    ["com.lovenotes.settings.noise-style"](): string;
     /**
       * `Use background noise effect on the sidebar.`
       */
-    ["com.affine.settings.noise-style-description"](): string;
+    ["com.lovenotes.settings.noise-style-description"](): string;
     /**
       * `Password`
       */
-    ["com.affine.settings.password"](): string;
+    ["com.lovenotes.settings.password"](): string;
     /**
       * `Change password`
       */
-    ["com.affine.settings.password.action.change"](): string;
+    ["com.lovenotes.settings.password.action.change"](): string;
     /**
       * `Set password`
       */
-    ["com.affine.settings.password.action.set"](): string;
+    ["com.lovenotes.settings.password.action.set"](): string;
     /**
       * `Set a password to sign in to your account`
       */
-    ["com.affine.settings.password.message"](): string;
+    ["com.lovenotes.settings.password.message"](): string;
     /**
       * `My profile`
       */
-    ["com.affine.settings.profile"](): string;
+    ["com.lovenotes.settings.profile"](): string;
     /**
       * `Your account profile will be displayed to everyone.`
       */
-    ["com.affine.settings.profile.message"](): string;
+    ["com.lovenotes.settings.profile.message"](): string;
     /**
       * `Display name`
       */
-    ["com.affine.settings.profile.name"](): string;
+    ["com.lovenotes.settings.profile.name"](): string;
     /**
       * `Input account name`
       */
-    ["com.affine.settings.profile.placeholder"](): string;
+    ["com.lovenotes.settings.profile.placeholder"](): string;
     /**
       * `Remove workspace`
       */
-    ["com.affine.settings.remove-workspace"](): string;
+    ["com.lovenotes.settings.remove-workspace"](): string;
     /**
       * `Remove workspace from this device and optionally delete all data.`
       */
-    ["com.affine.settings.remove-workspace-description"](): string;
+    ["com.lovenotes.settings.remove-workspace-description"](): string;
     /**
       * `Sign in / Sign up`
       */
-    ["com.affine.settings.sign"](): string;
+    ["com.lovenotes.settings.sign"](): string;
     /**
       * `Need more customization options? Tell us in the community.`
       */
-    ["com.affine.settings.suggestion"](): string;
+    ["com.lovenotes.settings.suggestion"](): string;
     /**
       * `Translucent UI on the sidebar`
       */
-    ["com.affine.settings.translucent-style"](): string;
+    ["com.lovenotes.settings.translucent-style"](): string;
     /**
       * `Use transparency effect on the sidebar.`
       */
-    ["com.affine.settings.translucent-style-description"](): string;
+    ["com.lovenotes.settings.translucent-style-description"](): string;
     /**
       * `Meetings`
       */
-    ["com.affine.settings.meetings"](): string;
+    ["com.lovenotes.settings.meetings"](): string;
     /**
       * `Beyond Recording
     Your AI Meeting Assistant is Here`
       */
-    ["com.affine.settings.meetings.setting.welcome"](): string;
+    ["com.lovenotes.settings.meetings.setting.welcome"](): string;
     /**
       * `Native Audio Capture, No Bots Required - Direct from Your Mac to Meeting Intelligence.`
       */
-    ["com.affine.settings.meetings.setting.prompt"](): string;
+    ["com.lovenotes.settings.meetings.setting.prompt"](): string;
     /**
       * `Learn more`
       */
-    ["com.affine.settings.meetings.setting.welcome.learn-more"](): string;
+    ["com.lovenotes.settings.meetings.setting.welcome.learn-more"](): string;
     /**
       * `Enable meeting notes`
       */
-    ["com.affine.settings.meetings.enable.title"](): string;
+    ["com.lovenotes.settings.meetings.enable.title"](): string;
     /**
       * `Meeting recording`
       */
-    ["com.affine.settings.meetings.record.header"](): string;
+    ["com.lovenotes.settings.meetings.record.header"](): string;
     /**
       * `When meeting starts`
       */
-    ["com.affine.settings.meetings.record.recording-mode"](): string;
+    ["com.lovenotes.settings.meetings.record.recording-mode"](): string;
     /**
       * `Choose the behavior when the meeting starts.`
       */
-    ["com.affine.settings.meetings.record.recording-mode.description"](): string;
+    ["com.lovenotes.settings.meetings.record.recording-mode.description"](): string;
     /**
       * `Open saved recordings`
       */
-    ["com.affine.settings.meetings.record.open-saved-file"](): string;
+    ["com.lovenotes.settings.meetings.record.open-saved-file"](): string;
     /**
       * `Open the locally stored recording files.`
       */
-    ["com.affine.settings.meetings.record.open-saved-file.description"](): string;
+    ["com.lovenotes.settings.meetings.record.open-saved-file.description"](): string;
     /**
       * `Transcription with AI`
       */
-    ["com.affine.settings.meetings.transcription.header"](): string;
+    ["com.lovenotes.settings.meetings.transcription.header"](): string;
     /**
       * `AI auto summary`
       */
-    ["com.affine.settings.meetings.transcription.auto-summary"](): string;
+    ["com.lovenotes.settings.meetings.transcription.auto-summary"](): string;
     /**
       * `Automatically generate a summary of the meeting notes.`
       */
-    ["com.affine.settings.meetings.transcription.auto-summary.description"](): string;
+    ["com.lovenotes.settings.meetings.transcription.auto-summary.description"](): string;
     /**
       * `AI auto todo list`
       */
-    ["com.affine.settings.meetings.transcription.auto-todo"](): string;
+    ["com.lovenotes.settings.meetings.transcription.auto-todo"](): string;
     /**
       * `Automatically generate a todo list of the meeting notes.`
       */
-    ["com.affine.settings.meetings.transcription.auto-todo.description"](): string;
+    ["com.lovenotes.settings.meetings.transcription.auto-todo.description"](): string;
     /**
       * `Privacy & Security`
       */
-    ["com.affine.settings.meetings.privacy.header"](): string;
+    ["com.lovenotes.settings.meetings.privacy.header"](): string;
     /**
       * `Screen & System audio recording`
       */
-    ["com.affine.settings.meetings.privacy.screen-system-audio-recording"](): string;
+    ["com.lovenotes.settings.meetings.privacy.screen-system-audio-recording"](): string;
     /**
       * `The Meeting feature requires permission to be used.`
       */
-    ["com.affine.settings.meetings.privacy.screen-system-audio-recording.description"](): string;
+    ["com.lovenotes.settings.meetings.privacy.screen-system-audio-recording.description"](): string;
     /**
       * `Click to allow`
       */
-    ["com.affine.settings.meetings.privacy.screen-system-audio-recording.permission-setting"](): string;
+    ["com.lovenotes.settings.meetings.privacy.screen-system-audio-recording.permission-setting"](): string;
     /**
       * `Microphone`
       */
-    ["com.affine.settings.meetings.privacy.microphone"](): string;
+    ["com.lovenotes.settings.meetings.privacy.microphone"](): string;
     /**
       * `The Meeting feature requires permission to be used.`
       */
-    ["com.affine.settings.meetings.privacy.microphone.description"](): string;
+    ["com.lovenotes.settings.meetings.privacy.microphone.description"](): string;
     /**
       * `Click to allow`
       */
-    ["com.affine.settings.meetings.privacy.microphone.permission-setting"](): string;
+    ["com.lovenotes.settings.meetings.privacy.microphone.permission-setting"](): string;
     /**
       * `Permission issues`
       */
-    ["com.affine.settings.meetings.privacy.issues"](): string;
+    ["com.lovenotes.settings.meetings.privacy.issues"](): string;
     /**
       * `Permissions are granted but the status isn't updated? Restart the app to refresh permissions.`
       */
-    ["com.affine.settings.meetings.privacy.issues.description"](): string;
+    ["com.lovenotes.settings.meetings.privacy.issues.description"](): string;
     /**
       * `Restart App`
       */
-    ["com.affine.settings.meetings.privacy.issues.restart"](): string;
+    ["com.lovenotes.settings.meetings.privacy.issues.restart"](): string;
     /**
       * `Do nothing`
       */
-    ["com.affine.settings.meetings.record.recording-mode.none"](): string;
+    ["com.lovenotes.settings.meetings.record.recording-mode.none"](): string;
     /**
       * `Auto start recording`
       */
-    ["com.affine.settings.meetings.record.recording-mode.auto-start"](): string;
+    ["com.lovenotes.settings.meetings.record.recording-mode.auto-start"](): string;
     /**
       * `Show a recording prompt`
       */
-    ["com.affine.settings.meetings.record.recording-mode.prompt"](): string;
+    ["com.lovenotes.settings.meetings.record.recording-mode.prompt"](): string;
     /**
       * `Screen & System Audio Recording`
       */
-    ["com.affine.settings.meetings.record.permission-modal.title"](): string;
+    ["com.lovenotes.settings.meetings.record.permission-modal.title"](): string;
     /**
-      * `AFFiNE will generate meeting notes by recording your meetings. Authorization to "Screen & System Audio Recording" is necessary.`
+      * `LoveNotes will generate meeting notes by recording your meetings. Authorization to "Screen & System Audio Recording" is necessary.`
       */
-    ["com.affine.settings.meetings.record.permission-modal.description"](): string;
+    ["com.lovenotes.settings.meetings.record.permission-modal.description"](): string;
     /**
       * `Save meeting's recording block to`
       */
-    ["com.affine.settings.meetings.record.save-mode"](): string;
+    ["com.lovenotes.settings.meetings.record.save-mode"](): string;
     /**
       * `Open System Settings`
       */
-    ["com.affine.settings.meetings.record.permission-modal.open-setting"](): string;
+    ["com.lovenotes.settings.meetings.record.permission-modal.open-setting"](): string;
     /**
       * `Workspace`
       */
-    ["com.affine.settings.workspace"](): string;
+    ["com.lovenotes.settings.workspace"](): string;
     /**
       * `You can view current workspace's information here.`
       */
-    ["com.affine.settings.workspace.description"](): string;
+    ["com.lovenotes.settings.workspace.description"](): string;
     /**
       * `Experimental features`
       */
-    ["com.affine.settings.workspace.experimental-features"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features"](): string;
     /**
       * `Get started`
       */
-    ["com.affine.settings.workspace.experimental-features.get-started"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.get-started"](): string;
     /**
       * `Experimental features`
       */
-    ["com.affine.settings.workspace.experimental-features.header.plugins"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.header.plugins"](): string;
     /**
       * `Some features available for early access`
       */
-    ["com.affine.settings.workspace.experimental-features.header.subtitle"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.header.subtitle"](): string;
     /**
       * `I am aware of the risks, and I am willing to continue to use it.`
       */
-    ["com.affine.settings.workspace.experimental-features.prompt-disclaimer"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.prompt-disclaimer"](): string;
     /**
       * `Do you want to use the plugin system that is in an experimental stage?`
       */
-    ["com.affine.settings.workspace.experimental-features.prompt-header"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.prompt-header"](): string;
     /**
       * `You are about to enable an experimental feature. This feature is still in development and may contain errors or behave unpredictably. Please proceed with caution and at your own risk.`
       */
-    ["com.affine.settings.workspace.experimental-features.prompt-warning"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.prompt-warning"](): string;
     /**
       * `WARNING MESSAGE`
       */
-    ["com.affine.settings.workspace.experimental-features.prompt-warning-title"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.prompt-warning-title"](): string;
     /**
       * `Enable AI`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai.name"](): string;
     /**
       * `Enable or disable ALL AI features.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai.description"](): string;
     /**
       * `Enable AI Network Search`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-network-search.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-network-search.name"](): string;
     /**
       * `Enable or disable AI Network Search feature.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-network-search.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-network-search.description"](): string;
     /**
       * `Enable AI Model Switch`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-model-switch.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-model-switch.name"](): string;
     /**
       * `Enable or disable AI model switch feature.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-model-switch.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-model-switch.description"](): string;
     /**
       * `Enable AI Playground`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-playground.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-playground.name"](): string;
     /**
       * `Enable or disable AI playground feature.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-playground.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-playground.description"](): string;
     /**
       * `Database Full Width`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-database-full-width.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-database-full-width.name"](): string;
     /**
       * `The database will be displayed in full-width mode.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-database-full-width.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-database-full-width.description"](): string;
     /**
       * `Database Attachment Note`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-database-attachment-note.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-database-attachment-note.name"](): string;
     /**
       * `Allows adding notes to database attachments.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-database-attachment-note.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-database-attachment-note.description"](): string;
     /**
       * `Todo Block Query`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-block-query.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-block-query.name"](): string;
     /**
       * `Enables querying of todo blocks.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-block-query.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-block-query.description"](): string;
     /**
       * `Synced Doc Block`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-synced-doc-block.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-synced-doc-block.name"](): string;
     /**
       * `Enables syncing of doc blocks.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-synced-doc-block.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-synced-doc-block.description"](): string;
     /**
       * `Edgeless Text`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-edgeless-text.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-edgeless-text.name"](): string;
     /**
       * `Enables edgeless text blocks.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-edgeless-text.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-edgeless-text.description"](): string;
     /**
       * `Color Picker`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-color-picker.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-color-picker.name"](): string;
     /**
       * `Enables color picker blocks.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-color-picker.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-color-picker.description"](): string;
     /**
       * `AI Chat Block`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-chat-block.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-chat-block.name"](): string;
     /**
       * `Enables AI chat blocks.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-chat-block.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-chat-block.description"](): string;
     /**
       * `AI Onboarding`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-onboarding.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-onboarding.name"](): string;
     /**
       * `Enables AI onboarding.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-onboarding.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-onboarding.description"](): string;
     /**
       * `Mind Map Import`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-mind-map-import.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-mind-map-import.name"](): string;
     /**
       * `Enables mind map import.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-mind-map-import.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-mind-map-import.description"](): string;
     /**
       * `Block Meta`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-block-meta.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-block-meta.name"](): string;
     /**
       * `Once enabled, all blocks will have created time, updated time, created by and updated by.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-block-meta.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-block-meta.description"](): string;
     /**
       * `Callout`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-callout.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-callout.name"](): string;
     /**
       * `Let your words stand out. This also include the callout in the transcription block.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-callout.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-callout.description"](): string;
     /**
       * `Embed Iframe Block`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-embed-iframe-block.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-embed-iframe-block.name"](): string;
     /**
       * `Enables Embed Iframe Block.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-embed-iframe-block.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-embed-iframe-block.description"](): string;
     /**
       * `Emoji Folder Icon`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-emoji-folder-icon.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-emoji-folder-icon.name"](): string;
     /**
       * `Once enabled, you can use an emoji as the folder icon. When the first character of the folder name is an emoji, it will be extracted and used as its icon.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-emoji-folder-icon.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-emoji-folder-icon.description"](): string;
     /**
       * `Emoji Doc Icon`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-emoji-doc-icon.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-emoji-doc-icon.name"](): string;
     /**
       * `Once enabled, you can use an emoji as the doc icon. When the first character of the doc name is an emoji, it will be extracted and used as its icon.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-emoji-doc-icon.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-emoji-doc-icon.description"](): string;
     /**
       * `Editor Settings`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-editor-settings.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-editor-settings.name"](): string;
     /**
       * `Enables editor settings.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-editor-settings.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-editor-settings.description"](): string;
     /**
       * `Theme Editor`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-theme-editor.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-theme-editor.name"](): string;
     /**
       * `Enables theme editor.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-theme-editor.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-theme-editor.description"](): string;
     /**
       * `Allow create local workspace`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-local-workspace.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-local-workspace.name"](): string;
     /**
       * `Allow create local workspace`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-local-workspace.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-local-workspace.description"](): string;
     /**
       * `Advanced block visibility control`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-advanced-block-visibility.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-advanced-block-visibility.name"](): string;
     /**
       * `To provide detailed control over which edgeless blocks are visible in page mode.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-advanced-block-visibility.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-advanced-block-visibility.description"](): string;
     /**
       * `Mobile Keyboard Toolbar`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-mobile-keyboard-toolbar.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-mobile-keyboard-toolbar.name"](): string;
     /**
       * `Enables the mobile keyboard toolbar.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-mobile-keyboard-toolbar.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-mobile-keyboard-toolbar.description"](): string;
     /**
       * `Mobile Linked Doc Widget`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-mobile-linked-doc-menu.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-mobile-linked-doc-menu.name"](): string;
     /**
       * `Enables the mobile linked doc menu.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-mobile-linked-doc-menu.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-mobile-linked-doc-menu.description"](): string;
     /**
       * `Enable Snapshot Import Export`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-snapshot-import-export.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-snapshot-import-export.name"](): string;
     /**
       * `Once enabled, users can import and export blocksuite snapshots.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-snapshot-import-export.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-snapshot-import-export.description"](): string;
     /**
       * `Enable Edgeless Editing`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-mobile-edgeless-editing.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-mobile-edgeless-editing.name"](): string;
     /**
       * `Once enabled, users can edit edgeless canvas.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-mobile-edgeless-editing.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-mobile-edgeless-editing.description"](): string;
     /**
       * `PDF embed preview`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-pdf-embed-preview.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-pdf-embed-preview.name"](): string;
     /**
       * `Once enabled, you can preview PDF in embed view.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-pdf-embed-preview.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-pdf-embed-preview.description"](): string;
     /**
       * `Audio block`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-audio-block.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-audio-block.name"](): string;
     /**
       * `Audio block allows you to play audio files globally and add notes to them.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-audio-block.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-audio-block.description"](): string;
     /**
       * `Meetings`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-meetings.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-meetings.name"](): string;
     /**
-      * `Meetings allows you to record and transcribe meetings. Don't forget to enable it in AFFiNE settings.`
+      * `Meetings allows you to record and transcribe meetings. Don't forget to enable it in LoveNotes settings.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-meetings.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-meetings.description"](): string;
     /**
       * `Editor RTL`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-editor-rtl.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-editor-rtl.name"](): string;
     /**
       * `Once enabled, the editor will be displayed in RTL mode.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-editor-rtl.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-editor-rtl.description"](): string;
     /**
       * `Edgeless scribbled style`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-edgeless-scribbled-style.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-edgeless-scribbled-style.name"](): string;
     /**
       * `Once enabled, you can use scribbled style in edgeless mode.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-edgeless-scribbled-style.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-edgeless-scribbled-style.description"](): string;
     /**
       * `Database block table view virtual scroll`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-table-virtual-scroll.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-table-virtual-scroll.name"](): string;
     /**
       * `Once enabled, switch table view to virtual scroll mode in Database Block.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-table-virtual-scroll.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-table-virtual-scroll.description"](): string;
     /**
       * `Code block HTML preview`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-code-block-html-preview.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-code-block-html-preview.name"](): string;
     /**
       * `Once enabled, you can preview HTML in code block.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-code-block-html-preview.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-code-block-html-preview.description"](): string;
     /**
       * `Adapter Panel`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-adapter-panel.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-adapter-panel.name"](): string;
     /**
       * `Once enabled, you can preview adapter export content in the right side bar.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-adapter-panel.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-adapter-panel.description"](): string;
     /**
       * `Send detailed object information to AI`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-send-detailed-object.name"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-send-detailed-object.name"](): string;
     /**
       * `When toggled off, every time you choose "Continue with AI", AI only got a screenshot.`
       */
-    ["com.affine.settings.workspace.experimental-features.enable-ai-send-detailed-object.description"](): string;
+    ["com.lovenotes.settings.workspace.experimental-features.enable-ai-send-detailed-object.description"](): string;
     /**
       * `Only an owner can edit the workspace avatar and name. Changes will be shown for everyone.`
       */
-    ["com.affine.settings.workspace.not-owner"](): string;
+    ["com.lovenotes.settings.workspace.not-owner"](): string;
     /**
       * `Preference`
       */
-    ["com.affine.settings.workspace.preferences"](): string;
+    ["com.lovenotes.settings.workspace.preferences"](): string;
     /**
       * `Team's Billing`
       */
-    ["com.affine.settings.workspace.billing"](): string;
+    ["com.lovenotes.settings.workspace.billing"](): string;
     /**
       * `Team Workspace`
       */
-    ["com.affine.settings.workspace.billing.team-workspace"](): string;
+    ["com.lovenotes.settings.workspace.billing.team-workspace"](): string;
     /**
       * `Your workspace is in a free trail period.`
       */
-    ["com.affine.settings.workspace.billing.team-workspace.description.free-trail"](): string;
+    ["com.lovenotes.settings.workspace.billing.team-workspace.description.free-trail"](): string;
     /**
       * `Your workspace is billed annually.`
       */
-    ["com.affine.settings.workspace.billing.team-workspace.description.billed.annually"](): string;
+    ["com.lovenotes.settings.workspace.billing.team-workspace.description.billed.annually"](): string;
     /**
       * `Your workspace is billed monthly.`
       */
-    ["com.affine.settings.workspace.billing.team-workspace.description.billed.monthly"](): string;
+    ["com.lovenotes.settings.workspace.billing.team-workspace.description.billed.monthly"](): string;
     /**
       * `Your subscription will end on {{date}}`
       */
-    ["com.affine.settings.workspace.billing.team-workspace.not-renewed"](options: {
+    ["com.lovenotes.settings.workspace.billing.team-workspace.not-renewed"](options: {
         readonly date: string;
     }): string;
     /**
       * `Next billing date: {{date}}`
       */
-    ["com.affine.settings.workspace.billing.team-workspace.next-billing-date"](options: {
+    ["com.lovenotes.settings.workspace.billing.team-workspace.next-billing-date"](options: {
         readonly date: string;
     }): string;
     /**
       * `Cancel Plan`
       */
-    ["com.affine.settings.workspace.billing.team-workspace.cancel-plan"](): string;
+    ["com.lovenotes.settings.workspace.billing.team-workspace.cancel-plan"](): string;
     /**
       * `License`
       */
-    ["com.affine.settings.workspace.license"](): string;
+    ["com.lovenotes.settings.workspace.license"](): string;
     /**
       * `Manage license information and invoices for the self host team workspace.`
       */
-    ["com.affine.settings.workspace.license.description"](): string;
+    ["com.lovenotes.settings.workspace.license.description"](): string;
     /**
       * `Get teams plan for your self hosted workspace.`
       */
-    ["com.affine.settings.workspace.license.benefit.team.title"](): string;
+    ["com.lovenotes.settings.workspace.license.benefit.team.title"](): string;
     /**
       * `Need more seats? Best for scalable teams.`
       */
-    ["com.affine.settings.workspace.license.benefit.team.subtitle"](): string;
+    ["com.lovenotes.settings.workspace.license.benefit.team.subtitle"](): string;
     /**
       * `Everything in Self Hosted FOSS`
       */
-    ["com.affine.settings.workspace.license.benefit.team.g1"](): string;
+    ["com.lovenotes.settings.workspace.license.benefit.team.g1"](): string;
     /**
       * `{{initialQuota}} initial storage + {{quotaPerSeat}} per seat`
       */
-    ["com.affine.settings.workspace.license.benefit.team.g2"](options: Readonly<{
+    ["com.lovenotes.settings.workspace.license.benefit.team.g2"](options: Readonly<{
         initialQuota: string;
         quotaPerSeat: string;
     }>): string;
     /**
       * `{{quota}} of maximum file size`
       */
-    ["com.affine.settings.workspace.license.benefit.team.g3"](options: {
+    ["com.lovenotes.settings.workspace.license.benefit.team.g3"](options: {
         readonly quota: string;
     }): string;
     /**
       * `Unlimited team members (10+ seats)`
       */
-    ["com.affine.settings.workspace.license.benefit.team.g4"](): string;
+    ["com.lovenotes.settings.workspace.license.benefit.team.g4"](): string;
     /**
       * `Multiple admin roles`
       */
-    ["com.affine.settings.workspace.license.benefit.team.g5"](): string;
+    ["com.lovenotes.settings.workspace.license.benefit.team.g5"](): string;
     /**
       * `Priority customer support`
       */
-    ["com.affine.settings.workspace.license.benefit.team.g6"](): string;
+    ["com.lovenotes.settings.workspace.license.benefit.team.g6"](): string;
     /**
       * `Lean more`
       */
-    ["com.affine.settings.workspace.license.lean-more"](): string;
+    ["com.lovenotes.settings.workspace.license.lean-more"](): string;
     /**
       * `Selfhosted workspace`
       */
-    ["com.affine.settings.workspace.license.self-host"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host"](): string;
     /**
       * `Self-host Team Workspace`
       */
-    ["com.affine.settings.workspace.license.self-host-team"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team"](): string;
     /**
       * `This license will expire on {{expirationDate}}, with {{leftDays}} days remaining.`
       */
-    ["com.affine.settings.workspace.license.self-host-team.team.description"](options: Readonly<{
+    ["com.lovenotes.settings.workspace.license.self-host-team.team.description"](options: Readonly<{
         expirationDate: string;
         leftDays: string;
     }>): string;
     /**
       * `Basic version: {{memberCount}} seats. For more, purchase or use activation key.`
       */
-    ["com.affine.settings.workspace.license.self-host-team.free.description"](options: {
+    ["com.lovenotes.settings.workspace.license.self-host-team.free.description"](options: {
         readonly memberCount: string;
     }): string;
     /**
       * `Seats`
       */
-    ["com.affine.settings.workspace.license.self-host-team.seats"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.seats"](): string;
     /**
       * `Use purchased key`
       */
-    ["com.affine.settings.workspace.license.self-host-team.use-purchased-key"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.use-purchased-key"](): string;
     /**
       * `Upload license file`
       */
-    ["com.affine.settings.workspace.license.self-host-team.upload-license-file"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.upload-license-file"](): string;
     /**
       * `Upload license file locally and verify the license information.`
       */
-    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.description"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.upload-license-file.description"](): string;
     /**
       * `To purchase a license:`
       */
-    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.tips.title"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.upload-license-file.tips.title"](): string;
     /**
       * `Workspace id`
       */
-    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.tips.workspace-id"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.upload-license-file.tips.workspace-id"](): string;
     /**
       * `Click to upload`
       */
-    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.click-to-upload"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.upload-license-file.click-to-upload"](): string;
     /**
       * `Activation failed`
       */
-    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.failed"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.upload-license-file.failed"](): string;
     /**
       * `Activation Success`
       */
-    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.success.title"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.upload-license-file.success.title"](): string;
     /**
       * `License has been successfully applied`
       */
-    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.success.description"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.upload-license-file.success.description"](): string;
     /**
       * `If you encounter any issues, contact support@toeverything.info.`
       */
-    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.help"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.upload-license-file.help"](): string;
     /**
       * `Deactivate`
       */
-    ["com.affine.settings.workspace.license.self-host-team.deactivate-license"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.deactivate-license"](): string;
     /**
       * `Replace your license file`
       */
-    ["com.affine.settings.workspace.license.self-host-team.replace-license.title"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.replace-license.title"](): string;
     /**
       * `Replace the existing license file with a new, updated version.`
       */
-    ["com.affine.settings.workspace.license.self-host-team.replace-license.description"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.replace-license.description"](): string;
     /**
       * `Upload license file`
       */
-    ["com.affine.settings.workspace.license.self-host-team.replace-license.upload"](): string;
+    ["com.lovenotes.settings.workspace.license.self-host-team.replace-license.upload"](): string;
     /**
       * `Buy more seat`
       */
-    ["com.affine.settings.workspace.license.buy-more-seat"](): string;
+    ["com.lovenotes.settings.workspace.license.buy-more-seat"](): string;
     /**
       * `Activate License`
       */
-    ["com.affine.settings.workspace.license.activate-modal.title"](): string;
+    ["com.lovenotes.settings.workspace.license.activate-modal.title"](): string;
     /**
       * `Enter license key to activate this self host workspace.`
       */
-    ["com.affine.settings.workspace.license.activate-modal.description"](): string;
+    ["com.lovenotes.settings.workspace.license.activate-modal.description"](): string;
     /**
       * `License activated successfully.`
       */
-    ["com.affine.settings.workspace.license.activate-success"](): string;
+    ["com.lovenotes.settings.workspace.license.activate-success"](): string;
     /**
       * `Confirm deactivation?`
       */
-    ["com.affine.settings.workspace.license.deactivate-modal.title"](): string;
+    ["com.lovenotes.settings.workspace.license.deactivate-modal.title"](): string;
     /**
       * `After deactivation, you will need to upload a new license to continue using team feature`
       */
-    ["com.affine.settings.workspace.license.deactivate-modal.description-license"](): string;
+    ["com.lovenotes.settings.workspace.license.deactivate-modal.description-license"](): string;
     /**
       * `Manage Payment`
       */
-    ["com.affine.settings.workspace.license.deactivate-modal.manage-payment"](): string;
+    ["com.lovenotes.settings.workspace.license.deactivate-modal.manage-payment"](): string;
     /**
       * `License deactivated successfully.`
       */
-    ["com.affine.settings.workspace.license.deactivate-success"](): string;
+    ["com.lovenotes.settings.workspace.license.deactivate-success"](): string;
     /**
       * `Local`
       */
-    ["com.affine.settings.workspace.state.local"](): string;
+    ["com.lovenotes.settings.workspace.state.local"](): string;
     /**
-      * `Sync with AFFiNE Cloud`
+      * `Sync with LoveNotes Cloud`
       */
-    ["com.affine.settings.workspace.state.sync-affine-cloud"](): string;
+    ["com.lovenotes.settings.workspace.state.sync-lovenotes-cloud"](): string;
     /**
       * `Self-Hosted Server`
       */
-    ["com.affine.settings.workspace.state.self-hosted"](): string;
+    ["com.lovenotes.settings.workspace.state.self-hosted"](): string;
     /**
       * `Joined Workspace`
       */
-    ["com.affine.settings.workspace.state.joined"](): string;
+    ["com.lovenotes.settings.workspace.state.joined"](): string;
     /**
       * `Available Offline`
       */
-    ["com.affine.settings.workspace.state.available-offline"](): string;
+    ["com.lovenotes.settings.workspace.state.available-offline"](): string;
     /**
       * `Published to Web`
       */
-    ["com.affine.settings.workspace.state.published"](): string;
+    ["com.lovenotes.settings.workspace.state.published"](): string;
     /**
       * `Team Workspace`
       */
-    ["com.affine.settings.workspace.state.team"](): string;
+    ["com.lovenotes.settings.workspace.state.team"](): string;
     /**
       * `Properties`
       */
-    ["com.affine.settings.workspace.properties"](): string;
+    ["com.lovenotes.settings.workspace.properties"](): string;
     /**
       * `Add property`
       */
-    ["com.affine.settings.workspace.properties.add_property"](): string;
+    ["com.lovenotes.settings.workspace.properties.add_property"](): string;
     /**
       * `All`
       */
-    ["com.affine.settings.workspace.properties.all"](): string;
+    ["com.lovenotes.settings.workspace.properties.all"](): string;
     /**
       * `Delete property`
       */
-    ["com.affine.settings.workspace.properties.delete-property"](): string;
+    ["com.lovenotes.settings.workspace.properties.delete-property"](): string;
     /**
       * `Edit property`
       */
-    ["com.affine.settings.workspace.properties.edit-property"](): string;
+    ["com.lovenotes.settings.workspace.properties.edit-property"](): string;
     /**
       * `General properties`
       */
-    ["com.affine.settings.workspace.properties.general-properties"](): string;
+    ["com.lovenotes.settings.workspace.properties.general-properties"](): string;
     /**
       * `Properties`
       */
-    ["com.affine.settings.workspace.properties.header.title"](): string;
+    ["com.lovenotes.settings.workspace.properties.header.title"](): string;
     /**
       * `In use`
       */
-    ["com.affine.settings.workspace.properties.in-use"](): string;
+    ["com.lovenotes.settings.workspace.properties.in-use"](): string;
     /**
       * `Readonly properties`
       */
-    ["com.affine.settings.workspace.properties.readonly-properties"](): string;
+    ["com.lovenotes.settings.workspace.properties.readonly-properties"](): string;
     /**
       * `Required properties`
       */
-    ["com.affine.settings.workspace.properties.required-properties"](): string;
+    ["com.lovenotes.settings.workspace.properties.required-properties"](): string;
     /**
       * `Set as required property`
       */
-    ["com.affine.settings.workspace.properties.set-as-required"](): string;
+    ["com.lovenotes.settings.workspace.properties.set-as-required"](): string;
     /**
       * `Unused`
       */
-    ["com.affine.settings.workspace.properties.unused"](): string;
+    ["com.lovenotes.settings.workspace.properties.unused"](): string;
     /**
       * `You can view current workspace's storage and files here.`
       */
-    ["com.affine.settings.workspace.storage.subtitle"](): string;
+    ["com.lovenotes.settings.workspace.storage.subtitle"](): string;
     /**
-      * `Enable AFFiNE Cloud to publish this workspace`
+      * `Enable LoveNotes Cloud to publish this workspace`
       */
-    ["com.affine.settings.workspace.publish-tooltip"](): string;
+    ["com.lovenotes.settings.workspace.publish-tooltip"](): string;
     /**
       * `Sharing`
       */
-    ["com.affine.settings.workspace.sharing.title"](): string;
+    ["com.lovenotes.settings.workspace.sharing.title"](): string;
     /**
       * `Allow URL unfurling by Slack & other social apps, even if a doc is only accessible by workspace members.`
       */
-    ["com.affine.settings.workspace.sharing.url-preview.description"](): string;
+    ["com.lovenotes.settings.workspace.sharing.url-preview.description"](): string;
     /**
       * `Always enable url preview`
       */
-    ["com.affine.settings.workspace.sharing.url-preview.title"](): string;
+    ["com.lovenotes.settings.workspace.sharing.url-preview.title"](): string;
     /**
       * `Control whether pages in this workspace can be shared publicly. Turn off to block new shares and external access for existing shares.`
       */
-    ["com.affine.settings.workspace.sharing.workspace-sharing.description"](): string;
+    ["com.lovenotes.settings.workspace.sharing.workspace-sharing.description"](): string;
     /**
       * `Allow workspace page sharing`
       */
-    ["com.affine.settings.workspace.sharing.workspace-sharing.title"](): string;
+    ["com.lovenotes.settings.workspace.sharing.workspace-sharing.title"](): string;
     /**
-      * `AFFiNE AI`
+      * `LoveNotes AI`
       */
-    ["com.affine.settings.workspace.affine-ai.title"](): string;
+    ["com.lovenotes.settings.workspace.lovenotes-ai.title"](): string;
     /**
-      * `Allow AFFiNE AI Assistant`
+      * `Allow LoveNotes AI Assistant`
       */
-    ["com.affine.settings.workspace.affine-ai.label"](): string;
+    ["com.lovenotes.settings.workspace.lovenotes-ai.label"](): string;
     /**
-      * `Allow workspace members to use AFFiNE AI features. This setting doesn't affect billing. Workspace members use AFFiNE AI through their personal accounts.`
+      * `Allow workspace members to use LoveNotes AI features. This setting doesn't affect billing. Workspace members use LoveNotes AI through their personal accounts.`
       */
-    ["com.affine.settings.workspace.affine-ai.description"](): string;
+    ["com.lovenotes.settings.workspace.lovenotes-ai.description"](): string;
     /**
       * `Archived workspaces`
       */
-    ["com.affine.settings.workspace.backup"](): string;
+    ["com.lovenotes.settings.workspace.backup"](): string;
     /**
       * `Manage archived local workspace files`
       */
-    ["com.affine.settings.workspace.backup.subtitle"](): string;
+    ["com.lovenotes.settings.workspace.backup.subtitle"](): string;
     /**
       * `No archived workspace files found`
       */
-    ["com.affine.settings.workspace.backup.empty"](): string;
+    ["com.lovenotes.settings.workspace.backup.empty"](): string;
     /**
       * `Delete archived workspace`
       */
-    ["com.affine.settings.workspace.backup.delete"](): string;
+    ["com.lovenotes.settings.workspace.backup.delete"](): string;
     /**
       * `Are you sure you want to delete this workspace. This action cannot be undone. Make sure you no longer need them before proceeding.`
       */
-    ["com.affine.settings.workspace.backup.delete.warning"](): string;
+    ["com.lovenotes.settings.workspace.backup.delete.warning"](): string;
     /**
       * `Workspace backup deleted successfully`
       */
-    ["com.affine.settings.workspace.backup.delete.success"](): string;
+    ["com.lovenotes.settings.workspace.backup.delete.success"](): string;
     /**
       * `Workspace enabled successfully`
       */
-    ["com.affine.settings.workspace.backup.import.success"](): string;
+    ["com.lovenotes.settings.workspace.backup.import.success"](): string;
     /**
       * `Enable local workspace`
       */
-    ["com.affine.settings.workspace.backup.import"](): string;
+    ["com.lovenotes.settings.workspace.backup.import"](): string;
     /**
       * `Open`
       */
-    ["com.affine.settings.workspace.backup.import.success.action"](): string;
+    ["com.lovenotes.settings.workspace.backup.import.success.action"](): string;
     /**
       * `Deleted on {{date}} at {{time}}`
       */
-    ["com.affine.settings.workspace.backup.delete-at"](options: Readonly<{
+    ["com.lovenotes.settings.workspace.backup.delete-at"](options: Readonly<{
         date: string;
         time: string;
     }>): string;
     /**
       * `Indexer & Embedding`
       */
-    ["com.affine.settings.workspace.indexer-embedding.title"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.title"](): string;
     /**
-      * `Manage AFFiNE indexing and AFFiNE AI Embedding for local content processing`
+      * `Manage LoveNotes indexing and LoveNotes AI Embedding for local content processing`
       */
-    ["com.affine.settings.workspace.indexer-embedding.description"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.description"](): string;
     /**
       * `Embedding`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.title"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.title"](): string;
     /**
       * `Embedding allows AI to retrieve your content. If the indexer uses local settings, it may affect some of the results of the Embedding.`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.description"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.description"](): string;
     /**
       * `Only the workspace owner can enable Workspace Embedding.`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.disabled-tooltip"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.disabled-tooltip"](): string;
     /**
       * `Select doc`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.select-doc"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.select-doc"](): string;
     /**
       * `Upload file`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.upload-file"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.upload-file"](): string;
     /**
       * `Workspace Embedding`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.switch.title"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.switch.title"](): string;
     /**
       * `AI can call files embedded in the workspace.`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.switch.description"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.switch.description"](): string;
     /**
       * `Failed to update workspace doc embedding enabled`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.switch.error"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.switch.error"](): string;
     /**
       * `Failed to remove attachment from embedding`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.remove-attachment.error"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.remove-attachment.error"](): string;
     /**
       * `Failed to update ignored docs`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.update-ignored-docs.error"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.update-ignored-docs.error"](): string;
     /**
       * `Embedding progress`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.progress.title"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.progress.title"](): string;
     /**
       * `Syncing`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.progress.syncing"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.progress.syncing"](): string;
     /**
       * `Synced`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.progress.synced"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.progress.synced"](): string;
     /**
       * `Loading sync status...`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.progress.loading-sync-status"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.progress.loading-sync-status"](): string;
     /**
       * `Ignore Docs`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.ignore-docs.title"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.ignore-docs.title"](): string;
     /**
       * `The Ignored docs will not be embedded into the current workspace.`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.ignore-docs.description"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.ignore-docs.description"](): string;
     /**
       * `Additional attachments`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.title"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.additional-attachments.title"](): string;
     /**
       * `The uploaded file will be embedded in the current workspace.`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.description"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.additional-attachments.description"](): string;
     /**
       * `Remove the attachment from embedding?`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.title"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.title"](): string;
     /**
       * `Attachment will be removed. AI will not continue to extract content from this attachment.`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.description"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.description"](): string;
     /**
       * `Delete File`
       */
-    ["com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.tooltip"](): string;
+    ["com.lovenotes.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.tooltip"](): string;
     /**
-      * `Sharing doc requires AFFiNE Cloud.`
+      * `Sharing doc requires LoveNotes Cloud.`
       */
-    ["com.affine.share-menu.EnableCloudDescription"](): string;
+    ["com.lovenotes.share-menu.EnableCloudDescription"](): string;
     /**
       * `Share mode`
       */
-    ["com.affine.share-menu.ShareMode"](): string;
+    ["com.lovenotes.share-menu.ShareMode"](): string;
     /**
       * `Share doc`
       */
-    ["com.affine.share-menu.SharePage"](): string;
+    ["com.lovenotes.share-menu.SharePage"](): string;
     /**
       * `General access`
       */
-    ["com.affine.share-menu.generalAccess"](): string;
+    ["com.lovenotes.share-menu.generalAccess"](): string;
     /**
       * `Share via export`
       */
-    ["com.affine.share-menu.ShareViaExport"](): string;
+    ["com.lovenotes.share-menu.ShareViaExport"](): string;
     /**
       * `Download a static copy of your doc to share with others`
       */
-    ["com.affine.share-menu.ShareViaExportDescription"](): string;
+    ["com.lovenotes.share-menu.ShareViaExportDescription"](): string;
     /**
       * `Print a paper copy`
       */
-    ["com.affine.share-menu.ShareViaPrintDescription"](): string;
+    ["com.lovenotes.share-menu.ShareViaPrintDescription"](): string;
     /**
       * `Share with link`
       */
-    ["com.affine.share-menu.ShareWithLink"](): string;
+    ["com.lovenotes.share-menu.ShareWithLink"](): string;
     /**
       * `Create a link you can easily share with anyone. The visitors will open your doc in the form od a document`
       */
-    ["com.affine.share-menu.ShareWithLinkDescription"](): string;
+    ["com.lovenotes.share-menu.ShareWithLinkDescription"](): string;
     /**
       * `Shared doc`
       */
-    ["com.affine.share-menu.SharedPage"](): string;
+    ["com.lovenotes.share-menu.SharedPage"](): string;
     /**
       * `Copy Link`
       */
-    ["com.affine.share-menu.copy"](): string;
+    ["com.lovenotes.share-menu.copy"](): string;
     /**
       * `Copy private link`
       */
-    ["com.affine.share-menu.copy-private-link"](): string;
+    ["com.lovenotes.share-menu.copy-private-link"](): string;
     /**
       * `Copy Link to Selected Block`
       */
-    ["com.affine.share-menu.copy.block"](): string;
+    ["com.lovenotes.share-menu.copy.block"](): string;
     /**
       * `Copy Link to Edgeless Mode`
       */
-    ["com.affine.share-menu.copy.edgeless"](): string;
+    ["com.lovenotes.share-menu.copy.edgeless"](): string;
     /**
       * `Copy Link to Selected Frame`
       */
-    ["com.affine.share-menu.copy.frame"](): string;
+    ["com.lovenotes.share-menu.copy.frame"](): string;
     /**
       * `Copy Link to Page Mode`
       */
-    ["com.affine.share-menu.copy.page"](): string;
+    ["com.lovenotes.share-menu.copy.page"](): string;
     /**
       * `You can share this document with link.`
       */
-    ["com.affine.share-menu.create-public-link.notification.success.message"](): string;
+    ["com.lovenotes.share-menu.create-public-link.notification.success.message"](): string;
     /**
       * `Public link created`
       */
-    ["com.affine.share-menu.create-public-link.notification.success.title"](): string;
+    ["com.lovenotes.share-menu.create-public-link.notification.success.title"](): string;
     /**
       * `Please try again later.`
       */
-    ["com.affine.share-menu.disable-publish-link.notification.fail.message"](): string;
+    ["com.lovenotes.share-menu.disable-publish-link.notification.fail.message"](): string;
     /**
       * `Failed to disable public link`
       */
-    ["com.affine.share-menu.disable-publish-link.notification.fail.title"](): string;
+    ["com.lovenotes.share-menu.disable-publish-link.notification.fail.title"](): string;
     /**
       * `This doc is no longer shared publicly.`
       */
-    ["com.affine.share-menu.disable-publish-link.notification.success.message"](): string;
+    ["com.lovenotes.share-menu.disable-publish-link.notification.success.message"](): string;
     /**
       * `Public link disabled`
       */
-    ["com.affine.share-menu.disable-publish-link.notification.success.title"](): string;
+    ["com.lovenotes.share-menu.disable-publish-link.notification.success.title"](): string;
     /**
       * `Manage workspace members`
       */
-    ["com.affine.share-menu.navigate.workspace"](): string;
+    ["com.lovenotes.share-menu.navigate.workspace"](): string;
     /**
       * `Anyone with the link`
       */
-    ["com.affine.share-menu.option.link.label"](): string;
+    ["com.lovenotes.share-menu.option.link.label"](): string;
     /**
       * `No access`
       */
-    ["com.affine.share-menu.option.link.no-access"](): string;
+    ["com.lovenotes.share-menu.option.link.no-access"](): string;
     /**
       * `Only workspace members can access this link`
       */
-    ["com.affine.share-menu.option.link.no-access.description"](): string;
+    ["com.lovenotes.share-menu.option.link.no-access.description"](): string;
     /**
       * `Read only`
       */
-    ["com.affine.share-menu.option.link.readonly"](): string;
+    ["com.lovenotes.share-menu.option.link.readonly"](): string;
     /**
       * `Anyone can access this link`
       */
-    ["com.affine.share-menu.option.link.readonly.description"](): string;
+    ["com.lovenotes.share-menu.option.link.readonly.description"](): string;
     /**
       * `Sharing for this workspace is turned off. Please contact an admin to enable it.`
       */
-    ["com.affine.share-menu.workspace-sharing.disabled.tooltip"](): string;
+    ["com.lovenotes.share-menu.workspace-sharing.disabled.tooltip"](): string;
     /**
       * `Can manage`
       */
-    ["com.affine.share-menu.option.permission.can-manage"](): string;
+    ["com.lovenotes.share-menu.option.permission.can-manage"](): string;
     /**
       * `Can edit`
       */
-    ["com.affine.share-menu.option.permission.can-edit"](): string;
+    ["com.lovenotes.share-menu.option.permission.can-edit"](): string;
     /**
       * `Can read`
       */
-    ["com.affine.share-menu.option.permission.can-read"](): string;
+    ["com.lovenotes.share-menu.option.permission.can-read"](): string;
     /**
       * `No access`
       */
-    ["com.affine.share-menu.option.permission.no-access"](): string;
+    ["com.lovenotes.share-menu.option.permission.no-access"](): string;
     /**
       * `Members in workspace`
       */
-    ["com.affine.share-menu.option.permission.label"](): string;
+    ["com.lovenotes.share-menu.option.permission.label"](): string;
     /**
       * `Workspace admins and owner automatically have Can manage permissions.`
       */
-    ["com.affine.share-menu.option.permission.tips"](): string;
+    ["com.lovenotes.share-menu.option.permission.tips"](): string;
     /**
       * `Publish to web`
       */
-    ["com.affine.share-menu.publish-to-web"](): string;
+    ["com.lovenotes.share-menu.publish-to-web"](): string;
     /**
       * `Share privately`
       */
-    ["com.affine.share-menu.share-privately"](): string;
+    ["com.lovenotes.share-menu.share-privately"](): string;
     /**
       * `Share`
       */
-    ["com.affine.share-menu.shareButton"](): string;
+    ["com.lovenotes.share-menu.shareButton"](): string;
     /**
       * `Shared`
       */
-    ["com.affine.share-menu.sharedButton"](): string;
+    ["com.lovenotes.share-menu.sharedButton"](): string;
     /**
       * `{{member1}} and {{member2}} are in this doc`
       */
-    ["com.affine.share-menu.member-management.member-count-2"](options: Readonly<{
+    ["com.lovenotes.share-menu.member-management.member-count-2"](options: Readonly<{
         member1: string;
         member2: string;
     }>): string;
     /**
       * `{{member1}}, {{member2}} and {{member3}} are in this doc`
       */
-    ["com.affine.share-menu.member-management.member-count-3"](options: Readonly<{
+    ["com.lovenotes.share-menu.member-management.member-count-3"](options: Readonly<{
         member1: string;
         member2: string;
         member3: string;
@@ -6718,7 +6718,7 @@ export function useAFFiNEI18N(): {
     /**
       * `{{member1}}, {{member2}} and {{memberCount}} others`
       */
-    ["com.affine.share-menu.member-management.member-count-more"](options: Readonly<{
+    ["com.lovenotes.share-menu.member-management.member-count-more"](options: Readonly<{
         member1: string;
         member2: string;
         memberCount: string;
@@ -6726,685 +6726,685 @@ export function useAFFiNEI18N(): {
     /**
       * `Remove`
       */
-    ["com.affine.share-menu.member-management.remove"](): string;
+    ["com.lovenotes.share-menu.member-management.remove"](): string;
     /**
       * `Set as owner`
       */
-    ["com.affine.share-menu.member-management.set-as-owner"](): string;
+    ["com.lovenotes.share-menu.member-management.set-as-owner"](): string;
     /**
       * `Make this person the owner?`
       */
-    ["com.affine.share-menu.member-management.set-as-owner.confirm.title"](): string;
+    ["com.lovenotes.share-menu.member-management.set-as-owner.confirm.title"](): string;
     /**
       * `The new owner will be effective immediately, and you might lose access to this doc if other users remove you, please confirm.`
       */
-    ["com.affine.share-menu.member-management.set-as-owner.confirm.description"](): string;
+    ["com.lovenotes.share-menu.member-management.set-as-owner.confirm.description"](): string;
     /**
       * `Permission updated`
       */
-    ["com.affine.share-menu.member-management.update-success"](): string;
+    ["com.lovenotes.share-menu.member-management.update-success"](): string;
     /**
       * `Failed to update permission`
       */
-    ["com.affine.share-menu.member-management.update-fail"](): string;
+    ["com.lovenotes.share-menu.member-management.update-fail"](): string;
     /**
       * `{{memberCount}} collaborators in the doc`
       */
-    ["com.affine.share-menu.member-management.header"](options: {
+    ["com.lovenotes.share-menu.member-management.header"](options: {
         readonly memberCount: string;
     }): string;
     /**
       * `Add collaborators`
       */
-    ["com.affine.share-menu.member-management.add-collaborators"](): string;
+    ["com.lovenotes.share-menu.member-management.add-collaborators"](): string;
     /**
       * `Send invite`
       */
-    ["com.affine.share-menu.invite-editor.header"](): string;
+    ["com.lovenotes.share-menu.invite-editor.header"](): string;
     /**
       * `Manage members`
       */
-    ["com.affine.share-menu.invite-editor.manage-members"](): string;
+    ["com.lovenotes.share-menu.invite-editor.manage-members"](): string;
     /**
       * `Invite`
       */
-    ["com.affine.share-menu.invite-editor.invite"](): string;
+    ["com.lovenotes.share-menu.invite-editor.invite"](): string;
     /**
       * `No results found`
       */
-    ["com.affine.share-menu.invite-editor.no-found"](): string;
+    ["com.lovenotes.share-menu.invite-editor.no-found"](): string;
     /**
       * `Invite other members`
       */
-    ["com.affine.share-menu.invite-editor.placeholder"](): string;
+    ["com.lovenotes.share-menu.invite-editor.placeholder"](): string;
     /**
       * `Notify via Email`
       */
-    ["com.affine.share-menu.invite-editor.sent-email"](): string;
+    ["com.lovenotes.share-menu.invite-editor.sent-email"](): string;
     /**
       * `Permission not available in Free plan`
       */
-    ["com.affine.share-menu.paywall.owner.title"](): string;
+    ["com.lovenotes.share-menu.paywall.owner.title"](): string;
     /**
       * `Upgrade to Pro or higher to unlock permission settings for this doc.`
       */
-    ["com.affine.share-menu.paywall.owner.description"](): string;
+    ["com.lovenotes.share-menu.paywall.owner.description"](): string;
     /**
       * `Upgrade`
       */
-    ["com.affine.share-menu.paywall.owner.confirm"](): string;
+    ["com.lovenotes.share-menu.paywall.owner.confirm"](): string;
     /**
       * `Permission requires a workspace upgrade`
       */
-    ["com.affine.share-menu.paywall.member.title"](): string;
+    ["com.lovenotes.share-menu.paywall.member.title"](): string;
     /**
       * `Ask your workspace owner to upgrade to Pro or higher to enable permissions.`
       */
-    ["com.affine.share-menu.paywall.member.description"](): string;
+    ["com.lovenotes.share-menu.paywall.member.description"](): string;
     /**
       * `Got it`
       */
-    ["com.affine.share-menu.paywall.member.confirm"](): string;
+    ["com.lovenotes.share-menu.paywall.member.confirm"](): string;
     /**
       * `Built with`
       */
-    ["com.affine.share-page.footer.built-with"](): string;
+    ["com.lovenotes.share-page.footer.built-with"](): string;
     /**
       * `Create with`
       */
-    ["com.affine.share-page.footer.create-with"](): string;
+    ["com.lovenotes.share-page.footer.create-with"](): string;
     /**
-      * `Empower your sharing with AFFiNE Cloud: One-click doc sharing`
+      * `Empower your sharing with LoveNotes Cloud: One-click doc sharing`
       */
-    ["com.affine.share-page.footer.description"](): string;
+    ["com.lovenotes.share-page.footer.description"](): string;
     /**
       * `Get started for free`
       */
-    ["com.affine.share-page.footer.get-started"](): string;
+    ["com.lovenotes.share-page.footer.get-started"](): string;
     /**
       * `Use This Template`
       */
-    ["com.affine.share-page.header.import-template"](): string;
+    ["com.lovenotes.share-page.header.import-template"](): string;
     /**
       * `Login or Sign Up`
       */
-    ["com.affine.share-page.header.login"](): string;
+    ["com.lovenotes.share-page.header.login"](): string;
     /**
       * `Present`
       */
-    ["com.affine.share-page.header.present"](): string;
+    ["com.lovenotes.share-page.header.present"](): string;
     /**
       * `Edgeless`
       */
-    ["com.affine.shortcutsTitle.edgeless"](): string;
+    ["com.lovenotes.shortcutsTitle.edgeless"](): string;
     /**
       * `General`
       */
-    ["com.affine.shortcutsTitle.general"](): string;
+    ["com.lovenotes.shortcutsTitle.general"](): string;
     /**
       * `Markdown syntax`
       */
-    ["com.affine.shortcutsTitle.markdownSyntax"](): string;
+    ["com.lovenotes.shortcutsTitle.markdownSyntax"](): string;
     /**
       * `Page`
       */
-    ["com.affine.shortcutsTitle.page"](): string;
+    ["com.lovenotes.shortcutsTitle.page"](): string;
     /**
       * `Collapse sidebar`
       */
-    ["com.affine.sidebarSwitch.collapse"](): string;
+    ["com.lovenotes.sidebarSwitch.collapse"](): string;
     /**
       * `Expand sidebar`
       */
-    ["com.affine.sidebarSwitch.expand"](): string;
+    ["com.lovenotes.sidebarSwitch.expand"](): string;
     /**
       * `Snapshot Imp. & Exp.`
       */
-    ["com.affine.snapshot.import-export.enable"](): string;
+    ["com.lovenotes.snapshot.import-export.enable"](): string;
     /**
       * `Once enabled you can find the Snapshot Export Import option in the document's More menu.`
       */
-    ["com.affine.snapshot.import-export.enable.desc"](): string;
+    ["com.lovenotes.snapshot.import-export.enable.desc"](): string;
     /**
       * `Maybe later`
       */
-    ["com.affine.star-affine.cancel"](): string;
+    ["com.lovenotes.star-lovenotes.cancel"](): string;
     /**
       * `Star on GitHub`
       */
-    ["com.affine.star-affine.confirm"](): string;
+    ["com.lovenotes.star-lovenotes.confirm"](): string;
     /**
       * `Are you finding our app useful and enjoyable? We'd love your support to keep improving! A great way to help us out is by giving us a star on GitHub. This simple action can make a big difference and helps us continue to deliver the best experience for you.`
       */
-    ["com.affine.star-affine.description"](): string;
+    ["com.lovenotes.star-lovenotes.description"](): string;
     /**
       * `Star us on GitHub`
       */
-    ["com.affine.star-affine.title"](): string;
+    ["com.lovenotes.star-lovenotes.title"](): string;
     /**
       * `Change plan`
       */
-    ["com.affine.storage.change-plan"](): string;
+    ["com.lovenotes.storage.change-plan"](): string;
     /**
       * `You have reached the maximum capacity limit for your current account`
       */
-    ["com.affine.storage.maximum-tips"](): string;
+    ["com.lovenotes.storage.maximum-tips"](): string;
     /**
       * `Pro users will have unlimited storage capacity during the alpha test period of the team version`
       */
-    ["com.affine.storage.maximum-tips.pro"](): string;
+    ["com.lovenotes.storage.maximum-tips.pro"](): string;
     /**
       * `Plan`
       */
-    ["com.affine.storage.plan"](): string;
+    ["com.lovenotes.storage.plan"](): string;
     /**
-      * `AFFiNE Cloud storage`
+      * `LoveNotes Cloud storage`
       */
-    ["com.affine.storage.title"](): string;
+    ["com.lovenotes.storage.title"](): string;
     /**
       * `Upgrade`
       */
-    ["com.affine.storage.upgrade"](): string;
+    ["com.lovenotes.storage.upgrade"](): string;
     /**
       * `Space used`
       */
-    ["com.affine.storage.used.hint"](): string;
+    ["com.lovenotes.storage.used.hint"](): string;
     /**
       * `Syncing`
       */
-    ["com.affine.syncing"](): string;
+    ["com.lovenotes.syncing"](): string;
     /**
       * `{{count}} doc`
     
-      * - com.affine.tags.count_one: `{{count}} doc`
+      * - com.lovenotes.tags.count_one: `{{count}} doc`
     
-      * - com.affine.tags.count_other: `{{count}} docs`
+      * - com.lovenotes.tags.count_other: `{{count}} docs`
     
-      * - com.affine.tags.count_zero: `{{count}} doc`
+      * - com.lovenotes.tags.count_zero: `{{count}} doc`
       */
-    ["com.affine.tags.count"](options: {
+    ["com.lovenotes.tags.count"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `{{count}} doc`
       */
-    ["com.affine.tags.count_one"](options: {
+    ["com.lovenotes.tags.count_one"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `{{count}} docs`
       */
-    ["com.affine.tags.count_other"](options: {
+    ["com.lovenotes.tags.count_other"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `{{count}} doc`
       */
-    ["com.affine.tags.count_zero"](options: {
+    ["com.lovenotes.tags.count_zero"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `Type tag name here...`
       */
-    ["com.affine.tags.create-tag.placeholder"](): string;
+    ["com.lovenotes.tags.create-tag.placeholder"](): string;
     /**
       * `Tag already exists`
       */
-    ["com.affine.tags.create-tag.toast.exist"](): string;
+    ["com.lovenotes.tags.create-tag.toast.exist"](): string;
     /**
       * `Tag created`
       */
-    ["com.affine.tags.create-tag.toast.success"](): string;
+    ["com.lovenotes.tags.create-tag.toast.success"](): string;
     /**
       * `Tag deleted`
       */
-    ["com.affine.tags.delete-tags.toast"](): string;
+    ["com.lovenotes.tags.delete-tags.toast"](): string;
     /**
       * `Tag updated`
       */
-    ["com.affine.tags.edit-tag.toast.success"](): string;
+    ["com.lovenotes.tags.edit-tag.toast.success"](): string;
     /**
       * `New tag`
       */
-    ["com.affine.tags.empty.new-tag-button"](): string;
+    ["com.lovenotes.tags.empty.new-tag-button"](): string;
     /**
       * `Enable telemetry`
       */
-    ["com.affine.telemetry.enable"](): string;
+    ["com.lovenotes.telemetry.enable"](): string;
     /**
       * `Telemetry is a feature that allows us to collect data on how you use the app. This data helps us improve the app and provide better features.`
       */
-    ["com.affine.telemetry.enable.desc"](): string;
+    ["com.lovenotes.telemetry.enable.desc"](): string;
     /**
       * `Dark`
       */
-    ["com.affine.themeSettings.dark"](): string;
+    ["com.lovenotes.themeSettings.dark"](): string;
     /**
       * `Light`
       */
-    ["com.affine.themeSettings.light"](): string;
+    ["com.lovenotes.themeSettings.light"](): string;
     /**
       * `System`
       */
-    ["com.affine.themeSettings.system"](): string;
+    ["com.lovenotes.themeSettings.system"](): string;
     /**
       * `Auto`
       */
-    ["com.affine.themeSettings.auto"](): string;
+    ["com.lovenotes.themeSettings.auto"](): string;
     /**
       * `now`
       */
-    ["com.affine.time.now"](): string;
+    ["com.lovenotes.time.now"](): string;
     /**
       * `this month`
       */
-    ["com.affine.time.this-mouth"](): string;
+    ["com.lovenotes.time.this-mouth"](): string;
     /**
       * `this week`
       */
-    ["com.affine.time.this-week"](): string;
+    ["com.lovenotes.time.this-week"](): string;
     /**
       * `this year`
       */
-    ["com.affine.time.this-year"](): string;
+    ["com.lovenotes.time.this-year"](): string;
     /**
       * `today`
       */
-    ["com.affine.time.today"](): string;
+    ["com.lovenotes.time.today"](): string;
     /**
       * `Successfully added linked doc`
       */
-    ["com.affine.toastMessage.addLinkedPage"](): string;
+    ["com.lovenotes.toastMessage.addLinkedPage"](): string;
     /**
       * `Added to favorites`
       */
-    ["com.affine.toastMessage.addedFavorites"](): string;
+    ["com.lovenotes.toastMessage.addedFavorites"](): string;
     /**
       * `Edgeless mode`
       */
-    ["com.affine.toastMessage.edgelessMode"](): string;
+    ["com.lovenotes.toastMessage.edgelessMode"](): string;
     /**
       * `Moved to trash`
       */
-    ["com.affine.toastMessage.movedTrash"](): string;
+    ["com.lovenotes.toastMessage.movedTrash"](): string;
     /**
       * `Page Mode`
       */
-    ["com.affine.toastMessage.pageMode"](): string;
+    ["com.lovenotes.toastMessage.pageMode"](): string;
     /**
       * `Default mode has changed`
       */
-    ["com.affine.toastMessage.defaultMode.page.title"](): string;
+    ["com.lovenotes.toastMessage.defaultMode.page.title"](): string;
     /**
       * `The default mode for this document has been changed to Page mode`
       */
-    ["com.affine.toastMessage.defaultMode.page.message"](): string;
+    ["com.lovenotes.toastMessage.defaultMode.page.message"](): string;
     /**
       * `Default mode has changed`
       */
-    ["com.affine.toastMessage.defaultMode.edgeless.title"](): string;
+    ["com.lovenotes.toastMessage.defaultMode.edgeless.title"](): string;
     /**
       * `The default mode for this document has been changed to Edgeless mode`
       */
-    ["com.affine.toastMessage.defaultMode.edgeless.message"](): string;
+    ["com.lovenotes.toastMessage.defaultMode.edgeless.message"](): string;
     /**
       * `Permanently deleted`
       */
-    ["com.affine.toastMessage.permanentlyDeleted"](): string;
+    ["com.lovenotes.toastMessage.permanentlyDeleted"](): string;
     /**
       * `Removed from favourites`
       */
-    ["com.affine.toastMessage.removedFavorites"](): string;
+    ["com.lovenotes.toastMessage.removedFavorites"](): string;
     /**
       * `Successfully renamed`
       */
-    ["com.affine.toastMessage.rename"](): string;
+    ["com.lovenotes.toastMessage.rename"](): string;
     /**
       * `{{title}} restored`
       */
-    ["com.affine.toastMessage.restored"](options: {
+    ["com.lovenotes.toastMessage.restored"](options: {
         readonly title: string;
     }): string;
     /**
       * `Successfully deleted`
       */
-    ["com.affine.toastMessage.successfullyDeleted"](): string;
+    ["com.lovenotes.toastMessage.successfullyDeleted"](): string;
     /**
       * `Today`
       */
-    ["com.affine.today"](): string;
+    ["com.lovenotes.today"](): string;
     /**
       * `Tomorrow`
       */
-    ["com.affine.tomorrow"](): string;
+    ["com.lovenotes.tomorrow"](): string;
     /**
       * `Last {{weekday}}`
       */
-    ["com.affine.last-week"](options: {
+    ["com.lovenotes.last-week"](options: {
         readonly weekday: string;
     }): string;
     /**
       * `Next {{weekday}}`
       */
-    ["com.affine.next-week"](options: {
+    ["com.lovenotes.next-week"](options: {
         readonly weekday: string;
     }): string;
     /**
       * `Limited to view-only on mobile.`
       */
-    ["com.affine.top-tip.mobile"](): string;
+    ["com.lovenotes.top-tip.mobile"](): string;
     /**
       * `Delete`
       */
-    ["com.affine.trashOperation.delete"](): string;
+    ["com.lovenotes.trashOperation.delete"](): string;
     /**
       * `Once deleted, you can't undo this action. Do you confirm?`
       */
-    ["com.affine.trashOperation.delete.description"](): string;
+    ["com.lovenotes.trashOperation.delete.description"](): string;
     /**
       * `Permanently delete`
       */
-    ["com.affine.trashOperation.delete.title"](): string;
+    ["com.lovenotes.trashOperation.delete.title"](): string;
     /**
       * `Once deleted, you can't undo this action. Do you confirm?`
       */
-    ["com.affine.trashOperation.deleteDescription"](): string;
+    ["com.lovenotes.trashOperation.deleteDescription"](): string;
     /**
       * `Delete permanently`
       */
-    ["com.affine.trashOperation.deletePermanently"](): string;
+    ["com.lovenotes.trashOperation.deletePermanently"](): string;
     /**
       * `Restore it`
       */
-    ["com.affine.trashOperation.restoreIt"](): string;
+    ["com.lovenotes.trashOperation.restoreIt"](): string;
     /**
       * `Refresh current page`
       */
-    ["com.affine.upgrade.button-text.done"](): string;
+    ["com.lovenotes.upgrade.button-text.done"](): string;
     /**
       * `Data upgrade error`
       */
-    ["com.affine.upgrade.button-text.error"](): string;
+    ["com.lovenotes.upgrade.button-text.error"](): string;
     /**
       * `Upgrade workspace data`
       */
-    ["com.affine.upgrade.button-text.pending"](): string;
+    ["com.lovenotes.upgrade.button-text.pending"](): string;
     /**
       * `Upgrading`
       */
-    ["com.affine.upgrade.button-text.upgrading"](): string;
+    ["com.lovenotes.upgrade.button-text.upgrading"](): string;
     /**
       * `After upgrading the workspace data, please refresh the page to see the changes.`
       */
-    ["com.affine.upgrade.tips.done"](): string;
+    ["com.lovenotes.upgrade.tips.done"](): string;
     /**
       * `We encountered some errors while upgrading the workspace data.`
       */
-    ["com.affine.upgrade.tips.error"](): string;
+    ["com.lovenotes.upgrade.tips.error"](): string;
     /**
-      * `To ensure compatibility with the updated AFFiNE client, please upgrade your data by clicking the "Upgrade workspace data" button below.`
+      * `To ensure compatibility with the updated LoveNotes client, please upgrade your data by clicking the "Upgrade workspace data" button below.`
       */
-    ["com.affine.upgrade.tips.normal"](): string;
+    ["com.lovenotes.upgrade.tips.normal"](): string;
     /**
       * `AI usage`
       */
-    ["com.affine.user-info.usage.ai"](): string;
+    ["com.lovenotes.user-info.usage.ai"](): string;
     /**
       * `Cloud storage`
       */
-    ["com.affine.user-info.usage.cloud"](): string;
+    ["com.lovenotes.user-info.usage.cloud"](): string;
     /**
       * `Close`
       */
-    ["com.affine.workbench.split-view-menu.close"](): string;
+    ["com.lovenotes.workbench.split-view-menu.close"](): string;
     /**
       * `Full screen`
       */
-    ["com.affine.workbench.split-view-menu.full-screen"](): string;
+    ["com.lovenotes.workbench.split-view-menu.full-screen"](): string;
     /**
       * `Solo view`
       */
-    ["com.affine.workbench.split-view-menu.keep-this-one"](): string;
+    ["com.lovenotes.workbench.split-view-menu.keep-this-one"](): string;
     /**
       * `Move left`
       */
-    ["com.affine.workbench.split-view-menu.move-left"](): string;
+    ["com.lovenotes.workbench.split-view-menu.move-left"](): string;
     /**
       * `Move right`
       */
-    ["com.affine.workbench.split-view-menu.move-right"](): string;
+    ["com.lovenotes.workbench.split-view-menu.move-right"](): string;
     /**
       * `Open in split view`
       */
-    ["com.affine.workbench.split-view.page-menu-open"](): string;
+    ["com.lovenotes.workbench.split-view.page-menu-open"](): string;
     /**
       * `Open in new tab`
       */
-    ["com.affine.workbench.tab.page-menu-open"](): string;
+    ["com.lovenotes.workbench.tab.page-menu-open"](): string;
     /**
       * `You cannot delete the last workspace`
       */
-    ["com.affine.workspace.cannot-delete"](): string;
+    ["com.lovenotes.workspace.cannot-delete"](): string;
     /**
       * `Cloud workspaces`
       */
-    ["com.affine.workspace.cloud"](): string;
+    ["com.lovenotes.workspace.cloud"](): string;
     /**
       * `Sign out`
       */
-    ["com.affine.workspace.cloud.account.logout"](): string;
+    ["com.lovenotes.workspace.cloud.account.logout"](): string;
     /**
       * `Account settings`
       */
-    ["com.affine.workspace.cloud.account.settings"](): string;
+    ["com.lovenotes.workspace.cloud.account.settings"](): string;
     /**
       * `Admin panel`
       */
-    ["com.affine.workspace.cloud.account.admin"](): string;
+    ["com.lovenotes.workspace.cloud.account.admin"](): string;
     /**
       * `Team owner`
       */
-    ["com.affine.workspace.cloud.account.team.owner"](): string;
+    ["com.lovenotes.workspace.cloud.account.team.owner"](): string;
     /**
       * `Team member`
       */
-    ["com.affine.workspace.cloud.account.team.member"](): string;
+    ["com.lovenotes.workspace.cloud.account.team.member"](): string;
     /**
       * `Multiple teams`
       */
-    ["com.affine.workspace.cloud.account.team.multi"](): string;
+    ["com.lovenotes.workspace.cloud.account.team.multi"](): string;
     /**
       * `Click to open workspace`
       */
-    ["com.affine.workspace.cloud.account.team.tips-1"](): string;
+    ["com.lovenotes.workspace.cloud.account.team.tips-1"](): string;
     /**
       * `Click to open workspace list`
       */
-    ["com.affine.workspace.cloud.account.team.tips-2"](): string;
+    ["com.lovenotes.workspace.cloud.account.team.tips-2"](): string;
     /**
       * `Sign up/ Sign in`
       */
-    ["com.affine.workspace.cloud.auth"](): string;
+    ["com.lovenotes.workspace.cloud.auth"](): string;
     /**
-      * `Sync with AFFiNE Cloud`
+      * `Sync with LoveNotes Cloud`
       */
-    ["com.affine.workspace.cloud.description"](): string;
+    ["com.lovenotes.workspace.cloud.description"](): string;
     /**
       * `Join workspace`
       */
-    ["com.affine.workspace.cloud.join"](): string;
+    ["com.lovenotes.workspace.cloud.join"](): string;
     /**
       * `Cloud sync`
       */
-    ["com.affine.workspace.cloud.sync"](): string;
+    ["com.lovenotes.workspace.cloud.sync"](): string;
     /**
       * `Failed to enable Cloud, please try again.`
       */
-    ["com.affine.workspace.enable-cloud.failed"](): string;
+    ["com.lovenotes.workspace.enable-cloud.failed"](): string;
     /**
       * `Local workspaces`
       */
-    ["com.affine.workspace.local"](): string;
+    ["com.lovenotes.workspace.local"](): string;
     /**
       * `Import workspace`
       */
-    ["com.affine.workspace.local.import"](): string;
+    ["com.lovenotes.workspace.local.import"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.workspaceDelete.button.cancel"](): string;
+    ["com.lovenotes.workspaceDelete.button.cancel"](): string;
     /**
       * `Delete`
       */
-    ["com.affine.workspaceDelete.button.delete"](): string;
+    ["com.lovenotes.workspaceDelete.button.delete"](): string;
     /**
       * `Please type workspace name to confirm`
       */
-    ["com.affine.workspaceDelete.placeholder"](): string;
+    ["com.lovenotes.workspaceDelete.placeholder"](): string;
     /**
       * `Delete workspace`
       */
-    ["com.affine.workspaceDelete.title"](): string;
+    ["com.lovenotes.workspaceDelete.title"](): string;
     /**
       * `Create workspace`
       */
-    ["com.affine.workspaceList.addWorkspace.create"](): string;
+    ["com.lovenotes.workspaceList.addWorkspace.create"](): string;
     /**
       * `Create cloud workspace`
       */
-    ["com.affine.workspaceList.addWorkspace.create-cloud"](): string;
+    ["com.lovenotes.workspaceList.addWorkspace.create-cloud"](): string;
     /**
       * `Cloud sync`
       */
-    ["com.affine.workspaceList.workspaceListType.cloud"](): string;
+    ["com.lovenotes.workspaceList.workspaceListType.cloud"](): string;
     /**
       * `Local storage`
       */
-    ["com.affine.workspaceList.workspaceListType.local"](): string;
+    ["com.lovenotes.workspaceList.workspaceListType.local"](): string;
     /**
       * `Add Server`
       */
-    ["com.affine.workspaceList.addServer"](): string;
+    ["com.lovenotes.workspaceList.addServer"](): string;
     /**
       * `All docs`
       */
-    ["com.affine.workspaceSubPath.all"](): string;
+    ["com.lovenotes.workspaceSubPath.all"](): string;
     /**
       * `Intelligence`
       */
-    ["com.affine.workspaceSubPath.chat"](): string;
+    ["com.lovenotes.workspaceSubPath.chat"](): string;
     /**
       * `Trash`
       */
-    ["com.affine.workspaceSubPath.trash"](): string;
+    ["com.lovenotes.workspaceSubPath.trash"](): string;
     /**
       * `Deleted docs will appear here.`
       */
-    ["com.affine.workspaceSubPath.trash.empty-description"](): string;
+    ["com.lovenotes.workspaceSubPath.trash.empty-description"](): string;
     /**
       * `Write with a blank page`
       */
-    ["com.affine.write_with_a_blank_page"](): string;
+    ["com.lovenotes.write_with_a_blank_page"](): string;
     /**
       * `Yesterday`
       */
-    ["com.affine.yesterday"](): string;
+    ["com.lovenotes.yesterday"](): string;
     /**
       * `Inactive`
       */
-    ["com.affine.inactive"](): string;
+    ["com.lovenotes.inactive"](): string;
     /**
       * `Inactive member`
       */
-    ["com.affine.inactive-member"](): string;
+    ["com.lovenotes.inactive-member"](): string;
     /**
       * `Inactive workspace`
       */
-    ["com.affine.inactive-workspace"](): string;
+    ["com.lovenotes.inactive-workspace"](): string;
     /**
       * `Display Properties`
       */
-    ["com.affine.all-docs.display.properties"](): string;
+    ["com.lovenotes.all-docs.display.properties"](): string;
     /**
       * `List view options`
       */
-    ["com.affine.all-docs.display.list-view"](): string;
+    ["com.lovenotes.all-docs.display.list-view"](): string;
     /**
       * `Icon`
       */
-    ["com.affine.all-docs.display.list-view.icon"](): string;
+    ["com.lovenotes.all-docs.display.list-view.icon"](): string;
     /**
       * `Body`
       */
-    ["com.affine.all-docs.display.list-view.body"](): string;
+    ["com.lovenotes.all-docs.display.list-view.body"](): string;
     /**
       * `Quick actions`
       */
-    ["com.affine.all-docs.quick-actions"](): string;
+    ["com.lovenotes.all-docs.quick-actions"](): string;
     /**
       * `Favorite`
       */
-    ["com.affine.all-docs.quick-action.favorite"](): string;
+    ["com.lovenotes.all-docs.quick-action.favorite"](): string;
     /**
       * `Move to trash`
       */
-    ["com.affine.all-docs.quick-action.trash"](): string;
+    ["com.lovenotes.all-docs.quick-action.trash"](): string;
     /**
       * `Open in split view`
       */
-    ["com.affine.all-docs.quick-action.split"](): string;
+    ["com.lovenotes.all-docs.quick-action.split"](): string;
     /**
       * `Open in new tab`
       */
-    ["com.affine.all-docs.quick-action.tab"](): string;
+    ["com.lovenotes.all-docs.quick-action.tab"](): string;
     /**
       * `Select checkbox`
       */
-    ["com.affine.all-docs.quick-action.select"](): string;
+    ["com.lovenotes.all-docs.quick-action.select"](): string;
     /**
       * `Delete permanently`
       */
-    ["com.affine.all-docs.quick-action.delete-permanently"](): string;
+    ["com.lovenotes.all-docs.quick-action.delete-permanently"](): string;
     /**
       * `Restore`
       */
-    ["com.affine.all-docs.quick-action.restore"](): string;
+    ["com.lovenotes.all-docs.quick-action.restore"](): string;
     /**
       * `All`
       */
-    ["com.affine.all-docs.pinned-collection.all"](): string;
+    ["com.lovenotes.all-docs.pinned-collection.all"](): string;
     /**
       * `Edit collection rules`
       */
-    ["com.affine.all-docs.pinned-collection.edit"](): string;
+    ["com.lovenotes.all-docs.pinned-collection.edit"](): string;
     /**
       * `Template`
       */
-    ["com.affine.all-docs.group.is-template"](): string;
+    ["com.lovenotes.all-docs.group.is-template"](): string;
     /**
       * `Not Template`
       */
-    ["com.affine.all-docs.group.is-not-template"](): string;
+    ["com.lovenotes.all-docs.group.is-not-template"](): string;
     /**
       * `Journal`
       */
-    ["com.affine.all-docs.group.is-journal"](): string;
+    ["com.lovenotes.all-docs.group.is-journal"](): string;
     /**
       * `Not Journal`
       */
-    ["com.affine.all-docs.group.is-not-journal"](): string;
+    ["com.lovenotes.all-docs.group.is-not-journal"](): string;
     /**
       * `Checked`
       */
-    ["com.affine.all-docs.group.is-checked"](): string;
+    ["com.lovenotes.all-docs.group.is-checked"](): string;
     /**
       * `Unchecked`
       */
-    ["com.affine.all-docs.group.is-not-checked"](): string;
+    ["com.lovenotes.all-docs.group.is-not-checked"](): string;
     /**
       * `Never updated`
       */
-    ["com.affine.all-docs.group.updated-at.never-updated"](): string;
+    ["com.lovenotes.all-docs.group.updated-at.never-updated"](): string;
     /**
       * `core`
       */
@@ -7440,493 +7440,493 @@ export function useAFFiNEI18N(): {
     /**
       * `Workspace properties`
       */
-    ["com.affine.workspace.properties"](): string;
+    ["com.lovenotes.workspace.properties"](): string;
     /**
       * `Rename to "{{name}}"`
       */
-    ["com.affine.m.rename-to"](options: {
+    ["com.lovenotes.m.rename-to"](options: {
         readonly name: string;
     }): string;
     /**
       * `Rename`
       */
-    ["com.affine.m.explorer.folder.rename"](): string;
+    ["com.lovenotes.m.explorer.folder.rename"](): string;
     /**
       * `Create Folder`
       */
-    ["com.affine.m.explorer.folder.new-dialog-title"](): string;
+    ["com.lovenotes.m.explorer.folder.new-dialog-title"](): string;
     /**
       * `Organize`
       */
-    ["com.affine.m.explorer.folder.root"](): string;
+    ["com.lovenotes.m.explorer.folder.root"](): string;
     /**
       * `Create a folder in the {{parent}}.`
       */
-    ["com.affine.m.explorer.folder.new-tip-empty"](options: {
+    ["com.lovenotes.m.explorer.folder.new-tip-empty"](options: {
         readonly parent: string;
     }): string;
     /**
       * `Create "{{value}}" in the {{parent}}.`
       */
-    ["com.affine.m.explorer.folder.new-tip-not-empty"](options: Readonly<{
+    ["com.lovenotes.m.explorer.folder.new-tip-not-empty"](options: Readonly<{
         value: string;
         parent: string;
     }>): string;
     /**
       * `Done`
       */
-    ["com.affine.m.explorer.folder.rename-confirm"](): string;
+    ["com.lovenotes.m.explorer.folder.rename-confirm"](): string;
     /**
       * `Rename`
       */
-    ["com.affine.m.explorer.tag.rename"](): string;
+    ["com.lovenotes.m.explorer.tag.rename"](): string;
     /**
       * `Rename Tag`
       */
-    ["com.affine.m.explorer.tag.rename-menu-title"](): string;
+    ["com.lovenotes.m.explorer.tag.rename-menu-title"](): string;
     /**
       * `Create Tag`
       */
-    ["com.affine.m.explorer.tag.new-dialog-title"](): string;
+    ["com.lovenotes.m.explorer.tag.new-dialog-title"](): string;
     /**
       * `Done`
       */
-    ["com.affine.m.explorer.tag.rename-confirm"](): string;
+    ["com.lovenotes.m.explorer.tag.rename-confirm"](): string;
     /**
       * `Create a tag in this workspace.`
       */
-    ["com.affine.m.explorer.tag.new-tip-empty"](): string;
+    ["com.lovenotes.m.explorer.tag.new-tip-empty"](): string;
     /**
       * `Create "{{value}}" tag in this workspace.`
       */
-    ["com.affine.m.explorer.tag.new-tip-not-empty"](options: {
+    ["com.lovenotes.m.explorer.tag.new-tip-not-empty"](options: {
         readonly value: string;
     }): string;
     /**
       * `Manage Doc(s)`
       */
-    ["com.affine.m.explorer.tag.manage-docs"](): string;
+    ["com.lovenotes.m.explorer.tag.manage-docs"](): string;
     /**
       * `Rename`
       */
-    ["com.affine.m.explorer.collection.rename"](): string;
+    ["com.lovenotes.m.explorer.collection.rename"](): string;
     /**
       * `Rename Collection`
       */
-    ["com.affine.m.explorer.collection.rename-menu-title"](): string;
+    ["com.lovenotes.m.explorer.collection.rename-menu-title"](): string;
     /**
       * `Create Collection`
       */
-    ["com.affine.m.explorer.collection.new-dialog-title"](): string;
+    ["com.lovenotes.m.explorer.collection.new-dialog-title"](): string;
     /**
       * `Rename`
       */
-    ["com.affine.m.explorer.doc.rename"](): string;
+    ["com.lovenotes.m.explorer.doc.rename"](): string;
     /**
       * `Doc`
       */
-    ["com.affine.m.selector.type-doc"](): string;
+    ["com.lovenotes.m.selector.type-doc"](): string;
     /**
       * `Tag`
       */
-    ["com.affine.m.selector.type-tag"](): string;
+    ["com.lovenotes.m.selector.type-tag"](): string;
     /**
       * `Collection`
       */
-    ["com.affine.m.selector.type-collection"](): string;
+    ["com.lovenotes.m.selector.type-collection"](): string;
     /**
       * `Folder`
       */
-    ["com.affine.m.selector.where-folder"](): string;
+    ["com.lovenotes.m.selector.where-folder"](): string;
     /**
       * `Tag`
       */
-    ["com.affine.m.selector.where-tag"](): string;
+    ["com.lovenotes.m.selector.where-tag"](): string;
     /**
       * `Collection`
       */
-    ["com.affine.m.selector.where-collection"](): string;
+    ["com.lovenotes.m.selector.where-collection"](): string;
     /**
       * `Apply`
       */
-    ["com.affine.m.selector.confirm-default"](): string;
+    ["com.lovenotes.m.selector.confirm-default"](): string;
     /**
       * `Manage {{type}}(s)`
       */
-    ["com.affine.m.selector.title"](options: {
+    ["com.lovenotes.m.selector.title"](options: {
         readonly type: string;
     }): string;
     /**
       * `{{total}} item(s)`
       */
-    ["com.affine.m.selector.info-total"](options: {
+    ["com.lovenotes.m.selector.info-total"](options: {
         readonly total: string;
     }): string;
     /**
       * `Add {{count}} {{type}}(s)`
       */
-    ["com.affine.m.selector.info-added"](options: Readonly<{
+    ["com.lovenotes.m.selector.info-added"](options: Readonly<{
         count: string;
         type: string;
     }>): string;
     /**
       * `Remove {{count}} {{type}}(s)`
       */
-    ["com.affine.m.selector.info-removed"](options: Readonly<{
+    ["com.lovenotes.m.selector.info-removed"](options: Readonly<{
         count: string;
         type: string;
     }>): string;
     /**
       * `Remove items`
       */
-    ["com.affine.m.selector.remove-warning.title"](): string;
+    ["com.lovenotes.m.selector.remove-warning.title"](): string;
     /**
       * `You unchecked {{type}} that already exist in the current {{where}}, which means you will remove them from this {{where}}. The item will not be deleted.`
       */
-    ["com.affine.m.selector.remove-warning.message"](options: Readonly<{
+    ["com.lovenotes.m.selector.remove-warning.message"](options: Readonly<{
         type: string;
         where: string;
     }>): string;
     /**
       * `Do not ask again`
       */
-    ["com.affine.m.selector.remove-warning.confirm"](): string;
+    ["com.lovenotes.m.selector.remove-warning.confirm"](): string;
     /**
       * `Cancel`
       */
-    ["com.affine.m.selector.remove-warning.cancel"](): string;
+    ["com.lovenotes.m.selector.remove-warning.cancel"](): string;
     /**
       * `tag`
       */
-    ["com.affine.m.selector.remove-warning.where-tag"](): string;
+    ["com.lovenotes.m.selector.remove-warning.where-tag"](): string;
     /**
       * `folder`
       */
-    ["com.affine.m.selector.remove-warning.where-folder"](): string;
+    ["com.lovenotes.m.selector.remove-warning.where-folder"](): string;
     /**
       * `Today's activity`
       */
-    ["com.affine.m.selector.journal-menu.today-activity"](): string;
+    ["com.lovenotes.m.selector.journal-menu.today-activity"](): string;
     /**
       * `Duplicate Entries in Today's Journal`
       */
-    ["com.affine.m.selector.journal-menu.conflicts"](): string;
+    ["com.lovenotes.m.selector.journal-menu.conflicts"](): string;
     /**
       * `Unable to preview this file`
       */
-    ["com.affine.attachment.preview.error.title"](): string;
+    ["com.lovenotes.attachment.preview.error.title"](): string;
     /**
       * `file type not supported.`
       */
-    ["com.affine.attachment.preview.error.subtitle"](): string;
+    ["com.lovenotes.attachment.preview.error.subtitle"](): string;
     /**
       * `Failed to render page.`
       */
-    ["com.affine.pdf.page.render.error"](): string;
+    ["com.lovenotes.pdf.page.render.error"](): string;
     /**
       * `Duplicate Entries in Today's Journal`
       */
-    ["com.affine.editor.journal-conflict.title"](): string;
+    ["com.lovenotes.editor.journal-conflict.title"](): string;
     /**
       * `Search for "{{query}}"`
       */
-    ["com.affine.editor.at-menu.link-to-doc"](options: {
+    ["com.lovenotes.editor.at-menu.link-to-doc"](options: {
         readonly query: string;
     }): string;
     /**
       * `Recent`
       */
-    ["com.affine.editor.at-menu.recent-docs"](): string;
+    ["com.lovenotes.editor.at-menu.recent-docs"](): string;
     /**
       * `Tags`
       */
-    ["com.affine.editor.at-menu.tags"](): string;
+    ["com.lovenotes.editor.at-menu.tags"](): string;
     /**
       * `Collections`
       */
-    ["com.affine.editor.at-menu.collections"](): string;
+    ["com.lovenotes.editor.at-menu.collections"](): string;
     /**
       * `Loading...`
       */
-    ["com.affine.editor.at-menu.loading"](): string;
+    ["com.lovenotes.editor.at-menu.loading"](): string;
     /**
       * `New`
       */
-    ["com.affine.editor.at-menu.new-doc"](): string;
+    ["com.lovenotes.editor.at-menu.new-doc"](): string;
     /**
       * `New "{{name}}" page`
       */
-    ["com.affine.editor.at-menu.create-page"](options: {
+    ["com.lovenotes.editor.at-menu.create-page"](options: {
         readonly name: string;
     }): string;
     /**
       * `New "{{name}}" edgeless`
       */
-    ["com.affine.editor.at-menu.create-edgeless"](options: {
+    ["com.lovenotes.editor.at-menu.create-edgeless"](options: {
         readonly name: string;
     }): string;
     /**
       * `Import`
       */
-    ["com.affine.editor.at-menu.import"](): string;
+    ["com.lovenotes.editor.at-menu.import"](): string;
     /**
       * `{{count}} more docs`
       */
-    ["com.affine.editor.at-menu.more-docs-hint"](options: {
+    ["com.lovenotes.editor.at-menu.more-docs-hint"](options: {
         readonly count: string;
     }): string;
     /**
       * `{{count}} more members`
       */
-    ["com.affine.editor.at-menu.more-members-hint"](options: {
+    ["com.lovenotes.editor.at-menu.more-members-hint"](options: {
         readonly count: string;
     }): string;
     /**
       * `Journal`
       */
-    ["com.affine.editor.at-menu.journal"](): string;
+    ["com.lovenotes.editor.at-menu.journal"](): string;
     /**
       * `Select a specific date`
       */
-    ["com.affine.editor.at-menu.date-picker"](): string;
+    ["com.lovenotes.editor.at-menu.date-picker"](): string;
     /**
       * `Mention Members`
       */
-    ["com.affine.editor.at-menu.mention-members"](): string;
+    ["com.lovenotes.editor.at-menu.mention-members"](): string;
     /**
       * `Member not notified`
       */
-    ["com.affine.editor.at-menu.member-not-notified"](): string;
+    ["com.lovenotes.editor.at-menu.member-not-notified"](): string;
     /**
       * `This member does not have access to this doc, they are not notified.`
       */
-    ["com.affine.editor.at-menu.member-not-notified-message"](): string;
+    ["com.lovenotes.editor.at-menu.member-not-notified-message"](): string;
     /**
       * `Invited and notified`
       */
-    ["com.affine.editor.at-menu.invited-and-notified"](): string;
+    ["com.lovenotes.editor.at-menu.invited-and-notified"](): string;
     /**
       * `Access needed`
       */
-    ["com.affine.editor.at-menu.access-needed"](): string;
+    ["com.lovenotes.editor.at-menu.access-needed"](): string;
     /**
       * `{{username}} does not have access to this doc, do you want to invite and notify them?`
       */
-    ["com.affine.editor.at-menu.access-needed-message"](options: {
+    ["com.lovenotes.editor.at-menu.access-needed-message"](options: {
         readonly username: string;
     }): string;
     /**
       * `Show`
       */
-    ["com.affine.editor.bi-directional-link-panel.show"](): string;
+    ["com.lovenotes.editor.bi-directional-link-panel.show"](): string;
     /**
       * `Hide`
       */
-    ["com.affine.editor.bi-directional-link-panel.hide"](): string;
+    ["com.lovenotes.editor.bi-directional-link-panel.hide"](): string;
     /**
       * `Fold page block`
       */
-    ["com.affine.editor.edgeless-note-header.fold-page-block"](): string;
+    ["com.lovenotes.editor.edgeless-note-header.fold-page-block"](): string;
     /**
       * `Open in Page`
       */
-    ["com.affine.editor.edgeless-note-header.open-in-page"](): string;
+    ["com.lovenotes.editor.edgeless-note-header.open-in-page"](): string;
     /**
       * `Fold`
       */
-    ["com.affine.editor.edgeless-embed-synced-doc-header.fold"](): string;
+    ["com.lovenotes.editor.edgeless-embed-synced-doc-header.fold"](): string;
     /**
       * `Unfold`
       */
-    ["com.affine.editor.edgeless-embed-synced-doc-header.unfold"](): string;
+    ["com.lovenotes.editor.edgeless-embed-synced-doc-header.unfold"](): string;
     /**
       * `Open`
       */
-    ["com.affine.editor.edgeless-embed-synced-doc-header.open"](): string;
+    ["com.lovenotes.editor.edgeless-embed-synced-doc-header.open"](): string;
     /**
       * `Empower Your Team with Seamless Collaboration`
       */
-    ["com.affine.upgrade-to-team-page.title"](): string;
+    ["com.lovenotes.upgrade-to-team-page.title"](): string;
     /**
       * `Select an existing workspace or create a new one`
       */
-    ["com.affine.upgrade-to-team-page.workspace-selector.placeholder"](): string;
+    ["com.lovenotes.upgrade-to-team-page.workspace-selector.placeholder"](): string;
     /**
       * `Create Workspace`
       */
-    ["com.affine.upgrade-to-team-page.workspace-selector.create-workspace"](): string;
+    ["com.lovenotes.upgrade-to-team-page.workspace-selector.create-workspace"](): string;
     /**
       * `Upgrade to Team Workspace`
       */
-    ["com.affine.upgrade-to-team-page.upgrade-button"](): string;
+    ["com.lovenotes.upgrade-to-team-page.upgrade-button"](): string;
     /**
       * `Team Workspace gives you everything you need for seamless team collaboration:`
       */
-    ["com.affine.upgrade-to-team-page.benefit.title"](): string;
+    ["com.lovenotes.upgrade-to-team-page.benefit.title"](): string;
     /**
       * `Invite unlimited members to your workspace`
       */
-    ["com.affine.upgrade-to-team-page.benefit.g1"](): string;
+    ["com.lovenotes.upgrade-to-team-page.benefit.g1"](): string;
     /**
       * `Set custom roles and permissions for better control`
       */
-    ["com.affine.upgrade-to-team-page.benefit.g2"](): string;
+    ["com.lovenotes.upgrade-to-team-page.benefit.g2"](): string;
     /**
       * `Access advanced team management features`
       */
-    ["com.affine.upgrade-to-team-page.benefit.g3"](): string;
+    ["com.lovenotes.upgrade-to-team-page.benefit.g3"](): string;
     /**
       * `Get priority customer support`
       */
-    ["com.affine.upgrade-to-team-page.benefit.g4"](): string;
+    ["com.lovenotes.upgrade-to-team-page.benefit.g4"](): string;
     /**
       * `Perfect for growing teams and organizations that need professional collaboration tools.`
       */
-    ["com.affine.upgrade-to-team-page.benefit.description"](): string;
+    ["com.lovenotes.upgrade-to-team-page.benefit.description"](): string;
     /**
       * `Upgrade to Team Workspace`
       */
-    ["com.affine.upgrade-to-team-page.upgrade-confirm.title"](): string;
+    ["com.lovenotes.upgrade-to-team-page.upgrade-confirm.title"](): string;
     /**
       * `Name Your Workspace`
       */
-    ["com.affine.upgrade-to-team-page.create-and-upgrade-confirm.title"](): string;
+    ["com.lovenotes.upgrade-to-team-page.create-and-upgrade-confirm.title"](): string;
     /**
       * `A workspace is your virtual space to capture, create and plan as just one person or together as a team.`
       */
-    ["com.affine.upgrade-to-team-page.create-and-upgrade-confirm.description"](): string;
+    ["com.lovenotes.upgrade-to-team-page.create-and-upgrade-confirm.description"](): string;
     /**
       * `Set a workspace name`
       */
-    ["com.affine.upgrade-to-team-page.create-and-upgrade-confirm.placeholder"](): string;
+    ["com.lovenotes.upgrade-to-team-page.create-and-upgrade-confirm.placeholder"](): string;
     /**
       * `Continue to Pricing`
       */
-    ["com.affine.upgrade-to-team-page.create-and-upgrade-confirm.confirm"](): string;
+    ["com.lovenotes.upgrade-to-team-page.create-and-upgrade-confirm.confirm"](): string;
     /**
       * `No workspace available`
       */
-    ["com.affine.upgrade-to-team-page.no-workspace-available"](): string;
+    ["com.lovenotes.upgrade-to-team-page.no-workspace-available"](): string;
     /**
       * `Workspace storage`
       */
-    ["com.affine.workspace.storage"](): string;
+    ["com.lovenotes.workspace.storage"](): string;
     /**
       * `Journal`
       */
-    ["com.affine.cmdk.affine.category.affine.journal"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.journal"](): string;
     /**
       * `Select a specific date`
       */
-    ["com.affine.cmdk.affine.category.affine.date-picker"](): string;
+    ["com.lovenotes.cmdk.lovenotes.category.lovenotes.date-picker"](): string;
     /**
       * `Workspace sync paused`
       */
-    ["com.affine.payment.sync-paused.title"](): string;
+    ["com.lovenotes.payment.sync-paused.title"](): string;
     /**
       * `Your workspace has exceeded both storage and member limits, causing synchronization to pause. To resume syncing, please either:`
       */
-    ["com.affine.payment.sync-paused.owner.both.description"](): string;
+    ["com.lovenotes.payment.sync-paused.owner.both.description"](): string;
     /**
       * `Reduce storage usage and remove some team members`
       */
-    ["com.affine.payment.sync-paused.owner.both.tips-1"](): string;
+    ["com.lovenotes.payment.sync-paused.owner.both.tips-1"](): string;
     /**
       * `Upgrade your plan for increased capacity`
       */
-    ["com.affine.payment.sync-paused.owner.both.tips-2"](): string;
+    ["com.lovenotes.payment.sync-paused.owner.both.tips-2"](): string;
     /**
       * `Your workspace has exceeded its storage limit and synchronization has been paused. To resume syncing, please either:`
       */
-    ["com.affine.payment.sync-paused.owner.storage.description"](): string;
+    ["com.lovenotes.payment.sync-paused.owner.storage.description"](): string;
     /**
       * `Remove unnecessary files or content to reduce storage usage`
       */
-    ["com.affine.payment.sync-paused.owner.storage.tips-1"](): string;
+    ["com.lovenotes.payment.sync-paused.owner.storage.tips-1"](): string;
     /**
       * `Upgrade your plan for increased storage capacity`
       */
-    ["com.affine.payment.sync-paused.owner.storage.tips-2"](): string;
+    ["com.lovenotes.payment.sync-paused.owner.storage.tips-2"](): string;
     /**
       * `Your workspace has reached its maximum member capacity and synchronization has been paused. To resume syncing, you can either`
       */
-    ["com.affine.payment.sync-paused.owner.member.description"](): string;
+    ["com.lovenotes.payment.sync-paused.owner.member.description"](): string;
     /**
       * `Remove some team members from the workspace`
       */
-    ["com.affine.payment.sync-paused.owner.member.tips-1"](): string;
+    ["com.lovenotes.payment.sync-paused.owner.member.tips-1"](): string;
     /**
       * `Upgrade your plan to accommodate more members`
       */
-    ["com.affine.payment.sync-paused.owner.member.tips-2"](): string;
+    ["com.lovenotes.payment.sync-paused.owner.member.tips-2"](): string;
     /**
       * `This workspace has exceeded both storage and member limits, causing synchronization to pause. Please contact your workspace owner to address these limits and resume syncing.`
       */
-    ["com.affine.payment.sync-paused.member.both.description"](): string;
+    ["com.lovenotes.payment.sync-paused.member.both.description"](): string;
     /**
       * `This workspace has exceeded its storage limit and synchronization has been paused. Please contact your workspace owner to either reduce storage usage or upgrade the plan to resume syncing.`
       */
-    ["com.affine.payment.sync-paused.member.storage.description"](): string;
+    ["com.lovenotes.payment.sync-paused.member.storage.description"](): string;
     /**
       * `This workspace has reached its maximum member capacity and synchronization has been paused. Please contact your workspace owner to either adjust team membership or upgrade the plan to resume syncing.`
       */
-    ["com.affine.payment.sync-paused.member.member.description"](): string;
+    ["com.lovenotes.payment.sync-paused.member.member.description"](): string;
     /**
       * `Got It`
       */
-    ["com.affine.payment.sync-paused.member.member.confirm"](): string;
+    ["com.lovenotes.payment.sync-paused.member.member.confirm"](): string;
     /**
       * `Delete Server`
       */
-    ["com.affine.server.delete"](): string;
+    ["com.lovenotes.server.delete"](): string;
     /**
       * `Start`
       */
-    ["com.affine.page-starter-bar.start"](): string;
+    ["com.lovenotes.page-starter-bar.start"](): string;
     /**
       * `Template`
       */
-    ["com.affine.page-starter-bar.template"](): string;
+    ["com.lovenotes.page-starter-bar.template"](): string;
     /**
       * `With AI`
       */
-    ["com.affine.page-starter-bar.ai"](): string;
+    ["com.lovenotes.page-starter-bar.ai"](): string;
     /**
       * `Edgeless`
       */
-    ["com.affine.page-starter-bar.edgeless"](): string;
+    ["com.lovenotes.page-starter-bar.edgeless"](): string;
     /**
       * `Unsupported message`
       */
-    ["com.affine.notification.unsupported"](): string;
+    ["com.lovenotes.notification.unsupported"](): string;
     /**
       * `What are your thoughts?`
       */
-    ["com.affine.notification.comment-prompt"](): string;
+    ["com.lovenotes.notification.comment-prompt"](): string;
     /**
       * `No new notifications`
       */
-    ["com.affine.notification.empty"](): string;
+    ["com.lovenotes.notification.empty"](): string;
     /**
       * `Loading more...`
       */
-    ["com.affine.notification.loading-more"](): string;
+    ["com.lovenotes.notification.loading-more"](): string;
     /**
       * `You'll be notified here for @mentions and workspace invites.`
       */
-    ["com.affine.notification.empty.description"](): string;
+    ["com.lovenotes.notification.empty.description"](): string;
     /**
       * `Open workspace`
       */
-    ["com.affine.notification.invitation-review-approved.open-workspace"](): string;
+    ["com.lovenotes.notification.invitation-review-approved.open-workspace"](): string;
     /**
       * `Accept & Join`
       */
-    ["com.affine.notification.invitation.accept"](): string;
+    ["com.lovenotes.notification.invitation.accept"](): string;
     /**
       * `Delete all notifications`
       */
-    ["com.affine.notification.delete-all"](): string;
+    ["com.lovenotes.notification.delete-all"](): string;
     /**
       * `Tips`
       */
@@ -7938,539 +7938,539 @@ export function useAFFiNEI18N(): {
     /**
       * `Delete Template`
       */
-    ["com.affine.template-list.delete"](): string;
+    ["com.lovenotes.template-list.delete"](): string;
     /**
       * `No template`
       */
-    ["com.affine.template-list.empty"](): string;
+    ["com.lovenotes.template-list.empty"](): string;
     /**
       * `Create new template`
       */
-    ["com.affine.template-list.create-new"](): string;
+    ["com.lovenotes.template-list.create-new"](): string;
     /**
       * `Set a Template for the Journal`
       */
-    ["com.affine.template-journal-onboarding.title"](): string;
+    ["com.lovenotes.template-journal-onboarding.title"](): string;
     /**
       * `Select`
       */
-    ["com.affine.template-journal-onboarding.select"](): string;
+    ["com.lovenotes.template-journal-onboarding.select"](): string;
     /**
       * `My Templates`
       */
-    ["com.affine.settings.workspace.template.title"](): string;
+    ["com.lovenotes.settings.workspace.template.title"](): string;
     /**
       * `Template for journal`
       */
-    ["com.affine.settings.workspace.template.journal"](): string;
+    ["com.lovenotes.settings.workspace.template.journal"](): string;
     /**
       * `Select a template for your journal`
       */
-    ["com.affine.settings.workspace.template.journal-desc"](): string;
+    ["com.lovenotes.settings.workspace.template.journal-desc"](): string;
     /**
       * `Keep empty`
       */
-    ["com.affine.settings.workspace.template.keep-empty"](): string;
+    ["com.lovenotes.settings.workspace.template.keep-empty"](): string;
     /**
       * `New doc with template`
       */
-    ["com.affine.settings.workspace.template.page"](): string;
+    ["com.lovenotes.settings.workspace.template.page"](): string;
     /**
       * `New docs will use the specified template, ignoring default settings.`
       */
-    ["com.affine.settings.workspace.template.page-desc"](): string;
+    ["com.lovenotes.settings.workspace.template.page-desc"](): string;
     /**
       * `Template for new doc`
       */
-    ["com.affine.settings.workspace.template.page-select"](): string;
+    ["com.lovenotes.settings.workspace.template.page-select"](): string;
     /**
       * `Remove template`
       */
-    ["com.affine.settings.workspace.template.remove"](): string;
+    ["com.lovenotes.settings.workspace.template.remove"](): string;
     /**
       * `You don't have permission to do this`
       */
-    ["com.affine.no-permission"](): string;
+    ["com.lovenotes.no-permission"](): string;
     /**
       * `Unused blobs`
       */
-    ["com.affine.settings.workspace.storage.unused-blobs"](): string;
+    ["com.lovenotes.settings.workspace.storage.unused-blobs"](): string;
     /**
       * `No unused blobs`
       */
-    ["com.affine.settings.workspace.storage.unused-blobs.empty"](): string;
+    ["com.lovenotes.settings.workspace.storage.unused-blobs.empty"](): string;
     /**
       * `Selected`
       */
-    ["com.affine.settings.workspace.storage.unused-blobs.selected"](): string;
+    ["com.lovenotes.settings.workspace.storage.unused-blobs.selected"](): string;
     /**
       * `Delete blob files`
       */
-    ["com.affine.settings.workspace.storage.unused-blobs.delete.title"](): string;
+    ["com.lovenotes.settings.workspace.storage.unused-blobs.delete.title"](): string;
     /**
       * `Are you sure you want to delete these blob files? This action cannot be undone. Make sure you no longer need them before proceeding.`
       */
-    ["com.affine.settings.workspace.storage.unused-blobs.delete.warning"](): string;
+    ["com.lovenotes.settings.workspace.storage.unused-blobs.delete.warning"](): string;
     /**
       * `Join Failed`
       */
-    ["com.affine.fail-to-join-workspace.title"](): string;
+    ["com.lovenotes.fail-to-join-workspace.title"](): string;
     /**
       * `Please contact your workspace owner to add more seats.`
       */
-    ["com.affine.fail-to-join-workspace.description-2"](): string;
+    ["com.lovenotes.fail-to-join-workspace.description-2"](): string;
     /**
       * `Request to join`
       */
-    ["com.affine.request-to-join-workspace.button"](): string;
+    ["com.lovenotes.request-to-join-workspace.button"](): string;
     /**
       * `Request Sent successfully`
       */
-    ["com.affine.sent-request-to-join-workspace.title"](): string;
+    ["com.lovenotes.sent-request-to-join-workspace.title"](): string;
     /**
       * `Request failed to send`
       */
-    ["com.affine.failed-to-send-request.title"](): string;
+    ["com.lovenotes.failed-to-send-request.title"](): string;
     /**
       * `Readwise`
       */
-    ["com.affine.integration.name.readwise"](): string;
+    ["com.lovenotes.integration.name.readwise"](): string;
     /**
       * `Integrations`
       */
-    ["com.affine.integration.integrations"](): string;
+    ["com.lovenotes.integration.integrations"](): string;
     /**
       * `Web Clipper`
       */
-    ["com.affine.integration.web-clipper.name"](): string;
+    ["com.lovenotes.integration.web-clipper.name"](): string;
     /**
-      * `Import web pages to AFFiNE`
+      * `Import web pages to LoveNotes`
       */
-    ["com.affine.integration.web-clipper.desc"](): string;
+    ["com.lovenotes.integration.web-clipper.desc"](): string;
     /**
-      * `Elevate your AFFiNE experience with diverse add-ons and seamless integrations.`
+      * `Elevate your LoveNotes experience with diverse add-ons and seamless integrations.`
       */
-    ["com.affine.integration.setting.description"](): string;
+    ["com.lovenotes.integration.setting.description"](): string;
     /**
-      * `Learn how to develop a integration for AFFiNE`
+      * `Learn how to develop a integration for LoveNotes`
       */
-    ["com.affine.integration.setting.learn"](): string;
+    ["com.lovenotes.integration.setting.learn"](): string;
     /**
       * `Readwise`
       */
-    ["com.affine.integration.readwise.name"](): string;
+    ["com.lovenotes.integration.readwise.name"](): string;
     /**
-      * `Manually import your content to AFFiNE from Readwise`
+      * `Manually import your content to LoveNotes from Readwise`
       */
-    ["com.affine.integration.readwise.desc"](): string;
+    ["com.lovenotes.integration.readwise.desc"](): string;
     /**
       * `Connect`
       */
-    ["com.affine.integration.readwise.connect"](): string;
+    ["com.lovenotes.integration.readwise.connect"](): string;
     /**
       * `Connect to Readwise`
       */
-    ["com.affine.integration.readwise.connect.title"](): string;
+    ["com.lovenotes.integration.readwise.connect.title"](): string;
     /**
       * `Paste your access token here`
       */
-    ["com.affine.integration.readwise.connect.placeholder"](): string;
+    ["com.lovenotes.integration.readwise.connect.placeholder"](): string;
     /**
       * `Please enter a valid access token.`
       */
-    ["com.affine.integration.readwise.connect.input-error"](): string;
+    ["com.lovenotes.integration.readwise.connect.input-error"](): string;
     /**
       * `Access Token failed validation`
       */
-    ["com.affine.integration.readwise.connect.error-notify-title"](): string;
+    ["com.lovenotes.integration.readwise.connect.error-notify-title"](): string;
     /**
       * `The token could not access Readwise. Please verify access and try again.`
       */
-    ["com.affine.integration.readwise.connect.error-notify-desc"](): string;
+    ["com.lovenotes.integration.readwise.connect.error-notify-desc"](): string;
     /**
       * `Import`
       */
-    ["com.affine.integration.readwise.import"](): string;
+    ["com.lovenotes.integration.readwise.import"](): string;
     /**
       * `Disconnect`
       */
-    ["com.affine.integration.readwise.disconnect"](): string;
+    ["com.lovenotes.integration.readwise.disconnect"](): string;
     /**
       * `Disconnect Readwise?`
       */
-    ["com.affine.integration.readwise.disconnect.title"](): string;
+    ["com.lovenotes.integration.readwise.disconnect.title"](): string;
     /**
-      * `Once disconnected, content will no longer be imported. Do you want to keep your existing highlights in AFFiNE?`
+      * `Once disconnected, content will no longer be imported. Do you want to keep your existing highlights in LoveNotes?`
       */
-    ["com.affine.integration.readwise.disconnect.desc"](): string;
+    ["com.lovenotes.integration.readwise.disconnect.desc"](): string;
     /**
       * `Keep`
       */
-    ["com.affine.integration.readwise.disconnect.keep"](): string;
+    ["com.lovenotes.integration.readwise.disconnect.keep"](): string;
     /**
       * `Delete`
       */
-    ["com.affine.integration.readwise.disconnect.delete"](): string;
+    ["com.lovenotes.integration.readwise.disconnect.delete"](): string;
     /**
       * `Highlights to be imported this time`
       */
-    ["com.affine.integration.readwise.import.title"](): string;
+    ["com.lovenotes.integration.readwise.import.title"](): string;
     /**
       * `Importing everything from the start`
       */
-    ["com.affine.integration.readwise.import.desc-from-start"](): string;
+    ["com.lovenotes.integration.readwise.import.desc-from-start"](): string;
     /**
       * `Content`
       */
-    ["com.affine.integration.readwise.import.cell-h-content"](): string;
+    ["com.lovenotes.integration.readwise.import.cell-h-content"](): string;
     /**
       * `Todo`
       */
-    ["com.affine.integration.readwise.import.cell-h-todo"](): string;
+    ["com.lovenotes.integration.readwise.import.cell-h-todo"](): string;
     /**
       * `Last update on Readwise`
       */
-    ["com.affine.integration.readwise.import.cell-h-time"](): string;
+    ["com.lovenotes.integration.readwise.import.cell-h-time"](): string;
     /**
       * `New`
       */
-    ["com.affine.integration.readwise.import.todo-new"](): string;
+    ["com.lovenotes.integration.readwise.import.todo-new"](): string;
     /**
       * `Skip`
       */
-    ["com.affine.integration.readwise.import.todo-skip"](): string;
+    ["com.lovenotes.integration.readwise.import.todo-skip"](): string;
     /**
       * `Updated`
       */
-    ["com.affine.integration.readwise.import.todo-update"](): string;
+    ["com.lovenotes.integration.readwise.import.todo-update"](): string;
     /**
       * `No highlights needs to be imported`
       */
-    ["com.affine.integration.readwise.import.empty"](): string;
+    ["com.lovenotes.integration.readwise.import.empty"](): string;
     /**
       * `Importing...`
       */
-    ["com.affine.integration.readwise.import.importing"](): string;
+    ["com.lovenotes.integration.readwise.import.importing"](): string;
     /**
       * `Please keep this app active until it's finished`
       */
-    ["com.affine.integration.readwise.import.importing-desc"](): string;
+    ["com.lovenotes.integration.readwise.import.importing-desc"](): string;
     /**
       * `Stop Importing`
       */
-    ["com.affine.integration.readwise.import.importing-stop"](): string;
+    ["com.lovenotes.integration.readwise.import.importing-stop"](): string;
     /**
       * `Importing aborted`
       */
-    ["com.affine.integration.readwise.import.abort-notify-title"](): string;
+    ["com.lovenotes.integration.readwise.import.abort-notify-title"](): string;
     /**
       * `Import aborted, with {{finished}} highlights processed`
       */
-    ["com.affine.integration.readwise.import.abort-notify-desc"](options: {
+    ["com.lovenotes.integration.readwise.import.abort-notify-desc"](options: {
         readonly finished: string;
     }): string;
     /**
       * `Configuration`
       */
-    ["com.affine.integration.readwise.setting.caption"](): string;
+    ["com.lovenotes.integration.readwise.setting.caption"](): string;
     /**
-      * `New Readwise highlights will be imported to AFFiNE `
+      * `New Readwise highlights will be imported to LoveNotes `
       */
-    ["com.affine.integration.readwise.setting.sync-new-name"](): string;
+    ["com.lovenotes.integration.readwise.setting.sync-new-name"](): string;
     /**
-      * `New highlights in Readwise will be synced to AFFiNE `
+      * `New highlights in Readwise will be synced to LoveNotes `
       */
-    ["com.affine.integration.readwise.setting.sync-new-desc"](): string;
+    ["com.lovenotes.integration.readwise.setting.sync-new-desc"](): string;
     /**
       * `Updates to Readwise highlights will be imported`
       */
-    ["com.affine.integration.readwise.setting.update-name"](): string;
+    ["com.lovenotes.integration.readwise.setting.update-name"](): string;
     /**
       * `Enable this, so that we will process updates of existing highlights from Readwise `
       */
-    ["com.affine.integration.readwise.setting.update-desc"](): string;
+    ["com.lovenotes.integration.readwise.setting.update-desc"](): string;
     /**
       * `How do we handle updates`
       */
-    ["com.affine.integration.readwise.setting.update-strategy"](): string;
+    ["com.lovenotes.integration.readwise.setting.update-strategy"](): string;
     /**
       * `Append new version to the end`
       */
-    ["com.affine.integration.readwise.setting.update-append-name"](): string;
+    ["com.lovenotes.integration.readwise.setting.update-append-name"](): string;
     /**
       * `Cited or modified highlights will have future versions added to the end of them`
       */
-    ["com.affine.integration.readwise.setting.update-append-desc"](): string;
+    ["com.lovenotes.integration.readwise.setting.update-append-desc"](): string;
     /**
       * `Overwrite with new version`
       */
-    ["com.affine.integration.readwise.setting.update-override-name"](): string;
+    ["com.lovenotes.integration.readwise.setting.update-override-name"](): string;
     /**
       * `Cited or modified highlights will be overwritten if there are future updates`
       */
-    ["com.affine.integration.readwise.setting.update-override-desc"](): string;
+    ["com.lovenotes.integration.readwise.setting.update-override-desc"](): string;
     /**
       * `Start Importing`
       */
-    ["com.affine.integration.readwise.setting.start-import-name"](): string;
+    ["com.lovenotes.integration.readwise.setting.start-import-name"](): string;
     /**
       * `Using the settings above`
       */
-    ["com.affine.integration.readwise.setting.start-import-desc"](): string;
+    ["com.lovenotes.integration.readwise.setting.start-import-desc"](): string;
     /**
       * `Import`
       */
-    ["com.affine.integration.readwise.setting.start-import-button"](): string;
+    ["com.lovenotes.integration.readwise.setting.start-import-button"](): string;
     /**
       * `Apply tags to highlight imports`
       */
-    ["com.affine.integration.readwise.setting.tags-label"](): string;
+    ["com.lovenotes.integration.readwise.setting.tags-label"](): string;
     /**
       * `Click to add tags`
       */
-    ["com.affine.integration.readwise.setting.tags-placeholder"](): string;
+    ["com.lovenotes.integration.readwise.setting.tags-placeholder"](): string;
     /**
       * `Author`
       */
-    ["com.affine.integration.readwise-prop.author"](): string;
+    ["com.lovenotes.integration.readwise-prop.author"](): string;
     /**
       * `Source`
       */
-    ["com.affine.integration.readwise-prop.source"](): string;
+    ["com.lovenotes.integration.readwise-prop.source"](): string;
     /**
       * `Created`
       */
-    ["com.affine.integration.readwise-prop.created"](): string;
+    ["com.lovenotes.integration.readwise-prop.created"](): string;
     /**
       * `Updated`
       */
-    ["com.affine.integration.readwise-prop.updated"](): string;
+    ["com.lovenotes.integration.readwise-prop.updated"](): string;
     /**
       * `Integration properties`
       */
-    ["com.affine.integration.properties"](): string;
+    ["com.lovenotes.integration.properties"](): string;
     /**
       * `Calendar`
       */
-    ["com.affine.integration.calendar.name"](): string;
+    ["com.lovenotes.integration.calendar.name"](): string;
     /**
-      * `New events will be scheduled in AFFiNE’s journal`
+      * `New events will be scheduled in LoveNotes’s journal`
       */
-    ["com.affine.integration.calendar.desc"](): string;
+    ["com.lovenotes.integration.calendar.desc"](): string;
     /**
       * `Subscribe`
       */
-    ["com.affine.integration.calendar.new-subscription"](): string;
+    ["com.lovenotes.integration.calendar.new-subscription"](): string;
     /**
       * `Unsubscribe`
       */
-    ["com.affine.integration.calendar.unsubscribe"](): string;
+    ["com.lovenotes.integration.calendar.unsubscribe"](): string;
     /**
       * `Add a calendar by URL`
       */
-    ["com.affine.integration.calendar.new-title"](): string;
+    ["com.lovenotes.integration.calendar.new-title"](): string;
     /**
       * `Calendar URL`
       */
-    ["com.affine.integration.calendar.new-url-label"](): string;
+    ["com.lovenotes.integration.calendar.new-url-label"](): string;
     /**
       * `An error occurred while saving the calendar settings`
       */
-    ["com.affine.integration.calendar.save-error"](): string;
+    ["com.lovenotes.integration.calendar.save-error"](): string;
     /**
       * `All day`
       */
-    ["com.affine.integration.calendar.all-day"](): string;
+    ["com.lovenotes.integration.calendar.all-day"](): string;
     /**
       * `New doc`
       */
-    ["com.affine.integration.calendar.new-doc"](): string;
+    ["com.lovenotes.integration.calendar.new-doc"](): string;
     /**
       * `Show calendar events`
       */
-    ["com.affine.integration.calendar.show-events"](): string;
+    ["com.lovenotes.integration.calendar.show-events"](): string;
     /**
-      * `Enabling this setting allows you to connect your calendar events to your Journal in AFFiNE`
+      * `Enabling this setting allows you to connect your calendar events to your Journal in LoveNotes`
       */
-    ["com.affine.integration.calendar.show-events-desc"](): string;
+    ["com.lovenotes.integration.calendar.show-events-desc"](): string;
     /**
       * `Show all day event`
       */
-    ["com.affine.integration.calendar.show-all-day-events"](): string;
+    ["com.lovenotes.integration.calendar.show-all-day-events"](): string;
     /**
       * `Are you sure you want to unsubscribe "{{name}}"? Unsubscribing this account will remove its data from Journal.`
       */
-    ["com.affine.integration.calendar.unsubscribe-content"](options: {
+    ["com.lovenotes.integration.calendar.unsubscribe-content"](options: {
         readonly name: string;
     }): string;
     /**
       * `No journal page found for {{date}}. Please create a journal page first.`
       */
-    ["com.affine.integration.calendar.no-journal"](options: {
+    ["com.lovenotes.integration.calendar.no-journal"](options: {
         readonly date: string;
     }): string;
     /**
       * `No subscribed calendars yet.`
       */
-    ["com.affine.integration.calendar.no-calendar"](): string;
+    ["com.lovenotes.integration.calendar.no-calendar"](): string;
     /**
       * `MCP Server`
       */
-    ["com.affine.integration.mcp-server.name"](): string;
+    ["com.lovenotes.integration.mcp-server.name"](): string;
     /**
-      * `Enable other MCP Client to search and read the doc of AFFiNE.`
+      * `Enable other MCP Client to search and read the doc of LoveNotes.`
       */
-    ["com.affine.integration.mcp-server.desc"](): string;
+    ["com.lovenotes.integration.mcp-server.desc"](): string;
     /**
       * `Notes`
       */
-    ["com.affine.audio.notes"](): string;
+    ["com.lovenotes.audio.notes"](): string;
     /**
       * `Transcribing`
       */
-    ["com.affine.audio.transcribing"](): string;
+    ["com.lovenotes.audio.transcribing"](): string;
     /**
       * `Unable to retrieve AI results for others`
       */
-    ["com.affine.audio.transcribe.non-owner.confirm.title"](): string;
+    ["com.lovenotes.audio.transcribe.non-owner.confirm.title"](): string;
     /**
       * `Audio activity`
       */
-    ["com.affine.recording.new"](): string;
+    ["com.lovenotes.recording.new"](): string;
     /**
       * `Finished`
       */
-    ["com.affine.recording.success.prompt"](): string;
+    ["com.lovenotes.recording.success.prompt"](): string;
     /**
       * `Open app`
       */
-    ["com.affine.recording.success.button"](): string;
+    ["com.lovenotes.recording.success.button"](): string;
     /**
       * `Failed to save`
       */
-    ["com.affine.recording.failed.prompt"](): string;
+    ["com.lovenotes.recording.failed.prompt"](): string;
     /**
       * `Open file`
       */
-    ["com.affine.recording.failed.button"](): string;
+    ["com.lovenotes.recording.failed.button"](): string;
     /**
       * `{{appName}}'s audio`
       */
-    ["com.affine.recording.recording"](options: {
+    ["com.lovenotes.recording.recording"](options: {
         readonly appName: string;
     }): string;
     /**
       * `Audio recording`
       */
-    ["com.affine.recording.recording.unnamed"](): string;
+    ["com.lovenotes.recording.recording.unnamed"](): string;
     /**
       * `Start`
       */
-    ["com.affine.recording.start"](): string;
+    ["com.lovenotes.recording.start"](): string;
     /**
       * `Dismiss`
       */
-    ["com.affine.recording.dismiss"](): string;
+    ["com.lovenotes.recording.dismiss"](): string;
     /**
       * `Stop`
       */
-    ["com.affine.recording.stop"](): string;
+    ["com.lovenotes.recording.stop"](): string;
     /**
       * `Migrate Data to Enhance User Experience`
       */
-    ["com.affine.migration-all-docs-notification.header"](): string;
+    ["com.lovenotes.migration-all-docs-notification.header"](): string;
     /**
       * `We are updating the local data to facilitate the recording and filtering of created by and Last edited by information. Please click the “Migrate Data” button and ensure a stable network connection during the process.`
       */
-    ["com.affine.migration-all-docs-notification.desc"](): string;
+    ["com.lovenotes.migration-all-docs-notification.desc"](): string;
     /**
       * `Migration failed: {{errorMessage}}`
       */
-    ["com.affine.migration-all-docs-notification.error"](options: {
+    ["com.lovenotes.migration-all-docs-notification.error"](options: {
         readonly errorMessage: string;
     }): string;
     /**
       * `Migrate data`
       */
-    ["com.affine.migration-all-docs-notification.button"](): string;
+    ["com.lovenotes.migration-all-docs-notification.button"](): string;
     /**
       * `Comments`
       */
-    ["com.affine.comment.comments"](): string;
+    ["com.lovenotes.comment.comments"](): string;
     /**
       * `No comments yet, select content to add comment to`
       */
-    ["com.affine.comment.no-comments"](): string;
+    ["com.lovenotes.comment.no-comments"](): string;
     /**
       * `Delete the thread?`
       */
-    ["com.affine.comment.delete.confirm.title"](): string;
+    ["com.lovenotes.comment.delete.confirm.title"](): string;
     /**
       * `All comments will also be deleted, and this action cannot be undone.`
       */
-    ["com.affine.comment.delete.confirm.description"](): string;
+    ["com.lovenotes.comment.delete.confirm.description"](): string;
     /**
       * `Delete this reply?`
       */
-    ["com.affine.comment.reply.delete.confirm.title"](): string;
+    ["com.lovenotes.comment.reply.delete.confirm.title"](): string;
     /**
       * `Delete this reply? This action cannot be undone.`
       */
-    ["com.affine.comment.reply.delete.confirm.description"](): string;
+    ["com.lovenotes.comment.reply.delete.confirm.description"](): string;
     /**
       * `Show {{count}} more replies`
       */
-    ["com.affine.comment.reply.show-more"](options: {
+    ["com.lovenotes.comment.reply.show-more"](options: {
         readonly count: string;
     }): string;
     /**
       * `Show resolved comments`
       */
-    ["com.affine.comment.filter.show-resolved"](): string;
+    ["com.lovenotes.comment.filter.show-resolved"](): string;
     /**
       * `Only my replies and mentions`
       */
-    ["com.affine.comment.filter.only-my-replies"](): string;
+    ["com.lovenotes.comment.filter.only-my-replies"](): string;
     /**
       * `Only current mode`
       */
-    ["com.affine.comment.filter.only-current-mode"](): string;
+    ["com.lovenotes.comment.filter.only-current-mode"](): string;
     /**
       * `Unlock more features`
       */
-    ["com.affine.payment.subscription.title"](): string;
+    ["com.lovenotes.payment.subscription.title"](): string;
     /**
       * `The universal editor that lets you work, play, present or create just about anything.`
       */
-    ["com.affine.payment.subscription.description"](): string;
+    ["com.lovenotes.payment.subscription.description"](): string;
     /**
       * `Upgrade`
       */
-    ["com.affine.payment.subscription.button"](): string;
+    ["com.lovenotes.payment.subscription.button"](): string;
     /**
       * `Reply`
       */
-    ["com.affine.comment.reply"](): string;
+    ["com.lovenotes.comment.reply"](): string;
     /**
       * `Copy link`
       */
-    ["com.affine.comment.copy-link"](): string;
+    ["com.lovenotes.comment.copy-link"](): string;
     /**
       * `Copy`
       */
-    ["com.affine.context-menu.copy"](): string;
+    ["com.lovenotes.context-menu.copy"](): string;
     /**
       * `Paste`
       */
-    ["com.affine.context-menu.paste"](): string;
+    ["com.lovenotes.context-menu.paste"](): string;
     /**
       * `Cut`
       */
-    ["com.affine.context-menu.cut"](): string;
+    ["com.lovenotes.context-menu.cut"](): string;
     /**
       * `Add icon`
       */
-    ["com.affine.docIconPicker.placeholder"](): string;
+    ["com.lovenotes.docIconPicker.placeholder"](): string;
     /**
       * `An internal error occurred.`
       */
@@ -9184,9 +9184,9 @@ function createComponent(i18nKey: string) {
 }
 export const TypedTrans: {
     /**
-      * `Go to <a>{{link}}</a> for learn more details about AFFiNE AI.`
+      * `Go to <a>{{link}}</a> for learn more details about LoveNotes AI.`
       */
-    ["com.affine.ai-onboarding.general.5.description"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.ai-onboarding.general.5.description"]: ComponentType<TypedTransProps<{
         readonly link: string;
     }, {
         a: JSX.Element;
@@ -9194,25 +9194,25 @@ export const TypedTrans: {
     /**
       * `By continuing, you are agreeing to our <a>AI Terms</a>.`
       */
-    ["com.affine.ai-onboarding.general.privacy"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.ai-onboarding.general.privacy"]: ComponentType<TypedTransProps<Readonly<{}>, {
         a: JSX.Element;
     }>>;
     /**
-      * `Opening <1>AFFiNE</1> app now`
+      * `Opening <1>LoveNotes</1> app now`
       */
-    ["com.affine.auth.open.affine.prompt"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.auth.open.lovenotes.prompt"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `This doc is now opened in <1>AFFiNE</1> app`
+      * `This doc is now opened in <1>LoveNotes</1> app`
       */
-    ["com.affine.auth.open.affine.open-doc-prompt"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.auth.open.lovenotes.open-doc-prompt"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `To continue signing in, please enter the code that was sent to <a>{{email}}</a>.`
       */
-    ["com.affine.auth.sign.auth.code.hint"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.auth.sign.auth.code.hint"]: ComponentType<TypedTransProps<{
         readonly email: string;
     }, {
         a: JSX.Element;
@@ -9220,36 +9220,36 @@ export const TypedTrans: {
     /**
       * `Or <1>sign in with password</1> instead.`
       */
-    ["com.affine.auth.sign.auth.code.message.password"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.auth.sign.auth.code.message.password"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `The Self-Hosted instance is not hosted or deployed by AFFiNE. Your data will be stored on these instances.  <1>Learn more about Self-Host details.</1>`
+      * `The Self-Hosted instance is not hosted or deployed by LoveNotes. Your data will be stored on these instances.  <1>Learn more about Self-Host details.</1>`
       */
-    ["com.affine.auth.sign.add-selfhosted.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.auth.sign.add-selfhosted.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `By clicking “Continue with Google/Email” above, you acknowledge that you agree to AFFiNE's <1>Terms of Conditions</1> and <3>Privacy Policy</3>.`
+      * `By clicking “Continue with Google/Email” above, you acknowledge that you agree to LoveNotes's <1>Terms of Conditions</1> and <3>Privacy Policy</3>.`
       */
-    ["com.affine.auth.sign.message"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.auth.sign.message"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
         ["3"]: JSX.Element;
     }>>;
     /**
-      * `This demo is limited. <1>Download the AFFiNE Client</1> for the latest features and Performance.`
+      * `This demo is limited. <1>Download the LoveNotes Client</1> for the latest features and Performance.`
       */
-    ["com.affine.banner.content"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.banner.content"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `<0>{{count}}</0> selected`
     
-      * - com.affine.collection.toolbar.selected_one: `<0>{{count}}</0> collection selected`
+      * - com.lovenotes.collection.toolbar.selected_one: `<0>{{count}}</0> collection selected`
     
-      * - com.affine.collection.toolbar.selected_other: `<0>{{count}}</0> collection(s) selected`
+      * - com.lovenotes.collection.toolbar.selected_other: `<0>{{count}}</0> collection(s) selected`
       */
-    ["com.affine.collection.toolbar.selected"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.collection.toolbar.selected"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9257,7 +9257,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> collection selected`
       */
-    ["com.affine.collection.toolbar.selected_one"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.collection.toolbar.selected_one"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9265,7 +9265,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> collection(s) selected`
       */
-    ["com.affine.collection.toolbar.selected_other"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.collection.toolbar.selected_other"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9273,7 +9273,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> collection(s) selected`
       */
-    ["com.affine.collection.toolbar.selected_others"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.collection.toolbar.selected_others"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["0"]: JSX.Element;
@@ -9281,7 +9281,7 @@ export const TypedTrans: {
     /**
       * `Deleting <1>{{tag}}</1> cannot be undone, please proceed with caution.`
       */
-    ["com.affine.delete-tags.confirm.description"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.delete-tags.confirm.description"]: ComponentType<TypedTransProps<{
         readonly tag: string;
     }, {
         ["1"]: JSX.Element;
@@ -9289,7 +9289,7 @@ export const TypedTrans: {
     /**
       * `Selected <1>{{selectedCount}}</1>, filtered <3>{{filteredCount}}</3>`
       */
-    ["com.affine.editCollection.rules.countTips"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.lovenotes.editCollection.rules.countTips"]: ComponentType<TypedTransProps<Readonly<{
         selectedCount: string;
         filteredCount: string;
     }>, {
@@ -9299,7 +9299,7 @@ export const TypedTrans: {
     /**
       * `Showing <1>{{count}}</1> docs.`
       */
-    ["com.affine.editCollection.rules.countTips.more"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.editCollection.rules.countTips.more"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["1"]: JSX.Element;
@@ -9307,7 +9307,7 @@ export const TypedTrans: {
     /**
       * `Showing <1>{{count}}</1> doc.`
       */
-    ["com.affine.editCollection.rules.countTips.one"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.editCollection.rules.countTips.one"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["1"]: JSX.Element;
@@ -9315,7 +9315,7 @@ export const TypedTrans: {
     /**
       * `Showing <1>{{count}}</1> docs.`
       */
-    ["com.affine.editCollection.rules.countTips.zero"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.editCollection.rules.countTips.zero"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["1"]: JSX.Element;
@@ -9323,14 +9323,14 @@ export const TypedTrans: {
     /**
       * `Please <1>add rules</1> to save this collection or switch to <3>Docs</3>, use manual selection mode`
       */
-    ["com.affine.editCollection.rules.empty.noRules.tips"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.editCollection.rules.empty.noRules.tips"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
         ["3"]: JSX.Element;
     }>>;
     /**
       * `Docs that meet the rules will be added to the current collection <2>{{highlight}}</2>`
       */
-    ["com.affine.editCollection.rules.tips"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.editCollection.rules.tips"]: ComponentType<TypedTransProps<{
         readonly highlight: string;
     }, {
         ["2"]: JSX.Element;
@@ -9338,29 +9338,29 @@ export const TypedTrans: {
     /**
       * `If you are still experiencing this issue, please <1>contact us through the community</1>.`
       */
-    ["com.affine.error.contact-us"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.error.contact-us"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `With the workspace creator's free account, every member can access up to <1>7 days<1> of version history.`
       */
-    ["com.affine.history.confirm-restore-modal.free-plan-prompt.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.history.confirm-restore-modal.free-plan-prompt.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `With the workspace creator's Pro account, every member enjoys the privilege of accessing up to <1>30 days<1> of version history.`
       */
-    ["com.affine.history.confirm-restore-modal.pro-plan-prompt.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.history.confirm-restore-modal.pro-plan-prompt.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `<0>{{count}}</0> selected`
     
-      * - com.affine.page.toolbar.selected_one: `<0>{{count}}</0> doc selected`
+      * - com.lovenotes.page.toolbar.selected_one: `<0>{{count}}</0> doc selected`
     
-      * - com.affine.page.toolbar.selected_other: `<0>{{count}}</0> doc(s) selected`
+      * - com.lovenotes.page.toolbar.selected_other: `<0>{{count}}</0> doc(s) selected`
       */
-    ["com.affine.page.toolbar.selected"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.page.toolbar.selected"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9368,7 +9368,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> doc selected`
       */
-    ["com.affine.page.toolbar.selected_one"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.page.toolbar.selected_one"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9376,7 +9376,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> doc(s) selected`
       */
-    ["com.affine.page.toolbar.selected_other"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.page.toolbar.selected_other"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9384,7 +9384,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> doc(s) selected`
       */
-    ["com.affine.page.toolbar.selected_others"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.page.toolbar.selected_others"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["0"]: JSX.Element;
@@ -9392,19 +9392,19 @@ export const TypedTrans: {
     /**
       * `You are currently on the <a>free plan</a>.`
       */
-    ["com.affine.payment.billing-setting.ai.free-desc"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.payment.billing-setting.ai.free-desc"]: ComponentType<TypedTransProps<Readonly<{}>, {
         a: JSX.Element;
     }>>;
     /**
       * `You have purchased <a>Believer plan</a>. Enjoy with your benefits!`
       */
-    ["com.affine.payment.billing-setting.believer.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.payment.billing-setting.believer.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         a: JSX.Element;
     }>>;
     /**
       * `You are currently on the <1>{{planName}} plan</1>.`
       */
-    ["com.affine.payment.billing-setting.current-plan.description"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.payment.billing-setting.current-plan.description"]: ComponentType<TypedTransProps<{
         readonly planName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9412,7 +9412,7 @@ export const TypedTrans: {
     /**
       * `You are currently on the believer <1>{{planName}} plan</1>.`
       */
-    ["com.affine.payment.billing-setting.current-plan.description.lifetime"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.payment.billing-setting.current-plan.description.lifetime"]: ComponentType<TypedTransProps<{
         readonly planName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9420,7 +9420,7 @@ export const TypedTrans: {
     /**
       * `You are currently on the monthly <1>{{planName}} plan</1>.`
       */
-    ["com.affine.payment.billing-setting.current-plan.description.monthly"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.payment.billing-setting.current-plan.description.monthly"]: ComponentType<TypedTransProps<{
         readonly planName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9428,7 +9428,7 @@ export const TypedTrans: {
     /**
       * `You are currently on the annually <1>{{planName}} plan</1>.`
       */
-    ["com.affine.payment.billing-setting.current-plan.description.yearly"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.payment.billing-setting.current-plan.description.yearly"]: ComponentType<TypedTransProps<{
         readonly planName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9436,13 +9436,13 @@ export const TypedTrans: {
     /**
       * `One-time Purchase. Personal use rights for up to 150 years. <a>Fair Usage Policies</a> may apply.`
       */
-    ["com.affine.payment.lifetime.caption-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.payment.lifetime.caption-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         a: JSX.Element;
     }>>;
     /**
       * `You are currently on the {{currentPlan}} plan. If you have any questions, please contact our <3>customer support</3>.`
       */
-    ["com.affine.payment.subtitle-active"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.payment.subtitle-active"]: ComponentType<TypedTransProps<{
         readonly currentPlan: string;
     }, {
         ["3"]: JSX.Element;
@@ -9450,37 +9450,37 @@ export const TypedTrans: {
     /**
       * `If you have any questions, please contact our <1> customer support</1>.`
       */
-    ["com.affine.payment.upgrade-success-page.support"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.payment.upgrade-success-page.support"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `If you have any questions, please contact our <1>customer support</1>.`
       */
-    ["com.affine.payment.upgrade-success-page.team.text-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.payment.upgrade-success-page.team.text-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `If you have any questions, please contact our <1>customer support</1>.`
       */
-    ["com.affine.payment.license-success.text-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.payment.license-success.text-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `This action deletes the old Favorites section. <b>Your documents are safe</b>, ensure you've moved your frequently accessed documents to the new personal Favorites section.`
       */
-    ["com.affine.rootAppSidebar.migration-data.clean-all.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.rootAppSidebar.migration-data.clean-all.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         b: JSX.Element;
     }>>;
     /**
       * `<b>Your documents are safe</b>, but you'll need to re-pin your most-used ones. "Favorites" are now personal. Move items from the old shared section to your new personal section or remove the old one by clicking "Empty the old favorites" now.`
       */
-    ["com.affine.rootAppSidebar.migration-data.help.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.rootAppSidebar.migration-data.help.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         b: JSX.Element;
     }>>;
     /**
       * `No doc titles contain <1>{{search}}</1>`
       */
-    ["com.affine.selectPage.empty.tips"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.selectPage.empty.tips"]: ComponentType<TypedTransProps<{
         readonly search: string;
     }, {
         ["1"]: JSX.Element;
@@ -9488,7 +9488,7 @@ export const TypedTrans: {
     /**
       * `Are you sure you want to delete your account from <1>{{server}}</1>?`
       */
-    ["com.affine.setting.account.delete.confirm-delete-description-1"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.setting.account.delete.confirm-delete-description-1"]: ComponentType<TypedTransProps<{
         readonly server: string;
     }, {
         ["1"]: JSX.Element;
@@ -9496,77 +9496,77 @@ export const TypedTrans: {
     /**
       * `Your account will be inaccessible, and your personal cloud space will be permanently deleted. You can remove local data by uninstalling the app or clearing your browser storage. <1>This action is irreversible.</1>`
       */
-    ["com.affine.setting.account.delete.confirm-delete-description-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.setting.account.delete.confirm-delete-description-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `Don't have the app? <1>Click to download</1>.`
       */
-    ["com.affine.open-in-app.card.subtitle"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.open-in-app.card.subtitle"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `Settings changed; please restart the app. <1>Restart</1>`
       */
-    ["com.affine.settings.editorSettings.general.spell-check.restart-hint"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.settings.editorSettings.general.spell-check.restart-hint"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `Love our app? <1>Star us on GitHub</1> and <2>create issues</2> for your valuable feedback!`
       */
-    ["com.affine.settings.suggestion-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.settings.suggestion-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
         ["2"]: JSX.Element;
     }>>;
     /**
       * `Meeting Features Available <strong>Free</strong> in Beta Phase`
       */
-    ["com.affine.settings.meetings.setting.prompt.2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.settings.meetings.setting.prompt.2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         strong: JSX.Element;
     }>>;
     /**
-      * `<strong>Where AI meets your meetings - affine your collaboration.</strong>
+      * `<strong>Where AI meets your meetings - lovenotes your collaboration.</strong>
     <ul><li>Extract Action Items & Key Insights Instantly</li><li>Smart Auto-Capture Starts With Your Meeting</li><li>Seamless Integration Across All Meeting Platforms</li><li>One Unified Space for All Your Meeting's Context</li><li>Your AI Assistant with Every Meeting Context Preserved</li></ul>`
       */
-    ["com.affine.settings.meetings.setting.welcome.hints"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.settings.meetings.setting.welcome.hints"]: ComponentType<TypedTransProps<Readonly<{}>, {
         strong: JSX.Element;
         ul: JSX.Element;
         li: JSX.Element;
     }>>;
     /**
-      * `Utilize the meeting notes and AI summarization features provided by AFFiNE. <1>Discuss more in the community</1>.`
+      * `Utilize the meeting notes and AI summarization features provided by LoveNotes. <1>Discuss more in the community</1>.`
       */
-    ["com.affine.settings.meetings.enable.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.settings.meetings.enable.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `Activate using the local key from <1>Toeverything.Inc</1>`
       */
-    ["com.affine.settings.workspace.license.self-host-team.team.license"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.settings.workspace.license.self-host-team.team.license"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `Copy your workspace id and <1>reach out to us</1>.`
       */
-    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.tips.content"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.settings.workspace.license.self-host-team.upload-license-file.tips.content"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `If you encounter any issues, contact support@toeverything.info. No license yet? <1>Click to purchase</1>.`
       */
-    ["com.affine.settings.workspace.license.activate-modal.tips"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.settings.workspace.license.activate-modal.tips"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `This will make the workspace read-only. Your key remains usable elsewhere. Deactivation doesn't cancel your Team plan. To cancel, go to <1>Manage Payment</1>.`
       */
-    ["com.affine.settings.workspace.license.deactivate-modal.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.settings.workspace.license.deactivate-modal.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `The "<1>{{ name }}</1>" property will be removed. This action cannot be undone.`
       */
-    ["com.affine.settings.workspace.properties.delete-property-desc"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.settings.workspace.properties.delete-property-desc"]: ComponentType<TypedTransProps<{
         readonly name: string;
     }, {
         ["1"]: JSX.Element;
@@ -9574,7 +9574,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> doc`
       */
-    ["com.affine.settings.workspace.properties.doc"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.settings.workspace.properties.doc"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["0"]: JSX.Element;
@@ -9582,7 +9582,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> docs`
       */
-    ["com.affine.settings.workspace.properties.doc_others"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.settings.workspace.properties.doc_others"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["0"]: JSX.Element;
@@ -9590,7 +9590,7 @@ export const TypedTrans: {
     /**
       * `Manage workspace <1>{{name}}</1> properties`
       */
-    ["com.affine.settings.workspace.properties.header.subtitle"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.settings.workspace.properties.header.subtitle"]: ComponentType<TypedTransProps<{
         readonly name: string;
     }, {
         ["1"]: JSX.Element;
@@ -9598,11 +9598,11 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> selected`
     
-      * - com.affine.tag.toolbar.selected_one: `<0>{{count}}</0> tag selected`
+      * - com.lovenotes.tag.toolbar.selected_one: `<0>{{count}}</0> tag selected`
     
-      * - com.affine.tag.toolbar.selected_other: `<0>{{count}}</0> tag(s) selected`
+      * - com.lovenotes.tag.toolbar.selected_other: `<0>{{count}}</0> tag(s) selected`
       */
-    ["com.affine.tag.toolbar.selected"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.tag.toolbar.selected"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9610,7 +9610,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> tag selected`
       */
-    ["com.affine.tag.toolbar.selected_one"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.tag.toolbar.selected_one"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9618,7 +9618,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> tag(s) selected`
       */
-    ["com.affine.tag.toolbar.selected_other"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.tag.toolbar.selected_other"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9626,7 +9626,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> tag(s) selected`
       */
-    ["com.affine.tag.toolbar.selected_others"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.tag.toolbar.selected_others"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["0"]: JSX.Element;
@@ -9634,7 +9634,7 @@ export const TypedTrans: {
     /**
       * `Deleting <1>{{workspace}}</1> cannot be undone, please proceed with caution. All contents will be lost.`
       */
-    ["com.affine.workspaceDelete.description"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.workspaceDelete.description"]: ComponentType<TypedTransProps<{
         readonly workspace: string;
     }, {
         ["1"]: JSX.Element;
@@ -9642,7 +9642,7 @@ export const TypedTrans: {
     /**
       * `Deleting <1>{{workspace}}</1> will delete both local and cloud data, this operation cannot be undone, please proceed with caution.`
       */
-    ["com.affine.workspaceDelete.description2"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.workspaceDelete.description2"]: ComponentType<TypedTransProps<{
         readonly workspace: string;
     }, {
         ["1"]: JSX.Element;
@@ -9656,7 +9656,7 @@ export const TypedTrans: {
     /**
       * `Are you sure you want to upgrade <1>{{workspaceName}}</1> to a Team Workspace? This will allow unlimited members to collaborate in this workspace.`
       */
-    ["com.affine.upgrade-to-team-page.upgrade-confirm.description"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.upgrade-to-team-page.upgrade-confirm.description"]: ComponentType<TypedTransProps<{
         readonly workspaceName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9664,7 +9664,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> mentioned you in <2>{{docTitle}}</2>`
       */
-    ["com.affine.notification.mention"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.lovenotes.notification.mention"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         docTitle: string;
     }>, {
@@ -9674,7 +9674,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> commented in <2>{{docTitle}}</2>`
       */
-    ["com.affine.notification.comment"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.lovenotes.notification.comment"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         docTitle: string;
     }>, {
@@ -9684,7 +9684,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> mentioned you in a comment in <2>{{docTitle}}</2>`
       */
-    ["com.affine.notification.comment-mention"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.lovenotes.notification.comment-mention"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         docTitle: string;
     }>, {
@@ -9694,7 +9694,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> has accept your invitation`
       */
-    ["com.affine.notification.invitation-accepted"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.notification.invitation-accepted"]: ComponentType<TypedTransProps<{
         readonly username: string;
     }, {
         ["1"]: JSX.Element;
@@ -9702,7 +9702,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> has requested to join <2>{{workspaceName}}</2>`
       */
-    ["com.affine.notification.invitation-review-request"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.lovenotes.notification.invitation-review-request"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         workspaceName: string;
     }>, {
@@ -9712,7 +9712,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> has declined your request to join <2>{{workspaceName}}</2>`
       */
-    ["com.affine.notification.invitation-review-declined"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.lovenotes.notification.invitation-review-declined"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         workspaceName: string;
     }>, {
@@ -9722,7 +9722,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> has approved your request to join <2>{{workspaceName}}</2>`
       */
-    ["com.affine.notification.invitation-review-approved"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.lovenotes.notification.invitation-review-approved"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         workspaceName: string;
     }>, {
@@ -9732,7 +9732,7 @@ export const TypedTrans: {
     /**
       * `There is an issue regarding your invitation to <1>{{workspaceName}}</1> `
       */
-    ["com.affine.notification.invitation-blocked"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.notification.invitation-blocked"]: ComponentType<TypedTransProps<{
         readonly workspaceName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9740,7 +9740,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> invited you to join <2>{{workspaceName}}</2>`
       */
-    ["com.affine.notification.invitation"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.lovenotes.notification.invitation"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         workspaceName: string;
     }>, {
@@ -9750,7 +9750,7 @@ export const TypedTrans: {
     /**
       * `Unable to join <1/> <2>{{workspaceName}}</2> due to insufficient seats available.`
       */
-    ["com.affine.fail-to-join-workspace.description-1"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.fail-to-join-workspace.description-1"]: ComponentType<TypedTransProps<{
         readonly workspaceName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9759,7 +9759,7 @@ export const TypedTrans: {
     /**
       * `You requested to join <1/> <2>{{workspaceName}}</2> with <3>{{userEmail}}</3>, the workspace owner and team admins will review your request.`
       */
-    ["com.affine.sent-request-to-join-workspace.description"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.lovenotes.sent-request-to-join-workspace.description"]: ComponentType<TypedTransProps<Readonly<{
         workspaceName: string;
         userEmail: string;
     }>, {
@@ -9770,7 +9770,7 @@ export const TypedTrans: {
     /**
       * `Unable to process your request to join <1/> <2>{{workspaceName}}</2> with <3>{{userEmail}}</3>, the workspace has reached its member limit. Please contact the workspace owner for available seats.`
       */
-    ["com.affine.failed-to-send-request.description"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.lovenotes.failed-to-send-request.description"]: ComponentType<TypedTransProps<Readonly<{
         workspaceName: string;
         userEmail: string;
     }>, {
@@ -9779,16 +9779,16 @@ export const TypedTrans: {
         ["3"]: JSX.Element;
     }>>;
     /**
-      * `Import your Readwise highlights to AFFiNE. Please visit Readwise, <br />click <a>"Get Access Token"</a>, and paste the token below.`
+      * `Import your Readwise highlights to LoveNotes. Please visit Readwise, <br />click <a>"Get Access Token"</a>, and paste the token below.`
       */
-    ["com.affine.integration.readwise.connect.desc"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.lovenotes.integration.readwise.connect.desc"]: ComponentType<TypedTransProps<Readonly<{}>, {
         br: JSX.Element;
         a: JSX.Element;
     }>>;
     /**
       * `Updates to be imported since last successful import on {{lastImportedAt}} <a>Import everything instead</a>`
       */
-    ["com.affine.integration.readwise.import.desc-from-last"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.integration.readwise.import.desc-from-last"]: ComponentType<TypedTransProps<{
         readonly lastImportedAt: string;
     }, {
         a: JSX.Element;
@@ -9796,7 +9796,7 @@ export const TypedTrans: {
     /**
       * `Please contact <1>{{user}}</1> to upgrade AI rights or resend the attachment.`
       */
-    ["com.affine.audio.transcribe.non-owner.confirm.message"]: ComponentType<TypedTransProps<{
+    ["com.lovenotes.audio.transcribe.non-owner.confirm.message"]: ComponentType<TypedTransProps<{
         readonly user: string;
     }, {
         ["1"]: JSX.Element;

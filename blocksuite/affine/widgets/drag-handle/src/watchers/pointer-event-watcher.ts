@@ -1,5 +1,5 @@
-import type { NoteBlockComponent } from '@blocksuite/affine-block-note';
-import { captureEventTarget } from '@blocksuite/affine-shared/utils';
+import type { NoteBlockComponent } from '@blocksuite/lovenotes-block-note';
+import { captureEventTarget } from '@blocksuite/lovenotes-shared/utils';
 import { Point } from '@blocksuite/global/gfx';
 import {
   BLOCK_ID_ATTR,
@@ -18,7 +18,7 @@ import {
   DRAG_HANDLE_GRABBER_WIDTH,
 } from '../config.js';
 import { AFFINE_DRAG_HANDLE_WIDGET } from '../consts.js';
-import type { AffineDragHandleWidget } from '../drag-handle.js';
+import type { LoveNotesDragHandleWidget } from '../drag-handle.js';
 import {
   getClosestBlockByPoint,
   getClosestNoteBlock,
@@ -212,9 +212,9 @@ export class PointerEventWatcher {
     // Need to be optimized
     const relatedElement = captureEventTarget(relatedTarget);
     const outOfPageViewPort = element.classList.contains(
-      'affine-page-viewport'
+      'lovenotes-page-viewport'
     );
-    const inPage = !!relatedElement?.closest('.affine-page-viewport');
+    const inPage = !!relatedElement?.closest('.lovenotes-page-viewport');
 
     const inDragHandle = !!relatedElement?.closest(AFFINE_DRAG_HANDLE_WIDGET);
     if (outOfPageViewPort && !inDragHandle && !inPage) {
@@ -246,7 +246,7 @@ export class PointerEventWatcher {
       if (!element) return;
 
       // When pointer on drag handle, should do nothing
-      if (element.closest('.affine-drag-handle-container')) return;
+      if (element.closest('.lovenotes-drag-handle-container')) return;
 
       if (!this.widget.rootComponent) return;
 
@@ -349,7 +349,7 @@ export class PointerEventWatcher {
     this._isPointerDown = false;
   };
 
-  constructor(readonly widget: AffineDragHandleWidget) {}
+  constructor(readonly widget: LoveNotesDragHandleWidget) {}
 
   reset() {
     this._lastHoveredBlockId = null;

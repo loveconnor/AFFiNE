@@ -1,16 +1,16 @@
-import { type CalloutBlockComponent } from '@blocksuite/affine-block-callout';
+import { type CalloutBlockComponent } from '@blocksuite/lovenotes-block-callout';
 import {
   AFFINE_EDGELESS_NOTE,
   EdgelessNoteBackground,
   EdgelessNoteBlockComponent,
-} from '@blocksuite/affine-block-note';
-import { ParagraphBlockComponent } from '@blocksuite/affine-block-paragraph';
+} from '@blocksuite/lovenotes-block-note';
+import { ParagraphBlockComponent } from '@blocksuite/lovenotes-block-paragraph';
 import {
   DatabaseBlockModel,
   ListBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   calcDropTarget,
   type DropTarget,
@@ -18,7 +18,7 @@ import {
   getBlockProps,
   getClosestBlockComponentByPoint,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import {
   Bound,
   Point,
@@ -111,7 +111,7 @@ export const extractIdsFromSnapshot = (snapshot: SliceSnapshot) => {
 
 // TODO: this is a hack, need to find a better way
 export const insideDatabaseTable = (element: Element) => {
-  return !!element.closest('.affine-database-block-table');
+  return !!element.closest('.lovenotes-database-block-table');
 };
 
 export const includeTextSelection = (selections: BaseSelection[]) => {
@@ -158,7 +158,7 @@ export const isOutOfNoteBlock = (
 };
 
 export const getParentNoteBlock = (blockComponent: BlockComponent) => {
-  return blockComponent.closest('affine-note, affine-edgeless-note') ?? null;
+  return blockComponent.closest('lovenotes-note, lovenotes-edgeless-note') ?? null;
 };
 
 export const getClosestNoteBlock = (
@@ -169,7 +169,7 @@ export const getClosestNoteBlock = (
   const isInsidePageEditor =
     editorHost.std.get(DocModeProvider).getEditorMode() === 'page';
   return isInsidePageEditor
-    ? findClosestBlockComponent(rootComponent, point, 'affine-note')
+    ? findClosestBlockComponent(rootComponent, point, 'lovenotes-note')
     : getHoveringNote(point);
 };
 
@@ -183,7 +183,7 @@ export const getClosestBlockByPoint = (
     rootComponent,
     point
   );
-  if (!closestNoteBlock || closestNoteBlock.closest('.affine-surface-ref')) {
+  if (!closestNoteBlock || closestNoteBlock.closest('.lovenotes-surface-ref')) {
     return null;
   }
 
@@ -195,7 +195,7 @@ export const getClosestBlockByPoint = (
   }) as BlockComponent | null;
 
   const blockSelector =
-    '.affine-note-block-container > .affine-block-children-container > [data-block-id]';
+    '.lovenotes-note-block-container > .lovenotes-block-children-container > [data-block-id]';
 
   const closestBlock = (
     block && containChildBlock([closestNoteBlock], block.model)
@@ -213,7 +213,7 @@ export const getClosestBlockByPoint = (
 
   if (matchModels(closestBlock.model, [ParagraphBlockModel])) {
     const callout =
-      closestBlock.closest<CalloutBlockComponent>('affine-callout');
+      closestBlock.closest<CalloutBlockComponent>('lovenotes-callout');
     if (callout) {
       return callout;
     }
@@ -304,7 +304,7 @@ export function getSnapshotRect(snapshot: SliceSnapshot): Bound | null {
   let bound: Bound | null = null;
 
   const getBound = (block: BlockSnapshot) => {
-    if (block.flavour === 'affine:surface') {
+    if (block.flavour === 'lovenotes:surface') {
       if (block.props.elements) {
         Object.values(
           block.props.elements as Record<

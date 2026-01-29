@@ -1,8 +1,8 @@
-import { EdgelessClipboardConfig } from '@blocksuite/affine-block-surface';
+import { EdgelessClipboardConfig } from '@blocksuite/lovenotes-block-surface';
 import { type BlockSnapshot } from '@blocksuite/store';
 
 export class EdgelessClipboardNoteConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:note';
+  static override readonly key = 'lovenotes:note';
 
   override async createBlock(note: BlockSnapshot): Promise<null | string> {
     const oldId = note.id;

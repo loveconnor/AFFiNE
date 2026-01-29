@@ -1,42 +1,42 @@
-import type { ReactToLit } from '@affine/component';
-import { AIViewExtension } from '@affine/core/blocksuite/view-extensions/ai';
-import { CloudViewExtension } from '@affine/core/blocksuite/view-extensions/cloud';
-import { CodeBlockPreviewViewExtension } from '@affine/core/blocksuite/view-extensions/code-block-preview';
-import { CommentViewExtension } from '@affine/core/blocksuite/view-extensions/comment';
-import { AffineDatabaseViewExtension } from '@affine/core/blocksuite/view-extensions/database';
+import type { ReactToLit } from '@lovenotes/component';
+import { AIViewExtension } from '@lovenotes/core/blocksuite/view-extensions/ai';
+import { CloudViewExtension } from '@lovenotes/core/blocksuite/view-extensions/cloud';
+import { CodeBlockPreviewViewExtension } from '@lovenotes/core/blocksuite/view-extensions/code-block-preview';
+import { CommentViewExtension } from '@lovenotes/core/blocksuite/view-extensions/comment';
+import { LoveNotesDatabaseViewExtension } from '@lovenotes/core/blocksuite/view-extensions/database';
 import {
   EdgelessBlockHeaderConfigViewExtension,
   type EdgelessBlockHeaderViewOptions,
-} from '@affine/core/blocksuite/view-extensions/edgeless-block-header';
-import { AffineEditorConfigViewExtension } from '@affine/core/blocksuite/view-extensions/editor-config';
-import { createDatabaseOptionsConfig } from '@affine/core/blocksuite/view-extensions/editor-config/database';
-import { createLinkedWidgetConfig } from '@affine/core/blocksuite/view-extensions/editor-config/linked';
+} from '@lovenotes/core/blocksuite/view-extensions/edgeless-block-header';
+import { LoveNotesEditorConfigViewExtension } from '@lovenotes/core/blocksuite/view-extensions/editor-config';
+import { createDatabaseOptionsConfig } from '@lovenotes/core/blocksuite/view-extensions/editor-config/database';
+import { createLinkedWidgetConfig } from '@lovenotes/core/blocksuite/view-extensions/editor-config/linked';
 import {
-  AffineEditorViewExtension,
-  type AffineEditorViewOptions,
-} from '@affine/core/blocksuite/view-extensions/editor-view/editor-view';
-import { ElectronViewExtension } from '@affine/core/blocksuite/view-extensions/electron';
-import { AffineIconPickerExtension } from '@affine/core/blocksuite/view-extensions/icon-picker';
-import { AffineLinkPreviewExtension } from '@affine/core/blocksuite/view-extensions/link-preview-service';
-import { MobileViewExtension } from '@affine/core/blocksuite/view-extensions/mobile';
-import { PdfViewExtension } from '@affine/core/blocksuite/view-extensions/pdf';
-import { AffineThemeViewExtension } from '@affine/core/blocksuite/view-extensions/theme';
-import { TurboRendererViewExtension } from '@affine/core/blocksuite/view-extensions/turbo-renderer';
-import { PeekViewService } from '@affine/core/modules/peek-view';
-import { DebugLogger } from '@affine/debug';
-import { tracker } from '@affine/track';
-import { DatabaseViewExtension } from '@blocksuite/affine/blocks/database/view';
-import { ParagraphViewExtension } from '@blocksuite/affine/blocks/paragraph/view';
+  LoveNotesEditorViewExtension,
+  type LoveNotesEditorViewOptions,
+} from '@lovenotes/core/blocksuite/view-extensions/editor-view/editor-view';
+import { ElectronViewExtension } from '@lovenotes/core/blocksuite/view-extensions/electron';
+import { LoveNotesIconPickerExtension } from '@lovenotes/core/blocksuite/view-extensions/icon-picker';
+import { LoveNotesLinkPreviewExtension } from '@lovenotes/core/blocksuite/view-extensions/link-preview-service';
+import { MobileViewExtension } from '@lovenotes/core/blocksuite/view-extensions/mobile';
+import { PdfViewExtension } from '@lovenotes/core/blocksuite/view-extensions/pdf';
+import { LoveNotesThemeViewExtension } from '@lovenotes/core/blocksuite/view-extensions/theme';
+import { TurboRendererViewExtension } from '@lovenotes/core/blocksuite/view-extensions/turbo-renderer';
+import { PeekViewService } from '@lovenotes/core/modules/peek-view';
+import { DebugLogger } from '@lovenotes/debug';
+import { tracker } from '@lovenotes/track';
+import { DatabaseViewExtension } from '@blocksuite/lovenotes/blocks/database/view';
+import { ParagraphViewExtension } from '@blocksuite/lovenotes/blocks/paragraph/view';
 import type {
   PeekOptions,
   PeekViewService as BSPeekViewService,
-} from '@blocksuite/affine/components/peek';
-import { ViewExtensionManager } from '@blocksuite/affine/ext-loader';
-import { getInternalViewExtensions } from '@blocksuite/affine/extensions/view';
-import { FoundationViewExtension } from '@blocksuite/affine/foundation/view';
-import { InlineCommentViewExtension } from '@blocksuite/affine/inlines/comment';
-import { AffineCanvasTextFonts } from '@blocksuite/affine/shared/services';
-import { LinkedDocViewExtension } from '@blocksuite/affine/widgets/linked-doc/view';
+} from '@blocksuite/lovenotes/components/peek';
+import { ViewExtensionManager } from '@blocksuite/lovenotes/ext-loader';
+import { getInternalViewExtensions } from '@blocksuite/lovenotes/extensions/view';
+import { FoundationViewExtension } from '@blocksuite/lovenotes/foundation/view';
+import { InlineCommentViewExtension } from '@blocksuite/lovenotes/inlines/comment';
+import { LoveNotesCanvasTextFonts } from '@blocksuite/lovenotes/shared/services';
+import { LinkedDocViewExtension } from '@blocksuite/lovenotes/widgets/linked-doc/view';
 import type { FrameworkProvider } from '@toeverything/infra';
 import type { TemplateResult } from 'lit';
 
@@ -44,7 +44,7 @@ type Configure = {
   init: () => Configure;
 
   foundation: (framework?: FrameworkProvider) => Configure;
-  editorView: (options?: AffineEditorViewOptions) => Configure;
+  editorView: (options?: LoveNotesEditorViewOptions) => Configure;
   theme: (framework?: FrameworkProvider) => Configure;
   editorConfig: (framework?: FrameworkProvider) => Configure;
   edgelessBlockHeader: (options?: EdgelessBlockHeaderViewOptions) => Configure;
@@ -68,7 +68,7 @@ type Configure = {
   value: ViewExtensionManager;
 };
 
-const peekViewLogger = new DebugLogger('affine::patch-peek-view-service');
+const peekViewLogger = new DebugLogger('lovenotes::patch-peek-view-service');
 
 class ViewProvider {
   static instance: ViewProvider | null = null;
@@ -85,10 +85,10 @@ class ViewProvider {
     this._manager = new ViewExtensionManager([
       ...getInternalViewExtensions(),
 
-      AffineThemeViewExtension,
-      AffineEditorViewExtension,
-      AffineEditorConfigViewExtension,
-      AffineIconPickerExtension,
+      LoveNotesThemeViewExtension,
+      LoveNotesEditorViewExtension,
+      LoveNotesEditorConfigViewExtension,
+      LoveNotesIconPickerExtension,
       CodeBlockPreviewViewExtension,
       EdgelessBlockHeaderConfigViewExtension,
       TurboRendererViewExtension,
@@ -97,8 +97,8 @@ class ViewProvider {
       MobileViewExtension,
       AIViewExtension,
       ElectronViewExtension,
-      AffineLinkPreviewExtension,
-      AffineDatabaseViewExtension,
+      LoveNotesLinkPreviewExtension,
+      LoveNotesDatabaseViewExtension,
       CommentViewExtension,
     ]);
   }
@@ -165,7 +165,7 @@ class ViewProvider {
           tracker.track(eventName, props);
         },
       },
-      fontConfig: AffineCanvasTextFonts.map(font => ({
+      fontConfig: LoveNotesCanvasTextFonts.map(font => ({
         ...font,
         url: environment.publicPath + 'fonts/' + font.url.split('/').pop(),
       })),
@@ -200,19 +200,19 @@ class ViewProvider {
   };
 
   private readonly _configureEditorView = (
-    options?: AffineEditorViewOptions
+    options?: LoveNotesEditorViewOptions
   ) => {
-    this._manager.configure(AffineEditorViewExtension, options);
+    this._manager.configure(LoveNotesEditorViewExtension, options);
     return this.config;
   };
 
   private readonly _configureTheme = (framework?: FrameworkProvider) => {
-    this._manager.configure(AffineThemeViewExtension, { framework });
+    this._manager.configure(LoveNotesThemeViewExtension, { framework });
     return this.config;
   };
 
   private readonly _configureEditorConfig = (framework?: FrameworkProvider) => {
-    this._manager.configure(AffineEditorConfigViewExtension, { framework });
+    this._manager.configure(LoveNotesEditorConfigViewExtension, { framework });
     return this.config;
   };
 
@@ -327,7 +327,7 @@ class ViewProvider {
   };
 
   private readonly _configureLinkPreview = (framework?: FrameworkProvider) => {
-    this._manager.configure(AffineLinkPreviewExtension, { framework });
+    this._manager.configure(LoveNotesLinkPreviewExtension, { framework });
     return this.config;
   };
 
@@ -339,7 +339,7 @@ class ViewProvider {
   };
 
   private readonly _configureIconPicker = (framework?: FrameworkProvider) => {
-    this._manager.configure(AffineIconPickerExtension, { framework });
+    this._manager.configure(LoveNotesIconPickerExtension, { framework });
     return this.config;
   };
 

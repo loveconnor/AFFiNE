@@ -1,4 +1,4 @@
-import type { RoughCanvas } from '@blocksuite/affine-block-surface';
+import type { RoughCanvas } from '@blocksuite/lovenotes-block-surface';
 
 import { Shape } from './shape';
 import { drawGeneralShape } from './utils';

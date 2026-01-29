@@ -2,23 +2,23 @@ import {
   BlockRenderer,
   DatabaseSelection,
   NoteRenderer,
-} from '@blocksuite/affine-block-database';
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
+} from '@blocksuite/lovenotes-block-database';
+import { CaptionedBlockComponent } from '@blocksuite/lovenotes-components/caption';
 import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { CopyIcon, DeleteIcon } from '@blocksuite/affine-components/icons';
-import { PeekViewProvider } from '@blocksuite/affine-components/peek';
-import { toast } from '@blocksuite/affine-components/toast';
-import { EDGELESS_TOP_CONTENTEDITABLE_SELECTOR } from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { CopyIcon, DeleteIcon } from '@blocksuite/lovenotes-components/icons';
+import { PeekViewProvider } from '@blocksuite/lovenotes-components/peek';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import { EDGELESS_TOP_CONTENTEDITABLE_SELECTOR } from '@blocksuite/lovenotes-shared/consts';
 import {
   DocModeProvider,
   NotificationProvider,
   type TelemetryEventMap,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   createRecordDetail,
   createUniComponentFromWebComponent,
@@ -48,17 +48,17 @@ import type { DataViewBlockModel } from './data-view-model.js';
 
 export class DataViewBlockComponent extends CaptionedBlockComponent<DataViewBlockModel> {
   static override styles = css`
-    ${unsafeCSS(dataViewCommonStyle('affine-database'))}
-    affine-database {
+    ${unsafeCSS(dataViewCommonStyle('lovenotes-database'))}
+    lovenotes-database {
       display: block;
       border-radius: 8px;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--lovenotes-background-primary-color);
       padding: 8px;
       margin: 8px -8px -8px;
     }
 
     .database-block-selected {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
       border-radius: 4px;
     }
 
@@ -72,11 +72,11 @@ export class DataViewBlockComponent extends CaptionedBlockComponent<DataViewBloc
     .database-ops svg {
       width: 16px;
       height: 16px;
-      color: var(--affine-icon-color);
+      color: var(--lovenotes-icon-color);
     }
 
     .database-ops:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
 
     @media print {
@@ -320,6 +320,6 @@ export class DataViewBlockComponent extends CaptionedBlockComponent<DataViewBloc
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-data-view': DataViewBlockComponent;
+    'lovenotes-data-view': DataViewBlockComponent;
   }
 }

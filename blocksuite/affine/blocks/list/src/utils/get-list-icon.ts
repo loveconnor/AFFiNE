@@ -1,5 +1,5 @@
-import type { ListBlockModel } from '@blocksuite/affine-model';
-import { getNumberPrefix } from '@blocksuite/affine-shared/utils';
+import type { ListBlockModel } from '@blocksuite/lovenotes-model';
+import { getNumberPrefix } from '@blocksuite/lovenotes-shared/utils';
 import {
   BulletedList01Icon,
   BulletedList02Icon,
@@ -39,7 +39,7 @@ export function getListIcon(
     case 'bulleted':
       return html`<div
         contenteditable="false"
-        class="affine-list-block__prefix"
+        class="lovenotes-list-block__prefix"
         @click=${onClick}
       >
         ${BulletIcons[deep % BulletIcons.length]}
@@ -47,7 +47,7 @@ export function getListIcon(
     case 'numbered':
       return html`<div
         contenteditable="false"
-        class="affine-list-block__prefix affine-list-block__numbered"
+        class="lovenotes-list-block__prefix lovenotes-list-block__numbered"
         @click=${onClick}
       >
         ${model.props.order ? getNumberPrefix(model.props.order, deep) : '1.'}
@@ -55,7 +55,7 @@ export function getListIcon(
     case 'todo':
       return html`<div
         contenteditable="false"
-        class=${`affine-list-block__prefix affine-list-block__todo-prefix ${model.store.readonly ? 'readonly' : ''}`}
+        class=${`lovenotes-list-block__prefix lovenotes-list-block__todo-prefix ${model.store.readonly ? 'readonly' : ''}`}
         @click=${onClick}
       >
         ${model.props.checked
@@ -65,7 +65,7 @@ export function getListIcon(
     case 'toggle':
       return html`<div
         contenteditable="false"
-        class="affine-list-block__prefix"
+        class="lovenotes-list-block__prefix"
         @click=${onClick}
       >
         ${showChildren ? ToggleDownIcon() : ToggleRightIcon()}

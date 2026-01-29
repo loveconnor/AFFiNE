@@ -1,13 +1,13 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine-block-surface';
+import { EdgelessCRUDIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   packColor,
   type PickColorEvent,
-} from '@blocksuite/affine-components/color-picker';
-import type { LineDetailType } from '@blocksuite/affine-components/edgeless-line-styles-panel';
+} from '@blocksuite/lovenotes-components/color-picker';
+import type { LineDetailType } from '@blocksuite/lovenotes-components/edgeless-line-styles-panel';
 import {
   createTextActions,
   normalizeTextBound,
-} from '@blocksuite/affine-gfx-text';
+} from '@blocksuite/lovenotes-gfx-text';
 import {
   ConnectorElementModel,
   type ConnectorElementProps,
@@ -20,23 +20,23 @@ import {
   PointStyle,
   resolveColor,
   StrokeStyle,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   type ToolbarContext,
   type ToolbarGenericAction,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   getMostCommonResolvedValue,
   getMostCommonValue,
-} from '@blocksuite/affine-shared/utils';
-import type { MenuItem } from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-shared/utils';
+import type { MenuItem } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import {
   getRootBlock,
   LINE_STYLE_LIST,
   renderMenu,
-} from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   AddTextIcon,
@@ -431,6 +431,6 @@ function updateModelsWith<
 }
 
 export const connectorToolbarExtension = ToolbarModuleExtension({
-  id: BlockFlavourIdentifier('affine:surface:connector'),
+  id: BlockFlavourIdentifier('lovenotes:surface:connector'),
   config: connectorToolbarConfig,
 });

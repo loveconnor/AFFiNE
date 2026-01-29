@@ -1,4 +1,4 @@
-import { type Tokenizer } from '@affine/server-native';
+import { type Tokenizer } from '@lovenotes/server-native';
 import { Logger } from '@nestjs/common';
 import { AiPrompt } from '@prisma/client';
 import Mustache from 'mustache';
@@ -130,13 +130,13 @@ export class ChatPrompt {
       currentDocId,
     } = params;
     return {
-      'affine::date': new Date().toLocaleDateString(),
-      'affine::language': language || 'same language as the user query',
-      'affine::timezone': timezone || 'no preference',
-      'affine::hasDocsRef': Array.isArray(docs) && docs.length > 0,
-      'affine::hasFilesRef': Array.isArray(files) && files.length > 0,
-      'affine::hasSelected': !!selectedMarkdown || !!selectedSnapshot || !!html,
-      'affine::hasCurrentDoc':
+      'lovenotes::date': new Date().toLocaleDateString(),
+      'lovenotes::language': language || 'same language as the user query',
+      'lovenotes::timezone': timezone || 'no preference',
+      'lovenotes::hasDocsRef': Array.isArray(docs) && docs.length > 0,
+      'lovenotes::hasFilesRef': Array.isArray(files) && files.length > 0,
+      'lovenotes::hasSelected': !!selectedMarkdown || !!selectedSnapshot || !!html,
+      'lovenotes::hasCurrentDoc':
         typeof currentDocId === 'string' && currentDocId.trim().length > 0,
     };
   }
@@ -150,7 +150,7 @@ export class ChatPrompt {
     this.checkParams(params, sessionId);
 
     const { attachments: attach, ...restParams } = Object.fromEntries(
-      Object.entries(params).filter(([k]) => !k.startsWith('affine::'))
+      Object.entries(params).filter(([k]) => !k.startsWith('lovenotes::'))
     );
     const paramsAttach = Array.isArray(attach) ? attach : [];
 

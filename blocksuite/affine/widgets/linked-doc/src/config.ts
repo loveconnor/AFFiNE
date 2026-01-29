@@ -3,20 +3,20 @@ import {
   LinkedDocIcon,
   LinkedEdgelessIcon,
   NewDocIcon,
-} from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
-import { StoreExtensionManagerIdentifier } from '@blocksuite/affine-ext-loader';
-import { insertLinkedNode } from '@blocksuite/affine-inline-reference';
+} from '@blocksuite/lovenotes-components/icons';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import { StoreExtensionManagerIdentifier } from '@blocksuite/lovenotes-ext-loader';
+import { insertLinkedNode } from '@blocksuite/lovenotes-inline-reference';
 import {
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import type { AffineInlineEditor } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-shared/services';
+import type { LoveNotesInlineEditor } from '@blocksuite/lovenotes-shared/types';
 import {
   createDefaultDoc,
   isFuzzyMatch,
   type Signal,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import {
   type BlockStdScope,
@@ -61,7 +61,7 @@ export type LinkedMenuGroup = {
 
 export type LinkedDocContext = {
   std: BlockStdScope;
-  inlineEditor: AffineInlineEditor;
+  inlineEditor: LoveNotesInlineEditor;
   startRange: InlineRange;
   startNativeRange: Range;
   triggerKey: string;
@@ -76,7 +76,7 @@ export function createLinkedDocMenuGroup(
   query: string,
   abort: () => void,
   editorHost: EditorHost,
-  inlineEditor: AffineInlineEditor
+  inlineEditor: LoveNotesInlineEditor
 ) {
   const doc = editorHost.store;
   const { docMetas } = doc.workspace.meta;
@@ -120,7 +120,7 @@ export function createNewDocMenuGroup(
   query: string,
   abort: () => void,
   editorHost: EditorHost,
-  inlineEditor: AffineInlineEditor
+  inlineEditor: LoveNotesInlineEditor
 ): LinkedMenuGroup {
   const doc = editorHost.store;
   const docName = query || DEFAULT_DOC_NAME;
@@ -210,7 +210,7 @@ export function getMenus(
   query: string,
   abort: () => void,
   editorHost: EditorHost,
-  inlineEditor: AffineInlineEditor
+  inlineEditor: LoveNotesInlineEditor
 ): Promise<LinkedMenuGroup[]> {
   return Promise.resolve([
     createLinkedDocMenuGroup(query, abort, editorHost, inlineEditor),
@@ -223,8 +223,8 @@ export const LinkedWidgetUtils = {
   insertLinkedNode,
 };
 
-export const AFFINE_LINKED_DOC_WIDGET = 'affine-linked-doc-widget';
+export const AFFINE_LINKED_DOC_WIDGET = 'lovenotes-linked-doc-widget';
 
 export const LinkedWidgetConfigExtension = ConfigExtensionFactory<
   Partial<LinkedWidgetConfig>
->('affine:widget-linked-doc');
+>('lovenotes:widget-linked-doc');

@@ -50,7 +50,7 @@ export interface NotificationService {
 }
 
 export const NotificationProvider = createIdentifier<NotificationService>(
-  'AffineNotificationService'
+  'LoveNotesNotificationService'
 );
 
 export function NotificationExtension(

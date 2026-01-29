@@ -1,6 +1,6 @@
 // related component
 
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { InsertToPosition } from '@blocksuite/lovenotes-shared/utils';
 import type { ReactiveController } from 'lit';
 
 import { startDrag } from '../../../../core/utils/drag.js';
@@ -88,7 +88,7 @@ export class TableDragController implements ReactiveController {
     | undefined => {
     const y = evt.y;
     const tableRect = this.host
-      ?.querySelector('affine-data-view-table-group')
+      ?.querySelector('lovenotes-data-view-table-group')
       ?.getBoundingClientRect();
     const rows = this.host?.querySelectorAll('data-view-table-row');
     if (!rows || !tableRect || y < tableRect.top) {
@@ -169,8 +169,8 @@ const createDragPreview = (row: TableRowView, x: number, y: number) => {
   div.style.position = 'fixed';
   div.style.pointerEvents = 'none';
   div.style.opacity = '0.5';
-  div.style.backgroundColor = 'var(--affine-background-primary-color)';
-  div.style.boxShadow = 'var(--affine-shadow-2)';
+  div.style.backgroundColor = 'var(--lovenotes-background-primary-color)';
+  div.style.boxShadow = 'var(--lovenotes-shadow-2)';
   div.style.left = `${x}px`;
   div.style.top = `${y}px`;
   div.style.zIndex = '9999';
@@ -193,7 +193,7 @@ const createDropPreview = () => {
   div.style.zIndex = '9999';
   div.style.height = '2px';
   div.style.borderRadius = '1px';
-  div.style.backgroundColor = 'var(--affine-primary-color)';
+  div.style.backgroundColor = 'var(--lovenotes-primary-color)';
   div.style.boxShadow = '0px 0px 8px 0px rgba(30, 150, 235, 0.35)';
   return {
     display(x: number, y: number, width: number) {

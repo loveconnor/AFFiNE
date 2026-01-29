@@ -4,12 +4,12 @@ import type {
   ColumnUpdater,
   DatabaseBlockModel,
   ViewBasicDataType,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   arrayMove,
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { BlockModel } from '@blocksuite/store';
 
 export function addProperty(
@@ -237,4 +237,4 @@ export const updateView = <ViewData extends ViewBasicDataType>(
     });
   });
 };
-export const DATABASE_CONVERT_WHITE_LIST = ['affine:list', 'affine:paragraph'];
+export const DATABASE_CONVERT_WHITE_LIST = ['lovenotes:list', 'lovenotes:paragraph'];

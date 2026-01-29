@@ -1,21 +1,21 @@
 {
-  "name": "@affine/web",
+  "name": "@lovenotes/web",
   "version": "0.26.0",
-  "description": "AFFiNE Desktop Web application",
+  "description": "LoveNotes Desktop Web application",
   "private": true,
   "browser": "src/index.tsx",
   "scripts": {
-    "build": "affine bundle",
-    "dev": "affine bundle --dev"
+    "build": "lovenotes bundle",
+    "dev": "lovenotes bundle --dev"
   },
   "dependencies": {
-    "@affine/component": "workspace:*",
-    "@affine/core": "workspace:*",
-    "@affine/env": "workspace:*",
-    "@affine/i18n": "workspace:*",
-    "@affine/nbstore": "workspace:*",
-    "@affine/track": "workspace:*",
     "@emotion/react": "^11.14.0",
+    "@lovenotes/component": "workspace:*",
+    "@lovenotes/core": "workspace:*",
+    "@lovenotes/env": "workspace:*",
+    "@lovenotes/i18n": "workspace:*",
+    "@lovenotes/nbstore": "workspace:*",
+    "@lovenotes/track": "workspace:*",
     "@sentry/react": "^9.47.1",
     "@toeverything/infra": "workspace:*",
     "react": "^19.2.1",

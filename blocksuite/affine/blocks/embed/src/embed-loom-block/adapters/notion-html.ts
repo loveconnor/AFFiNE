@@ -1,5 +1,5 @@
-import { EmbedLoomBlockSchema } from '@blocksuite/affine-model';
-import { BlockNotionHtmlAdapterExtension } from '@blocksuite/affine-shared/adapters';
+import { EmbedLoomBlockSchema } from '@blocksuite/lovenotes-model';
+import { BlockNotionHtmlAdapterExtension } from '@blocksuite/lovenotes-shared/adapters';
 
 import { createEmbedBlockNotionHtmlAdapterMatcher } from '../../common/adapters/notion-html.js';
 import { loomUrlRegex } from '../embed-loom-model.js';

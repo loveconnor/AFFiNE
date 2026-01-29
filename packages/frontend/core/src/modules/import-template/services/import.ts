@@ -1,10 +1,10 @@
-import type { DocMode } from '@blocksuite/affine/model';
-import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
+import type { DocMode } from '@blocksuite/lovenotes/model';
+import { ZipTransformer } from '@blocksuite/lovenotes/widgets/linked-doc';
 import { Service } from '@toeverything/infra';
 
 import { DocsService } from '../../doc';
 import {
-  getAFFiNEWorkspaceSchema,
+  getLoveNotesWorkspaceSchema,
   type WorkspaceMetadata,
   type WorkspacesService,
 } from '../../workspace';
@@ -26,7 +26,7 @@ export class ImportTemplateService extends Service {
     await workspace.engine.doc.waitForDocReady(workspace.id); // wait for root doc ready
     const [importedDoc] = await ZipTransformer.importDocs(
       workspace.docCollection,
-      getAFFiNEWorkspaceSchema(),
+      getLoveNotesWorkspaceSchema(),
       new Blob([docBinary], {
         type: 'application/zip',
       })

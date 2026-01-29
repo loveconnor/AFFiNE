@@ -1,10 +1,10 @@
-import { Button } from '@affine/component';
-import { AuthPageContainer } from '@affine/component/auth-components';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import { GraphQLService } from '@affine/core/modules/cloud';
-import { UserFriendlyError } from '@affine/error';
-import { changeEmailMutation } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import { Button } from '@lovenotes/component';
+import { AuthPageContainer } from '@lovenotes/component/auth-components';
+import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
+import { GraphQLService } from '@lovenotes/core/modules/cloud';
+import { UserFriendlyError } from '@lovenotes/error';
+import { changeEmailMutation } from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
 import { useService } from '@toeverything/infra';
 import { type FC, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -12,8 +12,8 @@ import { useSearchParams } from 'react-router-dom';
 import { AppContainer } from '../../components/app-container';
 
 export const ConfirmChangeEmail: FC<{
-  onOpenAffine: () => void;
-}> = ({ onOpenAffine }) => {
+  onOpenLoveNotes: () => void;
+}> = ({ onOpenLoveNotes }) => {
   const t = useI18n();
   const [searchParams] = useSearchParams();
   const navigateHelper = useNavigateHelper();
@@ -54,11 +54,11 @@ export const ConfirmChangeEmail: FC<{
 
   return (
     <AuthPageContainer
-      title={t['com.affine.auth.change.email.page.success.title']()}
-      subtitle={t['com.affine.auth.change.email.page.success.subtitle']()}
+      title={t['com.lovenotes.auth.change.email.page.success.title']()}
+      subtitle={t['com.lovenotes.auth.change.email.page.success.subtitle']()}
     >
-      <Button variant="primary" size="large" onClick={onOpenAffine}>
-        {t['com.affine.auth.open.affine']()}
+      <Button variant="primary" size="large" onClick={onOpenLoveNotes}>
+        {t['com.lovenotes.auth.open.lovenotes']()}
       </Button>
     </AuthPageContainer>
   );

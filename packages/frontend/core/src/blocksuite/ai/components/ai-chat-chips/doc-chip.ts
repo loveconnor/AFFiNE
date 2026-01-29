@@ -1,6 +1,6 @@
-import track from '@affine/track';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+import track from '@lovenotes/track';
+import { SignalWatcher, WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import { ShadowlessElement } from '@blocksuite/lovenotes/std';
 import { Signal } from '@preact/signals-core';
 import { html, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';

@@ -93,7 +93,7 @@ test.describe('AIChatWith/Attachments', () => {
         await utils.chatPanel.getLatestAssistantMessage(page);
       expect(content).toMatch(new RegExp(`Attachment${randomStr1}`));
       expect(content).toMatch(new RegExp(`Attachment${randomStr2}`));
-      expect(await message.locator('affine-footnote-node').count()).toBe(2);
+      expect(await message.locator('lovenotes-footnote-node').count()).toBe(2);
     }).toPass({ timeout: 20000 });
   });
 });

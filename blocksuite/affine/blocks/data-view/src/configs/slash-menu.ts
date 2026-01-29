@@ -1,6 +1,6 @@
-import { FeatureFlagService } from '@blocksuite/affine-shared/services';
-import { isInsideBlockByFlavour } from '@blocksuite/affine-shared/utils';
-import { type SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
+import { FeatureFlagService } from '@blocksuite/lovenotes-shared/services';
+import { isInsideBlockByFlavour } from '@blocksuite/lovenotes-shared/utils';
+import { type SlashMenuConfig } from '@blocksuite/lovenotes-widget-slash-menu';
 import { DatabaseTableViewIcon } from '@blocksuite/icons/lit';
 
 import type { DataViewBlockComponent } from '../data-view-block';
@@ -8,7 +8,7 @@ import { ToDoListTooltip } from './tooltips';
 
 export const dataViewSlashMenuConfig: SlashMenuConfig = {
   disableWhen: ({ model }) => {
-    return model.flavour === 'affine:data-view';
+    return model.flavour === 'lovenotes:data-view';
   },
   items: [
     {
@@ -21,7 +21,7 @@ export const dataViewSlashMenuConfig: SlashMenuConfig = {
       },
       group: '7_Database@1',
       when: ({ model, std }) =>
-        !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text') &&
+        !isInsideBlockByFlavour(model.store, model, 'lovenotes:edgeless-text') &&
         !!std.get(FeatureFlagService).getFlag('enable_block_query'),
 
       action: ({ model, std }) => {
@@ -30,7 +30,7 @@ export const dataViewSlashMenuConfig: SlashMenuConfig = {
         if (!parent) return;
         const index = parent.children.indexOf(model);
         const id = host.store.addBlock(
-          'affine:data-view',
+          'lovenotes:data-view',
           {},
           host.store.getParent(model),
           index + 1

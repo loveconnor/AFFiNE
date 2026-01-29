@@ -4,12 +4,12 @@ import type {
   SerializedConnectorElement,
   SerializedGroupElement,
   SerializedMindmapElement,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   ConnectorElementModel,
   GroupElementModel,
   MindmapElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { BlockStdScope } from '@blocksuite/std';
 import {
   getTopElements,

@@ -1,9 +1,9 @@
 import {
   CanvasElementType,
   EdgelessCRUDIdentifier,
-} from '@blocksuite/affine-block-surface';
-import type { BrushElementModel } from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-block-surface';
+import type { BrushElementModel } from '@blocksuite/lovenotes-model';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
 import type { IVec } from '@blocksuite/global/gfx';
 import type { PointerEventState } from '@blocksuite/std';
 import { BaseTool } from '@blocksuite/std/gfx';

@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/mobile';
+import { test } from '@lovenotes-test/kit/mobile';
 import { expect, type Page } from '@playwright/test';
 
 const openDocInfoModal = async (page: Page) => {
@@ -14,7 +14,7 @@ test.beforeEach(async ({ page }) => {
   await expect(docsTab).toBeVisible();
   await docsTab.click();
   await page.getByTestId('doc-list-item').first().click();
-  await expect(page.locator('.affine-page-viewport')).toBeVisible();
+  await expect(page.locator('.lovenotes-page-viewport')).toBeVisible();
 });
 
 test('can open page view more menu', async ({ page }) => {
@@ -29,7 +29,7 @@ test('switch to edgeless mode', async ({ page }) => {
   await page
     .getByRole('menuitem', { name: 'Default to Edgeless mode' })
     .click();
-  await expect(page.locator('.affine-edgeless-viewport')).toBeVisible();
+  await expect(page.locator('.lovenotes-edgeless-viewport')).toBeVisible();
 });
 
 test('can show doc info', async ({ page }) => {

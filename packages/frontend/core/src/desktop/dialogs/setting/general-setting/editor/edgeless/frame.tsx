@@ -1,9 +1,9 @@
-import { MenuItem, MenuTrigger } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { useI18n } from '@affine/i18n';
-import { DefaultTheme } from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+import { MenuItem, MenuTrigger } from '@lovenotes/component';
+import { SettingRow } from '@lovenotes/component/setting-components';
+import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
+import { useI18n } from '@lovenotes/i18n';
+import { DefaultTheme } from '@blocksuite/lovenotes/model';
+import type { Store } from '@blocksuite/lovenotes/store';
 import { useFramework, useLiveData } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
@@ -27,7 +27,7 @@ export const FrameSettings = () => {
     DefaultTheme.transparent
   );
 
-  const { background } = settings['affine:frame'];
+  const { background } = settings['lovenotes:frame'];
   const currentColor = useMemo(() => {
     return getCurrentColor(background);
   }, [getCurrentColor, background]);
@@ -35,7 +35,7 @@ export const FrameSettings = () => {
   const colorItems = useMemo(() => {
     return palettes.map(({ key, value, resolvedValue }) => {
       const handler = () => {
-        editorSetting.set('affine:frame', { background: value });
+        editorSetting.set('lovenotes:frame', { background: value });
       };
       const isSelected = isEqual(background, value);
       return (
@@ -52,20 +52,20 @@ export const FrameSettings = () => {
   }, [editorSetting, background, palettes]);
 
   const getElements = useCallback((doc: Store) => {
-    return doc.getBlocksByFlavour('affine:frame') || [];
+    return doc.getBlocksByFlavour('lovenotes:frame') || [];
   }, []);
 
   return (
     <>
       <EdgelessSnapshot
-        title={t['com.affine.settings.editorSettings.edgeless.frame']()}
+        title={t['com.lovenotes.settings.editorSettings.edgeless.frame']()}
         docName="frame"
-        keyName="affine:frame"
+        keyName="lovenotes:frame"
         getElements={getElements}
       />
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.frame.background'
+          'com.lovenotes.settings.editorSettings.edgeless.frame.background'
         ]()}
         desc={''}
       >

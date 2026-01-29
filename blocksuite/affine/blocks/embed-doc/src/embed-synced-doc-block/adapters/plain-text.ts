@@ -1,8 +1,8 @@
-import { EmbedSyncedDocBlockSchema } from '@blocksuite/affine-model';
+import { EmbedSyncedDocBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 export const embedSyncedDocBlockPlainTextAdapterMatcher: BlockPlainTextAdapterMatcher =
   {

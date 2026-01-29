@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-gfx-shape/store';
+export * from '@blocksuite/lovenotes-gfx-shape/store';

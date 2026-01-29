@@ -1,21 +1,21 @@
-import { Loading, Scrollable } from '@affine/component';
-import { WorkspaceDetailSkeleton } from '@affine/component/setting-components';
-import type { ModalProps } from '@affine/component/ui/modal';
-import { Modal } from '@affine/component/ui/modal';
+import { Loading, Scrollable } from '@lovenotes/component';
+import { WorkspaceDetailSkeleton } from '@lovenotes/component/setting-components';
+import type { ModalProps } from '@lovenotes/component/ui/modal';
+import { Modal } from '@lovenotes/component/ui/modal';
 import {
   AuthService,
   DefaultServerService,
   ServersService,
-} from '@affine/core/modules/cloud';
-import type { DialogComponentProps } from '@affine/core/modules/dialogs';
+} from '@lovenotes/core/modules/cloud';
+import type { DialogComponentProps } from '@lovenotes/core/modules/dialogs';
 import type {
   SettingTab,
   WORKSPACE_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs/constant';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { createIsland, type Island } from '@affine/core/utils/island';
-import { ServerDeploymentType } from '@affine/graphql';
-import { Trans } from '@affine/i18n';
+} from '@lovenotes/core/modules/dialogs/constant';
+import { GlobalContextService } from '@lovenotes/core/modules/global-context';
+import { createIsland, type Island } from '@lovenotes/core/utils/island';
+import { ServerDeploymentType } from '@lovenotes/graphql';
+import { Trans } from '@lovenotes/i18n';
 import { ContactWithUsIcon } from '@blocksuite/icons/rc';
 import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import { debounce } from 'lodash-es';
@@ -34,7 +34,7 @@ import { AccountSetting } from './account-setting';
 import { GeneralSetting } from './general-setting';
 import { IssueFeedbackModal } from './issue-feedback-modal';
 import { SettingSidebar } from './setting-sidebar';
-import { StarAFFiNEModal } from './star-affine-modal';
+import { StarLoveNotesModal } from './star-lovenotes-modal';
 import * as style from './style.css';
 import {
   SubPageContext,
@@ -141,15 +141,15 @@ const SettingModalInner = ({
     [setSettingState]
   );
   const [openIssueFeedbackModal, setOpenIssueFeedbackModal] = useState(false);
-  const [openStarAFFiNEModal, setOpenStarAFFiNEModal] = useState(false);
+  const [openStarLoveNotesModal, setOpenStarLoveNotesModal] = useState(false);
 
   const handleOpenIssueFeedbackModal = useCallback(() => {
     setOpenIssueFeedbackModal(true);
   }, [setOpenIssueFeedbackModal]);
 
-  const handleOpenStarAFFiNEModal = useCallback(() => {
-    setOpenStarAFFiNEModal(true);
-  }, [setOpenStarAFFiNEModal]);
+  const handleOpenStarLoveNotesModal = useCallback(() => {
+    setOpenStarLoveNotesModal(true);
+  }, [setOpenStarLoveNotesModal]);
 
   const addSubPageIsland = useCallback(() => {
     const island = createIsland();
@@ -230,12 +230,12 @@ const SettingModalInner = ({
               <div className={style.footer}>
                 <ContactWithUsIcon fontSize={16} />
                 <Trans
-                  i18nKey={'com.affine.settings.suggestion-2'}
+                  i18nKey={'com.lovenotes.settings.suggestion-2'}
                   components={{
                     1: (
                       <span
                         className={style.link}
-                        onClick={handleOpenStarAFFiNEModal}
+                        onClick={handleOpenStarLoveNotesModal}
                       />
                     ),
                     2: (
@@ -247,9 +247,9 @@ const SettingModalInner = ({
                   }}
                 />
               </div>
-              <StarAFFiNEModal
-                open={openStarAFFiNEModal}
-                setOpen={setOpenStarAFFiNEModal}
+              <StarLoveNotesModal
+                open={openStarLoveNotesModal}
+                setOpen={setOpenStarLoveNotesModal}
               />
               <IssueFeedbackModal
                 open={openIssueFeedbackModal}

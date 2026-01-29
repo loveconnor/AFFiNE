@@ -1,6 +1,6 @@
 {
-  "name": "@blocksuite/affine-widget-linked-doc",
-  "description": "Affine linked doc widget.",
+  "name": "@blocksuite/lovenotes-widget-linked-doc",
+  "description": "LoveNotes linked doc widget.",
   "type": "module",
   "scripts": {
     "build": "tsc"
@@ -10,15 +10,15 @@
   "author": "toeverything",
   "license": "MIT",
   "dependencies": {
-    "@blocksuite/affine-block-image": "workspace:*",
-    "@blocksuite/affine-components": "workspace:*",
-    "@blocksuite/affine-ext-loader": "workspace:*",
-    "@blocksuite/affine-inline-reference": "workspace:*",
-    "@blocksuite/affine-model": "workspace:*",
-    "@blocksuite/affine-rich-text": "workspace:*",
-    "@blocksuite/affine-shared": "workspace:*",
     "@blocksuite/global": "workspace:*",
     "@blocksuite/icons": "^2.2.17",
+    "@blocksuite/lovenotes-block-image": "workspace:*",
+    "@blocksuite/lovenotes-components": "workspace:*",
+    "@blocksuite/lovenotes-ext-loader": "workspace:*",
+    "@blocksuite/lovenotes-inline-reference": "workspace:*",
+    "@blocksuite/lovenotes-model": "workspace:*",
+    "@blocksuite/lovenotes-rich-text": "workspace:*",
+    "@blocksuite/lovenotes-shared": "workspace:*",
     "@blocksuite/std": "workspace:*",
     "@blocksuite/store": "workspace:*",
     "@lit/context": "^1.1.2",

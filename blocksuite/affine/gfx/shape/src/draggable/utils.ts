@@ -1,4 +1,4 @@
-import type { ShapeToolOption } from '@blocksuite/affine-gfx-shape';
+import type { ShapeToolOption } from '@blocksuite/lovenotes-gfx-shape';
 import { render, type TemplateResult } from 'lit';
 
 type TransformState = {

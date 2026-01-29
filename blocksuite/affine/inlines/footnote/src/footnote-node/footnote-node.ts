@@ -1,9 +1,9 @@
-import { HoverController } from '@blocksuite/affine-components/hover';
-import { PeekViewProvider } from '@blocksuite/affine-components/peek';
-import type { FootNote } from '@blocksuite/affine-model';
-import { CitationProvider } from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import { HoverController } from '@blocksuite/lovenotes-components/hover';
+import { PeekViewProvider } from '@blocksuite/lovenotes-components/peek';
+import type { FootNote } from '@blocksuite/lovenotes-model';
+import { CitationProvider } from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { WithDisposable } from '@blocksuite/global/lit';
 import {
   BlockSelection,
@@ -32,7 +32,7 @@ const POPUP_SHIFT_PADDING = 8;
 // The offset between the footnote node and the popup.
 const POPUP_OFFSET = 4;
 
-export class AffineFootnoteNode extends WithDisposable(ShadowlessElement) {
+export class LoveNotesFootnoteNode extends WithDisposable(ShadowlessElement) {
   static override styles = css`
     .footnote-node {
       padding: 0 2px;
@@ -61,7 +61,7 @@ export class AffineFootnoteNode extends WithDisposable(ShadowlessElement) {
 
     .footnote-node.hover-effect {
       .footnote-content-default {
-        color: var(--affine-text-primary-color);
+        color: var(--lovenotes-text-primary-color);
         background: ${unsafeCSSVarV2('block/footnote/numberBg')};
       }
     }
@@ -99,7 +99,7 @@ export class AffineFootnoteNode extends WithDisposable(ShadowlessElement) {
   }
 
   get inlineEditor() {
-    const inlineRoot = this.closest<InlineRootElement<AffineTextAttributes>>(
+    const inlineRoot = this.closest<InlineRootElement<LoveNotesTextAttributes>>(
       `[${INLINE_ROOT_ATTR}]`
     );
     return inlineRoot?.inlineEditor;
@@ -269,7 +269,7 @@ export class AffineFootnoteNode extends WithDisposable(ShadowlessElement) {
   accessor config: FootNoteNodeConfigProvider | undefined = undefined;
 
   @property({ type: Object })
-  accessor delta: DeltaInsert<AffineTextAttributes> = {
+  accessor delta: DeltaInsert<LoveNotesTextAttributes> = {
     insert: ZERO_WIDTH_FOR_EMPTY_LINE,
     attributes: {},
   };

@@ -1,14 +1,14 @@
-import { toast } from '@blocksuite/affine-components/toast';
-import { EditorChevronDown } from '@blocksuite/affine-components/toolbar';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import { EditorChevronDown } from '@blocksuite/lovenotes-components/toolbar';
 import {
   type EmbedCardStyle,
   EmbedLinkedDocModel,
   EmbedLinkedDocStyles,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   ActionPlacement,
   DocDisplayMetaProvider,
@@ -20,11 +20,11 @@ import {
   type ToolbarContext,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   getBlockProps,
   referenceToNode,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   CaptionIcon,
@@ -82,10 +82,10 @@ const docTitleAction = {
       'Untitled';
     const open = (event: MouseEvent) => block.open({ event });
 
-    return html`<affine-linked-doc-title
+    return html`<lovenotes-linked-doc-title
       .title=${originalTitle}
       .open=${open}
-    ></affine-linked-doc-title>`;
+    ></lovenotes-linked-doc-title>`;
   },
 } as const satisfies ToolbarAction;
 
@@ -200,7 +200,7 @@ const conversionsActionGroup = {
         const block = ctx.getCurrentBlockByType(EmbedLinkedDocBlockComponent);
         if (!block) return true;
 
-        if (block.closest('affine-embed-synced-doc-block')) return true;
+        if (block.closest('lovenotes-embed-synced-doc-block')) return true;
 
         const model = block.model;
 
@@ -219,7 +219,7 @@ const conversionsActionGroup = {
           const editorSetting = ctx.std.getOptional(EditorSettingProvider);
           editorSetting?.set?.(
             'docCanvasPreferView',
-            'affine:embed-synced-doc'
+            'lovenotes:embed-synced-doc'
           );
         }
 
@@ -243,12 +243,12 @@ const conversionsActionGroup = {
 
     return html`${keyed(
       model,
-      html`<affine-view-dropdown-menu
+      html`<lovenotes-view-dropdown-menu
         @toggle=${onToggle}
         .actions=${actions}
         .context=${ctx}
         .viewType$=${viewType$}
-      ></affine-view-dropdown-menu>`
+      ></lovenotes-view-dropdown-menu>`
     )}`;
   },
 } as const satisfies ToolbarActionGroup<ToolbarAction>;
@@ -295,12 +295,12 @@ const builtinToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-card-style-dropdown-menu
+          html`<lovenotes-card-style-dropdown-menu
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
             .style$=${model.props.style$}
-          ></affine-card-style-dropdown-menu>`
+          ></lovenotes-card-style-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -419,12 +419,12 @@ const builtinSurfaceToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-card-style-dropdown-menu
+          html`<lovenotes-card-style-dropdown-menu
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
             .style$=${style$}
-          ></affine-card-style-dropdown-menu>`
+          ></lovenotes-card-style-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -475,12 +475,12 @@ const builtinSurfaceToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-size-dropdown-menu
+          html`<lovenotes-size-dropdown-menu
             @select=${onSelect}
             @toggle=${onToggle}
             .format=${format}
             .size$=${scale$}
-          ></affine-size-dropdown-menu>`
+          ></lovenotes-size-dropdown-menu>`
         )}`;
       },
     },
@@ -501,7 +501,7 @@ export const createBuiltinToolbarConfigExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier(`affine:surface:${name}`),
+      id: BlockFlavourIdentifier(`lovenotes:surface:${name}`),
       config: builtinSurfaceToolbarConfig,
     }),
   ];

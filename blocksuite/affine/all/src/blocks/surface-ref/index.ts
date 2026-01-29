@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-block-surface-ref';
+export * from '@blocksuite/lovenotes-block-surface-ref';

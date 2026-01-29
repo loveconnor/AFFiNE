@@ -27,7 +27,7 @@ export type ParagraphProps = {
 } & BlockMeta;
 
 export const ParagraphBlockSchema = defineBlockSchema({
-  flavour: 'affine:paragraph',
+  flavour: 'lovenotes:paragraph',
   props: (internal): ParagraphProps => ({
     type: 'text',
     text: internal.Text(),
@@ -43,13 +43,13 @@ export const ParagraphBlockSchema = defineBlockSchema({
     version: 1,
     role: 'content',
     parent: [
-      'affine:note',
-      'affine:database',
-      'affine:paragraph',
-      'affine:list',
-      'affine:edgeless-text',
-      'affine:callout',
-      'affine:transcription',
+      'lovenotes:note',
+      'lovenotes:database',
+      'lovenotes:paragraph',
+      'lovenotes:list',
+      'lovenotes:edgeless-text',
+      'lovenotes:callout',
+      'lovenotes:transcription',
     ],
   },
   toModel: () => new ParagraphBlockModel(),

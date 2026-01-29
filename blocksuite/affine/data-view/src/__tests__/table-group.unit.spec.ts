@@ -11,7 +11,7 @@ describe('TableGroup', () => {
   test('toggle collapse on pc', () => {
     pcEffects();
     const group = document.createElement(
-      'affine-data-view-table-group'
+      'lovenotes-data-view-table-group'
     ) as TableGroup;
 
     expect(group.collapsed$.value).toBe(false);

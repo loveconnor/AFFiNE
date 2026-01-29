@@ -1,11 +1,11 @@
-import { EmbedLinkedDocBlockSchema } from '@blocksuite/affine-model';
-import { insertContent } from '@blocksuite/affine-rich-text';
-import { REFERENCE_NODE } from '@blocksuite/affine-shared/consts';
-import { createDefaultDoc } from '@blocksuite/affine-shared/utils';
+import { EmbedLinkedDocBlockSchema } from '@blocksuite/lovenotes-model';
+import { insertContent } from '@blocksuite/lovenotes-rich-text';
+import { REFERENCE_NODE } from '@blocksuite/lovenotes-shared/consts';
+import { createDefaultDoc } from '@blocksuite/lovenotes-shared/utils';
 import {
   type SlashMenuConfig,
   SlashMenuConfigIdentifier,
-} from '@blocksuite/affine-widget-slash-menu';
+} from '@blocksuite/lovenotes-widget-slash-menu';
 import { LinkedPageIcon, PlusIcon } from '@blocksuite/icons/lit';
 import { type ExtensionType } from '@blocksuite/store';
 
@@ -23,7 +23,7 @@ const linkedDocSlashMenuConfig: SlashMenuConfig = {
       },
       group: '3_Page@0',
       when: ({ model }) =>
-        model.store.schema.flavourSchemaMap.has('affine:embed-linked-doc'),
+        model.store.schema.flavourSchemaMap.has('lovenotes:embed-linked-doc'),
       action: ({ std, model }) => {
         const newDoc = createDefaultDoc(std.host.store.workspace);
         insertContent(std, model, REFERENCE_NODE, {
@@ -48,20 +48,20 @@ const linkedDocSlashMenuConfig: SlashMenuConfig = {
         const root = model.store.root;
         if (!root) return false;
         const linkedDocWidget = std.view.getWidget(
-          'affine-linked-doc-widget',
+          'lovenotes-linked-doc-widget',
           root.id
         );
         if (!linkedDocWidget) return false;
 
         return model.store.schema.flavourSchemaMap.has(
-          'affine:embed-linked-doc'
+          'lovenotes:embed-linked-doc'
         );
       },
       action: ({ model, std }) => {
         const root = model.store.root;
         if (!root) return;
         const linkedDocWidget = std.view.getWidget(
-          'affine-linked-doc-widget',
+          'lovenotes-linked-doc-widget',
           root.id
         );
         if (!linkedDocWidget) return;

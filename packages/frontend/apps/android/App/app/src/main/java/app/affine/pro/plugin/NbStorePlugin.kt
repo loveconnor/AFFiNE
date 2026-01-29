@@ -1,4 +1,4 @@
-package app.affine.pro.plugin
+package app.lovenotes.pro.plugin
 
 import com.getcapacitor.JSArray
 import com.getcapacitor.JSObject
@@ -8,9 +8,9 @@ import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
 import kotlinx.coroutines.Dispatchers
 import timber.log.Timber
-import uniffi.affine_mobile_native.DocRecord
-import uniffi.affine_mobile_native.SetBlob
-import uniffi.affine_mobile_native.newDocStoragePool
+import uniffi.lovenotes_mobile_native.DocRecord
+import uniffi.lovenotes_mobile_native.SetBlob
+import uniffi.lovenotes_mobile_native.newDocStoragePool
 
 @CapacitorPlugin(name = "NbStoreDocStorage")
 class NbStorePlugin : Plugin() {

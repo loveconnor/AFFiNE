@@ -1,8 +1,8 @@
 import type {
   DatabaseAllViewEvents,
   EventTraceFn,
-} from '@blocksuite/affine-shared/services';
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import type { InsertToPosition } from '@blocksuite/lovenotes-shared/utils';
 import type { Disposable } from '@blocksuite/global/disposable';
 import type { EventName, UIEventHandler } from '@blocksuite/std';
 import type { ReadonlySignal } from '@preact/signals-core';

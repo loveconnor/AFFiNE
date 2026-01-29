@@ -1,9 +1,9 @@
-import { ListBlockModel } from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
+import { ListBlockModel } from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
 import {
   getNextContinuousNumberedLists,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { Command, EditorHost } from '@blocksuite/std';
 
 import { canDedentListCommand, dedentListCommand } from './dedent-list.js';
@@ -50,7 +50,7 @@ export const splitListCommand: Command<{
      *   - bbb
      */
     if (parent.role === 'hub') {
-      const id = doc.addBlock('affine:paragraph', {}, parent, modelIndex);
+      const id = doc.addBlock('lovenotes:paragraph', {}, parent, modelIndex);
       const paragraph = doc.getBlock(id);
       if (!paragraph) return;
       doc.deleteBlock(model, {
@@ -130,7 +130,7 @@ export const splitListCommand: Command<{
        *   - bbb
        */
       newListId = doc.addBlock(
-        'affine:list',
+        'lovenotes:list',
         {
           type: model.props.type,
           text: afterText,
@@ -174,7 +174,7 @@ export const splitListCommand: Command<{
        *   - bbb
        */
       newListId = doc.addBlock(
-        'affine:list',
+        'lovenotes:list',
         {
           type: model.props.type,
           text: afterText,
@@ -225,7 +225,7 @@ export const splitListCommand: Command<{
      */
     const afterText = model.props.text.split(inlineIndex);
     newListId = doc.addBlock(
-      'affine:list',
+      'lovenotes:list',
       {
         type: model.props.type,
         text: afterText,

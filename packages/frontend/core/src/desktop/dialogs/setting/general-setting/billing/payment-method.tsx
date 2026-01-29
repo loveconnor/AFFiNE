@@ -1,16 +1,16 @@
-import { notify } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
+import { notify } from '@lovenotes/component';
+import { SettingRow } from '@lovenotes/component/setting-components';
 import {
   Button,
   type ButtonProps,
   IconButton,
-} from '@affine/component/ui/button';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { SubscriptionService } from '@affine/core/modules/cloud';
-import { UrlService } from '@affine/core/modules/url';
-import { UserFriendlyError } from '@affine/error';
-import { createCustomerPortalMutation } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/component/ui/button';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { SubscriptionService } from '@lovenotes/core/modules/cloud';
+import { UrlService } from '@lovenotes/core/modules/url';
+import { UserFriendlyError } from '@lovenotes/error';
+import { createCustomerPortalMutation } from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
@@ -36,9 +36,9 @@ export const PaymentMethod = () => {
     <>
       <SettingRow
         className={styles.paymentMethod}
-        name={t['com.affine.payment.billing-setting.payment-method']()}
+        name={t['com.lovenotes.payment.billing-setting.payment-method']()}
         desc={t[
-          'com.affine.payment.billing-setting.payment-method.description'
+          'com.lovenotes.payment.billing-setting.payment-method.description'
         ]()}
       >
         <PaymentMethodUpdater />
@@ -46,9 +46,9 @@ export const PaymentMethod = () => {
       {isBeliever || isOnetime ? null : proSubscription?.end &&
         proSubscription?.canceledAt ? (
         <SettingRow
-          name={t['com.affine.payment.billing-setting.expiration-date']()}
+          name={t['com.lovenotes.payment.billing-setting.expiration-date']()}
           desc={t[
-            'com.affine.payment.billing-setting.expiration-date.description'
+            'com.lovenotes.payment.billing-setting.expiration-date.description'
           ]({
             expirationDate: new Date(proSubscription.end).toLocaleDateString(),
           })}
@@ -63,9 +63,9 @@ export const PaymentMethod = () => {
               setOpenCancelModal(true);
             }}
             className="dangerous-setting"
-            name={t['com.affine.payment.billing-setting.cancel-subscription']()}
+            name={t['com.lovenotes.payment.billing-setting.cancel-subscription']()}
             desc={t[
-              'com.affine.payment.billing-setting.cancel-subscription.description'
+              'com.lovenotes.payment.billing-setting.cancel-subscription.description'
             ]()}
           >
             <CancelSubscription />
@@ -111,8 +111,8 @@ export const PaymentMethodUpdater = ({
       variant={variant}
     >
       {inCardView
-        ? t['com.affine.payment.billing-setting.payment-method']()
-        : t['com.affine.payment.billing-setting.payment-method.go']()}
+        ? t['com.lovenotes.payment.billing-setting.payment-method']()
+        : t['com.lovenotes.payment.billing-setting.payment-method.go']()}
     </Button>
   );
 };
@@ -133,7 +133,7 @@ const ResumeSubscription = () => {
         data-event-args-type={subscription.pro$.value?.plan}
         data-event-args-category={subscription.pro$.value?.recurring}
       >
-        {t['com.affine.payment.billing-setting.resume-subscription']()}
+        {t['com.lovenotes.payment.billing-setting.resume-subscription']()}
       </Button>
     </ResumeAction>
   );

@@ -16,13 +16,13 @@ export * from './menu-renderer';
 export * from './sub-menu';
 
 export function effects() {
-  customElements.define('affine-menu', MenuComponent);
+  customElements.define('lovenotes-menu', MenuComponent);
   customElements.define('mobile-menu', MobileMenuComponent);
-  customElements.define('affine-menu-button', MenuButton);
+  customElements.define('lovenotes-menu-button', MenuButton);
   customElements.define('mobile-menu-button', MobileMenuButton);
-  customElements.define('affine-menu-input', MenuInput);
+  customElements.define('lovenotes-menu-input', MenuInput);
   customElements.define('mobile-menu-input', MobileMenuInput);
-  customElements.define('affine-menu-sub-menu', MenuSubMenu);
+  customElements.define('lovenotes-menu-sub-menu', MenuSubMenu);
   customElements.define('mobile-sub-menu', MobileSubMenu);
   customElements.define('menu-divider', MenuDivider);
 }

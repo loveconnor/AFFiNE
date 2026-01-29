@@ -55,12 +55,12 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "AFFiNE AI Yearly Subscription",
-              "displayName" : "AFFiNE AI Yearly",
+              "description" : "LoveNotes AI Yearly Subscription",
+              "displayName" : "LoveNotes AI Yearly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "app.affine.pro.ai.Annual",
+          "productID" : "app.lovenotes.pro.ai.Annual",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "AI Yearly Subscription",
           "subscriptionGroupID" : "21781265",
@@ -92,12 +92,12 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "AFFiNE Pro Monthly Subscription",
-              "displayName" : "AFFiNE Pro Monthly",
+              "description" : "LoveNotes Pro Monthly Subscription",
+              "displayName" : "LoveNotes Pro Monthly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "app.affine.pro.Monthly",
+          "productID" : "app.lovenotes.pro.Monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Pro Monthly Subscription",
           "subscriptionGroupID" : "21781263",
@@ -120,12 +120,12 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "AFFiNE Pro Yearly Subscription",
-              "displayName" : "AFFiNE Pro Yearly",
+              "description" : "LoveNotes Pro Yearly Subscription",
+              "displayName" : "LoveNotes Pro Yearly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "app.affine.pro.Annual",
+          "productID" : "app.lovenotes.pro.Annual",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "Pro Yearly Subscription",
           "subscriptionGroupID" : "21781263",

@@ -1,7 +1,7 @@
-import type { DomRenderer } from '@blocksuite/affine-block-surface';
-import { isRTL } from '@blocksuite/affine-gfx-text';
-import type { ShapeElementModel } from '@blocksuite/affine-model';
-import { DefaultTheme } from '@blocksuite/affine-model';
+import type { DomRenderer } from '@blocksuite/lovenotes-block-surface';
+import { isRTL } from '@blocksuite/lovenotes-gfx-text';
+import type { ShapeElementModel } from '@blocksuite/lovenotes-model';
+import { DefaultTheme } from '@blocksuite/lovenotes-model';
 import { SVGShapeBuilder } from '@blocksuite/global/gfx';
 
 import { manageClassNames, setStyles } from './utils';

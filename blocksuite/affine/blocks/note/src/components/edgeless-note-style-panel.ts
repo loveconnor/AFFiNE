@@ -1,25 +1,25 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine-block-surface';
+import { EdgelessCRUDIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   packColorsWith,
   type PickColorEvent,
   preprocessColor,
-} from '@blocksuite/affine-components/color-picker';
-import type { LineDetailType } from '@blocksuite/affine-components/edgeless-line-styles-panel';
-import type { SliderSelectEvent } from '@blocksuite/affine-components/slider';
+} from '@blocksuite/lovenotes-components/color-picker';
+import type { LineDetailType } from '@blocksuite/lovenotes-components/edgeless-line-styles-panel';
+import type { SliderSelectEvent } from '@blocksuite/lovenotes-components/slider';
 import {
   DefaultTheme,
   NoteBlockModel,
   type NoteProps,
   type NoteShadow,
   resolveColor,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-model';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import {
   type ColorEvent,
   getMostCommonResolvedValue,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { ArrowLeftSmallIcon, PaletteIcon } from '@blocksuite/icons/lit';
 import { BlockStdScope, PropTypes, requiredProperties } from '@blocksuite/std';
@@ -73,7 +73,7 @@ export class EdgelessNoteStylePanel extends SignalWatcher(
         'clig' off;
 
       /* Client/sm */
-      font-family: var(--affine-font-family);
+      font-family: var(--lovenotes-font-family);
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
@@ -92,7 +92,7 @@ export class EdgelessNoteStylePanel extends SignalWatcher(
       align-items: stretch;
       gap: 8px;
 
-      affine-slider {
+      lovenotes-slider {
         width: 168px;
       }
 
@@ -319,7 +319,7 @@ export class EdgelessNoteStylePanel extends SignalWatcher(
       </div>
       <div
         class="edgeless-note-style-section"
-        data-testid="affine-note-border-style-panel"
+        data-testid="lovenotes-note-border-style-panel"
       >
         <div class="edgeless-note-style-section-title">Border</div>
         <edgeless-line-styles-panel
@@ -330,17 +330,17 @@ export class EdgelessNoteStylePanel extends SignalWatcher(
       </div>
       <div
         class="edgeless-note-style-section"
-        data-testid="affine-note-corner-radius-panel"
+        data-testid="lovenotes-note-corner-radius-panel"
       >
         <div class="edgeless-note-style-section-title">Corner Radius</div>
         <div class="edgeless-note-corner-radius-panel">
-          <affine-slider
+          <lovenotes-slider
             .value=${this._borderRadius}
             .range=${{
               points: [0, 4, 8, 16, 24, 32],
             }}
             @select=${this._selectBorderRadius}
-          ></affine-slider>
+          ></lovenotes-slider>
 
           <editor-toolbar-separator></editor-toolbar-separator>
 

@@ -1,8 +1,8 @@
-import { isFrameBlock } from '@blocksuite/affine-block-frame';
+import { isFrameBlock } from '@blocksuite/lovenotes-block-frame';
 import {
   getSurfaceComponent,
   isNoteBlock,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import type {
   EdgelessTextBlockModel,
   EmbedSyncedDocModel,
@@ -10,8 +10,8 @@ import type {
   ImageBlockModel,
   NoteBlockModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
-import { getElementsWithoutGroup } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { getElementsWithoutGroup } from '@blocksuite/lovenotes-shared/utils';
 import { getCommonBoundWithRotation } from '@blocksuite/global/gfx';
 import type { BlockComponent } from '@blocksuite/std';
 import { GfxControllerIdentifier, type GfxModel } from '@blocksuite/std/gfx';

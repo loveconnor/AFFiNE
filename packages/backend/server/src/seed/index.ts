@@ -51,7 +51,7 @@ function parseArgs(args: string[]) {
 
   args.forEach(arg => {
     let kvSep = arg.indexOf('=');
-    if (kvSep) {
+    if (kvSep >= 0) {
       const key = arg.slice(0, kvSep);
       const val = arg.slice(kvSep + 1);
 

@@ -1,6 +1,6 @@
-import { CommentInlineSpecExtension } from '@blocksuite/affine-inline-comment';
-import { LatexInlineSpecExtension } from '@blocksuite/affine-inline-latex';
-import { LinkInlineSpecExtension } from '@blocksuite/affine-inline-link';
+import { CommentInlineSpecExtension } from '@blocksuite/lovenotes-inline-comment';
+import { LatexInlineSpecExtension } from '@blocksuite/lovenotes-inline-latex';
+import { LinkInlineSpecExtension } from '@blocksuite/lovenotes-inline-link';
 import {
   BackgroundInlineSpecExtension,
   BoldInlineSpecExtension,
@@ -9,8 +9,8 @@ import {
   ItalicInlineSpecExtension,
   StrikeInlineSpecExtension,
   UnderlineInlineSpecExtension,
-} from '@blocksuite/affine-inline-preset';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-inline-preset';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import {
   InlineManagerExtension,
   InlineSpecExtension,
@@ -19,19 +19,19 @@ import { html } from 'lit';
 import { z } from 'zod';
 
 export const CodeBlockUnitSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'code-block-unit',
     schema: z.object({
       'code-block-uint': z.undefined(),
     }),
     match: () => true,
     renderer: ({ delta }) => {
-      return html`<affine-code-unit .delta=${delta}></affine-code-unit>`;
+      return html`<lovenotes-code-unit .delta=${delta}></lovenotes-code-unit>`;
     },
   });
 
 export const CodeBlockInlineManagerExtension =
-  InlineManagerExtension<AffineTextAttributes>({
+  InlineManagerExtension<LoveNotesTextAttributes>({
     id: 'CodeBlockInlineManager',
     enableMarkdown: false,
     specs: [

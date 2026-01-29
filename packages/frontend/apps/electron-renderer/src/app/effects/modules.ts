@@ -1,23 +1,23 @@
-import { configureElectronStateStorageImpls } from '@affine/core/desktop/storage';
-import { configureCommonModules } from '@affine/core/modules';
-import { configureAppTabsHeaderModule } from '@affine/core/modules/app-tabs-header';
-import { configureDesktopBackupModule } from '@affine/core/modules/backup';
-import { ValidatorProvider } from '@affine/core/modules/cloud';
+import { configureElectronStateStorageImpls } from '@lovenotes/core/desktop/storage';
+import { configureCommonModules } from '@lovenotes/core/modules';
+import { configureAppTabsHeaderModule } from '@lovenotes/core/modules/app-tabs-header';
+import { configureDesktopBackupModule } from '@lovenotes/core/modules/backup';
+import { ValidatorProvider } from '@lovenotes/core/modules/cloud';
 import {
   configureDesktopApiModule,
   DesktopApiService,
-} from '@affine/core/modules/desktop-api';
+} from '@lovenotes/core/modules/desktop-api';
 import {
   configureSpellCheckSettingModule,
   configureTraySettingModule,
-} from '@affine/core/modules/editor-setting';
-import { configureFindInPageModule } from '@affine/core/modules/find-in-page';
+} from '@lovenotes/core/modules/editor-setting';
+import { configureFindInPageModule } from '@lovenotes/core/modules/find-in-page';
 import {
   ClientSchemeProvider,
   PopupWindowProvider,
-} from '@affine/core/modules/url';
-import { configureDesktopWorkbenchModule } from '@affine/core/modules/workbench';
-import { configureBrowserWorkspaceFlavours } from '@affine/core/modules/workspace-engine';
+} from '@lovenotes/core/modules/url';
+import { configureDesktopWorkbenchModule } from '@lovenotes/core/modules/workbench';
+import { configureBrowserWorkspaceFlavours } from '@lovenotes/core/modules/workspace-engine';
 import { Framework } from '@toeverything/infra';
 
 export function setupModules() {

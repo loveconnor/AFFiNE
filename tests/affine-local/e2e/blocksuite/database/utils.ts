@@ -1,9 +1,9 @@
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   addDatabase,
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import type { Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 
@@ -76,7 +76,7 @@ export async function selectColumnType(
   columnType: string,
   nth: number = 1
 ) {
-  const typeMenu = page.locator('affine-menu').getByText('Type');
+  const typeMenu = page.locator('lovenotes-menu').getByText('Type');
   await page.waitForTimeout(100);
   await typeMenu.hover();
   await page.mouse.move(0, 0);
@@ -109,7 +109,7 @@ export async function changeColumnType(
   columnIndex: number,
   columnType: string
 ) {
-  const header = page.locator('affine-database-header-column').nth(columnIndex);
+  const header = page.locator('lovenotes-database-header-column').nth(columnIndex);
   await header.click();
   await selectColumnType(page, columnType);
 }

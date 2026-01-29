@@ -1,6 +1,6 @@
-import { createLitPortal } from '@blocksuite/affine/components/portal';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+import { createLitPortal } from '@blocksuite/lovenotes/components/portal';
+import { SignalWatcher, WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import { ShadowlessElement } from '@blocksuite/lovenotes/std';
 import { PlusIcon } from '@blocksuite/icons/lit';
 import { flip, offset } from '@floating-ui/dom';
 import { css, html } from 'lit';
@@ -85,7 +85,7 @@ export class AIChatAddContext extends SignalWatcher(
         ></chat-panel-add-popover>
       `,
       portalStyles: {
-        zIndex: 'var(--affine-z-index-popover)',
+        zIndex: 'var(--lovenotes-z-index-popover)',
       },
       container: this.portalContainer ?? document.body,
       computePosition: {

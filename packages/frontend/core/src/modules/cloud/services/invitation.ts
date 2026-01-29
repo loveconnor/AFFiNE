@@ -1,4 +1,4 @@
-import type { GetInviteInfoQuery } from '@affine/graphql';
+import type { GetInviteInfoQuery } from '@lovenotes/graphql';
 import {
   catchErrorInto,
   effect,

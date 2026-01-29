@@ -1,13 +1,13 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { AttachmentBlockSchemaExtension } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-ext-loader';
+import { AttachmentBlockSchemaExtension } from '@blocksuite/lovenotes-model';
 
 import { AttachmentBlockAdapterExtensions } from './adapters/extension';
 
 export class AttachmentStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-attachment-block';
+  override name = 'lovenotes-attachment-block';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

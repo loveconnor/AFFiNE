@@ -1,8 +1,8 @@
 import {
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import { DoneIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
@@ -18,7 +18,7 @@ export class EmbedIframeLinkEditPopup extends SignalWatcher(
       padding: 12px;
       align-items: center;
       gap: 12px;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
       border-radius: 8px;
       border: 0.5px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
       background: ${unsafeCSSVarV2('layer/background/primary')};
@@ -28,14 +28,14 @@ export class EmbedIframeLinkEditPopup extends SignalWatcher(
         display: flex;
         width: 280px;
         align-items: center;
-        border: 1px solid var(--affine-border-color);
+        border: 1px solid var(--lovenotes-border-color);
         border-radius: 4px;
         padding: 0 8px;
-        background-color: var(--affine-background-color);
+        background-color: var(--lovenotes-background-color);
         gap: 8px;
 
         .input-label {
-          color: var(--affine-text-secondary-color);
+          color: var(--lovenotes-text-secondary-color);
           font-size: 14px;
           margin-right: 8px;
           white-space: nowrap;
@@ -52,7 +52,7 @@ export class EmbedIframeLinkEditPopup extends SignalWatcher(
       }
 
       .input-container:focus-within {
-        border-color: var(--affine-blue-700);
+        border-color: var(--lovenotes-blue-700);
         outline: none;
       }
 

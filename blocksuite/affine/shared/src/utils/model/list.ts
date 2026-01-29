@@ -1,4 +1,4 @@
-import { ListBlockModel } from '@blocksuite/affine-model';
+import { ListBlockModel } from '@blocksuite/lovenotes-model';
 import type { BlockStdScope } from '@blocksuite/std';
 import type { BlockModel, Store } from '@blocksuite/store';
 
@@ -67,7 +67,7 @@ export function toNumberedList(
 
   // add a new list block and delete the current block
   const newListId = doc.addBlock(
-    'affine:list',
+    'lovenotes:list',
     {
       type: 'numbered',
       text: model.text.clone(),

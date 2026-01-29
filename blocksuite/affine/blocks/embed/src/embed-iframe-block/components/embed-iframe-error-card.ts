@@ -1,10 +1,10 @@
-import { createLitPortal } from '@blocksuite/affine-components/portal';
-import type { EmbedIframeBlockModel } from '@blocksuite/affine-model';
+import { createLitPortal } from '@blocksuite/lovenotes-components/portal';
+import type { EmbedIframeBlockModel } from '@blocksuite/lovenotes-model';
 import {
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { EditIcon, InformationIcon, ResetIcon } from '@blocksuite/icons/lit';
 import type { BlockStdScope } from '@blocksuite/std';
@@ -27,8 +27,8 @@ export class EmbedIframeErrorCard extends WithDisposable(LitElement) {
       height: 100%;
     }
 
-    .affine-embed-iframe-error-card {
-      container: affine-embed-iframe-error-card / size;
+    .lovenotes-embed-iframe-error-card {
+      container: lovenotes-embed-iframe-error-card / size;
       display: flex;
       box-sizing: border-box;
       user-select: none;
@@ -63,7 +63,7 @@ export class EmbedIframeErrorCard extends WithDisposable(LitElement) {
             color: ${unsafeCSSVarV2('text/primary')};
             text-align: justify;
             /* Client/smBold */
-            font-size: var(--affine-font-sm);
+            font-size: var(--lovenotes-font-sm);
             font-style: normal;
             font-weight: 600;
             line-height: 22px; /* 157.143% */
@@ -83,7 +83,7 @@ export class EmbedIframeErrorCard extends WithDisposable(LitElement) {
             'clig' off;
           text-overflow: ellipsis;
           /* Client/xs */
-          font-size: var(--affine-font-xs);
+          font-size: var(--lovenotes-font-xs);
           font-style: normal;
           font-weight: 400;
           line-height: 20px; /* 166.667% */
@@ -109,7 +109,7 @@ export class EmbedIframeErrorCard extends WithDisposable(LitElement) {
 
             .text {
               padding: 0px 4px;
-              font-size: var(--affine-font-xs);
+              font-size: var(--lovenotes-font-xs);
               font-style: normal;
               font-weight: 500;
               line-height: 20px; /* 166.667% */
@@ -127,7 +127,7 @@ export class EmbedIframeErrorCard extends WithDisposable(LitElement) {
       }
     }
 
-    .affine-embed-iframe-error-card.horizontal {
+    .lovenotes-embed-iframe-error-card.horizontal {
       flex-direction: row;
       align-items: flex-start;
 
@@ -141,14 +141,14 @@ export class EmbedIframeErrorCard extends WithDisposable(LitElement) {
         }
       }
 
-      @container affine-embed-iframe-error-card (width < 480px) {
+      @container lovenotes-embed-iframe-error-card (width < 480px) {
         .error-banner {
           display: none;
         }
       }
     }
 
-    .affine-embed-iframe-error-card.vertical {
+    .lovenotes-embed-iframe-error-card.vertical {
       flex-direction: column-reverse;
       align-items: center;
       justify-content: center;
@@ -169,7 +169,7 @@ export class EmbedIframeErrorCard extends WithDisposable(LitElement) {
         }
       }
 
-      @container affine-embed-iframe-error-card (height < 300px) or (width < 300px) {
+      @container lovenotes-embed-iframe-error-card (height < 300px) or (width < 300px) {
         .error-banner {
           display: none;
         }
@@ -227,7 +227,7 @@ export class EmbedIframeErrorCard extends WithDisposable(LitElement) {
   override render() {
     const { layout, width, height } = this.options;
     const cardClasses = classMap({
-      'affine-embed-iframe-error-card': true,
+      'lovenotes-embed-iframe-error-card': true,
       horizontal: layout === 'horizontal',
       vertical: layout === 'vertical',
     });

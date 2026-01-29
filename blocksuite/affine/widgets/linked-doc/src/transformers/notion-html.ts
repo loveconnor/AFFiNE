@@ -1,7 +1,7 @@
 import {
   defaultImageProxyMiddleware,
   NotionHtmlAdapter,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { Container } from '@blocksuite/global/di';
 import { sha } from '@blocksuite/global/utils';
 import {
@@ -328,7 +328,7 @@ async function importNotionZip({
       }
       if (index === 0 && fileName.endsWith('.csv')) {
         window.open(
-          'https://affine.pro/blog/import-your-data-from-notion-into-affine',
+          'https://lovenotes.pro/blog/import-your-data-from-notion-into-lovenotes',
           '_blank'
         );
         continue;

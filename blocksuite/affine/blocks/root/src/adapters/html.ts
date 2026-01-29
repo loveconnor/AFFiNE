@@ -1,9 +1,9 @@
-import { RootBlockSchema } from '@blocksuite/affine-model';
+import { RootBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 export const rootBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
   flavour: RootBlockSchema.model.flavour,

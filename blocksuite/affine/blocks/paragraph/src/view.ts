@@ -1,8 +1,8 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { ParagraphBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-ext-loader';
+import { ParagraphBlockModel } from '@blocksuite/lovenotes-model';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 import { z } from 'zod';
@@ -35,7 +35,7 @@ const optionsSchema = z.object({
 export class ParagraphViewExtension extends ViewExtensionProvider<
   z.infer<typeof optionsSchema>
 > {
-  override name = 'affine-paragraph-block';
+  override name = 'lovenotes-paragraph-block';
 
   override schema = optionsSchema;
 
@@ -53,8 +53,8 @@ export class ParagraphViewExtension extends ViewExtensionProvider<
       options?.getPlaceholder ?? (model => placeholders[model.props.type]);
 
     context.register([
-      FlavourExtension('affine:paragraph'),
-      BlockViewExtension('affine:paragraph', literal`affine-paragraph`),
+      FlavourExtension('lovenotes:paragraph'),
+      BlockViewExtension('lovenotes:paragraph', literal`lovenotes-paragraph`),
       ParagraphTextKeymapExtension,
       ParagraphKeymapExtension,
       ParagraphBlockConfigExtension({

@@ -1,13 +1,13 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { Input } from '@affine/admin/components/ui/input';
-import { Label } from '@affine/admin/components/ui/label';
-import { FeatureType, getUserFeaturesQuery } from '@affine/graphql';
+import { Button } from '@lovenotes/admin/components/ui/button';
+import { Input } from '@lovenotes/admin/components/ui/input';
+import { Label } from '@lovenotes/admin/components/ui/label';
+import { FeatureType, getUserFeaturesQuery } from '@lovenotes/graphql';
 import type { FormEvent } from 'react';
 import { useCallback, useRef } from 'react';
 import { Navigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
-import { affineFetch } from '../../fetch-utils';
+import { lovenotesFetch } from '../../fetch-utils';
 import { isAdmin, useCurrentUser, useRevalidateCurrentUser } from '../common';
 import logo from './logo.svg';
 
@@ -21,7 +21,7 @@ export function Auth() {
       e.preventDefault();
       e.stopPropagation();
       if (!emailRef.current || !passwordRef.current) return;
-      affineFetch('/api/auth/sign-in', {
+      lovenotesFetch('/api/auth/sign-in', {
         method: 'POST',
         body: JSON.stringify({
           email: emailRef.current?.value,
@@ -39,7 +39,7 @@ export function Auth() {
           return response.json();
         })
         .then(() =>
-          affineFetch('/graphql', {
+          lovenotesFetch('/graphql', {
             method: 'POST',
             body: JSON.stringify({
               operationName: getUserFeaturesQuery.op,

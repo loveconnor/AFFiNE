@@ -1,4 +1,4 @@
-import { cssVarV2 } from '@blocksuite/affine-shared/theme';
+import { cssVarV2 } from '@blocksuite/lovenotes-shared/theme';
 type Color = {
   name: string;
   color: string;

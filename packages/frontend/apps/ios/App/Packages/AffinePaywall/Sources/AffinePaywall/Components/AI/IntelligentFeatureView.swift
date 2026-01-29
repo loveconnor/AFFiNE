@@ -1,11 +1,11 @@
 //
 //  IntelligentFeatureView.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //
 
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 struct IntelligentFeatureView: View {
@@ -41,11 +41,11 @@ struct IntelligentFeatureView: View {
               .overlay {
                 Image(systemName: "circle.fill")
                   .font(.system(size: 4))
-                  .foregroundColor(AffineColors.textSecondary.color)
+                  .foregroundColor(LoveNotesColors.textSecondary.color)
               }
             Text(item)
               .font(.system(size: 16))
-              .foregroundColor(AffineColors.textSecondary.color)
+              .foregroundColor(LoveNotesColors.textSecondary.color)
               .lineLimit(nil)
               .fixedSize(horizontal: false, vertical: true)
           }

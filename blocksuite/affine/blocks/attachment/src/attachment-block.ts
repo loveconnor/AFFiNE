@@ -1,32 +1,32 @@
 import {
   CaptionedBlockComponent,
   SelectedStyle,
-} from '@blocksuite/affine-components/caption';
+} from '@blocksuite/lovenotes-components/caption';
 import {
   getAttachmentFileIcon,
   LoadingIcon,
-} from '@blocksuite/affine-components/icons';
-import { Peekable } from '@blocksuite/affine-components/peek';
+} from '@blocksuite/lovenotes-components/icons';
+import { Peekable } from '@blocksuite/lovenotes-components/peek';
 import {
   type ResolvedStateInfo,
   ResourceController,
-} from '@blocksuite/affine-components/resource';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@blocksuite/lovenotes-components/resource';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import {
   type AttachmentBlockModel,
   AttachmentBlockStyles,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   BlockElementCommentManager,
   CitationProvider,
   DocModeProvider,
   FileSizeLimitProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   formatSize,
   openSingleFileWith,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import {
   AttachmentIcon,
   ResetIcon,
@@ -275,7 +275,7 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
       onOverFileSize,
       () => html`
         <button
-          class="affine-attachment-content-button"
+          class="lovenotes-attachment-content-button"
           @click=${(event: MouseEvent) => {
             event.stopPropagation();
             onOverFileSize?.();
@@ -316,7 +316,7 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
 
     return html`
       <button
-        class="affine-attachment-content-button"
+        class="lovenotes-attachment-content-button"
         @click=${(event: MouseEvent) => {
           event.stopPropagation();
           run().catch(console.error);
@@ -356,16 +356,16 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
   ) {
     return html`
       <div class=${classMap(classInfo)}>
-        <div class="affine-attachment-content">
-          <div class="affine-attachment-content-title">
-            <div class="affine-attachment-content-title-icon">${icon}</div>
-            <div class="affine-attachment-content-title-text truncate">
+        <div class="lovenotes-attachment-content">
+          <div class="lovenotes-attachment-content-title">
+            <div class="lovenotes-attachment-content-title-icon">${icon}</div>
+            <div class="lovenotes-attachment-content-title-text truncate">
               ${title}
             </div>
           </div>
 
-          <div class="affine-attachment-content-description">
-            <div class="affine-attachment-content-info truncate">
+          <div class="lovenotes-attachment-content-description">
+            <div class="lovenotes-attachment-content-info truncate">
               ${description}
             </div>
             ${choose(state, [
@@ -375,7 +375,7 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
           </div>
         </div>
 
-        <div class="affine-attachment-banner">${kind}</div>
+        <div class="lovenotes-attachment-banner">${kind}</div>
       </div>
     `;
   }
@@ -393,20 +393,20 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
   ) {
     return html`
       <div class=${classMap(classInfo)}>
-        <div class="affine-attachment-content">
-          <div class="affine-attachment-content-title">
-            <div class="affine-attachment-content-title-icon">${icon}</div>
-            <div class="affine-attachment-content-title-text truncate">
+        <div class="lovenotes-attachment-content">
+          <div class="lovenotes-attachment-content-title">
+            <div class="lovenotes-attachment-content-title-icon">${icon}</div>
+            <div class="lovenotes-attachment-content-title-text truncate">
               ${title}
             </div>
           </div>
 
-          <div class="affine-attachment-content-info truncate">
+          <div class="lovenotes-attachment-content-info truncate">
             ${description}
           </div>
         </div>
 
-        <div class="affine-attachment-banner">
+        <div class="lovenotes-attachment-banner">
           ${kind}
           ${choose(state, [
             ['error', () => this.renderNormalButton(needUpload)],
@@ -438,7 +438,7 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
     const cardStyle = this.model.props.style$.value ?? AttachmentBlockStyles[1];
 
     const classInfo = {
-      'affine-attachment-card': true,
+      'lovenotes-attachment-card': true,
       [cardStyle]: true,
       loading: resolvedState.loading,
       error: resolvedState.error,
@@ -464,7 +464,7 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
     const enabled = provider.shouldShowStatus(model);
 
     return html`
-      <div class="affine-attachment-embed-container">
+      <div class="lovenotes-attachment-embed-container">
         ${guard([this._refreshKey$.value], () => render(model, blobUrl))}
       </div>
       ${when(enabled, () => {
@@ -479,12 +479,12 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
           needUpload ? this.resourceController.upload() : this.reload();
 
         return html`
-          <affine-resource-status
-            class="affine-attachment-embed-status"
+          <lovenotes-resource-status
+            class="lovenotes-attachment-embed-status"
             .message=${message}
             .needUpload=${needUpload}
             .action=${action}
-          ></affine-resource-status>
+          ></lovenotes-resource-status>
         `;
       })}
     `;
@@ -494,19 +494,19 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
     const { name, footnoteIdentifier } = this.model.props;
     const icon = getAttachmentFileIcon(this.filetype);
 
-    return html`<affine-citation-card
+    return html`<lovenotes-citation-card
       .icon=${icon}
       .citationTitle=${name}
       .citationIdentifier=${footnoteIdentifier}
       .active=${this.selected$.value}
-    ></affine-citation-card>`;
+    ></lovenotes-citation-card>`;
   };
 
   override renderBlock() {
     return html`
       <div
         class=${classMap({
-          'affine-attachment-container': true,
+          'lovenotes-attachment-container': true,
           focused: this.selected$.value,
           'comment-highlighted': this.isCommentHighlighted,
         })}
@@ -528,6 +528,6 @@ export class AttachmentBlockComponent extends CaptionedBlockComponent<Attachment
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-attachment': AttachmentBlockComponent;
+    'lovenotes-attachment': AttachmentBlockComponent;
   }
 }

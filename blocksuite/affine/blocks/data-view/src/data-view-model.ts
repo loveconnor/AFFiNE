@@ -1,9 +1,9 @@
-import type { ColumnDataType } from '@blocksuite/affine-model';
+import type { ColumnDataType } from '@blocksuite/lovenotes-model';
 import {
   arrayMove,
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { DataViewDataType } from '@blocksuite/data-view';
 import {
   BlockModel,
@@ -80,7 +80,7 @@ export class DataViewBlockModel extends BlockModel<Props> {
 }
 
 export const DataViewBlockSchema = defineBlockSchema({
-  flavour: 'affine:data-view',
+  flavour: 'lovenotes:data-view',
   props: (): Props => ({
     views: [],
     title: '',
@@ -90,8 +90,8 @@ export const DataViewBlockSchema = defineBlockSchema({
   metadata: {
     role: 'hub',
     version: 1,
-    parent: ['affine:note'],
-    children: ['affine:paragraph', 'affine:list'],
+    parent: ['lovenotes:note'],
+    children: ['lovenotes:paragraph', 'lovenotes:list'],
   },
   toModel: () => {
     return new DataViewBlockModel();

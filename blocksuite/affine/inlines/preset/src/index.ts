@@ -1,4 +1,4 @@
-import type * as RichTextEffects from '@blocksuite/affine-rich-text/effects';
+import type * as RichTextEffects from '@blocksuite/lovenotes-rich-text/effects';
 
 declare type _GLOBAL_ = typeof RichTextEffects;
 

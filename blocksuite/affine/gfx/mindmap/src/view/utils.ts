@@ -1,4 +1,4 @@
-import { fitContent } from '@blocksuite/affine-gfx-shape';
+import { fitContent } from '@blocksuite/lovenotes-gfx-shape';
 import {
   applyNodeStyle,
   LayoutType,
@@ -9,7 +9,7 @@ import {
   type NodeDetail,
   type NodeType,
   type ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { IVec } from '@blocksuite/global/gfx';
 import { assertType } from '@blocksuite/global/utils';
 import {

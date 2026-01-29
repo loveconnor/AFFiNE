@@ -24,12 +24,12 @@ const SUMMARY_LIMIT: usize = 1000;
 const DEFAULT_PAGE_TITLE: &str = "Untitled";
 
 const BOOKMARK_FLAVOURS: [&str; 6] = [
-  "affine:bookmark",
-  "affine:embed-youtube",
-  "affine:embed-iframe",
-  "affine:embed-figma",
-  "affine:embed-github",
-  "affine:embed-loom",
+  "lovenotes:bookmark",
+  "lovenotes:embed-youtube",
+  "lovenotes:embed-iframe",
+  "lovenotes:embed-figma",
+  "lovenotes:embed-github",
+  "lovenotes:embed-loom",
 ];
 
 struct SummaryBuilder {
@@ -185,22 +185,22 @@ pub fn parse_page_doc(
     };
 
     match flavour.as_str() {
-      "affine:page" | "affine:note" => {
+      "lovenotes:page" | "lovenotes:note" => {
         walker.enqueue_children(&block_id, block);
       }
-      "affine:attachment" | "affine:transcription" | "affine:callout" => {
+      "lovenotes:attachment" | "lovenotes:transcription" | "lovenotes:callout" => {
         if summary.is_unlimited() {
           walker.enqueue_children(&block_id, block);
         }
       }
-      "affine:database" => {
+      "lovenotes:database" => {
         if summary.is_unlimited()
           && let Some(text) = database_summary_text(block, &context)
         {
           summary.push_raw(&text);
         }
       }
-      "affine:table" => {
+      "lovenotes:table" => {
         if summary.is_unlimited() {
           let contents = table_cell_texts(block);
           if !contents.is_empty() {
@@ -208,7 +208,7 @@ pub fn parse_page_doc(
           }
         }
       }
-      "affine:paragraph" | "affine:list" | "affine:code" => {
+      "lovenotes:paragraph" | "lovenotes:list" | "lovenotes:code" => {
         walker.enqueue_children(&block_id, block);
         if let Some((text, len)) = text_content_for_summary(block, "prop:text") {
           summary.push_text(&text, len);
@@ -263,7 +263,7 @@ pub fn parse_doc_to_markdown(
       .and_then(|id| context.block_pool.get(id))
       .and_then(get_flavour);
 
-    if parent_flavour.as_deref() == Some("affine:database") {
+    if parent_flavour.as_deref() == Some("lovenotes:database") {
       continue;
     }
 
@@ -286,7 +286,7 @@ pub fn parse_doc_to_markdown(
     let mut block_markdown = String::new();
 
     match flavour.as_str() {
-      "affine:database" => {
+      "lovenotes:database" => {
         let title = get_string(block, "prop:title").unwrap_or_default();
         block_markdown.push_str(&format!("\n### {title}\n"));
 
@@ -297,7 +297,7 @@ pub fn parse_doc_to_markdown(
           writer.push_table(&table_md);
         }
       }
-      "affine:note" | "affine:surface" | "affine:frame" => {}
+      "lovenotes:note" | "lovenotes:surface" | "lovenotes:frame" => {}
       _ => {
         if let Some(block_flavour) = BlockFlavour::from_str(flavour.as_str()) {
           let spec = BlockSpec::from_block_map_with_flavour(block, block_flavour);
@@ -380,9 +380,9 @@ pub fn parse_doc_from_binary(doc_bin: Vec<u8>, doc_id: String) -> Result<CrawlRe
       continue;
     }
 
-    if matches!(flavour.as_str(), "affine:paragraph" | "affine:list" | "affine:code") {
+    if matches!(flavour.as_str(), "lovenotes:paragraph" | "lovenotes:list" | "lovenotes:code") {
       if let Some(text) = block.get("prop:text").and_then(|value| value.to_text()) {
-        let database_name = if flavour == "affine:paragraph" && parent_flavour.as_deref() == Some("affine:database") {
+        let database_name = if flavour == "lovenotes:paragraph" && parent_flavour.as_deref() == Some("lovenotes:database") {
           parent_block.and_then(|map| get_string(map, "prop:title"))
         } else {
           None
@@ -404,7 +404,7 @@ pub fn parse_doc_from_binary(doc_bin: Vec<u8>, doc_id: String) -> Result<CrawlRe
       continue;
     }
 
-    if matches!(flavour.as_str(), "affine:embed-linked-doc" | "affine:embed-synced-doc") {
+    if matches!(flavour.as_str(), "lovenotes:embed-linked-doc" | "lovenotes:embed-synced-doc") {
       if let Some(page_id) = get_string(block, "prop:pageId") {
         let mut info = build_block(None);
         let payload = embed_ref_payload(block, &page_id);
@@ -414,7 +414,7 @@ pub fn parse_doc_from_binary(doc_bin: Vec<u8>, doc_id: String) -> Result<CrawlRe
       continue;
     }
 
-    if flavour == "affine:attachment" {
+    if flavour == "lovenotes:attachment" {
       if let Some(blob_id) = get_string(block, "prop:sourceId") {
         let mut info = build_block(None);
         let name = get_string(block, "prop:name").unwrap_or_default();
@@ -424,7 +424,7 @@ pub fn parse_doc_from_binary(doc_bin: Vec<u8>, doc_id: String) -> Result<CrawlRe
       continue;
     }
 
-    if flavour == "affine:image" {
+    if flavour == "lovenotes:image" {
       let image = ImageSpec::from_block_map(block);
       if !image.source_id.is_empty() {
         let mut info = build_block(None);
@@ -435,7 +435,7 @@ pub fn parse_doc_from_binary(doc_bin: Vec<u8>, doc_id: String) -> Result<CrawlRe
       continue;
     }
 
-    if flavour == "affine:surface" {
+    if flavour == "lovenotes:surface" {
       let texts = gather_surface_texts(block);
       let mut info = build_block(None);
       info.content = Some(texts);
@@ -443,7 +443,7 @@ pub fn parse_doc_from_binary(doc_bin: Vec<u8>, doc_id: String) -> Result<CrawlRe
       continue;
     }
 
-    if flavour == "affine:database" {
+    if flavour == "lovenotes:database" {
       let (texts, database_name) = gather_database_texts(block);
       let mut info = BlockInfo::base(
         &block_id,
@@ -462,7 +462,7 @@ pub fn parse_doc_from_binary(doc_bin: Vec<u8>, doc_id: String) -> Result<CrawlRe
       continue;
     }
 
-    if flavour == "affine:latex" {
+    if flavour == "lovenotes:latex" {
       if let Some(content) = get_string(block, "prop:latex") {
         let mut info = build_block(None);
         info.content = Some(vec![content]);
@@ -471,7 +471,7 @@ pub fn parse_doc_from_binary(doc_bin: Vec<u8>, doc_id: String) -> Result<CrawlRe
       continue;
     }
 
-    if flavour == "affine:table" {
+    if flavour == "lovenotes:table" {
       let contents = table_cell_texts(block);
       let mut info = build_block(None);
       info.content = Some(contents);
@@ -695,7 +695,7 @@ mod tests {
 
     let mut page = doc.create_map().unwrap();
     page.insert("sys:id".into(), "page").unwrap();
-    page.insert("sys:flavour".into(), "affine:page").unwrap();
+    page.insert("sys:flavour".into(), "lovenotes:page").unwrap();
     let mut page_children = doc.create_array().unwrap();
     page_children.push("note").unwrap();
     page.insert("sys:children".into(), Value::Array(page_children)).unwrap();
@@ -706,7 +706,7 @@ mod tests {
 
     let mut note = doc.create_map().unwrap();
     note.insert("sys:id".into(), "note").unwrap();
-    note.insert("sys:flavour".into(), "affine:note").unwrap();
+    note.insert("sys:flavour".into(), "lovenotes:note").unwrap();
     let mut note_children = doc.create_array().unwrap();
     note_children.push("db").unwrap();
     note.insert("sys:children".into(), Value::Array(note_children)).unwrap();
@@ -715,7 +715,7 @@ mod tests {
 
     let mut db = doc.create_map().unwrap();
     db.insert("sys:id".into(), "db").unwrap();
-    db.insert("sys:flavour".into(), "affine:database").unwrap();
+    db.insert("sys:flavour".into(), "lovenotes:database").unwrap();
     db.insert("sys:children".into(), Value::Array(doc.create_array().unwrap()))
       .unwrap();
     let mut db_title = doc.create_text().unwrap();
@@ -787,7 +787,7 @@ mod tests {
     let result = parse_doc_to_markdown(doc_bin, doc_id.to_string(), true, None).expect("parse doc");
     let md = result.markdown;
 
-    assert!(md.contains("flavour=affine:image"));
+    assert!(md.contains("flavour=lovenotes:image"));
     assert!(md.contains("blob://image-id"));
     assert!(md.contains("|A|B|"));
     assert!(md.contains("|---|---|"));

@@ -1,10 +1,10 @@
-import { insertLinkByQuickSearchCommand } from '@blocksuite/affine-block-bookmark';
-import { insertEmbedCard } from '@blocksuite/affine-block-embed';
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import { toggleEmbedCardCreateModal } from '@blocksuite/affine-components/embed-card-modal';
-import { LinkIcon } from '@blocksuite/affine-components/icons';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { QuickToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { insertLinkByQuickSearchCommand } from '@blocksuite/lovenotes-block-bookmark';
+import { insertEmbedCard } from '@blocksuite/lovenotes-block-embed';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import { toggleEmbedCardCreateModal } from '@blocksuite/lovenotes-components/embed-card-modal';
+import { LinkIcon } from '@blocksuite/lovenotes-components/icons';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
+import { QuickToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 import { css, html, LitElement } from 'lit';
 
@@ -34,7 +34,7 @@ export class EdgelessLinkToolButton extends QuickToolMixin(LitElement) {
           mode: 'edgeless',
           onSave: url => {
             insertEmbedCard(this.edgeless.std, {
-              flavour: 'affine:bookmark',
+              flavour: 'lovenotes:bookmark',
               targetStyle: 'vertical',
               props: { url },
             });
@@ -82,10 +82,10 @@ export class EdgelessLinkToolButton extends QuickToolMixin(LitElement) {
   override render() {
     return html`<edgeless-tool-icon-button
       .iconContainerPadding="${6}"
-      .tooltip="${html`<affine-tooltip-content-with-shortcut
+      .tooltip="${html`<lovenotes-tooltip-content-with-shortcut
         data-tip="${'Link'}"
         data-shortcut="${'@'}"
-      ></affine-tooltip-content-with-shortcut>`}"
+      ></lovenotes-tooltip-content-with-shortcut>`}"
       .tooltipOffset=${17}
       class="edgeless-link-tool-button"
       @click=${this._onClick}

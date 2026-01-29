@@ -1,4 +1,4 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import type { DeltaOperation, Text } from '@blocksuite/store';
 
 export const getSingleDocIdFromText = (text?: Text) => {
@@ -19,7 +19,7 @@ export const getSingleDocIdFromText = (text?: Text) => {
 };
 
 export const isLinkedDoc = (delta: DeltaOperation) => {
-  const attributes: AffineTextAttributes | undefined = delta.attributes;
+  const attributes: LoveNotesTextAttributes | undefined = delta.attributes;
   return attributes?.reference?.type === 'LinkedPage';
 };
 

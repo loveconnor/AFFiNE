@@ -5,12 +5,12 @@ export function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export type AffineTextEvent = {
+export type LoveNotesTextEvent = {
   type: 'attachment' | 'message';
   data: string;
 };
 
-type AffineTextStream = AsyncIterable<AffineTextEvent>;
+type LoveNotesTextStream = AsyncIterable<LoveNotesTextEvent>;
 
 type toTextStreamOptions = {
   timeout?: number;
@@ -31,10 +31,10 @@ const safeParseError = (data: string): { status: number } => {
 export function toTextStream(
   eventSource: EventSource,
   { timeout, signal }: toTextStreamOptions = {}
-): AffineTextStream {
+): LoveNotesTextStream {
   return {
     [Symbol.asyncIterator]: async function* () {
-      const messageQueue: AffineTextEvent[] = [];
+      const messageQueue: LoveNotesTextEvent[] = [];
       let resolveMessagePromise: () => void;
       let rejectMessagePromise: (err: Error) => void;
 

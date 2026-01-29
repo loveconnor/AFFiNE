@@ -1,39 +1,39 @@
-import { addAttachments } from '@blocksuite/affine-block-attachment';
-import { EdgelessFrameManagerIdentifier } from '@blocksuite/affine-block-frame';
-import { addImages } from '@blocksuite/affine-block-image';
+import { addAttachments } from '@blocksuite/lovenotes-block-attachment';
+import { EdgelessFrameManagerIdentifier } from '@blocksuite/lovenotes-block-frame';
+import { addImages } from '@blocksuite/lovenotes-block-image';
 import {
   CanvasRenderer,
   DefaultTool,
   EdgelessCRUDIdentifier,
   ExportManager,
   getSurfaceComponent,
-} from '@blocksuite/affine-block-surface';
-import { splitIntoLines } from '@blocksuite/affine-gfx-text';
+} from '@blocksuite/lovenotes-block-surface';
+import { splitIntoLines } from '@blocksuite/lovenotes-gfx-text';
 import type {
   EmbedCardStyle,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   BookmarkStyles,
   DEFAULT_NOTE_HEIGHT,
   DEFAULT_NOTE_WIDTH,
   FrameBlockModel,
   MAX_IMAGE_WIDTH,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   ClipboardAdapter,
   decodeClipboardBlobs,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import {
   CANVAS_EXPORT_IGNORE_TAGS,
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   EmbedOptionProvider,
   ParseDocUrlProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   convertToPng,
   isInsidePageEditor,
@@ -41,7 +41,7 @@ import {
   isUrlInClipboard,
   matchModels,
   referenceToNode,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import {
@@ -87,7 +87,7 @@ interface CanvasExportOptions {
 }
 
 export class EdgelessClipboardController extends PageClipboard {
-  static override key = 'affine-edgeless-clipboard';
+  static override key = 'lovenotes-edgeless-clipboard';
 
   private readonly _initEdgelessClipboard = () => {
     this.std.event.add('copy', ctx => {
@@ -277,12 +277,12 @@ export class EdgelessClipboardController extends PageClipboard {
       const url = data.getData('text/plain');
       const { x, y } = this.toolManager.lastMousePos$.peek();
 
-      // try to interpret url as affine doc url
+      // try to interpret url as lovenotes doc url
       const parseDocUrlService = this.std.getOptional(ParseDocUrlProvider);
       const docUrlInfo = parseDocUrlService?.parseDocUrl(url);
       const options: Record<string, unknown> = {};
 
-      let flavour = 'affine:bookmark';
+      let flavour = 'lovenotes:bookmark';
       let style: EmbedCardStyle = BookmarkStyles[0];
       let isInternalLink = false;
       let isLinkedBlock = false;
@@ -290,7 +290,7 @@ export class EdgelessClipboardController extends PageClipboard {
       if (docUrlInfo) {
         const { docId: pageId, ...params } = docUrlInfo;
 
-        flavour = 'affine:embed-linked-doc';
+        flavour = 'lovenotes:embed-linked-doc';
         style = 'vertical';
 
         isInternalLink = true;
@@ -478,7 +478,7 @@ export class EdgelessClipboardController extends PageClipboard {
       onclone: async function (documentClone: Document, element: HTMLElement) {
         // html2canvas can't support transform feature
         element.style.setProperty('transform', 'none');
-        const layer = documentClone.querySelector('.affine-edgeless-layer');
+        const layer = documentClone.querySelector('.lovenotes-edgeless-layer');
         if (layer && layer instanceof HTMLElement) {
           layer.style.setProperty('transform', 'none');
         }
@@ -622,7 +622,7 @@ export class EdgelessClipboardController extends PageClipboard {
     };
 
     const noteId = this.crud.addBlock(
-      'affine:note',
+      'lovenotes:note',
       noteProps,
       this.doc.root!.id
     );
@@ -638,7 +638,7 @@ export class EdgelessClipboardController extends PageClipboard {
     if (typeof content === 'string') {
       splitIntoLines(content).forEach((line, idx) => {
         this.crud.addBlock(
-          'affine:paragraph',
+          'lovenotes:paragraph',
           { text: new Y.Text(line) },
           noteId,
           idx
@@ -648,7 +648,7 @@ export class EdgelessClipboardController extends PageClipboard {
       // eslint-disable-next-line @typescript-eslint/prefer-for-of
       for (let index = 0; index < content.length; index++) {
         const blockSnapshot = content[index];
-        if (blockSnapshot.flavour === 'affine:note') {
+        if (blockSnapshot.flavour === 'lovenotes:note') {
           for (const child of blockSnapshot.children) {
             await this.onBlockSnapshotPaste(child, this.doc, noteId);
           }

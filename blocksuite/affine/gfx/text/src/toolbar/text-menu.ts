@@ -1,7 +1,7 @@
-import { DefaultTheme } from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import type { ColorEvent } from '@blocksuite/affine-shared/utils';
-import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { DefaultTheme } from '@blocksuite/lovenotes-model';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
+import type { ColorEvent } from '@blocksuite/lovenotes-shared/utils';
+import { EdgelessToolbarToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { computed } from '@preact/signals-core';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';

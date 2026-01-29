@@ -5,10 +5,10 @@ import {
   DeleteIcon,
   DuplicateIcon,
   WrapIcon,
-} from '@blocksuite/affine-components/icons';
-import type { MenuItemGroup } from '@blocksuite/affine-components/toolbar';
-import { CommentProviderIdentifier } from '@blocksuite/affine-shared/services';
-import { isInsidePageEditor } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-components/icons';
+import type { MenuItemGroup } from '@blocksuite/lovenotes-components/toolbar';
+import { CommentProviderIdentifier } from '@blocksuite/lovenotes-shared/services';
+import { isInsidePageEditor } from '@blocksuite/lovenotes-shared/utils';
 import { noop, sleep } from '@blocksuite/global/utils';
 import { CommentIcon, NumberedListIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@blocksuite/std';

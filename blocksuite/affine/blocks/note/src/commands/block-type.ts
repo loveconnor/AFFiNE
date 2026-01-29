@@ -2,22 +2,22 @@ import {
   CodeBlockModel,
   ListBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   asyncSetInlineRange,
   focusTextModel,
   onModelTextUpdated,
-} from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-rich-text';
 import {
   getBlockSelectionsCommand,
   getSelectedBlocksCommand,
   getTextSelectionCommand,
-} from '@blocksuite/affine-shared/commands';
+} from '@blocksuite/lovenotes-shared/commands';
 import {
   matchModels,
   mergeToCodeModel,
   transformModel,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import {
   type BlockComponent,
   BlockSelection,
@@ -81,7 +81,7 @@ export const updateBlockType: Command<
     _,
     next
   ) => {
-    if (flavour !== 'affine:code') return;
+    if (flavour !== 'lovenotes:code') return;
     const id = mergeToCodeModel(blockModels);
     if (!id) return;
     const model = doc.getModelById(id);
@@ -96,7 +96,7 @@ export const updateBlockType: Command<
     _,
     next
   ) => {
-    if (flavour !== 'affine:divider') {
+    if (flavour !== 'lovenotes:divider') {
       return false;
     }
     const model = blockModels.at(-1);
@@ -110,9 +110,9 @@ export const updateBlockType: Command<
     const index = parent.children.indexOf(model);
     const nextSibling = doc.getNext(model);
     let nextSiblingId = nextSibling?.id as string;
-    const id = doc.addBlock('affine:divider', {}, parent, index + 1);
+    const id = doc.addBlock('lovenotes:divider', {}, parent, index + 1);
     if (!nextSibling) {
-      nextSiblingId = doc.addBlock('affine:paragraph', {}, parent);
+      nextSiblingId = doc.addBlock('lovenotes:paragraph', {}, parent);
     }
     focusTextModel(host.std, nextSiblingId);
     const newModel = doc.getModelById(id);
@@ -228,7 +228,7 @@ export const updateBlockType: Command<
     // focus
     .try(chain => [
       chain.pipe((_, next) => {
-        if (['affine:code', 'affine:divider'].includes(flavour)) {
+        if (['lovenotes:code', 'lovenotes:divider'].includes(flavour)) {
           return next();
         }
         return false;

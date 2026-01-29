@@ -4,26 +4,26 @@ export const PackageToDistribution = new Map<
   PackageName,
   BUILD_CONFIG_TYPE['distribution']
 >([
-  ['@affine/admin', 'admin'],
-  ['@affine/web', 'web'],
-  ['@affine/electron-renderer', 'desktop'],
-  ['@affine/electron', 'desktop'],
-  ['@affine/mobile', 'mobile'],
-  ['@affine/ios', 'ios'],
-  ['@affine/android', 'android'],
+  ['@lovenotes/admin', 'admin'],
+  ['@lovenotes/web', 'web'],
+  ['@lovenotes/electron-renderer', 'desktop'],
+  ['@lovenotes/electron', 'desktop'],
+  ['@lovenotes/mobile', 'mobile'],
+  ['@lovenotes/ios', 'ios'],
+  ['@lovenotes/android', 'android'],
 ]);
 
 export const AliasToPackage = new Map<string, PackageName>([
-  ['admin', '@affine/admin'],
-  ['web', '@affine/web'],
-  ['electron', '@affine/electron'],
-  ['desktop', '@affine/electron-renderer'],
-  ['renderer', '@affine/electron-renderer'],
-  ['mobile', '@affine/mobile'],
-  ['ios', '@affine/ios'],
-  ['android', '@affine/android'],
-  ['server', '@affine/server'],
-  ['gql', '@affine/graphql'],
+  ['admin', '@lovenotes/admin'],
+  ['web', '@lovenotes/web'],
+  ['electron', '@lovenotes/electron'],
+  ['desktop', '@lovenotes/electron-renderer'],
+  ['renderer', '@lovenotes/electron-renderer'],
+  ['mobile', '@lovenotes/mobile'],
+  ['ios', '@lovenotes/ios'],
+  ['android', '@lovenotes/android'],
+  ['server', '@lovenotes/server'],
+  ['gql', '@lovenotes/graphql'],
   ...PackageList.map(
     pkg => [pkg.name.split('/').pop()!, pkg.name] as [string, PackageName]
   ),

@@ -1,13 +1,13 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { edgelessDraggingAreaWidget } from './edgeless-dragging-area-rect';
 import { effects } from './effects';
 
 export class EdgelessDraggingAreaViewExtension extends ViewExtensionProvider {
-  override name = 'affine-edgeless-dragging-area-widget';
+  override name = 'lovenotes-edgeless-dragging-area-widget';
 
   override effect() {
     super.effect();

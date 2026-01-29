@@ -1,9 +1,9 @@
-import { isFrameBlock } from '@blocksuite/affine-block-frame';
+import { isFrameBlock } from '@blocksuite/lovenotes-block-frame';
 import {
   GroupElementModel,
   MindmapElementModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EdgelessIcon,
   FrameIcon,
@@ -117,7 +117,7 @@ export const TYPE_ICON_MAP: {
     icon: TemplateResult;
   };
 } = {
-  'affine:frame': {
+  'lovenotes:frame': {
     name: 'Frame',
     icon: FrameIcon(),
   },

@@ -1,13 +1,13 @@
-import { DefaultInlineManagerExtension } from '@blocksuite/affine-inline-preset';
-import type { RichText } from '@blocksuite/affine-rich-text';
+import { DefaultInlineManagerExtension } from '@blocksuite/lovenotes-inline-preset';
+import type { RichText } from '@blocksuite/lovenotes-rich-text';
 import {
   ParseDocUrlProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   getViewportElement,
   isValidUrl,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { BaseCellRenderer } from '@blocksuite/data-view';
 import { IS_MAC } from '@blocksuite/global/env';
 import { LinkedPageIcon } from '@blocksuite/icons/lit';
@@ -45,7 +45,7 @@ export class HeaderAreaTextCell extends BaseCellRenderer<Text, string> {
 
   get topContenteditableElement() {
     const databaseBlock =
-      this.closest<DatabaseBlockComponent>('affine-database');
+      this.closest<DatabaseBlockComponent>('lovenotes-database');
     return databaseBlock?.topContenteditableElement;
   }
 
@@ -149,7 +149,7 @@ export class HeaderAreaTextCell extends BaseCellRenderer<Text, string> {
           module: 'database title cell',
           type: 'paste',
           segment: 'database',
-          parentFlavour: 'affine:database',
+          parentFlavour: 'lovenotes:database',
         });
       } else {
         inlineEditor?.insertText(inlineRange, text, {
@@ -278,7 +278,7 @@ export class HeaderAreaTextCell extends BaseCellRenderer<Text, string> {
         this.topContenteditableElement?.host
           ? getViewportElement(this.topContenteditableElement.host)
           : null}"
-      data-parent-flavour="affine:database"
+      data-parent-flavour="lovenotes:database"
       class="${titleRichTextStyle}"
     ></rich-text>`;
   }

@@ -1,9 +1,9 @@
 import {
   DomElementRendererExtension,
   type DomRenderer,
-} from '@blocksuite/affine-block-surface';
-import type { BrushElementModel } from '@blocksuite/affine-model';
-import { DefaultTheme } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { BrushElementModel } from '@blocksuite/lovenotes-model';
+import { DefaultTheme } from '@blocksuite/lovenotes-model';
 
 export const BrushDomRendererExtension = DomElementRendererExtension(
   'brush',

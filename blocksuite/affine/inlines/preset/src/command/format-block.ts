@@ -1,5 +1,5 @@
-import { getSelectedBlocksCommand } from '@blocksuite/affine-shared/commands';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import { getSelectedBlocksCommand } from '@blocksuite/lovenotes-shared/commands';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import type { BlockSelection, Command } from '@blocksuite/std';
 import {
   INLINE_ROOT_ATTR,
@@ -12,7 +12,7 @@ import { FORMAT_BLOCK_SUPPORT_FLAVOURS } from './consts.js';
 export const formatBlockCommand: Command<{
   currentBlockSelections?: BlockSelection[];
   blockSelections?: BlockSelection[];
-  styles: AffineTextAttributes;
+  styles: LoveNotesTextAttributes;
   mode?: 'replace' | 'merge';
 }> = (ctx, next) => {
   const blockSelections = ctx.blockSelections ?? ctx.currentBlockSelections;
@@ -46,7 +46,7 @@ export const formatBlockCommand: Command<{
 
       const selectedInlineEditors = selectedBlocks.flatMap(el => {
         const inlineRoot = el.querySelector<
-          InlineRootElement<AffineTextAttributes>
+          InlineRootElement<LoveNotesTextAttributes>
         >(`[${INLINE_ROOT_ATTR}]`);
         if (inlineRoot) {
           return inlineRoot.inlineEditor;

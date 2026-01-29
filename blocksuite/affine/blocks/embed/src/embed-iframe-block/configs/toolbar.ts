@@ -1,13 +1,13 @@
-import { reassociateConnectorsCommand } from '@blocksuite/affine-block-surface';
-import { toast } from '@blocksuite/affine-components/toast';
+import { reassociateConnectorsCommand } from '@blocksuite/lovenotes-block-surface';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import {
   BookmarkStyles,
   EmbedIframeBlockModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   ActionPlacement,
   type ToolbarAction,
@@ -15,8 +15,8 @@ import {
   type ToolbarContext,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
-import { getBlockProps } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { getBlockProps } from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   CaptionIcon,
@@ -121,7 +121,7 @@ export const builtinToolbarConfig = {
 
             const text = new Text(yText);
 
-            ctx.store.addBlock('affine:paragraph', { text }, parent, index);
+            ctx.store.addBlock('lovenotes:paragraph', { text }, parent, index);
 
             ctx.store.deleteBlock(model);
 
@@ -149,7 +149,7 @@ export const builtinToolbarConfig = {
             const { parent } = model;
             const index = parent?.children.indexOf(model);
 
-            const flavour = 'affine:bookmark';
+            const flavour = 'lovenotes:bookmark';
             const style =
               BookmarkStyles.find(s => s !== 'vertical' && s !== 'cube') ??
               BookmarkStyles[1];
@@ -198,12 +198,12 @@ export const builtinToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-view-dropdown-menu
+          html`<lovenotes-view-dropdown-menu
             .actions=${actions}
             .context=${ctx}
             .toggle=${toggle}
             .viewType$=${signal(actions[2].label)}
-          ></affine-view-dropdown-menu>`
+          ></lovenotes-view-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -356,7 +356,7 @@ export const builtinSurfaceToolbarConfig = {
             const style =
               BookmarkStyles.find(s => s !== 'vertical' && s !== 'cube') ??
               BookmarkStyles[1];
-            let flavour = 'affine:bookmark';
+            let flavour = 'lovenotes:bookmark';
 
             const bounds = Bound.deserialize(xywh);
             bounds.w = EMBED_CARD_WIDTH[style];
@@ -404,12 +404,12 @@ export const builtinSurfaceToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-view-dropdown-menu
+          html`<lovenotes-view-dropdown-menu
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
             .viewType$=${signal(actions[1].label)}
-          ></affine-view-dropdown-menu>`
+          ></lovenotes-view-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -461,12 +461,12 @@ export const builtinSurfaceToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-size-dropdown-menu
+          html`<lovenotes-size-dropdown-menu
             @select=${onSelect}
             @toggle=${onToggle}
             .format=${format}
             .size$=${scale$}
-          ></affine-size-dropdown-menu>`
+          ></lovenotes-size-dropdown-menu>`
         )}`;
       },
     },
@@ -485,7 +485,7 @@ export const createBuiltinToolbarConfigExtension = (
       config: builtinToolbarConfig,
     }),
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier(`affine:surface:${name}`),
+      id: BlockFlavourIdentifier(`lovenotes:surface:${name}`),
       config: builtinSurfaceToolbarConfig,
     }),
   ];

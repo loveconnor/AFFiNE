@@ -1,10 +1,10 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine-block-surface';
-import type { RootBlockModel } from '@blocksuite/affine-model';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
+import { EdgelessCRUDIdentifier } from '@blocksuite/lovenotes-block-surface';
+import type { RootBlockModel } from '@blocksuite/lovenotes-model';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   isInsideEdgelessEditor,
   isInsidePageEditor,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import type { IVec, Point, Rect } from '@blocksuite/global/gfx';
 import { type BlockComponent, WidgetComponent } from '@blocksuite/std';
@@ -27,7 +27,7 @@ import { KeyboardEventWatcher } from './watchers/keyboard-event-watcher.js';
 import { PageWatcher } from './watchers/page-watcher.js';
 import { PointerEventWatcher } from './watchers/pointer-event-watcher.js';
 
-export class AffineDragHandleWidget extends WidgetComponent<RootBlockModel> {
+export class LoveNotesDragHandleWidget extends WidgetComponent<RootBlockModel> {
   static override styles = styles;
 
   private _anchorModelDisposables: DisposableGroup | null = null;
@@ -205,13 +205,13 @@ export class AffineDragHandleWidget extends WidgetComponent<RootBlockModel> {
     );
     const isGfx = this.activeDragHandle === 'gfx';
     const classes = {
-      'affine-drag-handle-grabber': true,
+      'lovenotes-drag-handle-grabber': true,
       dots: isGfx ? true : false,
     };
 
     return html`
-      <div class="affine-drag-handle-widget">
-        <div class="affine-drag-handle-container">
+      <div class="lovenotes-drag-handle-widget">
+        <div class="lovenotes-drag-handle-container">
           <div class=${classMap(classes)}>
             ${isGfx
               ? html`
@@ -225,15 +225,15 @@ export class AffineDragHandleWidget extends WidgetComponent<RootBlockModel> {
               : nothing}
           </div>
         </div>
-        <div class="affine-drag-hover-rect" style=${hoverRectStyle}></div>
+        <div class="lovenotes-drag-hover-rect" style=${hoverRectStyle}></div>
       </div>
     `;
   }
 
-  @query('.affine-drag-handle-container')
+  @query('.lovenotes-drag-handle-container')
   accessor dragHandleContainer!: HTMLDivElement;
 
-  @query('.affine-drag-handle-grabber')
+  @query('.lovenotes-drag-handle-grabber')
   accessor dragHandleGrabber!: HTMLDivElement;
 
   @state()
@@ -247,6 +247,6 @@ export class AffineDragHandleWidget extends WidgetComponent<RootBlockModel> {
 
 declare global {
   interface HTMLElementTagNameMap {
-    [AFFINE_DRAG_HANDLE_WIDGET]: AffineDragHandleWidget;
+    [AFFINE_DRAG_HANDLE_WIDGET]: LoveNotesDragHandleWidget;
   }
 }

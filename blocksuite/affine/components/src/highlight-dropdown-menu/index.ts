@@ -8,9 +8,9 @@ export * from './text-duotone-icon';
 
 export function effects() {
   customElements.define(
-    'affine-highlight-dropdown-menu',
+    'lovenotes-highlight-dropdown-menu',
     HighlightDropdownMenu
   );
-  customElements.define('affine-highlight-duotone-icon', HighlightDuotoneIcon);
-  customElements.define('affine-text-duotone-icon', TextDuotoneIcon);
+  customElements.define('lovenotes-highlight-duotone-icon', HighlightDuotoneIcon);
+  customElements.define('lovenotes-text-duotone-icon', TextDuotoneIcon);
 }

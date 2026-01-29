@@ -1,4 +1,4 @@
-import type { CanvasRenderer } from '@blocksuite/affine-block-surface';
+import type { CanvasRenderer } from '@blocksuite/lovenotes-block-surface';
 import {
   getFontString,
   getLineHeight,
@@ -8,14 +8,14 @@ import {
   type TextDelta,
   wrapText,
   wrapTextDeltas,
-} from '@blocksuite/affine-gfx-text';
+} from '@blocksuite/lovenotes-gfx-text';
 import type {
   LocalShapeElementModel,
   ShapeElementModel,
   TextAlign,
   TextVerticalAlign,
-} from '@blocksuite/affine-model';
-import { FeatureFlagService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { FeatureFlagService } from '@blocksuite/lovenotes-shared/services';
 import type { Bound, SerializedXYWH } from '@blocksuite/global/gfx';
 import { deltaInsertsToChunks } from '@blocksuite/std/inline';
 

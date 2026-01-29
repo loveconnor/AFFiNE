@@ -2,14 +2,14 @@ import {
   type EditorMenuButton,
   type EditorToolbar,
   renderToolbarSeparator,
-} from '@blocksuite/affine-components/toolbar';
+} from '@blocksuite/lovenotes-components/toolbar';
 import {
   ActionPlacement,
   type ToolbarAction,
   type ToolbarActions,
   type ToolbarContext,
   type ToolbarPlacement,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { nextTick } from '@blocksuite/global/utils';
 import { MoreVerticalIcon } from '@blocksuite/icons/lit';
 import type {
@@ -42,11 +42,11 @@ import toPairs from 'lodash-es/toPairs';
 
 export const sideMap = new Map([
   // includes frame element
-  ['affine:surface:frame', { top: 28 }],
+  ['lovenotes:surface:frame', { top: 28 }],
   // includes group element
-  ['affine:surface:group', { top: 20 }],
+  ['lovenotes:surface:group', { top: 20 }],
   // has only one shape element
-  ['affine:surface:shape', { top: 26, bottom: -26 }],
+  ['lovenotes:surface:shape', { top: 26, bottom: -26 }],
 ]);
 
 export function autoUpdatePosition(
@@ -58,7 +58,7 @@ export function autoUpdatePosition(
   sideOptions: Partial<SideObject> | null,
   options: AutoUpdateOptions = { elementResize: false, animationFrame: true }
 ) {
-  const isInline = flavour === 'affine:note';
+  const isInline = flavour === 'lovenotes:note';
   const hasSurfaceScope = flavour.includes('surface');
   const isInner = placement === 'inner';
   const offsetTop = sideOptions?.top ?? 0;
@@ -201,10 +201,10 @@ const merge = (a: any, b: any) =>
  * Renders toolbar
  *
  * Merges the following configs:
- * 1. `affine:note`
- * 2. `custom:affine:note`
- * 3. `affine:*`
- * 4. `custom:affine:*`
+ * 1. `lovenotes:note`
+ * 2. `custom:lovenotes:note`
+ * 3. `lovenotes:*`
+ * 4. `custom:lovenotes:*`
  */
 export function renderToolbar(
   toolbar: EditorToolbar,
@@ -217,9 +217,9 @@ export function renderToolbar(
   const actions = [
     flavour,
     `custom:${flavour}`,
-    hasSurfaceScope ? ['affine:surface:*', 'custom:affine:surface:*'] : [],
-    'affine:*',
-    'custom:affine:*',
+    hasSurfaceScope ? ['lovenotes:surface:*', 'custom:lovenotes:surface:*'] : [],
+    'lovenotes:*',
+    'custom:lovenotes:*',
   ]
     .flat()
     .map(key => toolbarRegistry.modules.get(key))
@@ -302,7 +302,7 @@ export function renderToolbar(
   );
 
   // Avoids shaking
-  if (flavour === 'affine:note' && context.std.range.value) {
+  if (flavour === 'lovenotes:note' && context.std.range.value) {
     if (!('inline' in toolbar.dataset)) {
       toolbar.dataset.inline = '';
     } else {

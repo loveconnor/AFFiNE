@@ -8,7 +8,7 @@ export interface SidebarService {
 }
 
 export const SidebarExtensionIdentifier = createIdentifier<SidebarService>(
-  'AffineSidebarExtension'
+  'LoveNotesSidebarExtension'
 );
 
 export const SidebarExtension = (service: SidebarService): ExtensionType => ({

@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-shared/adapters';
+export * from '@blocksuite/lovenotes-shared/adapters';

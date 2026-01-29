@@ -1,12 +1,12 @@
-import { getNotesFromDoc } from '@blocksuite/affine-block-embed';
-import { ViewExtensionManagerIdentifier } from '@blocksuite/affine-ext-loader';
+import { getNotesFromDoc } from '@blocksuite/lovenotes-block-embed';
+import { ViewExtensionManagerIdentifier } from '@blocksuite/lovenotes-ext-loader';
 import {
   ImageBlockModel,
   ListBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { EMBED_CARD_HEIGHT } from '@blocksuite/affine-shared/consts';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { EMBED_CARD_HEIGHT } from '@blocksuite/lovenotes-shared/consts';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { BlockStdScope } from '@blocksuite/std';
 import type { BlockModel, Query } from '@blocksuite/store';
 import { render, type TemplateResult } from 'lit';
@@ -154,7 +154,7 @@ async function renderNoteContent(
   }
 
   const noteBlocksContainer = document.createElement('div');
-  noteBlocksContainer.classList.add('affine-embed-doc-content-note-blocks');
+  noteBlocksContainer.classList.add('lovenotes-embed-doc-content-note-blocks');
   noteBlocksContainer.contentEditable = 'false';
   noteContainer.append(noteBlocksContainer);
 

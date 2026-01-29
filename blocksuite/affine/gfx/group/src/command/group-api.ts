@@ -1,8 +1,8 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine-block-surface';
+import { EdgelessCRUDIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   type GroupElementModel,
   MindmapElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { Command } from '@blocksuite/std';
 import { GfxControllerIdentifier, type GfxModel } from '@blocksuite/std/gfx';
 

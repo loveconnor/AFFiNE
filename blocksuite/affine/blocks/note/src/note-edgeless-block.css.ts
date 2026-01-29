@@ -1,4 +1,4 @@
-import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/affine-shared/consts';
+import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/lovenotes-shared/consts';
 import { cssVar } from '@toeverything/theme';
 import { style } from '@vanilla-extract/css';
 

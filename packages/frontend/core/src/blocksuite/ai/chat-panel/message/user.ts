@@ -1,5 +1,5 @@
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+import { WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import { ShadowlessElement } from '@blocksuite/lovenotes/std';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 

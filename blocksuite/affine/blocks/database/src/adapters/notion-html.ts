@@ -1,10 +1,10 @@
-import { DatabaseBlockSchema } from '@blocksuite/affine-model';
+import { DatabaseBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   AdapterTextUtils,
   BlockNotionHtmlAdapterExtension,
   type BlockNotionHtmlAdapterMatcher,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { getTagColor } from '@blocksuite/data-view';
 import { type BlockSnapshot, nanoid } from '@blocksuite/store';
 
@@ -105,7 +105,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
                       {
                         type: 'block',
                         id: nanoid(),
-                        flavour: 'affine:paragraph',
+                        flavour: 'lovenotes:paragraph',
                         props: {
                           text: {
                             '$blocksuite:internal:text$': true,
@@ -122,7 +122,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
                     {
                       type: 'block',
                       id: nanoid(),
-                      flavour: 'affine:paragraph',
+                      flavour: 'lovenotes:paragraph',
                       props: {
                         text: {
                           '$blocksuite:internal:text$': true,
@@ -147,7 +147,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
                     {
                       type: 'block',
                       id: nanoid(),
-                      flavour: 'affine:paragraph',
+                      flavour: 'lovenotes:paragraph',
                       props: {
                         text: {
                           '$blocksuite:internal:text$': true,

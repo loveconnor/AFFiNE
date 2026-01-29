@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/hover';
+export * from '@blocksuite/lovenotes-components/hover';

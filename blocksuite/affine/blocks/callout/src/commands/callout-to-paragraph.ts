@@ -1,9 +1,9 @@
 import {
   CalloutBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { Command } from '@blocksuite/std';
 import { BlockSelection } from '@blocksuite/std';
 import { Text } from '@blocksuite/store';

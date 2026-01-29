@@ -2,8 +2,8 @@ import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-components/context-menu';
+import type { InsertToPosition } from '@blocksuite/lovenotes-shared/utils';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { signal } from '@preact/signals-core';
 import type { TemplateResult } from 'lit';
@@ -86,7 +86,7 @@ export class MobileTableViewUILogic extends DataViewUILogicBase<
     return html` <div style="display:flex;">
       <div
         class="dv-hover dv-round-8"
-        style="display:flex;align-items:center;gap: 10px;padding: 6px 12px 6px 8px;color: var(--affine-text-secondary-color);font-size: 12px;line-height: 20px;position: sticky;left: ${LEFT_TOOL_BAR_WIDTH}px;"
+        style="display:flex;align-items:center;gap: 10px;padding: 6px 12px 6px 8px;color: var(--lovenotes-text-secondary-color);font-size: 12px;line-height: 20px;position: sticky;left: ${LEFT_TOOL_BAR_WIDTH}px;"
         @click="${add}"
       >
         <div class="dv-icon-16" style="display:flex;">${AddCursorIcon()}</div>

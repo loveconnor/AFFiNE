@@ -1,4 +1,4 @@
-import { NoteBlockModel } from '@blocksuite/affine-model';
+import { NoteBlockModel } from '@blocksuite/lovenotes-model';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
   type BlockStdScope,

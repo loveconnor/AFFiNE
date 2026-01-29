@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/smooth-corner';
+export * from '@blocksuite/lovenotes-components/smooth-corner';

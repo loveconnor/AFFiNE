@@ -3,7 +3,7 @@ import {
   SurfaceGroupLikeModel,
   type SurfaceMiddleware,
   surfaceMiddlewareExtension,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 
 const groupRelationWatcher: SurfaceMiddleware = (
   surface: SurfaceBlockModel

@@ -1,7 +1,7 @@
 import {
   insertPositionToIndex,
   type InsertToPosition,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 
 import { evalFilter } from '../../core/filter/eval.js';

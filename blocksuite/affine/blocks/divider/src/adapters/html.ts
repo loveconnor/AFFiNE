@@ -1,9 +1,9 @@
-import { DividerBlockSchema } from '@blocksuite/affine-model';
+import { DividerBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 
 export const dividerBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
@@ -21,7 +21,7 @@ export const dividerBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
           {
             type: 'block',
             id: nanoid(),
-            flavour: 'affine:divider',
+            flavour: 'lovenotes:divider',
             props: {},
             children: [],
           },

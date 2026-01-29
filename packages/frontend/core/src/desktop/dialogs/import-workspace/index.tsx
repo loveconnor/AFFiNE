@@ -1,13 +1,13 @@
-import { toast } from '@affine/component';
+import { toast } from '@lovenotes/component';
 import {
   type DialogComponentProps,
   type GLOBAL_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs';
-import { WorkspacesService } from '@affine/core/modules/workspace';
-import { _addLocalWorkspace } from '@affine/core/modules/workspace-engine';
-import { DebugLogger } from '@affine/debug';
-import { apis } from '@affine/electron-api';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/dialogs';
+import { WorkspacesService } from '@lovenotes/core/modules/workspace';
+import { _addLocalWorkspace } from '@lovenotes/core/modules/workspace-engine';
+import { DebugLogger } from '@lovenotes/debug';
+import { apis } from '@lovenotes/electron-api';
+import { useI18n } from '@lovenotes/i18n';
 import { useService } from '@toeverything/infra';
 import { useLayoutEffect, useRef } from 'react';
 

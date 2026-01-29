@@ -2,7 +2,7 @@ import {
   menu,
   popFilterableSimpleMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
   PlusIcon,
@@ -30,15 +30,15 @@ import { getVerticalIndicator } from './header/vertical-indicator.js';
 import type { TableViewUILogic } from './table-view-ui-logic.js';
 
 const styles = css`
-  affine-data-view-table-group:hover .group-header-op {
+  lovenotes-data-view-table-group:hover .group-header-op {
     visibility: visible;
     opacity: 1;
   }
 
-  affine-data-view-table-group {
+  lovenotes-data-view-table-group {
     margin-top: 4px;
     padding-top: 4px;
-    border-top: 1px solid var(--affine-border-color);
+    border-top: 1px solid var(--lovenotes-border-color);
   }
 
   .data-view-table-group-add-row {
@@ -53,8 +53,8 @@ const styles = css`
     border-bottom: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.border)};
   }
 
-  .affine-data-view-table-group:hover svg {
-    fill: var(--affine-icon-color);
+  .lovenotes-data-view-table-group:hover svg {
+    fill: var(--lovenotes-icon-color);
   }
 
   @media print {
@@ -73,7 +73,7 @@ const styles = css`
     user-select: none;
     font-size: 12px;
     line-height: 20px;
-    color: var(--affine-text-secondary-color);
+    color: var(--lovenotes-text-secondary-color);
   }
 
   .group-toggle-btn {
@@ -88,7 +88,7 @@ const styles = css`
   }
 
   .group-toggle-btn:hover {
-    background: var(--affine-hover-color);
+    background: var(--lovenotes-hover-color);
   }
 
   .group-toggle-btn svg {
@@ -325,11 +325,11 @@ export class TableGroup extends SignalWatcher(
 
   private renderRows(rows: Row[]) {
     return html`
-      <affine-database-column-header
+      <lovenotes-database-column-header
         .renderGroupHeader=${this.renderGroupHeader}
         .tableViewLogic=${this.tableViewLogic}
-      ></affine-database-column-header>
-      <div class="affine-database-block-rows">
+      ></lovenotes-database-column-header>
+      <div class="lovenotes-database-block-rows">
         ${repeat(
           rows,
           row => row.rowId,
@@ -352,17 +352,17 @@ export class TableGroup extends SignalWatcher(
           >
             <div
               class="data-view-table-group-add-row-button dv-icon-16"
-              data-test-id="affine-database-add-row-button"
+              data-test-id="lovenotes-database-add-row-button"
               role="button"
             >
               ${PlusIcon()}<span style="font-size: 12px">New Record</span>
             </div>
           </div>`}
-      <affine-database-column-stats
+      <lovenotes-database-column-stats
         .tableViewLogic="${this.tableViewLogic}"
         .group="${this.group}"
       >
-      </affine-database-column-stats>
+      </lovenotes-database-column-stats>
     `;
   }
 
@@ -389,7 +389,7 @@ export class TableGroup extends SignalWatcher(
     `;
   }
 
-  @query('.affine-database-block-rows')
+  @query('.lovenotes-database-block-rows')
   accessor rowsContainer: HTMLElement | null = null;
 
   @property({ attribute: false })
@@ -402,6 +402,6 @@ export class TableGroup extends SignalWatcher(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-data-view-table-group': TableGroup;
+    'lovenotes-data-view-table-group': TableGroup;
   }
 }

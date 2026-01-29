@@ -24,20 +24,20 @@ export class StaticFilesResolver implements OnModuleInit {
     }
 
     const app = this.adapterHost.httpAdapter.getInstance<Application>();
-    // for example, '/affine' in host [//host.com/affine]
+    // for example, '/lovenotes' in host [//host.com/lovenotes]
     const basePath = this.config.server.path;
     const staticPath = join(env.projectRoot, 'static');
 
     // web => {
-    //   affine: 'static/index.html',
+    //   lovenotes: 'static/index.html',
     //   selfhost: 'static/selfhost.html'
     // }
     // admin => {
-    //   affine: 'static/admin/index.html',
+    //   lovenotes: 'static/admin/index.html',
     //   selfhost: 'static/admin/selfhost.html'
     // }
     // mobile => {
-    //   affine: 'static/mobile/index.html',
+    //   lovenotes: 'static/mobile/index.html',
     //   selfhost: 'static/mobile/selfhost.html'
     // }
     // NOTE(@forehalo):

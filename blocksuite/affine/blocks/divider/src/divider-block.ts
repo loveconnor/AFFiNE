@@ -1,6 +1,6 @@
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
-import type { DividerBlockModel } from '@blocksuite/affine-model';
-import { BLOCK_CHILDREN_CONTAINER_PADDING_LEFT } from '@blocksuite/affine-shared/consts';
+import { CaptionedBlockComponent } from '@blocksuite/lovenotes-components/caption';
+import type { DividerBlockModel } from '@blocksuite/lovenotes-model';
+import { BLOCK_CHILDREN_CONTAINER_PADDING_LEFT } from '@blocksuite/lovenotes-shared/consts';
 import { BlockSelection } from '@blocksuite/std';
 import { html } from 'lit';
 
@@ -25,14 +25,14 @@ export class DividerBlockComponent extends CaptionedBlockComponent<DividerBlockM
 
   override renderBlock() {
     const children = html`<div
-      class="affine-block-children-container"
+      class="lovenotes-block-children-container"
       style="padding-left: ${BLOCK_CHILDREN_CONTAINER_PADDING_LEFT}px"
     >
       ${this.renderChildren(this.model)}
     </div>`;
 
     return html`
-      <div class="affine-divider-block-container">
+      <div class="lovenotes-divider-block-container">
         <hr />
 
         ${children}
@@ -45,6 +45,6 @@ export class DividerBlockComponent extends CaptionedBlockComponent<DividerBlockM
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-divider': DividerBlockComponent;
+    'lovenotes-divider': DividerBlockComponent;
   }
 }

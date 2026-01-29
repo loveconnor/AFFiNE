@@ -1,5 +1,5 @@
-import type { ReferenceInfo } from '@blocksuite/affine-model';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { ReferenceInfo } from '@blocksuite/lovenotes-model';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import type { BlockStdScope } from '@blocksuite/std';
 import type { InlineEditor, InlineRange } from '@blocksuite/std/inline';
 
@@ -9,7 +9,7 @@ export function toggleReferencePopup(
   std: BlockStdScope,
   docTitle: string,
   referenceInfo: ReferenceInfo,
-  inlineEditor: InlineEditor<AffineTextAttributes>,
+  inlineEditor: InlineEditor<LoveNotesTextAttributes>,
   inlineRange: InlineRange,
   abortController: AbortController
 ): ReferencePopup {

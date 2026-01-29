@@ -1,8 +1,8 @@
 import { rmSync } from 'node:fs';
 import { cpus } from 'node:os';
 
-import { Logger } from '@affine-tools/utils/logger';
-import { Package } from '@affine-tools/utils/workspace';
+import { Logger } from '@lovenotes-tools/utils/logger';
+import { Package } from '@lovenotes-tools/utils/workspace';
 import { merge } from 'lodash-es';
 import webpack from 'webpack';
 import WebpackDevServer, {
@@ -17,7 +17,7 @@ import {
 } from './webpack';
 
 function getBaseWorkerConfigs(pkg: Package) {
-  const core = new Package('@affine/core');
+  const core = new Package('@lovenotes/core');
 
   return [
     createWorkerTargetConfig(
@@ -41,15 +41,15 @@ function getBaseWorkerConfigs(pkg: Package) {
 
 function getBundleConfigs(pkg: Package): webpack.MultiConfiguration {
   switch (pkg.name) {
-    case '@affine/admin': {
+    case '@lovenotes/admin': {
       return [
         createHTMLTargetConfig(pkg, pkg.srcPath.join('index.tsx').value),
       ] as webpack.MultiConfiguration;
     }
-    case '@affine/web':
-    case '@affine/mobile':
-    case '@affine/ios':
-    case '@affine/android': {
+    case '@lovenotes/web':
+    case '@lovenotes/mobile':
+    case '@lovenotes/ios':
+    case '@lovenotes/android': {
       const workerConfigs = getBaseWorkerConfigs(pkg);
       workerConfigs.push(
         createWorkerTargetConfig(
@@ -68,7 +68,7 @@ function getBundleConfigs(pkg: Package): webpack.MultiConfiguration {
         ...workerConfigs,
       ] as webpack.MultiConfiguration;
     }
-    case '@affine/electron-renderer': {
+    case '@lovenotes/electron-renderer': {
       const workerConfigs = getBaseWorkerConfigs(pkg);
 
       return [
@@ -91,7 +91,7 @@ function getBundleConfigs(pkg: Package): webpack.MultiConfiguration {
         ...workerConfigs,
       ] as webpack.MultiConfiguration;
     }
-    case '@affine/server': {
+    case '@lovenotes/server': {
       return [
         createNodeTargetConfig(pkg, pkg.srcPath.join('index.ts').value),
       ] as webpack.MultiConfiguration;
@@ -104,8 +104,15 @@ function getBundleConfigs(pkg: Package): webpack.MultiConfiguration {
 const IN_CI = !!process.env.CI;
 const httpProxyMiddlewareLogLevel = IN_CI ? 'silent' : 'error';
 
+const devServerPort =
+  Number(process.env.PORT) ||
+  Number(process.env.WEB_PORT) ||
+  Number(process.env.DEV_PORT) ||
+  8080;
+
 const defaultDevServerConfig: DevServerConfiguration = {
   host: '0.0.0.0',
+  port: devServerPort,
   allowedHosts: 'all',
   hot: false,
   liveReload: true,
@@ -117,7 +124,7 @@ const defaultDevServerConfig: DevServerConfiguration = {
     // see: https://webpack.js.org/configuration/dev-server/#websocketurl
     // must be an explicit ws/wss URL because custom protocols (e.g. assets://)
     // cannot be used to construct WebSocket endpoints in Electron
-    webSocketURL: 'ws://0.0.0.0:8080/ws',
+    webSocketURL: `ws://0.0.0.0:${devServerPort}/ws`,
   },
   historyApiFallback: {
     rewrites: [

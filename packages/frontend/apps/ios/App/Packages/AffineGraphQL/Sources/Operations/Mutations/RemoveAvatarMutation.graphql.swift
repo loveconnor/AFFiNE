@@ -12,11 +12,11 @@ public class RemoveAvatarMutation: GraphQLMutation {
 
   public init() {}
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("removeAvatar", RemoveAvatar.self),
     ] }
@@ -27,11 +27,11 @@ public class RemoveAvatarMutation: GraphQLMutation {
     /// RemoveAvatar
     ///
     /// Parent Type: `RemoveAvatar`
-    public struct RemoveAvatar: AffineGraphQL.SelectionSet {
+    public struct RemoveAvatar: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.RemoveAvatar }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.RemoveAvatar }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("success", Bool.self),

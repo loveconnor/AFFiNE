@@ -1,6 +1,6 @@
-import { insertEmbedCard } from '@blocksuite/affine-block-embed';
-import type { EmbedCardStyle } from '@blocksuite/affine-model';
-import { EmbedOptionProvider } from '@blocksuite/affine-shared/services';
+import { insertEmbedCard } from '@blocksuite/lovenotes-block-embed';
+import type { EmbedCardStyle } from '@blocksuite/lovenotes-model';
+import { EmbedOptionProvider } from '@blocksuite/lovenotes-shared/services';
 import type { Command } from '@blocksuite/std';
 
 export const insertBookmarkCommand: Command<
@@ -10,7 +10,7 @@ export const insertBookmarkCommand: Command<
   const { url, std } = ctx;
   const embedOptions = std.get(EmbedOptionProvider).getEmbedBlockOptions(url);
 
-  let flavour = 'affine:bookmark';
+  let flavour = 'lovenotes:bookmark';
   let targetStyle: EmbedCardStyle = 'vertical';
   const props: Record<string, unknown> = { url };
   if (embedOptions) {

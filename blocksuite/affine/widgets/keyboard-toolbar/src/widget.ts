@@ -1,11 +1,11 @@
-import { getDocTitleByEditorHost } from '@blocksuite/affine-fragment-doc-title';
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import { getDocTitleByEditorHost } from '@blocksuite/lovenotes-fragment-doc-title';
+import type { RootBlockModel } from '@blocksuite/lovenotes-model';
 import {
   FeatureFlagService,
   isVirtualKeyboardProviderWithAction,
   VirtualKeyboardProvider,
   type VirtualKeyboardProviderWithAction,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { WidgetComponent, WidgetViewExtension } from '@blocksuite/std';
 import { effect, signal } from '@preact/signals-core';
@@ -17,18 +17,18 @@ import {
   KeyboardToolbarConfigExtension,
 } from './config.js';
 
-export const AFFINE_KEYBOARD_TOOLBAR_WIDGET = 'affine-keyboard-toolbar-widget';
+export const AFFINE_KEYBOARD_TOOLBAR_WIDGET = 'lovenotes-keyboard-toolbar-widget';
 
-export class AffineKeyboardToolbarWidget extends WidgetComponent<RootBlockModel> {
+export class LoveNotesKeyboardToolbarWidget extends WidgetComponent<RootBlockModel> {
   private readonly _show$ = signal(false);
 
   private _initialInputMode: string = '';
 
   get keyboard(): VirtualKeyboardProviderWithAction & { fallback?: boolean } {
-    const provider = this.std.get(VirtualKeyboardProvider);
-    if (isVirtualKeyboardProviderWithAction(provider)) return provider;
+    const provider = this.std.getOptional(VirtualKeyboardProvider);
+    if (provider && isVirtualKeyboardProviderWithAction(provider)) return provider;
 
-    return {
+    const fallback: VirtualKeyboardProviderWithAction & { fallback?: boolean } = {
       // fallback keyboard actions
       fallback: true,
       show: () => {
@@ -43,8 +43,9 @@ export class AffineKeyboardToolbarWidget extends WidgetComponent<RootBlockModel>
           rootComponent.inputMode = 'none';
         }
       },
-      ...provider,
     };
+
+    return provider ? { ...fallback, ...provider } : fallback;
   }
 
   private get _docTitle() {
@@ -110,23 +111,23 @@ export class AffineKeyboardToolbarWidget extends WidgetComponent<RootBlockModel>
 
     return html`<blocksuite-portal
       .shadowDom=${false}
-      .template=${html`<affine-keyboard-toolbar
+      .template=${html`<lovenotes-keyboard-toolbar
         .keyboard=${this.keyboard}
         .config=${this.config}
         .rootComponent=${this.block.rootComponent}
-      ></affine-keyboard-toolbar>`}
+      ></lovenotes-keyboard-toolbar>`}
     ></blocksuite-portal>`;
   }
 }
 
 export const keyboardToolbarWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   AFFINE_KEYBOARD_TOOLBAR_WIDGET,
   literal`${unsafeStatic(AFFINE_KEYBOARD_TOOLBAR_WIDGET)}`
 );
 
 declare global {
   interface HTMLElementTagNameMap {
-    [AFFINE_KEYBOARD_TOOLBAR_WIDGET]: AffineKeyboardToolbarWidget;
+    [AFFINE_KEYBOARD_TOOLBAR_WIDGET]: LoveNotesKeyboardToolbarWidget;
   }
 }

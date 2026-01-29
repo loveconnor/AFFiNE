@@ -1,22 +1,22 @@
-import type { AIToolsConfigService } from '@affine/core/modules/ai-button';
-import type { AIModelService } from '@affine/core/modules/ai-button/services/models';
+import type { AIToolsConfigService } from '@lovenotes/core/modules/ai-button';
+import type { AIModelService } from '@lovenotes/core/modules/ai-button/services/models';
 import type {
   ServerService,
   SubscriptionService,
-} from '@affine/core/modules/cloud';
-import type { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import type { AppThemeService } from '@affine/core/modules/theme';
+} from '@lovenotes/core/modules/cloud';
+import type { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import type { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import type { AppThemeService } from '@lovenotes/core/modules/theme';
 import type {
   ContextEmbedStatus,
   CopilotChatHistoryFragment,
-} from '@affine/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { type NotificationService } from '@blocksuite/affine/shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { ExtensionType, Store } from '@blocksuite/affine/store';
+} from '@lovenotes/graphql';
+import { SignalWatcher, WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import { type NotificationService } from '@blocksuite/lovenotes/shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes/shared/theme';
+import type { EditorHost } from '@blocksuite/lovenotes/std';
+import { ShadowlessElement } from '@blocksuite/lovenotes/std';
+import type { ExtensionType, Store } from '@blocksuite/lovenotes/store';
 import { DeleteIcon, NewPageIcon } from '@blocksuite/icons/lit';
 import { css, html, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
@@ -66,7 +66,7 @@ export class PlaygroundChat extends SignalWatcher(
       }
 
       .chat-panel-title {
-        background: var(--affine-background-primary-color);
+        background: var(--lovenotes-background-primary-color);
         position: relative;
         padding: 8px 0px;
         width: 100%;
@@ -79,13 +79,13 @@ export class PlaygroundChat extends SignalWatcher(
         .chat-panel-title-text {
           font-size: 14px;
           font-weight: 500;
-          color: var(--affine-text-secondary-color);
+          color: var(--lovenotes-text-secondary-color);
         }
 
         svg {
           width: 18px;
           height: 18px;
-          color: var(--affine-text-secondary-color);
+          color: var(--lovenotes-text-secondary-color);
         }
       }
 
@@ -98,18 +98,18 @@ export class PlaygroundChat extends SignalWatcher(
         margin: 0 4px;
         padding: 8px 12px;
         border-radius: 8px;
-        border: 1px solid var(--affine-border-color);
+        border: 1px solid var(--lovenotes-border-color);
         font-size: 14px;
         font-weight: 500;
         cursor: pointer;
       }
 
       .chat-panel-hints :first-child {
-        color: var(--affine-text-primary-color);
+        color: var(--lovenotes-text-primary-color);
       }
 
       .chat-panel-hints :nth-child(2) {
-        color: var(--affine-text-secondary-color);
+        color: var(--lovenotes-text-secondary-color);
       }
 
       .chat-panel-add,
@@ -169,13 +169,13 @@ export class PlaygroundChat extends SignalWatcher(
   accessor serverService!: ServerService;
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor lovenotesFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
-  accessor affineThemeService!: AppThemeService;
+  accessor lovenotesThemeService!: AppThemeService;
 
   @property({ attribute: false })
-  accessor affineWorkspaceDialogService!: WorkspaceDialogService;
+  accessor lovenotesWorkspaceDialogService!: WorkspaceDialogService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -332,11 +332,11 @@ export class PlaygroundChat extends SignalWatcher(
             ? html`<span data-testid="chat-panel-embedding-progress"
                 >Embedding ${done}/${total}</span
               >`
-            : 'AFFiNE AI'}
+            : 'LoveNotes AI'}
         </div>
         <div class="chat-panel-add" @click=${this.addChat}>
           ${NewPageIcon()}
-          <affine-tooltip>Add chat</affine-tooltip>
+          <lovenotes-tooltip>Add chat</lovenotes-tooltip>
         </div>
         <ai-history-clear
           .doc=${this.doc}
@@ -358,8 +358,8 @@ export class PlaygroundChat extends SignalWatcher(
         .createSession=${this._createSession}
         .updateContext=${this.updateContext}
         .extensions=${this.extensions}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
-        .affineThemeService=${this.affineThemeService}
+        .lovenotesFeatureFlagService=${this.lovenotesFeatureFlagService}
+        .lovenotesThemeService=${this.lovenotesThemeService}
         .notificationService=${this.notificationService}
         .aiToolsConfigService=${this.aiToolsConfigService}
         .reasoningConfig=${this.reasoningConfig}
@@ -381,8 +381,8 @@ export class PlaygroundChat extends SignalWatcher(
         .serverService=${this.serverService}
         .notificationService=${this.notificationService}
         .aiToolsConfigService=${this.aiToolsConfigService}
-        .affineWorkspaceDialogService=${this.affineWorkspaceDialogService}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
+        .lovenotesWorkspaceDialogService=${this.lovenotesWorkspaceDialogService}
+        .lovenotesFeatureFlagService=${this.lovenotesFeatureFlagService}
         .subscriptionService=${this.subscriptionService}
         .aiModelService=${this.aiModelService}
         .onAISubscribe=${this.onAISubscribe}

@@ -1,6 +1,6 @@
 //
 //  SKUnit+AI.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //
@@ -11,7 +11,7 @@ extension SKUnit {
   static let aiUnits: [SKUnit] = [
     SKUnit(
       category: SKUnitCategory.ai,
-      primaryText: "AFFINE AI",
+      primaryText: "LoveNotes AI",
       secondaryText: "A true multimodal AI copilot.",
       package: [
         SKUnitPackageOption(
@@ -20,8 +20,8 @@ extension SKUnit {
           isDefaultSelected: true,
           primaryTitle: "...", // Will be populated from App Store
           secondaryTitle: "",
-          productIdentifier: "app.affine.pro.ai.Annual",
-          revenueCatIdentifier: "app.affine.pro.ai.Annual"
+          productIdentifier: "app.lovenotes.pro.ai.Annual",
+          revenueCatIdentifier: "app.lovenotes.pro.ai.Annual"
         ),
       ]
     ),

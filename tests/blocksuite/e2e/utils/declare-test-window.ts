@@ -1,7 +1,7 @@
-import type * as Effect from '@blocksuite/affine/effects';
-import type { EditorHost } from '@blocksuite/affine/std';
-import type { Store, Transformer, Workspace } from '@blocksuite/affine/store';
-import type { TestAffineEditorContainer } from '@blocksuite/integration-test';
+import type * as Effect from '@blocksuite/lovenotes/effects';
+import type { EditorHost } from '@blocksuite/lovenotes/std';
+import type { Store, Transformer, Workspace } from '@blocksuite/lovenotes/store';
+import type { TestLoveNotesEditorContainer } from '@blocksuite/integration-test';
 
 declare type _GLOBAL_ = typeof Effect;
 
@@ -11,22 +11,22 @@ declare global {
      * the following instance are initialized in `packages/playground/apps/starter/main.ts`
      */
     $blocksuite: {
-      store: typeof import('@blocksuite/affine/store');
+      store: typeof import('@blocksuite/lovenotes/store');
       blocks: {
-        database: typeof import('@blocksuite/affine/blocks/database');
-        note: typeof import('@blocksuite/affine/blocks/note');
+        database: typeof import('@blocksuite/lovenotes/blocks/database');
+        note: typeof import('@blocksuite/lovenotes/blocks/note');
       };
       global: {
-        utils: typeof import('@blocksuite/affine/global/utils');
+        utils: typeof import('@blocksuite/lovenotes/global/utils');
       };
-      services: typeof import('@blocksuite/affine/shared/services');
+      services: typeof import('@blocksuite/lovenotes/shared/services');
       editor: typeof import('@blocksuite/integration-test');
-      blockStd: typeof import('@blocksuite/affine/std');
-      affineModel: typeof import('@blocksuite/affine-model');
+      blockStd: typeof import('@blocksuite/lovenotes/std');
+      lovenotesModel: typeof import('@blocksuite/lovenotes-model');
     };
     collection: Workspace;
     doc: Store;
-    editor: TestAffineEditorContainer;
+    editor: TestLoveNotesEditorContainer;
     host: EditorHost;
     job: Transformer;
   }

@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { EmbedIcon } from '@blocksuite/icons/lit';
 import { baseTheme } from '@toeverything/theme';
@@ -17,8 +17,8 @@ export class EmbedIframeIdleCard extends WithDisposable(LitElement) {
       height: 100%;
     }
 
-    .affine-embed-iframe-idle-card {
-      container: affine-embed-iframe-idle-card / size;
+    .lovenotes-embed-iframe-idle-card {
+      container: lovenotes-embed-iframe-idle-card / size;
       box-sizing: border-box;
       display: flex;
       align-items: center;
@@ -49,11 +49,11 @@ export class EmbedIframeIdleCard extends WithDisposable(LitElement) {
       }
     }
 
-    .affine-embed-iframe-idle-card:hover {
+    .lovenotes-embed-iframe-idle-card:hover {
       cursor: pointer;
     }
 
-    .affine-embed-iframe-idle-card.horizontal {
+    .lovenotes-embed-iframe-idle-card.horizontal {
       flex-direction: row;
 
       .icon {
@@ -67,7 +67,7 @@ export class EmbedIframeIdleCard extends WithDisposable(LitElement) {
       }
     }
 
-    .affine-embed-iframe-idle-card.vertical {
+    .lovenotes-embed-iframe-idle-card.vertical {
       flex-direction: column;
       justify-content: center;
       overflow: hidden;
@@ -91,7 +91,7 @@ export class EmbedIframeIdleCard extends WithDisposable(LitElement) {
         word-break: break-word;
       }
 
-      @container affine-embed-iframe-idle-card (height < 180px) {
+      @container lovenotes-embed-iframe-idle-card (height < 180px) {
         .icon {
           display: none;
         }
@@ -102,7 +102,7 @@ export class EmbedIframeIdleCard extends WithDisposable(LitElement) {
   override render() {
     const { layout, width, height } = this.options;
     const cardClasses = classMap({
-      'affine-embed-iframe-idle-card': true,
+      'lovenotes-embed-iframe-idle-card': true,
       horizontal: layout === 'horizontal',
       vertical: layout === 'vertical',
     });

@@ -5,15 +5,15 @@ import {
   monitorForElements,
   type MonitorGetFeedback,
   type toExternalData,
-} from '@affine/component';
-import type { AffineDNDData } from '@affine/core/types/dnd';
+} from '@lovenotes/component';
+import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import {
   DNDAPIExtension,
   DndApiExtensionIdentifier,
-} from '@blocksuite/affine/shared/services';
-import { BlockStdScope } from '@blocksuite/affine/std';
-import type { SliceSnapshot } from '@blocksuite/affine/store';
-import type { DragBlockPayload } from '@blocksuite/affine/widgets/drag-handle';
+} from '@blocksuite/lovenotes/shared/services';
+import { BlockStdScope } from '@blocksuite/lovenotes/std';
+import type { SliceSnapshot } from '@blocksuite/lovenotes/store';
+import type { DragBlockPayload } from '@blocksuite/lovenotes/widgets/drag-handle';
 import { Service } from '@toeverything/infra';
 
 import type { DocsService } from '../../doc';
@@ -21,12 +21,12 @@ import type { EditorSettingService } from '../../editor-setting';
 import { resolveLinkToDoc } from '../../navigation';
 import type { WorkspaceService } from '../../workspace';
 
-type Entity = AffineDNDData['draggable']['entity'];
+type Entity = LoveNotesDNDData['draggable']['entity'];
 type EntityResolver = (data: string) => Entity | null;
 
 type ExternalDragPayload = ExternalGetDataFeedbackArgs['source'];
 
-type MixedDNDData = AffineDNDData & {
+type MixedDNDData = LoveNotesDNDData & {
   draggable: DragBlockPayload;
 };
 
@@ -71,10 +71,10 @@ export class DndService extends Service {
 
   private setupBlocksuiteAdapter() {
     /**
-     * Migrate from affine to blocksuite
+     * Migrate from lovenotes to blocksuite
      * For now, we only support doc
      */
-    const affineToBlocksuite = (args: MonitorGetFeedback<MixedDNDData>) => {
+    const lovenotesToBlocksuite = (args: MonitorGetFeedback<MixedDNDData>) => {
       const data = args.source.data;
       if (data.entity && !data.bsEntity) {
         if (data.entity.type !== 'doc') {
@@ -86,7 +86,7 @@ export class DndService extends Service {
         }
         const snapshotSlice = dndAPI.fromEntity({
           docId: data.entity.id,
-          flavour: 'affine:embed-linked-doc',
+          flavour: 'lovenotes:embed-linked-doc',
         });
         if (!snapshotSlice) {
           return;
@@ -100,9 +100,9 @@ export class DndService extends Service {
     };
 
     /**
-     * Migrate from blocksuite to affine
+     * Migrate from blocksuite to lovenotes
      */
-    const blocksuiteToAffine = (args: MonitorGetFeedback<MixedDNDData>) => {
+    const blocksuiteToLoveNotes = (args: MonitorGetFeedback<MixedDNDData>) => {
       const data = args.source.data;
       if (!data.entity && data.bsEntity) {
         if (data.bsEntity.type !== 'blocks' || !data.bsEntity.snapshot) {
@@ -121,8 +121,8 @@ export class DndService extends Service {
     };
 
     function adaptDragEvent(args: MonitorGetFeedback<MixedDNDData>) {
-      affineToBlocksuite(args);
-      blocksuiteToAffine(args);
+      lovenotesToBlocksuite(args);
+      blocksuiteToLoveNotes(args);
     }
 
     function canMonitor(args: MonitorGetFeedback<MixedDNDData>) {
@@ -152,7 +152,7 @@ export class DndService extends Service {
       const flavour =
         dropTarget === 'canvas'
           ? this.editorSettingService.editorSetting.docCanvasPreferView.value
-          : 'affine:embed-linked-doc';
+          : 'lovenotes:embed-linked-doc';
 
       const { entity, bsEntity } = args.source.data;
       if (!entity || !bsEntity) return;
@@ -192,7 +192,7 @@ export class DndService extends Service {
 
   private readonly resolvers: ((
     source: ExternalDragPayload
-  ) => AffineDNDData['draggable'] | null)[] = [];
+  ) => LoveNotesDNDData['draggable'] | null)[] = [];
 
   getBlocksuiteDndAPI(sourceDocId?: string) {
     const collection = this.workspaceService.workspace.docCollection;
@@ -211,7 +211,7 @@ export class DndService extends Service {
     return dndAPI;
   }
 
-  fromExternalData: fromExternalData<AffineDNDData> = (
+  fromExternalData: fromExternalData<LoveNotesDNDData> = (
     args: ExternalGetDataFeedbackArgs,
     isDropEvent?: boolean
   ) => {
@@ -219,7 +219,7 @@ export class DndService extends Service {
       return {};
     }
 
-    let resolved: AffineDNDData['draggable'] | null = null;
+    let resolved: LoveNotesDNDData['draggable'] | null = null;
 
     // in the order of the resolvers instead of the order of the types
     for (const resolver of this.resolvers) {
@@ -237,7 +237,7 @@ export class DndService extends Service {
     return resolved;
   };
 
-  toExternalData: toExternalData<AffineDNDData> = (args, data) => {
+  toExternalData: toExternalData<LoveNotesDNDData> = (args, data) => {
     const normalData = typeof data === 'function' ? data(args) : data;
 
     if (
@@ -257,7 +257,7 @@ export class DndService extends Service {
 
     const snapshotSlice = dndAPI.fromEntity({
       docId: normalData.entity.id,
-      flavour: 'affine:embed-linked-doc',
+      flavour: 'lovenotes:embed-linked-doc',
     });
 
     if (!snapshotSlice) {
@@ -301,7 +301,7 @@ export class DndService extends Service {
    */
   private readonly resolveBlocksuiteExternalData = (
     source: ExternalDragPayload
-  ): AffineDNDData['draggable'] | null => {
+  ): LoveNotesDNDData['draggable'] | null => {
     const dndAPI = this.getBlocksuiteDndAPI();
     if (!dndAPI) {
       return null;
@@ -347,7 +347,7 @@ export class DndService extends Service {
   ): Entity | null => {
     for (const block of snapshot.content) {
       if (
-        ['affine:embed-linked-doc', 'affine:embed-synced-doc'].includes(
+        ['lovenotes:embed-linked-doc', 'lovenotes:embed-synced-doc'].includes(
           block.flavour
         )
       ) {

@@ -1,5 +1,5 @@
-import { getSelectedModelsCommand } from '@blocksuite/affine-shared/commands';
-import type { SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
+import { getSelectedModelsCommand } from '@blocksuite/lovenotes-shared/commands';
+import type { SlashMenuConfig } from '@blocksuite/lovenotes-widget-slash-menu';
 import { EmbedIcon } from '@blocksuite/icons/lit';
 
 import { insertEmptyEmbedIframeCommand } from '../../commands/insert-empty-embed-iframe';
@@ -17,7 +17,7 @@ export const embedIframeSlashMenuConfig: SlashMenuConfig = {
       },
       group: '4_Content & Media@5',
       when: ({ model }) => {
-        return model.store.schema.flavourSchemaMap.has('affine:embed-iframe');
+        return model.store.schema.flavourSchemaMap.has('lovenotes:embed-iframe');
       },
       action: ({ std }) => {
         std.command

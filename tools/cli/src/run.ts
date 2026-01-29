@@ -1,6 +1,6 @@
-import { Path } from '@affine-tools/utils/path';
-import { execAsync } from '@affine-tools/utils/process';
-import type { Package, PackageName } from '@affine-tools/utils/workspace';
+import { Path } from '@lovenotes-tools/utils/path';
+import { execAsync } from '@lovenotes-tools/utils/process';
+import type { Package, PackageName } from '@lovenotes-tools/utils/workspace';
 
 import { Option, PackageCommand } from './command';
 
@@ -28,33 +28,33 @@ export class RunCommand extends PackageCommand {
   static override paths = [[], ['run'], ['r']];
 
   static override usage = PackageCommand.Usage({
-    description: 'AFFiNE Monorepo scripts',
+    description: 'LoveNotes Monorepo scripts',
     details: `
-      \`affine web <script>\`    Run any script defined in package's package.json
+      \`lovenotes web <script>\`    Run any script defined in package's package.json
 
-      \`affine init\`            Generate the required files if there are any package added or removed
+      \`lovenotes init\`            Generate the required files if there are any package added or removed
 
-      \`affine clean\`           Clean the output files of ts, cargo, webpack, etc.
+      \`lovenotes clean\`           Clean the output files of ts, cargo, webpack, etc.
 
-      \`affine bundle\`          Bundle the packages
+      \`lovenotes bundle\`          Bundle the packages
 
-      \`affine build\`           A proxy for <-p package>'s \`build\` script
+      \`lovenotes build\`           A proxy for <-p package>'s \`build\` script
 
-      \`affine dev\`             A proxy for <-p package>'s \`dev\` script
+      \`lovenotes dev\`             A proxy for <-p package>'s \`dev\` script
     `,
     examples: [
       [`See detail of each command`, '$0 -h'],
       [
-        `Run custom 'xxx' script defined in @affine/web's package.json`,
+        `Run custom 'xxx' script defined in @lovenotes/web's package.json`,
         '$0 web xxx',
       ],
       [`Run 'init' for workspace`, '$0 init'],
       [`Clean dist of each package`, '$0 clean --dist'],
       [`Clean node_modules under each package`, '$0 clean --node-modules'],
       [`Clean everything`, '$0 clean --all'],
-      [`Run 'build' script for @affine/web`, '$0 build -p web'],
+      [`Run 'build' script for @lovenotes/web`, '$0 build -p web'],
       [
-        `Run 'build' script for @affine/web with all deps prebuild before`,
+        `Run 'build' script for @lovenotes/web with all deps prebuild before`,
         '$0 build -p web --deps',
       ],
     ],
@@ -140,9 +140,9 @@ export class RunCommand extends PackageCommand {
       }
     }
 
-    const isAFFiNECommand = args[0] === 'affine';
-    if (isAFFiNECommand) {
-      // remove 'affine' from 'affine xxx' command
+    const isLoveNotesCommand = args[0] === 'lovenotes';
+    if (isLoveNotesCommand) {
+      // remove 'lovenotes' from 'lovenotes xxx' command
       args.shift();
       args.push('-p', pkg.name);
 

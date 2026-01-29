@@ -16,7 +16,7 @@ export const container = style({
 });
 
 export const header = style({
-  background: 'var(--affine-background-primary-color)',
+  background: 'var(--lovenotes-background-primary-color)',
   position: 'relative',
   padding: '8px var(--h-padding, 16px)',
   width: '100%',
@@ -30,7 +30,7 @@ export const header = style({
 export const title = style({
   fontSize: '14px',
   fontWeight: 500,
-  color: 'var(--affine-text-secondary-color)',
+  color: 'var(--lovenotes-text-secondary-color)',
   display: 'flex',
   alignItems: 'center',
 });
@@ -72,20 +72,20 @@ export const loading = style({
 
 export const loadingTitle = style({
   fontWeight: 600,
-  fontSize: 'var(--affine-font-sm)',
-  color: 'var(--affine-text-secondary-color)',
+  fontSize: 'var(--lovenotes-font-sm)',
+  color: 'var(--lovenotes-text-secondary-color)',
 });
 
 export const loadingIcon = style({
   width: '44px',
   height: '44px',
-  color: 'var(--affine-icon-secondary)',
+  color: 'var(--lovenotes-icon-secondary)',
 });
 
 globalStyle(`${playground} svg`, {
   width: '18px',
   height: '18px',
-  color: 'var(--affine-text-secondary-color)',
+  color: 'var(--lovenotes-text-secondary-color)',
 });
 
 globalStyle(`${playground}:hover svg`, {

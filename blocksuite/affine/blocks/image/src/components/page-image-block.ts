@@ -1,12 +1,12 @@
-import type { ResolvedStateInfo } from '@blocksuite/affine-components/resource';
+import type { ResolvedStateInfo } from '@blocksuite/lovenotes-components/resource';
 import {
   focusBlockEnd,
   focusBlockStart,
   getNextBlockCommand,
   getPrevBlockCommand,
-} from '@blocksuite/affine-shared/commands';
-import { ImageSelection } from '@blocksuite/affine-shared/selection';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-shared/commands';
+import { ImageSelection } from '@blocksuite/lovenotes-shared/selection';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import type { BlockComponent, UIEventStateContext } from '@blocksuite/std';
 import {
@@ -31,7 +31,7 @@ export class ImageBlockPageComponent extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = css`
-    affine-page-image {
+    lovenotes-page-image {
       position: relative;
       display: flex;
       flex-direction: column;
@@ -41,7 +41,7 @@ export class ImageBlockPageComponent extends SignalWatcher(
       cursor: pointer;
     }
 
-    affine-page-image .loading {
+    lovenotes-page-image .loading {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,23 +62,23 @@ export class ImageBlockPageComponent extends SignalWatcher(
       }
     }
 
-    affine-page-image .affine-image-status {
+    lovenotes-page-image .lovenotes-image-status {
       position: absolute;
       left: 18px;
       bottom: 18px;
     }
 
-    affine-page-image .resizable-img {
+    lovenotes-page-image .resizable-img {
       position: relative;
       max-width: 100%;
     }
 
-    affine-page-image .resizable-img img {
+    lovenotes-page-image .resizable-img img {
       width: 100%;
       height: 100%;
     }
 
-    affine-page-image .comment-highlighted {
+    lovenotes-page-image .comment-highlighted {
       outline: 2px solid ${unsafeCSSVarV2('block/comment/highlightUnderline')};
     }
   `;
@@ -108,7 +108,7 @@ export class ImageBlockPageComponent extends SignalWatcher(
 
       const index = parent.children.indexOf(this._model);
       const blockId = this._doc.addBlock(
-        'affine:paragraph',
+        'lovenotes:paragraph',
         {},
         parent,
         index + 1
@@ -392,15 +392,15 @@ export class ImageBlockPageComponent extends SignalWatcher(
       ${when(
         Boolean(error && description),
         () =>
-          html`<affine-resource-status
-            class="affine-image-status"
+          html`<lovenotes-resource-status
+            class="lovenotes-image-status"
             .message=${description}
             .needUpload=${needUpload}
             .action=${() =>
               needUpload
                 ? this.block.resourceController.upload()
                 : this.block.refreshData()}
-          ></affine-resource-status>`
+          ></lovenotes-resource-status>`
       )}
     `;
   }
@@ -417,6 +417,6 @@ export class ImageBlockPageComponent extends SignalWatcher(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-page-image': ImageBlockPageComponent;
+    'lovenotes-page-image': ImageBlockPageComponent;
   }
 }

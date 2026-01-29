@@ -1,14 +1,14 @@
-import { ImageBlockModel, type RootBlockModel } from '@blocksuite/affine-model';
-import { FetchUtils } from '@blocksuite/affine-shared/adapters';
+import { ImageBlockModel, type RootBlockModel } from '@blocksuite/lovenotes-model';
+import { FetchUtils } from '@blocksuite/lovenotes-shared/adapters';
 import {
   CANVAS_EXPORT_IGNORE_TAGS,
   DEFAULT_IMAGE_PROXY_ENDPOINT,
-} from '@blocksuite/affine-shared/consts';
-import type { Viewport } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-shared/consts';
+import type { Viewport } from '@blocksuite/lovenotes-shared/types';
 import {
   isInsidePageEditor,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import type { IBound } from '@blocksuite/global/gfx';
 import { deserializeXYWH } from '@blocksuite/global/gfx';
@@ -136,7 +136,7 @@ export class ExportManager {
             : null
           : null;
         const imageCard = rootComponent?.querySelector(
-          'affine-image-fallback-card'
+          'lovenotes-image-fallback-card'
         );
         const isReady =
           !imageCard || imageCard.getAttribute('imageState') === '0';
@@ -187,7 +187,7 @@ export class ExportManager {
     const viewportElement = rootComponent.viewportElement;
     if (!viewportElement) return;
     const pageContainer = viewportElement.querySelector(
-      '.affine-page-root-block-container'
+      '.lovenotes-page-root-block-container'
     );
     const rect = pageContainer?.getBoundingClientRect();
     const { viewport } = rootComponent;
@@ -211,7 +211,7 @@ export class ExportManager {
           (element.classList.contains('expand') &&
             element.parentElement?.classList.contains('meta-data'))
         ) {
-          // the close and expand buttons in affine-doc-meta-data is not needed to be showed
+          // the close and expand buttons in lovenotes-doc-meta-data is not needed to be showed
           return true;
         } else {
           return false;
@@ -303,7 +303,7 @@ export class ExportManager {
       onclone: async (documentClone: Document, element: HTMLElement) => {
         // html2canvas can't support transform feature
         element.style.setProperty('transform', 'none');
-        const layer = element.classList.contains('.affine-edgeless-layer')
+        const layer = element.classList.contains('.lovenotes-edgeless-layer')
           ? element
           : null;
 
@@ -395,7 +395,7 @@ export class ExportManager {
     const containerComputedStyle = window.getComputedStyle(viewportElement);
 
     const container = rootComponent.querySelector(
-      '.affine-block-children-container'
+      '.lovenotes-block-children-container'
     );
 
     if (!container) return;
@@ -408,11 +408,11 @@ export class ExportManager {
     if (edgelessBackground) {
       await this._drawEdgelessBackground(ctx, {
         backgroundColor: containerComputedStyle.getPropertyValue(
-          '--affine-background-primary-color'
+          '--lovenotes-background-primary-color'
         ),
         size: getBgGridGap(edgelessBackground.zoom),
         gridColor: containerComputedStyle.getPropertyValue(
-          '--affine-edgeless-grid-color'
+          '--lovenotes-edgeless-grid-color'
         ),
       });
     }

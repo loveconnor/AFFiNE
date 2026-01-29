@@ -1,4 +1,4 @@
-import { appendParagraphCommand } from '@blocksuite/affine-block-paragraph';
+import { appendParagraphCommand } from '@blocksuite/lovenotes-block-paragraph';
 import {
   CodeBlockModel,
   ListBlockModel,
@@ -6,19 +6,19 @@ import {
   NoteDisplayMode,
   ParagraphBlockModel,
   type RootBlockModel,
-} from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
 import {
   PageViewportService,
   ViewportElementProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   focusTitle,
   getClosestBlockComponentByPoint,
   getDocTitleInlineEditor,
   getScrollContainer,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { Point } from '@blocksuite/global/gfx';
 import type { PointerEventState } from '@blocksuite/std';
 import { BlockComponent, BlockSelection, TextSelection } from '@blocksuite/std';
@@ -50,49 +50,49 @@ function testClickOnBlankArea(
 
 export class PageRootBlockComponent extends BlockComponent<RootBlockModel> {
   static override styles = css`
-    editor-host:has(> affine-page-root, * > affine-page-root) {
+    editor-host:has(> lovenotes-page-root, * > lovenotes-page-root) {
       display: block;
       height: 100%;
     }
 
-    affine-page-root {
+    lovenotes-page-root {
       display: block;
       height: 100%;
       cursor: default;
     }
 
-    .affine-page-root-block-container {
+    .lovenotes-page-root-block-container {
       display: flex;
       flex-direction: column;
       width: 100%;
       height: 100%;
-      font-family: var(--affine-font-family);
-      font-size: var(--affine-font-base);
-      line-height: var(--affine-line-height);
-      color: var(--affine-text-primary-color);
+      font-family: var(--lovenotes-font-family);
+      font-size: var(--lovenotes-font-base);
+      line-height: var(--lovenotes-line-height);
+      color: var(--lovenotes-text-primary-color);
       font-weight: 400;
-      max-width: var(--affine-editor-width);
+      max-width: var(--lovenotes-editor-width);
       margin: 0 auto;
 
       /* Leave a place for drag-handle */
       /* Do not use prettier format this style, or it will be broken */
       /* prettier-ignore */
-      padding-left: var(--affine-editor-side-padding, ${DOC_BLOCK_CHILD_PADDING}px);
+      padding-left: var(--lovenotes-editor-side-padding, ${DOC_BLOCK_CHILD_PADDING}px);
       /* prettier-ignore */
-      padding-right: var(--affine-editor-side-padding, ${DOC_BLOCK_CHILD_PADDING}px);
+      padding-right: var(--lovenotes-editor-side-padding, ${DOC_BLOCK_CHILD_PADDING}px);
       /* prettier-ignore */
-      padding-bottom: var(--affine-editor-bottom-padding, ${DOC_BOTTOM_PADDING}px);
+      padding-bottom: var(--lovenotes-editor-bottom-padding, ${DOC_BOTTOM_PADDING}px);
     }
 
     /* Extra small devices (phones, 640px and down) */
     @container viewport (width <= 640px) {
-      .affine-page-root-block-container {
+      .lovenotes-page-root-block-container {
         padding-left: ${DOC_BLOCK_CHILD_PADDING}px;
         padding-right: ${DOC_BLOCK_CHILD_PADDING}px;
       }
     }
 
-    .affine-block-element {
+    .lovenotes-block-element {
       display: block;
     }
 
@@ -118,7 +118,7 @@ export class PageRootBlockComponent extends BlockComponent<RootBlockModel> {
       return { id: firstText.id, created: false };
     } else {
       const newFirstParagraphId = this.store.addBlock(
-        'affine:paragraph',
+        'lovenotes:paragraph',
         {},
         defaultNote,
         0
@@ -132,7 +132,7 @@ export class PageRootBlockComponent extends BlockComponent<RootBlockModel> {
 
   prependParagraphWithText = (text: Text) => {
     const newFirstParagraphId = this.store.addBlock(
-      'affine:paragraph',
+      'lovenotes:paragraph',
       { text },
       this._getDefaultNoteBlock(),
       0
@@ -159,14 +159,14 @@ export class PageRootBlockComponent extends BlockComponent<RootBlockModel> {
   private _createDefaultNoteBlock() {
     const { store } = this;
 
-    const noteId = store.addBlock('affine:note', {}, store.root?.id);
+    const noteId = store.addBlock('lovenotes:note', {}, store.root?.id);
     return store.getModelById(noteId) as NoteBlockModel;
   }
 
   private _getDefaultNoteBlock() {
     return (
       this.store.root?.children.find(
-        child => child.flavour === 'affine:note'
+        child => child.flavour === 'lovenotes:note'
       ) ?? this._createDefaultNoteBlock()
     );
   }
@@ -233,7 +233,7 @@ export class PageRootBlockComponent extends BlockComponent<RootBlockModel> {
         let model: BlockModel | null = null;
         let current = this.store.getModelById(sel.blockId);
         while (current && !model) {
-          if (current.flavour === 'affine:note') {
+          if (current.flavour === 'lovenotes:note') {
             model = current;
           } else {
             current = this.store.getParent(current);
@@ -241,7 +241,7 @@ export class PageRootBlockComponent extends BlockComponent<RootBlockModel> {
         }
         if (!model) return;
         const prevNote = this.store.getPrev(model);
-        if (!prevNote || prevNote.flavour !== 'affine:note') {
+        if (!prevNote || prevNote.flavour !== 'lovenotes:note') {
           const isFirstText = sel.is(TextSelection) && sel.start.index === 0;
           const isBlock = sel.is(BlockSelection);
           if (isBlock || isFirstText) {
@@ -249,7 +249,7 @@ export class PageRootBlockComponent extends BlockComponent<RootBlockModel> {
           }
           return;
         }
-        const notes = this.store.getModelsByFlavour('affine:note');
+        const notes = this.store.getModelsByFlavour('lovenotes:note');
         const index = notes.indexOf(prevNote);
         if (index !== 0) return;
 
@@ -416,10 +416,10 @@ export class PageRootBlockComponent extends BlockComponent<RootBlockModel> {
     this.contentEditable = String(!this.store.readonly$.value);
 
     return html`
-      <div class="affine-page-root-block-container">${children} ${widgets}</div>
+      <div class="lovenotes-page-root-block-container">${children} ${widgets}</div>
     `;
   }
 
-  @query('.affine-page-root-block-container')
+  @query('.lovenotes-page-root-block-container')
   accessor rootElementContainer!: HTMLDivElement;
 }

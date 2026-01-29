@@ -1,17 +1,17 @@
-import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
-import type { DefaultOpenProperty } from '@affine/core/components/properties';
-import { PresentTool } from '@blocksuite/affine/blocks/frame';
-import { DefaultTool } from '@blocksuite/affine/blocks/surface';
-import type { DocTitle } from '@blocksuite/affine/fragments/doc-title';
-import { findCommentedTexts } from '@blocksuite/affine/inlines/comment';
-import type { DocMode, ReferenceParams } from '@blocksuite/affine/model';
-import { HighlightSelection } from '@blocksuite/affine/shared/selection';
+import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor';
+import type { DefaultOpenProperty } from '@lovenotes/core/components/properties';
+import { PresentTool } from '@blocksuite/lovenotes/blocks/frame';
+import { DefaultTool } from '@blocksuite/lovenotes/blocks/surface';
+import type { DocTitle } from '@blocksuite/lovenotes/fragments/doc-title';
+import { findCommentedTexts } from '@blocksuite/lovenotes/inlines/comment';
+import type { DocMode, ReferenceParams } from '@blocksuite/lovenotes/model';
+import { HighlightSelection } from '@blocksuite/lovenotes/shared/selection';
 import {
   DocModeProvider,
   findCommentedBlocks,
   findCommentedElements,
-} from '@blocksuite/affine/shared/services';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
+} from '@blocksuite/lovenotes/shared/services';
+import { GfxControllerIdentifier } from '@blocksuite/lovenotes/std/gfx';
 import type { InlineEditor } from '@blocksuite/std/inline';
 import { effect } from '@preact/signals-core';
 import { Entity, LiveData } from '@toeverything/infra';
@@ -37,7 +37,7 @@ export class Editor extends Entity {
   readonly doc = this.docService.doc;
   readonly isSharedMode =
     this.workspaceService.workspace.openOptions.isSharedMode;
-  readonly editorContainer$ = new LiveData<AffineEditorContainer | null>(null);
+  readonly editorContainer$ = new LiveData<LoveNotesEditorContainer | null>(null);
   readonly defaultOpenProperty$ = new LiveData<DefaultOpenProperty | undefined>(
     undefined
   );
@@ -269,7 +269,7 @@ export class Editor extends Entity {
   }
 
   bindEditorContainer(
-    editorContainer: AffineEditorContainer,
+    editorContainer: LoveNotesEditorContainer,
     docTitle?: DocTitle | null,
     scrollViewport?: HTMLElement | null
   ) {

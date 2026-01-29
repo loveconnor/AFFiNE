@@ -1,11 +1,11 @@
-import { updateBlockAlign } from '@blocksuite/affine-block-note';
-import { ImageBlockModel, TextAlign } from '@blocksuite/affine-model';
+import { updateBlockAlign } from '@blocksuite/lovenotes-block-note';
+import { ImageBlockModel, TextAlign } from '@blocksuite/lovenotes-model';
 import {
   ActionPlacement,
   blockCommentToolbarButton,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   BookmarkIcon,
   CaptionIcon,
@@ -142,7 +142,7 @@ const builtinToolbarConfig = {
           icon: BookmarkIcon(),
           when(ctx) {
             const supported =
-              ctx.store.schema.flavourSchemaMap.has('affine:attachment');
+              ctx.store.schema.flavourSchemaMap.has('lovenotes:attachment');
             if (!supported) return false;
 
             const block = ctx.getCurrentBlockByType(ImageBlockComponent);
@@ -215,7 +215,7 @@ export const createBuiltinToolbarConfigExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier(`affine:surface:${name}`),
+      id: BlockFlavourIdentifier(`lovenotes:surface:${name}`),
       config: builtinSurfaceToolbarConfig,
     }),
   ];

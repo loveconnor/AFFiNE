@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-widget-linked-doc';
+export * from '@blocksuite/lovenotes-widget-linked-doc';

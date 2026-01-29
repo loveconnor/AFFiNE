@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { ConnectionOverlay } from './connector-manager';
 import { ConnectorTool } from './connector-tool';
@@ -16,7 +16,7 @@ import { connectorQuickTool } from './toolbar/quick-tool';
 import { ConnectorElementView, ConnectorInteraction } from './view/view';
 
 export class ConnectorViewExtension extends ViewExtensionProvider {
-  override name = 'affine-connector-gfx';
+  override name = 'lovenotes-connector-gfx';
 
   override effect(): void {
     super.effect();

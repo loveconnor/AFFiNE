@@ -1,4 +1,4 @@
-import { useI18n } from '@affine/i18n';
+import { useI18n } from '@lovenotes/i18n';
 
 import { SettingGroup } from '../group';
 import { RowLayout } from '../row.layout';
@@ -9,34 +9,34 @@ export const OthersGroup = () => {
   const t = useI18n();
 
   return (
-    <SettingGroup title={t['com.affine.mobile.setting.others.title']()}>
+    <SettingGroup title={t['com.lovenotes.mobile.setting.others.title']()}>
       <RowLayout
         label={
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            {t['com.affine.mobile.setting.others.discord']()}
+            {t['com.lovenotes.mobile.setting.others.discord']()}
             <div className={hotTag}>Hot</div>
           </div>
         }
         href="https://discord.com/invite/whd5mjYqVw"
       />
       <RowLayout
-        label={t['com.affine.mobile.setting.others.github']()}
-        href="https://github.com/toeverything/AFFiNE"
+        label={t['com.lovenotes.mobile.setting.others.github']()}
+        href="https://github.com/toeverything/LoveNotes"
       />
 
       <RowLayout
-        label={t['com.affine.mobile.setting.others.website']()}
-        href="https://affine.pro/"
+        label={t['com.lovenotes.mobile.setting.others.website']()}
+        href="https://lovenotes.pro/"
       />
 
       <RowLayout
-        label={t['com.affine.mobile.setting.others.privacy']()}
-        href="https://affine.pro/privacy"
+        label={t['com.lovenotes.mobile.setting.others.privacy']()}
+        href="https://lovenotes.pro/privacy"
       />
 
       <RowLayout
-        label={t['com.affine.mobile.setting.others.terms']()}
-        href="https://affine.pro/terms"
+        label={t['com.lovenotes.mobile.setting.others.terms']()}
+        href="https://lovenotes.pro/terms"
       />
       <DeleteAccount />
     </SettingGroup>

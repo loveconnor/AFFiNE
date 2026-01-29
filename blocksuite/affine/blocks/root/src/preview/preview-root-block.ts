@@ -1,12 +1,12 @@
-import { NoteBlockModel, NoteDisplayMode } from '@blocksuite/affine-model';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+import { NoteBlockModel, NoteDisplayMode } from '@blocksuite/lovenotes-model';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { BlockComponent } from '@blocksuite/std';
 import { css, html } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 
 export class PreviewRootBlockComponent extends BlockComponent {
   static override styles = css`
-    affine-preview-root {
+    lovenotes-preview-root {
       display: block;
     }
   `;
@@ -36,6 +36,6 @@ export class PreviewRootBlockComponent extends BlockComponent {
       return !(isNote && displayOnEdgeless);
     });
 
-    return html`<div class="affine-preview-root">${children} ${widgets}</div>`;
+    return html`<div class="lovenotes-preview-root">${children} ${widgets}</div>`;
   }
 }

@@ -1,10 +1,10 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine-block-surface';
+import { EdgelessCRUDIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   packColor,
   type PickColorEvent,
-} from '@blocksuite/affine-components/color-picker';
-import type { LineDetailType } from '@blocksuite/affine-components/edgeless-line-styles-panel';
-import { createTextActions } from '@blocksuite/affine-gfx-text';
+} from '@blocksuite/lovenotes-components/color-picker';
+import type { LineDetailType } from '@blocksuite/lovenotes-components/edgeless-line-styles-panel';
+import { createTextActions } from '@blocksuite/lovenotes-gfx-text';
 import {
   type Color,
   DefaultTheme,
@@ -22,18 +22,18 @@ import {
   ShapeStyle,
   ShapeType,
   StrokeStyle,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   type ToolbarGenericAction,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
-import { getMostCommonValue } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { getMostCommonValue } from '@blocksuite/lovenotes-shared/utils';
 import {
   getRootBlock,
   LINE_STYLE_LIST,
   renderMenu,
-} from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { Bound } from '@blocksuite/global/gfx';
 import { AddTextIcon, ShapeIcon } from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@blocksuite/std';
@@ -333,6 +333,6 @@ export function hasGrouped(model: ShapeElementModel) {
 }
 
 export const shapeToolbarExtension = ToolbarModuleExtension({
-  id: BlockFlavourIdentifier('affine:surface:shape'),
+  id: BlockFlavourIdentifier('lovenotes:surface:shape'),
   config: shapeToolbarConfig,
 });

@@ -1,13 +1,13 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { toolbarWidget } from '.';
 import { effects } from './effects';
 
 export class ToolbarViewExtension extends ViewExtensionProvider {
-  override name = 'affine-toolbar-widget';
+  override name = 'lovenotes-toolbar-widget';
 
   override effect() {
     super.effect();

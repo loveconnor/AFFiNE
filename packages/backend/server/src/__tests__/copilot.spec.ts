@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { Readable } from 'node:stream';
 
-import { ProjectRoot } from '@affine-tools/utils/path';
+import { ProjectRoot } from '@lovenotes-tools/utils/path';
 import { PrismaClient } from '@prisma/client';
 import type { TestFn } from 'ava';
 import ava from 'ava';
@@ -194,7 +194,7 @@ test.beforeEach(async t => {
   Sinon.restore();
   const { auth, prompt } = t.context;
   await prompt.onApplicationBootstrap();
-  const user = await auth.signUp(`test-${randomUUID()}@affine.pro`, '123456');
+  const user = await auth.signUp(`test-${randomUUID()}@lovenotes.pro`, '123456');
   userId = user.id;
   promptName = randomUUID().replaceAll('-', '');
 });
@@ -290,7 +290,7 @@ test('should be able to render listed prompt', async t => {
     content: 'links:\n{{#links}}- {{.}}\n{{/links}}',
   };
   const params = {
-    links: ['https://affine.pro', 'https://github.com/toeverything/affine'],
+    links: ['https://lovenotes.pro', 'https://github.com/toeverything/lovenotes'],
   };
 
   await prompt.set(promptName, 'test', [msg]);
@@ -298,7 +298,7 @@ test('should be able to render listed prompt', async t => {
 
   t.is(
     testPrompt?.finish(params).pop()?.content,
-    'links:\n- https://affine.pro\n- https://github.com/toeverything/affine\n',
+    'links:\n- https://lovenotes.pro\n- https://github.com/toeverything/lovenotes\n',
     'should render the prompt'
   );
 });
@@ -387,7 +387,7 @@ test('should be able to update chat session prompt', async t => {
   // Update the session
   const updatedSessionId = await session.update({
     sessionId,
-    promptName: 'Chat With AFFiNE AI',
+    promptName: 'Chat With LoveNotes AI',
     userId,
   });
   t.is(updatedSessionId, sessionId, 'should update session with same id');
@@ -397,7 +397,7 @@ test('should be able to update chat session prompt', async t => {
   t.truthy(updatedSession, 'should retrieve updated session');
   t.is(
     updatedSession?.config.promptName,
-    'Chat With AFFiNE AI',
+    'Chat With LoveNotes AI',
     'should have updated prompt name'
   );
 });
@@ -436,7 +436,7 @@ test('should be able to fork chat session', async t => {
   });
   t.not(sessionId, forkedSessionId1, 'should fork a new session');
 
-  const newUser = await auth.signUp('darksky.1@affine.pro', '123456');
+  const newUser = await auth.signUp('darksky.1@lovenotes.pro', '123456');
   const forkedSessionId2 = await session.fork({
     userId: newUser.id,
     sessionId,
@@ -606,7 +606,7 @@ test('should be able to generate with message id', async t => {
 
     const message = await session.createMessage({
       sessionId,
-      attachments: ['https://affine.pro/example.jpg'],
+      attachments: ['https://lovenotes.pro/example.jpg'],
     });
 
     await s.pushByMessageId(message);
@@ -617,7 +617,7 @@ test('should be able to generate with message id', async t => {
       // system prompt
       undefined,
       // user prompt
-      ['https://affine.pro/example.jpg'],
+      ['https://lovenotes.pro/example.jpg'],
     ]);
   }
 
@@ -1102,7 +1102,7 @@ test('should be able to run text executor', async t => {
   {
     const ret = await wrapAsyncIter(
       executor.next(nodeData, {
-        attachments: ['https://affine.pro/example.jpg'],
+        attachments: ['https://lovenotes.pro/example.jpg'],
       })
     );
 
@@ -1116,7 +1116,7 @@ test('should be able to run text executor', async t => {
     );
     t.deepEqual(
       textStream.lastCall.args[1][0].params?.attachments,
-      ['https://affine.pro/example.jpg'],
+      ['https://lovenotes.pro/example.jpg'],
       'should pass attachments to provider'
     );
   }
@@ -1165,7 +1165,7 @@ test('should be able to run image executor', async t => {
   {
     const ret = await wrapAsyncIter(
       executor.next(nodeData, {
-        attachments: ['https://affine.pro/example.jpg'],
+        attachments: ['https://lovenotes.pro/example.jpg'],
       })
     );
 
@@ -1182,7 +1182,7 @@ test('should be able to run image executor', async t => {
     );
     t.deepEqual(
       imageStream.lastCall.args[1][0].params?.attachments,
-      ['https://affine.pro/example.jpg'],
+      ['https://lovenotes.pro/example.jpg'],
       'should pass attachments to provider'
     );
   }
@@ -2070,13 +2070,13 @@ test('should resolve model correctly based on subscription status and prompt con
   await db.aiPrompt.create({
     data: {
       name: promptName,
-      model: 'gemini-2.5-flash',
+      model: 'gpt-5',
       messages: {
         create: [{ idx: 0, role: 'system', content: 'test' }],
       },
       config: { proModels: ['gemini-2.5-pro', 'claude-sonnet-4-5@20250929'] },
       optionalModels: [
-        'gemini-2.5-flash',
+        'gpt-5',
         'gemini-2.5-pro',
         'claude-sonnet-4-5@20250929',
       ],
@@ -2119,7 +2119,7 @@ test('should resolve model correctly based on subscription status and prompt con
       'should fallback to default model when requesting pro model during trialing'
     );
 
-    const model4 = await s.resolveModel(true, 'gemini-2.5-flash');
+    const model4 = await s.resolveModel(true, 'gpt-5');
     t.snapshot(model4, 'should honor requested non-pro model during trialing');
 
     const model5 = await s.resolveModel(true);

@@ -1,94 +1,94 @@
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 extension Image {
   /// Check circle icon
-  static var affineCheckCircle: Image {
-    AffineIcons.checkCircle.image
+  static var lovenotesCheckCircle: Image {
+    LoveNotesIcons.checkCircle.image
   }
 
   /// More options icon
-  static var affineMore: Image {
-    AffineIcons.more.image
+  static var lovenotesMore: Image {
+    LoveNotesIcons.more.image
   }
 
   /// Arrow down icon
-  static var affineArrowDown: Image {
-    AffineIcons.arrowDown.image
+  static var lovenotesArrowDown: Image {
+    LoveNotesIcons.arrowDown.image
   }
 
   /// Tools icon
-  static var affineTools: Image {
-    AffineIcons.tools.image
+  static var lovenotesTools: Image {
+    LoveNotesIcons.tools.image
   }
 
   /// Box icon
-  static var affineBox: Image {
-    AffineIcons.box.image
+  static var lovenotesBox: Image {
+    LoveNotesIcons.box.image
   }
 
   /// Think icon
-  static var affineThink: Image {
-    AffineIcons.think.image
+  static var lovenotesThink: Image {
+    LoveNotesIcons.think.image
   }
 
   /// Web icon
-  static var affineWeb: Image {
-    AffineIcons.web.image
+  static var lovenotesWeb: Image {
+    LoveNotesIcons.web.image
   }
 
   /// Calendar icon
-  static var affineCalendar: Image {
-    AffineIcons.calendar.image
+  static var lovenotesCalendar: Image {
+    LoveNotesIcons.calendar.image
   }
 
   /// Camera icon
-  static var affineCamera: Image {
-    AffineIcons.camera.image
+  static var lovenotesCamera: Image {
+    LoveNotesIcons.camera.image
   }
 
   /// Close icon
-  static var affineClose: Image {
-    AffineIcons.close.image
+  static var lovenotesClose: Image {
+    LoveNotesIcons.close.image
   }
 
   /// Big arrow up icon
-  static var affineArrowUpBig: Image {
-    AffineIcons.arrowUpBig.image
+  static var lovenotesArrowUpBig: Image {
+    LoveNotesIcons.arrowUpBig.image
   }
 
   /// Broom icon
-  static var affineBroom: Image {
-    AffineIcons.broom.image
+  static var lovenotesBroom: Image {
+    LoveNotesIcons.broom.image
   }
 
   /// Bubble icon
-  static var affineBubble: Image {
-    AffineIcons.bubble.image
+  static var lovenotesBubble: Image {
+    LoveNotesIcons.bubble.image
   }
 
   /// Image icon
-  static var affineImage: Image {
-    AffineIcons.image.image
+  static var lovenotesImage: Image {
+    LoveNotesIcons.image.image
   }
 
   /// Page icon
-  static var affinePage: Image {
-    AffineIcons.page.image
+  static var lovenotesPage: Image {
+    LoveNotesIcons.page.image
   }
 
   /// Plus icon
-  static var affinePlus: Image {
-    AffineIcons.plus.image
+  static var lovenotesPlus: Image {
+    LoveNotesIcons.plus.image
   }
 
   /// Settings icon
-  static var affineSettings: Image {
-    AffineIcons.settings.image
+  static var lovenotesSettings: Image {
+    LoveNotesIcons.settings.image
   }
 
   /// Upload icon
-  static var affineUpload: Image {
-    AffineIcons.upload.image
+  static var lovenotesUpload: Image {
+    LoveNotesIcons.upload.image
   }
 }

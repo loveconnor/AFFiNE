@@ -1,4 +1,4 @@
-import type { ColumnDataType, SerializedCells } from '@blocksuite/affine-model';
+import type { ColumnDataType, SerializedCells } from '@blocksuite/lovenotes-model';
 import type { BlockSnapshot, DeltaInsert } from '@blocksuite/store';
 
 import { databaseBlockModels } from '../properties/model';

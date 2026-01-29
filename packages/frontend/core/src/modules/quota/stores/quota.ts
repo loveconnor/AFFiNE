@@ -1,5 +1,5 @@
-import type { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { workspaceQuotaQuery } from '@affine/graphql';
+import type { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
+import { workspaceQuotaQuery } from '@lovenotes/graphql';
 import { Store } from '@toeverything/infra';
 
 export class WorkspaceQuotaStore extends Store {

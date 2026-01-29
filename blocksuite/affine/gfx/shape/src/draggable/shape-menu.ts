@@ -5,13 +5,13 @@ import {
   type ShapeName,
   ShapeStyle,
   ShapeType,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   FeatureFlagService,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import type { ColorEvent } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import type { ColorEvent } from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { StyleGeneralIcon, StyleScribbleIcon } from '@blocksuite/icons/lit';
 import type { BlockComponent } from '@blocksuite/std';
@@ -48,7 +48,7 @@ export class EdgelessShapeMenu extends SignalWatcher(
     }
     .shape-type-container svg,
     .shape-style-container svg {
-      fill: var(--affine-icon-color);
+      fill: var(--lovenotes-icon-color);
       stroke: none;
     }
     menu-divider {

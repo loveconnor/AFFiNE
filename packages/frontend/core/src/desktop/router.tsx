@@ -7,7 +7,7 @@ import {
   useNavigate,
 } from 'react-router-dom';
 
-import { AffineErrorComponent } from '../components/affine/affine-error-boundary/affine-error-fallback';
+import { LoveNotesErrorComponent } from '../components/lovenotes/lovenotes-error-boundary/lovenotes-error-fallback';
 import { NavigateContext } from '../components/hooks/use-navigate-helper';
 import { RootWrapper } from './pages/root';
 
@@ -31,7 +31,7 @@ export function RootRouter() {
 export const topLevelRoutes = [
   {
     element: <RootRouter />,
-    errorElement: <AffineErrorComponent />,
+    errorElement: <LoveNotesErrorComponent />,
     children: [
       {
         path: '/',
@@ -134,6 +134,11 @@ export const topLevelRoutes = [
       {
         path: '/auth/:authType',
         lazy: () => import(/* webpackChunkName: "auth" */ './pages/auth/auth'),
+      },
+      {
+        path: '/sign-in',
+        lazy: () =>
+          import(/* webpackChunkName: "auth" */ './pages/auth/sign-in'),
       },
       {
         path: '/sign-In',

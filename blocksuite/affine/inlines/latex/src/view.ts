@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import {
@@ -11,7 +11,7 @@ import {
 import { LatexEditorInlineManagerExtension } from './latex-node/latex-editor-menu';
 
 export class LatexViewExtension extends ViewExtensionProvider {
-  override name = 'affine-latex-inline';
+  override name = 'lovenotes-latex-inline';
 
   override effect(): void {
     super.effect();

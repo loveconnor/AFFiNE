@@ -2,8 +2,8 @@ import {
   DefaultTool,
   EdgelessCRUDIdentifier,
   SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
-import { EmbedIframeService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-block-surface';
+import { EmbedIframeService } from '@blocksuite/lovenotes-shared/services';
 import { Bound, Vec } from '@blocksuite/global/gfx';
 import {
   BlockSelection,
@@ -48,7 +48,7 @@ export const insertEmbedIframeWithUrlCommand: Command<
     selectedBlockId = surfaceSelection.blockId;
   }
 
-  const flavour = 'affine:embed-iframe';
+  const flavour = 'lovenotes:embed-iframe';
   const props: Record<string, unknown> = { url };
   // When there is a selected block, it means that the selection is in note or edgeless text
   // we should insert the embed iframe block after the selected block and only need the url prop

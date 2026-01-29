@@ -34,11 +34,11 @@ public class GetCopilotHistoryIdsQuery: GraphQLQuery {
     "options": options
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("currentUser", CurrentUser?.self),
     ] }
@@ -49,11 +49,11 @@ public class GetCopilotHistoryIdsQuery: GraphQLQuery {
     /// CurrentUser
     ///
     /// Parent Type: `UserType`
-    public struct CurrentUser: AffineGraphQL.SelectionSet {
+    public struct CurrentUser: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("copilot", Copilot.self, arguments: ["workspaceId": .variable("workspaceId")]),
@@ -64,11 +64,11 @@ public class GetCopilotHistoryIdsQuery: GraphQLQuery {
       /// CurrentUser.Copilot
       ///
       /// Parent Type: `Copilot`
-      public struct Copilot: AffineGraphQL.SelectionSet {
+      public struct Copilot: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Copilot }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Copilot }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("chats", Chats.self, arguments: [
@@ -83,11 +83,11 @@ public class GetCopilotHistoryIdsQuery: GraphQLQuery {
         /// CurrentUser.Copilot.Chats
         ///
         /// Parent Type: `PaginatedCopilotHistoriesType`
-        public struct Chats: AffineGraphQL.SelectionSet {
+        public struct Chats: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PaginatedCopilotHistoriesType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PaginatedCopilotHistoriesType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("pageInfo", PageInfo.self),
@@ -100,11 +100,11 @@ public class GetCopilotHistoryIdsQuery: GraphQLQuery {
           /// CurrentUser.Copilot.Chats.PageInfo
           ///
           /// Parent Type: `PageInfo`
-          public struct PageInfo: AffineGraphQL.SelectionSet {
+          public struct PageInfo: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PageInfo }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PageInfo }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("hasNextPage", Bool.self),
@@ -122,11 +122,11 @@ public class GetCopilotHistoryIdsQuery: GraphQLQuery {
           /// CurrentUser.Copilot.Chats.Edge
           ///
           /// Parent Type: `CopilotHistoriesTypeEdge`
-          public struct Edge: AffineGraphQL.SelectionSet {
+          public struct Edge: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotHistoriesTypeEdge }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotHistoriesTypeEdge }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("cursor", String.self),
@@ -139,11 +139,11 @@ public class GetCopilotHistoryIdsQuery: GraphQLQuery {
             /// CurrentUser.Copilot.Chats.Edge.Node
             ///
             /// Parent Type: `CopilotHistories`
-            public struct Node: AffineGraphQL.SelectionSet {
+            public struct Node: LoveNotesGraphQL.SelectionSet {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotHistories }
+              public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotHistories }
               public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("sessionId", String.self),
@@ -158,21 +158,21 @@ public class GetCopilotHistoryIdsQuery: GraphQLQuery {
               /// CurrentUser.Copilot.Chats.Edge.Node.Message
               ///
               /// Parent Type: `ChatMessage`
-              public struct Message: AffineGraphQL.SelectionSet {
+              public struct Message: LoveNotesGraphQL.SelectionSet {
                 public let __data: DataDict
                 public init(_dataDict: DataDict) { __data = _dataDict }
 
-                public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.ChatMessage }
+                public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.ChatMessage }
                 public static var __selections: [ApolloAPI.Selection] { [
                   .field("__typename", String.self),
-                  .field("id", AffineGraphQL.ID?.self),
+                  .field("id", LoveNotesGraphQL.ID?.self),
                   .field("role", String.self),
-                  .field("createdAt", AffineGraphQL.DateTime.self),
+                  .field("createdAt", LoveNotesGraphQL.DateTime.self),
                 ] }
 
-                public var id: AffineGraphQL.ID? { __data["id"] }
+                public var id: LoveNotesGraphQL.ID? { __data["id"] }
                 public var role: String { __data["role"] }
-                public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
+                public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
               }
             }
           }

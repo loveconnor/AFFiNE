@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 import { BlockViewExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 
@@ -11,7 +11,7 @@ import { edgelessTextToolbarExtension } from './edgeless-toolbar';
 import { effects } from './effects';
 
 export class EdgelessTextViewExtension extends ViewExtensionProvider {
-  override name = 'affine-edgeless-text-block';
+  override name = 'lovenotes-edgeless-text-block';
 
   override effect() {
     super.effect();
@@ -25,8 +25,8 @@ export class EdgelessTextViewExtension extends ViewExtensionProvider {
     if (isEdgeless) {
       context.register([
         BlockViewExtension(
-          'affine:edgeless-text',
-          literal`affine-edgeless-text`
+          'lovenotes:edgeless-text',
+          literal`lovenotes-edgeless-text`
         ),
       ]);
       context.register(edgelessTextToolbarExtension);

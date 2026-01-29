@@ -1,4 +1,4 @@
-import { Button } from '@affine/component';
+import { Button } from '@lovenotes/component';
 import clsx from 'clsx';
 import {
   cloneElement,

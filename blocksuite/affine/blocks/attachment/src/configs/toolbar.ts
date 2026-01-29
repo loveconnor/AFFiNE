@@ -1,21 +1,21 @@
-import { createLitPortal } from '@blocksuite/affine-components/portal';
+import { createLitPortal } from '@blocksuite/lovenotes-components/portal';
 import {
   AttachmentBlockModel,
   defaultAttachmentProps,
   type EmbedCardStyle,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   ActionPlacement,
   type ToolbarAction,
   type ToolbarActionGroup,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
-import { getBlockProps } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { getBlockProps } from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   CaptionIcon,
@@ -140,12 +140,12 @@ export const attachmentViewDropdownMenu = {
       });
     };
 
-    return html`<affine-view-dropdown-menu
+    return html`<lovenotes-view-dropdown-menu
       @toggle=${onToggle}
       .actions=${actions.value}
       .context=${ctx}
       .viewType$=${viewType$}
-    ></affine-view-dropdown-menu>`;
+    ></lovenotes-view-dropdown-menu>`;
   },
 } as const satisfies ToolbarActionGroup<ToolbarAction>;
 
@@ -362,12 +362,12 @@ const builtinSurfaceToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-card-style-dropdown-menu
+          html`<lovenotes-card-style-dropdown-menu
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
             .style$=${style$}
-          ></affine-card-style-dropdown-menu>`
+          ></lovenotes-card-style-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -399,7 +399,7 @@ export const createBuiltinToolbarConfigExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier(`affine:surface:${name}`),
+      id: BlockFlavourIdentifier(`lovenotes:surface:${name}`),
       config: builtinSurfaceToolbarConfig,
     }),
   ];

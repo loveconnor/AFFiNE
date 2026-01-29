@@ -26,11 +26,11 @@ public class GetWorkspaceEmbeddingIgnoredDocsQuery: GraphQLQuery {
     "pagination": pagination
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -41,11 +41,11 @@ public class GetWorkspaceEmbeddingIgnoredDocsQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("embedding", Embedding.self),
@@ -56,11 +56,11 @@ public class GetWorkspaceEmbeddingIgnoredDocsQuery: GraphQLQuery {
       /// Workspace.Embedding
       ///
       /// Parent Type: `CopilotWorkspaceConfig`
-      public struct Embedding: AffineGraphQL.SelectionSet {
+      public struct Embedding: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotWorkspaceConfig }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotWorkspaceConfig }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("ignoredDocs", IgnoredDocs.self, arguments: ["pagination": .variable("pagination")]),
@@ -71,11 +71,11 @@ public class GetWorkspaceEmbeddingIgnoredDocsQuery: GraphQLQuery {
         /// Workspace.Embedding.IgnoredDocs
         ///
         /// Parent Type: `PaginatedIgnoredDocsType`
-        public struct IgnoredDocs: AffineGraphQL.SelectionSet {
+        public struct IgnoredDocs: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PaginatedIgnoredDocsType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PaginatedIgnoredDocsType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("totalCount", Int.self),
@@ -90,11 +90,11 @@ public class GetWorkspaceEmbeddingIgnoredDocsQuery: GraphQLQuery {
           /// Workspace.Embedding.IgnoredDocs.PageInfo
           ///
           /// Parent Type: `PageInfo`
-          public struct PageInfo: AffineGraphQL.SelectionSet {
+          public struct PageInfo: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PageInfo }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PageInfo }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("endCursor", String?.self),
@@ -108,11 +108,11 @@ public class GetWorkspaceEmbeddingIgnoredDocsQuery: GraphQLQuery {
           /// Workspace.Embedding.IgnoredDocs.Edge
           ///
           /// Parent Type: `CopilotWorkspaceIgnoredDocTypeEdge`
-          public struct Edge: AffineGraphQL.SelectionSet {
+          public struct Edge: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotWorkspaceIgnoredDocTypeEdge }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotWorkspaceIgnoredDocTypeEdge }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("node", Node.self),
@@ -123,17 +123,17 @@ public class GetWorkspaceEmbeddingIgnoredDocsQuery: GraphQLQuery {
             /// Workspace.Embedding.IgnoredDocs.Edge.Node
             ///
             /// Parent Type: `CopilotWorkspaceIgnoredDoc`
-            public struct Node: AffineGraphQL.SelectionSet {
+            public struct Node: LoveNotesGraphQL.SelectionSet {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotWorkspaceIgnoredDoc }
+              public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotWorkspaceIgnoredDoc }
               public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("docId", String.self),
-                .field("createdAt", AffineGraphQL.DateTime.self),
-                .field("docCreatedAt", AffineGraphQL.DateTime?.self),
-                .field("docUpdatedAt", AffineGraphQL.DateTime?.self),
+                .field("createdAt", LoveNotesGraphQL.DateTime.self),
+                .field("docCreatedAt", LoveNotesGraphQL.DateTime?.self),
+                .field("docUpdatedAt", LoveNotesGraphQL.DateTime?.self),
                 .field("title", String?.self),
                 .field("createdBy", String?.self),
                 .field("createdByAvatar", String?.self),
@@ -141,9 +141,9 @@ public class GetWorkspaceEmbeddingIgnoredDocsQuery: GraphQLQuery {
               ] }
 
               public var docId: String { __data["docId"] }
-              public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
-              public var docCreatedAt: AffineGraphQL.DateTime? { __data["docCreatedAt"] }
-              public var docUpdatedAt: AffineGraphQL.DateTime? { __data["docUpdatedAt"] }
+              public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
+              public var docCreatedAt: LoveNotesGraphQL.DateTime? { __data["docCreatedAt"] }
+              public var docUpdatedAt: LoveNotesGraphQL.DateTime? { __data["docUpdatedAt"] }
               public var title: String? { __data["title"] }
               public var createdBy: String? { __data["createdBy"] }
               public var createdByAvatar: String? { __data["createdByAvatar"] }

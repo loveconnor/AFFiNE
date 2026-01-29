@@ -1,11 +1,11 @@
-package app.affine.pro
+package app.lovenotes.pro
 
 import android.webkit.WebView
-import app.affine.pro.service.CookieStore
-import app.affine.pro.utils.dataStore
-import app.affine.pro.utils.get
-import app.affine.pro.utils.getCurrentServerBaseUrl
-import app.affine.pro.utils.logger.FileTree
+import app.lovenotes.pro.service.CookieStore
+import app.lovenotes.pro.utils.dataStore
+import app.lovenotes.pro.utils.get
+import app.lovenotes.pro.utils.getCurrentServerBaseUrl
+import app.lovenotes.pro.utils.logger.FileTree
 import com.getcapacitor.Bridge
 import com.getcapacitor.WebViewListener
 import kotlinx.coroutines.Dispatchers
@@ -24,9 +24,9 @@ object AuthInitializer {
                 MainScope().launch(Dispatchers.IO) {
                     try {
                         val server = bridge.getCurrentServerBaseUrl().toHttpUrl()
-                        val sessionCookieStr = AFFiNEApp.context().dataStore
+                        val sessionCookieStr = LoveNotesApp.context().dataStore
                             .get(server.host + CookieStore.AFFINE_SESSION)
-                        val userIdCookieStr = AFFiNEApp.context().dataStore
+                        val userIdCookieStr = LoveNotesApp.context().dataStore
                             .get(server.host + CookieStore.AFFINE_USER_ID)
                         if (sessionCookieStr.isEmpty() || userIdCookieStr.isEmpty()) {
                             Timber.i("[init] user has not signed in yet.")

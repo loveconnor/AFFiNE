@@ -1,4 +1,4 @@
-import { ColorScheme, NoteShadow } from '@blocksuite/affine-model';
+import { ColorScheme, NoteShadow } from '@blocksuite/lovenotes-model';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -88,7 +88,7 @@ export class EdgelessNoteShadowPanel extends WithDisposable(LitElement) {
     }
 
     .item:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
   `;
 
@@ -110,7 +110,7 @@ export class EdgelessNoteShadowPanel extends WithDisposable(LitElement) {
             style=${styleMap({
               border:
                 this.value === shadow.type
-                  ? '1px solid var(--affine-brand-color)'
+                  ? '1px solid var(--lovenotes-brand-color)'
                   : 'none',
             })}
           >

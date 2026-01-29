@@ -1,6 +1,6 @@
 //
 //  Paywall.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //
@@ -12,7 +12,7 @@ import WebKit
 
 public enum Paywall {
   package static let revenueCatToken: String = "appl_FIzFhieVpSSmJRYJWwhVrgtnsVf"
-  package static let revenueCatProxyEndpoit = URL(string: "https://iap.affine.pro/")!
+  package static let revenueCatProxyEndpoit = URL(string: "https://iap.lovenotes.pro/")!
   package static var isPurchasesConfigured = false
 
   private static let setupExecution: Void = {
@@ -46,7 +46,7 @@ public enum Paywall {
     default:
       break
     }
-    let view = AffinePaywallPageView(viewModel: viewModel)
+    let view = LoveNotesPaywallPageView(viewModel: viewModel)
     let hostingController = UIHostingController(rootView: view)
     viewModel.bind(controller: hostingController)
     hostingController.modalPresentationStyle = .overFullScreen

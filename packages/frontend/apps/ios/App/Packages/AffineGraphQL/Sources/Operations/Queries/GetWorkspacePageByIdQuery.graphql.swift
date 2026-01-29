@@ -26,11 +26,11 @@ public class GetWorkspacePageByIdQuery: GraphQLQuery {
     "pageId": pageId
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -41,11 +41,11 @@ public class GetWorkspacePageByIdQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("doc", Doc.self, arguments: ["docId": .variable("pageId")]),
@@ -57,24 +57,24 @@ public class GetWorkspacePageByIdQuery: GraphQLQuery {
       /// Workspace.Doc
       ///
       /// Parent Type: `DocType`
-      public struct Doc: AffineGraphQL.SelectionSet {
+      public struct Doc: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.DocType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.DocType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", String.self),
-          .field("mode", GraphQLEnum<AffineGraphQL.PublicDocMode>.self),
-          .field("defaultRole", GraphQLEnum<AffineGraphQL.DocRole>.self),
+          .field("mode", GraphQLEnum<LoveNotesGraphQL.PublicDocMode>.self),
+          .field("defaultRole", GraphQLEnum<LoveNotesGraphQL.DocRole>.self),
           .field("public", Bool.self),
           .field("title", String?.self),
           .field("summary", String?.self),
         ] }
 
         public var id: String { __data["id"] }
-        public var mode: GraphQLEnum<AffineGraphQL.PublicDocMode> { __data["mode"] }
-        public var defaultRole: GraphQLEnum<AffineGraphQL.DocRole> { __data["defaultRole"] }
+        public var mode: GraphQLEnum<LoveNotesGraphQL.PublicDocMode> { __data["mode"] }
+        public var defaultRole: GraphQLEnum<LoveNotesGraphQL.DocRole> { __data["defaultRole"] }
         public var `public`: Bool { __data["public"] }
         public var title: String? { __data["title"] }
         public var summary: String? { __data["summary"] }

@@ -1,13 +1,13 @@
 # iOS
 
-AFFiNE iOS app.
+LoveNotes iOS app.
 
 ## Build
 
 - `yarn install`
-- `BUILD_TYPE=canary PUBLIC_PATH="/" yarn affine @affine/ios build`
-- `yarn affine @affine/ios cap sync`
-- `yarn affine @affine/ios cap open ios`
+- `BUILD_TYPE=canary PUBLIC_PATH="/" yarn lovenotes @lovenotes/ios build`
+- `yarn lovenotes @lovenotes/ios cap sync`
+- `yarn lovenotes @lovenotes/ios cap open ios`
 
 ## Live Reload
 
@@ -16,5 +16,5 @@ AFFiNE iOS app.
 - `yarn install`
 - `yarn dev`
   - select `ios` for the "Distribution" option
-- `yarn affine @affine/ios sync:dev`
-- `yarn affine @affine/ios cap open ios`
+- `yarn lovenotes @lovenotes/ios sync:dev`
+- `yarn lovenotes @lovenotes/ios cap open ios`

@@ -1,4 +1,4 @@
-import type { ReferenceParams } from '@blocksuite/affine-model';
+import type { ReferenceParams } from '@blocksuite/lovenotes-model';
 import type { DeltaInsert } from '@blocksuite/store';
 import isEqual from 'lodash-es/isEqual';
 

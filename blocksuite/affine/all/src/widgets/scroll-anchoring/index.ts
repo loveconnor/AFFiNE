@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-widget-scroll-anchoring';
+export * from '@blocksuite/lovenotes-widget-scroll-anchoring';

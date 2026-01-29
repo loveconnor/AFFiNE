@@ -1,6 +1,6 @@
-import { type Color, ColorScheme } from '@blocksuite/affine-model';
-import { FeatureFlagService } from '@blocksuite/affine-shared/services';
-import { requestConnectedFrame } from '@blocksuite/affine-shared/utils';
+import { type Color, ColorScheme } from '@blocksuite/lovenotes-model';
+import { FeatureFlagService } from '@blocksuite/lovenotes-shared/services';
+import { requestConnectedFrame } from '@blocksuite/lovenotes-shared/utils';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import type { IBound } from '@blocksuite/global/gfx';
 import { getBoundWithRotation, intersects } from '@blocksuite/global/gfx';

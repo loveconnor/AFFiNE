@@ -1,6 +1,6 @@
-import { Button } from '@affine/component/ui/button';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import { useI18n } from '@affine/i18n';
+import { Button } from '@lovenotes/component/ui/button';
+import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
+import { useI18n } from '@lovenotes/i18n';
 import { useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
@@ -21,7 +21,7 @@ export const SignIn = () => {
       onClick={onClickSignIn}
       data-testid="share-page-sign-in-button"
     >
-      {t['com.affine.share-page.header.login']()}
+      {t['com.lovenotes.share-page.header.login']()}
     </Button>
   );
 };

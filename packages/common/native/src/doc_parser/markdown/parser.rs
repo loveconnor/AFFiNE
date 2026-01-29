@@ -888,12 +888,12 @@ fn parse_youtube_video_id(src: &str) -> Option<String> {
 }
 
 const AFFINE_DOMAINS: [&str; 6] = [
-  "affine.pro",
-  "app.affine.pro",
-  "insider.affine.pro",
-  "affine.fail",
+  "lovenotes.pro",
+  "app.lovenotes.pro",
+  "insider.lovenotes.pro",
+  "lovenotes.fail",
   "toeverything.app",
-  "apple.getaffineapp.com",
+  "apple.getlovenotesapp.com",
 ];
 
 fn is_valid_generic_embed_url(url: &str) -> bool {
@@ -1690,10 +1690,10 @@ mod tests {
   }
 
   #[test]
-  fn test_validate_markdown_rejects_iframe_affine_domain() {
+  fn test_validate_markdown_rejects_iframe_lovenotes_domain() {
     let markdown = r#"# Title
 
-<iframe src="https://affine.pro/embed"></iframe>
+<iframe src="https://lovenotes.pro/embed"></iframe>
 "#;
     let result = validate_markdown(markdown);
     assert!(result.is_err());

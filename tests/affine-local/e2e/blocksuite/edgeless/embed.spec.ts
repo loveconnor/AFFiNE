@@ -1,17 +1,17 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   locateEditorContainer,
   locateToolbar,
-} from '@affine-test/kit/utils/editor';
-import { pressEnter } from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/editor';
+import { pressEnter } from '@lovenotes-test/kit/utils/keyboard';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { isContainedInBoundingBox } from '@affine-test/kit/utils/utils';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { isContainedInBoundingBox } from '@lovenotes-test/kit/utils/utils';
 import { expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
@@ -42,18 +42,18 @@ test('should close embed editing modal when editor switching to page mode by sho
 });
 
 test('embed card should not overflow the edgeless note', async ({ page }) => {
-  const note = page.locator('affine-edgeless-note');
+  const note = page.locator('lovenotes-edgeless-note');
   await note.dblclick();
   await type(page, '/github');
   await pressEnter(page);
   await page
     .locator('.embed-card-modal-input')
-    .fill('https://github.com/toeverything/AFFiNE/pull/10442');
+    .fill('https://github.com/toeverything/LoveNotes/pull/10442');
   await pressEnter(page);
 
-  const embedCard = page.locator('affine-embed-github-block');
+  const embedCard = page.locator('lovenotes-embed-github-block');
   await embedCard
-    .locator('.affine-embed-github-block:not(.loading)')
+    .locator('.lovenotes-embed-github-block:not(.loading)')
     .waitFor({ state: 'visible' });
   expect(await isContainedInBoundingBox(note, embedCard, true)).toBe(true);
 });

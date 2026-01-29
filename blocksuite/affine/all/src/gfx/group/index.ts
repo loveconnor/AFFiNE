@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-gfx-group';
+export * from '@blocksuite/lovenotes-gfx-group';

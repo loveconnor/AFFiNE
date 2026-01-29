@@ -1,5 +1,5 @@
-import { Separator } from '@affine/admin/components/ui/separator';
-import { adminWorkspaceQuery } from '@affine/graphql';
+import { Separator } from '@lovenotes/admin/components/ui/separator';
+import { adminWorkspaceQuery } from '@lovenotes/graphql';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useMemo } from 'react';
 

@@ -1,18 +1,18 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   createRandomUser,
   enableCloudWorkspace,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
-import { clickUserInfoCard } from '@affine-test/kit/utils/setting';
+} from '@lovenotes-test/kit/utils/cloud';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@lovenotes-test/kit/utils/page-logic';
+import { clickUserInfoCard } from '@lovenotes-test/kit/utils/setting';
 import {
   clickSideBarAllPageButton,
   clickSideBarSettingButton,
   clickSideBarUseAvatar,
-} from '@affine-test/kit/utils/sidebar';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@lovenotes-test/kit/utils/sidebar';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 test('can open login modal in workspace list', async ({ page }) => {

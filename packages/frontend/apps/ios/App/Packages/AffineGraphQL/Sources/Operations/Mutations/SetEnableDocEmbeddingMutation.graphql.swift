@@ -26,11 +26,11 @@ public class SetEnableDocEmbeddingMutation: GraphQLMutation {
     "enableDocEmbedding": enableDocEmbedding
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("updateWorkspace", UpdateWorkspace.self, arguments: ["input": [
         "id": .variable("id"),
@@ -44,17 +44,17 @@ public class SetEnableDocEmbeddingMutation: GraphQLMutation {
     /// UpdateWorkspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct UpdateWorkspace: AffineGraphQL.SelectionSet {
+    public struct UpdateWorkspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", AffineGraphQL.ID.self),
+        .field("id", LoveNotesGraphQL.ID.self),
       ] }
 
-      public var id: AffineGraphQL.ID { __data["id"] }
+      public var id: LoveNotesGraphQL.ID { __data["id"] }
     }
   }
 }

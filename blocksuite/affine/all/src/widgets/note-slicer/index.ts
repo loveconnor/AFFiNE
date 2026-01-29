@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-widget-note-slicer';
+export * from '@blocksuite/lovenotes-widget-note-slicer';

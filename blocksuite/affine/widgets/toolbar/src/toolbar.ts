@@ -1,25 +1,25 @@
-import { DatabaseSelection } from '@blocksuite/affine-block-database';
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
-import { TableSelection } from '@blocksuite/affine-block-table';
+import { DatabaseSelection } from '@blocksuite/lovenotes-block-database';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
+import { TableSelection } from '@blocksuite/lovenotes-block-table';
 import {
   darkToolbarStyles,
   type EditorMenuButton,
   EditorToolbar,
   lightToolbarStyles,
-} from '@blocksuite/affine-components/toolbar';
+} from '@blocksuite/lovenotes-components/toolbar';
 import {
   CodeBlockModel,
   ImageBlockModel,
   ListBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   ToolbarContext,
   ToolbarFlag as Flag,
   ToolbarRegistryIdentifier,
-} from '@blocksuite/affine-shared/services';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import {
   Bound,
   getCommonBound,
@@ -48,9 +48,9 @@ import toPairs from 'lodash-es/toPairs';
 
 import { autoUpdatePosition, renderToolbar, sideMap } from './utils';
 
-export const AFFINE_TOOLBAR_WIDGET = 'affine-toolbar-widget';
+export const AFFINE_TOOLBAR_WIDGET = 'lovenotes-toolbar-widget';
 
-export class AffineToolbarWidget extends WidgetComponent {
+export class LoveNotesToolbarWidget extends WidgetComponent {
   static override styles = css`
     editor-toolbar {
       position: absolute;
@@ -61,7 +61,7 @@ export class AffineToolbarWidget extends WidgetComponent {
       width: max-content;
       touch-action: none;
       backface-visibility: hidden;
-      z-index: var(--affine-z-index-popover);
+      z-index: var(--lovenotes-z-index-popover);
 
       will-change: opacity, overlay, display, transform;
       transition-property: opacity, overlay, display;
@@ -173,7 +173,7 @@ export class AffineToolbarWidget extends WidgetComponent {
   ) {
     const gfx = ctx.gfx;
     const surface = gfx.surface;
-    let flavour = 'affine:surface';
+    let flavour = 'lovenotes:surface';
     let elements: GfxModel[] = [];
     let hasLocked = false;
     let sideOptions = null;
@@ -210,21 +210,21 @@ export class AffineToolbarWidget extends WidgetComponent {
       ]);
 
       if (hasLocked) {
-        flavour = 'affine:surface:locked';
+        flavour = 'lovenotes:surface:locked';
       } else {
         if (paired.length === 1) {
           flavour = paired[0][0];
-          if (flavour === 'affine:surface:shape' && paired[0][1].length === 1) {
+          if (flavour === 'lovenotes:surface:shape' && paired[0][1].length === 1) {
             sideOptions = sideMap.get(flavour) ?? null;
           }
         }
       }
       if (!sideOptions) {
         const flavours = new Set(paired.map(([f]) => f));
-        if (flavours.has('affine:surface:frame')) {
-          sideOptions = sideMap.get('affine:surface:frame') ?? null;
-        } else if (flavours.has('affine:surface:group')) {
-          sideOptions = sideMap.get('affine:surface:group') ?? null;
+        if (flavours.has('lovenotes:surface:frame')) {
+          sideOptions = sideMap.get('lovenotes:surface:frame') ?? null;
+        } else if (flavours.has('lovenotes:surface:group')) {
+          sideOptions = sideMap.get('lovenotes:surface:group') ?? null;
         }
       }
     }
@@ -293,8 +293,8 @@ export class AffineToolbarWidget extends WidgetComponent {
           this.setReferenceElementWithRange(range);
 
           sideOptions$.value = null;
-          flavour$.value = 'affine:note';
-          placement$.value = toolbarRegistry.getModulePlacement('affine:note');
+          flavour$.value = 'lovenotes:note';
+          placement$.value = toolbarRegistry.getModulePlacement('lovenotes:note');
           flags.refresh(Flag.Text);
         });
       })
@@ -344,8 +344,8 @@ export class AffineToolbarWidget extends WidgetComponent {
         this.setReferenceElementWithRange(range);
 
         sideOptions$.value = null;
-        flavour$.value = 'affine:note';
-        placement$.value = toolbarRegistry.getModulePlacement('affine:note');
+        flavour$.value = 'lovenotes:note';
+        placement$.value = toolbarRegistry.getModulePlacement('lovenotes:note');
         flags.refresh(Flag.Native);
       });
     });
@@ -355,7 +355,7 @@ export class AffineToolbarWidget extends WidgetComponent {
       std.selection.filter$(BlockSelection).subscribe(selections => {
         const blockIds = selections.map(s => s.blockId);
         const count = blockIds.length;
-        let flavour = 'affine:note';
+        let flavour = 'lovenotes:note';
         let activated = context.activated && Boolean(count);
 
         if (activated) {
@@ -396,7 +396,7 @@ export class AffineToolbarWidget extends WidgetComponent {
           flavour$.value = flavour;
           placement$.value = toolbarRegistry.getModulePlacement(
             flavour,
-            flavour === 'affine:note' ? 'top' : 'top-start'
+            flavour === 'lovenotes:note' ? 'top' : 'top-start'
           );
           flags.refresh(Flag.Block);
         });

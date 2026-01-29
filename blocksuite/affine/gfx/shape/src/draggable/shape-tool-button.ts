@@ -1,5 +1,5 @@
-import { type ShapeName, ShapeType } from '@blocksuite/affine-model';
-import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { type ShapeName, ShapeType } from '@blocksuite/lovenotes-model';
+import { EdgelessToolbarToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import { css, html, LitElement } from 'lit';
 
@@ -69,10 +69,10 @@ export class EdgelessShapeToolButton extends EdgelessToolbarToolMixin(
         class="edgeless-shape-button"
         .tooltip=${this.popper
           ? ''
-          : html`<affine-tooltip-content-with-shortcut
+          : html`<lovenotes-tooltip-content-with-shortcut
               data-tip="${'Shape'}"
               data-shortcut="${'S'}"
-            ></affine-tooltip-content-with-shortcut>`}
+            ></lovenotes-tooltip-content-with-shortcut>`}
         .tooltipOffset=${5}
         .active=${active}
       >

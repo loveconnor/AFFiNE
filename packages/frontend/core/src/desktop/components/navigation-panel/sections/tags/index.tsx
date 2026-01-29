@@ -1,9 +1,9 @@
-import { IconButton } from '@affine/component';
-import { RenameModal } from '@affine/component/rename-modal';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import { TagService } from '@affine/core/modules/tag';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { IconButton } from '@lovenotes/component';
+import { RenameModal } from '@lovenotes/component/rename-modal';
+import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
+import { TagService } from '@lovenotes/core/modules/tag';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
 import { AddTagIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -48,7 +48,7 @@ export const NavigationPanelTags = () => {
       path={path}
       testId="navigation-panel-tags"
       headerClassName={styles.draggedOverHighlight}
-      title={t['com.affine.rootAppSidebar.tags']()}
+      title={t['com.lovenotes.rootAppSidebar.tags']()}
       actions={
         <div className={styles.iconContainer}>
           <IconButton
@@ -56,7 +56,7 @@ export const NavigationPanelTags = () => {
             onClick={handleOpenCreateModal}
             size="16"
             tooltip={t[
-              'com.affine.rootAppSidebar.explorer.tag-section-add-tooltip'
+              'com.lovenotes.rootAppSidebar.explorer.tag-section-add-tooltip'
             ]()}
           >
             <AddTagIcon />
@@ -66,7 +66,7 @@ export const NavigationPanelTags = () => {
               open
               onOpenChange={setCreating}
               onRename={handleCreateNewTag}
-              currentName={t['com.affine.rootAppSidebar.tags.new-tag']()}
+              currentName={t['com.lovenotes.rootAppSidebar.tags.new-tag']()}
             />
           )}
         </div>

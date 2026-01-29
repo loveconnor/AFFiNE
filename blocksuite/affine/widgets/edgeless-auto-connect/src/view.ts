@@ -1,13 +1,13 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { autoConnectWidget } from '.';
 import { effects } from './effects';
 
 export class EdgelessAutoConnectViewExtension extends ViewExtensionProvider {
-  override name = 'affine-edgeless-auto-connect-widget';
+  override name = 'lovenotes-edgeless-auto-connect-widget';
 
   override effect() {
     super.effect();

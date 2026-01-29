@@ -1,6 +1,6 @@
-import { IconEditor, IconRenderer } from '@affine/component';
-import { ExplorerIconService } from '@affine/core/modules/explorer-icon/services/explorer-icon';
-import { useI18n } from '@affine/i18n';
+import { IconEditor, IconRenderer } from '@lovenotes/component';
+import { ExplorerIconService } from '@lovenotes/core/modules/explorer-icon/services/explorer-icon';
+import { useI18n } from '@lovenotes/i18n';
 import { SmileSolidIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 
@@ -71,7 +71,7 @@ export const DocIconPicker = ({
           <div className={styles.placeholderContent}>
             <SmileSolidIcon className={styles.placeholderContentIcon} />
             <span className={styles.placeholderContentText}>
-              {t['com.affine.docIconPicker.placeholder']()}
+              {t['com.lovenotes.docIconPicker.placeholder']()}
             </span>
           </div>
         }

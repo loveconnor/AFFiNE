@@ -1,8 +1,8 @@
-import { EdgelessClipboardConfig } from '@blocksuite/affine-block-surface';
+import { EdgelessClipboardConfig } from '@blocksuite/lovenotes-block-surface';
 import { type BlockSnapshot } from '@blocksuite/store';
 
 export class EdgelessClipboardImageConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:image';
+  static override readonly key = 'lovenotes:image';
 
   override async createBlock(image: BlockSnapshot) {
     const { xywh, rotate, sourceId, size, width, height, caption } =
@@ -14,7 +14,7 @@ export class EdgelessClipboardImageConfig extends EdgelessClipboardConfig {
       return null;
     }
     return this.crud.addBlock(
-      'affine:image',
+      'lovenotes:image',
       {
         caption,
         sourceId,

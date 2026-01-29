@@ -1,9 +1,9 @@
-import { EdgelessFrameManager } from '@blocksuite/affine-block-frame';
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+import { EdgelessFrameManager } from '@blocksuite/lovenotes-block-frame';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
 import {
   DocModeProvider,
   EditPropsStore,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { Bound } from '@blocksuite/global/gfx';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
@@ -62,7 +62,7 @@ const styles = css`
     align-self: center;
     width: 230px;
     height: 48px;
-    color: var(--affine-text-secondary-color, #8e8d91);
+    color: var(--lovenotes-text-secondary-color, #8e8d91);
     text-align: center;
 
     /* light/base */
@@ -75,7 +75,7 @@ const styles = css`
   .insert-indicator {
     height: 2px;
     border-radius: 1px;
-    background-color: var(--affine-blue-600);
+    background-color: var(--lovenotes-blue-600);
     position: absolute;
     contain: layout size;
     width: 284px;
@@ -83,7 +83,7 @@ const styles = css`
   }
 `;
 
-export const AFFINE_FRAME_PANEL_BODY = 'affine-frame-panel-body';
+export const AFFINE_FRAME_PANEL_BODY = 'lovenotes-frame-panel-body';
 
 export class FramePanelBody extends SignalWatcher(
   WithDisposable(ShadowlessElement)
@@ -157,7 +157,7 @@ export class FramePanelBody extends SignalWatcher(
 
   get frames() {
     const frames = this.editorHost.store
-      .getBlocksByFlavour('affine:frame')
+      .getBlocksByFlavour('lovenotes:frame')
       .map(block => block.model as FrameBlockModel);
     return frames.sort(compare);
   }
@@ -262,7 +262,7 @@ export class FramePanelBody extends SignalWatcher(
       const { frame, frameIndex, cardIndex } = frameItem;
       return keyed(
         frame,
-        html`<affine-frame-card
+        html`<lovenotes-frame-card
           data-frame-id=${frame.id}
           .frame=${frame}
           .std=${this.editorHost.std}
@@ -276,7 +276,7 @@ export class FramePanelBody extends SignalWatcher(
           @select=${this._selectFrame}
           @fitview=${this._fitToElement}
           @drag=${this._drag}
-        ></affine-frame-card>`
+        ></lovenotes-frame-card>`
       );
     })}`;
 
@@ -328,7 +328,7 @@ export class FramePanelBody extends SignalWatcher(
     this._docDisposables = new DisposableGroup();
     this._docDisposables.add(
       doc.slots.blockUpdated.subscribe(({ type, flavour }) => {
-        if (flavour === 'affine:frame' && type !== 'update') {
+        if (flavour === 'lovenotes:frame' && type !== 'update') {
           requestAnimationFrame(() => {
             this._updateFrames();
           });

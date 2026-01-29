@@ -13,9 +13,9 @@ import {
   showMainWindow,
 } from './windows-manager';
 
-let protocol = buildType === 'stable' ? 'affine' : `affine-${buildType}`;
+let protocol = buildType === 'stable' ? 'lovenotes' : `lovenotes-${buildType}`;
 if (isDev) {
-  protocol = 'affine-dev';
+  protocol = 'lovenotes-dev';
 }
 
 export function setupDeepLink(app: App) {
@@ -35,9 +35,9 @@ export function setupDeepLink(app: App) {
       event.preventDefault();
       app
         .whenReady()
-        .then(() => handleAffineUrl(url))
+        .then(() => handleLoveNotesUrl(url))
         .catch(e => {
-          logger.error('failed to handle affine url', e);
+          logger.error('failed to handle lovenotes url', e);
         });
     }
   });
@@ -54,8 +54,8 @@ export function setupDeepLink(app: App) {
         const url = commandLine.pop();
         if (url?.startsWith(`${protocol}://`)) {
           event.preventDefault();
-          handleAffineUrl(url).catch(e => {
-            logger.error('failed to handle affine url', e);
+          handleLoveNotesUrl(url).catch(e => {
+            logger.error('failed to handle lovenotes url', e);
           });
         }
       })
@@ -68,17 +68,17 @@ export function setupDeepLink(app: App) {
     const url = process.argv.at(-1);
     logger.log('url from argv', process.argv, url);
     if (url?.startsWith(`${protocol}://`)) {
-      handleAffineUrl(url).catch(e => {
-        logger.error('failed to handle affine url', e);
+      handleLoveNotesUrl(url).catch(e => {
+        logger.error('failed to handle lovenotes url', e);
       });
     }
   });
 }
 
-async function handleAffineUrl(url: string) {
+async function handleLoveNotesUrl(url: string) {
   await showMainWindow();
 
-  logger.info('open affine url', url);
+  logger.info('open lovenotes url', url);
   const urlObj = new URL(url);
 
   if (urlObj.hostname === 'authentication') {

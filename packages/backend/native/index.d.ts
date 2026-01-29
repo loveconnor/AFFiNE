@@ -28,7 +28,7 @@ export interface Chunk {
 }
 
 /**
- * Converts markdown content to AFFiNE-compatible y-octo document binary.
+ * Converts markdown content to LoveNotes-compatible y-octo document binary.
  *
  * # Arguments
  * * `title` - The document title

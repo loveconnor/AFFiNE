@@ -1,4 +1,4 @@
-import AffinePaywall
+import LoveNotesPaywall
 import Capacitor
 import Foundation
 import SwiftUI

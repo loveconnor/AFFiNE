@@ -1,7 +1,7 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import {
   latexDeltaMarkdownAdapterMatch,
@@ -10,7 +10,7 @@ import {
 } from './adapters';
 
 export class LatexStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-latex-inline';
+  override name = 'lovenotes-latex-inline';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

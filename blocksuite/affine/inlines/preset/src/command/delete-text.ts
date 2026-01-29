@@ -1,5 +1,5 @@
-import { RootBlockModel } from '@blocksuite/affine-model';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+import { RootBlockModel } from '@blocksuite/lovenotes-model';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { type Command, TextSelection } from '@blocksuite/std';
 import type { Text } from '@blocksuite/store';
 

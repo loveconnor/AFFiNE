@@ -1,12 +1,12 @@
 {
-  "name": "@affine-test/affine-mobile",
+  "name": "@lovenotes-test/lovenotes-mobile",
   "private": true,
   "type": "module",
   "scripts": {
     "e2e": "yarn playwright test"
   },
   "devDependencies": {
-    "@affine-test/kit": "workspace:*",
+    "@lovenotes-test/kit": "workspace:*",
     "@playwright/test": "=1.52.0"
   },
   "version": "0.26.0"

@@ -1,21 +1,21 @@
 import {
   createEmbedEdgelessBlockInteraction,
   toEdgelessEmbedBlock,
-} from '@blocksuite/affine-block-embed';
+} from '@blocksuite/lovenotes-block-embed';
 import {
   EdgelessCRUDIdentifier,
   reassociateConnectorsCommand,
-} from '@blocksuite/affine-block-surface';
-import { EmbedLinkedDocBlockSchema } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import { EmbedLinkedDocBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   cloneReferenceInfoWithoutAliases,
   isNewTabTrigger,
   isNewViewTrigger,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 
 import { EmbedLinkedDocBlockComponent } from './embed-linked-doc-block.js';
@@ -35,7 +35,7 @@ export class EmbedEdgelessLinkedDocBlockComponent extends toEdgelessEmbedBlock(
     const { addBlock } = this.std.get(EdgelessCRUDIdentifier);
     const surface = this.gfx.surface ?? undefined;
     const newId = addBlock(
-      'affine:embed-synced-doc',
+      'lovenotes:embed-synced-doc',
       {
         xywh: bound.serialize(),
         caption,

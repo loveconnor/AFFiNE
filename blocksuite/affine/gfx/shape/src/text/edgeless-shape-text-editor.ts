@@ -2,15 +2,15 @@ import {
   DefaultTool,
   EdgelessCRUDIdentifier,
   TextUtils,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   MindmapElementModel,
   ShapeElementModel,
   TextResizing,
-} from '@blocksuite/affine-model';
-import type { RichText } from '@blocksuite/affine-rich-text';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { getSelectedRect } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import type { RichText } from '@blocksuite/lovenotes-rich-text';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
+import { getSelectedRect } from '@blocksuite/lovenotes-shared/utils';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import { Bound, toRadian, Vec } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';

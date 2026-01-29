@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-block-paragraph/view';
+export * from '@blocksuite/lovenotes-block-paragraph/view';

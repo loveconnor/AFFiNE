@@ -1,4 +1,4 @@
-import { BRUSH_LINE_WIDTHS, LineWidth } from '@blocksuite/affine-model';
+import { BRUSH_LINE_WIDTHS, LineWidth } from '@blocksuite/lovenotes-model';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -18,7 +18,7 @@ export class EdgelessLineWidthPanel extends WithDisposable(LitElement) {
   }
 
   override render() {
-    return html`<affine-slider
+    return html`<lovenotes-slider
       ?disabled=${this.disabled}
       .range=${{ points: this.lineWidths }}
       .value=${this.selectedSize}
@@ -27,7 +27,7 @@ export class EdgelessLineWidthPanel extends WithDisposable(LitElement) {
         e.stopPropagation();
         this._onSelect(e.detail.value);
       }}
-    ></affine-slider>`;
+    ></lovenotes-slider>`;
   }
 
   @property({ attribute: false })

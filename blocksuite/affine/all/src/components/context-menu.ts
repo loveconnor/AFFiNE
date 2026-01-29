@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/context-menu';
+export * from '@blocksuite/lovenotes-components/context-menu';

@@ -1,6 +1,6 @@
 //
 //  PositionObservingView.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/23/25.
 //

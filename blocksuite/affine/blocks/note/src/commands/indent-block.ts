@@ -1,8 +1,8 @@
-import { ListBlockModel, ParagraphBlockModel } from '@blocksuite/affine-model';
+import { ListBlockModel, ParagraphBlockModel } from '@blocksuite/lovenotes-model';
 import {
   calculateCollapsedSiblings,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { Command } from '@blocksuite/std';
 
 /**
@@ -60,7 +60,7 @@ export const indentBlock: Command<{
     store.moveBlocks([model], previousSibling);
   }
 
-  // update collapsed state of affine list
+  // update collapsed state of lovenotes list
   if (
     matchModels(previousSibling, [ListBlockModel]) &&
     previousSibling.props.collapsed

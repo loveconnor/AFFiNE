@@ -1,12 +1,12 @@
 import {
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-shared/services';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import type { BlockComponent } from '@blocksuite/std';
 import { InlineMarkdownExtension } from '@blocksuite/std/inline';
 
-export const LatexExtension = InlineMarkdownExtension<AffineTextAttributes>({
+export const LatexExtension = InlineMarkdownExtension<LoveNotesTextAttributes>({
   name: 'latex',
 
   pattern:
@@ -30,7 +30,7 @@ export const LatexExtension = InlineMarkdownExtension<AffineTextAttributes>({
     const index = parentComponent.model.children.indexOf(blockComponent.model);
     if (index === -1) return;
     const mode = std.get(DocModeProvider).getEditorMode() ?? 'page';
-    const ifEdgelessText = blockComponent.closest('affine-edgeless-text');
+    const ifEdgelessText = blockComponent.closest('lovenotes-edgeless-text');
 
     if (blockPrefix === '$$$$') {
       undoManager.stopCapturing();
@@ -41,7 +41,7 @@ export const LatexExtension = InlineMarkdownExtension<AffineTextAttributes>({
       });
 
       const id = doc.addBlock(
-        'affine:latex',
+        'lovenotes:latex',
         {
           latex: '',
         },
@@ -51,7 +51,7 @@ export const LatexExtension = InlineMarkdownExtension<AffineTextAttributes>({
       blockComponent.host.updateComplete
         .then(() => {
           const latexBlock = blockComponent.std.view.getBlock(id);
-          if (!latexBlock || latexBlock.flavour !== 'affine:latex') return;
+          if (!latexBlock || latexBlock.flavour !== 'lovenotes:latex') return;
 
           //FIXME(@Flrande): wait for refactor
           // @ts-expect-error BS-2241
@@ -110,7 +110,7 @@ export const LatexExtension = InlineMarkdownExtension<AffineTextAttributes>({
           if (!textPoint) return;
 
           const [text] = textPoint;
-          const latexNode = text.parentElement?.closest('affine-latex-node');
+          const latexNode = text.parentElement?.closest('lovenotes-latex-node');
           if (!latexNode) return;
 
           latexNode.toggleEditor();

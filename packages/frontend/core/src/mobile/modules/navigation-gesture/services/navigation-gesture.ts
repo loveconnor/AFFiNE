@@ -1,4 +1,4 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@lovenotes/debug';
 import {
   effect,
   exhaustMapWithTrailing,
@@ -10,7 +10,7 @@ import { catchError, distinctUntilChanged, EMPTY } from 'rxjs';
 
 import type { NavigationGestureProvider } from '../providers/navigation-gesture';
 
-const logger = new DebugLogger('affine:navigation-gesture');
+const logger = new DebugLogger('lovenotes:navigation-gesture');
 
 export class NavigationGestureService extends Service {
   public enabled$ = new LiveData(false);

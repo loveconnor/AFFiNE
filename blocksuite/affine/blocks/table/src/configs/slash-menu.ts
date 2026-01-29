@@ -1,14 +1,14 @@
-import { getSelectedModelsCommand } from '@blocksuite/affine-shared/commands';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { isInsideBlockByFlavour } from '@blocksuite/affine-shared/utils';
-import type { SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
+import { getSelectedModelsCommand } from '@blocksuite/lovenotes-shared/commands';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
+import { isInsideBlockByFlavour } from '@blocksuite/lovenotes-shared/utils';
+import type { SlashMenuConfig } from '@blocksuite/lovenotes-widget-slash-menu';
 import { TableIcon } from '@blocksuite/icons/lit';
 
 import { insertTableBlockCommand } from '../commands';
 import { tableTooltip } from './tooltips';
 
 export const tableSlashMenuConfig: SlashMenuConfig = {
-  disableWhen: ({ model }) => model.flavour === 'affine:table',
+  disableWhen: ({ model }) => model.flavour === 'lovenotes:table',
   items: [
     {
       name: 'Table',
@@ -20,7 +20,7 @@ export const tableSlashMenuConfig: SlashMenuConfig = {
       },
       group: '4_Content & Media@0',
       when: ({ model }) =>
-        !isInsideBlockByFlavour(model.store, model, 'affine:edgeless-text'),
+        !isInsideBlockByFlavour(model.store, model, 'lovenotes:edgeless-text'),
       action: ({ std }) => {
         std.command
           .chain()
@@ -33,7 +33,7 @@ export const tableSlashMenuConfig: SlashMenuConfig = {
             if (insertedTableBlockId) {
               const telemetry = std.getOptional(TelemetryProvider);
               telemetry?.track('BlockCreated', {
-                blockType: 'affine:table',
+                blockType: 'lovenotes:table',
               });
             }
           })

@@ -2,15 +2,15 @@ import {
   type CodeBlockModel,
   CodeBlockSchema,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { BlockComponent } from '@blocksuite/std';
 import { InlineMarkdownExtension } from '@blocksuite/std/inline';
 
 export const CodeBlockMarkdownExtension =
-  InlineMarkdownExtension<AffineTextAttributes>({
+  InlineMarkdownExtension<LoveNotesTextAttributes>({
     name: 'code-block',
     pattern: /^```([a-zA-Z0-9]*)\s$/,
     action: ({ inlineEditor, inlineRange, prefixText, pattern }) => {
@@ -51,7 +51,7 @@ export const CodeBlockMarkdownExtension =
 
       if (model.text && model.text.length > prefixText.length) {
         const text = model.text.clone();
-        store.addBlock('affine:paragraph', { text }, parent, index + 1);
+        store.addBlock('lovenotes:paragraph', { text }, parent, index + 1);
         text.delete(0, prefixText.length);
       }
       store.deleteBlock(model, { bringChildrenTo: parent });

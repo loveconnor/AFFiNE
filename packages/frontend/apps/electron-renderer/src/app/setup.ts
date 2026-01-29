@@ -1,11 +1,11 @@
-import '@affine/core/bootstrap/electron';
-import '@affine/core/bootstrap/cleanup';
-import '@affine/component/theme';
+import '@lovenotes/core/bootstrap/electron';
+import '@lovenotes/core/bootstrap/cleanup';
+import '@lovenotes/component/theme';
 import './global.css';
 
-import { apis } from '@affine/electron-api';
-import { bindNativeDBApis } from '@affine/nbstore/sqlite';
-import { bindNativeDBV1Apis } from '@affine/nbstore/sqlite/v1';
+import { apis } from '@lovenotes/electron-api';
+import { bindNativeDBApis } from '@lovenotes/nbstore/sqlite';
+import { bindNativeDBV1Apis } from '@lovenotes/nbstore/sqlite/v1';
 
 // oxlint-disable-next-line no-non-null-assertion
 bindNativeDBApis(apis!.nbstore);

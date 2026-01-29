@@ -1,11 +1,11 @@
-import { parseStringToRgba } from '@blocksuite/affine-components/color-picker';
+import { parseStringToRgba } from '@blocksuite/lovenotes-components/color-picker';
 import {
   ColorScheme,
   FrameBlockModel,
   isTransparent,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { on } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
+import { on } from '@blocksuite/lovenotes-shared/utils';
 import { Bound, type SerializedXYWH } from '@blocksuite/global/gfx';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
@@ -23,12 +23,12 @@ import { property, state } from 'lit/decorators.js';
 import { mountFrameTitleEditor } from './mount-frame-title-editor.js';
 import { frameTitleStyle, frameTitleStyleVars } from './styles.js';
 
-export const AFFINE_FRAME_TITLE = 'affine-frame-title';
+export const AFFINE_FRAME_TITLE = 'lovenotes-frame-title';
 
 @requiredProperties({
   model: PropTypes.instanceOf(FrameBlockModel),
 })
-export class AffineFrameTitle extends SignalWatcher(
+export class LoveNotesFrameTitle extends SignalWatcher(
   WithDisposable(LitElement)
 ) {
   static override styles = frameTitleStyle;
@@ -166,7 +166,7 @@ export class AffineFrameTitle extends SignalWatcher(
           (payload.type === 'update' &&
             payload.props.key === 'xywh' &&
             doc.getBlock(payload.id)?.model instanceof FrameBlockModel) ||
-          (payload.type === 'add' && payload.flavour === 'affine:frame')
+          (payload.type === 'add' && payload.flavour === 'lovenotes:frame')
         ) {
           this._nestedFrame = this._isInsideFrame();
         }

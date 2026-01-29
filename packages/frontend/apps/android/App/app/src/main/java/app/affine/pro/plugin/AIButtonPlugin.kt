@@ -1,4 +1,4 @@
-package app.affine.pro.plugin
+package app.lovenotes.pro.plugin
 
 import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall

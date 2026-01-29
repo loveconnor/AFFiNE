@@ -3,8 +3,8 @@ import {
   NoteDisplayMode,
   ParagraphBlockModel,
   RootBlockModel,
-} from '@blocksuite/affine-model';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { BlockModel, Store } from '@blocksuite/store';
 
 import { headingKeys } from '../config.js';

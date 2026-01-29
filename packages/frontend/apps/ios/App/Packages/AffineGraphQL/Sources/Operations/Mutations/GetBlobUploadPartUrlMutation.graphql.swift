@@ -34,11 +34,11 @@ public class GetBlobUploadPartUrlMutation: GraphQLMutation {
     "partNumber": partNumber
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("getBlobUploadPartUrl", GetBlobUploadPartUrl.self, arguments: [
         "workspaceId": .variable("workspaceId"),
@@ -53,21 +53,21 @@ public class GetBlobUploadPartUrlMutation: GraphQLMutation {
     /// GetBlobUploadPartUrl
     ///
     /// Parent Type: `BlobUploadPart`
-    public struct GetBlobUploadPartUrl: AffineGraphQL.SelectionSet {
+    public struct GetBlobUploadPartUrl: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.BlobUploadPart }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.BlobUploadPart }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("uploadUrl", String.self),
-        .field("headers", AffineGraphQL.JSONObject?.self),
-        .field("expiresAt", AffineGraphQL.DateTime?.self),
+        .field("headers", LoveNotesGraphQL.JSONObject?.self),
+        .field("expiresAt", LoveNotesGraphQL.DateTime?.self),
       ] }
 
       public var uploadUrl: String { __data["uploadUrl"] }
-      public var headers: AffineGraphQL.JSONObject? { __data["headers"] }
-      public var expiresAt: AffineGraphQL.DateTime? { __data["expiresAt"] }
+      public var headers: LoveNotesGraphQL.JSONObject? { __data["headers"] }
+      public var expiresAt: LoveNotesGraphQL.DateTime? { __data["expiresAt"] }
     }
   }
 }

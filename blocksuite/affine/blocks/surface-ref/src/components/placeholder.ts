@@ -1,5 +1,5 @@
-import { ColorScheme } from '@blocksuite/affine-model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { ColorScheme } from '@blocksuite/lovenotes-model';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { DeleteIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';

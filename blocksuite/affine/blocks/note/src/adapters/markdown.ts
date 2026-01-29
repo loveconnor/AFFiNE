@@ -1,11 +1,11 @@
-import { NoteBlockSchema, NoteDisplayMode } from '@blocksuite/affine-model';
+import { NoteBlockSchema, NoteDisplayMode } from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   FOOTNOTE_DEFINITION_PREFIX,
   isFootnoteDefinitionNode,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { Root } from 'mdast';
 
 const isRootNode = (node: MarkdownAST): node is Root => node.type === 'root';

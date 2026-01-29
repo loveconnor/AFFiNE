@@ -18,11 +18,11 @@ public class GetWorkspaceRolePermissionsQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["id": id] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspaceRolePermissions", WorkspaceRolePermissions.self, arguments: ["id": .variable("id")]),
     ] }
@@ -34,11 +34,11 @@ public class GetWorkspaceRolePermissionsQuery: GraphQLQuery {
     /// WorkspaceRolePermissions
     ///
     /// Parent Type: `WorkspaceRolePermissions`
-    public struct WorkspaceRolePermissions: AffineGraphQL.SelectionSet {
+    public struct WorkspaceRolePermissions: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceRolePermissions }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceRolePermissions }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("permissions", Permissions.self),
@@ -49,11 +49,11 @@ public class GetWorkspaceRolePermissionsQuery: GraphQLQuery {
       /// WorkspaceRolePermissions.Permissions
       ///
       /// Parent Type: `WorkspacePermissions`
-      public struct Permissions: AffineGraphQL.SelectionSet {
+      public struct Permissions: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspacePermissions }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspacePermissions }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("Workspace_Administrators_Manage", Bool.self),

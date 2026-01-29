@@ -1,4 +1,4 @@
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { UploadIcon } from '@blocksuite/icons/rc';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import {

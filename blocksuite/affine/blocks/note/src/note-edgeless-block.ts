@@ -1,13 +1,13 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
-import type { DocTitle } from '@blocksuite/affine-fragment-doc-title';
-import { NoteBlockSchema, NoteDisplayMode } from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/affine-shared/consts';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
+import type { DocTitle } from '@blocksuite/lovenotes-fragment-doc-title';
+import { NoteBlockSchema, NoteDisplayMode } from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/lovenotes-shared/consts';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   handleNativeRangeAtPoint,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import { toGfxBlockComponent } from '@blocksuite/std';
 import {
@@ -27,7 +27,7 @@ import { NoteBlockComponent } from './note-block';
 import { ACTIVE_NOTE_EXTRA_PADDING } from './note-edgeless-block.css';
 import * as styles from './note-edgeless-block.css';
 
-export const AFFINE_EDGELESS_NOTE = 'affine-edgeless-note';
+export const AFFINE_EDGELESS_NOTE = 'lovenotes-edgeless-note';
 
 export class EdgelessNoteBlockComponent extends toGfxBlockComponent(
   NoteBlockComponent
@@ -456,7 +456,7 @@ export const EdgelessNoteInteraction =
 
                   if (model.children.length === 0) {
                     const blockId = std.store.addBlock(
-                      'affine:paragraph',
+                      'lovenotes:paragraph',
                       { type: 'text' },
                       model.id
                     );
@@ -466,7 +466,7 @@ export const EdgelessNoteInteraction =
                     }
                   } else {
                     const rect = view
-                      .querySelector('.affine-block-children-container')
+                      .querySelector('.lovenotes-block-children-container')
                       ?.getBoundingClientRect();
 
                     if (rect) {

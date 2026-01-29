@@ -1,9 +1,9 @@
 import {
   cleanSpecifiedTail,
   getTextContentFromInlineRange,
-} from '@blocksuite/affine-rich-text';
-import { VirtualKeyboardProvider } from '@blocksuite/affine-shared/services';
-import { getViewportElement } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-rich-text';
+import { VirtualKeyboardProvider } from '@blocksuite/lovenotes-shared/services';
+import { getViewportElement } from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import { PropTypes, requiredProperties } from '@blocksuite/std';
@@ -21,12 +21,12 @@ import type {
 import { mobileLinkedDocMenuStyles } from './styles.js';
 import { resolveSignal } from './utils.js';
 
-export const AFFINE_MOBILE_LINKED_DOC_MENU = 'affine-mobile-linked-doc-menu';
+export const AFFINE_MOBILE_LINKED_DOC_MENU = 'lovenotes-mobile-linked-doc-menu';
 
 @requiredProperties({
   context: PropTypes.object,
 })
-export class AffineMobileLinkedDocMenu extends SignalWatcher(
+export class LoveNotesMobileLinkedDocMenu extends SignalWatcher(
   WithDisposable(LitElement)
 ) {
   static override styles = mobileLinkedDocMenuStyles;

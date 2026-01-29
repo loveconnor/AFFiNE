@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import katex from 'katex';
 import { html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
@@ -19,7 +19,7 @@ export const LatexTooltip = (
       .latex-tooltip-content {
         width: 159px;
         color: #121212;
-        font-family: var(--affine-font-family);
+        font-family: var(--lovenotes-font-family);
         font-size: 10px;
         font-style: normal;
 

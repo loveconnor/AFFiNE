@@ -1,11 +1,11 @@
-import { NoteBlockModel } from '@blocksuite/affine-model';
+import { NoteBlockModel } from '@blocksuite/lovenotes-model';
 import {
   calcDropTarget,
   type DropTarget,
   getClosestBlockComponentByPoint,
   isInsidePageEditor,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { createIdentifier } from '@blocksuite/global/di';
 import type { IVec } from '@blocksuite/global/gfx';
 import { Point } from '@blocksuite/global/gfx';
@@ -77,7 +77,7 @@ export class FileDropExtension extends LifeCycleWatcher {
 
     let lastNote = rootModel.children[rootModel.children.length - 1];
     if (!lastNote || !matchModels(lastNote, [NoteBlockModel])) {
-      const newNoteId = this.doc.addBlock('affine:note', {}, rootModel.id);
+      const newNoteId = this.doc.addBlock('lovenotes:note', {}, rootModel.id);
       const newNote = this.doc.getBlock(newNoteId)?.model;
       if (!newNote) return null;
       lastNote = newNote;
@@ -88,7 +88,7 @@ export class FileDropExtension extends LifeCycleWatcher {
       model = lastItem;
     } else {
       const newParagraphId = this.doc.addBlock(
-        'affine:paragraph',
+        'lovenotes:paragraph',
         {},
         lastNote,
         0

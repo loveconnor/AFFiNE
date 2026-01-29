@@ -10,13 +10,13 @@ export const datePickerStyle = css`
     flex-direction: column;
     box-sizing: border-box;
     gap: var(--gap-v);
-    font-family: var(--affine-font-family);
+    font-family: var(--lovenotes-font-family);
   }
 
   .popup.date-picker {
-    background: var(--affine-background-overlay-panel-color);
+    background: var(--lovenotes-background-overlay-panel-color);
     border-radius: 12px;
-    box-shadow: var(--affine-menu-shadow);
+    box-shadow: var(--lovenotes-menu-shadow);
   }
 
   /* small action */
@@ -32,12 +32,12 @@ export const datePickerStyle = css`
 
   .interactive.date-picker-small-action,
   .interactive.action-label.today {
-    color: var(--affine-icon-color);
+    color: var(--lovenotes-icon-color);
   }
 
   .date-picker-small-action:hover {
-    color: var(--affine-icon-hover-color);
-    background: var(--affine-icon-hover-background);
+    color: var(--lovenotes-icon-hover-color);
+    background: var(--lovenotes-icon-hover-background);
   }
 
   .date-picker-small-action.left > svg {
@@ -68,7 +68,7 @@ export const datePickerStyle = css`
     display: flex;
     align-items: center;
     gap: 4px;
-    color: var(--affine-text-primary-color);
+    color: var(--lovenotes-text-primary-color);
     font-weight: 600;
     padding: 2px;
     border-radius: 4px;
@@ -84,7 +84,7 @@ export const datePickerStyle = css`
     display: flex;
     align-items: center;
     gap: 16px;
-    color: var(--affine-icon-color);
+    color: var(--lovenotes-icon-color);
   }
 
   .date-picker-header__action.with-slot {
@@ -118,7 +118,7 @@ export const datePickerStyle = css`
   }
 
   .days-header > div {
-    color: var(--affine-text-secondary-color);
+    color: var(--lovenotes-text-secondary-color);
     font-weight: 500;
     font-size: 12px;
     cursor: default;
@@ -159,13 +159,13 @@ export const datePickerStyle = css`
   }
 
   .date-cell.date-cell--today {
-    color: var(--affine-primary-color);
+    color: var(--lovenotes-primary-color);
     font-weight: 600;
   }
 
   .date-cell.date-cell--selected {
-    background: var(--affine-primary-color);
-    color: var(--affine-pure-white);
+    background: var(--lovenotes-primary-color);
+    color: var(--lovenotes-pure-white);
     font-weight: 500;
   }
 
@@ -180,8 +180,8 @@ export const datePickerStyle = css`
     position: relative;
     border: none;
     background-color: unset;
-    font-family: var(--affine-font-family);
-    color: var(--affine-text-primary-color);
+    font-family: var(--lovenotes-font-family);
+    color: var(--lovenotes-text-primary-color);
   }
 
   /* --hover */
@@ -202,7 +202,7 @@ export const datePickerStyle = css`
   }
 
   .interactive:hover::after {
-    background: var(--affine-hover-color);
+    background: var(--lovenotes-hover-color);
   }
 
   /* --focus */
@@ -210,14 +210,14 @@ export const datePickerStyle = css`
   .interactive::before {
     opacity: 0;
     transition: none;
-    box-shadow: 0 0 0 3px var(--affine-primary-color);
+    box-shadow: 0 0 0 3px var(--lovenotes-primary-color);
   }
 
   /* .interactive:active, */
 
   .interactive:focus-visible {
     outline: none;
-    outline: 1px solid var(--affine-primary-color);
+    outline: 1px solid var(--lovenotes-primary-color);
   }
 
   /* .interactive:active::before, */
@@ -266,8 +266,8 @@ export const datePickerStyle = css`
 
   .date-picker-month button.active,
   .date-picker-year button.active {
-    color: var(--affine-primary-color);
-    /* background: var(--affine-primary-color); */
+    color: var(--lovenotes-primary-color);
+    /* background: var(--lovenotes-primary-color); */
     font-weight: 600;
   }
 
@@ -289,7 +289,7 @@ export const datePickerStyle = css`
   .date-picker-footer {
     margin-top: 8px;
     padding-top: 8px;
-    border-top: 1px solid var(--affine-border-color);
+    border-top: 1px solid var(--lovenotes-border-color);
   }
 
   .footer-button {
@@ -297,13 +297,13 @@ export const datePickerStyle = css`
     border: none;
     border-radius: 4px;
     background: none;
-    color: var(--affine-text-secondary-color);
+    color: var(--lovenotes-text-secondary-color);
     cursor: pointer;
-    font-size: var(--affine-font-sm);
+    font-size: var(--lovenotes-font-sm);
     padding: 0 12px;
   }
 
   .footer-button:hover {
-    background: var(--affine-hover-color);
+    background: var(--lovenotes-hover-color);
   }
 `;

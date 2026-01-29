@@ -1,4 +1,4 @@
-import { cleanupWorkspace } from '@affine-test/kit/utils/cloud';
+import { cleanupWorkspace } from '@lovenotes-test/kit/utils/cloud';
 import { expect, type Page } from '@playwright/test';
 
 const WORKSPACE_EMBEDDING_SWITCH_TEST_ID = 'workspace-embedding-setting-switch';
@@ -203,7 +203,7 @@ export class SettingsPanelUtils {
       const pageListItem = searcher.getByTestId('page-list-item');
       await expect(pageListItem).toHaveCount(1);
 
-      await pageListItem.getByTestId('affine-checkbox').uncheck();
+      await pageListItem.getByTestId('lovenotes-checkbox').uncheck();
 
       await searcher.getByTestId('doc-selector-confirm-button').click();
     }

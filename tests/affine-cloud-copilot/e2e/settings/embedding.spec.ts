@@ -1,4 +1,4 @@
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 import { test } from '../base/base-test';
@@ -57,7 +57,7 @@ test.describe('AISettings/Embedding', () => {
     await createLocalWorkspace({ name: 'test' }, page);
     await utils.settings.openSettingsPanel(page);
     await expect(
-      page.getByTestId('publish-enable-affine-cloud-button')
+      page.getByTestId('publish-enable-lovenotes-cloud-button')
     ).toBeVisible();
   });
 
@@ -77,7 +77,7 @@ test.describe('AISettings/Embedding', () => {
               serverConfig: {
                 version: '1.0.0',
                 baseUrl: 'http://localhost:8080',
-                name: 'AFFiNE',
+                name: 'LoveNotes',
                 features: [],
                 type: 'cloud',
                 initialized: true,
@@ -141,7 +141,7 @@ test.describe('AISettings/Embedding', () => {
     loggedInPage: page,
     utils,
   }) => {
-    await createLocalWorkspace({ name: 'test' }, page, false, 'affine-cloud');
+    await createLocalWorkspace({ name: 'test' }, page, false, 'lovenotes-cloud');
     await utils.settings.openSettingsPanel(page);
     await utils.settings.enableWorkspaceEmbedding(page);
     const randomStr1 = Math.random().toString(36).substring(2, 6);
@@ -210,7 +210,7 @@ test.describe('AISettings/Embedding', () => {
         await utils.chatPanel.getLatestAssistantMessage(page);
       expect(content).toMatch(new RegExp(`Workspace${randomStr1}.*cat`));
       expect(content).toMatch(new RegExp(`Workspace${randomStr2}.*dog`));
-      expect(await message.locator('affine-footnote-node').count()).toBe(2);
+      expect(await message.locator('lovenotes-footnote-node').count()).toBe(2);
     }).toPass({ timeout: 20000 });
   });
 
@@ -218,7 +218,7 @@ test.describe('AISettings/Embedding', () => {
     loggedInPage: page,
     utils,
   }) => {
-    await createLocalWorkspace({ name: 'test' }, page, false, 'affine-cloud');
+    await createLocalWorkspace({ name: 'test' }, page, false, 'lovenotes-cloud');
     await utils.settings.openSettingsPanel(page);
     await utils.settings.enableWorkspaceEmbedding(page);
     const attachments = [
@@ -250,7 +250,7 @@ test.describe('AISettings/Embedding', () => {
     loggedInPage: page,
     utils,
   }) => {
-    await createLocalWorkspace({ name: 'test' }, page, false, 'affine-cloud');
+    await createLocalWorkspace({ name: 'test' }, page, false, 'lovenotes-cloud');
     await utils.settings.openSettingsPanel(page);
     await utils.settings.enableWorkspaceEmbedding(page);
     const person = 'test123';
@@ -298,7 +298,7 @@ test.describe('AISettings/Embedding', () => {
         await utils.chatPanel.getLatestAssistantMessage(page);
       expect(content).toMatch(/climbing/i);
       expect(content).toMatch(/skating/i);
-      expect(await message.locator('affine-footnote-node').count()).toBe(2);
+      expect(await message.locator('lovenotes-footnote-node').count()).toBe(2);
     }).toPass({ timeout: 20000 });
   });
 
@@ -306,7 +306,7 @@ test.describe('AISettings/Embedding', () => {
     loggedInPage: page,
     utils,
   }) => {
-    await createLocalWorkspace({ name: 'test' }, page, false, 'affine-cloud');
+    await createLocalWorkspace({ name: 'test' }, page, false, 'lovenotes-cloud');
     await utils.settings.openSettingsPanel(page);
     await utils.settings.enableWorkspaceEmbedding(page);
     const attachments = Array.from({ length: 11 }, (_, i) => ({
@@ -345,7 +345,7 @@ test.describe('AISettings/Embedding', () => {
     loggedInPage: page,
     utils,
   }) => {
-    await createLocalWorkspace({ name: 'test' }, page, false, 'affine-cloud');
+    await createLocalWorkspace({ name: 'test' }, page, false, 'lovenotes-cloud');
     await utils.settings.openSettingsPanel(page);
     await utils.settings.enableWorkspaceEmbedding(page);
     const randomStr1 = Math.random().toString(36).substring(2, 6);
@@ -372,7 +372,7 @@ test.describe('AISettings/Embedding', () => {
     loggedInPage: page,
     utils,
   }) => {
-    await createLocalWorkspace({ name: 'test' }, page, false, 'affine-cloud');
+    await createLocalWorkspace({ name: 'test' }, page, false, 'lovenotes-cloud');
     await utils.settings.openSettingsPanel(page);
     await utils.settings.enableWorkspaceEmbedding(page);
     const randomStr1 = Math.random().toString(36).substring(2, 6);
@@ -405,7 +405,7 @@ test.describe('AISettings/Embedding', () => {
     loggedInPage: page,
     utils,
   }) => {
-    await createLocalWorkspace({ name: 'test' }, page, false, 'affine-cloud');
+    await createLocalWorkspace({ name: 'test' }, page, false, 'lovenotes-cloud');
     await utils.settings.openSettingsPanel(page);
     await utils.settings.enableWorkspaceEmbedding(page);
     const randomStr1 = Math.random().toString(36).substring(2, 6);
@@ -468,7 +468,7 @@ test.describe('AISettings/Embedding', () => {
         await utils.chatPanel.getLatestAssistantMessage(page);
       expect(content).toMatch(/WBIgnoreEEE.*cat/);
       expect(content).toMatch(/WBIgnoreFFF.*dog/);
-      expect(await message.locator('affine-footnote-node').count()).toBe(2);
+      expect(await message.locator('lovenotes-footnote-node').count()).toBe(2);
     }).toPass({ timeout: 20000 });
 
     // Ignore docs

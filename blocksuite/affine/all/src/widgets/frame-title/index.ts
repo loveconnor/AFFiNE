@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-widget-frame-title';
+export * from '@blocksuite/lovenotes-widget-frame-title';

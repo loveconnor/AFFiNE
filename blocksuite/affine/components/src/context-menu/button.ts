@@ -28,7 +28,7 @@ export type MenuButtonData = {
 
 export class MenuButton extends MenuFocusable {
   static override styles = css`
-    .affine-menu-button {
+    .lovenotes-menu-button {
       display: flex;
       width: 100%;
       font-size: 20px;
@@ -37,32 +37,32 @@ export class MenuButton extends MenuFocusable {
       padding: 4px;
       gap: 8px;
       border-radius: 4px;
-      color: var(--affine-icon-color);
+      color: var(--lovenotes-icon-color);
     }
 
-    .affine-menu-button:hover,
-    affine-menu-button.active .affine-menu-button {
-      background-color: var(--affine-hover-color);
+    .lovenotes-menu-button:hover,
+    lovenotes-menu-button.active .lovenotes-menu-button {
+      background-color: var(--lovenotes-hover-color);
     }
 
-    .affine-menu-button .affine-menu-action-text {
+    .lovenotes-menu-button .lovenotes-menu-action-text {
       flex: 1;
       font-size: 14px;
       line-height: 22px;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
     }
 
-    .affine-menu-button.focused {
+    .lovenotes-menu-button.focused {
       outline: 1px solid ${unsafeCSS(cssVarV2.layer.insideBorder.primaryBorder)};
     }
 
-    .affine-menu-button.delete-item:hover {
-      background-color: var(--affine-background-error-color);
-      color: var(--affine-error-color);
+    .lovenotes-menu-button.delete-item:hover {
+      background-color: var(--lovenotes-background-error-color);
+      color: var(--lovenotes-error-color);
     }
 
-    .affine-menu-button.delete-item:hover .affine-menu-action-text {
-      color: var(--affine-error-color);
+    .lovenotes-menu-button.delete-item:hover .lovenotes-menu-action-text {
+      color: var(--lovenotes-error-color);
     }
   `;
 
@@ -98,7 +98,7 @@ export class MenuButton extends MenuFocusable {
 
   protected override render(): unknown {
     const classString = classMap({
-      'affine-menu-button': true,
+      'lovenotes-menu-button': true,
       focused: this.isFocused$.value,
       ...this.data.class,
     });
@@ -125,22 +125,22 @@ export class MobileMenuButton extends MenuFocusable {
       padding: 11px 8px;
       gap: 8px;
       border-radius: 4px;
-      color: var(--affine-icon-color);
+      color: var(--lovenotes-icon-color);
     }
 
-    .mobile-menu-button .affine-menu-action-text {
+    .mobile-menu-button .lovenotes-menu-action-text {
       flex: 1;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
       font-size: 17px;
       line-height: 22px;
     }
 
     .mobile-menu-button.delete-item {
-      color: var(--affine-error-color);
+      color: var(--lovenotes-error-color);
     }
 
     .mobile-menu-button.delete-item .mobile-menu-action-text {
-      color: var(--affine-error-color);
+      color: var(--lovenotes-error-color);
     }
   `;
 
@@ -188,10 +188,10 @@ const renderButton = (data: MenuButtonData, menu: Menu) => {
       .menu="${menu}"
     ></mobile-menu-button>`;
   }
-  return html`<affine-menu-button
+  return html`<lovenotes-menu-button
     .data="${data}"
     .menu="${menu}"
-  ></affine-menu-button>`;
+  ></lovenotes-menu-button>`;
 };
 export const menuButtonItems = {
   action:
@@ -217,7 +217,7 @@ export const menuButtonItems = {
         content: () => {
           return html`
             ${config.prefix}
-            <div class="affine-menu-action-text">
+            <div class="lovenotes-menu-action-text">
               ${config.label?.() ?? config.name} ${config.info}
             </div>
             ${config.postfix ?? (config.isSelected ? DoneIcon() : undefined)}
@@ -253,7 +253,7 @@ export const menuButtonItems = {
           ${config.checked.value
             ? CheckBoxCheckSolidIcon({ style: `color:#1E96EB` })
             : CheckBoxUnIcon()}
-          <div class="affine-menu-action-text">
+          <div class="lovenotes-menu-action-text">
             ${config.label?.() ?? config.name}
           </div>
           ${config.postfix}
@@ -289,7 +289,7 @@ export const menuButtonItems = {
       const data: MenuButtonData = {
         content: () => html`
           ${config.prefix}
-          <div class="affine-menu-action-text">
+          <div class="lovenotes-menu-action-text">
             ${config.label?.() ?? config.name}
           </div>
           <toggle-switch

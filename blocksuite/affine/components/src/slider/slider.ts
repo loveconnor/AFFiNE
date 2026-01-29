@@ -1,4 +1,4 @@
-import { on, once } from '@blocksuite/affine-shared/utils';
+import { on, once } from '@blocksuite/lovenotes-shared/utils';
 import { clamp } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { PropTypes, requiredProperties } from '@blocksuite/std';
@@ -152,7 +152,7 @@ export class Slider extends WithDisposable(LitElement) {
       <div class="bottom-line"></div>
       <div class="slider-selected-overlay"></div>
       ${this.tooltip
-        ? html`<affine-tooltip .offset=${8}>${this.tooltip}</affine-tooltip>`
+        ? html`<lovenotes-tooltip .offset=${8}>${this.tooltip}</lovenotes-tooltip>`
         : nothing}
     </div>`;
   }

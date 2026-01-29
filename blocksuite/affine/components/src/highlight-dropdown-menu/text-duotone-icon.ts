@@ -21,6 +21,6 @@ export class TextDuotoneIcon extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-text-duotone-icon': TextDuotoneIcon;
+    'lovenotes-text-duotone-icon': TextDuotoneIcon;
   }
 }

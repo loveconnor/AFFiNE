@@ -1,11 +1,11 @@
 //
 //  TheGiveMeMoneyButtonView.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //
 
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 struct TheGiveMeMoneyButtonView: View {
@@ -30,7 +30,7 @@ struct TheGiveMeMoneyButtonView: View {
     Button { callback() } label: {
       if isPurchased {
         Image(systemName: "checkmark")
-          .foregroundColor(AffineColors.layerPureWhite.color)
+          .foregroundColor(LoveNotesColors.layerPureWhite.color)
           .font(.system(size: 16, weight: .bold))
           .padding(12)
       } else {
@@ -48,7 +48,7 @@ struct TheGiveMeMoneyButtonView: View {
               .contentTransition(.numericText())
           }
         }
-        .foregroundColor(AffineColors.layerPureWhite.color)
+        .foregroundColor(LoveNotesColors.layerPureWhite.color)
         .padding(12)
       }
     }
@@ -57,7 +57,7 @@ struct TheGiveMeMoneyButtonView: View {
     .buttonStyle(.plain)
     .frame(maxWidth: .infinity)
     .frame(minHeight: 32)
-    .background(AffineColors.buttonPrimary.color)
+    .background(LoveNotesColors.buttonPrimary.color)
     .clipShape(RoundedRectangle(cornerRadius: 8))
     .disabled(isPurchased)
   }

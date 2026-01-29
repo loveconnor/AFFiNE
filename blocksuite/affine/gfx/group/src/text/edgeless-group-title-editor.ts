@@ -1,6 +1,6 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import type { GroupElementModel } from '@blocksuite/affine-model';
-import type { RichText } from '@blocksuite/affine-rich-text';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import type { GroupElementModel } from '@blocksuite/lovenotes-model';
+import type { RichText } from '@blocksuite/lovenotes-rich-text';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import { Bound } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';
@@ -159,14 +159,14 @@ export class EdgelessGroupTitleEditor extends WithDisposable(
       left: x + 'px',
       top: `${y - GROUP_TITLE_OFFSET + 2}px`,
       minWidth: '8px',
-      fontFamily: 'var(--affine-font-family)',
-      color: 'var(--affine-text-primary-color)',
-      background: 'var(--affine-white-10)',
+      fontFamily: 'var(--lovenotes-font-family)',
+      color: 'var(--lovenotes-text-primary-color)',
+      background: 'var(--lovenotes-white-10)',
       outline: 'none',
       zIndex: '1',
       border: `1px solid
-        var(--affine-primary-color)`,
-      boxShadow: 'var(--affine-active-shadow)',
+        var(--lovenotes-primary-color)`,
+      boxShadow: 'var(--lovenotes-active-shadow)',
     });
     return html`<rich-text
       .yText=${this.group.title}

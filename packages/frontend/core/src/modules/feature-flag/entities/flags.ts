@@ -5,7 +5,7 @@ import type { GlobalStateService } from '../../storage';
 import { AFFINE_FLAGS } from '../constant';
 import type { FlagInfo } from '../types';
 
-const FLAG_PREFIX = 'affine-flag:';
+const FLAG_PREFIX = 'lovenotes-flag:';
 
 export type Flag<F extends FlagInfo = FlagInfo> = {
   readonly value: F['defaultState'] extends boolean

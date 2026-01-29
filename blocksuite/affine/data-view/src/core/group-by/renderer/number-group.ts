@@ -2,7 +2,7 @@ import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { css, html } from 'lit';
 
 import { BaseGroup } from './base.js';
@@ -17,7 +17,7 @@ export class NumberGroupView extends BaseGroup<number, NonNullable<unknown>> {
     }
 
     .data-view-group-title-number-view:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
   `;
 

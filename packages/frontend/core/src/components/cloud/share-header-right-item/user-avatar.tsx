@@ -1,7 +1,7 @@
-import { Avatar } from '@affine/component/ui/avatar';
-import { Menu, MenuItem, MenuSeparator } from '@affine/component/ui/menu';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useI18n } from '@affine/i18n';
+import { Avatar } from '@lovenotes/component/ui/avatar';
+import { Menu, MenuItem, MenuSeparator } from '@lovenotes/component/ui/menu';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { useI18n } from '@lovenotes/i18n';
 import { SignOutIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect, useMemo } from 'react';
@@ -68,7 +68,7 @@ export const PublishPageUserAvatar = () => {
           data-testid="share-page-sign-out-option"
           onClick={handleSignOut}
         >
-          {t['com.affine.workspace.cloud.account.logout']()}
+          {t['com.lovenotes.workspace.cloud.account.logout']()}
         </MenuItem>
       </>
     );

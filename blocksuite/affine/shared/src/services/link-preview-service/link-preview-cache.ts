@@ -1,4 +1,4 @@
-import type { LinkPreviewData } from '@blocksuite/affine-model';
+import type { LinkPreviewData } from '@blocksuite/lovenotes-model';
 import { type Container, createIdentifier } from '@blocksuite/global/di';
 import { Extension, type ExtensionType } from '@blocksuite/store';
 import debounce from 'lodash-es/debounce';
@@ -80,7 +80,7 @@ export interface LinkPreviewCacheProvider {
 }
 
 export const LinkPreviewCacheIdentifier =
-  createIdentifier<LinkPreviewCacheProvider>('AffineLinkPreviewCache');
+  createIdentifier<LinkPreviewCacheProvider>('LoveNotesLinkPreviewCache');
 
 /**
  * The link preview cache, it will cache the link preview data in the memory and local storage

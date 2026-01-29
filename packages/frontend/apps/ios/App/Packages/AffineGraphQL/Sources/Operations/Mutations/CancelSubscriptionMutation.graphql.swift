@@ -26,11 +26,11 @@ public class CancelSubscriptionMutation: GraphQLMutation {
     "workspaceId": workspaceId
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("cancelSubscription", CancelSubscription.self, arguments: [
         "plan": .variable("plan"),
@@ -43,24 +43,24 @@ public class CancelSubscriptionMutation: GraphQLMutation {
     /// CancelSubscription
     ///
     /// Parent Type: `SubscriptionType`
-    public struct CancelSubscription: AffineGraphQL.SelectionSet {
+    public struct CancelSubscription: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.SubscriptionType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.SubscriptionType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", String?.self),
-        .field("status", GraphQLEnum<AffineGraphQL.SubscriptionStatus>.self),
-        .field("nextBillAt", AffineGraphQL.DateTime?.self),
-        .field("canceledAt", AffineGraphQL.DateTime?.self),
+        .field("status", GraphQLEnum<LoveNotesGraphQL.SubscriptionStatus>.self),
+        .field("nextBillAt", LoveNotesGraphQL.DateTime?.self),
+        .field("canceledAt", LoveNotesGraphQL.DateTime?.self),
       ] }
 
       @available(*, deprecated, message: "removed")
       public var id: String? { __data["id"] }
-      public var status: GraphQLEnum<AffineGraphQL.SubscriptionStatus> { __data["status"] }
-      public var nextBillAt: AffineGraphQL.DateTime? { __data["nextBillAt"] }
-      public var canceledAt: AffineGraphQL.DateTime? { __data["canceledAt"] }
+      public var status: GraphQLEnum<LoveNotesGraphQL.SubscriptionStatus> { __data["status"] }
+      public var nextBillAt: LoveNotesGraphQL.DateTime? { __data["nextBillAt"] }
+      public var canceledAt: LoveNotesGraphQL.DateTime? { __data["canceledAt"] }
     }
   }
 }

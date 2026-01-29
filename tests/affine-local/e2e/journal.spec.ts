@@ -1,9 +1,9 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   confirmCreateJournal,
   openHomePage,
-} from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@lovenotes-test/kit/utils/page-logic';
 import { expect, type Locator, type Page } from '@playwright/test';
 
 type MaybeDate = string | number | Date;

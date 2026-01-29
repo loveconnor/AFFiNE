@@ -1,33 +1,23 @@
-import { Button, notify } from '@affine/component';
+import { Button, notify } from '@lovenotes/component';
 import {
   AuthContainer,
   AuthContent,
   AuthFooter,
   AuthHeader,
   AuthInput,
-} from '@affine/component/auth-components';
-import { OAuth } from '@affine/core/components/affine/auth/oauth';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { AuthService, ServerService } from '@affine/core/modules/cloud';
-import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
-import { ServerDeploymentType } from '@affine/graphql';
-import { Trans, useI18n } from '@affine/i18n';
-import {
-  ArrowRightBigIcon,
-  LocalWorkspaceIcon,
-  PublishIcon,
-} from '@blocksuite/icons/rc';
+} from '@lovenotes/component/auth-components';
+import { OAuth } from '@lovenotes/core/components/lovenotes/auth/oauth';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { AuthService, ServerService } from '@lovenotes/core/modules/cloud';
+import type { AuthSessionStatus } from '@lovenotes/core/modules/cloud/entities/session';
+import { ServerDeploymentType } from '@lovenotes/graphql';
+import { Trans, useI18n } from '@lovenotes/i18n';
+import { ArrowRightBigIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
-import {
-  type Dispatch,
-  type SetStateAction,
-  useCallback,
-  useEffect,
-  useState,
-} from 'react';
+import { type Dispatch, type SetStateAction, useEffect, useState } from 'react';
 
-import { useSelfhostLoginVersionGuard } from '../hooks/affine/use-selfhost-login-version-guard';
+import { useSelfhostLoginVersionGuard } from '../hooks/lovenotes/use-selfhost-login-version-guard';
 import type { SignInState } from '.';
 import { Back } from './back';
 import * as style from './style.css';
@@ -73,8 +63,8 @@ export const SignInStep = ({
   useEffect(() => {
     if (loginStatus === 'authenticated') {
       notify.success({
-        title: t['com.affine.auth.toast.title.signed-in'](),
-        message: t['com.affine.auth.toast.message.signed-in'](),
+        title: t['com.lovenotes.auth.toast.title.signed-in'](),
+        message: t['com.lovenotes.auth.toast.message.signed-in'](),
       });
     }
     onAuthenticated?.(loginStatus);
@@ -120,18 +110,11 @@ export const SignInStep = ({
     setIsMutating(false);
   }, [authService, changeState, email]);
 
-  const onAddSelfhosted = useCallback(() => {
-    changeState(prev => ({
-      ...prev,
-      step: 'addSelfhosted',
-    }));
-  }, [changeState]);
-
   if (versionError && isSelfhosted) {
     return (
       <AuthContainer>
         <AuthHeader
-          title={t['com.affine.auth.sign.in']()}
+          title={t['com.lovenotes.auth.sign.in']()}
           subTitle={serverName}
         />
         <AuthContent>
@@ -144,7 +127,7 @@ export const SignInStep = ({
   return (
     <AuthContainer>
       <AuthHeader
-        title={t['com.affine.auth.sign.in']()}
+        title={t['com.lovenotes.auth.sign.in']()}
         subTitle={serverName}
       />
 
@@ -153,12 +136,12 @@ export const SignInStep = ({
 
         <AuthInput
           className={style.authInput}
-          label={t['com.affine.settings.email']()}
-          placeholder={t['com.affine.auth.sign.email.placeholder']()}
+          label={t['com.lovenotes.settings.email']()}
+          placeholder={t['com.lovenotes.auth.sign.email.placeholder']()}
           onChange={setEmail}
           error={!isValidEmail}
           errorHint={
-            isValidEmail ? '' : t['com.affine.auth.sign.email.error']()
+            isValidEmail ? '' : t['com.lovenotes.auth.sign.email.error']()
           }
           onEnter={onContinue}
         />
@@ -174,50 +157,17 @@ export const SignInStep = ({
           suffixStyle={{ width: 20, height: 20, color: cssVar('blue') }}
           onClick={onContinue}
         >
-          {t['com.affine.auth.sign.email.continue']()}
+          {t['com.lovenotes.auth.sign.email.continue']()}
         </Button>
 
         {!isSelfhosted && (
-          <>
-            <div className={style.authMessage}>
-              {/*prettier-ignore*/}
-              <Trans i18nKey="com.affine.auth.sign.message">
-                By clicking &quot;Continue with Google/Email&quot; above, you acknowledge that
-                you agree to AFFiNE&apos;s <a href="https://affine.pro/terms" target="_blank" rel="noreferrer">Terms of Conditions</a> and <a href="https://affine.pro/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.
-            </Trans>
-            </div>
-            <div className={style.skipDivider}>
-              <div className={style.skipDividerLine} />
-              <span className={style.skipDividerText}>or</span>
-              <div className={style.skipDividerLine} />
-            </div>
-            <div className={style.skipSection}>
-              {BUILD_CONFIG.isNative ? (
-                <Button
-                  variant="plain"
-                  className={style.addSelfhostedButton}
-                  prefix={
-                    <PublishIcon className={style.addSelfhostedButtonPrefix} />
-                  }
-                  onClick={onAddSelfhosted}
-                >
-                  {t['com.affine.auth.sign.add-selfhosted']()}
-                </Button>
-              ) : (
-                <div className={style.skipText}>
-                  {t['com.affine.mobile.sign-in.skip.hint']()}
-                </div>
-              )}
-              <Button
-                variant="plain"
-                onClick={onSkip}
-                className={style.skipLink}
-                prefix={<LocalWorkspaceIcon className={style.skipLinkIcon} />}
-              >
-                {t['com.affine.mobile.sign-in.skip.link']()}
-              </Button>
-            </div>
-          </>
+          <div className={style.authMessage}>
+            {/*prettier-ignore*/}
+            <Trans i18nKey="com.lovenotes.auth.sign.message">
+              By clicking &quot;Continue with Google/Email&quot; above, you acknowledge that
+              you agree to LoveNotes&apos;s <a href="https://lovenotes.pro/terms" target="_blank" rel="noreferrer">Terms of Conditions</a> and <a href="https://lovenotes.pro/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.
+          </Trans>
+          </div>
         )}
       </AuthContent>
       {isSelfhosted && (

@@ -1,5 +1,5 @@
-import { panelBaseStyle } from '@blocksuite/affine-shared/styles';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
+import { panelBaseStyle } from '@blocksuite/lovenotes-shared/styles';
+import { stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { css, html, LitElement } from 'lit';
 
@@ -23,7 +23,7 @@ export class EditorToolbar extends WithDisposable(LitElement) {
       justify-content: center;
       align-items: center;
       gap: 8px;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
       fill: currentColor;
     }
   `;

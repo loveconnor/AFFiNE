@@ -1,5 +1,5 @@
-use affine_common::hashcash::Stamp;
-use affine_nbstore::{Data, pool::SqliteDocStoragePool};
+use lovenotes_common::hashcash::Stamp;
+use lovenotes_nbstore::{Data, pool::SqliteDocStoragePool};
 
 #[derive(uniffi::Error, thiserror::Error, Debug)]
 pub enum UniffiError {
@@ -11,15 +11,15 @@ pub enum UniffiError {
   TimestampDecodingError,
 }
 
-impl From<affine_nbstore::error::Error> for UniffiError {
-  fn from(err: affine_nbstore::error::Error) -> Self {
+impl From<lovenotes_nbstore::error::Error> for UniffiError {
+  fn from(err: lovenotes_nbstore::error::Error) -> Self {
     Self::Err(err.to_string())
   }
 }
 
 type Result<T> = std::result::Result<T, UniffiError>;
 
-uniffi::setup_scaffolding!("affine_mobile_native");
+uniffi::setup_scaffolding!("lovenotes_mobile_native");
 
 #[uniffi::export]
 pub fn hashcash_mint(resource: String, bits: u32) -> String {
@@ -34,8 +34,8 @@ pub struct DocRecord {
   pub timestamp: i64,
 }
 
-impl From<affine_nbstore::DocRecord> for DocRecord {
-  fn from(record: affine_nbstore::DocRecord) -> Self {
+impl From<lovenotes_nbstore::DocRecord> for DocRecord {
+  fn from(record: lovenotes_nbstore::DocRecord) -> Self {
     Self {
       doc_id: record.doc_id,
       bin: base64_simd::STANDARD.encode_to_string(&record.bin),
@@ -44,7 +44,7 @@ impl From<affine_nbstore::DocRecord> for DocRecord {
   }
 }
 
-impl TryFrom<DocRecord> for affine_nbstore::DocRecord {
+impl TryFrom<DocRecord> for lovenotes_nbstore::DocRecord {
   type Error = UniffiError;
 
   fn try_from(record: DocRecord) -> Result<Self> {
@@ -70,8 +70,8 @@ pub struct DocUpdate {
   pub bin: String,
 }
 
-impl From<affine_nbstore::DocUpdate> for DocUpdate {
-  fn from(update: affine_nbstore::DocUpdate) -> Self {
+impl From<lovenotes_nbstore::DocUpdate> for DocUpdate {
+  fn from(update: lovenotes_nbstore::DocUpdate) -> Self {
     Self {
       doc_id: update.doc_id,
       timestamp: update.timestamp.and_utc().timestamp_millis(),
@@ -80,7 +80,7 @@ impl From<affine_nbstore::DocUpdate> for DocUpdate {
   }
 }
 
-impl TryFrom<DocUpdate> for affine_nbstore::DocUpdate {
+impl TryFrom<DocUpdate> for lovenotes_nbstore::DocUpdate {
   type Error = UniffiError;
 
   fn try_from(update: DocUpdate) -> Result<Self> {
@@ -100,8 +100,8 @@ pub struct DocClock {
   pub timestamp: i64,
 }
 
-impl From<affine_nbstore::DocClock> for DocClock {
-  fn from(clock: affine_nbstore::DocClock) -> Self {
+impl From<lovenotes_nbstore::DocClock> for DocClock {
+  fn from(clock: lovenotes_nbstore::DocClock) -> Self {
     Self {
       doc_id: clock.doc_id,
       timestamp: clock.timestamp.and_utc().timestamp_millis(),
@@ -109,7 +109,7 @@ impl From<affine_nbstore::DocClock> for DocClock {
   }
 }
 
-impl TryFrom<DocClock> for affine_nbstore::DocClock {
+impl TryFrom<DocClock> for lovenotes_nbstore::DocClock {
   type Error = UniffiError;
 
   fn try_from(clock: DocClock) -> Result<Self> {
@@ -132,8 +132,8 @@ pub struct Blob {
   pub created_at: i64,
 }
 
-impl From<affine_nbstore::Blob> for Blob {
-  fn from(blob: affine_nbstore::Blob) -> Self {
+impl From<lovenotes_nbstore::Blob> for Blob {
+  fn from(blob: lovenotes_nbstore::Blob) -> Self {
     Self {
       key: blob.key,
       data: base64_simd::STANDARD.encode_to_string(&blob.data),
@@ -152,7 +152,7 @@ pub struct SetBlob {
   pub mime: String,
 }
 
-impl TryFrom<SetBlob> for affine_nbstore::SetBlob {
+impl TryFrom<SetBlob> for lovenotes_nbstore::SetBlob {
   type Error = UniffiError;
 
   fn try_from(blob: SetBlob) -> Result<Self> {
@@ -176,8 +176,8 @@ pub struct ListedBlob {
   pub created_at: i64,
 }
 
-impl From<affine_nbstore::ListedBlob> for ListedBlob {
-  fn from(blob: affine_nbstore::ListedBlob) -> Self {
+impl From<lovenotes_nbstore::ListedBlob> for ListedBlob {
+  fn from(blob: lovenotes_nbstore::ListedBlob) -> Self {
     Self {
       key: blob.key,
       size: blob.size,
@@ -200,8 +200,8 @@ pub struct BlockInfo {
   pub additional: Option<String>,
 }
 
-impl From<affine_nbstore::indexer::NativeBlockInfo> for BlockInfo {
-  fn from(value: affine_nbstore::indexer::NativeBlockInfo) -> Self {
+impl From<lovenotes_nbstore::indexer::NativeBlockInfo> for BlockInfo {
+  fn from(value: lovenotes_nbstore::indexer::NativeBlockInfo) -> Self {
     Self {
       block_id: value.block_id,
       flavour: value.flavour,
@@ -223,8 +223,8 @@ pub struct CrawlResult {
   pub summary: String,
 }
 
-impl From<affine_nbstore::indexer::NativeCrawlResult> for CrawlResult {
-  fn from(value: affine_nbstore::indexer::NativeCrawlResult) -> Self {
+impl From<lovenotes_nbstore::indexer::NativeCrawlResult> for CrawlResult {
+  fn from(value: lovenotes_nbstore::indexer::NativeCrawlResult) -> Self {
     Self {
       blocks: value.blocks.into_iter().map(Into::into).collect(),
       title: value.title,
@@ -240,8 +240,8 @@ pub struct SearchHit {
   pub terms: Vec<String>,
 }
 
-impl From<affine_nbstore::indexer::NativeSearchHit> for SearchHit {
-  fn from(value: affine_nbstore::indexer::NativeSearchHit) -> Self {
+impl From<lovenotes_nbstore::indexer::NativeSearchHit> for SearchHit {
+  fn from(value: lovenotes_nbstore::indexer::NativeSearchHit) -> Self {
     Self {
       id: value.id,
       score: value.score,
@@ -256,8 +256,8 @@ pub struct MatchRange {
   pub end: u32,
 }
 
-impl From<affine_nbstore::indexer::NativeMatch> for MatchRange {
-  fn from(value: affine_nbstore::indexer::NativeMatch) -> Self {
+impl From<lovenotes_nbstore::indexer::NativeMatch> for MatchRange {
+  fn from(value: lovenotes_nbstore::indexer::NativeMatch) -> Self {
     Self {
       start: value.start,
       end: value.end,
@@ -742,6 +742,6 @@ impl DocStoragePool {
   }
 
   pub async fn fts_index_version(&self) -> Result<u32> {
-    Ok(affine_nbstore::storage::SqliteDocStorage::index_version())
+    Ok(lovenotes_nbstore::storage::SqliteDocStorage::index_version())
   }
 }

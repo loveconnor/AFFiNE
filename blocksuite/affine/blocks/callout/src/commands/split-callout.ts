@@ -1,9 +1,9 @@
 import {
   CalloutBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { Command, EditorHost } from '@blocksuite/std';
 
 export const splitCalloutCommand: Command<{
@@ -46,7 +46,7 @@ export const splitCalloutCommand: Command<{
     if (parent) {
       const currentIndex = parent.children.indexOf(currentModel);
       const newParagraphId = doc.addBlock(
-        'affine:paragraph',
+        'lovenotes:paragraph',
         {
           text: afterText,
         },
@@ -65,7 +65,7 @@ export const splitCalloutCommand: Command<{
   } else {
     // If current block is not a paragraph, create a new paragraph in callout
     const newParagraphId = doc.addBlock(
-      'affine:paragraph',
+      'lovenotes:paragraph',
       {
         text: new Text(),
       },

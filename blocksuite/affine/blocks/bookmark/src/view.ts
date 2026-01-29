@@ -1,8 +1,8 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { BookmarkBlockSchema } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-ext-loader';
+import { BookmarkBlockSchema } from '@blocksuite/lovenotes-model';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 
@@ -15,7 +15,7 @@ import { effects } from './effects';
 const flavour = BookmarkBlockSchema.model.flavour;
 
 export class BookmarkViewExtension extends ViewExtensionProvider {
-  override name = 'affine-bookmark-block';
+  override name = 'lovenotes-bookmark-block';
 
   override effect() {
     super.effect();
@@ -27,9 +27,9 @@ export class BookmarkViewExtension extends ViewExtensionProvider {
     context.register([
       FlavourExtension(flavour),
       BlockViewExtension(flavour, model => {
-        return model.parent?.flavour === 'affine:surface'
-          ? literal`affine-edgeless-bookmark`
-          : literal`affine-bookmark`;
+        return model.parent?.flavour === 'lovenotes:surface'
+          ? literal`lovenotes-edgeless-bookmark`
+          : literal`lovenotes-bookmark`;
       }),
       BookmarkSlashMenuConfigExtension,
     ]);

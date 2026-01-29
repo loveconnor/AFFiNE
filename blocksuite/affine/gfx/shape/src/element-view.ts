@@ -1,4 +1,4 @@
-import { ShapeElementModel } from '@blocksuite/affine-model';
+import { ShapeElementModel } from '@blocksuite/lovenotes-model';
 import {
   GfxElementModelView,
   GfxViewInteractionExtension,

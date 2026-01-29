@@ -4,16 +4,16 @@
 import PackageDescription
 
 let package = Package(
-  name: "AffineResources",
+  name: "LoveNotesResources",
   products: [
     .library(
-      name: "AffineResources",
-      targets: ["AffineResources"]
+      name: "LoveNotesResources",
+      targets: ["LoveNotesResources"]
     ),
   ],
   targets: [
     .target(
-      name: "AffineResources",
+      name: "LoveNotesResources",
       resources: [
         .process("Resources/Icons.xcassets"),
         .process("Resources/Colors.xcassets"),

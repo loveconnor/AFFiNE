@@ -19,7 +19,7 @@ Enter Travel Details
 Compare and Select Flights`
     );
     const { answer, responses } = await findActions();
-    const todos = await answer.locator('affine-list').all();
+    const todos = await answer.locator('lovenotes-list').all();
 
     const expectedTexts = [
       /Choose a Booking Platform/i,
@@ -30,7 +30,7 @@ Compare and Select Flights`
     await Promise.all(
       todos.map(async (todo, index) => {
         await expect(
-          todo.locator('.affine-list-block__todo-prefix')
+          todo.locator('.lovenotes-list-block__todo-prefix')
         ).toBeVisible();
         await expect(todo).toHaveText(expectedTexts[index]);
       })
@@ -53,7 +53,7 @@ Compare and Select Flights`
     );
 
     const { answer, responses } = await findActions();
-    const todos = await answer.locator('affine-list').all();
+    const todos = await answer.locator('lovenotes-list').all();
     const expectedTexts = [
       /Choose a Booking Platform/i,
       /Enter Travel Details/i,
@@ -62,7 +62,7 @@ Compare and Select Flights`
     await Promise.all(
       todos.map(async (todo, index) => {
         await expect(
-          todo.locator('.affine-list-block__todo-prefix')
+          todo.locator('.lovenotes-list-block__todo-prefix')
         ).toBeVisible();
         await expect(todo).toHaveText(expectedTexts[index]);
       })
@@ -85,7 +85,7 @@ Compare and Select Flights`
     );
 
     const { answer, responses } = await findActions();
-    const todos = await answer.locator('affine-list').all();
+    const todos = await answer.locator('lovenotes-list').all();
     const expectedTexts = [
       /Choose a Booking Platform/i,
       /Enter Travel Details/i,
@@ -94,7 +94,7 @@ Compare and Select Flights`
     await Promise.all(
       todos.map(async (todo, index) => {
         await expect(
-          todo.locator('.affine-list-block__todo-prefix')
+          todo.locator('.lovenotes-list-block__todo-prefix')
         ).toBeVisible();
         await expect(todo).toHaveText(expectedTexts[index]);
       })
@@ -125,7 +125,7 @@ Compare and Select Flights`
       prompt,
       actionName,
     } = await utils.chatPanel.getLatestAIActionMessage(page);
-    const todos = await panelAnswer.locator('affine-list').all();
+    const todos = await panelAnswer.locator('lovenotes-list').all();
 
     const expectedTexts = [
       /Choose a Booking Platform/i,
@@ -135,7 +135,7 @@ Compare and Select Flights`
     await Promise.all(
       todos.map(async (todo, index) => {
         await expect(
-          todo.locator('.affine-list-block__todo-prefix')
+          todo.locator('.lovenotes-list-block__todo-prefix')
         ).toBeVisible();
         await expect(todo).toHaveText(expectedTexts[index]);
       })

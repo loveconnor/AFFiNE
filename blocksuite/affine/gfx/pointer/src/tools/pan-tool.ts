@@ -1,8 +1,8 @@
 import {
   DefaultTool,
   EdgelessLegacySlotIdentifier,
-} from '@blocksuite/affine-block-surface';
-import { on } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-block-surface';
+import { on } from '@blocksuite/lovenotes-shared/utils';
 import type { PointerEventState } from '@blocksuite/std';
 import { BaseTool, MouseButton, type ToolOptions } from '@blocksuite/std/gfx';
 import { Signal } from '@preact/signals-core';

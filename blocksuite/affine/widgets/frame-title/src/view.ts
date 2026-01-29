@@ -1,13 +1,13 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
-import { frameTitleWidget } from './affine-frame-title-widget';
+import { frameTitleWidget } from './lovenotes-frame-title-widget';
 import { effects } from './effects';
 
 export class FrameTitleViewExtension extends ViewExtensionProvider {
-  override name = 'affine-frame-title-widget';
+  override name = 'lovenotes-frame-title-widget';
 
   override effect() {
     super.effect();

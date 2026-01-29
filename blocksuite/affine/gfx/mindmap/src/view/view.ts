@@ -4,9 +4,9 @@ import {
   type MindmapElementModel,
   type MindmapNode,
   type MindmapRoot,
-} from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { requestThrottledConnectedFrame } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
+import { requestThrottledConnectedFrame } from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import type { PointerEventState } from '@blocksuite/std';
 import {

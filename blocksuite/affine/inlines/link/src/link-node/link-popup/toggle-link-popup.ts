@@ -1,4 +1,4 @@
-import type { AffineInlineEditor } from '@blocksuite/affine-shared/types';
+import type { LoveNotesInlineEditor } from '@blocksuite/lovenotes-shared/types';
 import type { BlockStdScope } from '@blocksuite/std';
 import type { InlineRange } from '@blocksuite/std/inline';
 
@@ -7,7 +7,7 @@ import { LinkPopup } from './link-popup';
 export function toggleLinkPopup(
   std: BlockStdScope,
   type: LinkPopup['type'],
-  inlineEditor: AffineInlineEditor,
+  inlineEditor: LoveNotesInlineEditor,
   targetInlineRange: InlineRange,
   abortController: AbortController
 ): LinkPopup {

@@ -1,13 +1,13 @@
-import { Wrapper } from '@affine/component';
-import { EmptyDocs } from '@affine/core/components/affine/empty';
+import { Wrapper } from '@lovenotes/component';
+import { EmptyDocs } from '@lovenotes/core/components/lovenotes/empty';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@affine/core/components/explorer/context';
-import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
-import { Page } from '@affine/core/mobile/components/page';
-import { CollectionRulesService } from '@affine/core/modules/collection-rules';
-import type { Tag } from '@affine/core/modules/tag';
+} from '@lovenotes/core/components/explorer/context';
+import { DocsExplorer } from '@lovenotes/core/components/explorer/docs-view/docs-list';
+import { Page } from '@lovenotes/core/mobile/components/page';
+import { CollectionRulesService } from '@lovenotes/core/modules/collection-rules';
+import type { Tag } from '@lovenotes/core/modules/tag';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect, useState } from 'react';
 

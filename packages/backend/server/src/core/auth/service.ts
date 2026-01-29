@@ -37,8 +37,8 @@ export class AuthService implements OnApplicationBootstrap {
     path: '/',
     secure: this.config.server.https,
   };
-  static readonly sessionCookieName = 'affine_session';
-  static readonly userCookieName = 'affine_user_id';
+  static readonly sessionCookieName = 'lovenotes_session';
+  static readonly userCookieName = 'lovenotes_user_id';
 
   constructor(
     private readonly config: Config,

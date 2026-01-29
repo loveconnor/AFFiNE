@@ -1,17 +1,17 @@
 /**
- * Custom fetch utility with AFFiNE version header
- * Automatically adds the x-affine-version header to all fetch requests
+ * Custom fetch utility with LoveNotes version header
+ * Automatically adds the x-lovenotes-version header to all fetch requests
  */
 
-// BUILD_CONFIG is defined globally in the AFFiNE project
+// BUILD_CONFIG is defined globally in the LoveNotes project
 
 /**
- * Wrapper around fetch that automatically adds the x-affine-version header
+ * Wrapper around fetch that automatically adds the x-lovenotes-version header
  * @param input Request URL
  * @param init Request initialization options
  * @returns Promise with the fetch Response
  */
-export const affineFetch = (
+export const lovenotesFetch = (
   input: RequestInfo | URL,
   init?: RequestInit
 ): Promise<Response> => {
@@ -19,7 +19,7 @@ export const affineFetch = (
     ...init,
     headers: {
       ...init?.headers,
-      'x-affine-version': BUILD_CONFIG.appVersion,
+      'x-lovenotes-version': BUILD_CONFIG.appVersion,
     },
   });
 };

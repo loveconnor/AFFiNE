@@ -4,20 +4,20 @@ import {
   MenuSub,
   toast,
   useConfirmModal,
-} from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { Guard } from '@affine/core/components/guard';
-import { useBlockSuiteMetaHelper } from '@affine/core/components/hooks/affine/use-block-suite-meta-helper';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { DocsService } from '@affine/core/modules/doc';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { preventDefault } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@lovenotes/component';
+import { usePageHelper } from '@lovenotes/core/blocksuite/block-suite-page-list/utils';
+import { Guard } from '@lovenotes/core/components/guard';
+import { useBlockSuiteMetaHelper } from '@lovenotes/core/components/hooks/lovenotes/use-block-suite-meta-helper';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { IsFavoriteIcon } from '@lovenotes/core/components/pure/icons';
+import type { NodeOperation } from '@lovenotes/core/desktop/components/navigation-panel';
+import { DocsService } from '@lovenotes/core/modules/doc';
+import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { preventDefault } from '@lovenotes/core/utils';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
 import {
   DeleteIcon,
   DuplicateIcon,
@@ -75,12 +75,12 @@ export const useNavigationPanelDocNodeOperations = (
       return;
     }
     openConfirmModal({
-      title: t['com.affine.moveToTrash.title'](),
-      description: t['com.affine.moveToTrash.confirmModal.description']({
+      title: t['com.lovenotes.moveToTrash.title'](),
+      description: t['com.lovenotes.moveToTrash.confirmModal.description']({
         title: docRecord.title$.value,
       }),
-      confirmText: t['com.affine.moveToTrash.confirmModal.confirm'](),
-      cancelText: t['com.affine.moveToTrash.confirmModal.cancel'](),
+      confirmText: t['com.lovenotes.moveToTrash.confirmModal.confirm'](),
+      cancelText: t['com.lovenotes.moveToTrash.confirmModal.cancel'](),
       confirmButtonOptions: {
         variant: 'error',
       },
@@ -89,7 +89,7 @@ export const useNavigationPanelDocNodeOperations = (
         track.$.navigationPanel.docs.deleteDoc({
           control: 'button',
         });
-        toast(t['com.affine.toastMessage.movedTrash']());
+        toast(t['com.lovenotes.toastMessage.movedTrash']());
       },
     });
   }, [docRecord, openConfirmModal, t]);
@@ -217,7 +217,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
               </DocFrameScope>
             }
           >
-            <span>{t['com.affine.page-properties.page-info.view']()}</span>
+            <span>{t['com.lovenotes.page-properties.page-info.view']()}</span>
           </MenuSub>
         ),
       },
@@ -231,7 +231,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
                 onClick={handleAddLinkedPage}
                 disabled={!canEdit}
               >
-                {t['com.affine.page-operation.add-linked-page']()}
+                {t['com.lovenotes.page-operation.add-linked-page']()}
               </MenuItem>
             )}
           </Guard>
@@ -241,7 +241,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
         index: 98,
         view: (
           <MenuItem prefixIcon={<DuplicateIcon />} onClick={handleDuplicate}>
-            {t['com.affine.header.option.duplicate']()}
+            {t['com.lovenotes.header.option.duplicate']()}
           </MenuItem>
         ),
       },
@@ -249,7 +249,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
         index: 99,
         view: (
           <MenuItem prefixIcon={<OpenInNewIcon />} onClick={handleOpenInNewTab}>
-            {t['com.affine.workbench.tab.page-menu-open']()}
+            {t['com.lovenotes.workbench.tab.page-menu-open']()}
           </MenuItem>
         ),
       },
@@ -261,8 +261,8 @@ export const useNavigationPanelDocNodeOperationsMenu = (
             onClick={handleToggleFavoriteDoc}
           >
             {favorite
-              ? t['com.affine.favoritePageOperation.remove']()
-              : t['com.affine.favoritePageOperation.add']()}
+              ? t['com.lovenotes.favoritePageOperation.remove']()
+              : t['com.lovenotes.favoritePageOperation.add']()}
           </MenuItem>
         ),
       },
@@ -281,7 +281,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
                 onClick={handleMoveToTrash}
                 disabled={!canMoveToTrash}
               >
-                {t['com.affine.moveToTrash.title']()}
+                {t['com.lovenotes.moveToTrash.title']()}
               </MenuItem>
             )}
           </Guard>

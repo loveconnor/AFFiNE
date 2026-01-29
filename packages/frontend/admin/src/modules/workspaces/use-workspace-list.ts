@@ -1,10 +1,10 @@
-import { useQuery } from '@affine/admin/use-query';
+import { useQuery } from '@lovenotes/admin/use-query';
 import {
   adminWorkspacesCountQuery,
   AdminWorkspaceSort,
   adminWorkspacesQuery,
   FeatureType,
-} from '@affine/graphql';
+} from '@lovenotes/graphql';
 import { useEffect, useMemo, useState } from 'react';
 
 import type { WorkspaceFlagFilter } from './schema';

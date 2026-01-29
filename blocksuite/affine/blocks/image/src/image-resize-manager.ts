@@ -1,8 +1,8 @@
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   getClosestBlockComponentByElement,
   getModelByElement,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { BlockComponent, PointerEventState } from '@blocksuite/std';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 
@@ -101,5 +101,5 @@ export class ImageResizeManager {
 }
 
 function getClosestRootBlockComponent(el: HTMLElement): BlockComponent | null {
-  return el.closest('affine-edgeless-root, affine-page-root');
+  return el.closest('lovenotes-edgeless-root, lovenotes-page-root');
 }

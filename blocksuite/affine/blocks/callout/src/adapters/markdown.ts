@@ -1,4 +1,4 @@
-import { CalloutBlockSchema } from '@blocksuite/affine-model';
+import { CalloutBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
@@ -11,7 +11,7 @@ import {
   DEFAULT_ADMONITION_TYPE,
   getCalloutEmoji,
   isCalloutNode,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { type DeltaInsert, nanoid } from '@blocksuite/store';
 
 // Currently, the callout block children can only be paragraph block or list block

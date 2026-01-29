@@ -1,8 +1,8 @@
 import {
   type ElementRenderer,
   ElementRendererExtension,
-} from '@blocksuite/affine-block-surface';
-import { DefaultTheme, type TextElementModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import { DefaultTheme, type TextElementModel } from '@blocksuite/lovenotes-model';
 import { deltaInsertsToChunks } from '@blocksuite/std/inline';
 
 import {

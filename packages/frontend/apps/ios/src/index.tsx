@@ -1,9 +1,9 @@
 import './setup';
-import '@affine/component/theme';
-import '@affine/core/mobile/styles/mobile.css';
+import '@lovenotes/component/theme';
+import '@lovenotes/core/mobile/styles/mobile.css';
 
-import { Telemetry } from '@affine/core/components/telemetry';
-import { bindNativeDBApis } from '@affine/nbstore/sqlite';
+import { Telemetry } from '@lovenotes/core/components/telemetry';
+import { bindNativeDBApis } from '@lovenotes/nbstore/sqlite';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 

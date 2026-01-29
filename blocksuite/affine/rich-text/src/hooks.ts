@@ -1,5 +1,5 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import { isStrictUrl } from '@blocksuite/affine-shared/utils';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
+import { isStrictUrl } from '@blocksuite/lovenotes-shared/utils';
 import type {
   BeforeinputHookCtx,
   CompositionEndHookCtx,
@@ -9,7 +9,7 @@ import type {
 const EDGE_IGNORED_ATTRIBUTES = ['code', 'link'] as const;
 const GLOBAL_IGNORED_ATTRIBUTES = [] as const;
 
-const autoIdentifyLink = (ctx: HookContext<AffineTextAttributes>) => {
+const autoIdentifyLink = (ctx: HookContext<LoveNotesTextAttributes>) => {
   // auto identify link only on pressing space
   if (ctx.data !== ' ') {
     return;
@@ -60,8 +60,8 @@ const autoIdentifyLink = (ctx: HookContext<AffineTextAttributes>) => {
 
 function handleExtendedAttributes(
   ctx:
-    | BeforeinputHookCtx<AffineTextAttributes>
-    | CompositionEndHookCtx<AffineTextAttributes>
+    | BeforeinputHookCtx<LoveNotesTextAttributes>
+    | CompositionEndHookCtx<LoveNotesTextAttributes>
 ) {
   const { data, inlineEditor, inlineRange } = ctx;
   const deltas = inlineEditor.getDeltasByInlineRange(inlineRange);
@@ -103,14 +103,14 @@ function handleExtendedAttributes(
 }
 
 export const onVBeforeinput = (
-  ctx: BeforeinputHookCtx<AffineTextAttributes>
+  ctx: BeforeinputHookCtx<LoveNotesTextAttributes>
 ) => {
   handleExtendedAttributes(ctx);
   autoIdentifyLink(ctx);
 };
 
 export const onVCompositionEnd = (
-  ctx: CompositionEndHookCtx<AffineTextAttributes>
+  ctx: CompositionEndHookCtx<LoveNotesTextAttributes>
 ) => {
   handleExtendedAttributes(ctx);
 };

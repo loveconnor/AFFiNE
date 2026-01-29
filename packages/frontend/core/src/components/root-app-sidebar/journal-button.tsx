@@ -1,8 +1,8 @@
-import { MenuLinkItem } from '@affine/core/modules/app-sidebar/views';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { JournalService } from '@affine/core/modules/journal';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
+import { MenuLinkItem } from '@lovenotes/core/modules/app-sidebar/views';
+import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
+import { JournalService } from '@lovenotes/core/modules/journal';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { useI18n } from '@lovenotes/i18n';
 import { TodayIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 
@@ -25,7 +25,7 @@ export const AppSidebarJournalButton = () => {
       to={'/journals'}
       icon={<Icon />}
     >
-      {t['com.affine.journal.app-sidebar-title']()}
+      {t['com.lovenotes.journal.app-sidebar-title']()}
     </MenuLinkItem>
   );
 };

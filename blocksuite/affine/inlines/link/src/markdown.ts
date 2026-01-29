@@ -1,7 +1,7 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { InlineMarkdownExtension } from '@blocksuite/std/inline';
 
-export const LinkExtension = InlineMarkdownExtension<AffineTextAttributes>({
+export const LinkExtension = InlineMarkdownExtension<LoveNotesTextAttributes>({
   name: 'link',
   pattern: /.*\[(.+?)\]\((.+?)\)\s$/,
   action: ({ inlineEditor, prefixText, inlineRange, pattern, undoManager }) => {

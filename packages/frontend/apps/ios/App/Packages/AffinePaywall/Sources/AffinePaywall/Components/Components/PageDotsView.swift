@@ -1,11 +1,11 @@
 //
 //  PageDotsView.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //
 
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 struct PageDotsView: View {
@@ -20,8 +20,8 @@ struct PageDotsView: View {
         Circle()
           .foregroundStyle(
             index == current
-              ? AffineColors.buttonPrimary.color
-              : AffineColors.textSecondary.color.opacity(0.5)
+              ? LoveNotesColors.buttonPrimary.color
+              : LoveNotesColors.textSecondary.color.opacity(0.5)
           )
           .frame(width: 6, height: 6)
           .padding(4)

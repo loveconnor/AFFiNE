@@ -1,5 +1,5 @@
-import { EmptyCollections } from '@affine/core/components/affine/empty';
-import { CollectionService } from '@affine/core/modules/collection';
+import { EmptyCollections } from '@lovenotes/core/components/lovenotes/empty';
+import { CollectionService } from '@lovenotes/core/modules/collection';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import { CollectionListItem } from './item';

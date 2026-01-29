@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { toGfxBlockComponent } from '@blocksuite/std';
 import { css } from 'lit';
 
@@ -8,8 +8,8 @@ export class ImageEdgelessPlaceholderBlockComponent extends toGfxBlockComponent(
   ImagePlaceholderBlockComponent
 ) {
   static override styles = css`
-    affine-edgeless-placeholder-preview-image
-      .affine-placeholder-preview-container {
+    lovenotes-edgeless-placeholder-preview-image
+      .lovenotes-placeholder-preview-container {
       border: 1px solid ${unsafeCSSVarV2('layer/background/tertiary')};
     }
   `;
@@ -21,6 +21,6 @@ export class ImageEdgelessPlaceholderBlockComponent extends toGfxBlockComponent(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-edgeless-placeholder-preview-image': ImageEdgelessPlaceholderBlockComponent;
+    'lovenotes-edgeless-placeholder-preview-image': ImageEdgelessPlaceholderBlockComponent;
   }
 }

@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-widget-drag-handle';
+export * from '@blocksuite/lovenotes-widget-drag-handle';

@@ -1,4 +1,4 @@
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import {
   type InlineRootElement,
   InlineSpecExtension,
@@ -7,10 +7,10 @@ import type { ExtensionType } from '@blocksuite/store';
 import { html } from 'lit';
 import { z } from 'zod';
 
-export type AffineInlineRootElement = InlineRootElement<AffineTextAttributes>;
+export type LoveNotesInlineRootElement = InlineRootElement<LoveNotesTextAttributes>;
 
 export const BoldInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'bold',
     schema: z.object({
       bold: z.literal(true).optional().nullable().catch(undefined),
@@ -19,12 +19,12 @@ export const BoldInlineSpecExtension =
       return !!delta.attributes?.bold;
     },
     renderer: ({ delta }) => {
-      return html`<affine-text .delta=${delta}></affine-text>`;
+      return html`<lovenotes-text .delta=${delta}></lovenotes-text>`;
     },
   });
 
 export const ItalicInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'italic',
     schema: z.object({
       italic: z.literal(true).optional().nullable().catch(undefined),
@@ -33,12 +33,12 @@ export const ItalicInlineSpecExtension =
       return !!delta.attributes?.italic;
     },
     renderer: ({ delta }) => {
-      return html`<affine-text .delta=${delta}></affine-text>`;
+      return html`<lovenotes-text .delta=${delta}></lovenotes-text>`;
     },
   });
 
 export const UnderlineInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'underline',
     schema: z.object({
       underline: z.literal(true).optional().nullable().catch(undefined),
@@ -47,12 +47,12 @@ export const UnderlineInlineSpecExtension =
       return !!delta.attributes?.underline;
     },
     renderer: ({ delta }) => {
-      return html`<affine-text .delta=${delta}></affine-text>`;
+      return html`<lovenotes-text .delta=${delta}></lovenotes-text>`;
     },
   });
 
 export const StrikeInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'strike',
     schema: z.object({
       strike: z.literal(true).optional().nullable().catch(undefined),
@@ -61,12 +61,12 @@ export const StrikeInlineSpecExtension =
       return !!delta.attributes?.strike;
     },
     renderer: ({ delta }) => {
-      return html`<affine-text .delta=${delta}></affine-text>`;
+      return html`<lovenotes-text .delta=${delta}></lovenotes-text>`;
     },
   });
 
 export const CodeInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'inline-code',
     schema: z.object({
       code: z.literal(true).optional().nullable().catch(undefined),
@@ -75,12 +75,12 @@ export const CodeInlineSpecExtension =
       return !!delta.attributes?.code;
     },
     renderer: ({ delta }) => {
-      return html`<affine-text .delta=${delta}></affine-text>`;
+      return html`<lovenotes-text .delta=${delta}></lovenotes-text>`;
     },
   });
 
 export const BackgroundInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'background',
     schema: z.object({
       background: z.string().optional().nullable().catch(undefined),
@@ -89,12 +89,12 @@ export const BackgroundInlineSpecExtension =
       return !!delta.attributes?.background;
     },
     renderer: ({ delta }) => {
-      return html`<affine-text .delta=${delta}></affine-text>`;
+      return html`<lovenotes-text .delta=${delta}></lovenotes-text>`;
     },
   });
 
 export const ColorInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>({
+  InlineSpecExtension<LoveNotesTextAttributes>({
     name: 'color',
     schema: z.object({
       color: z.string().optional().nullable().catch(undefined),
@@ -103,7 +103,7 @@ export const ColorInlineSpecExtension =
       return !!delta.attributes?.color;
     },
     renderer: ({ delta }) => {
-      return html`<affine-text .delta=${delta}></affine-text>`;
+      return html`<lovenotes-text .delta=${delta}></lovenotes-text>`;
     },
   });
 

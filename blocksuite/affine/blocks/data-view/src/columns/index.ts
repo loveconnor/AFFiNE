@@ -1,4 +1,4 @@
-import { richTextColumnConfig } from '@blocksuite/affine-block-database';
+import { richTextColumnConfig } from '@blocksuite/lovenotes-block-database';
 import type { PropertyMetaConfig } from '@blocksuite/data-view';
 import { propertyPresets } from '@blocksuite/data-view/property-presets';
 

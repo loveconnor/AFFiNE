@@ -1,13 +1,13 @@
-import { waitNextFrame } from '@affine-test/kit/bs/misc';
-import { test } from '@affine-test/kit/playwright';
-import { locateEditorContainer } from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { waitNextFrame } from '@lovenotes-test/kit/bs/misc';
+import { test } from '@lovenotes-test/kit/playwright';
+import { locateEditorContainer } from '@lovenotes-test/kit/utils/editor';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   addDatabase,
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test('database is useable', async ({ page }) => {
@@ -20,7 +20,7 @@ test('database is useable', async ({ page }) => {
   await page.keyboard.press('Enter');
   expect(await title.innerText()).toBe('test title');
   await addDatabase(page);
-  const database = page.locator('affine-database');
+  const database = page.locator('lovenotes-database');
   await expect(database).toBeVisible();
   await page.reload();
   await waitForEditorLoad(page);
@@ -31,7 +31,7 @@ test('database is useable', async ({ page }) => {
   expect(await title2.innerText()).toBe('test title2');
   await page.keyboard.press('Enter');
   await addDatabase(page);
-  const database2 = page.locator('affine-database');
+  const database2 = page.locator('lovenotes-database');
   await expect(database2).toBeVisible();
 });
 
@@ -58,9 +58,9 @@ test('link page is useable', async ({ page }) => {
   await page.keyboard.press('1');
   await waitNextFrame(page);
   await page.locator('icon-button:has-text("page1")').first().click();
-  const link = page.locator('.affine-reference');
+  const link = page.locator('.lovenotes-reference');
   await expect(link).toBeVisible();
-  await page.click('.affine-reference');
+  await page.click('.lovenotes-reference');
   await page.waitForTimeout(500);
 
   await expect(
@@ -79,7 +79,7 @@ test('append paragraph when click editor gap', async ({ page }) => {
   await page.keyboard.press('ArrowDown');
   await page.keyboard.insertText('test content');
 
-  const paragraph = page.locator('affine-paragraph');
+  const paragraph = page.locator('lovenotes-paragraph');
   const numParagraphs = await paragraph.count();
 
   await page.locator('[data-testid=page-editor-blank]').click();

@@ -1,12 +1,12 @@
-import { SettingRow } from '@affine/component/setting-components';
-import { Button } from '@affine/component/ui/button';
-import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
+import { SettingRow } from '@lovenotes/component/setting-components';
+import { Button } from '@lovenotes/component/ui/button';
+import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
 import {
   type Workspace,
   WorkspaceService,
-} from '@affine/core/modules/workspace';
-import { UNTITLED_WORKSPACE_NAME } from '@affine/env/constant';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/workspace';
+import { UNTITLED_WORKSPACE_NAME } from '@lovenotes/env/constant';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
@@ -48,17 +48,17 @@ export const EnableCloudPanel = ({
       spreadCol={false}
       style={{
         padding: '10px',
-        background: 'var(--affine-background-secondary-color)',
+        background: 'var(--lovenotes-background-secondary-color)',
         marginTop: '24px',
       }}
     >
       <Button
-        data-testid="publish-enable-affine-cloud-button"
+        data-testid="publish-enable-lovenotes-cloud-button"
         variant="primary"
         onClick={confirmEnableCloudAndClose}
         style={{ marginTop: '12px' }}
       >
-        {t['Enable AFFiNE Cloud']()}
+        {t['Enable LoveNotes Cloud']()}
       </Button>
     </SettingRow>
   );

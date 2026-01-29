@@ -1,16 +1,16 @@
-import { reassociateConnectorsCommand } from '@blocksuite/affine-block-surface';
-import { toast } from '@blocksuite/affine-components/toast';
+import { reassociateConnectorsCommand } from '@blocksuite/lovenotes-block-surface';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import {
   BookmarkStyles,
   type EmbedCardStyle,
   EmbedGithubModel,
   EmbedGithubStyles,
   isExternalEmbedModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   ActionPlacement,
   EmbedOptionProvider,
@@ -20,8 +20,8 @@ import {
   type ToolbarContext,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
-import { getBlockProps } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { getBlockProps } from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   CaptionIcon,
@@ -58,7 +58,7 @@ const previewAction = {
 
     if (options?.viewType !== 'card') return null;
 
-    return html`<affine-link-preview .url=${url}></affine-link-preview>`;
+    return html`<lovenotes-link-preview .url=${url}></lovenotes-link-preview>`;
   },
 } satisfies ToolbarAction;
 
@@ -113,7 +113,7 @@ function createBuiltinToolbarConfigForExternal(
 
               const text = new Text(yText);
 
-              ctx.store.addBlock('affine:paragraph', { text }, parent, index);
+              ctx.store.addBlock('lovenotes:paragraph', { text }, parent, index);
 
               ctx.store.deleteBlock(model);
 
@@ -154,7 +154,7 @@ function createBuiltinToolbarConfigForExternal(
                 .getEmbedBlockOptions(url);
 
               let style: EmbedCardStyle = model.props.style;
-              let flavour = 'affine:bookmark';
+              let flavour = 'lovenotes:bookmark';
 
               if (options?.viewType === 'card') {
                 flavour = options.flavour;
@@ -277,12 +277,12 @@ function createBuiltinToolbarConfigForExternal(
 
           return html`${keyed(
             model,
-            html`<affine-view-dropdown-menu
+            html`<lovenotes-view-dropdown-menu
               @toggle=${onToggle}
               .actions=${actions}
               .context=${ctx}
               .viewType$=${viewType$}
-            ></affine-view-dropdown-menu>`
+            ></lovenotes-view-dropdown-menu>`
           )}`;
         },
       } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -325,12 +325,12 @@ function createBuiltinToolbarConfigForExternal(
 
           return html`${keyed(
             model,
-            html`<affine-card-style-dropdown-menu
+            html`<lovenotes-card-style-dropdown-menu
               @toggle=${onToggle}
               .actions=${actions}
               .context=${ctx}
               .style$=${model.props.style$}
-            ></affine-card-style-dropdown-menu>`
+            ></lovenotes-card-style-dropdown-menu>`
           )}`;
         },
       } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -439,7 +439,7 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
               const { url, caption } = model.props;
 
               let { style } = model.props;
-              let flavour = 'affine:bookmark';
+              let flavour = 'lovenotes:bookmark';
 
               if (
                 !BookmarkStyles.includes(
@@ -510,12 +510,12 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
 
           return html`${keyed(
             model,
-            html`<affine-view-dropdown-menu
+            html`<lovenotes-view-dropdown-menu
               @toggle=${onToggle}
               .actions=${actions}
               .context=${ctx}
               .viewType$=${viewType$}
-            ></affine-view-dropdown-menu>`
+            ></lovenotes-view-dropdown-menu>`
           )}`;
         },
       } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -575,12 +575,12 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
 
           return html`${keyed(
             model,
-            html`<affine-card-style-dropdown-menu
+            html`<lovenotes-card-style-dropdown-menu
               @toggle=${onToggle}
               .actions=${actions}
               .context=${ctx}
               .style$=${style$}
-            ></affine-card-style-dropdown-menu>`
+            ></lovenotes-card-style-dropdown-menu>`
           )}`;
         },
       } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -642,12 +642,12 @@ const createBuiltinSurfaceToolbarConfigForExternal = (
 
           return html`${keyed(
             model,
-            html`<affine-size-dropdown-menu
+            html`<lovenotes-size-dropdown-menu
               @select=${onSelect}
               @toggle=${onToggle}
               .format=${format}
               .size$=${scale$}
-            ></affine-size-dropdown-menu>`
+            ></lovenotes-size-dropdown-menu>`
           )}`;
         },
       },
@@ -674,7 +674,7 @@ export const createBuiltinToolbarConfigExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier(`affine:surface:${name}`),
+      id: BlockFlavourIdentifier(`lovenotes:surface:${name}`),
       config: createBuiltinSurfaceToolbarConfigForExternal(klass),
     }),
   ];

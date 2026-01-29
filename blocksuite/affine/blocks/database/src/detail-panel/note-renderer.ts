@@ -4,11 +4,11 @@ import {
   ListBlockModel,
   ParagraphBlockModel,
   type RootBlockModel,
-} from '@blocksuite/affine-model';
-import { REFERENCE_NODE } from '@blocksuite/affine-shared/consts';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import { createDefaultDoc, matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { REFERENCE_NODE } from '@blocksuite/lovenotes-shared/consts';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
+import { createDefaultDoc, matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { DetailSlotProps, SingleView } from '@blocksuite/data-view';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { type EditorHost, ShadowlessElement } from '@blocksuite/std';
@@ -27,7 +27,7 @@ export class NoteRenderer
   static override styles = css`
     database-datasource-note-renderer {
       width: 100%;
-      --affine-editor-side-padding: 0;
+      --lovenotes-editor-side-padding: 0;
       flex: 1;
     }
   `;
@@ -65,13 +65,13 @@ export class NoteRenderer
             type: 'LinkedPage',
             pageId: note.id,
           },
-        } satisfies AffineTextAttributes as BaseTextAttributes
+        } satisfies LoveNotesTextAttributes as BaseTextAttributes
       );
       collection.meta.setDocMeta(note.id, { title: rowContent });
       if (note.root) {
         (note.root as RootBlockModel).props.title.insert(rowContent ?? '', 0);
         note.root.children
-          .find(child => child.flavour === 'affine:note')
+          .find(child => child.flavour === 'lovenotes:note')
           ?.children.find(block =>
             matchModels(block, [
               ParagraphBlockModel,
@@ -85,7 +85,7 @@ export class NoteRenderer
         segment: 'database',
         module: 'center peek in database',
         type: 'turn into',
-        parentFlavour: 'affine:database',
+        parentFlavour: 'lovenotes:database',
       });
     }
   }
@@ -93,7 +93,7 @@ export class NoteRenderer
   protected override render(): unknown {
     return html`
       <div
-        style="height: 1px;max-width: var(--affine-editor-width);background-color: ${unsafeCSS(
+        style="height: 1px;max-width: var(--lovenotes-editor-width);background-color: ${unsafeCSS(
           cssVarV2.layer.insideBorder.border
         )};margin: auto;margin-bottom: 16px"
       ></div>
@@ -106,7 +106,7 @@ export class NoteRenderer
       return html` <div>
         <div
           @click="${this.addNote}"
-          style="max-width: var(--affine-editor-width);margin: auto;cursor: pointer;color: var(--affine-text-disable-color)"
+          style="max-width: var(--lovenotes-editor-width);margin: auto;cursor: pointer;color: var(--lovenotes-text-disable-color)"
         >
           Click to create a linked doc in center peek.
         </div>

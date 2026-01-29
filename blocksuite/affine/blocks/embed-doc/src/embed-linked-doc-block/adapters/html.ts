@@ -1,9 +1,9 @@
-import { EmbedLinkedDocBlockSchema } from '@blocksuite/affine-model';
+import { EmbedLinkedDocBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   AdapterTextUtils,
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 export const embedLinkedDocBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
   flavour: EmbedLinkedDocBlockSchema.model.flavour,
@@ -30,7 +30,7 @@ export const embedLinkedDocBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
             type: 'element',
             tagName: 'div',
             properties: {
-              className: ['affine-paragraph-block-container'],
+              className: ['lovenotes-paragraph-block-container'],
             },
             children: [],
           },

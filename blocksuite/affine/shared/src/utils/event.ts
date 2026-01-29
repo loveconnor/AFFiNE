@@ -1,4 +1,4 @@
-import type { Palette } from '@blocksuite/affine-model';
+import type { Palette } from '@blocksuite/lovenotes-model';
 import { IS_IOS, IS_MAC } from '@blocksuite/global/env';
 
 export function isTouchPadPinchEvent(e: WheelEvent) {

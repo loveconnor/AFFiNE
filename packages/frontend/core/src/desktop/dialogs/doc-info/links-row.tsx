@@ -1,6 +1,6 @@
-import { PropertyCollapsibleSection } from '@affine/component';
-import { AffinePageReference } from '@affine/core/components/affine/reference-link';
-import type { Backlink, Link } from '@affine/core/modules/doc-link';
+import { PropertyCollapsibleSection } from '@lovenotes/component';
+import { LoveNotesPageReference } from '@lovenotes/core/components/lovenotes/reference-link';
+import type { Backlink, Link } from '@lovenotes/core/modules/doc-link';
 import type { MouseEvent, ReactNode } from 'react';
 
 import * as styles from './links-row.css';
@@ -25,7 +25,7 @@ export const LinksRow = ({
     >
       {Array.isArray(references)
         ? references.map(link => (
-            <AffinePageReference
+            <LoveNotesPageReference
               key={link.docId}
               pageId={link.docId}
               params={'params' in link ? link.params : undefined}

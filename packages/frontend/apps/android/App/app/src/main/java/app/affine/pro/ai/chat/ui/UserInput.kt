@@ -1,4 +1,4 @@
-package app.affine.pro.ai.chat.ui
+package app.lovenotes.pro.ai.chat.ui
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -42,10 +42,10 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import app.affine.pro.R
-import app.affine.pro.components.AFFiNEIconButton
-import app.affine.pro.theme.AFFiNETheme
-import app.affine.pro.theme.ThemeMode
+import app.lovenotes.pro.R
+import app.lovenotes.pro.components.LoveNotesIconButton
+import app.lovenotes.pro.theme.LoveNotesTheme
+import app.lovenotes.pro.theme.ThemeMode
 
 enum class InputSelector {
     NONE,
@@ -56,7 +56,7 @@ enum class InputSelector {
 @Preview
 @Composable
 fun UserInputPreview() {
-    AFFiNETheme(ThemeMode.Dark) {
+    LoveNotesTheme(ThemeMode.Dark) {
         UserInput(onMessageSent = {})
     }
 }
@@ -92,7 +92,7 @@ fun UserInput(
         tonalElevation = 2.dp,
         shadowElevation = 2.dp,
         shape = RoundedCornerShape(16.dp, 16.dp, 0.dp, 0.dp),
-        color = AFFiNETheme.colors.backgroundOverlayPanel,
+        color = LoveNotesTheme.colors.backgroundOverlayPanel,
     ) {
         Column(modifier = modifier) {
             UserInputText(
@@ -138,14 +138,14 @@ private fun UserInputSelector(
             .padding(10.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        AFFiNEIconButton(
+        LoveNotesIconButton(
             R.drawable.ic_camera,
             onClick = { onSelectorChange(InputSelector.CAMERA) },
         )
 
         Spacer(modifier = Modifier.width(14.dp))
 
-        AFFiNEIconButton(
+        LoveNotesIconButton(
             R.drawable.ic_image,
             onClick = { onSelectorChange(InputSelector.PICTURE) },
         )
@@ -153,7 +153,7 @@ private fun UserInputSelector(
         Spacer(modifier = Modifier.weight(1f))
 
         // Send button
-        AFFiNEIconButton(
+        LoveNotesIconButton(
             R.drawable.ic_send,
             enabled = sendMessageEnabled,
             onClick = onMessageSent,
@@ -212,7 +212,7 @@ private fun BoxScope.UserInputTextField(
     modifier: Modifier = Modifier
 ) {
     var lastFocusState by remember { mutableStateOf(false) }
-    val color = AFFiNETheme.colors.textPrimary
+    val color = LoveNotesTheme.colors.textPrimary
     BasicTextField(
         value = textFieldValue,
         onValueChange = { onTextChanged(it) },

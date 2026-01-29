@@ -1,4 +1,4 @@
-import type { AliasInfo, ReferenceParams } from '@blocksuite/affine-model';
+import type { AliasInfo, ReferenceParams } from '@blocksuite/lovenotes-model';
 import { type Container, createIdentifier } from '@blocksuite/global/di';
 import {
   type DisposableMember,
@@ -37,7 +37,7 @@ export type DocDisplayMetaParams = {
  * Supports the following blocks:
  *
  * * Inline View:
- *      `AffineReference`
+ *      `LoveNotesReference`
  * * Card View:
  *      `EmbedLinkedDocBlockComponent`
  *      `EmbedEdgelessLinkedDocBlockComponent`

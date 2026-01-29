@@ -1,11 +1,11 @@
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { getSelectedBlocksCommand } from '@blocksuite/affine/shared/commands';
-import type { CommentProvider } from '@blocksuite/affine/shared/services';
-import { CommentProviderIdentifier } from '@blocksuite/affine/shared/services';
-import type { BlockStdScope } from '@blocksuite/affine/std';
-import { StdIdentifier } from '@blocksuite/affine/std';
-import type { BaseSelection, ExtensionType } from '@blocksuite/affine/store';
-import { ImageSelection } from '@blocksuite/affine-shared/selection';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { getSelectedBlocksCommand } from '@blocksuite/lovenotes/shared/commands';
+import type { CommentProvider } from '@blocksuite/lovenotes/shared/services';
+import { CommentProviderIdentifier } from '@blocksuite/lovenotes/shared/services';
+import type { BlockStdScope } from '@blocksuite/lovenotes/std';
+import { StdIdentifier } from '@blocksuite/lovenotes/std';
+import type { BaseSelection, ExtensionType } from '@blocksuite/lovenotes/store';
+import { ImageSelection } from '@blocksuite/lovenotes-shared/selection';
 import { type Container } from '@blocksuite/global/di';
 import {
   BlockSelection,
@@ -44,7 +44,7 @@ function getPreviewFromSelections(
       // Get block flavour for BlockSelection
       const block = std.store.getBlock(selection.blockId);
       if (block?.model) {
-        const flavour = block.model.flavour.replace('affine:', '');
+        const flavour = block.model.flavour.replace('lovenotes:', '');
         previews.push(`<${flavour}>`);
       }
     } else if (selection instanceof ImageSelection) {
@@ -54,10 +54,10 @@ function getPreviewFromSelections(
       selection.elements.forEach(elementId => {
         const model = gfx.getElementById(elementId);
         if (model instanceof GfxPrimitiveElementModel) {
-          const flavour = model.type.replace('affine:', '');
+          const flavour = model.type.replace('lovenotes:', '');
           previews.push(`<${flavour}>`);
         } else if (model instanceof GfxBlockElementModel) {
-          const flavour = model.flavour.replace('affine:', '');
+          const flavour = model.flavour.replace('lovenotes:', '');
           previews.push(`<${flavour}>`);
         }
       });
@@ -117,7 +117,7 @@ function extractTextFromSelection(
   }
 }
 
-class AffineCommentService implements CommentProvider {
+class LoveNotesCommentService implements CommentProvider {
   private readonly docCommentManager: DocCommentManagerService;
 
   constructor(
@@ -187,7 +187,7 @@ class AffineCommentService implements CommentProvider {
   }
 }
 
-export function AffineCommentProvider(
+export function LoveNotesCommentProvider(
   framework: FrameworkProvider
 ): ExtensionType {
   return {
@@ -195,7 +195,7 @@ export function AffineCommentProvider(
       di.addImpl(
         CommentProviderIdentifier,
         provider =>
-          new AffineCommentService(provider.get(StdIdentifier), framework)
+          new LoveNotesCommentService(provider.get(StdIdentifier), framework)
       );
     },
   };

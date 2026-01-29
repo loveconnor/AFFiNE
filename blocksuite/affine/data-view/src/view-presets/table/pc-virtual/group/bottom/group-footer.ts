@@ -83,7 +83,7 @@ export class TableGroupFooter extends WithDisposable(ShadowlessElement) {
             >
               <div
                 class="${styles.addRowButton} dv-icon-16"
-                data-test-id="affine-database-add-row-button"
+                data-test-id="lovenotes-database-add-row-button"
                 role="button"
               >
                 ${PlusIcon()}<span class="${styles.addRowText}"
@@ -92,10 +92,10 @@ export class TableGroupFooter extends WithDisposable(ShadowlessElement) {
               </div>
             </div>
           `}
-      <affine-database-virtual-column-stats
+      <lovenotes-database-virtual-column-stats
         .view="${this.tableViewManager}"
         .group="${this.group$.value}"
-      ></affine-database-virtual-column-stats>
+      ></lovenotes-database-virtual-column-stats>
     `;
   }
 }

@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/icon-button';
+export * from '@blocksuite/lovenotes-components/icon-button';

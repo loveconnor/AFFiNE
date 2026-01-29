@@ -2,11 +2,11 @@ import {
   type TableBlockPropsSerialized,
   TableBlockSchema,
   TableModelFlavour,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert } from '@blocksuite/store';
 import { nanoid } from '@blocksuite/store';
 

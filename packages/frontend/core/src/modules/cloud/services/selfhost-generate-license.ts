@@ -1,4 +1,4 @@
-import { type UserFriendlyError } from '@affine/error';
+import { type UserFriendlyError } from '@lovenotes/error';
 import {
   catchErrorInto,
   effect,

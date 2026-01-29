@@ -1,8 +1,8 @@
-import { setupGlobal } from '@affine/env/global';
-import { getBuildConfig } from '@affine-tools/utils/build-config';
-import { Package } from '@affine-tools/utils/workspace';
+import { setupGlobal } from '@lovenotes/env/global';
+import { getBuildConfig } from '@lovenotes-tools/utils/build-config';
+import { Package } from '@lovenotes-tools/utils/workspace';
 
-globalThis.BUILD_CONFIG = getBuildConfig(new Package('@affine/web'), {
+globalThis.BUILD_CONFIG = getBuildConfig(new Package('@lovenotes/web'), {
   mode: 'development',
   channel: 'canary',
 });

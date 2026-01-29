@@ -1,47 +1,47 @@
 import { TextSelection } from '@blocksuite/std';
 import { describe, expect, it } from 'vitest';
 
-import { affine } from '../../test-utils';
+import { lovenotes } from '../../test-utils';
 
-describe('helpers/affine-template', () => {
+describe('helpers/lovenotes-template', () => {
   it('should create a basic document structure from template', () => {
-    const host = affine`
-      <affine-page id="page">
-        <affine-note id="note">
-          <affine-paragraph id="paragraph-1">Hello, world</affine-paragraph>
-        </affine-note>
-      </affine-page>
+    const host = lovenotes`
+      <lovenotes-page id="page">
+        <lovenotes-note id="note">
+          <lovenotes-paragraph id="paragraph-1">Hello, world</lovenotes-paragraph>
+        </lovenotes-note>
+      </lovenotes-page>
     `;
 
     expect(host.store).toBeDefined();
 
     const pageBlock = host.store.getBlock('page');
     expect(pageBlock).toBeDefined();
-    expect(pageBlock?.flavour).toBe('affine:page');
+    expect(pageBlock?.flavour).toBe('lovenotes:page');
 
     const noteBlock = host.store.getBlock('note');
     expect(noteBlock).toBeDefined();
-    expect(noteBlock?.flavour).toBe('affine:note');
+    expect(noteBlock?.flavour).toBe('lovenotes:note');
 
     const paragraphBlock = host.store.getBlock('paragraph-1');
     expect(paragraphBlock).toBeDefined();
-    expect(paragraphBlock?.flavour).toBe('affine:paragraph');
+    expect(paragraphBlock?.flavour).toBe('lovenotes:paragraph');
   });
 
   it('should handle nested blocks correctly', () => {
-    const host = affine`
-      <affine-page>
-        <affine-note>
-          <affine-paragraph>First paragraph</affine-paragraph>
-          <affine-list>List item</affine-list>
-          <affine-paragraph>Second paragraph</affine-paragraph>
-        </affine-note>
-      </affine-page>
+    const host = lovenotes`
+      <lovenotes-page>
+        <lovenotes-note>
+          <lovenotes-paragraph>First paragraph</lovenotes-paragraph>
+          <lovenotes-list>List item</lovenotes-list>
+          <lovenotes-paragraph>Second paragraph</lovenotes-paragraph>
+        </lovenotes-note>
+      </lovenotes-page>
     `;
 
-    const noteBlocks = host.store.getBlocksByFlavour('affine:note');
-    const paragraphBlocks = host.store.getBlocksByFlavour('affine:paragraph');
-    const listBlocks = host.store.getBlocksByFlavour('affine:list');
+    const noteBlocks = host.store.getBlocksByFlavour('lovenotes:note');
+    const paragraphBlocks = host.store.getBlocksByFlavour('lovenotes:paragraph');
+    const listBlocks = host.store.getBlocksByFlavour('lovenotes:list');
 
     expect(noteBlocks.length).toBe(1);
     expect(paragraphBlocks.length).toBe(2);
@@ -52,21 +52,21 @@ describe('helpers/affine-template', () => {
       host.store.getBlock(noteBlock.id)?.model.children || [];
     expect(noteChildren.length).toBe(3);
 
-    expect(noteChildren[0].flavour).toBe('affine:paragraph');
-    expect(noteChildren[1].flavour).toBe('affine:list');
-    expect(noteChildren[2].flavour).toBe('affine:paragraph');
+    expect(noteChildren[0].flavour).toBe('lovenotes:paragraph');
+    expect(noteChildren[1].flavour).toBe('lovenotes:list');
+    expect(noteChildren[2].flavour).toBe('lovenotes:paragraph');
   });
 
   it('should handle empty blocks correctly', () => {
-    const host = affine`
-      <affine-page>
-        <affine-note>
-          <affine-paragraph></affine-paragraph>
-        </affine-note>
-      </affine-page>
+    const host = lovenotes`
+      <lovenotes-page>
+        <lovenotes-note>
+          <lovenotes-paragraph></lovenotes-paragraph>
+        </lovenotes-note>
+      </lovenotes-page>
     `;
 
-    const paragraphBlocks = host.store.getBlocksByFlavour('affine:paragraph');
+    const paragraphBlocks = host.store.getBlocksByFlavour('lovenotes:paragraph');
     expect(paragraphBlocks.length).toBe(1);
 
     const paragraphBlock = host.store.getBlock(paragraphBlocks[0].id);
@@ -76,20 +76,20 @@ describe('helpers/affine-template', () => {
 
   it('should throw error on invalid template', () => {
     expect(() => {
-      affine`
+      lovenotes`
         <unknown-tag></unknown-tag>
       `;
     }).toThrow();
   });
 
   it('should handle text selection with anchor and focus', () => {
-    const host = affine`
-      <affine-page id="page">
-        <affine-note id="note">
-          <affine-paragraph id="paragraph-1">Hel<anchor />lo</affine-paragraph>
-          <affine-paragraph id="paragraph-2">Wo<focus />rld</affine-paragraph>
-        </affine-note>
-      </affine-page>
+    const host = lovenotes`
+      <lovenotes-page id="page">
+        <lovenotes-note id="note">
+          <lovenotes-paragraph id="paragraph-1">Hel<anchor />lo</lovenotes-paragraph>
+          <lovenotes-paragraph id="paragraph-2">Wo<focus />rld</lovenotes-paragraph>
+        </lovenotes-note>
+      </lovenotes-page>
     `;
 
     const selection = host.selection.value[0] as TextSelection;
@@ -104,12 +104,12 @@ describe('helpers/affine-template', () => {
   });
 
   it('should handle cursor position', () => {
-    const host = affine`
-      <affine-page id="page">
-        <affine-note id="note">
-          <affine-paragraph id="paragraph-1">Hello<cursor />World</affine-paragraph>
-        </affine-note>
-      </affine-page>
+    const host = lovenotes`
+      <lovenotes-page id="page">
+        <lovenotes-note id="note">
+          <lovenotes-paragraph id="paragraph-1">Hello<cursor />World</lovenotes-paragraph>
+        </lovenotes-note>
+      </lovenotes-page>
     `;
 
     const selection = host.selection.value[0] as TextSelection;
@@ -122,12 +122,12 @@ describe('helpers/affine-template', () => {
   });
 
   it('should handle selection in empty blocks', () => {
-    const host = affine`
-      <affine-page id="page">
-        <affine-note id="note">
-          <affine-paragraph id="paragraph-1"><cursor /></affine-paragraph>
-        </affine-note>
-      </affine-page>
+    const host = lovenotes`
+      <lovenotes-page id="page">
+        <lovenotes-note id="note">
+          <lovenotes-paragraph id="paragraph-1"><cursor /></lovenotes-paragraph>
+        </lovenotes-note>
+      </lovenotes-page>
     `;
 
     const selection = host.selection.value[0] as TextSelection;
@@ -140,12 +140,12 @@ describe('helpers/affine-template', () => {
   });
 
   it('should handle single point selection', () => {
-    const host = affine`
-      <affine-page id="page">
-        <affine-note id="note">
-          <affine-paragraph id="paragraph-1">Hello<anchor></anchor>World<focus></focus>Affine</affine-paragraph>
-        </affine-note>
-      </affine-page>
+    const host = lovenotes`
+      <lovenotes-page id="page">
+        <lovenotes-note id="note">
+          <lovenotes-paragraph id="paragraph-1">Hello<anchor></anchor>World<focus></focus>LoveNotes</lovenotes-paragraph>
+        </lovenotes-note>
+      </lovenotes-page>
     `;
 
     const selection = host.selection.value[0] as TextSelection;

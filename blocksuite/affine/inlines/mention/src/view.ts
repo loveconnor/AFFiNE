@@ -1,13 +1,13 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import { MentionInlineSpecExtension } from './inline-spec';
 
 export class MentionViewExtension extends ViewExtensionProvider {
-  override name = 'affine-mention-inline';
+  override name = 'lovenotes-mention-inline';
 
   override effect(): void {
     super.effect();

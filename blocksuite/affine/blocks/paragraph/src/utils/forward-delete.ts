@@ -8,12 +8,12 @@ import {
   ImageBlockModel,
   ListBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { EMBED_BLOCK_MODEL_LIST } from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-model';
+import { EMBED_BLOCK_MODEL_LIST } from '@blocksuite/lovenotes-shared/consts';
 import {
   getNextContentBlock,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import {
   BlockSelection,
   type BlockStdScope,

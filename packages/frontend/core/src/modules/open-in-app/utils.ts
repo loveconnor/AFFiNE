@@ -1,9 +1,9 @@
-import { channelToScheme } from '@affine/core/utils';
-import { DebugLogger } from '@affine/debug';
+import { channelToScheme } from '@lovenotes/core/utils';
+import { DebugLogger } from '@lovenotes/debug';
 
 const logger = new DebugLogger('open-in-app');
 
-// return an AFFiNE app's url to be opened in desktop app
+// return an LoveNotes app's url to be opened in desktop app
 export const getOpenUrlInDesktopAppLink = (
   url: string,
   newTab = true,

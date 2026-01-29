@@ -1,33 +1,33 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { css } from 'lit';
 
 export const paragraphBlockStyles = css`
-  affine-paragraph {
+  lovenotes-paragraph {
     box-sizing: border-box;
     display: block;
-    font-size: var(--affine-font-base);
+    font-size: var(--lovenotes-font-base);
   }
 
-  .affine-paragraph-block-container {
+  .lovenotes-paragraph-block-container {
     position: relative;
     border-radius: 4px;
   }
-  .affine-paragraph-rich-text-wrapper {
+  .lovenotes-paragraph-rich-text-wrapper {
     position: relative;
   }
 
-  .affine-paragraph-block-container.highlight-comment {
+  .lovenotes-paragraph-block-container.highlight-comment {
     background-color: ${unsafeCSSVarV2('block/comment/highlightActive')};
     outline: 2px solid ${unsafeCSSVarV2('block/comment/highlightUnderline')};
   }
 
-  affine-paragraph code {
-    font-size: calc(var(--affine-font-base) - 3px);
+  lovenotes-paragraph code {
+    font-size: calc(var(--lovenotes-font-base) - 3px);
     padding: 0px 4px 2px;
   }
 
   .h1 {
-    font-size: var(--affine-font-h-1);
+    font-size: var(--lovenotes-font-h-1);
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: calc(1em + 8px);
@@ -36,12 +36,12 @@ export const paragraphBlockStyles = css`
   }
 
   .h1 code {
-    font-size: calc(var(--affine-font-base) + 10px);
+    font-size: calc(var(--lovenotes-font-base) + 10px);
     padding: 0px 4px;
   }
 
   .h2 {
-    font-size: var(--affine-font-h-2);
+    font-size: var(--lovenotes-font-h-2);
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: calc(1em + 10px);
@@ -50,12 +50,12 @@ export const paragraphBlockStyles = css`
   }
 
   .h2 code {
-    font-size: calc(var(--affine-font-base) + 8px);
+    font-size: calc(var(--lovenotes-font-base) + 8px);
     padding: 0px 4px;
   }
 
   .h3 {
-    font-size: var(--affine-font-h-3);
+    font-size: var(--lovenotes-font-h-3);
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: calc(1em + 8px);
@@ -64,12 +64,12 @@ export const paragraphBlockStyles = css`
   }
 
   .h3 code {
-    font-size: calc(var(--affine-font-base) + 6px);
+    font-size: calc(var(--lovenotes-font-base) + 6px);
     padding: 0px 4px;
   }
 
   .h4 {
-    font-size: var(--affine-font-h-4);
+    font-size: var(--lovenotes-font-h-4);
     font-weight: 600;
     letter-spacing: -0.015em;
     line-height: calc(1em + 8px);
@@ -77,12 +77,12 @@ export const paragraphBlockStyles = css`
     margin-bottom: 10px;
   }
   .h4 code {
-    font-size: calc(var(--affine-font-base) + 4px);
+    font-size: calc(var(--lovenotes-font-base) + 4px);
     padding: 0px 4px;
   }
 
   .h5 {
-    font-size: var(--affine-font-h-5);
+    font-size: var(--lovenotes-font-h-5);
     font-weight: 600;
     letter-spacing: -0.015em;
     line-height: calc(1em + 8px);
@@ -90,12 +90,12 @@ export const paragraphBlockStyles = css`
     margin-bottom: 10px;
   }
   .h5 code {
-    font-size: calc(var(--affine-font-base) + 2px);
+    font-size: calc(var(--lovenotes-font-base) + 2px);
     padding: 0px 4px;
   }
 
   .h6 {
-    font-size: var(--affine-font-h-6);
+    font-size: var(--lovenotes-font-h-6);
     font-weight: 600;
     letter-spacing: -0.015em;
     line-height: calc(1em + 8px);
@@ -104,14 +104,14 @@ export const paragraphBlockStyles = css`
   }
 
   .h6 code {
-    font-size: var(--affine-font-base);
+    font-size: var(--lovenotes-font-base);
     padding: 0px 4px 2px;
   }
 
   .quote {
     line-height: 26px;
     padding-left: 17px;
-    margin-top: var(--affine-paragraph-space);
+    margin-top: var(--lovenotes-paragraph-space);
     padding-top: 10px;
     padding-bottom: 10px;
     position: relative;
@@ -125,11 +125,11 @@ export const paragraphBlockStyles = css`
     position: absolute;
     left: 0;
     top: 0;
-    background: var(--affine-quote-color);
+    background: var(--lovenotes-quote-color);
     border-radius: 18px;
   }
 
-  .affine-paragraph-placeholder {
+  .lovenotes-paragraph-placeholder {
     position: absolute;
     display: none;
     max-width: 100%;
@@ -139,19 +139,19 @@ export const paragraphBlockStyles = css`
     left: 0;
     bottom: 0;
     pointer-events: none;
-    color: var(--affine-black-30);
-    fill: var(--affine-black-30);
+    color: var(--lovenotes-black-30);
+    fill: var(--lovenotes-black-30);
   }
   @media print {
-    .affine-paragraph-placeholder {
+    .lovenotes-paragraph-placeholder {
       display: none !important;
     }
   }
-  .affine-paragraph-placeholder.visible {
+  .lovenotes-paragraph-placeholder.visible {
     display: block;
   }
   @media print {
-    .affine-paragraph-placeholder.visible {
+    .lovenotes-paragraph-placeholder.visible {
       display: none;
     }
   }

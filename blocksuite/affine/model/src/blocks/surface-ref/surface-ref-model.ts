@@ -12,7 +12,7 @@ export type SurfaceRefProps = {
 };
 
 export const SurfaceRefBlockSchema = defineBlockSchema({
-  flavour: 'affine:surface-ref',
+  flavour: 'lovenotes:surface-ref',
   props: (): SurfaceRefProps => ({
     reference: '',
     caption: '',
@@ -22,7 +22,7 @@ export const SurfaceRefBlockSchema = defineBlockSchema({
   metadata: {
     version: 1,
     role: 'content',
-    parent: ['affine:note', 'affine:paragraph', 'affine:list'],
+    parent: ['lovenotes:note', 'lovenotes:paragraph', 'lovenotes:list'],
   },
   toModel: () => new SurfaceRefBlockModel(),
 });

@@ -1,4 +1,4 @@
-import type { ParagraphType } from '@blocksuite/affine-model';
+import type { ParagraphType } from '@blocksuite/lovenotes-model';
 import {
   BulletedListIcon,
   CheckBoxCheckLinearIcon,
@@ -34,11 +34,11 @@ export const getIcon = (
     };
   }
 ): TemplateResult => {
-  if (model.flavour === 'affine:paragraph') {
+  if (model.flavour === 'lovenotes:paragraph') {
     const type = model.props.type as ParagraphType;
     return icons[type] ?? TextIcon();
   }
-  if (model.flavour === 'affine:list') {
+  if (model.flavour === 'lovenotes:list') {
     return icons[model.props.type ?? 'bulleted'] ?? BulletedListIcon();
   }
   return TextIcon();

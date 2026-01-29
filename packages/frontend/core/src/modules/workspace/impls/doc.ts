@@ -1,4 +1,4 @@
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
+import { getStoreManager } from '@lovenotes/core/blocksuite/manager/store';
 import {
   AwarenessStore,
   type Doc,
@@ -6,7 +6,7 @@ import {
   type GetStoreOptions,
   StoreContainer,
   type YBlock,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/store';
 import { Awareness } from 'y-protocols/awareness.js';
 import * as Y from 'yjs';
 

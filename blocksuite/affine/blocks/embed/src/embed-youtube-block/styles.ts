@@ -1,8 +1,8 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { css, html } from 'lit';
 
 export const styles = css`
-  .affine-embed-youtube-block {
+  .lovenotes-embed-youtube-block {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -19,32 +19,32 @@ export const styles = css`
     user-select: none;
   }
 
-  .affine-embed-youtube-video {
+  .lovenotes-embed-youtube-video {
     flex-grow: 1;
     width: 100%;
   }
 
-  .affine-embed-youtube-video img,
-  .affine-embed-youtube-video object,
-  .affine-embed-youtube-video svg {
+  .lovenotes-embed-youtube-video img,
+  .lovenotes-embed-youtube-video object,
+  .lovenotes-embed-youtube-video svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 4px;
   }
 
-  .affine-embed-youtube-video-iframe-container {
+  .lovenotes-embed-youtube-video-iframe-container {
     position: relative;
     height: 100%;
   }
 
-  .affine-embed-youtube-video-iframe-container > iframe {
+  .lovenotes-embed-youtube-video-iframe-container > iframe {
     width: 100%;
     height: 100%;
     border-radius: 4px;
   }
 
-  .affine-embed-youtube-video-iframe-overlay {
+  .lovenotes-embed-youtube-video-iframe-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -52,18 +52,18 @@ export const styles = css`
     height: 100%;
   }
 
-  .affine-embed-youtube-video-iframe-overlay.hide {
+  .lovenotes-embed-youtube-video-iframe-overlay.hide {
     display: none;
   }
 
-  .affine-embed-youtube-content {
+  .lovenotes-embed-youtube-content {
     display: block;
     flex-direction: column;
     width: 100%;
     height: fit-content;
   }
 
-  .affine-embed-youtube-content-header {
+  .lovenotes-embed-youtube-content-header {
     display: flex;
     flex-direction: row;
     gap: 8px;
@@ -72,7 +72,7 @@ export const styles = css`
     align-self: stretch;
   }
 
-  .affine-embed-youtube-content-title-icon {
+  .lovenotes-embed-youtube-content-title-icon {
     display: flex;
     width: 20px;
     height: 20px;
@@ -80,15 +80,15 @@ export const styles = css`
     align-items: center;
   }
 
-  .affine-embed-youtube-content-title-icon img,
-  .affine-embed-youtube-content-title-icon object,
-  .affine-embed-youtube-content-title-icon svg {
+  .lovenotes-embed-youtube-content-title-icon img,
+  .lovenotes-embed-youtube-content-title-icon object,
+  .lovenotes-embed-youtube-content-title-icon svg {
     width: 20px;
     height: 20px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--lovenotes-background-primary-color);
   }
 
-  .affine-embed-youtube-content-title-text {
+  .lovenotes-embed-youtube-content-title-text {
     flex: 1 0 0;
 
     display: -webkit-box;
@@ -98,16 +98,16 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--lovenotes-text-primary-color);
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-sm);
+    font-family: var(--lovenotes-font-family);
+    font-size: var(--lovenotes-font-sm);
     font-style: normal;
     font-weight: 600;
     line-height: 22px;
   }
 
-  .affine-embed-youtube-content-creator-image {
+  .lovenotes-embed-youtube-content-creator-image {
     display: flex;
     width: 16px;
     height: 16px;
@@ -115,30 +115,30 @@ export const styles = css`
     align-items: flex-start;
   }
 
-  .affine-embed-youtube-content-creator-image img,
-  .affine-embed-youtube-content-creator-image object,
-  .affine-embed-youtube-content-creator-image svg {
+  .lovenotes-embed-youtube-content-creator-image img,
+  .lovenotes-embed-youtube-content-creator-image object,
+  .lovenotes-embed-youtube-content-creator-image svg {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    fill: var(--affine-background-primary-color);
+    fill: var(--lovenotes-background-primary-color);
   }
 
-  .affine-embed-youtube-content-creator-text {
+  .lovenotes-embed-youtube-content-creator-text {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 
-    color: var(--affine-text-primary-color);
+    color: var(--lovenotes-text-primary-color);
     text-align: justify;
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-xs);
+    font-family: var(--lovenotes-font-family);
+    font-size: var(--lovenotes-font-xs);
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
   }
 
-  .affine-embed-youtube-content-description {
+  .lovenotes-embed-youtube-content-description {
     height: 40px;
 
     position: relative;
@@ -147,24 +147,24 @@ export const styles = css`
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--lovenotes-text-primary-color);
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-xs);
+    font-family: var(--lovenotes-font-family);
+    font-size: var(--lovenotes-font-xs);
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
   }
 
-  .affine-embed-youtube-content-description::after {
+  .lovenotes-embed-youtube-content-description::after {
     content: '...';
     position: absolute;
     right: 0;
     bottom: 0;
-    background-color: var(--affine-background-primary-color);
+    background-color: var(--lovenotes-background-primary-color);
   }
 
-  .affine-embed-youtube-content-url {
+  .lovenotes-embed-youtube-content-url {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -173,7 +173,7 @@ export const styles = css`
     max-width: 100%;
     cursor: pointer;
   }
-  .affine-embed-youtube-content-url > span {
+  .lovenotes-embed-youtube-content-url > span {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -184,44 +184,44 @@ export const styles = css`
     text-overflow: ellipsis;
     color: ${unsafeCSSVarV2('icon/primary')};
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-xs);
+    font-family: var(--lovenotes-font-family);
+    font-size: var(--lovenotes-font-xs);
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
   }
-  .affine-embed-youtube-content-url:hover > span {
-    color: var(--affine-link-color);
+  .lovenotes-embed-youtube-content-url:hover > span {
+    color: var(--lovenotes-link-color);
   }
-  .affine-embed-youtube-content-url:hover .open-icon {
-    fill: var(--affine-link-color);
+  .lovenotes-embed-youtube-content-url:hover .open-icon {
+    fill: var(--lovenotes-link-color);
   }
 
-  .affine-embed-youtube-content-url-icon {
+  .lovenotes-embed-youtube-content-url-icon {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 12px;
     height: 12px;
   }
-  .affine-embed-youtube-content-url-icon svg {
+  .lovenotes-embed-youtube-content-url-icon svg {
     height: 12px;
     width: 12px;
     fill: ${unsafeCSSVarV2('icon/primary')};
   }
 
-  .affine-embed-youtube-block.loading {
-    .affine-embed-youtube-content-title-text {
-      color: var(--affine-placeholder-color);
+  .lovenotes-embed-youtube-block.loading {
+    .lovenotes-embed-youtube-content-title-text {
+      color: var(--lovenotes-placeholder-color);
     }
   }
 
-  .affine-embed-youtube-block.selected {
-    .affine-embed-youtube-content-url > span {
-      color: var(--affine-link-color);
+  .lovenotes-embed-youtube-block.selected {
+    .lovenotes-embed-youtube-content-url > span {
+      color: var(--lovenotes-link-color);
     }
-    .affine-embed-youtube-content-url .open-icon {
-      fill: var(--affine-link-color);
+    .lovenotes-embed-youtube-content-url .open-icon {
+      fill: var(--lovenotes-link-color);
     }
   }
 `;

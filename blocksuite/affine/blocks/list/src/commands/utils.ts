@@ -1,8 +1,8 @@
-import { ListBlockModel } from '@blocksuite/affine-model';
+import { ListBlockModel } from '@blocksuite/lovenotes-model';
 import {
   getNextContinuousNumberedLists,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { BlockModel, Store } from '@blocksuite/store';
 
 /**

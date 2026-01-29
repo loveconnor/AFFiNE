@@ -1,9 +1,9 @@
-import { keepColor } from '@blocksuite/affine-components/color-picker';
+import { keepColor } from '@blocksuite/lovenotes-components/color-picker';
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-shared/services';
+import { EdgelessToolbarToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import { computed, signal } from '@preact/signals-core';
 import { css, html, LitElement, nothing } from 'lit';
@@ -178,10 +178,10 @@ export class EdgelessPenToolButton extends EdgelessToolbarToolMixin(
           this.popper,
           () => nothing,
           () =>
-            html`<affine-tooltip-content-with-shortcut
+            html`<lovenotes-tooltip-content-with-shortcut
               data-tip="${tip}"
               data-shortcut="${shortcut}"
-            ></affine-tooltip-content-with-shortcut>`
+            ></lovenotes-tooltip-content-with-shortcut>`
         )}
         .tooltipOffset=${4}
         .active=${active}

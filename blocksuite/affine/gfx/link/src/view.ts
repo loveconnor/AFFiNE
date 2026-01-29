@@ -1,13 +1,13 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import { linkQuickTool } from './link-tool';
 
 export class LinkViewExtension extends ViewExtensionProvider {
-  override name = 'affine-link-gfx';
+  override name = 'lovenotes-link-gfx';
 
   override effect() {
     super.effect();

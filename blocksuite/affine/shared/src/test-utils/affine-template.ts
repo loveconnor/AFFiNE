@@ -6,7 +6,7 @@ import {
   NoteBlockSchemaExtension,
   ParagraphBlockSchemaExtension,
   RootBlockSchemaExtension,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { Container } from '@blocksuite/global/di';
 import { TextSelection } from '@blocksuite/std';
 import {
@@ -31,13 +31,13 @@ const DEFAULT_EXTENSIONS = [
 
 // Mapping from tag names to flavours
 const tagToFlavour: Record<string, string> = {
-  'affine-page': 'affine:page',
-  'affine-note': 'affine:note',
-  'affine-paragraph': 'affine:paragraph',
-  'affine-list': 'affine:list',
-  'affine-image': 'affine:image',
-  'affine-database': 'affine:database',
-  'affine-code': 'affine:code',
+  'lovenotes-page': 'lovenotes:page',
+  'lovenotes-note': 'lovenotes:note',
+  'lovenotes-paragraph': 'lovenotes:paragraph',
+  'lovenotes-list': 'lovenotes:list',
+  'lovenotes-image': 'lovenotes:image',
+  'lovenotes-database': 'lovenotes:database',
+  'lovenotes-code': 'lovenotes:code',
 };
 
 interface SelectionInfo {
@@ -49,7 +49,7 @@ interface SelectionInfo {
   cursorOffset?: number;
 }
 
-export function createAffineTemplate(
+export function createLoveNotesTemplate(
   extensions: ExtensionType[] = DEFAULT_EXTENSIONS
 ) {
   /**
@@ -58,17 +58,17 @@ export function createAffineTemplate(
    *
    * Example:
    * ```
-   * const host = affine`
-   *   <affine-page id="page">
-   *     <affine-note id="note">
-   *       <affine-paragraph id="paragraph-1">Hello, world<anchor /></affine-paragraph>
-   *       <affine-paragraph id="paragraph-2">Hello, world<focus /></affine-paragraph>
-   *     </affine-note>
-   *   </affine-page>
+   * const host = lovenotes`
+   *   <lovenotes-page id="page">
+   *     <lovenotes-note id="note">
+   *       <lovenotes-paragraph id="paragraph-1">Hello, world<anchor /></lovenotes-paragraph>
+   *       <lovenotes-paragraph id="paragraph-2">Hello, world<focus /></lovenotes-paragraph>
+   *     </lovenotes-note>
+   *   </lovenotes-page>
    * `;
    * ```
    */
-  function affine(strings: TemplateStringsArray, ...values: any[]) {
+  function lovenotes(strings: TemplateStringsArray, ...values: any[]) {
     // Merge template strings and values
     let htmlString = '';
     strings.forEach((str, i) => {
@@ -157,7 +157,7 @@ export function createAffineTemplate(
    *
    * Example:
    * ```
-   * const block = block`<affine-note />`
+   * const block = block`<lovenotes-note />`
    * ```
    */
   function block(
@@ -195,12 +195,12 @@ export function createAffineTemplate(
       // Create a root block if needed
       const flavour = tagToFlavour[root.tagName.toLowerCase()];
       if (
-        flavour === 'affine:paragraph' ||
-        flavour === 'affine:list' ||
-        flavour === 'affine:code'
+        flavour === 'lovenotes:paragraph' ||
+        flavour === 'lovenotes:list' ||
+        flavour === 'lovenotes:code'
       ) {
-        const pageId = store.addBlock('affine:page', {});
-        const noteId = store.addBlock('affine:note', {}, pageId);
+        const pageId = store.addBlock('lovenotes:page', {});
+        const noteId = store.addBlock('lovenotes:note', {}, pageId);
         blockId = buildDocFromElement(store, root, noteId, selectionInfo);
       } else {
         blockId = buildDocFromElement(store, root, null, selectionInfo);
@@ -212,12 +212,12 @@ export function createAffineTemplate(
   }
 
   return {
-    affine,
+    lovenotes,
     block,
   };
 }
 
-export const { affine, block } = createAffineTemplate();
+export const { lovenotes, block } = createLoveNotesTemplate();
 
 /**
  * Recursively build document structure
@@ -290,8 +290,8 @@ function buildDocFromElement(
 
   // Special handling for different block types based on their flavours
   switch (flavour) {
-    case 'affine:paragraph':
-    case 'affine:list':
+    case 'lovenotes:paragraph':
+    case 'lovenotes:list':
       if (element.textContent) {
         props.text = new Text(element.textContent);
       }

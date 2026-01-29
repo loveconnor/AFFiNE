@@ -18,11 +18,11 @@ public class UpdateUserProfileMutation: GraphQLMutation {
 
   public var __variables: Variables? { ["input": input] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("updateProfile", UpdateProfile.self, arguments: ["input": .variable("input")]),
     ] }
@@ -32,18 +32,18 @@ public class UpdateUserProfileMutation: GraphQLMutation {
     /// UpdateProfile
     ///
     /// Parent Type: `UserType`
-    public struct UpdateProfile: AffineGraphQL.SelectionSet {
+    public struct UpdateProfile: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", AffineGraphQL.ID.self),
+        .field("id", LoveNotesGraphQL.ID.self),
         .field("name", String.self),
       ] }
 
-      public var id: AffineGraphQL.ID { __data["id"] }
+      public var id: LoveNotesGraphQL.ID { __data["id"] }
       /// User name
       public var name: String { __data["name"] }
     }

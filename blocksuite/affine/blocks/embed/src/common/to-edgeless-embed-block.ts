@@ -1,5 +1,5 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
-import type { EmbedProps } from '@blocksuite/affine-model';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
+import type { EmbedProps } from '@blocksuite/lovenotes-model';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   blockComponentSymbol,

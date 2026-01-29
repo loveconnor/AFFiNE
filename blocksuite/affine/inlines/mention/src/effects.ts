@@ -1,11 +1,11 @@
-import { AffineMention } from './affine-mention';
+import { LoveNotesMention } from './lovenotes-mention';
 
 export function effects() {
-  customElements.define('affine-mention', AffineMention);
+  customElements.define('lovenotes-mention', LoveNotesMention);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-mention': AffineMention;
+    'lovenotes-mention': LoveNotesMention;
   }
 }

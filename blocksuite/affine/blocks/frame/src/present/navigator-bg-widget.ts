@@ -1,6 +1,6 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
-import type { FrameBlockModel, RootBlockModel } from '@blocksuite/affine-model';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
+import type { FrameBlockModel, RootBlockModel } from '@blocksuite/lovenotes-model';
+import { EditPropsStore } from '@blocksuite/lovenotes-shared/services';
 import { Bound } from '@blocksuite/global/gfx';
 import { WidgetComponent, WidgetViewExtension } from '@blocksuite/std';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
@@ -120,7 +120,7 @@ export class EdgelessNavigatorBlackBackgroundWidget extends WidgetComponent<Root
 }
 
 export const edgelessNavigatorBgWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   EDGELESS_NAVIGATOR_BLACK_BACKGROUND_WIDGET,
   literal`${unsafeStatic(EDGELESS_NAVIGATOR_BLACK_BACKGROUND_WIDGET)}`
 );

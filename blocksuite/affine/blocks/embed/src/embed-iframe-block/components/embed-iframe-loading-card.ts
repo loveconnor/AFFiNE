@@ -1,5 +1,5 @@
-import { LoadingIcon } from '@blocksuite/affine-components/icons';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { LoadingIcon } from '@blocksuite/lovenotes-components/icons';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { EmbedIcon } from '@blocksuite/icons/lit';
 import { type BlockStdScope } from '@blocksuite/std';
 import { css, html, LitElement } from 'lit';
@@ -17,8 +17,8 @@ export class EmbedIframeLoadingCard extends LitElement {
       height: 100%;
     }
 
-    .affine-embed-iframe-loading-card {
-      container: affine-embed-iframe-loading-card / size;
+    .lovenotes-embed-iframe-loading-card {
+      container: lovenotes-embed-iframe-loading-card / size;
       display: flex;
       box-sizing: border-box;
       border-radius: 8px;
@@ -51,7 +51,7 @@ export class EmbedIframeLoadingCard extends LitElement {
           text-overflow: ellipsis;
           /* Client/smMedium */
           font-family: Inter;
-          font-size: var(--affine-font-sm);
+          font-size: var(--lovenotes-font-sm);
           font-style: normal;
           font-weight: 500;
           line-height: 22px; /* 157.143% */
@@ -82,14 +82,14 @@ export class EmbedIframeLoadingCard extends LitElement {
         }
       }
 
-      @container affine-embed-iframe-loading-card (width < 360px) {
+      @container lovenotes-embed-iframe-loading-card (width < 360px) {
         .loading-banner {
           display: none;
         }
       }
     }
 
-    .affine-embed-iframe-loading-card.horizontal {
+    .lovenotes-embed-iframe-loading-card.horizontal {
       flex-direction: row;
       align-items: flex-start;
 
@@ -118,7 +118,7 @@ export class EmbedIframeLoadingCard extends LitElement {
       }
     }
 
-    .affine-embed-iframe-loading-card.vertical {
+    .lovenotes-embed-iframe-loading-card.vertical {
       flex-direction: column-reverse;
       align-items: center;
       justify-content: center;
@@ -146,7 +146,7 @@ export class EmbedIframeLoadingCard extends LitElement {
         }
       }
 
-      @container affine-embed-iframe-loading-card (height < 240px) {
+      @container lovenotes-embed-iframe-loading-card (height < 240px) {
         .loading-banner {
           display: none;
         }
@@ -157,7 +157,7 @@ export class EmbedIframeLoadingCard extends LitElement {
   override render() {
     const { layout, width, height } = this.options;
     const cardClasses = classMap({
-      'affine-embed-iframe-loading-card': true,
+      'lovenotes-embed-iframe-loading-card': true,
       horizontal: layout === 'horizontal',
       vertical: layout === 'vertical',
     });

@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import {
@@ -10,7 +10,7 @@ import {
 } from './index';
 
 export class RemoteSelectionViewExtension extends ViewExtensionProvider {
-  override name = 'affine-remote-selection-widget';
+  override name = 'lovenotes-remote-selection-widget';
 
   override effect() {
     super.effect();

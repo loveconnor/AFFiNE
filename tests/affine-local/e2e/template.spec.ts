@@ -1,9 +1,9 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   confirmCreateJournal,
   openHomePage,
-} from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@lovenotes-test/kit/utils/page-logic';
 import { expect, type Locator, type Page } from '@playwright/test';
 
 function getTemplateRow(page: Page) {
@@ -64,7 +64,7 @@ const createDocAndMarkAsTemplate = async (
   await toggleTemplate(templateRow, true);
 
   // focus editor
-  await page.locator('affine-note').first().click();
+  await page.locator('lovenotes-note').first().click();
   await onCreated?.();
 };
 
@@ -247,7 +247,7 @@ test('create template doc from sidebar template entrance', async ({ page }) => {
   await page.getByTestId('sidebar-template-doc-entrance').click();
   await page.getByTestId('template-doc-item-create').click();
 
-  await page.locator('affine-note').first().click();
+  await page.locator('lovenotes-note').first().click();
   await page.keyboard.press('Backspace');
   await page.keyboard.type('Template');
   const templateDocId = await getDocId(page);

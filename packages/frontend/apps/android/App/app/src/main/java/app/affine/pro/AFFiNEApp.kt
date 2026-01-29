@@ -1,11 +1,11 @@
-package app.affine.pro
+package app.lovenotes.pro
 
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import app.affine.pro.utils.logger.AffineDebugTree
-import app.affine.pro.utils.logger.CrashlyticsTree
-import app.affine.pro.utils.logger.FileTree
+import app.lovenotes.pro.utils.logger.LoveNotesDebugTree
+import app.lovenotes.pro.utils.logger.CrashlyticsTree
+import app.lovenotes.pro.utils.logger.FileTree
 import com.google.firebase.crashlytics.ktx.crashlytics
 import com.google.firebase.crashlytics.setCustomKeys
 import com.google.firebase.ktx.Firebase
@@ -13,14 +13,14 @@ import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 @HiltAndroidApp
-class AFFiNEApp : Application() {
+class LoveNotesApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
         _context = applicationContext
         // init logger
         if (BuildConfig.DEBUG) {
-            Timber.plant(AffineDebugTree())
+            Timber.plant(LoveNotesDebugTree())
         } else {
             Timber.plant(CrashlyticsTree(), FileTree(applicationContext))
         }
@@ -29,7 +29,7 @@ class AFFiNEApp : Application() {
         CapacitorConfig.init(baseContext)
         // init crashlytics
         Firebase.crashlytics.setCustomKeys {
-            key("affine_version", CapacitorConfig.getAffineVersion())
+            key("lovenotes_version", CapacitorConfig.getLoveNotesVersion())
         }
     }
 

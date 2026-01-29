@@ -2,8 +2,8 @@ import {
   type OpenDocMode,
   type ToolbarAction,
   ToolbarContext,
-} from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { PropTypes, requiredProperties } from '@blocksuite/std';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
@@ -126,6 +126,6 @@ export class OpenDocDropdownMenu extends SignalWatcher(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-open-doc-dropdown-menu': OpenDocDropdownMenu;
+    'lovenotes-open-doc-dropdown-menu': OpenDocDropdownMenu;
   }
 }

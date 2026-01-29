@@ -1,10 +1,10 @@
-import { LoadingIcon, OpenIcon } from '@blocksuite/affine-components/icons';
+import { LoadingIcon, OpenIcon } from '@blocksuite/lovenotes-components/icons';
 import type {
   EmbedYoutubeModel,
   EmbedYoutubeStyles,
-} from '@blocksuite/affine-model';
-import { ImageProxyService } from '@blocksuite/affine-shared/adapters';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { ImageProxyService } from '@blocksuite/lovenotes-shared/adapters';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import { BlockSelection } from '@blocksuite/std';
 import { html, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
@@ -129,7 +129,7 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
       () => html`
         <div
           class=${classMap({
-            'affine-embed-youtube-block': true,
+            'lovenotes-embed-youtube-block': true,
             loading,
             selected: this.selected$.value,
           })}
@@ -139,10 +139,10 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
           @click=${this._handleClick}
           @dblclick=${this._handleDoubleClick}
         >
-          <div class="affine-embed-youtube-video">
+          <div class="lovenotes-embed-youtube-video">
             ${videoId
               ? html`
-                  <div class="affine-embed-youtube-video-iframe-container">
+                  <div class="lovenotes-embed-youtube-video-iframe-container">
                     <iframe
                       id="ytplayer"
                       type="text/html"
@@ -157,13 +157,13 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
                     <!-- overlay to prevent the iframe from capturing pointer events -->
                     <div
                       class=${classMap({
-                        'affine-embed-youtube-video-iframe-overlay': true,
+                        'lovenotes-embed-youtube-video-iframe-overlay': true,
                         hide: !this.showOverlay$.value,
                       })}
                     ></div>
                     <img
                       class=${classMap({
-                        'affine-embed-youtube-video-iframe-overlay': true,
+                        'lovenotes-embed-youtube-video-iframe-overlay': true,
                         'media-print': true,
                         hide: !this._showImage,
                       })}
@@ -175,39 +175,39 @@ export class EmbedYoutubeBlockComponent extends EmbedBlockComponent<
                 `
               : bannerImage}
           </div>
-          <div class="affine-embed-youtube-content">
-            <div class="affine-embed-youtube-content-header">
-              <div class="affine-embed-youtube-content-title-icon">
+          <div class="lovenotes-embed-youtube-content">
+            <div class="lovenotes-embed-youtube-content-header">
+              <div class="lovenotes-embed-youtube-content-title-icon">
                 ${titleIcon}
               </div>
 
-              <div class="affine-embed-youtube-content-title-text">
+              <div class="lovenotes-embed-youtube-content-title-text">
                 ${titleText}
               </div>
 
-              <div class="affine-embed-youtube-content-creator-image">
+              <div class="lovenotes-embed-youtube-content-creator-image">
                 ${creatorImageEl}
               </div>
 
-              <div class="affine-embed-youtube-content-creator-text">
+              <div class="lovenotes-embed-youtube-content-creator-text">
                 ${creator}
               </div>
             </div>
 
             ${loading
               ? html`<div
-                  class="affine-embed-youtube-content-description"
+                  class="lovenotes-embed-youtube-content-description"
                 ></div>`
               : descriptionText
-                ? html`<div class="affine-embed-youtube-content-description">
+                ? html`<div class="lovenotes-embed-youtube-content-description">
                     ${descriptionText}
                   </div>`
                 : nothing}
 
-            <div class="affine-embed-youtube-content-url" @click=${this.open}>
+            <div class="lovenotes-embed-youtube-content-url" @click=${this.open}>
               <span>www.youtube.com</span>
 
-              <div class="affine-embed-youtube-content-url-icon">
+              <div class="lovenotes-embed-youtube-content-url-icon">
                 ${OpenIcon}
               </div>
             </div>

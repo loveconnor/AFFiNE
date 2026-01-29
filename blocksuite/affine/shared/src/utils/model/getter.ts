@@ -1,4 +1,4 @@
-import { NoteBlockModel, NoteDisplayMode } from '@blocksuite/affine-model';
+import { NoteBlockModel, NoteDisplayMode } from '@blocksuite/lovenotes-model';
 import type { BlockComponent, BlockStdScope } from '@blocksuite/std';
 import type { BlockModel, Store } from '@blocksuite/store';
 

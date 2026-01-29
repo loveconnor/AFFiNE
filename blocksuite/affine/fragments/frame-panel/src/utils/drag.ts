@@ -1,5 +1,5 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
-import { on, once } from '@blocksuite/affine-shared/utils';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
+import { on, once } from '@blocksuite/lovenotes-shared/utils';
 
 import type { FramePanelBody } from '../body/frame-panel-body.js';
 import { FrameCard } from '../card/frame-card.js';
@@ -149,7 +149,7 @@ function createMaskElement(doc: Document) {
   mask.style.position = 'fixed';
   mask.style.left = '0';
   mask.style.top = '0';
-  mask.style.zIndex = 'calc(var(--affine-z-index-popover, 0) + 3)';
+  mask.style.zIndex = 'calc(var(--lovenotes-z-index-popover, 0) + 3)';
   mask.style.cursor = 'grabbing';
 
   return mask;

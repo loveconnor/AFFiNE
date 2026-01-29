@@ -2,8 +2,8 @@ import {
   type CanvasRenderer,
   type ElementRenderer,
   ElementRendererExtension,
-} from '@blocksuite/affine-block-surface';
-import type { GroupElementModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { GroupElementModel } from '@blocksuite/lovenotes-model';
 import { Bound } from '@blocksuite/global/gfx';
 
 import { titleRenderParams } from './utils';
@@ -28,7 +28,7 @@ export const group: ElementRenderer<GroupElementModel> = (
       renderTitle(model, ctx, renderer, renderParams);
     } else {
       ctx.lineWidth = 2 / renderer.viewport.zoom;
-      ctx.strokeStyle = renderer.getPropertyValue('--affine-blue');
+      ctx.strokeStyle = renderer.getPropertyValue('--lovenotes-blue');
       ctx.strokeRect(0, 0, bound.w, bound.h);
     }
   } else if (model.childElements.some(child => elements.includes(child.id))) {
@@ -60,7 +60,7 @@ function renderTitle(
   ctx.beginPath();
 
   ctx.font = font;
-  ctx.fillStyle = renderer.getPropertyValue('--affine-blue');
+  ctx.fillStyle = renderer.getPropertyValue('--lovenotes-blue');
   ctx.textAlign = 'left';
   ctx.textBaseline = 'middle';
   ctx.fillText(text, padding[0], -lineHeight / 2 - padding[1]);

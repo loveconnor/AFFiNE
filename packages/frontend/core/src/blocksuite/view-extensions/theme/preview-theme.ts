@@ -1,28 +1,28 @@
-import { AppThemeService } from '@affine/core/modules/theme';
-import { ColorScheme } from '@blocksuite/affine/model';
+import { AppThemeService } from '@lovenotes/core/modules/theme';
+import { ColorScheme } from '@blocksuite/lovenotes/model';
 import {
   type ThemeExtension,
   ThemeExtensionIdentifier,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/lovenotes/shared/services';
 import {
   createSignalFromObservable,
   type Signal,
-} from '@blocksuite/affine/shared/utils';
+} from '@blocksuite/lovenotes/shared/utils';
 import {
   type BlockStdScope,
   LifeCycleWatcher,
   StdIdentifier,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/lovenotes/std';
 import type { Container } from '@blocksuite/global/di';
 import type { FrameworkProvider } from '@toeverything/infra';
 import type { Observable } from 'rxjs';
 
 export function getPreviewThemeExtension(framework: FrameworkProvider) {
-  class AffinePagePreviewThemeExtension
+  class LoveNotesPagePreviewThemeExtension
     extends LifeCycleWatcher
     implements ThemeExtension
   {
-    static override readonly key = 'affine-page-preview-theme';
+    static override readonly key = 'lovenotes-page-preview-theme';
 
     readonly theme: Signal<ColorScheme>;
 
@@ -30,7 +30,7 @@ export function getPreviewThemeExtension(framework: FrameworkProvider) {
 
     static override setup(di: Container) {
       super.setup(di);
-      di.override(ThemeExtensionIdentifier, AffinePagePreviewThemeExtension, [
+      di.override(ThemeExtensionIdentifier, LoveNotesPagePreviewThemeExtension, [
         StdIdentifier,
       ]);
     }
@@ -69,5 +69,5 @@ export function getPreviewThemeExtension(framework: FrameworkProvider) {
     }
   }
 
-  return AffinePagePreviewThemeExtension;
+  return LoveNotesPagePreviewThemeExtension;
 }

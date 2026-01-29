@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: ghcr.io/toeverything/affine
+  repository: ghcr.io/toeverything/lovenotes
   pullPolicy: IfNotPresent
   tag: ''
 
@@ -15,7 +15,7 @@ app:
 serviceAccount:
   create: true
   annotations: {}
-  name: 'affine-sync'
+  name: 'lovenotes-sync'
 
 podAnnotations: {}
 

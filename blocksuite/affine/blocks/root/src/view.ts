@@ -1,12 +1,12 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { NoteBlockSchema } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-ext-loader';
+import { NoteBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   ToolbarModuleExtension,
   ViewportElementExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   BlockFlavourIdentifier,
   BlockViewExtension,
@@ -24,7 +24,7 @@ import { effects } from './effects';
 import { fallbackKeymap } from './keyboard/keymap';
 
 export class RootViewExtension extends ViewExtensionProvider {
-  override name = 'affine-root-block';
+  override name = 'lovenotes-root-block';
 
   override effect(): void {
     super.effect();
@@ -34,7 +34,7 @@ export class RootViewExtension extends ViewExtensionProvider {
   override setup(context: ViewExtensionContext) {
     super.setup(context);
     context.register([
-      FlavourExtension('affine:page'),
+      FlavourExtension('lovenotes:page'),
       fallbackKeymap,
       ToolbarModuleExtension({
         id: BlockFlavourIdentifier(NoteBlockSchema.model.flavour),
@@ -55,15 +55,15 @@ export class RootViewExtension extends ViewExtensionProvider {
   }
 
   private readonly _setupPage = (context: ViewExtensionContext) => {
-    context.register(ViewportElementExtension('.affine-page-viewport'));
+    context.register(ViewportElementExtension('.lovenotes-page-viewport'));
     if (context.scope === 'preview-page') {
       context.register(
-        BlockViewExtension('affine:page', literal`affine-preview-root`)
+        BlockViewExtension('lovenotes:page', literal`lovenotes-preview-root`)
       );
       return;
     }
     context.register(
-      BlockViewExtension('affine:page', literal`affine-page-root`)
+      BlockViewExtension('lovenotes:page', literal`lovenotes-page-root`)
     );
     context.register(PageClipboard);
   };
@@ -71,20 +71,20 @@ export class RootViewExtension extends ViewExtensionProvider {
   private readonly _setupEdgeless = (context: ViewExtensionContext) => {
     context.register([
       EdgelessRootService,
-      ViewportElementExtension('.affine-edgeless-viewport'),
+      ViewportElementExtension('.lovenotes-edgeless-viewport'),
     ]);
     if (context.scope === 'preview-edgeless') {
       context.register([
         BlockViewExtension(
-          'affine:page',
-          literal`affine-edgeless-root-preview`
+          'lovenotes:page',
+          literal`lovenotes-edgeless-root-preview`
         ),
         EdgelessLocker,
       ]);
       return;
     }
     context.register([
-      BlockViewExtension('affine:page', literal`affine-edgeless-root`),
+      BlockViewExtension('lovenotes:page', literal`lovenotes-edgeless-root`),
       EdgelessClipboardController,
       AltCloneExtension,
     ]);

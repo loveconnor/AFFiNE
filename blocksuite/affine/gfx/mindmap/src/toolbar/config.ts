@@ -1,20 +1,20 @@
-import { hasGrouped } from '@blocksuite/affine-gfx-shape';
+import { hasGrouped } from '@blocksuite/lovenotes-gfx-shape';
 import {
   LayoutType,
   MindmapElementModel,
   MindmapStyle,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   type ToolbarContext,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
-import { getMostCommonValue } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { getMostCommonValue } from '@blocksuite/lovenotes-shared/utils';
 import {
   type MenuItem,
   renderMenu,
-} from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { RadiantIcon, RightLayoutIcon, StyleIcon } from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@blocksuite/std';
 
@@ -189,11 +189,11 @@ export const shapeMindmapToolbarConfig = {
 } as const satisfies ToolbarModuleConfig;
 
 export const mindmapToolbarExtension = ToolbarModuleExtension({
-  id: BlockFlavourIdentifier('affine:surface:mindmap'),
+  id: BlockFlavourIdentifier('lovenotes:surface:mindmap'),
   config: mindmapToolbarConfig,
 });
 
 export const shapeMindmapToolbarExtension = ToolbarModuleExtension({
-  id: BlockFlavourIdentifier('custom:affine:surface:shape'),
+  id: BlockFlavourIdentifier('custom:lovenotes:surface:shape'),
   config: shapeMindmapToolbarConfig,
 });

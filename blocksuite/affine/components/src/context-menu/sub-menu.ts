@@ -47,10 +47,10 @@ export class MenuSubMenu extends MenuFocusable {
   static override styles = [
     MenuButton.styles,
     css`
-      .affine-menu-button svg:last-child {
+      .lovenotes-menu-button svg:last-child {
         transition: transform 150ms cubic-bezier(0.42, 0, 1, 1);
       }
-      affine-menu-sub-menu.active .affine-menu-button svg:last-child {
+      lovenotes-menu-sub-menu.active .lovenotes-menu-button svg:last-child {
         transform: rotate(90deg);
       }
     `,
@@ -153,7 +153,7 @@ export class MenuSubMenu extends MenuFocusable {
   protected override render(): unknown {
     const classString = classMap({
       [this.data.class ?? '']: true,
-      'affine-menu-button': true,
+      'lovenotes-menu-button': true,
       focused: this.isFocused$.value,
     });
     return html` <div class="${classString}">${this.data.content()}</div>`;
@@ -225,10 +225,10 @@ export const renderSubMenu = (data: MenuSubMenuData, menu: Menu) => {
       .menu="${menu}"
     ></mobile-sub-menu>`;
   }
-  return html` <affine-menu-sub-menu
+  return html` <lovenotes-menu-sub-menu
     .data="${data}"
     .menu="${menu}"
-  ></affine-menu-sub-menu>`;
+  ></lovenotes-menu-sub-menu>`;
 };
 
 export const subMenuItems = {
@@ -256,7 +256,7 @@ export const subMenuItems = {
       const data: MenuSubMenuData = {
         content: () =>
           html`${config.prefix}
-            <div class="affine-menu-action-text">
+            <div class="lovenotes-menu-action-text">
               ${config.label?.() ?? config.name}
             </div>
             ${config.postfix}

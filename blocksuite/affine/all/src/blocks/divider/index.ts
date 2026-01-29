@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-block-divider';
+export * from '@blocksuite/lovenotes-block-divider';

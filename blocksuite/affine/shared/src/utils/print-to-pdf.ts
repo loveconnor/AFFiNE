@@ -1,6 +1,6 @@
 export async function printToPdf(
   rootElement: HTMLElement | null = document.querySelector(
-    '.affine-page-viewport'
+    '.lovenotes-page-viewport'
   ),
   options: {
     /**
@@ -40,8 +40,8 @@ export async function printToPdf(
                 display: none;
               }
               :root {
-                --affine-note-shadow-box: none !important;
-                --affine-note-shadow-sticker: none !important;
+                --lovenotes-note-shadow-box: none !important;
+                --lovenotes-note-shadow-sticker: none !important;
               }
             }</style></head><body></body></html>`);
 

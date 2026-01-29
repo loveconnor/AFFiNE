@@ -1,11 +1,11 @@
-import { REFERENCE_NODE } from '@blocksuite/affine-shared/consts';
-import type { AffineInlineEditor } from '@blocksuite/affine-shared/types';
+import { REFERENCE_NODE } from '@blocksuite/lovenotes-shared/consts';
+import type { LoveNotesInlineEditor } from '@blocksuite/lovenotes-shared/types';
 
 export function insertLinkedNode({
   inlineEditor,
   docId,
 }: {
-  inlineEditor: AffineInlineEditor;
+  inlineEditor: LoveNotesInlineEditor;
   docId: string;
 }) {
   if (!inlineEditor) return;

@@ -1,5 +1,5 @@
-import { UserFriendlyError } from '@affine/error';
-import { gqlFetcherFactory } from '@affine/graphql';
+import { UserFriendlyError } from '@lovenotes/error';
+import { gqlFetcherFactory } from '@lovenotes/graphql';
 
 import { DummyConnection } from '../../connection';
 
@@ -33,7 +33,7 @@ export class HttpConnection extends DummyConnection {
         headers: {
           ...this.requestHeaders,
           ...init?.headers,
-          'x-affine-version': BUILD_CONFIG.appVersion,
+          'x-lovenotes-version': BUILD_CONFIG.appVersion,
         },
       })
       .catch(err => {

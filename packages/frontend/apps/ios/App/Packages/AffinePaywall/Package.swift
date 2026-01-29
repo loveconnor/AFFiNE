@@ -4,26 +4,26 @@
 import PackageDescription
 
 let package = Package(
-  name: "AffinePaywall",
+  name: "LoveNotesPaywall",
   platforms: [
     .iOS(.v16),
     .macOS(.v14), // just for build so LLM can verify their code
   ],
   products: [
     .library(
-      name: "AffinePaywall",
-      targets: ["AffinePaywall"]
+      name: "LoveNotesPaywall",
+      targets: ["LoveNotesPaywall"]
     ),
   ],
   dependencies: [
-    .package(path: "../AffineResources"),
+    .package(path: "../LoveNotesResources"),
     .package(url: "https://github.com/RevenueCat/purchases-ios-spm.git", from: "5.55.3"),
   ],
   targets: [
     .target(
-      name: "AffinePaywall",
+      name: "LoveNotesPaywall",
       dependencies: [
-        "AffineResources",
+        "LoveNotesResources",
         .product(name: "RevenueCat", package: "purchases-ios-spm"),
       ]
     ),

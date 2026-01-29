@@ -1,4 +1,4 @@
-import { ColorSchema } from '@blocksuite/affine-model';
+import { ColorSchema } from '@blocksuite/lovenotes-model';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import type { DeepPartial } from '@blocksuite/global/utils';

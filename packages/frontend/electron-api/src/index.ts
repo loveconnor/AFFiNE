@@ -1,13 +1,13 @@
 import type {
   events as helperEvents,
   handlers as helperHandlers,
-} from '@affine/electron/helper/exposed';
+} from '@lovenotes/electron/helper/exposed';
 import type {
   events as mainEvents,
   handlers as mainHandlers,
-} from '@affine/electron/main/exposed';
-import type { AppInfo } from '@affine/electron/preload/electron-api';
-import type { SharedStorage } from '@affine/electron/preload/shared-storage';
+} from '@lovenotes/electron/main/exposed';
+import type { AppInfo } from '@lovenotes/electron/preload/electron-api';
+import type { SharedStorage } from '@lovenotes/electron/preload/shared-storage';
 
 type MainHandlers = typeof mainHandlers;
 type HelperHandlers = typeof helperHandlers;
@@ -45,9 +45,9 @@ export {
   type WorkbenchMeta,
   type WorkbenchViewMeta,
   type WorkbenchViewModule,
-} from '@affine/electron/main/shared-state-schema';
-export type { UpdateMeta } from '@affine/electron/main/updater/event';
+} from '@lovenotes/electron/main/shared-state-schema';
+export type { UpdateMeta } from '@lovenotes/electron/main/updater/event';
 export type {
   AddTabOption,
   TabAction,
-} from '@affine/electron/main/windows-manager';
+} from '@lovenotes/electron/main/windows-manager';

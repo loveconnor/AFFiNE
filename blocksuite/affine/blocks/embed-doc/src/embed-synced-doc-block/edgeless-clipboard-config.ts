@@ -1,9 +1,9 @@
-import { EdgelessClipboardConfig } from '@blocksuite/affine-block-surface';
-import { ReferenceInfoSchema } from '@blocksuite/affine-model';
+import { EdgelessClipboardConfig } from '@blocksuite/lovenotes-block-surface';
+import { ReferenceInfoSchema } from '@blocksuite/lovenotes-model';
 import { type BlockSnapshot } from '@blocksuite/store';
 
 export class EdgelessClipboardEmbedSyncedDocConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:embed-synced-doc';
+  static override readonly key = 'lovenotes:embed-synced-doc';
 
   override createBlock(syncedDocEmbed: BlockSnapshot): string | null {
     if (!this.surface) return null;
@@ -13,7 +13,7 @@ export class EdgelessClipboardEmbedSyncedDocConfig extends EdgelessClipboardConf
     const referenceInfo = ReferenceInfoSchema.parse({ pageId, params });
 
     return this.crud.addBlock(
-      'affine:embed-synced-doc',
+      'lovenotes:embed-synced-doc',
       {
         xywh,
         style,

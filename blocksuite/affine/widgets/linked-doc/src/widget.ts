@@ -1,10 +1,10 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import type { RootBlockModel } from '@blocksuite/lovenotes-model';
 import {
   getRangeRects,
   type SelectionRect,
-} from '@blocksuite/affine-shared/commands';
-import { FeatureFlagService } from '@blocksuite/affine-shared/services';
-import { getViewportElement } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/commands';
+import { FeatureFlagService } from '@blocksuite/lovenotes-shared/services';
+import { getViewportElement } from '@blocksuite/lovenotes-shared/utils';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import type { BlockComponent } from '@blocksuite/std';
 import {
@@ -34,7 +34,7 @@ import {
 } from './config.js';
 import { linkedDocWidgetStyles } from './styles.js';
 
-export class AffineLinkedDocWidget extends WidgetComponent<RootBlockModel> {
+export class LoveNotesLinkedDocWidget extends WidgetComponent<RootBlockModel> {
   static override styles = linkedDocWidgetStyles;
 
   private _context: LinkedDocContext | null = null;
@@ -87,16 +87,16 @@ export class AffineLinkedDocWidget extends WidgetComponent<RootBlockModel> {
   private readonly _renderLinkedDocMenu = () => {
     if (!this.block?.rootComponent) return nothing;
 
-    return html`<affine-mobile-linked-doc-menu
+    return html`<lovenotes-mobile-linked-doc-menu
       .context=${this._context}
       .rootComponent=${this.block.rootComponent}
-    ></affine-mobile-linked-doc-menu>`;
+    ></lovenotes-mobile-linked-doc-menu>`;
   };
 
   private readonly _renderLinkedDocPopover = () => {
-    return html`<affine-linked-doc-popover
+    return html`<lovenotes-linked-doc-popover
       .context=${this._context}
-    ></affine-linked-doc-popover>`;
+    ></lovenotes-linked-doc-popover>`;
   };
 
   private _renderInputMask() {
@@ -221,7 +221,7 @@ export class AffineLinkedDocWidget extends WidgetComponent<RootBlockModel> {
   get config(): LinkedWidgetConfig {
     return {
       triggerKeys: ['@', '[[', '【【'],
-      ignoreBlockTypes: ['affine:code'],
+      ignoreBlockTypes: ['lovenotes:code'],
       ignoreSelector:
         'edgeless-text-editor, edgeless-shape-text-editor, edgeless-group-title-editor, edgeless-frame-title-editor, edgeless-connector-label-editor',
       convertTriggerKey: true,
@@ -332,13 +332,13 @@ export class AffineLinkedDocWidget extends WidgetComponent<RootBlockModel> {
 }
 
 export const linkedDocWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   AFFINE_LINKED_DOC_WIDGET,
   literal`${unsafeStatic(AFFINE_LINKED_DOC_WIDGET)}`
 );
 
 declare global {
   interface HTMLElementTagNameMap {
-    [AFFINE_LINKED_DOC_WIDGET]: AffineLinkedDocWidget;
+    [AFFINE_LINKED_DOC_WIDGET]: LoveNotesLinkedDocWidget;
   }
 }

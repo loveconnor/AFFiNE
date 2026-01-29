@@ -3,13 +3,13 @@ import type {
   TableCellSerialized,
   TableColumn,
   TableRow,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   type HtmlAST,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
-import { HastUtils } from '@blocksuite/affine-shared/adapters';
-import { generateFractionalIndexingKeyBetween } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/adapters';
+import { HastUtils } from '@blocksuite/lovenotes-shared/adapters';
+import { generateFractionalIndexingKeyBetween } from '@blocksuite/lovenotes-shared/utils';
 import type { DeltaInsert } from '@blocksuite/store';
 import { nanoid } from '@blocksuite/store';
 import type { Element } from 'hast';

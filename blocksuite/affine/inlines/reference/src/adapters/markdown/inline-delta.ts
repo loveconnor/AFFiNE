@@ -1,7 +1,7 @@
 import {
   AdapterTextUtils,
   InlineDeltaToMarkdownAdapterExtension,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { PhrasingContent } from 'mdast';
 
 export const referenceDeltaToMarkdownAdapterMatcher =

@@ -1,5 +1,5 @@
-import type { ShapeToolOption } from '@blocksuite/affine-gfx-shape';
-import { ShapeType } from '@blocksuite/affine-model';
+import type { ShapeToolOption } from '@blocksuite/lovenotes-gfx-shape';
+import { ShapeType } from '@blocksuite/lovenotes-model';
 import {
   DiamondIcon,
   EllipseIcon,

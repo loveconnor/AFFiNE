@@ -1,10 +1,10 @@
-import type { Rect } from '@blocksuite/affine-gfx-turbo-renderer';
+import type { Rect } from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import {
   BlockLayoutHandlerExtension,
   BlockLayoutHandlersIdentifier,
   getSentenceRects,
   segmentSentences,
-} from '@blocksuite/affine-gfx-turbo-renderer';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import type { Container } from '@blocksuite/global/di';
 import type { EditorHost, GfxBlockComponent } from '@blocksuite/std';
 import { clientToModelCoord, type ViewportRecord } from '@blocksuite/std/gfx';
@@ -13,7 +13,7 @@ import type { BlockModel } from '@blocksuite/store';
 import type { ParagraphLayout } from './paragraph-painter.worker';
 
 export class ParagraphLayoutHandlerExtension extends BlockLayoutHandlerExtension<ParagraphLayout> {
-  readonly blockType = 'affine:paragraph';
+  readonly blockType = 'lovenotes:paragraph';
 
   static override setup(di: Container) {
     di.addImpl(
@@ -32,13 +32,13 @@ export class ParagraphLayoutHandlerExtension extends BlockLayoutHandlerExtension
     ) as GfxBlockComponent | null;
     if (!component) return null;
     const paragraphSelector =
-      '.affine-paragraph-rich-text-wrapper [data-v-text="true"]';
+      '.lovenotes-paragraph-rich-text-wrapper [data-v-text="true"]';
     const paragraphNode = component.querySelector(paragraphSelector);
     if (!paragraphNode) return null;
 
     const { zoom, viewScale } = viewportRecord;
     const paragraph: ParagraphLayout = {
-      type: 'affine:paragraph',
+      type: 'lovenotes:paragraph',
       sentences: [],
       blockId: model.id,
       rect: { x: 0, y: 0, w: 0, h: 0 },

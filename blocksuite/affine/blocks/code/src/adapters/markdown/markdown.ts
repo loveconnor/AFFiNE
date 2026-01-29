@@ -1,11 +1,11 @@
-import { CodeBlockSchema } from '@blocksuite/affine-model';
+import { CodeBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   CODE_BLOCK_WRAP_KEY,
   IN_PARAGRAPH_NODE_CONTEXT_KEY,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert } from '@blocksuite/store';
 import { nanoid } from '@blocksuite/store';
 import type { Code, Html } from 'mdast';
@@ -19,7 +19,7 @@ const isCodeOrHtmlNode = (node: MarkdownAST): node is Code | Html =>
 export const codeBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
   flavour: CodeBlockSchema.model.flavour,
   toMatch: o => isCodeOrHtmlNode(o.node),
-  fromMatch: o => o.node.flavour === 'affine:code',
+  fromMatch: o => o.node.flavour === 'lovenotes:code',
   toBlockSnapshot: {
     enter: (o, context) => {
       if (!isCodeOrHtmlNode(o.node)) {
@@ -53,7 +53,7 @@ export const codeBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
           {
             type: 'block',
             id: nanoid(),
-            flavour: 'affine:code',
+            flavour: 'lovenotes:code',
             props: {
               language,
               wrap,

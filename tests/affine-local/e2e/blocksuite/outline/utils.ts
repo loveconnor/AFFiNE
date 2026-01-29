@@ -1,9 +1,9 @@
-import { locateEditorContainer } from '@affine-test/kit/utils/editor';
-import { pressEnter } from '@affine-test/kit/utils/keyboard';
+import { locateEditorContainer } from '@lovenotes-test/kit/utils/editor';
+import { pressEnter } from '@lovenotes-test/kit/utils/keyboard';
 import {
   getBlockSuiteEditorTitle,
   type,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import type { Locator, Page } from '@playwright/test';
 
 export async function createTitle(page: Page) {

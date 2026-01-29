@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import {
@@ -16,7 +16,7 @@ import {
 import { EmbedSyncedDocInteraction } from './embed-synced-doc-block/configs/edgeless-interaction';
 
 export class EmbedDocViewExtension extends ViewExtensionProvider {
-  override name = 'affine-embed-doc-block';
+  override name = 'lovenotes-embed-doc-block';
 
   override effect(): void {
     super.effect();

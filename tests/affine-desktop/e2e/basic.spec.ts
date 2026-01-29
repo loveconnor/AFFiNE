@@ -1,10 +1,10 @@
-import { test } from '@affine-test/kit/electron';
+import { test } from '@lovenotes-test/kit/electron';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarSettingButton } from '@affine-test/kit/utils/sidebar';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { clickSideBarSettingButton } from '@lovenotes-test/kit/utils/sidebar';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import type { Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 

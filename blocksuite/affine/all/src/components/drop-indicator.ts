@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/drop-indicator';
+export * from '@blocksuite/lovenotes-components/drop-indicator';

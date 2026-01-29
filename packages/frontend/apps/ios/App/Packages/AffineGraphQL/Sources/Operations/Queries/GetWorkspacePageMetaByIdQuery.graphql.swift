@@ -26,11 +26,11 @@ public class GetWorkspacePageMetaByIdQuery: GraphQLQuery {
     "pageId": pageId
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("id")]),
     ] }
@@ -41,11 +41,11 @@ public class GetWorkspacePageMetaByIdQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("pageMeta", PageMeta.self, arguments: ["pageId": .variable("pageId")]),
@@ -58,32 +58,32 @@ public class GetWorkspacePageMetaByIdQuery: GraphQLQuery {
       /// Workspace.PageMeta
       ///
       /// Parent Type: `WorkspaceDocMeta`
-      public struct PageMeta: AffineGraphQL.SelectionSet {
+      public struct PageMeta: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceDocMeta }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceDocMeta }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("createdAt", AffineGraphQL.DateTime.self),
-          .field("updatedAt", AffineGraphQL.DateTime.self),
+          .field("createdAt", LoveNotesGraphQL.DateTime.self),
+          .field("updatedAt", LoveNotesGraphQL.DateTime.self),
           .field("createdBy", CreatedBy?.self),
           .field("updatedBy", UpdatedBy?.self),
         ] }
 
-        public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
-        public var updatedAt: AffineGraphQL.DateTime { __data["updatedAt"] }
+        public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
+        public var updatedAt: LoveNotesGraphQL.DateTime { __data["updatedAt"] }
         public var createdBy: CreatedBy? { __data["createdBy"] }
         public var updatedBy: UpdatedBy? { __data["updatedBy"] }
 
         /// Workspace.PageMeta.CreatedBy
         ///
         /// Parent Type: `EditorType`
-        public struct CreatedBy: AffineGraphQL.SelectionSet {
+        public struct CreatedBy: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.EditorType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.EditorType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("name", String.self),
@@ -97,11 +97,11 @@ public class GetWorkspacePageMetaByIdQuery: GraphQLQuery {
         /// Workspace.PageMeta.UpdatedBy
         ///
         /// Parent Type: `EditorType`
-        public struct UpdatedBy: AffineGraphQL.SelectionSet {
+        public struct UpdatedBy: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.EditorType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.EditorType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("name", String.self),

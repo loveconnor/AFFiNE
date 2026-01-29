@@ -1,11 +1,11 @@
 import {
   EmbedEdgelessIcon,
   EmbedPageIcon,
-} from '@blocksuite/affine-components/icons';
+} from '@blocksuite/lovenotes-components/icons';
 import {
   ColorScheme,
   type EmbedLinkedDocStyles,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { TemplateResult } from 'lit';
 
 import {

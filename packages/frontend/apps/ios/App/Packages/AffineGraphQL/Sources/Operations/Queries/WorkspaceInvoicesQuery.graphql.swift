@@ -30,11 +30,11 @@ public class WorkspaceInvoicesQuery: GraphQLQuery {
     "workspaceId": workspaceId
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -45,11 +45,11 @@ public class WorkspaceInvoicesQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("invoiceCount", Int.self),
@@ -66,32 +66,32 @@ public class WorkspaceInvoicesQuery: GraphQLQuery {
       /// Workspace.Invoice
       ///
       /// Parent Type: `InvoiceType`
-      public struct Invoice: AffineGraphQL.SelectionSet {
+      public struct Invoice: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.InvoiceType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.InvoiceType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", String?.self),
-          .field("status", GraphQLEnum<AffineGraphQL.InvoiceStatus>.self),
+          .field("status", GraphQLEnum<LoveNotesGraphQL.InvoiceStatus>.self),
           .field("currency", String.self),
           .field("amount", Int.self),
           .field("reason", String.self),
           .field("lastPaymentError", String?.self),
           .field("link", String?.self),
-          .field("createdAt", AffineGraphQL.DateTime.self),
+          .field("createdAt", LoveNotesGraphQL.DateTime.self),
         ] }
 
         @available(*, deprecated, message: "removed")
         public var id: String? { __data["id"] }
-        public var status: GraphQLEnum<AffineGraphQL.InvoiceStatus> { __data["status"] }
+        public var status: GraphQLEnum<LoveNotesGraphQL.InvoiceStatus> { __data["status"] }
         public var currency: String { __data["currency"] }
         public var amount: Int { __data["amount"] }
         public var reason: String { __data["reason"] }
         public var lastPaymentError: String? { __data["lastPaymentError"] }
         public var link: String? { __data["link"] }
-        public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
+        public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
       }
     }
   }

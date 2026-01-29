@@ -1,5 +1,5 @@
-import { NoteDisplayMode } from '@blocksuite/affine-model';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
+import { NoteDisplayMode } from '@blocksuite/lovenotes-model';
+import { stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { EdgelessIcon, PageIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement } from 'lit';
@@ -35,7 +35,7 @@ export class NoteDisplayModePanel extends WithDisposable(LitElement) {
       justify-content: center;
       align-items: center;
       gap: 4px;
-      color: var(--affine-icon-color);
+      color: var(--lovenotes-icon-color);
 
       svg {
         width: 20px;
@@ -44,7 +44,7 @@ export class NoteDisplayModePanel extends WithDisposable(LitElement) {
     }
     .item:hover,
     .item.selected {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
   `;
 

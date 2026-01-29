@@ -18,11 +18,11 @@ public class GetUserQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["email": email] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("user", User?.self, arguments: ["email": .variable("email")]),
     ] }
@@ -33,11 +33,11 @@ public class GetUserQuery: GraphQLQuery {
     /// User
     ///
     /// Parent Type: `UserOrLimitedUser`
-    public struct User: AffineGraphQL.SelectionSet {
+    public struct User: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Unions.UserOrLimitedUser }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Unions.UserOrLimitedUser }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .inlineFragment(AsUserType.self),
@@ -50,21 +50,21 @@ public class GetUserQuery: GraphQLQuery {
       /// User.AsUserType
       ///
       /// Parent Type: `UserType`
-      public struct AsUserType: AffineGraphQL.InlineFragment {
+      public struct AsUserType: LoveNotesGraphQL.InlineFragment {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = GetUserQuery.Data.User
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
         public static var __selections: [ApolloAPI.Selection] { [
-          .field("id", AffineGraphQL.ID.self),
+          .field("id", LoveNotesGraphQL.ID.self),
           .field("name", String.self),
           .field("avatarUrl", String?.self),
           .field("email", String.self),
           .field("hasPassword", Bool?.self),
         ] }
 
-        public var id: AffineGraphQL.ID { __data["id"] }
+        public var id: LoveNotesGraphQL.ID { __data["id"] }
         /// User name
         public var name: String { __data["name"] }
         /// User avatar url
@@ -78,12 +78,12 @@ public class GetUserQuery: GraphQLQuery {
       /// User.AsLimitedUserType
       ///
       /// Parent Type: `LimitedUserType`
-      public struct AsLimitedUserType: AffineGraphQL.InlineFragment {
+      public struct AsLimitedUserType: LoveNotesGraphQL.InlineFragment {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = GetUserQuery.Data.User
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.LimitedUserType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.LimitedUserType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("email", String.self),
           .field("hasPassword", Bool?.self),

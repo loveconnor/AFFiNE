@@ -7,19 +7,19 @@ import {
   notify,
   Tooltip,
   useConfirmModal,
-} from '@affine/component';
-import { useGuard } from '@affine/core/components/guard';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { DocService } from '@affine/core/modules/doc';
+} from '@lovenotes/component';
+import { useGuard } from '@lovenotes/core/components/guard';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { DocService } from '@lovenotes/core/modules/doc';
 import {
   DocGrantedUsersService,
   type GrantedUser,
   WorkspacePermissionService,
-} from '@affine/core/modules/permissions';
-import { UserFriendlyError } from '@affine/error';
-import { DocRole } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@lovenotes/core/modules/permissions';
+import { UserFriendlyError } from '@lovenotes/error';
+import { DocRole } from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
+import track from '@lovenotes/track';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
@@ -150,11 +150,11 @@ const Options = ({
         if (res) {
           notify.success({
             title:
-              t['com.affine.share-menu.member-management.update-success'](),
+              t['com.lovenotes.share-menu.member-management.update-success'](),
           });
         } else {
           notify.error({
-            title: t['com.affine.share-menu.member-management.update-fail'](),
+            title: t['com.lovenotes.share-menu.member-management.update-fail'](),
           });
         }
       } catch (error) {
@@ -195,11 +195,11 @@ const Options = ({
     openConfirmModal({
       title:
         t[
-          'com.affine.share-menu.member-management.set-as-owner.confirm.title'
+          'com.lovenotes.share-menu.member-management.set-as-owner.confirm.title'
         ](),
       description:
         t[
-          'com.affine.share-menu.member-management.set-as-owner.confirm.description'
+          'com.lovenotes.share-menu.member-management.set-as-owner.confirm.description'
         ](),
       onConfirm: changeToOwner,
       confirmText: t['Confirm'](),
@@ -226,18 +226,18 @@ const Options = ({
   const operationButtonInfo = useMemo(() => {
     return [
       {
-        label: t['com.affine.share-menu.option.permission.can-manage'](),
+        label: t['com.lovenotes.share-menu.option.permission.can-manage'](),
         onClick: changeToManager,
         role: DocRole.Manager,
       },
       {
-        label: t['com.affine.share-menu.option.permission.can-edit'](),
+        label: t['com.lovenotes.share-menu.option.permission.can-edit'](),
         onClick: changeToEditor,
         role: DocRole.Editor,
         showPlanTag: hittingPaywall,
       },
       {
-        label: t['com.affine.share-menu.option.permission.can-read'](),
+        label: t['com.lovenotes.share-menu.option.permission.can-read'](),
         onClick: changeToReader,
         role: DocRole.Reader,
         showPlanTag: hittingPaywall,
@@ -260,7 +260,7 @@ const Options = ({
         </MenuItem>
       ))}
       <MenuItem onSelect={openTransferOwnerModal} disabled={!canTransferOwner}>
-        {t['com.affine.share-menu.member-management.set-as-owner']()}
+        {t['com.lovenotes.share-menu.member-management.set-as-owner']()}
       </MenuItem>
       <MenuSeparator />
       <MenuItem
@@ -269,7 +269,7 @@ const Options = ({
         className={styles.remove}
         disabled={!canManageUsers}
       >
-        {t['com.affine.share-menu.member-management.remove']()}
+        {t['com.lovenotes.share-menu.member-management.remove']()}
       </MenuItem>
     </>
   );

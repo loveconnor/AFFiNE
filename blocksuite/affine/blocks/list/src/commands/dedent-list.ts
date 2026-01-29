@@ -1,6 +1,6 @@
-import { ListBlockModel } from '@blocksuite/affine-model';
-import type { IndentContext } from '@blocksuite/affine-shared/types';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+import { ListBlockModel } from '@blocksuite/lovenotes-model';
+import type { IndentContext } from '@blocksuite/lovenotes-shared/types';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { type Command, TextSelection } from '@blocksuite/std';
 
 import { correctNumberedListsOrderToPrev } from './utils.js';
@@ -88,7 +88,7 @@ export const canDedentListCommand: Command<
       blockId,
       inlineIndex,
       type: 'dedent',
-      flavour: 'affine:list',
+      flavour: 'lovenotes:list',
     },
   });
 };
@@ -102,7 +102,7 @@ export const dedentListCommand: Command<{
   if (
     !dedentContext ||
     dedentContext.type !== 'dedent' ||
-    dedentContext.flavour !== 'affine:list'
+    dedentContext.flavour !== 'lovenotes:list'
   ) {
     console.warn(
       'you need to use `canDedentList` command before running `dedentList` command'

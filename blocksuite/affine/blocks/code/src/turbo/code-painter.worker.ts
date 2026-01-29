@@ -2,15 +2,15 @@ import type {
   BlockLayout,
   BlockLayoutPainter,
   WorkerToHostMessage,
-} from '@blocksuite/affine-gfx-turbo-renderer';
-import { BlockLayoutPainterExtension } from '@blocksuite/affine-gfx-turbo-renderer/painter';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer';
+import { BlockLayoutPainterExtension } from '@blocksuite/lovenotes-gfx-turbo-renderer/painter';
 
 export interface CodeLayout extends BlockLayout {
-  type: 'affine:code';
+  type: 'lovenotes:code';
 }
 
 function isCodeLayout(layout: BlockLayout): layout is CodeLayout {
-  return layout.type === 'affine:code';
+  return layout.type === 'lovenotes:code';
 }
 
 class CodeLayoutPainter implements BlockLayoutPainter {
@@ -24,7 +24,7 @@ class CodeLayoutPainter implements BlockLayoutPainter {
       const message: WorkerToHostMessage = {
         type: 'paintError',
         error: 'Invalid layout format',
-        blockType: 'affine:code',
+        blockType: 'lovenotes:code',
       };
       self.postMessage(message);
       return;
@@ -48,6 +48,6 @@ class CodeLayoutPainter implements BlockLayoutPainter {
 }
 
 export const CodeLayoutPainterExtension = BlockLayoutPainterExtension(
-  'affine:code',
+  'lovenotes:code',
   CodeLayoutPainter
 );

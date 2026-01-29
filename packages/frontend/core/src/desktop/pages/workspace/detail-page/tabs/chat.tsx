@@ -1,44 +1,44 @@
-import { useConfirmModal } from '@affine/component';
-import { AIProvider } from '@affine/core/blocksuite/ai';
-import type { AppSidebarConfig } from '@affine/core/blocksuite/ai/chat-panel/chat-config';
+import { useConfirmModal } from '@lovenotes/component';
+import { AIProvider } from '@lovenotes/core/blocksuite/ai';
+import type { AppSidebarConfig } from '@lovenotes/core/blocksuite/ai/chat-panel/chat-config';
 import {
   AIChatContent,
   type ChatContextValue,
-} from '@affine/core/blocksuite/ai/components/ai-chat-content';
-import type { ChatStatus } from '@affine/core/blocksuite/ai/components/ai-chat-messages';
+} from '@lovenotes/core/blocksuite/ai/components/ai-chat-content';
+import type { ChatStatus } from '@lovenotes/core/blocksuite/ai/components/ai-chat-messages';
 import {
   AIChatToolbar,
   configureAIChatToolbar,
   getOrCreateAIChatToolbar,
-} from '@affine/core/blocksuite/ai/components/ai-chat-toolbar';
-import { createPlaygroundModal } from '@affine/core/blocksuite/ai/components/playground/modal';
-import { registerAIAppEffects } from '@affine/core/blocksuite/ai/effects/app';
-import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
-import { NotificationServiceImpl } from '@affine/core/blocksuite/view-extensions/editor-view/notification-service';
-import { useAIChatConfig } from '@affine/core/components/hooks/affine/use-ai-chat-config';
-import { useAISpecs } from '@affine/core/components/hooks/affine/use-ai-specs';
-import { useAISubscribe } from '@affine/core/components/hooks/affine/use-ai-subscribe';
+} from '@lovenotes/core/blocksuite/ai/components/ai-chat-toolbar';
+import { createPlaygroundModal } from '@lovenotes/core/blocksuite/ai/components/playground/modal';
+import { registerAIAppEffects } from '@lovenotes/core/blocksuite/ai/effects/app';
+import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor';
+import { NotificationServiceImpl } from '@lovenotes/core/blocksuite/view-extensions/editor-view/notification-service';
+import { useAIChatConfig } from '@lovenotes/core/components/hooks/lovenotes/use-ai-chat-config';
+import { useAISpecs } from '@lovenotes/core/components/hooks/lovenotes/use-ai-specs';
+import { useAISubscribe } from '@lovenotes/core/components/hooks/lovenotes/use-ai-subscribe';
 import {
   AIDraftService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
-import { AIModelService } from '@affine/core/modules/ai-button/services/models';
-import { ServerService, SubscriptionService } from '@affine/core/modules/cloud';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { useSignalValue } from '@affine/core/modules/doc-info/utils';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { PeekViewService } from '@affine/core/modules/peek-view';
-import { AppThemeService } from '@affine/core/modules/theme';
-import { WorkbenchService } from '@affine/core/modules/workbench';
+} from '@lovenotes/core/modules/ai-button';
+import { AIModelService } from '@lovenotes/core/modules/ai-button/services/models';
+import { ServerService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { useSignalValue } from '@lovenotes/core/modules/doc-info/utils';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { PeekViewService } from '@lovenotes/core/modules/peek-view';
+import { AppThemeService } from '@lovenotes/core/modules/theme';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import type {
   ContextEmbedStatus,
   CopilotChatHistoryFragment,
   UpdateChatSessionInput,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { DocModeProvider } from '@blocksuite/affine/shared/services';
-import { createSignalFromObservable } from '@blocksuite/affine/shared/utils';
+} from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
+import { DocModeProvider } from '@blocksuite/lovenotes/shared/services';
+import { createSignalFromObservable } from '@blocksuite/lovenotes/shared/utils';
 import { CenterPeekIcon, Logo1Icon } from '@blocksuite/icons/rc';
 import type { Signal } from '@preact/signals-core';
 import { useFramework, useService } from '@toeverything/infra';
@@ -55,7 +55,7 @@ import {
 registerAIAppEffects();
 
 export interface SidebarTabProps {
-  editor: AffineEditorContainer | null;
+  editor: LoveNotesEditorContainer | null;
   onLoad?: ((component: HTMLElement) => void) | null;
 }
 
@@ -159,7 +159,7 @@ export const EditorChatPanel = ({ editor, onLoad }: SidebarTabProps) => {
       const sessionId = await AIProvider.session.createSession({
         docId: doc.id,
         workspaceId: doc.workspace.id,
-        promptName: 'Chat With AFFiNE AI',
+        promptName: 'Chat With LoveNotes AI',
         reuseLatestChat: false,
         ...options,
       });
@@ -408,11 +408,11 @@ export const EditorChatPanel = ({ editor, onLoad }: SidebarTabProps) => {
     content.docDisplayConfig = docDisplayConfig;
     content.extensions = specs;
     content.serverService = framework.get(ServerService);
-    content.affineFeatureFlagService = framework.get(FeatureFlagService);
-    content.affineWorkspaceDialogService = framework.get(
+    content.lovenotesFeatureFlagService = framework.get(FeatureFlagService);
+    content.lovenotesWorkspaceDialogService = framework.get(
       WorkspaceDialogService
     );
-    content.affineThemeService = framework.get(AppThemeService);
+    content.lovenotesThemeService = framework.get(AppThemeService);
     content.notificationService = notificationService;
     content.aiDraftService = framework.get(AIDraftService);
     content.aiToolsConfigService = framework.get(AIToolsConfigService);
@@ -562,10 +562,10 @@ export const EditorChatPanel = ({ editor, onLoad }: SidebarTabProps) => {
         .docDisplayConfig=${docDisplayConfig}
         .extensions=${specs}
         .serverService=${framework.get(ServerService)}
-        .affineFeatureFlagService=${framework.get(FeatureFlagService)}
-        .affineThemeService=${framework.get(AppThemeService)}
+        .lovenotesFeatureFlagService=${framework.get(FeatureFlagService)}
+        .lovenotesThemeService=${framework.get(AppThemeService)}
         .notificationService=${notificationService}
-        .affineWorkspaceDialogService=${framework.get(WorkspaceDialogService)}
+        .lovenotesWorkspaceDialogService=${framework.get(WorkspaceDialogService)}
         .aiToolsConfigService=${framework.get(AIToolsConfigService)}
         .subscriptionService=${framework.get(SubscriptionService)}
         .aiModelService=${framework.get(AIModelService)}
@@ -614,7 +614,7 @@ export const EditorChatPanel = ({ editor, onLoad }: SidebarTabProps) => {
           <div className={styles.loading}>
             <Logo1Icon className={styles.loadingIcon} />
             <div className={styles.loadingTitle}>
-              {t['com.affine.ai.chat-panel.loading-history']()}
+              {t['com.lovenotes.ai.chat-panel.loading-history']()}
             </div>
           </div>
         </div>
@@ -624,13 +624,13 @@ export const EditorChatPanel = ({ editor, onLoad }: SidebarTabProps) => {
             <div className={styles.title}>
               {isEmbedding ? (
                 <span data-testid="chat-panel-embedding-progress">
-                  {t.t('com.affine.ai.chat-panel.embedding-progress', {
+                  {t.t('com.lovenotes.ai.chat-panel.embedding-progress', {
                     done,
                     total,
                   })}
                 </span>
               ) : (
-                t['com.affine.ai.chat-panel.title']()
+                t['com.lovenotes.ai.chat-panel.title']()
               )}
             </div>
             {playgroundVisible ? (

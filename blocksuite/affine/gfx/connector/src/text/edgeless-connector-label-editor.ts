@@ -1,12 +1,12 @@
 import {
   DefaultTool,
   EdgelessCRUDIdentifier,
-} from '@blocksuite/affine-block-surface';
-import { getLineHeight } from '@blocksuite/affine-gfx-text';
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
-import type { RichText } from '@blocksuite/affine-rich-text';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { almostEqual } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-block-surface';
+import { getLineHeight } from '@blocksuite/lovenotes-gfx-text';
+import type { ConnectorElementModel } from '@blocksuite/lovenotes-model';
+import type { RichText } from '@blocksuite/lovenotes-rich-text';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
+import { almostEqual } from '@blocksuite/lovenotes-shared/utils';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import { Bound, type IVec, Vec } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';
@@ -92,8 +92,8 @@ export class EdgelessConnectorLabelEditor extends WithDisposable(
       transform-origin: center;
       z-index: 10;
       padding: ${VERTICAL_PADDING}px ${HORIZONTAL_PADDING}px;
-      border: ${BORDER_WIDTH}px solid var(--affine-primary-color, #1e96eb);
-      background: var(--affine-background-primary-color, #fff);
+      border: ${BORDER_WIDTH}px solid var(--lovenotes-primary-color, #1e96eb);
+      background: var(--lovenotes-background-primary-color, #fff);
       border-radius: 2px;
       box-shadow: 0px 0px 0px 2px rgba(30, 150, 235, 0.3);
       box-sizing: border-box;
@@ -111,7 +111,7 @@ export class EdgelessConnectorLabelEditor extends WithDisposable(
 
       .edgeless-connector-label-editor-placeholder {
         pointer-events: none;
-        color: var(--affine-text-disable-color);
+        color: var(--lovenotes-text-disable-color);
         white-space: nowrap;
       }
     }

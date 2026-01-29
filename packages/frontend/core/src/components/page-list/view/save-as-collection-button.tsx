@@ -1,5 +1,5 @@
-import { Button, usePromptModal } from '@affine/component';
-import { useI18n } from '@affine/i18n';
+import { Button, usePromptModal } from '@lovenotes/component';
+import { useI18n } from '@lovenotes/i18n';
 import { SaveIcon } from '@blocksuite/icons/rc';
 import { useCallback } from 'react';
 
@@ -16,18 +16,18 @@ export const SaveAsCollectionButton = ({
   const { openPromptModal } = usePromptModal();
   const handleClick = useCallback(() => {
     openPromptModal({
-      title: t['com.affine.editCollection.saveCollection'](),
-      label: t['com.affine.editCollectionName.name'](),
+      title: t['com.lovenotes.editCollection.saveCollection'](),
+      label: t['com.lovenotes.editCollectionName.name'](),
       inputOptions: {
-        placeholder: t['com.affine.editCollectionName.name.placeholder'](),
+        placeholder: t['com.lovenotes.editCollectionName.name.placeholder'](),
       },
       children: (
         <div className={styles.createTips}>
-          {t['com.affine.editCollectionName.createTips']()}
+          {t['com.lovenotes.editCollectionName.createTips']()}
         </div>
       ),
-      confirmText: t['com.affine.editCollection.save'](),
-      cancelText: t['com.affine.editCollection.button.cancel'](),
+      confirmText: t['com.lovenotes.editCollection.save'](),
+      cancelText: t['com.lovenotes.editCollection.button.cancel'](),
       confirmButtonOptions: {
         variant: 'primary',
       },
@@ -43,7 +43,7 @@ export const SaveAsCollectionButton = ({
       prefix={<SaveIcon />}
       className={styles.button}
     >
-      {t['com.affine.editCollection.saveCollection']()}
+      {t['com.lovenotes.editCollection.saveCollection']()}
     </Button>
   );
 };

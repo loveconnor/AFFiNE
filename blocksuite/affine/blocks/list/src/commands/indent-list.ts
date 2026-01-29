@@ -1,9 +1,9 @@
-import { ListBlockModel, ParagraphBlockModel } from '@blocksuite/affine-model';
-import type { IndentContext } from '@blocksuite/affine-shared/types';
+import { ListBlockModel, ParagraphBlockModel } from '@blocksuite/lovenotes-model';
+import type { IndentContext } from '@blocksuite/lovenotes-shared/types';
 import {
   getNearestHeadingBefore,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { type Command, TextSelection } from '@blocksuite/std';
 
 import { correctNumberedListsOrderToPrev } from './utils.js';
@@ -81,7 +81,7 @@ export const canIndentListCommand: Command<
       blockId,
       inlineIndex,
       type: 'indent',
-      flavour: 'affine:list',
+      flavour: 'lovenotes:list',
     },
   });
 };
@@ -93,7 +93,7 @@ export const indentListCommand: Command<{
   if (
     !indentContext ||
     indentContext.type !== 'indent' ||
-    indentContext.flavour !== 'affine:list'
+    indentContext.flavour !== 'lovenotes:list'
   ) {
     console.warn(
       'you need to use `canIndentList` command before running `indentList` command'

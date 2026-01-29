@@ -1,4 +1,4 @@
-import { getImageFilesFromLocal } from '@blocksuite/affine-shared/utils';
+import { getImageFilesFromLocal } from '@blocksuite/lovenotes-shared/utils';
 import type { Command } from '@blocksuite/std';
 import type { BlockModel } from '@blocksuite/store';
 

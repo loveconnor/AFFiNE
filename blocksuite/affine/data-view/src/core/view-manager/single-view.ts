@@ -1,4 +1,4 @@
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+import type { InsertToPosition } from '@blocksuite/lovenotes-shared/utils';
 import type { GeneralServiceIdentifier } from '@blocksuite/global/di';
 import { computed, type ReadonlySignal, signal } from '@preact/signals-core';
 

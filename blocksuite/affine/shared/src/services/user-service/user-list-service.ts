@@ -2,10 +2,10 @@ import { createIdentifier } from '@blocksuite/global/di';
 import type { ExtensionType } from '@blocksuite/store';
 import type { ReadonlySignal } from '@preact/signals-core';
 
-import type { AffineUserInfo } from './types';
+import type { LoveNotesUserInfo } from './types';
 
 export interface UserListService {
-  users$: ReadonlySignal<AffineUserInfo[]>;
+  users$: ReadonlySignal<LoveNotesUserInfo[]>;
   isLoading$: ReadonlySignal<boolean>;
   searchText$: ReadonlySignal<string>;
   hasMore$: ReadonlySignal<boolean>;
@@ -14,7 +14,7 @@ export interface UserListService {
 }
 
 export const UserListProvider = createIdentifier<UserListService>(
-  'affine-user-list-service'
+  'lovenotes-user-list-service'
 );
 
 export function UserListServiceExtension(

@@ -1,5 +1,5 @@
-import type { ExtensionType } from '@blocksuite/affine/store';
-import type { MarkdownAST } from '@blocksuite/affine-shared/adapters';
+import type { ExtensionType } from '@blocksuite/lovenotes/store';
+import type { MarkdownAST } from '@blocksuite/lovenotes-shared/adapters';
 import {
   createIdentifier,
   type ServiceIdentifier,

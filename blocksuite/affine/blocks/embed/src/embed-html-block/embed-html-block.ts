@@ -1,4 +1,4 @@
-import type { EmbedHtmlModel, EmbedHtmlStyles } from '@blocksuite/affine-model';
+import type { EmbedHtmlModel, EmbedHtmlStyles } from '@blocksuite/lovenotes-model';
 import { BlockSelection } from '@blocksuite/std';
 import { html } from 'lit';
 import { query } from 'lit/decorators.js';
@@ -62,20 +62,20 @@ export class EmbedHtmlBlockComponent extends EmbedBlockComponent<EmbedHtmlModel>
 
     return this.renderEmbed(() => {
       if (!this.model.props.html) {
-        return html` <div class="affine-html-empty">Empty</div>`;
+        return html` <div class="lovenotes-html-empty">Empty</div>`;
       }
       return html`
         <div
           class=${classMap({
-            'affine-embed-html-block': true,
+            'lovenotes-embed-html-block': true,
             selected: this.selected$.value,
           })}
           style=${styleMap(this.embedHtmlStyle)}
           @click=${this._handleClick}
           @dblclick=${this._handleDoubleClick}
         >
-          <div class="affine-embed-html">
-            <div class="affine-embed-html-iframe-container">
+          <div class="lovenotes-embed-html">
+            <div class="lovenotes-embed-html-iframe-container">
               <div class="embed-html-block-iframe-wrapper" allowfullscreen>
                 <iframe
                   class="embed-html-block-iframe"
@@ -92,17 +92,17 @@ export class EmbedHtmlBlockComponent extends EmbedBlockComponent<EmbedHtmlModel>
               <!-- overlay to prevent the iframe from capturing pointer events -->
               <div
                 class=${classMap({
-                  'affine-embed-html-iframe-overlay': true,
+                  'lovenotes-embed-html-iframe-overlay': true,
                   hide: !this.showOverlay$.value,
                 })}
               ></div>
             </div>
           </div>
 
-          <div class="affine-embed-html-title">
-            <div class="affine-embed-html-title-icon">${HtmlIcon}</div>
+          <div class="lovenotes-embed-html-title">
+            <div class="lovenotes-embed-html-title-icon">${HtmlIcon}</div>
 
-            <div class="affine-embed-html-title-text">${titleText}</div>
+            <div class="lovenotes-embed-html-title-text">${titleText}</div>
           </div>
         </div>
       `;

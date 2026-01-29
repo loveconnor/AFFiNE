@@ -1,20 +1,20 @@
-import { whenHover } from '@blocksuite/affine-components/hover';
-import { Peekable } from '@blocksuite/affine-components/peek';
-import type { ReferenceInfo } from '@blocksuite/affine-model';
+import { whenHover } from '@blocksuite/lovenotes-components/hover';
+import { Peekable } from '@blocksuite/lovenotes-components/peek';
+import type { ReferenceInfo } from '@blocksuite/lovenotes-model';
 import {
   DEFAULT_DOC_NAME,
   REFERENCE_NODE,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   DocDisplayMetaProvider,
   ToolbarRegistryIdentifier,
-} from '@blocksuite/affine-shared/services';
-import { affineTextStyles } from '@blocksuite/affine-shared/styles';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-shared/services';
+import { lovenotesTextStyles } from '@blocksuite/lovenotes-shared/styles';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import {
   cloneReferenceInfo,
   referenceToNode,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { LinkedPageIcon } from '@blocksuite/icons/lit';
 import type { BlockComponent, BlockStdScope } from '@blocksuite/std';
@@ -37,13 +37,13 @@ import { RefNodeSlotsProvider } from './reference-node-slots';
 import type { DocLinkClickedEvent } from './types';
 
 @Peekable({ action: false })
-export class AffineReference extends WithDisposable(ShadowlessElement) {
+export class LoveNotesReference extends WithDisposable(ShadowlessElement) {
   static override styles = css`
-    .affine-reference {
+    .lovenotes-reference {
       white-space: normal;
       word-break: break-word;
-      color: var(--affine-text-primary-color);
-      fill: var(--affine-icon-color);
+      color: var(--lovenotes-text-primary-color);
+      fill: var(--lovenotes-icon-color);
       border-radius: 4px;
       text-decoration: none;
       cursor: pointer;
@@ -54,21 +54,21 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
         margin-bottom: 0.1em;
       }
     }
-    .affine-reference:hover {
-      background: var(--affine-hover-color);
+    .lovenotes-reference:hover {
+      background: var(--lovenotes-hover-color);
     }
 
-    .affine-reference[data-selected='true'] {
-      background: var(--affine-hover-color);
+    .lovenotes-reference[data-selected='true'] {
+      background: var(--lovenotes-hover-color);
     }
 
-    .affine-reference-title {
+    .lovenotes-reference-title {
       margin-left: 4px;
-      border-bottom: 0.5px solid var(--affine-divider-color);
+      border-bottom: 0.5px solid var(--lovenotes-divider-color);
       transition: border 0.2s ease-out;
     }
-    .affine-reference-title:hover {
-      border-bottom: 0.5px solid var(--affine-icon-color);
+    .lovenotes-reference-title:hover {
+      border-bottom: 0.5px solid var(--lovenotes-icon-color);
     }
   `;
 
@@ -130,7 +130,7 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
   }
 
   get inlineEditor() {
-    const inlineRoot = this.closest<InlineRootElement<AffineTextAttributes>>(
+    const inlineRoot = this.closest<InlineRootElement<LoveNotesTextAttributes>>(
       `[${INLINE_ROOT_ATTR}]`
     );
     return inlineRoot?.inlineEditor;
@@ -171,7 +171,7 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
 
       if (hovered) {
         message$.value = {
-          flavour: 'affine:reference',
+          flavour: 'lovenotes:reference',
           element: this,
           setFloating: this._whenHover.setFloating,
         };
@@ -264,13 +264,13 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
       ],
     ]);
 
-    const style = affineTextStyles(
+    const style = lovenotesTextStyles(
       attributes,
       isDeleted
         ? {
-            color: 'var(--affine-text-disable-color)',
+            color: 'var(--lovenotes-text-disable-color)',
             textDecoration: 'line-through',
-            fill: 'var(--affine-text-disable-color)',
+            fill: 'var(--lovenotes-text-disable-color)',
           }
         : {}
     );
@@ -279,7 +279,7 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
       ? this.customContent(this)
       : html`${icon}<span
             data-title=${ifDefined(title)}
-            class="affine-reference-title"
+            class="lovenotes-reference-title"
             >${title}</span
           >`;
 
@@ -287,7 +287,7 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
     // embed element to make sure inline range calculation is correct
     return html`<span
       data-selected=${this.selected}
-      class="affine-reference"
+      class="lovenotes-reference"
       style=${styleMap(style)}
       @click=${(event: MouseEvent) => this.open({ event })}
       @auxclick=${(event: MouseEvent) => this.open({ event })}
@@ -308,7 +308,7 @@ export class AffineReference extends WithDisposable(ShadowlessElement) {
   accessor config!: ReferenceNodeConfigProvider;
 
   @property({ type: Object })
-  accessor delta: DeltaInsert<AffineTextAttributes> = {
+  accessor delta: DeltaInsert<LoveNotesTextAttributes> = {
     insert: ZERO_WIDTH_FOR_EMPTY_LINE,
     attributes: {},
   };

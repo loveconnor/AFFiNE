@@ -1,11 +1,11 @@
 //
 //  HeadlineView.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //
 
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 struct HeadlineView: View {
@@ -20,7 +20,7 @@ struct HeadlineView: View {
 
       Text(viewModel.selectedUnit.secondaryText)
         .font(.system(size: 16))
-        .foregroundStyle(AffineColors.textSecondary.color)
+        .foregroundStyle(LoveNotesColors.textSecondary.color)
         .contentTransition(.numericText())
         .animation(.spring.speed(2), value: viewModel.category)
     }

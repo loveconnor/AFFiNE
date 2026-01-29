@@ -1,15 +1,15 @@
-import { skipOnboarding } from '@affine-test/kit/playwright';
+import { skipOnboarding } from '@lovenotes-test/kit/playwright';
 import {
   createRandomAIUser,
   switchDefaultChatModel,
-} from '@affine-test/kit/utils/cloud';
-import { openHomePage, setCoreUrl } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/cloud';
+import { openHomePage, setCoreUrl } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
-import type { Store } from '@blocksuite/affine/store';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
+import type { Store } from '@blocksuite/lovenotes/store';
 import type { Page } from '@playwright/test';
 
 declare global {
@@ -63,7 +63,7 @@ export class TestUtils {
 
   public async setupTestEnvironment(
     page: Page,
-    defaultModel = 'gemini-2.5-flash'
+    defaultModel = 'gpt-5'
   ) {
     await switchDefaultChatModel(defaultModel);
 

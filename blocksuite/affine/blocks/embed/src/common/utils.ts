@@ -9,9 +9,9 @@ import {
   EmbedCardLightHorizontalIcon,
   EmbedCardLightListIcon,
   EmbedCardLightVerticalIcon,
-} from '@blocksuite/affine-components/icons';
-import { ColorScheme } from '@blocksuite/affine-model';
-import { EmbedOptionProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-components/icons';
+import { ColorScheme } from '@blocksuite/lovenotes-model';
+import { EmbedOptionProvider } from '@blocksuite/lovenotes-shared/services';
 import type { BlockStdScope } from '@blocksuite/std';
 import type { TemplateResult } from 'lit';
 

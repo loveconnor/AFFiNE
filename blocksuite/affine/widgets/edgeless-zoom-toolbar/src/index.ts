@@ -1,5 +1,5 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
+import type { RootBlockModel } from '@blocksuite/lovenotes-model';
 import { WidgetComponent, WidgetViewExtension } from '@blocksuite/std';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 import { effect } from '@preact/signals-core';
@@ -8,15 +8,15 @@ import { state } from 'lit/decorators.js';
 import { literal, unsafeStatic } from 'lit/static-html.js';
 
 export const AFFINE_EDGELESS_ZOOM_TOOLBAR_WIDGET =
-  'affine-edgeless-zoom-toolbar-widget';
+  'lovenotes-edgeless-zoom-toolbar-widget';
 
-export class AffineEdgelessZoomToolbarWidget extends WidgetComponent<RootBlockModel> {
+export class LoveNotesEdgelessZoomToolbarWidget extends WidgetComponent<RootBlockModel> {
   static override styles = css`
     :host {
       position: absolute;
       bottom: 20px;
       left: 12px;
-      z-index: var(--affine-z-index-popover);
+      z-index: var(--lovenotes-z-index-popover);
       display: flex;
       justify-content: center;
       -webkit-user-select: none;
@@ -88,7 +88,7 @@ export class AffineEdgelessZoomToolbarWidget extends WidgetComponent<RootBlockMo
 }
 
 export const edgelessZoomToolbarWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   AFFINE_EDGELESS_ZOOM_TOOLBAR_WIDGET,
   literal`${unsafeStatic(AFFINE_EDGELESS_ZOOM_TOOLBAR_WIDGET)}`
 );

@@ -1,10 +1,10 @@
-import { ParagraphBlockSchema } from '@blocksuite/affine-model';
+import { ParagraphBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   HastUtils,
   type HtmlAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert, NodeProps } from '@blocksuite/store';
 import { nanoid } from '@blocksuite/store';
 
@@ -61,7 +61,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                 {
                   type: 'block',
                   id: nanoid(),
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: 'quote',
                     text: {
@@ -93,7 +93,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                 {
                   type: 'block',
                   id: nanoid(),
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: 'text',
                     text: {
@@ -115,7 +115,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
             {
               type: 'block',
               id: nanoid(),
-              flavour: 'affine:paragraph',
+              flavour: 'lovenotes:paragraph',
               props: {
                 type: walkerContext.getGlobalContext('hast:blockquote')
                   ? 'quote'
@@ -142,7 +142,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
               {
                 type: 'block',
                 id: nanoid(),
-                flavour: 'affine:paragraph',
+                flavour: 'lovenotes:paragraph',
                 props: {
                   type: o.node.tagName,
                   text: {
@@ -175,10 +175,10 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
           ) {
             if (
               o.node.properties.className.includes(
-                'affine-paragraph-block-container'
+                'lovenotes-paragraph-block-container'
               ) ||
               o.node.properties.className.includes(
-                'affine-block-children-container'
+                'lovenotes-block-children-container'
               ) ||
               o.node.properties.className.includes('indented')
             ) {
@@ -197,7 +197,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
             o.next.tagName === 'div' &&
             Array.isArray(o.next.properties?.className) &&
             (o.next.properties.className.includes(
-              'affine-block-children-container'
+              'lovenotes-block-children-container'
             ) ||
               o.next.properties.className.includes('indented'))
           ) {
@@ -224,7 +224,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                 type: 'element',
                 tagName: 'div',
                 properties: {
-                  className: ['affine-paragraph-block-container'],
+                  className: ['lovenotes-paragraph-block-container'],
                 },
                 children: [],
               },
@@ -245,7 +245,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                 type: 'element',
                 tagName: 'div',
                 properties: {
-                  className: ['affine-block-children-container'],
+                  className: ['lovenotes-block-children-container'],
                   style: 'padding-left: 26px;',
                 },
                 children: [],
@@ -266,7 +266,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                 type: 'element',
                 tagName: 'div',
                 properties: {
-                  className: ['affine-paragraph-block-container'],
+                  className: ['lovenotes-paragraph-block-container'],
                 },
                 children: [],
               },
@@ -287,7 +287,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                 type: 'element',
                 tagName: 'div',
                 properties: {
-                  className: ['affine-block-children-container'],
+                  className: ['lovenotes-block-children-container'],
                   style: 'padding-left: 26px;',
                 },
                 children: [],
@@ -303,7 +303,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                 type: 'element',
                 tagName: 'div',
                 properties: {
-                  className: ['affine-paragraph-block-container'],
+                  className: ['lovenotes-paragraph-block-container'],
                 },
                 children: [],
               },
@@ -336,7 +336,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                 type: 'element',
                 tagName: 'div',
                 properties: {
-                  className: ['affine-block-children-container'],
+                  className: ['lovenotes-block-children-container'],
                   style: 'padding-left: 26px;',
                 },
                 children: [],

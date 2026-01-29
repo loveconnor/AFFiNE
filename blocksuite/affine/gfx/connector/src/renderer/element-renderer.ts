@@ -3,7 +3,7 @@ import {
   type ElementRenderer,
   ElementRendererExtension,
   type RoughCanvas,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   getFontString,
   getLineHeight,
@@ -11,14 +11,14 @@ import {
   isRTL,
   type TextDelta,
   wrapTextDeltas,
-} from '@blocksuite/affine-gfx-text';
+} from '@blocksuite/lovenotes-gfx-text';
 import {
   type ConnectorElementModel,
   ConnectorMode,
   DefaultTheme,
   type LocalConnectorElementModel,
   type PointStyle,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   getBezierParameters,
   type PointLocation,

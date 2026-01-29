@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import { BlockComponent, type BlockService } from '@blocksuite/std';
 import type { BlockModel } from '@blocksuite/store';
 import { html, nothing } from 'lit';
@@ -46,7 +46,7 @@ export class CaptionedBlockComponent<
     return html`<div
       style=${style}
       class=${classMap({
-        'affine-block-component': true,
+        'lovenotes-block-component': true,
         [theme]: true,
         border: isBorder,
       })}
@@ -58,9 +58,9 @@ export class CaptionedBlockComponent<
           ></block-caption-editor>`
         : nothing}
       ${this.selectedStyle === SelectedStyle.Background
-        ? html`<affine-block-selection
+        ? html`<lovenotes-block-selection
             .selected=${this.selected$.value}
-          ></affine-block-selection>`
+          ></lovenotes-block-selection>`
         : null}
       ${this.useZeroWidth && !this.store.readonly
         ? html`<block-zero-width .block=${this}></block-zero-width>`

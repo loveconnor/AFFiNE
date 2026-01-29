@@ -5,10 +5,10 @@ import {
   DatabaseBlockModel,
   ImageBlockModel,
   SurfaceRefBlockModel,
-} from '@blocksuite/affine-model';
-import { getSelectionRectsCommand } from '@blocksuite/affine-shared/commands';
-import { EMBED_BLOCK_MODEL_LIST } from '@blocksuite/affine-shared/consts';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { getSelectionRectsCommand } from '@blocksuite/lovenotes-shared/commands';
+import { EMBED_BLOCK_MODEL_LIST } from '@blocksuite/lovenotes-shared/consts';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import {
   BlockSelection,
   TextSelection,
@@ -35,9 +35,9 @@ export interface SelectionRect {
 }
 
 export const AFFINE_DOC_REMOTE_SELECTION_WIDGET =
-  'affine-doc-remote-selection-widget';
+  'lovenotes-doc-remote-selection-widget';
 
-export class AffineDocRemoteSelectionWidget extends WidgetComponent {
+export class LoveNotesDocRemoteSelectionWidget extends WidgetComponent {
   // avoid being unable to select text by mouse click or drag
   static override styles = css`
     :host {
@@ -148,7 +148,7 @@ export class AffineDocRemoteSelectionWidget extends WidgetComponent {
       return null;
     }
 
-    if (this.block.model.flavour !== 'affine:page') {
+    if (this.block.model.flavour !== 'lovenotes:page') {
       console.error('remote selection widget must be used in page component');
       return null;
     }
@@ -216,7 +216,7 @@ export class AffineDocRemoteSelectionWidget extends WidgetComponent {
       return [];
     }
 
-    if (this.block.model.flavour !== 'affine:page') {
+    if (this.block.model.flavour !== 'lovenotes:page') {
       console.error('remote selection widget must be used in page component');
       return [];
     }
@@ -369,7 +369,7 @@ export class AffineDocRemoteSelectionWidget extends WidgetComponent {
                       color: 'white',
                       maxWidth: '160px',
                       padding: '0 3px',
-                      border: '1px solid var(--affine-pure-black-20)',
+                      border: '1px solid var(--lovenotes-pure-black-20)',
                       boxShadow: '0px 1px 6px 0px rgba(0, 0, 0, 0.16)',
                       borderRadius: '4px',
                       fontSize: '12px',
@@ -393,6 +393,6 @@ export class AffineDocRemoteSelectionWidget extends WidgetComponent {
 
 declare global {
   interface HTMLElementTagNameMap {
-    [AFFINE_DOC_REMOTE_SELECTION_WIDGET]: AffineDocRemoteSelectionWidget;
+    [AFFINE_DOC_REMOTE_SELECTION_WIDGET]: LoveNotesDocRemoteSelectionWidget;
   }
 }

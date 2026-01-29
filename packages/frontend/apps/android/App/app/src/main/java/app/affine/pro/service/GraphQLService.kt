@@ -1,16 +1,16 @@
-package app.affine.pro.service
+package app.lovenotes.pro.service
 
-import app.affine.pro.Prompt
-import app.affine.pro.utils.getCurrentServerBaseUrl
-import com.affine.pro.graphql.CreateCopilotMessageMutation
-import com.affine.pro.graphql.CreateCopilotSessionMutation
-import com.affine.pro.graphql.GetCopilotHistoriesQuery
-import com.affine.pro.graphql.GetCopilotHistoryIdsQuery
-import com.affine.pro.graphql.GetCopilotSessionsQuery
-import com.affine.pro.graphql.type.CreateChatMessageInput
-import com.affine.pro.graphql.type.CreateChatSessionInput
-import com.affine.pro.graphql.type.PaginationInput
-import com.affine.pro.graphql.type.QueryChatHistoriesInput
+import app.lovenotes.pro.Prompt
+import app.lovenotes.pro.utils.getCurrentServerBaseUrl
+import com.lovenotes.pro.graphql.CreateCopilotMessageMutation
+import com.lovenotes.pro.graphql.CreateCopilotSessionMutation
+import com.lovenotes.pro.graphql.GetCopilotHistoriesQuery
+import com.lovenotes.pro.graphql.GetCopilotHistoryIdsQuery
+import com.lovenotes.pro.graphql.GetCopilotSessionsQuery
+import com.lovenotes.pro.graphql.type.CreateChatMessageInput
+import com.lovenotes.pro.graphql.type.CreateChatSessionInput
+import com.lovenotes.pro.graphql.type.PaginationInput
+import com.lovenotes.pro.graphql.type.QueryChatHistoriesInput
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.api.Mutation
 import com.apollographql.apollo.api.Optional
@@ -44,7 +44,7 @@ class GraphQLService @Inject constructor() {
     suspend fun createCopilotSession(
         workspaceId: String,
         docId: String,
-        prompt: Prompt = Prompt.ChatWithAFFiNEAI
+        prompt: Prompt = Prompt.ChatWithLoveNotesAI
     ) = mutation(
         CreateCopilotSessionMutation(
             CreateChatSessionInput(

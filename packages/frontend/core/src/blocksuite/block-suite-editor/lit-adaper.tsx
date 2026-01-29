@@ -1,32 +1,32 @@
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import 'katex/dist/katex.min.css';
 
-import { useConfirmModal, useLitPortalFactory } from '@affine/component';
+import { useConfirmModal, useLitPortalFactory } from '@lovenotes/component';
 import {
   type EdgelessEditor,
   LitDocEditor,
   LitDocTitle,
   LitEdgelessEditor,
   type PageEditor,
-} from '@affine/core/blocksuite/editors';
-import { getViewManager } from '@affine/core/blocksuite/manager/view';
-import { useEnableAI } from '@affine/core/components/hooks/affine/use-enable-ai';
-import { ServerService } from '@affine/core/modules/cloud';
-import type { DocCustomPropertyInfo } from '@affine/core/modules/db';
+} from '@lovenotes/core/blocksuite/editors';
+import { getViewManager } from '@lovenotes/core/blocksuite/manager/view';
+import { useEnableAI } from '@lovenotes/core/components/hooks/lovenotes/use-enable-ai';
+import { ServerService } from '@lovenotes/core/modules/cloud';
+import type { DocCustomPropertyInfo } from '@lovenotes/core/modules/db';
 import type {
   DatabaseRow,
   DatabaseValueCell,
-} from '@affine/core/modules/doc-info/types';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { JournalService } from '@affine/core/modules/journal';
-import { useInsidePeekView } from '@affine/core/modules/peek-view';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { ServerFeature } from '@affine/graphql';
-import track from '@affine/track';
-import type { DocTitle } from '@blocksuite/affine/fragments/doc-title';
-import type { DocMode } from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+} from '@lovenotes/core/modules/doc-info/types';
+import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { JournalService } from '@lovenotes/core/modules/journal';
+import { useInsidePeekView } from '@lovenotes/core/modules/peek-view';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { ServerFeature } from '@lovenotes/graphql';
+import track from '@lovenotes/track';
+import type { DocTitle } from '@blocksuite/lovenotes/fragments/doc-title';
+import type { DocMode } from '@blocksuite/lovenotes/model';
+import type { Store } from '@blocksuite/lovenotes/store';
 import {
   useFramework,
   useLiveData,
@@ -47,7 +47,6 @@ import {
   type DefaultOpenProperty,
   WorkspacePropertiesTable,
 } from '../../components/properties';
-import { BiDirectionalLinkPanel } from './bi-directional-link-panel';
 import { DocIconPicker } from './doc-icon-picker';
 import { BlocksuiteEditorJournalDocTitle } from './journal-doc-title';
 import { StarterBar } from './starter-bar';
@@ -211,12 +210,6 @@ export const BlocksuiteDocEditor = forwardRef<
 
   const [specs, portals] = usePatchSpecs('page', shared);
 
-  const displayBiDirectionalLink = useLiveData(
-    editorSettingService.editorSetting.settings$.selector(
-      s => s.displayBiDirectionalLink
-    )
-  );
-
   const displayDocInfo = useLiveData(
     editorSettingService.editorSetting.settings$.selector(s => s.displayDocInfo)
   );
@@ -255,7 +248,7 @@ export const BlocksuiteDocEditor = forwardRef<
 
   return (
     <>
-      <div className={styles.affineDocViewport}>
+      <div className={styles.lovenotesDocViewport}>
         {!BUILD_CONFIG.isMobileEdition ? (
           <DocIconPicker docId={page.id} readonly={readonly || shared} />
         ) : null}
@@ -290,9 +283,6 @@ export const BlocksuiteDocEditor = forwardRef<
         {!readonly && !BUILD_CONFIG.isMobileEdition && (
           <StarterBar doc={page} />
         )}
-        {!shared && displayBiDirectionalLink ? (
-          <BiDirectionalLinkPanel />
-        ) : null}
       </div>
       {portals}
     </>
@@ -325,7 +315,7 @@ export const BlocksuiteEdgelessEditor = forwardRef<
         .then(() => {
           // make sure editor can get keyboard events on showing up
           editorRef.current
-            ?.querySelector<HTMLElement>('affine-edgeless-root')
+            ?.querySelector<HTMLElement>('lovenotes-edgeless-root')
             ?.click();
         })
         .catch(console.error);
@@ -333,7 +323,7 @@ export const BlocksuiteEdgelessEditor = forwardRef<
   }, []);
 
   return (
-    <div className={styles.affineEdgelessDocViewport}>
+    <div className={styles.lovenotesEdgelessDocViewport}>
       <LitEdgelessEditor ref={onDocRef} doc={page} specs={specs} />
       {portals}
     </div>

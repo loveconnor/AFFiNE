@@ -1,4 +1,4 @@
-import { DefaultTheme, NoteDisplayMode } from '@blocksuite/affine-model';
+import { DefaultTheme, NoteDisplayMode } from '@blocksuite/lovenotes-model';
 import type { ServiceProvider } from '@blocksuite/global/di';
 import {
   type AssetsManager,
@@ -278,7 +278,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
     const blockSnapshotRoot = {
       type: 'block',
       id: nanoid(),
-      flavour: 'affine:note',
+      flavour: 'lovenotes:note',
       props: {
         xywh: '[0,0,800,95]',
         background: DefaultTheme.noteBackgrounColor,
@@ -304,7 +304,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
     const blockSnapshotRoot = {
       type: 'block',
       id: nanoid(),
-      flavour: 'affine:note',
+      flavour: 'lovenotes:note',
       props: {
         xywh: '[0,0,800,95]',
         background: DefaultTheme.noteBackgrounColor,
@@ -325,7 +325,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
       blocks: {
         type: 'block',
         id: nanoid(),
-        flavour: 'affine:page',
+        flavour: 'lovenotes:page',
         props: {
           title: {
             '$blocksuite:internal:text$': true,
@@ -341,7 +341,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
           {
             type: 'block',
             id: nanoid(),
-            flavour: 'affine:surface',
+            flavour: 'lovenotes:surface',
             props: {
               elements: {},
             },
@@ -364,7 +364,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
     const blockSnapshotRoot = {
       type: 'block',
       id: nanoid(),
-      flavour: 'affine:note',
+      flavour: 'lovenotes:note',
       props: {
         xywh: '[0,0,800,95]',
         background: DefaultTheme.noteBackgrounColor,

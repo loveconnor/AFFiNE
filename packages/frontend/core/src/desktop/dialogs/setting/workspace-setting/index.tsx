@@ -1,10 +1,10 @@
-import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
-import { ServerService } from '@affine/core/modules/cloud';
-import type { SettingTab } from '@affine/core/modules/dialogs/constant';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { EmbeddingSettings } from '@affine/core/modules/workspace-indexer-embedding';
-import { ServerDeploymentType } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import { useWorkspaceInfo } from '@lovenotes/core/components/hooks/use-workspace-info';
+import { ServerService } from '@lovenotes/core/modules/cloud';
+import type { SettingTab } from '@lovenotes/core/modules/dialogs/constant';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { EmbeddingSettings } from '@lovenotes/core/modules/workspace-indexer-embedding';
+import { ServerDeploymentType } from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
 import {
   AiEmbeddingIcon,
   CollaborationIcon,
@@ -82,13 +82,13 @@ export const useWorkspaceSettingList = (): SettingSidebarItem[] => {
     return [
       {
         key: 'workspace:preference',
-        title: t['com.affine.settings.workspace.preferences'](),
+        title: t['com.lovenotes.settings.workspace.preferences'](),
         icon: <SettingsIcon />,
         testId: 'workspace-setting:preference',
       },
       {
         key: 'workspace:properties',
-        title: t['com.affine.settings.workspace.properties'](),
+        title: t['com.lovenotes.settings.workspace.properties'](),
         icon: <PropertyIcon />,
         testId: 'workspace-setting:properties',
       },
@@ -100,7 +100,7 @@ export const useWorkspaceSettingList = (): SettingSidebarItem[] => {
       },
       {
         key: 'workspace:integrations',
-        title: t['com.affine.integration.integrations'](),
+        title: t['com.lovenotes.integration.integrations'](),
         icon: <IntegrationsIcon />,
         testId: 'workspace-setting:integrations',
       },
@@ -114,20 +114,20 @@ export const useWorkspaceSettingList = (): SettingSidebarItem[] => {
         key: 'workspace:embedding',
         title:
           t[
-            'com.affine.settings.workspace.indexer-embedding.embedding.title'
+            'com.lovenotes.settings.workspace.indexer-embedding.embedding.title'
           ](),
         icon: <AiEmbeddingIcon />,
         testId: 'workspace-setting:embedding',
       },
       showBilling && {
         key: 'workspace:billing' as SettingTab,
-        title: t['com.affine.settings.workspace.billing'](),
+        title: t['com.lovenotes.settings.workspace.billing'](),
         icon: <PaymentIcon />,
         testId: 'workspace-setting:billing',
       },
       showLicense && {
         key: 'workspace:license' as SettingTab,
-        title: t['com.affine.settings.workspace.license'](),
+        title: t['com.lovenotes.settings.workspace.license'](),
         icon: <PaymentIcon />,
         testId: 'workspace-setting:license',
       },

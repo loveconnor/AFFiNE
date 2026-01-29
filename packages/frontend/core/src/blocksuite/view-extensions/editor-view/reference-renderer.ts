@@ -1,17 +1,17 @@
-import type { ReactToLit } from '@affine/component';
-import type { AffineReference } from '@blocksuite/affine/inlines/reference';
-import { ReferenceNodeConfigExtension } from '@blocksuite/affine/inlines/reference';
-import type { ExtensionType } from '@blocksuite/affine/store';
+import type { ReactToLit } from '@lovenotes/component';
+import type { LoveNotesReference } from '@blocksuite/lovenotes/inlines/reference';
+import { ReferenceNodeConfigExtension } from '@blocksuite/lovenotes/inlines/reference';
+import type { ExtensionType } from '@blocksuite/lovenotes/store';
 
 export type ReferenceReactRenderer = (
-  reference: AffineReference
+  reference: LoveNotesReference
 ) => React.ReactElement;
 
 export function patchReferenceRenderer(
   reactToLit: ReactToLit,
   reactRenderer: ReferenceReactRenderer
 ): ExtensionType {
-  const customContent = (reference: AffineReference) => {
+  const customContent = (reference: LoveNotesReference) => {
     const node = reactRenderer(reference);
     return reactToLit(node, true);
   };

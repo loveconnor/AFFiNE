@@ -42,11 +42,11 @@ public class MatchContextQuery: GraphQLQuery {
     "threshold": threshold
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("currentUser", CurrentUser?.self),
     ] }
@@ -57,11 +57,11 @@ public class MatchContextQuery: GraphQLQuery {
     /// CurrentUser
     ///
     /// Parent Type: `UserType`
-    public struct CurrentUser: AffineGraphQL.SelectionSet {
+    public struct CurrentUser: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("copilot", Copilot.self, arguments: ["workspaceId": .variable("workspaceId")]),
@@ -72,11 +72,11 @@ public class MatchContextQuery: GraphQLQuery {
       /// CurrentUser.Copilot
       ///
       /// Parent Type: `Copilot`
-      public struct Copilot: AffineGraphQL.SelectionSet {
+      public struct Copilot: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Copilot }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Copilot }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("contexts", [Context].self, arguments: ["contextId": .variable("contextId")]),
@@ -88,11 +88,11 @@ public class MatchContextQuery: GraphQLQuery {
         /// CurrentUser.Copilot.Context
         ///
         /// Parent Type: `CopilotContext`
-        public struct Context: AffineGraphQL.SelectionSet {
+        public struct Context: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotContext }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotContext }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("matchFiles", [MatchFile].self, arguments: [
@@ -117,18 +117,18 @@ public class MatchContextQuery: GraphQLQuery {
           /// CurrentUser.Copilot.Context.MatchFile
           ///
           /// Parent Type: `ContextMatchedFileChunk`
-          public struct MatchFile: AffineGraphQL.SelectionSet {
+          public struct MatchFile: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.ContextMatchedFileChunk }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.ContextMatchedFileChunk }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("fileId", String.self),
               .field("blobId", String.self),
               .field("name", String.self),
               .field("mimeType", String.self),
-              .field("chunk", AffineGraphQL.SafeInt.self),
+              .field("chunk", LoveNotesGraphQL.SafeInt.self),
               .field("content", String.self),
               .field("distance", Double?.self),
             ] }
@@ -137,7 +137,7 @@ public class MatchContextQuery: GraphQLQuery {
             public var blobId: String { __data["blobId"] }
             public var name: String { __data["name"] }
             public var mimeType: String { __data["mimeType"] }
-            public var chunk: AffineGraphQL.SafeInt { __data["chunk"] }
+            public var chunk: LoveNotesGraphQL.SafeInt { __data["chunk"] }
             public var content: String { __data["content"] }
             public var distance: Double? { __data["distance"] }
           }
@@ -145,21 +145,21 @@ public class MatchContextQuery: GraphQLQuery {
           /// CurrentUser.Copilot.Context.MatchWorkspaceDoc
           ///
           /// Parent Type: `ContextMatchedDocChunk`
-          public struct MatchWorkspaceDoc: AffineGraphQL.SelectionSet {
+          public struct MatchWorkspaceDoc: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.ContextMatchedDocChunk }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.ContextMatchedDocChunk }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("docId", String.self),
-              .field("chunk", AffineGraphQL.SafeInt.self),
+              .field("chunk", LoveNotesGraphQL.SafeInt.self),
               .field("content", String.self),
               .field("distance", Double?.self),
             ] }
 
             public var docId: String { __data["docId"] }
-            public var chunk: AffineGraphQL.SafeInt { __data["chunk"] }
+            public var chunk: LoveNotesGraphQL.SafeInt { __data["chunk"] }
             public var content: String { __data["content"] }
             public var distance: Double? { __data["distance"] }
           }

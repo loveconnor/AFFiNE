@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 import z from 'zod';
 
 import { effects } from './effects';
@@ -18,7 +18,7 @@ const optionsSchema = z.object({
 export class InlineCommentViewExtension extends ViewExtensionProvider<
   z.infer<typeof optionsSchema>
 > {
-  override name = 'affine-inline-comment';
+  override name = 'lovenotes-inline-comment';
 
   override schema = optionsSchema;
 

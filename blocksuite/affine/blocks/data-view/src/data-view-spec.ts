@@ -3,6 +3,6 @@ import type { ExtensionType } from '@blocksuite/store';
 import { literal } from 'lit/static-html.js';
 
 export const DataViewBlockSpec: ExtensionType[] = [
-  FlavourExtension('affine:data-view'),
-  BlockViewExtension('affine:data-view', literal`affine-data-view`),
+  FlavourExtension('lovenotes:data-view'),
+  BlockViewExtension('lovenotes:data-view', literal`lovenotes-data-view`),
 ];

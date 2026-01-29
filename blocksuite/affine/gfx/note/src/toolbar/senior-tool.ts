@@ -1,4 +1,4 @@
-import { SeniorToolExtension } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { SeniorToolExtension } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { html } from 'lit';
 
 export const noteSeniorTool = SeniorToolExtension('note', ({ block }) => {

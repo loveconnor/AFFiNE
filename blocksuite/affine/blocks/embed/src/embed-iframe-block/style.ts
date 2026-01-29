@@ -1,7 +1,7 @@
 import { css } from 'lit';
 
 export const embedIframeBlockStyles = css`
-  .affine-embed-iframe-block-container {
+  .lovenotes-embed-iframe-block-container {
     display: flex;
     width: 100%;
     border-radius: 8px;
@@ -11,11 +11,11 @@ export const embedIframeBlockStyles = css`
     position: relative;
   }
 
-  .affine-embed-iframe-block-container.in-surface {
+  .lovenotes-embed-iframe-block-container.in-surface {
     height: 100%;
   }
 
-  .affine-embed-iframe-block-overlay {
+  .lovenotes-embed-iframe-block-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@ export const embedIframeBlockStyles = css`
     display: none;
   }
 
-  .affine-embed-iframe-source {
+  .lovenotes-embed-iframe-source {
     position: absolute;
     left: 8px;
     bottom: 8px;
@@ -36,7 +36,7 @@ export const embedIframeBlockStyles = css`
     line-height: 16px;
     pointer-events: none;
   }
-  .affine-embed-iframe-block-overlay.show {
+  .lovenotes-embed-iframe-block-overlay.show {
     display: block;
   }
 `;

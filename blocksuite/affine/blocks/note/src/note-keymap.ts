@@ -4,11 +4,11 @@ import {
   NoteBlockModel,
   NoteBlockSchema,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   textAlignConfigs,
   textConversionConfigs,
-} from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-rich-text';
 import {
   focusBlockEnd,
   focusBlockStart,
@@ -16,11 +16,11 @@ import {
   getNextBlockCommand,
   getPrevBlockCommand,
   getTextSelectionCommand,
-} from '@blocksuite/affine-shared/commands';
+} from '@blocksuite/lovenotes-shared/commands';
 import {
   asyncGetBlockComponent,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import {
   type BlockComponent,
   BlockSelection,
@@ -118,7 +118,7 @@ class NoteKeymap {
                         return;
                       }
 
-                      if (item.flavour !== 'affine:code') {
+                      if (item.flavour !== 'lovenotes:code') {
                         return;
                       }
 
@@ -493,7 +493,7 @@ class NoteKeymap {
         const index = parent.children.indexOf(model) ?? undefined;
 
         const blockId = store.addBlock(
-          'affine:paragraph',
+          'lovenotes:paragraph',
           {},
           parent,
           index + 1

@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-inline-preset/store';
+export * from '@blocksuite/lovenotes-inline-preset/store';

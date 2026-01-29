@@ -1,12 +1,12 @@
-import { Overlay } from '@blocksuite/affine-block-surface';
-import { PathGenerator } from '@blocksuite/affine-gfx-connector';
+import { Overlay } from '@blocksuite/lovenotes-block-surface';
+import { PathGenerator } from '@blocksuite/lovenotes-gfx-connector';
 import {
   ConnectorMode,
   LayoutType,
   type MindmapElementModel,
   type MindmapNode,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   type Bound,
   isVecZero,
@@ -179,7 +179,7 @@ export class MindMapIndicatorOverlay extends Overlay {
     const targetPos = this.targetBound;
     const points = this._generatePath();
     const color = this.themeService.getColorValue(
-      '--affine-primary-color',
+      '--lovenotes-primary-color',
       '#1E96EB',
       true
     );

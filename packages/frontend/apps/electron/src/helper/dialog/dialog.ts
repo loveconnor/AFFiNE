@@ -1,7 +1,7 @@
 import { parse } from 'node:path';
 
-import { DocStorage, ValidationResult } from '@affine/native';
-import { parseUniversalId } from '@affine/nbstore';
+import { DocStorage, ValidationResult } from '@lovenotes/native';
+import { parseUniversalId } from '@lovenotes/nbstore';
 import fs from 'fs-extra';
 import { nanoid } from 'nanoid';
 
@@ -63,7 +63,7 @@ export function setFakeDialogResult(result: FakeDialogResult | undefined) {
   }
 }
 
-const extension = 'affine';
+const extension = 'lovenotes';
 
 function getDefaultDBFileName(name: string, id: string) {
   const fileName = `${name}_${id}.${extension}`;
@@ -199,10 +199,10 @@ export async function loadDBFile(
           {
             name: 'SQLite Database',
             // do we want to support other file format?
-            extensions: ['db', 'affine'],
+            extensions: ['db', 'lovenotes'],
           },
         ],
-        message: 'Load Workspace from a AFFiNE file',
+        message: 'Load Workspace from a LoveNotes file',
       }));
     const originalPath = ret.filePaths?.[0];
     if (ret.canceled || !originalPath) {
@@ -252,7 +252,7 @@ async function cpV1DBFile(
   originalPath: string,
   workspaceId: string
 ): Promise<LoadDBFileResult> {
-  const { SqliteConnection } = await import('@affine/native');
+  const { SqliteConnection } = await import('@lovenotes/native');
 
   const validationResult = await SqliteConnection.validate(originalPath);
 

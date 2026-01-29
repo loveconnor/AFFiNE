@@ -1,8 +1,8 @@
-import { Divider, MenuItem } from '@affine/component';
-import type { GroupByParams } from '@affine/core/modules/collection-rules/types';
-import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import { Divider, MenuItem } from '@lovenotes/component';
+import type { GroupByParams } from '@lovenotes/core/modules/collection-rules/types';
+import { WorkspacePropertyService } from '@lovenotes/core/modules/workspace-property';
+import { useI18n } from '@lovenotes/i18n';
+import track from '@lovenotes/track';
 import { DoneIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
@@ -70,7 +70,7 @@ export const GroupByList = ({
       ))}
       <Divider size="thinner" style={{ margin: '4px 0' }} />
       <MenuItem onClick={() => onChange?.(undefined)}>
-        {t['com.affine.explorer.display-menu.grouping.remove']()}
+        {t['com.lovenotes.explorer.display-menu.grouping.remove']()}
       </MenuItem>
     </>
   );

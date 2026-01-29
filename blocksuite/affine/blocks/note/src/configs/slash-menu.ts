@@ -2,24 +2,24 @@ import {
   formatBlockCommand,
   type TextFormatConfig,
   textFormatConfigs,
-} from '@blocksuite/affine-inline-preset';
+} from '@blocksuite/lovenotes-inline-preset';
 import {
   type TextAlignConfig,
   textAlignConfigs,
   type TextConversionConfig,
   textConversionConfigs,
-} from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-rich-text';
 import {
   getSelectedModelsCommand,
   getTextSelectionCommand,
-} from '@blocksuite/affine-shared/commands';
-import { isInsideBlockByFlavour } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/commands';
+import { isInsideBlockByFlavour } from '@blocksuite/lovenotes-shared/utils';
 import {
   type SlashMenuActionItem,
   type SlashMenuConfig,
   SlashMenuConfigExtension,
   type SlashMenuItem,
-} from '@blocksuite/affine-widget-slash-menu';
+} from '@blocksuite/lovenotes-widget-slash-menu';
 import { HeadingsIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@blocksuite/std';
 
@@ -41,7 +41,7 @@ const noteSlashMenuConfig: SlashMenuConfig = {
         .map(config => createConversionItem(config)),
     },
     ...textConversionConfigs
-      .filter(i => i.flavour === 'affine:code')
+      .filter(i => i.flavour === 'lovenotes:code')
       .map(config => createConversionItem(config, `0_Basic@${basicIndex++}`)),
 
     ...textConversionConfigs
@@ -55,13 +55,13 @@ const noteSlashMenuConfig: SlashMenuConfig = {
               !isInsideBlockByFlavour(
                 model.store,
                 model,
-                'affine:edgeless-text'
+                'lovenotes:edgeless-text'
               ),
           }) satisfies SlashMenuActionItem
       ),
 
     ...textConversionConfigs
-      .filter(i => i.flavour === 'affine:list')
+      .filter(i => i.flavour === 'lovenotes:list')
       .map((config, index) =>
         createConversionItem(config, `1_List@${index++}`)
       ),
@@ -151,6 +151,6 @@ function createTextFormatItem(
 }
 
 export const NoteSlashMenuConfigExtension = SlashMenuConfigExtension(
-  'affine:note',
+  'lovenotes:note',
   noteSlashMenuConfig
 );

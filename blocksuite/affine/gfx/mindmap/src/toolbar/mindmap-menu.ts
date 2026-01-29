@@ -1,16 +1,16 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import { toast } from '@blocksuite/affine-components/toast';
-import { EmptyTool } from '@blocksuite/affine-gfx-pointer';
-import type { MindmapStyle } from '@blocksuite/affine-model';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import { EmptyTool } from '@blocksuite/lovenotes-gfx-pointer';
+import type { MindmapStyle } from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   FeatureFlagService,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   EdgelessDraggableElementController,
   EdgelessToolbarToolMixin,
-} from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { ErrorCode } from '@blocksuite/global/exceptions';
 import type { Bound } from '@blocksuite/global/gfx';
 import { SignalWatcher } from '@blocksuite/global/lit';
@@ -72,7 +72,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
       width: 1px;
       transform: scaleX(0.5);
       height: 48px;
-      background: var(--affine-border-color);
+      background: var(--lovenotes-border-color);
     }
     .text-item,
     .media-item {
@@ -106,7 +106,7 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
     .media-item:hover,
     .mindmap-item[data-is-active='true'],
     .mindmap-item:hover {
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
     .text-item > button.next,
     .media-item > button.next,
@@ -171,11 +171,11 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
       >
         ${importMindMapIcon}
       </button>
-      <affine-tooltip tip-position="top" .offset=${12}>
-        <affine-tooltip-content-with-shortcut
+      <lovenotes-tooltip tip-position="top" .offset=${12}>
+        <lovenotes-tooltip-content-with-shortcut
           data-tip="${'Support import of FreeMind,OPML.'}"
-        ></affine-tooltip-content-with-shortcut>
-      </affine-tooltip>
+        ></lovenotes-tooltip-content-with-shortcut>
+      </lovenotes-tooltip>
     </div>`;
   }
 
@@ -301,11 +301,11 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
           >
             ${mediaItem.icon}
           </button>
-          <affine-tooltip tip-position="top" .offset=${12}>
-            <affine-tooltip-content-with-shortcut
+          <lovenotes-tooltip tip-position="top" .offset=${12}>
+            <lovenotes-tooltip-content-with-shortcut
               data-tip="${'Add media'}"
-            ></affine-tooltip-content-with-shortcut>
-          </affine-tooltip>
+            ></lovenotes-tooltip-content-with-shortcut>
+          </lovenotes-tooltip>
         </div>
         <div class="thin-divider"></div>
         <div class="text-item">
@@ -332,12 +332,12 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
           >
             ${textItem.icon}
           </button>
-          <affine-tooltip tip-position="top" .offset=${12}>
-            <affine-tooltip-content-with-shortcut
+          <lovenotes-tooltip tip-position="top" .offset=${12}>
+            <lovenotes-tooltip-content-with-shortcut
               data-tip="${'Edgeless Text'}"
               data-shortcup="${'T'}"
-            ></affine-tooltip-content-with-shortcut>
-          </affine-tooltip>
+            ></lovenotes-tooltip-content-with-shortcut>
+          </lovenotes-tooltip>
         </div>
         <div class="thin-divider"></div>
         <!-- mind map -->
@@ -378,12 +378,12 @@ export class EdgelessMindmapMenu extends EdgelessToolbarToolMixin(
               >
                 ${mindMap.icon}
               </button>
-              <affine-tooltip tip-position="top" .offset=${12}>
-                <affine-tooltip-content-with-shortcut
+              <lovenotes-tooltip tip-position="top" .offset=${12}>
+                <lovenotes-tooltip-content-with-shortcut
                   data-tip="${'Mind Map'}"
                   data-shortcup="${'M'}"
-                ></affine-tooltip-content-with-shortcut>
-              </affine-tooltip>
+                ></lovenotes-tooltip-content-with-shortcut>
+              </lovenotes-tooltip>
             </div>
           `;
         })}

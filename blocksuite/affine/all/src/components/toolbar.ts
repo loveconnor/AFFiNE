@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/toolbar';
+export * from '@blocksuite/lovenotes-components/toolbar';

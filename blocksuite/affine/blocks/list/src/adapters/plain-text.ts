@@ -1,8 +1,8 @@
-import { ListBlockSchema } from '@blocksuite/affine-model';
+import { ListBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert } from '@blocksuite/store';
 
 export const listBlockPlainTextAdapterMatcher: BlockPlainTextAdapterMatcher = {

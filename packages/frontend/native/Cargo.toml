@@ -1,16 +1,16 @@
 [package]
 edition = "2024"
-name    = "affine_native"
+name    = "lovenotes_native"
 version = "0.0.0"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-affine_common = { workspace = true, features = ["hashcash"] }
-affine_media_capture = { path = "./media_capture" }
-affine_nbstore = { path = "./nbstore" }
-affine_sqlite_v1 = { path = "./sqlite_v1" }
+lovenotes_common = { workspace = true, features = ["hashcash"] }
+lovenotes_media_capture = { path = "./media_capture" }
+lovenotes_nbstore = { path = "./nbstore" }
+lovenotes_sqlite_v1 = { path = "./sqlite_v1" }
 napi = { workspace = true }
 napi-derive = { workspace = true }
 once_cell = { workspace = true }

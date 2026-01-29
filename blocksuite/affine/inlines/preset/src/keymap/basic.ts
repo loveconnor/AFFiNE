@@ -2,7 +2,7 @@ import {
   focusTextModel,
   getInlineEditorByModel,
   selectTextModel,
-} from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-rich-text';
 import {
   BlockSelection,
   type BlockStdScope,

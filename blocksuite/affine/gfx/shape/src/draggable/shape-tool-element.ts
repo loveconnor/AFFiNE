@@ -2,13 +2,13 @@ import {
   CanvasElementType,
   DefaultTool,
   EdgelessCRUDIdentifier,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   getShapeRadius,
   getShapeType,
   type ShapeName,
   type ShapeStyle,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { Bound } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { sleep } from '@blocksuite/global/utils';

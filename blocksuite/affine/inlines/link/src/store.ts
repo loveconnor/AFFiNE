@@ -1,7 +1,7 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import {
   htmlLinkElementToDeltaMatcher,
@@ -13,7 +13,7 @@ import {
 } from './adapters';
 
 export class LinkStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-link-inline';
+  override name = 'lovenotes-link-inline';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

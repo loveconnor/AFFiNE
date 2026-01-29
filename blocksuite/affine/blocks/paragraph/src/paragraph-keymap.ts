@@ -1,17 +1,17 @@
-import { textKeymap } from '@blocksuite/affine-inline-preset';
+import { textKeymap } from '@blocksuite/lovenotes-inline-preset';
 import {
   CalloutBlockModel,
   ParagraphBlockModel,
   ParagraphBlockSchema,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   focusTextModel,
   getInlineEditorByModel,
-} from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-rich-text';
 import {
   calculateCollapsedSiblings,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { IS_MAC } from '@blocksuite/global/env';
 import { KeymapExtension, TextSelection } from '@blocksuite/std';
 

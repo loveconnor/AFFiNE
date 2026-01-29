@@ -1,9 +1,9 @@
-import { SettingRow } from '@affine/component/setting-components';
-import { Button } from '@affine/component/ui/button';
-import { getUpgradeQuestionnaireLink } from '@affine/core/components/hooks/affine/use-subscription-notify';
-import { AuthService, SubscriptionService } from '@affine/core/modules/cloud';
-import { SubscriptionPlan, SubscriptionRecurring } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import { SettingRow } from '@lovenotes/component/setting-components';
+import { Button } from '@lovenotes/component/ui/button';
+import { getUpgradeQuestionnaireLink } from '@lovenotes/core/components/hooks/lovenotes/use-subscription-notify';
+import { AuthService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import { SubscriptionPlan, SubscriptionRecurring } from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import * as styles from './style.css';
@@ -35,11 +35,11 @@ export const TypeformLink = () => {
   return (
     <SettingRow
       className={styles.paymentMethod}
-      name={t['com.affine.payment.billing-type-form.title']()}
-      desc={t['com.affine.payment.billing-type-form.description']()}
+      name={t['com.lovenotes.payment.billing-type-form.title']()}
+      desc={t['com.lovenotes.payment.billing-type-form.description']()}
     >
       <a target="_blank" href={link} rel="noreferrer">
-        <Button>{t['com.affine.payment.billing-type-form.go']()}</Button>
+        <Button>{t['com.lovenotes.payment.billing-type-form.go']()}</Button>
       </a>
     </SettingRow>
   );

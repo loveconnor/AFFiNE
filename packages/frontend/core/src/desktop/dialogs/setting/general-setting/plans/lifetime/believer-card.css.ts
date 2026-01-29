@@ -1,13 +1,13 @@
 import { cssVar } from '@toeverything/theme';
 import { createVar, globalStyle, style } from '@vanilla-extract/css';
 
-export const affineIconGradientStart = createVar();
-export const affineIconGradientStop = createVar();
+export const lovenotesIconGradientStart = createVar();
+export const lovenotesIconGradientStop = createVar();
 
 const colorSchemes = {
   light: {
     dot: '#E0E0E0',
-    affine: {
+    lovenotes: {
       start: '#fff',
       stop: '#fff',
     },
@@ -15,7 +15,7 @@ const colorSchemes = {
   },
   dark: {
     dot: 'rgba(255,255,255,0.1)',
-    affine: {
+    lovenotes: {
       start: '#8C8C8C',
       stop: '#262626',
     },
@@ -79,18 +79,18 @@ export const bg = style({
     zIndex: 1,
   },
 });
-globalStyle(`.${bg} > svg.affine-svg`, {
+globalStyle(`.${bg} > svg.lovenotes-svg`, {
   vars: {
-    [affineIconGradientStart]: colorSchemes.light.affine.start,
-    [affineIconGradientStop]: colorSchemes.light.affine.stop,
+    [lovenotesIconGradientStart]: colorSchemes.light.lovenotes.start,
+    [lovenotesIconGradientStop]: colorSchemes.light.lovenotes.stop,
   },
   position: 'absolute',
   zIndex: 0,
 });
-globalStyle(`[data-theme='dark'] .${bg} > svg.affine-svg`, {
+globalStyle(`[data-theme='dark'] .${bg} > svg.lovenotes-svg`, {
   vars: {
-    [affineIconGradientStart]: colorSchemes.dark.affine.start,
-    [affineIconGradientStop]: colorSchemes.dark.affine.stop,
+    [lovenotesIconGradientStart]: colorSchemes.dark.lovenotes.start,
+    [lovenotesIconGradientStop]: colorSchemes.dark.lovenotes.stop,
   },
 });
 globalStyle(` .${bg} > svg.icons-svg`, {
@@ -103,7 +103,7 @@ globalStyle(`[data-theme='dark'] .${bg} > svg.icons-svg`, {
 });
 
 // --------- style1 ---------
-globalStyle(`.${card}[data-type="1"] .${bg} > svg.affine-svg`, {
+globalStyle(`.${card}[data-type="1"] .${bg} > svg.lovenotes-svg`, {
   right: -150,
   top: -100,
 });
@@ -115,7 +115,7 @@ globalStyle(`.${card}[data-type="1"] .${bg} > svg.icons-svg`, {
 });
 
 // --------- style2 ---------
-globalStyle(`.${card}[data-type="2"] .${bg} > svg.affine-svg`, {
+globalStyle(`.${card}[data-type="2"] .${bg} > svg.lovenotes-svg`, {
   position: 'absolute',
   right: -140,
   bottom: -130,

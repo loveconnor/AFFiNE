@@ -3,7 +3,7 @@ import {
   type MindmapElementModel,
   type MindmapNode,
   type MindmapRoot,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { SerializedXYWH } from '@blocksuite/global/gfx';
 import { Bound } from '@blocksuite/global/gfx';
 

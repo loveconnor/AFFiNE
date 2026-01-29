@@ -3,10 +3,10 @@ import {
   ImageBlockModel,
   ListBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine/model';
-import { getSelectedModelsCommand } from '@blocksuite/affine/shared/commands';
-import { matchModels } from '@blocksuite/affine/shared/utils';
-import type { Chain, InitCommandCtx } from '@blocksuite/affine/std';
+} from '@blocksuite/lovenotes/model';
+import { getSelectedModelsCommand } from '@blocksuite/lovenotes/shared/commands';
+import { matchModels } from '@blocksuite/lovenotes/shared/utils';
+import type { Chain, InitCommandCtx } from '@blocksuite/lovenotes/std';
 import {
   CommentIcon,
   DoneIcon,

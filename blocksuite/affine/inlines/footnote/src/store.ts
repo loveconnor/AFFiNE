@@ -1,7 +1,7 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import {
   footnoteReferenceDeltaToMarkdownAdapterMatcher,
@@ -10,7 +10,7 @@ import {
 } from './adapters';
 
 export class FootnoteStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-footnote-inline';
+  override name = 'lovenotes-footnote-inline';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

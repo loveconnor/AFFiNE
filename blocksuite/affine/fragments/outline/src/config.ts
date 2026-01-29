@@ -1,4 +1,4 @@
-import type { ParagraphBlockModel } from '@blocksuite/affine-model';
+import type { ParagraphBlockModel } from '@blocksuite/lovenotes-model';
 import {
   AttachmentIcon,
   BlockIcon,

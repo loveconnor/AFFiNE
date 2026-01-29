@@ -1,5 +1,5 @@
-import type { Color } from '@blocksuite/affine-model';
-import { on, once, stopPropagation } from '@blocksuite/affine-shared/utils';
+import type { Color } from '@blocksuite/lovenotes-model';
+import { on, once, stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { batch, computed, signal } from '@preact/signals-core';
 import { html, LitElement } from 'lit';

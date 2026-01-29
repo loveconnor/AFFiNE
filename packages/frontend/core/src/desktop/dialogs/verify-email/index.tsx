@@ -1,25 +1,25 @@
-import { Button, Modal, notify } from '@affine/component';
+import { Button, Modal, notify } from '@lovenotes/component';
 import {
   AuthContent,
   AuthHeader,
   AuthInput,
-} from '@affine/component/auth-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+} from '@lovenotes/component/auth-components';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import {
   AuthService,
   DefaultServerService,
   ServersService,
-} from '@affine/core/modules/cloud';
+} from '@lovenotes/core/modules/cloud';
 import type {
   DialogComponentProps,
   GLOBAL_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs';
-import { Unreachable } from '@affine/env/constant';
+} from '@lovenotes/core/modules/dialogs';
+import { Unreachable } from '@lovenotes/env/constant';
 import {
   sendChangeEmailMutation,
   sendVerifyEmailMutation,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useState } from 'react';
 
@@ -77,13 +77,13 @@ export const VerifyEmailDialog = ({
       }
 
       notify.success({
-        title: t['com.affine.auth.send.verify.email.hint'](),
+        title: t['com.lovenotes.auth.send.verify.email.hint'](),
       });
       setHasSentEmail(true);
     } catch (err) {
       console.error(err);
       notify.error({
-        title: t['com.affine.auth.sent.change.email.fail'](),
+        title: t['com.lovenotes.auth.sent.change.email.fail'](),
       });
     } finally {
       setLoading(false);
@@ -108,12 +108,12 @@ export const VerifyEmailDialog = ({
     >
       <AuthHeader
         title={serverName}
-        subTitle={t['com.affine.settings.email.action.change']()}
+        subTitle={t['com.lovenotes.settings.email.action.change']()}
       />
       <AuthContent>
-        <p>{t['com.affine.auth.verify.email.message']({ email })}</p>
+        <p>{t['com.lovenotes.auth.verify.email.message']({ email })}</p>
         <AuthInput
-          label={t['com.affine.settings.email']()}
+          label={t['com.lovenotes.settings.email']()}
           disabled={true}
           value={email}
         />
@@ -126,8 +126,8 @@ export const VerifyEmailDialog = ({
           onClick={onSendEmail}
         >
           {hasSentEmail
-            ? t['com.affine.auth.sent']()
-            : t['com.affine.auth.send.verify.email.hint']()}
+            ? t['com.lovenotes.auth.sent']()
+            : t['com.lovenotes.auth.send.verify.email.hint']()}
         </Button>
       </AuthContent>
     </Modal>

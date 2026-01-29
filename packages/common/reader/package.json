@@ -1,5 +1,5 @@
 {
-  "name": "@affine/reader",
+  "name": "@lovenotes/reader",
   "type": "module",
   "version": "0.26.0",
   "private": true,
@@ -18,10 +18,10 @@
     "yjs": "^13.6.27"
   },
   "devDependencies": {
-    "@blocksuite/affine": "workspace:*",
+    "@blocksuite/lovenotes": "workspace:*",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "@blocksuite/affine": "workspace:*"
+    "@blocksuite/lovenotes": "workspace:*"
   }
 }

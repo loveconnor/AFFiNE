@@ -5,8 +5,8 @@ import { fontSMStyle } from './font';
 
 export const panelBaseColorsStyle = (container: string) => css`
   ${unsafeCSS(container)} {
-    color: var(--affine-icon-color);
-    box-shadow: var(--affine-overlay-shadow);
+    color: var(--lovenotes-icon-color);
+    box-shadow: var(--lovenotes-overlay-shadow);
     background: ${unsafeCSSVarV2('layer/background/overlayPanel')};
   }
 `;

@@ -2,8 +2,8 @@ import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-components/context-menu';
+import type { InsertToPosition } from '@blocksuite/lovenotes-shared/utils';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { signal } from '@preact/signals-core';
 import type { TemplateResult } from 'lit';
@@ -150,7 +150,7 @@ export class TableViewUI extends DataViewUIBase<TableViewUILogic> {
     this.logic.dragController.hostConnected();
     this.logic.hotkeysController.hostConnected();
     this.logic.selectionController.hostConnected();
-    this.classList.add('affine-database-table', tableViewStyle);
+    this.classList.add('lovenotes-database-table', tableViewStyle);
     this.dataset['testid'] = 'dv-table-view';
   }
 
@@ -165,19 +165,19 @@ export class TableViewUI extends DataViewUIBase<TableViewUILogic> {
             groups,
             group => group.key,
             group =>
-              html`<affine-data-view-table-group
+              html`<lovenotes-data-view-table-group
                 data-group-key="${group.key}"
                 .tableViewLogic="${this.logic}"
                 .group="${group}"
-              ></affine-data-view-table-group>`
+              ></lovenotes-data-view-table-group>`
           )}
           ${this.logic.renderAddGroup(this.logic.view.groupTrait)}
         </div>
       `;
     }
-    return html`<affine-data-view-table-group
+    return html`<lovenotes-data-view-table-group
       .tableViewLogic="${this.logic}"
-    ></affine-data-view-table-group>`;
+    ></lovenotes-data-view-table-group>`;
   }
 
   override render(): TemplateResult {
@@ -204,7 +204,7 @@ export class TableViewUI extends DataViewUIBase<TableViewUILogic> {
         >
           <div
             ${ref(this.logic.tableContainer$)}
-            class="affine-database-table-container"
+            class="lovenotes-database-table-container"
             style="${containerStyle}"
           >
             ${this.logic.view.groupTrait.allHidden$.value

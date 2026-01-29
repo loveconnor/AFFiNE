@@ -3,8 +3,8 @@ import {
   popMenu,
   type PopupTarget,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
   ArrowDownSmallIcon,
@@ -98,7 +98,7 @@ export class SortRootView extends SignalWatcher(
           if (!variable) {
             content = html`
               <data-view-component-button
-                style="color: var(--affine-error-color);border-color: color: var(--affine-error-color)"
+                style="color: var(--lovenotes-error-color);border-color: color: var(--lovenotes-error-color)"
                 @click="${deleteRule}"
                 .text="${html`This rule is invalid, click to delete`}"
               ></data-view-component-button>

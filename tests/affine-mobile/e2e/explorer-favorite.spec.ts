@@ -1,6 +1,6 @@
-import { test } from '@affine-test/kit/mobile';
-import { getBlockSuiteEditorTitle } from '@affine-test/kit/utils/page-logic';
-import { getCurrentDocIdFromUrl } from '@affine-test/kit/utils/url';
+import { test } from '@lovenotes-test/kit/mobile';
+import { getBlockSuiteEditorTitle } from '@lovenotes-test/kit/utils/page-logic';
+import { getCurrentDocIdFromUrl } from '@lovenotes-test/kit/utils/url';
 import { expect } from '@playwright/test';
 
 import { expandCollapsibleSection, pageBack } from './utils';

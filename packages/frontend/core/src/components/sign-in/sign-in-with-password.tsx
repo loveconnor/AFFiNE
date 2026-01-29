@@ -1,22 +1,22 @@
-import { notify } from '@affine/component';
+import { notify } from '@lovenotes/component';
 import {
   AuthContainer,
   AuthContent,
   AuthFooter,
   AuthHeader,
   AuthInput,
-} from '@affine/component/auth-components';
-import { Button } from '@affine/component/ui/button';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+} from '@lovenotes/component/auth-components';
+import { Button } from '@lovenotes/component/ui/button';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import {
   AuthService,
   CaptchaService,
   ServerService,
-} from '@affine/core/modules/cloud';
-import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
-import { Unreachable } from '@affine/env/constant';
-import { ServerDeploymentType } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/cloud';
+import type { AuthSessionStatus } from '@lovenotes/core/modules/cloud/entities/session';
+import { Unreachable } from '@lovenotes/env/constant';
+import { ServerDeploymentType } from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback, useEffect, useState } from 'react';
@@ -67,8 +67,8 @@ export const SignInWithPasswordStep = ({
   useEffect(() => {
     if (loginStatus === 'authenticated') {
       notify.success({
-        title: t['com.affine.auth.toast.title.signed-in'](),
-        message: t['com.affine.auth.toast.message.signed-in'](),
+        title: t['com.lovenotes.auth.toast.title.signed-in'](),
+        message: t['com.lovenotes.auth.toast.message.signed-in'](),
       });
     }
     onAuthenticated?.(loginStatus);
@@ -103,47 +103,32 @@ export const SignInWithPasswordStep = ({
     challenge,
   ]);
 
-  const sendMagicLink = useCallback(() => {
-    changeState(prev => ({ ...prev, step: 'signInWithEmail' }));
-  }, [changeState]);
-
   return (
     <AuthContainer>
       <AuthHeader
-        title={t['com.affine.auth.sign.in']()}
+        title={t['com.lovenotes.auth.sign.in']()}
         subTitle={serverName}
       />
 
       <AuthContent>
         <AuthInput
-          label={t['com.affine.settings.email']()}
+          label={t['com.lovenotes.settings.email']()}
           disabled={true}
           value={email}
         />
         <AuthInput
           autoFocus
           data-testid="password-input"
-          label={t['com.affine.auth.password']()}
+          label={t['com.lovenotes.auth.password']()}
           value={password}
           type="password"
           onChange={useCallback((value: string) => {
             setPassword(value);
           }, [])}
           error={passwordError}
-          errorHint={t['com.affine.auth.password.error']()}
+          errorHint={t['com.lovenotes.auth.password.error']()}
           onEnter={onSignIn}
         />
-        {!isSelfhosted && (
-          <div className={styles.passwordButtonRow}>
-            <a
-              data-testid="send-magic-link-button"
-              className={styles.linkButton}
-              onClick={sendMagicLink}
-            >
-              {t['com.affine.auth.sign.auth.code.send-email.sign-in']()}
-            </a>
-          </div>
-        )}
         {!verifyToken && needCaptcha && <Captcha />}
         <Button
           data-testid="sign-in-button"
@@ -153,7 +138,7 @@ export const SignInWithPasswordStep = ({
           disabled={isLoading || (!verifyToken && needCaptcha)}
           onClick={onSignIn}
         >
-          {t['com.affine.auth.sign.in']()}
+          {t['com.lovenotes.auth.sign.in']()}
         </Button>
       </AuthContent>
       <AuthFooter>

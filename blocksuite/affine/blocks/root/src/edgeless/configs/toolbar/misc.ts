@@ -1,20 +1,20 @@
-import { EdgelessFrameManagerIdentifier } from '@blocksuite/affine-block-frame';
+import { EdgelessFrameManagerIdentifier } from '@blocksuite/lovenotes-block-frame';
 import {
   EdgelessCRUDIdentifier,
   getSurfaceComponent,
-} from '@blocksuite/affine-block-surface';
-import { ConnectorTool } from '@blocksuite/affine-gfx-connector';
+} from '@blocksuite/lovenotes-block-surface';
+import { ConnectorTool } from '@blocksuite/lovenotes-gfx-connector';
 import {
   createGroupCommand,
   createGroupFromSelectedCommand,
   ungroupCommand,
-} from '@blocksuite/affine-gfx-group';
+} from '@blocksuite/lovenotes-gfx-group';
 import {
   ConnectorElementModel,
   DEFAULT_CONNECTOR_MODE,
   GroupElementModel,
   MindmapElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   ActionPlacement,
   blockCommentToolbarButton,
@@ -22,7 +22,7 @@ import {
   type ToolbarAction,
   type ToolbarContext,
   type ToolbarModuleConfig,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   AlignLeftIcon,

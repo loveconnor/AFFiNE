@@ -1,9 +1,9 @@
-import { ParagraphBlockSchema } from '@blocksuite/affine-model';
+import { ParagraphBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockNotionHtmlAdapterExtension,
   type BlockNotionHtmlAdapterMatcher,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 
 const paragraphBlockMatchTags = new Set([
@@ -45,7 +45,7 @@ export const paragraphBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatch
               {
                 type: 'block',
                 id: nanoid(),
-                flavour: 'affine:paragraph',
+                flavour: 'lovenotes:paragraph',
                 props: {
                   type: 'quote',
                   text: {
@@ -72,7 +72,7 @@ export const paragraphBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatch
               {
                 type: 'block',
                 id: nanoid(),
-                flavour: 'affine:paragraph',
+                flavour: 'lovenotes:paragraph',
                 props: {
                   type: walkerContext.getGlobalContext('hast:blockquote')
                     ? 'quote'
@@ -102,7 +102,7 @@ export const paragraphBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatch
                 {
                   type: 'block',
                   id: nanoid(),
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: o.node.tagName,
                     text: {
@@ -126,7 +126,7 @@ export const paragraphBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatch
                     {
                       type: 'block',
                       id: nanoid(),
-                      flavour: 'affine:paragraph',
+                      flavour: 'lovenotes:paragraph',
                       props: {
                         type: 'text',
                         text: {
@@ -163,7 +163,7 @@ export const paragraphBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatch
                   {
                     type: 'block',
                     id: nanoid(),
-                    flavour: 'affine:paragraph',
+                    flavour: 'lovenotes:paragraph',
                     props: {
                       type: 'quote',
                       text: {

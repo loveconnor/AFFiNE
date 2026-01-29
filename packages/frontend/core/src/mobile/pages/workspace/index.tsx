@@ -1,10 +1,10 @@
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-import { AffineErrorComponent } from '@affine/core/components/affine/affine-error-boundary/affine-error-fallback';
-import { PageNotFound } from '@affine/core/desktop/pages/404';
-import { SharePage } from '@affine/core/desktop/pages/workspace/share/share-page';
-import { workbenchRoutes } from '@affine/core/mobile/workbench-router';
-import { ServersService } from '@affine/core/modules/cloud';
-import { WorkspacesService } from '@affine/core/modules/workspace';
+import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
+import { LoveNotesErrorComponent } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary/lovenotes-error-fallback';
+import { PageNotFound } from '@lovenotes/core/desktop/pages/404';
+import { SharePage } from '@lovenotes/core/desktop/pages/workspace/share/share-page';
+import { workbenchRoutes } from '@lovenotes/core/mobile/workbench-router';
+import { ServersService } from '@lovenotes/core/modules/cloud';
+import { WorkspacesService } from '@lovenotes/core/modules/workspace';
 import { FrameworkScope, useLiveData, useServices } from '@toeverything/infra';
 import {
   lazy as reactLazy,
@@ -31,11 +31,11 @@ type Route = { Component: React.ComponentType };
  **/
 const MobileRouteContainer = ({ route }: { route: Route }) => {
   return (
-    <AffineErrorBoundary>
+    <LoveNotesErrorBoundary>
       <Suspense>
         <route.Component />
       </Suspense>
-    </AffineErrorBoundary>
+    </LoveNotesErrorBoundary>
   );
 };
 
@@ -60,7 +60,7 @@ const warpedRoutes = workbenchRoutes.map((originalRoute: RouteObject) => {
     Component: () => {
       return <MobileRouteContainer route={route} />;
     },
-    errorElement: <AffineErrorComponent />,
+    errorElement: <LoveNotesErrorComponent />,
   };
 });
 

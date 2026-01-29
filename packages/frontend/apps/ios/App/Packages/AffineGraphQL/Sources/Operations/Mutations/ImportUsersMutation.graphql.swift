@@ -18,11 +18,11 @@ public class ImportUsersMutation: GraphQLMutation {
 
   public var __variables: Variables? { ["input": input] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("importUsers", [ImportUser].self, arguments: ["input": .variable("input")]),
     ] }
@@ -33,11 +33,11 @@ public class ImportUsersMutation: GraphQLMutation {
     /// ImportUser
     ///
     /// Parent Type: `UserImportResultType`
-    public struct ImportUser: AffineGraphQL.SelectionSet {
+    public struct ImportUser: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Unions.UserImportResultType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Unions.UserImportResultType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .inlineFragment(AsUserType.self),
@@ -50,19 +50,19 @@ public class ImportUsersMutation: GraphQLMutation {
       /// ImportUser.AsUserType
       ///
       /// Parent Type: `UserType`
-      public struct AsUserType: AffineGraphQL.InlineFragment {
+      public struct AsUserType: LoveNotesGraphQL.InlineFragment {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ImportUsersMutation.Data.ImportUser
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
         public static var __selections: [ApolloAPI.Selection] { [
-          .field("id", AffineGraphQL.ID.self),
+          .field("id", LoveNotesGraphQL.ID.self),
           .field("name", String.self),
           .field("email", String.self),
         ] }
 
-        public var id: AffineGraphQL.ID { __data["id"] }
+        public var id: LoveNotesGraphQL.ID { __data["id"] }
         /// User name
         public var name: String { __data["name"] }
         /// User email
@@ -72,12 +72,12 @@ public class ImportUsersMutation: GraphQLMutation {
       /// ImportUser.AsUserImportFailedType
       ///
       /// Parent Type: `UserImportFailedType`
-      public struct AsUserImportFailedType: AffineGraphQL.InlineFragment {
+      public struct AsUserImportFailedType: LoveNotesGraphQL.InlineFragment {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
         public typealias RootEntityType = ImportUsersMutation.Data.ImportUser
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserImportFailedType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserImportFailedType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("email", String.self),
           .field("error", String.self),

@@ -1,7 +1,7 @@
 import {
   type MarkdownAdapterPreprocessor,
   MarkdownPreprocessorExtension,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 /**
  * Check if a string is a URL

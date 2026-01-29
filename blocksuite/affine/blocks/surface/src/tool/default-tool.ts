@@ -1,4 +1,4 @@
-import { resetNativeSelection } from '@blocksuite/affine-shared/utils';
+import { resetNativeSelection } from '@blocksuite/lovenotes-shared/utils';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import type { IVec } from '@blocksuite/global/gfx';
 import type { PointerEventState } from '@blocksuite/std';

@@ -1,4 +1,4 @@
-import type { AffineTextStyleAttributes } from '@blocksuite/affine-shared/types';
+import type { LoveNotesTextStyleAttributes } from '@blocksuite/lovenotes-shared/types';
 import { PropTypes, requiredProperties } from '@blocksuite/std';
 import { LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -21,7 +21,7 @@ const colors = [
 ] as const;
 
 export type HighlightType = Pick<
-  AffineTextStyleAttributes,
+  LoveNotesTextStyleAttributes,
   'color' | 'background'
 >;
 
@@ -46,20 +46,20 @@ export class HighlightDropdownMenu extends LitElement {
   };
 
   override render() {
-    const prefix = '--affine-text-highlight';
+    const prefix = '--lovenotes-text-highlight';
 
     return html`
       <editor-menu-button
         .contentPadding="${'8px'}"
         .button=${html`
           <editor-icon-button aria-label="highlight" .tooltip="${'Highlight'}">
-            <affine-highlight-duotone-icon
+            <lovenotes-highlight-duotone-icon
               style=${styleMap({
                 '--color':
-                  // latestHighlightColor ?? 'var(--affine-text-primary-color)',
-                  'var(--affine-text-primary-color)',
+                  // latestHighlightColor ?? 'var(--lovenotes-text-primary-color)',
+                  'var(--lovenotes-text-primary-color)',
               })}
-            ></affine-highlight-duotone-icon>
+            ></lovenotes-highlight-duotone-icon>
             ${EditorChevronDown}
           </editor-icon-button>
         `}
@@ -76,11 +76,11 @@ export class HighlightDropdownMenu extends LitElement {
                 data-testid="foreground-${color}"
                 @click=${() => this._update({ color: value })}
               >
-                <affine-text-duotone-icon
+                <lovenotes-text-duotone-icon
                   style=${styleMap({
-                    '--color': value ?? 'var(--affine-text-primary-color)',
+                    '--color': value ?? 'var(--lovenotes-text-primary-color)',
                   })}
-                ></affine-text-duotone-icon>
+                ></lovenotes-text-duotone-icon>
                 <span class="label capitalize"
                   >${isDefault ? `${color} color` : color}</span
                 >
@@ -97,12 +97,12 @@ export class HighlightDropdownMenu extends LitElement {
                 data-testid="background-${color}"
                 @click=${() => this._update({ background: value })}
               >
-                <affine-text-duotone-icon
+                <lovenotes-text-duotone-icon
                   style=${styleMap({
-                    '--color': 'var(--affine-text-primary-color)',
+                    '--color': 'var(--lovenotes-text-primary-color)',
                     '--background': value ?? 'transparent',
                   })}
-                ></affine-text-duotone-icon>
+                ></lovenotes-text-duotone-icon>
 
                 <span class="label capitalize"
                   >${isDefault ? `${color} background` : color}</span
@@ -118,6 +118,6 @@ export class HighlightDropdownMenu extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-highlight-dropdown-menu': HighlightDropdownMenu;
+    'lovenotes-highlight-dropdown-menu': HighlightDropdownMenu;
   }
 }

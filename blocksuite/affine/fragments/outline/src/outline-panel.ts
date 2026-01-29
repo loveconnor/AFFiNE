@@ -1,4 +1,4 @@
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
   type EditorHost,
@@ -14,7 +14,7 @@ import { property } from 'lit/decorators.js';
 import { outlineSettingsKey, type TocContext, tocContext } from './config.js';
 import * as styles from './outline-panel.css';
 
-export const AFFINE_OUTLINE_PANEL = 'affine-outline-panel';
+export const AFFINE_OUTLINE_PANEL = 'lovenotes-outline-panel';
 
 @requiredProperties({
   editor: PropTypes.object,
@@ -95,9 +95,9 @@ export class OutlinePanel extends SignalWatcher(
     if (!this.editor) return;
 
     return html`
-      <affine-outline-panel-header></affine-outline-panel-header>
-      <affine-outline-panel-body> </affine-outline-panel-body>
-      <affine-outline-notice></affine-outline-notice>
+      <lovenotes-outline-panel-header></lovenotes-outline-panel-header>
+      <lovenotes-outline-panel-body> </lovenotes-outline-panel-body>
+      <lovenotes-outline-notice></lovenotes-outline-notice>
     `;
   }
 

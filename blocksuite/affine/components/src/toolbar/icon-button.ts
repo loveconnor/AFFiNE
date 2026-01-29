@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import type { Placement } from '@floating-ui/dom';
 import type { TemplateResult } from 'lit';
 import { css, html, LitElement, nothing } from 'lit';
@@ -12,7 +12,7 @@ export class EditorIconButton extends LitElement {
     :host(:disabled) {
       pointer-events: none;
       cursor: not-allowed;
-      color: var(--affine-text-disable-color);
+      color: var(--lovenotes-text-disable-color);
     }
 
     .icon-container {
@@ -32,20 +32,20 @@ export class EditorIconButton extends LitElement {
     }
 
     :host([active]) .icon-container.active-mode-color {
-      color: var(--affine-primary-color);
+      color: var(--lovenotes-primary-color);
     }
 
     :host([active]) .icon-container.active-mode-border {
-      border: 1px solid var(--affine-brand-color);
+      border: 1px solid var(--lovenotes-brand-color);
     }
 
     :host([active]) .icon-container.active-mode-background {
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
 
     .icon-container[coming] {
       cursor: not-allowed;
-      color: var(--affine-text-disable-color);
+      color: var(--lovenotes-text-disable-color);
     }
 
     ::slotted(svg) {
@@ -73,7 +73,7 @@ export class EditorIconButton extends LitElement {
     .icon-container[with-hover]::before {
       content: '';
       display: block;
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
       position: absolute;
       width: 100%;
       height: 100%;
@@ -134,7 +134,7 @@ export class EditorIconButton extends LitElement {
       <style>
         .icon-container:hover,
         .icon-container.hovered {
-          background: ${this.hover ? `var(--affine-hover-color)` : 'inherit'};
+          background: ${this.hover ? `var(--lovenotes-hover-color)` : 'inherit'};
         }
       </style>
       <div
@@ -146,11 +146,11 @@ export class EditorIconButton extends LitElement {
         <slot></slot>
         ${cache(
           this.showTooltip && tooltip
-            ? html`<affine-tooltip
+            ? html`<lovenotes-tooltip
                 tip-position=${this.tipPosition}
                 .arrow=${this.arrow}
                 .offset=${this.tooltipOffset}
-                >${tooltip}</affine-tooltip
+                >${tooltip}</lovenotes-tooltip
               >`
             : nothing
         )}

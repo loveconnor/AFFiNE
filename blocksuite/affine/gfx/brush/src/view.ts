@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { BrushTool } from './brush-tool';
 import { effects } from './effects';
@@ -20,7 +20,7 @@ import {
 import { penSeniorTool } from './toolbar/senior-tool';
 
 export class BrushViewExtension extends ViewExtensionProvider {
-  override name = 'affine-brush-gfx';
+  override name = 'lovenotes-brush-gfx';
 
   override effect(): void {
     super.effect();

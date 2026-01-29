@@ -2,8 +2,8 @@ import {
   EmbedLoomBlockSchema,
   type EmbedLoomModel,
   EmbedLoomStyles,
-} from '@blocksuite/affine-model';
-import { EmbedOptionConfig } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { EmbedOptionConfig } from '@blocksuite/lovenotes-shared/services';
 import { BlockService } from '@blocksuite/std';
 
 import { loomUrlRegex } from './embed-loom-model.js';

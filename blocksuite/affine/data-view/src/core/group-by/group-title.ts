@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { MoreHorizontalIcon, PlusIcon } from '@blocksuite/icons/lit';
 import { nothing } from 'lit';
@@ -49,11 +49,11 @@ const GroupTitleMobile = (
         width: 20px;
         height: 20px;
         border-radius: 4px;
-        background-color: var(--affine-background-secondary-color);
+        background-color: var(--lovenotes-background-secondary-color);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--affine-text-secondary-color);
+        color: var(--lovenotes-text-secondary-color);
         font-size: var(--data-view-cell-text-size);
       }
 
@@ -146,11 +146,11 @@ export const GroupTitle = (
         width: 20px;
         height: 20px;
         border-radius: 4px;
-        background-color: var(--affine-background-secondary-color);
+        background-color: var(--lovenotes-background-secondary-color);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--affine-text-secondary-color);
+        color: var(--lovenotes-text-secondary-color);
         font-size: var(--data-view-cell-text-size);
       }
 
@@ -184,19 +184,19 @@ export const GroupTitle = (
       .group-header-icon svg {
         width: 16px;
         height: 16px;
-        color: var(--affine-icon-color);
-        fill: var(--affine-icon-color);
+        color: var(--lovenotes-icon-color);
+        fill: var(--lovenotes-icon-color);
       }
 
       .group-header-op:hover {
-        background-color: var(--affine-hover-color);
+        background-color: var(--lovenotes-hover-color);
       }
 
       .group-header-op svg {
         width: 16px;
         height: 16px;
-        fill: var(--affine-icon-color);
-        color: var(--affine-icon-color);
+        fill: var(--lovenotes-icon-color);
+        color: var(--lovenotes-icon-color);
       }
 
       .group-header-title {

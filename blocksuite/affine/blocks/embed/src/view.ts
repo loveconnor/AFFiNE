@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import {
@@ -36,7 +36,7 @@ import {
 import { EmbedYoutubeBlockInteraction } from './embed-youtube-block/embed-edgeless-youtube-block';
 
 export class EmbedViewExtension extends ViewExtensionProvider {
-  override name = 'affine-embed-block';
+  override name = 'lovenotes-embed-block';
 
   override effect(): void {
     super.effect();

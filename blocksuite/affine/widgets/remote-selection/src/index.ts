@@ -8,13 +8,13 @@ export * from './doc';
 export * from './edgeless';
 
 export const docRemoteSelectionWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   AFFINE_DOC_REMOTE_SELECTION_WIDGET,
   literal`${unsafeStatic(AFFINE_DOC_REMOTE_SELECTION_WIDGET)}`
 );
 
 export const edgelessRemoteSelectionWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   AFFINE_EDGELESS_REMOTE_SELECTION_WIDGET,
   literal`${unsafeStatic(AFFINE_EDGELESS_REMOTE_SELECTION_WIDGET)}`
 );

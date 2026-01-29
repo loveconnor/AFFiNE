@@ -1,10 +1,10 @@
-import type { EditorIconButton } from '@blocksuite/affine-components/toolbar';
-import type { AffineInlineEditor } from '@blocksuite/affine-shared/types';
+import type { EditorIconButton } from '@blocksuite/lovenotes-components/toolbar';
+import type { LoveNotesInlineEditor } from '@blocksuite/lovenotes-shared/types';
 import {
   isValidUrl,
   normalizeUrl,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { DoneIcon } from '@blocksuite/icons/lit';
 import {
@@ -41,10 +41,10 @@ export class LinkPopup extends WithDisposable(ShadowlessElement) {
       .catch(console.error);
 
     return html`
-      <div class="affine-link-popover create">
+      <div class="lovenotes-link-popover create">
         <input
           id="link-input"
-          class="affine-link-popover-input"
+          class="lovenotes-link-popover-input"
           type="text"
           spellcheck="false"
           placeholder="Paste or type a link"
@@ -77,27 +77,27 @@ export class LinkPopup extends WithDisposable(ShadowlessElement) {
       .catch(console.error);
 
     return html`
-      <div class="affine-link-edit-popover">
-        <div class="affine-edit-area text">
+      <div class="lovenotes-link-edit-popover">
+        <div class="lovenotes-edit-area text">
           <input
-            class="affine-edit-input"
+            class="lovenotes-edit-input"
             id="text-input"
             type="text"
             placeholder="Enter text"
             @input=${this._updateConfirmBtn}
           />
-          <label class="affine-edit-label" for="text-input">Text</label>
+          <label class="lovenotes-edit-label" for="text-input">Text</label>
         </div>
-        <div class="affine-edit-area link">
+        <div class="lovenotes-edit-area link">
           <input
             id="link-input"
-            class="affine-edit-input"
+            class="lovenotes-edit-input"
             type="text"
             spellcheck="false"
             placeholder="Paste or type a link"
             @input=${this._updateConfirmBtn}
           />
-          <label class="affine-edit-label" for="link-input">Link</label>
+          <label class="lovenotes-edit-label" for="link-input">Link</label>
         </div>
         ${this._confirmBtnTemplate()}
       </div>
@@ -118,7 +118,7 @@ export class LinkPopup extends WithDisposable(ShadowlessElement) {
   private _confirmBtnTemplate() {
     return html`
       <editor-icon-button
-        class="affine-confirm-button"
+        class="lovenotes-confirm-button"
         .iconSize="${'24px'}"
         .disabled=${true}
         @click=${this._onConfirm}
@@ -303,11 +303,11 @@ export class LinkPopup extends WithDisposable(ShadowlessElement) {
   @property({ attribute: false })
   accessor abortController!: AbortController;
 
-  @query('.affine-confirm-button')
+  @query('.lovenotes-confirm-button')
   accessor confirmButton: EditorIconButton | null = null;
 
   @property({ attribute: false })
-  accessor inlineEditor!: AffineInlineEditor;
+  accessor inlineEditor!: LoveNotesInlineEditor;
 
   @query('#link-input')
   accessor linkInput: HTMLInputElement | null = null;

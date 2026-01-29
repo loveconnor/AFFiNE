@@ -1,11 +1,11 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { css, html } from 'lit';
 
 export const EMBED_HTML_MIN_WIDTH = 370;
 export const EMBED_HTML_MIN_HEIGHT = 80;
 
 export const styles = css`
-  .affine-embed-html-block {
+  .lovenotes-embed-html-block {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -22,26 +22,26 @@ export const styles = css`
     user-select: none;
   }
 
-  .affine-embed-html {
+  .lovenotes-embed-html {
     flex-grow: 1;
     width: 100%;
   }
 
-  .affine-embed-html img,
-  .affine-embed-html object,
-  .affine-embed-html svg {
+  .lovenotes-embed-html img,
+  .lovenotes-embed-html object,
+  .lovenotes-embed-html svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 4px;
   }
 
-  .affine-embed-html-iframe-container {
+  .lovenotes-embed-html-iframe-container {
     position: relative;
     width: 100%;
     height: 100%;
     border-radius: 4px 4px 0px 0px;
-    box-shadow: var(--affine-shadow-1);
+    box-shadow: var(--lovenotes-shadow-1);
     overflow: hidden;
   }
 
@@ -57,15 +57,15 @@ export const styles = css`
     border: none;
   }
 
-  .embed-html-block-iframe-wrapper affine-menu {
+  .embed-html-block-iframe-wrapper lovenotes-menu {
     min-width: 296px;
   }
 
-  .embed-html-block-iframe-wrapper affine-menu .settings-header {
+  .embed-html-block-iframe-wrapper lovenotes-menu .settings-header {
     padding: 7px 12px;
     font-weight: 500;
-    font-size: var(--affine-font-xs);
-    color: var(--affine-text-secondary-color);
+    font-size: var(--lovenotes-font-xs);
+    color: var(--lovenotes-text-secondary-color);
   }
 
   .embed-html-block-iframe-wrapper > embed-html-fullscreen-toolbar {
@@ -76,7 +76,7 @@ export const styles = css`
     visibility: visible;
   }
 
-  .affine-embed-html-iframe-overlay {
+  .lovenotes-embed-html-iframe-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -84,18 +84,18 @@ export const styles = css`
     height: 100%;
   }
 
-  .affine-embed-html-iframe-overlay.hide {
+  .lovenotes-embed-html-iframe-overlay.hide {
     display: none;
   }
 
-  .affine-embed-html-title {
+  .lovenotes-embed-html-title {
     height: fit-content;
     display: flex;
     align-items: center;
     gap: 8px;
   }
 
-  .affine-embed-html-title-icon {
+  .lovenotes-embed-html-title-icon {
     display: flex;
     width: 20px;
     height: 20px;
@@ -103,15 +103,15 @@ export const styles = css`
     align-items: center;
   }
 
-  .affine-embed-html-title-icon img,
-  .affine-embed-html-title-icon object,
-  .affine-embed-html-title-icon svg {
+  .lovenotes-embed-html-title-icon img,
+  .lovenotes-embed-html-title-icon object,
+  .lovenotes-embed-html-title-icon svg {
     width: 20px;
     height: 20px;
-    fill: var(--affine-background-primary-color);
+    fill: var(--lovenotes-background-primary-color);
   }
 
-  .affine-embed-html-title-text {
+  .lovenotes-embed-html-title-text {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -119,10 +119,10 @@ export const styles = css`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--affine-text-primary-color);
+    color: var(--lovenotes-text-primary-color);
 
-    font-family: var(--affine-font-family);
-    font-size: var(--affine-font-sm);
+    font-family: var(--lovenotes-font-family);
+    font-size: var(--lovenotes-font-sm);
     font-style: normal;
     font-weight: 600;
     line-height: 22px;

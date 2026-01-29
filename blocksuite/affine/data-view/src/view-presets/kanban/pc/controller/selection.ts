@@ -23,9 +23,9 @@ export class KanbanSelectionController implements ReactiveController {
     const selection = this.selection;
     const target = event.target as HTMLElement;
     const closestCardId = target.closest(
-      'affine-data-view-kanban-card'
+      'lovenotes-data-view-kanban-card'
     )?.cardId;
-    const closestGroupKey = target.closest('affine-data-view-kanban-group')
+    const closestGroupKey = target.closest('lovenotes-data-view-kanban-group')
       ?.group.key;
     if (!closestCardId) return;
     if (!closestGroupKey) return;
@@ -200,7 +200,7 @@ export class KanbanSelectionController implements ReactiveController {
     }
     if (selection.selectionType === 'card') {
       const card = getSelectedCards(this.host, selection)[0];
-      const cell = card?.querySelector('affine-data-view-kanban-cell');
+      const cell = card?.querySelector('lovenotes-data-view-kanban-cell');
       if (card && cell) {
         this.selection = {
           groupKey: card.groupKey,
@@ -245,10 +245,10 @@ export class KanbanSelectionController implements ReactiveController {
     } else if (selection.selectionType === 'card') {
       // card focus
       const group = this.host?.querySelector(
-        `affine-data-view-kanban-group[data-key="${selection.cards[0].groupKey}"]`
+        `lovenotes-data-view-kanban-group[data-key="${selection.cards[0].groupKey}"]`
       );
       const cardElements = Array.from(
-        group?.querySelectorAll('affine-data-view-kanban-card') ?? []
+        group?.querySelectorAll('lovenotes-data-view-kanban-card') ?? []
       );
 
       const index = cardElements.findIndex(
@@ -319,10 +319,10 @@ export class KanbanSelectionController implements ReactiveController {
       return;
     }
     const group = host.querySelector(
-      `affine-data-view-kanban-group[data-key="${selection.cards[0].groupKey}"]`
+      `lovenotes-data-view-kanban-group[data-key="${selection.cards[0].groupKey}"]`
     );
     const kanbanCards = Array.from(
-      group?.querySelectorAll('affine-data-view-kanban-card') ?? []
+      group?.querySelectorAll('lovenotes-data-view-kanban-card') ?? []
     );
 
     if (nextPosition === 'up') {
@@ -358,7 +358,7 @@ export class KanbanSelectionController implements ReactiveController {
     }
 
     const groups = Array.from(
-      this.host?.querySelectorAll('affine-data-view-kanban-group') ?? []
+      this.host?.querySelectorAll('lovenotes-data-view-kanban-group') ?? []
     );
 
     if (nextPosition === 'right') {
@@ -401,10 +401,10 @@ export class KanbanSelectionController implements ReactiveController {
     }
     const kanbanCells = getCardCellsBySelection(this.host, selection);
     const group = this.host.querySelector(
-      `affine-data-view-kanban-group[data-key="${selection.groupKey}"]`
+      `lovenotes-data-view-kanban-group[data-key="${selection.groupKey}"]`
     );
     const cards = Array.from(
-      group?.querySelectorAll('affine-data-view-kanban-card') ?? []
+      group?.querySelectorAll('lovenotes-data-view-kanban-card') ?? []
     );
 
     if (nextPosition === 'up') {
@@ -456,7 +456,7 @@ export class KanbanSelectionController implements ReactiveController {
     }
 
     const groups = Array.from(
-      this.host?.querySelectorAll('affine-data-view-kanban-group') ?? []
+      this.host?.querySelectorAll('lovenotes-data-view-kanban-group') ?? []
     );
 
     if (nextPosition === 'right') {
@@ -644,7 +644,7 @@ function getNextGroupFocusElement(
   if (!element) return;
   const rect = element.getBoundingClientRect();
   const nextCards = Array.from(
-    nextGroup.querySelectorAll('affine-data-view-kanban-card')
+    nextGroup.querySelectorAll('lovenotes-data-view-kanban-card')
   );
   const cardPos = nextCards
     .map((card, index) => {
@@ -676,7 +676,7 @@ function getNextGroupFocusElement(
   }
 
   const cells = Array.from(
-    nextCard.querySelectorAll('affine-data-view-kanban-cell')
+    nextCard.querySelectorAll('lovenotes-data-view-kanban-cell')
   );
   const cellPos = cells
     .map((card, index) => {
@@ -718,7 +718,7 @@ function getNextCardFocusCell(
   const nextCard = cards[nextCardIndex];
   if (!nextCard) return;
   const nextCells = Array.from(
-    nextCard.querySelectorAll('affine-data-view-kanban-cell')
+    nextCard.querySelectorAll('lovenotes-data-view-kanban-cell')
   );
   const nextCellIndex = nextPosition === 'up' ? nextCells.length - 1 : 0;
   if (!nextCells[nextCellIndex]) return;
@@ -734,7 +734,7 @@ function getCardCellsBySelection(
 ) {
   const card = getSelectedCard(viewElement, selection);
   return Array.from(
-    card?.querySelectorAll('affine-data-view-kanban-cell') ?? []
+    card?.querySelectorAll('lovenotes-data-view-kanban-cell') ?? []
   );
 }
 
@@ -743,12 +743,12 @@ function getSelectedCard(
   selection: KanbanCellSelection
 ): KanbanCard | null {
   const group = viewElement.querySelector(
-    `affine-data-view-kanban-group[data-key="${selection.groupKey}"]`
+    `lovenotes-data-view-kanban-group[data-key="${selection.groupKey}"]`
   );
 
   if (!group) return null;
   return group.querySelector<KanbanCard>(
-    `affine-data-view-kanban-card[data-card-id="${selection.cardId}"]`
+    `lovenotes-data-view-kanban-card[data-card-id="${selection.cardId}"]`
   );
 }
 
@@ -762,7 +762,7 @@ function getSelectedCards(
   const groups = groupKeys
     .map(key =>
       viewElement.querySelector(
-        `affine-data-view-kanban-group[data-key="${key}"]`
+        `lovenotes-data-view-kanban-group[data-key="${key}"]`
       )
     )
     .filter((group): group is Element => group !== null);
@@ -772,7 +772,7 @@ function getSelectedCards(
     .flatMap(group =>
       cardIds.map(id =>
         group.querySelector<KanbanCard>(
-          `affine-data-view-kanban-card[data-card-id="${id}"]`
+          `lovenotes-data-view-kanban-card[data-card-id="${id}"]`
         )
       )
     )
@@ -784,7 +784,7 @@ function getSelectedCards(
 function getFocusCell(viewElement: Element, selection: KanbanCellSelection) {
   const card = getSelectedCard(viewElement, selection);
   return card?.querySelector<KanbanCell>(
-    `affine-data-view-kanban-cell[data-column-id="${selection.columnId}"]`
+    `lovenotes-data-view-kanban-cell[data-column-id="${selection.columnId}"]`
   );
 }
 

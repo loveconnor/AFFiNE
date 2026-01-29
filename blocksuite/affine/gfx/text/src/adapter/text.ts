@@ -1,4 +1,4 @@
-import type { DeltaInsert } from '@blocksuite/affine/store';
+import type { DeltaInsert } from '@blocksuite/lovenotes/store';
 
 export function getTextElementText(
   elementModel: Record<string, unknown>

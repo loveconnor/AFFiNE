@@ -18,11 +18,11 @@ public class ForkCopilotSessionMutation: GraphQLMutation {
 
   public var __variables: Variables? { ["options": options] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("forkCopilotSession", String.self, arguments: ["options": .variable("options")]),
     ] }

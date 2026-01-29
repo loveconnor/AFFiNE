@@ -1,10 +1,10 @@
-import { Switch } from '@affine/component';
+import { Switch } from '@lovenotes/component';
 import {
   AFFINE_FLAGS,
   FeatureFlagService,
   type Flag,
-} from '@affine/core/modules/feature-flag';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/feature-flag';
+import { useI18n } from '@lovenotes/i18n';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';

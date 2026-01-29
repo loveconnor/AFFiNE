@@ -1,17 +1,17 @@
-import { FrameBlockComponent } from '@blocksuite/affine-block-frame';
+import { FrameBlockComponent } from '@blocksuite/lovenotes-block-frame';
 import {
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
-} from '@blocksuite/affine-block-surface';
-import type { BlockCaptionEditor } from '@blocksuite/affine-components/caption';
-import { whenHover } from '@blocksuite/affine-components/hover';
-import { Peekable } from '@blocksuite/affine-components/peek';
-import { ViewExtensionManagerIdentifier } from '@blocksuite/affine-ext-loader';
-import { RefNodeSlotsProvider } from '@blocksuite/affine-inline-reference';
+} from '@blocksuite/lovenotes-block-surface';
+import type { BlockCaptionEditor } from '@blocksuite/lovenotes-components/caption';
+import { whenHover } from '@blocksuite/lovenotes-components/hover';
+import { Peekable } from '@blocksuite/lovenotes-components/peek';
+import { ViewExtensionManagerIdentifier } from '@blocksuite/lovenotes-ext-loader';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes-inline-reference';
 import {
   FrameBlockModel,
   type SurfaceRefBlockModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   BlockElementCommentManager,
   DocModeProvider,
@@ -20,9 +20,9 @@ import {
   ThemeProvider,
   ToolbarRegistryIdentifier,
   ViewportElementExtension,
-} from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { requestConnectedFrame } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import { requestConnectedFrame } from '@blocksuite/lovenotes-shared/utils';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import { Bound, type SerializedXYWH } from '@blocksuite/global/gfx';
@@ -53,16 +53,16 @@ import { styleMap } from 'lit/directives/style-map.js';
 })
 export class SurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockModel> {
   static override styles = css`
-    affine-surface-ref {
+    lovenotes-surface-ref {
       position: relative;
     }
 
-    affine-surface-ref:not(:hover)
-      affine-surface-ref-toolbar:not([data-open-menu-display='show']) {
+    lovenotes-surface-ref:not(:hover)
+      lovenotes-surface-ref-toolbar:not([data-open-menu-display='show']) {
       display: none;
     }
 
-    .affine-surface-ref {
+    .lovenotes-surface-ref {
       position: relative;
       user-select: none;
       margin: 10px 0;
@@ -73,26 +73,26 @@ export class SurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockMode
       overflow: hidden;
     }
 
-    .affine-surface-ref.focused {
+    .lovenotes-surface-ref.focused {
       border-color: ${unsafeCSSVarV2('edgeless/frame/border/active')};
     }
 
-    .affine-surface-ref.comment-highlighted {
+    .lovenotes-surface-ref.comment-highlighted {
       outline: 2px solid ${unsafeCSSVarV2('block/comment/highlightUnderline')};
     }
 
     @media print {
-      .affine-surface-ref {
+      .lovenotes-surface-ref {
         outline: none !important;
       }
     }
 
     .ref-content {
       position: relative;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--lovenotes-background-primary-color);
       background: radial-gradient(
-        var(--affine-edgeless-grid-color) 1px,
-        var(--affine-background-primary-color) 1px
+        var(--lovenotes-edgeless-grid-color) 1px,
+        var(--lovenotes-background-primary-color) 1px
       );
     }
 
@@ -134,7 +134,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockMode
     return (
       this.isConnected &&
       // prevent surface-ref from render itself in loop
-      !this.parentComponent?.closest('affine-surface-ref')
+      !this.parentComponent?.closest('lovenotes-surface-ref')
     );
   }
 
@@ -163,7 +163,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockMode
 
       const [paragraphId] = this.store.addSiblingBlocks(this.model, [
         {
-          flavour: 'affine:paragraph',
+          flavour: 'lovenotes:paragraph',
         },
       ]);
       const model = this.store.getModelById(paragraphId);
@@ -467,7 +467,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockMode
     return html`
       <div
         class=${classMap({
-          'affine-surface-ref': true,
+          'lovenotes-surface-ref': true,
           focused: this.selected$.value,
           'comment-highlighted': this.isCommentHighlighted,
         })}
@@ -494,10 +494,10 @@ export class SurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockMode
     this.std.get(DocModeProvider).setEditorMode('edgeless');
   }
 
-  @query('.affine-surface-ref')
+  @query('.lovenotes-surface-ref')
   accessor hoverableContainer!: HTMLDivElement;
 
-  @query('affine-surface-ref > block-caption-editor')
+  @query('lovenotes-surface-ref > block-caption-editor')
   accessor captionElement!: BlockCaptionEditor;
 
   @query('editor-host')
@@ -506,6 +506,6 @@ export class SurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockMode
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-surface-ref': SurfaceRefBlockComponent;
+    'lovenotes-surface-ref': SurfaceRefBlockComponent;
   }
 }

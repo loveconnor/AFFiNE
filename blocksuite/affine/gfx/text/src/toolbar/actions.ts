@@ -1,12 +1,12 @@
 import {
   EdgelessCRUDIdentifier,
   TextUtils,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   packColor,
   type PickColorEvent,
-} from '@blocksuite/affine-components/color-picker';
-import { EditorChevronDown } from '@blocksuite/affine-components/toolbar';
+} from '@blocksuite/lovenotes-components/color-picker';
+import { EditorChevronDown } from '@blocksuite/lovenotes-components/toolbar';
 import {
   DefaultTheme,
   FontFamily,
@@ -16,20 +16,20 @@ import {
   type SurfaceTextModelMap,
   TextAlign,
   type TextStyleProps,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   type ToolbarActions,
   type ToolbarContext,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   getMostCommonResolvedValue,
   getMostCommonValue,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import {
   type MenuItem,
   renderCurrentMenuItemWith,
   renderMenu,
-} from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import {
   TextAlignCenterIcon,
   TextAlignLeftIcon,
@@ -349,12 +349,12 @@ export function createTextActions<
           }
         };
 
-        return html`<affine-size-dropdown-menu
+        return html`<lovenotes-size-dropdown-menu
           @select=${onPick}
           .label="${'Font size'}"
           .sizes=${FONT_SIZE_LIST}
           .size$=${fontSize$}
-        ></affine-size-dropdown-menu>`;
+        ></lovenotes-size-dropdown-menu>`;
       },
     },
     {

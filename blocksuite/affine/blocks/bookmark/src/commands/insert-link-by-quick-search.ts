@@ -1,15 +1,15 @@
-import { insertEmbedIframeWithUrlCommand } from '@blocksuite/affine-block-embed';
+import { insertEmbedIframeWithUrlCommand } from '@blocksuite/lovenotes-block-embed';
 import {
   type InsertedLinkType,
   insertEmbedLinkedDocCommand,
   insertEmbedSyncedDocCommand,
   type LinkableFlavour,
-} from '@blocksuite/affine-block-embed-doc';
+} from '@blocksuite/lovenotes-block-embed-doc';
 import {
   DocModeProvider,
   EditorSettingProvider,
   QuickSearchProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import type { Command } from '@blocksuite/std';
 
 import { insertBookmarkCommand } from './insert-bookmark';
@@ -33,14 +33,14 @@ export const insertLinkByQuickSearchCommand: Command<
       if ('docId' in result) {
         const editorMode = std.get(DocModeProvider).getEditorMode();
         const editorSettings = std.get(EditorSettingProvider);
-        let flavour: LinkableFlavour = 'affine:embed-linked-doc';
+        let flavour: LinkableFlavour = 'lovenotes:embed-linked-doc';
         if (editorMode === 'edgeless') {
           flavour =
             editorSettings.setting$.value.docCanvasPreferView ?? flavour;
         }
 
         const insertCommand =
-          flavour === 'affine:embed-linked-doc'
+          flavour === 'lovenotes:embed-linked-doc'
             ? insertEmbedLinkedDocCommand
             : insertEmbedSyncedDocCommand;
 

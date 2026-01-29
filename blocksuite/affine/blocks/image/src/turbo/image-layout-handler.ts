@@ -1,8 +1,8 @@
-import type { Rect } from '@blocksuite/affine-gfx-turbo-renderer';
+import type { Rect } from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import {
   BlockLayoutHandlerExtension,
   BlockLayoutHandlersIdentifier,
-} from '@blocksuite/affine-gfx-turbo-renderer';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import type { Container } from '@blocksuite/global/di';
 import type { EditorHost, GfxBlockComponent } from '@blocksuite/std';
 import { clientToModelCoord, type ViewportRecord } from '@blocksuite/std/gfx';
@@ -11,7 +11,7 @@ import type { BlockModel } from '@blocksuite/store';
 import type { ImageLayout } from './image-painter.worker';
 
 export class ImageLayoutHandlerExtension extends BlockLayoutHandlerExtension<ImageLayout> {
-  readonly blockType = 'affine:image';
+  readonly blockType = 'lovenotes:image';
 
   static override setup(di: Container) {
     di.addImpl(
@@ -30,7 +30,7 @@ export class ImageLayoutHandlerExtension extends BlockLayoutHandlerExtension<Ima
     ) as GfxBlockComponent | null;
     if (!component) return null;
 
-    const imageContainer = component.querySelector('.affine-image-container');
+    const imageContainer = component.querySelector('.lovenotes-image-container');
     if (!imageContainer) return null;
 
     const resizableImg = component.querySelector(
@@ -47,7 +47,7 @@ export class ImageLayoutHandlerExtension extends BlockLayoutHandlerExtension<Ima
     ]);
 
     const imageLayout: ImageLayout = {
-      type: 'affine:image',
+      type: 'lovenotes:image',
       blockId: model.id,
       rect: {
         x: modelX,

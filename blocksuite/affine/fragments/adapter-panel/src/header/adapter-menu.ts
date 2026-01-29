@@ -11,17 +11,17 @@ import {
   ADAPTERS,
 } from '../config';
 
-export const AFFINE_ADAPTER_MENU = 'affine-adapter-menu';
+export const AFFINE_ADAPTER_MENU = 'lovenotes-adapter-menu';
 
 export class AdapterMenu extends SignalWatcher(LitElement) {
   static override styles = css`
     .adapter-menu {
       min-width: 120px;
       padding: 4px;
-      background: var(--affine-background-primary-color);
-      border: 1px solid var(--affine-border-color);
+      background: var(--lovenotes-background-primary-color);
+      border: 1px solid var(--lovenotes-border-color);
       border-radius: 4px;
-      box-shadow: var(--affine-shadow-1);
+      box-shadow: var(--lovenotes-shadow-1);
     }
     .adapter-menu-item {
       display: block;
@@ -31,17 +31,17 @@ export class AdapterMenu extends SignalWatcher(LitElement) {
       background: none;
       text-align: left;
       cursor: pointer;
-      color: var(--affine-text-primary-color);
-      font-family: var(--affine-font-family);
-      font-size: var(--affine-font-xs);
+      color: var(--lovenotes-text-primary-color);
+      font-family: var(--lovenotes-font-family);
+      font-size: var(--lovenotes-font-xs);
       border-radius: 4px;
     }
     .adapter-menu-item:hover {
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
     .adapter-menu-item.active {
-      color: var(--affine-primary-color);
-      background: var(--affine-hover-color);
+      color: var(--lovenotes-primary-color);
+      background: var(--lovenotes-hover-color);
     }
   `;
 

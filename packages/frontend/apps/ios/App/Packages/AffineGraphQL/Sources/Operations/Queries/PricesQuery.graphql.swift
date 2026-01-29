@@ -12,11 +12,11 @@ public class PricesQuery: GraphQLQuery {
 
   public init() {}
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("prices", [Price].self),
     ] }
@@ -26,15 +26,15 @@ public class PricesQuery: GraphQLQuery {
     /// Price
     ///
     /// Parent Type: `SubscriptionPrice`
-    public struct Price: AffineGraphQL.SelectionSet {
+    public struct Price: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.SubscriptionPrice }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.SubscriptionPrice }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("type", String.self),
-        .field("plan", GraphQLEnum<AffineGraphQL.SubscriptionPlan>.self),
+        .field("plan", GraphQLEnum<LoveNotesGraphQL.SubscriptionPlan>.self),
         .field("currency", String.self),
         .field("amount", Int?.self),
         .field("yearlyAmount", Int?.self),
@@ -42,7 +42,7 @@ public class PricesQuery: GraphQLQuery {
       ] }
 
       public var type: String { __data["type"] }
-      public var plan: GraphQLEnum<AffineGraphQL.SubscriptionPlan> { __data["plan"] }
+      public var plan: GraphQLEnum<LoveNotesGraphQL.SubscriptionPlan> { __data["plan"] }
       public var currency: String { __data["currency"] }
       public var amount: Int? { __data["amount"] }
       public var yearlyAmount: Int? { __data["yearlyAmount"] }

@@ -3,15 +3,15 @@ import {
   getBgGridGap,
   type SurfaceBlockComponent,
   type SurfaceBlockModel,
-} from '@blocksuite/affine-block-surface';
-import type { RootBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { RootBlockModel } from '@blocksuite/lovenotes-model';
 import {
   EditorSettingProvider,
   FontLoaderService,
   ThemeProvider,
   ViewportElementProvider,
-} from '@blocksuite/affine-shared/services';
-import { requestThrottledConnectedFrame } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { requestThrottledConnectedFrame } from '@blocksuite/lovenotes-shared/utils';
 import {
   BlockComponent,
   type GfxBlockComponent,
@@ -29,7 +29,7 @@ import { isCanvasElement } from '../edgeless/utils/query';
 
 export class EdgelessRootPreviewBlockComponent extends BlockComponent<RootBlockModel> {
   static override styles = css`
-    affine-edgeless-root-preview {
+    lovenotes-edgeless-root-preview {
       pointer-events: none;
       -webkit-user-select: none;
       user-select: none;
@@ -37,7 +37,7 @@ export class EdgelessRootPreviewBlockComponent extends BlockComponent<RootBlockM
       height: 100%;
     }
 
-    affine-edgeless-root-preview .widgets-container {
+    lovenotes-edgeless-root-preview .widgets-container {
       position: absolute;
       left: 0;
       top: 0;
@@ -46,12 +46,12 @@ export class EdgelessRootPreviewBlockComponent extends BlockComponent<RootBlockM
       height: 100%;
     }
 
-    affine-edgeless-root-preview .edgeless-background {
+    lovenotes-edgeless-root-preview .edgeless-background {
       height: 100%;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--lovenotes-background-primary-color);
       background-image: radial-gradient(
-        var(--affine-edgeless-grid-color) 1px,
-        var(--affine-background-primary-color) 1px
+        var(--lovenotes-edgeless-grid-color) 1px,
+        var(--lovenotes-background-primary-color) 1px
       );
     }
 
@@ -87,7 +87,7 @@ export class EdgelessRootPreviewBlockComponent extends BlockComponent<RootBlockM
 
   get surfaceBlockModel() {
     return this.model.children.find(
-      child => child.flavour === 'affine:surface'
+      child => child.flavour === 'lovenotes:surface'
     ) as SurfaceBlockModel;
   }
 
@@ -257,6 +257,6 @@ export class EdgelessRootPreviewBlockComponent extends BlockComponent<RootBlockM
   @query('gfx-viewport')
   accessor gfxViewportElm!: GfxViewportElement;
 
-  @query('affine-surface')
+  @query('lovenotes-surface')
   accessor surface!: SurfaceBlockComponent;
 }

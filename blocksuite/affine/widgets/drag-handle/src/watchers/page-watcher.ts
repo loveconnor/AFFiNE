@@ -1,13 +1,13 @@
-import { PageViewportService } from '@blocksuite/affine-shared/services';
+import { PageViewportService } from '@blocksuite/lovenotes-shared/services';
 
-import type { AffineDragHandleWidget } from '../drag-handle.js';
+import type { LoveNotesDragHandleWidget } from '../drag-handle.js';
 
 export class PageWatcher {
   get pageViewportService() {
     return this.widget.std.get(PageViewportService);
   }
 
-  constructor(readonly widget: AffineDragHandleWidget) {}
+  constructor(readonly widget: LoveNotesDragHandleWidget) {}
 
   watch() {
     const { disposables } = this.widget;

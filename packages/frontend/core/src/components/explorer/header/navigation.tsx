@@ -1,19 +1,19 @@
-import { WorkbenchLink } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
+import { useI18n } from '@lovenotes/i18n';
+import track from '@lovenotes/track';
 
 import * as styles from './navigation.css';
 
 const items = [
   {
     value: 'docs',
-    label: 'com.affine.docs.header',
+    label: 'com.lovenotes.docs.header',
     testId: 'workspace-docs-button',
     to: '/all',
   },
   {
     value: 'collections',
-    label: 'com.affine.collections.header',
+    label: 'com.lovenotes.collections.header',
     testId: 'workspace-collections-button',
     to: '/collection',
   },

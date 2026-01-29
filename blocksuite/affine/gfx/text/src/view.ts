@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { DblClickAddEdgelessText } from './dblclick-add-edgeless-text';
 import { effects } from './effects';
@@ -11,7 +11,7 @@ import { TextTool } from './tool';
 import { textToolbarExtension } from './toolbar';
 
 export class TextViewExtension extends ViewExtensionProvider {
-  override name = 'affine-text-gfx';
+  override name = 'lovenotes-text-gfx';
 
   override effect(): void {
     super.effect();

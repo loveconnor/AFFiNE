@@ -1,5 +1,5 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import { stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import type { DataViewUILogicBase } from '@blocksuite/data-view';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -16,18 +16,18 @@ export class DatabaseTitle extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = css`
-    .affine-database-title {
+    .lovenotes-database-title {
       position: relative;
       flex: 1;
       font-family: inherit;
       font-size: 20px;
       line-height: 28px;
       font-weight: 600;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
       overflow: hidden;
     }
 
-    .affine-database-title textarea {
+    .lovenotes-database-title textarea {
       font-size: inherit;
       line-height: inherit;
       font-weight: inherit;
@@ -46,35 +46,35 @@ export class DatabaseTitle extends SignalWatcher(
       scrollbar-width: none;
     }
 
-    .affine-database-title .text {
+    .lovenotes-database-title .text {
       user-select: none;
       opacity: 0;
       white-space: pre-wrap;
     }
 
-    .affine-database-title[data-title-focus='false'] textarea {
+    .lovenotes-database-title[data-title-focus='false'] textarea {
       opacity: 0;
     }
 
-    .affine-database-title[data-title-focus='false'] .text {
+    .lovenotes-database-title[data-title-focus='false'] .text {
       text-overflow: ellipsis;
       overflow: hidden;
       opacity: 1;
       white-space: pre;
     }
 
-    .affine-database-title [data-title-empty='true']::before {
+    .lovenotes-database-title [data-title-empty='true']::before {
       content: 'Untitled';
       position: absolute;
       pointer-events: none;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
     }
 
-    .affine-database-title [data-title-focus='true']::before {
-      color: var(--affine-placeholder-color);
+    .lovenotes-database-title [data-title-focus='true']::before {
+      color: var(--lovenotes-placeholder-color);
     }
 
-    .affine-database-title.comment-highlighted {
+    .lovenotes-database-title.comment-highlighted {
       border-bottom: 2px solid
         ${unsafeCSSVarV2('block/comment/highlightUnderline')};
       background-color: ${unsafeCSSVarV2('block/comment/highlightActive')};
@@ -121,7 +121,7 @@ export class DatabaseTitle extends SignalWatcher(
   };
 
   get database() {
-    return this.closest<DatabaseBlockComponent>('affine-database');
+    return this.closest<DatabaseBlockComponent>('lovenotes-database');
   }
 
   override connectedCallback() {
@@ -139,7 +139,7 @@ export class DatabaseTitle extends SignalWatcher(
     const isEmpty = !this.text$.value;
 
     const classList = classMap({
-      'affine-database-title': true,
+      'lovenotes-database-title': true,
       ellipsis: !this.isFocus$.value,
       'comment-highlighted': this.database?.isCommentHighlighted ?? false,
     });
@@ -194,6 +194,6 @@ export class DatabaseTitle extends SignalWatcher(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-database-title': DatabaseTitle;
+    'lovenotes-database-title': DatabaseTitle;
   }
 }

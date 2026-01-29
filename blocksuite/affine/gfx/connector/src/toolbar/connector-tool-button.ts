@@ -1,6 +1,6 @@
-import { ConnectorMode, getConnectorModeName } from '@blocksuite/affine-model';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import { QuickToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { ConnectorMode, getConnectorModeName } from '@blocksuite/lovenotes-model';
+import { EditPropsStore } from '@blocksuite/lovenotes-shared/services';
+import { QuickToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import {
   ConnectorCIcon,
@@ -55,10 +55,10 @@ export class EdgelessConnectorToolButton extends QuickToolMixin(
         class="edgeless-connector-button"
         .tooltip=${this.popper
           ? ''
-          : html`<affine-tooltip-content-with-shortcut
+          : html`<lovenotes-tooltip-content-with-shortcut
               data-tip="${getConnectorModeName(mode)}"
               data-shortcut="${'C'}"
-            ></affine-tooltip-content-with-shortcut>`}
+            ></lovenotes-tooltip-content-with-shortcut>`}
         .tooltipOffset=${17}
         .active=${active}
         .iconContainerPadding=${6}

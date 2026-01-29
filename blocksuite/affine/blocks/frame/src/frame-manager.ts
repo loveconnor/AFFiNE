@@ -1,7 +1,7 @@
-import type { SurfaceBlockModel } from '@blocksuite/affine-block-surface';
-import { Overlay } from '@blocksuite/affine-block-surface';
-import type { FrameBlockModel } from '@blocksuite/affine-model';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+import type { SurfaceBlockModel } from '@blocksuite/lovenotes-block-surface';
+import { Overlay } from '@blocksuite/lovenotes-block-surface';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
+import { EditPropsStore } from '@blocksuite/lovenotes-shared/services';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import {
@@ -210,14 +210,14 @@ export class EdgelessFrameManager extends GfxExtension {
     const surfaceModel = this.gfx.surface as SurfaceBlockModel;
     const props = this.gfx.std
       .get(EditPropsStore)
-      .applyLastProps('affine:frame', {
+      .applyLastProps('lovenotes:frame', {
         title: new Text(new Y.Text(`Frame ${this.frames.length + 1}`)),
         xywh: bound.serialize(),
         index: this.gfx.layer.generateIndex(true),
         presentationIndex: this.generatePresentationIndex(),
       });
 
-    const id = this.gfx.doc.addBlock('affine:frame', props, surfaceModel);
+    const id = this.gfx.doc.addBlock('lovenotes:frame', props, surfaceModel);
     const frameModel = this.gfx.getElementById(id);
 
     if (!frameModel || !isFrameBlock(frameModel)) {
@@ -499,5 +499,5 @@ function areSetsEqual<T>(setA: Set<T>, setB: Set<T>) {
 }
 
 export function isFrameBlock(element: unknown): element is FrameBlockModel {
-  return !!element && (element as BlockModel).flavour === 'affine:frame';
+  return !!element && (element as BlockModel).flavour === 'lovenotes:frame';
 }

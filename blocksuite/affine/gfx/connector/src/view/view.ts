@@ -1,7 +1,7 @@
 import {
   type ConnectorElementModel,
   LocalShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { Bound, serializeXYWH, Vec } from '@blocksuite/global/gfx';
 import type { PointerEventState } from '@blocksuite/std';
 import {

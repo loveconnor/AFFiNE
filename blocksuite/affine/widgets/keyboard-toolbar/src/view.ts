@@ -1,14 +1,14 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 import { IS_MOBILE } from '@blocksuite/global/env';
 
 import { effects } from './effects';
 import { keyboardToolbarWidget } from './widget';
 
 export class KeyboardToolbarViewExtension extends ViewExtensionProvider {
-  override name = 'affine-keyboard-toolbar-widget';
+  override name = 'lovenotes-keyboard-toolbar-widget';
 
   override effect() {
     super.effect();

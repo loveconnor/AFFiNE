@@ -1,9 +1,9 @@
 import type {
   EmbedYoutubeBlockUrlData,
   EmbedYoutubeModel,
-} from '@blocksuite/affine-model';
-import type { LinkPreviewProvider } from '@blocksuite/affine-shared/services';
-import { isAbortError } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import type { LinkPreviewProvider } from '@blocksuite/lovenotes-shared/services';
+import { isAbortError } from '@blocksuite/lovenotes-shared/utils';
 
 import type { EmbedYoutubeBlockComponent } from './embed-youtube-block.js';
 

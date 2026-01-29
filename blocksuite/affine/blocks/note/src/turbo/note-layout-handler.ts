@@ -1,13 +1,13 @@
-import type { Rect } from '@blocksuite/affine-gfx-turbo-renderer';
+import type { Rect } from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import {
   BlockLayoutHandlerExtension,
   BlockLayoutHandlersIdentifier,
-} from '@blocksuite/affine-gfx-turbo-renderer';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import {
   ColorScheme,
   type NoteBlockModel,
   resolveColor,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { Container } from '@blocksuite/global/di';
 import type { EditorHost, GfxBlockComponent } from '@blocksuite/std';
 import { clientToModelCoord, type ViewportRecord } from '@blocksuite/std/gfx';
@@ -16,7 +16,7 @@ import type { BlockModel } from '@blocksuite/store';
 import type { NoteLayout } from './note-painter.worker';
 
 export class NoteLayoutHandlerExtension extends BlockLayoutHandlerExtension<NoteLayout> {
-  readonly blockType = 'affine:note';
+  readonly blockType = 'lovenotes:note';
 
   static override setup(di: Container) {
     di.addImpl(
@@ -36,7 +36,7 @@ export class NoteLayoutHandlerExtension extends BlockLayoutHandlerExtension<Note
     if (!component) return null;
 
     // Get the note container element
-    const noteContainer = component.querySelector('.affine-note-mask');
+    const noteContainer = component.querySelector('.lovenotes-note-mask');
     if (!noteContainer) return null;
 
     // Get the bounding client rect of the note container
@@ -58,7 +58,7 @@ export class NoteLayoutHandlerExtension extends BlockLayoutHandlerExtension<Note
 
     // Create the note layout object
     const noteLayout: NoteLayout = {
-      type: 'affine:note',
+      type: 'lovenotes:note',
       blockId: model.id,
       rect: {
         x: modelX,

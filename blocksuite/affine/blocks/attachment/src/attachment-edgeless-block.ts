@@ -1,12 +1,12 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   AttachmentBlockSchema,
   AttachmentBlockStyles,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import { toGfxBlockComponent } from '@blocksuite/std';
 import { GfxViewInteractionExtension } from '@blocksuite/std/gfx';
 import { styleMap } from 'lit/directives/style-map.js';
@@ -49,7 +49,7 @@ export class AttachmentEdgelessBlockComponent extends toGfxBlockComponent(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-edgeless-attachment': AttachmentEdgelessBlockComponent;
+    'lovenotes-edgeless-attachment': AttachmentEdgelessBlockComponent;
   }
 }
 

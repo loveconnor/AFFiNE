@@ -1,11 +1,11 @@
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
-import { getAFFiNEWorkspaceSchema } from '@affine/core/modules/workspace';
-import { getEmbedLinkedDocIcons } from '@blocksuite/affine/blocks/embed-doc';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import type { ColorScheme } from '@blocksuite/affine/model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { MarkdownTransformer } from '@blocksuite/affine/widgets/linked-doc';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+import { getStoreManager } from '@lovenotes/core/blocksuite/manager/store';
+import { getLoveNotesWorkspaceSchema } from '@lovenotes/core/modules/workspace';
+import { getEmbedLinkedDocIcons } from '@blocksuite/lovenotes/blocks/embed-doc';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
+import type { ColorScheme } from '@blocksuite/lovenotes/model';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes/shared/theme';
+import { MarkdownTransformer } from '@blocksuite/lovenotes/widgets/linked-doc';
+import type { NotificationService } from '@blocksuite/lovenotes-shared/services';
 import { CopyIcon, PageIcon, ToolIcon } from '@blocksuite/icons/lit';
 import type { BlockStdScope } from '@blocksuite/std';
 import { css, html } from 'lit';
@@ -161,7 +161,7 @@ export class DocComposeTool extends ArtifactTool<
         const refNodeSlots = std.getOptional(RefNodeSlotsProvider);
         const docId = await MarkdownTransformer.importMarkdownToDoc({
           collection: workspace,
-          schema: getAFFiNEWorkspaceSchema(),
+          schema: getLoveNotesWorkspaceSchema(),
           markdown: successResult.markdown,
           fileName: title,
           extensions: getStoreManager().config.init().value.get('store'),

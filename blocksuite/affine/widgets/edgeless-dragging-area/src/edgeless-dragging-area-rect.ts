@@ -1,8 +1,8 @@
 import {
   DefaultModeDragType,
   DefaultTool,
-} from '@blocksuite/affine-block-surface';
-import type { RootBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { RootBlockModel } from '@blocksuite/lovenotes-model';
 import { WidgetComponent, WidgetViewExtension } from '@blocksuite/std';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 import { cssVarV2 } from '@toeverything/theme/v2';
@@ -14,7 +14,7 @@ export const EDGELESS_DRAGGING_AREA_WIDGET = 'edgeless-dragging-area-rect';
 
 export class EdgelessDraggingAreaRectWidget extends WidgetComponent<RootBlockModel> {
   static override styles = css`
-    .affine-edgeless-dragging-area {
+    .lovenotes-edgeless-dragging-area {
       position: absolute;
       background: ${unsafeCSS(
         cssVarV2('edgeless/selection/selectionMarqueeBackground', '#1E96EB14')
@@ -56,13 +56,13 @@ export class EdgelessDraggingAreaRectWidget extends WidgetComponent<RootBlockMod
     };
 
     return html`
-      <div class="affine-edgeless-dragging-area" style=${styleMap(style)}></div>
+      <div class="lovenotes-edgeless-dragging-area" style=${styleMap(style)}></div>
     `;
   }
 }
 
 export const edgelessDraggingAreaWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   EDGELESS_DRAGGING_AREA_WIDGET,
   literal`${unsafeStatic(EDGELESS_DRAGGING_AREA_WIDGET)}`
 );

@@ -1,17 +1,17 @@
-import { test } from '@affine-test/kit/electron';
+import { test } from '@lovenotes-test/kit/electron';
 import {
   closeTab,
   expectActiveTab,
   expectTabCount,
   expectTabTitle,
-} from '@affine-test/kit/utils/app-tabs';
+} from '@lovenotes-test/kit/utils/app-tabs';
 import {
   clickNewPageButton,
   createLinkedPage,
   dragTo,
   getPageByTitle,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@lovenotes-test/kit/utils/sidebar';
 import { expect } from '@playwright/test';
 
 test('create new tab', async ({ views }) => {
@@ -95,7 +95,7 @@ test('open new tab via cmd+click page link', async ({ page }) => {
   await page.keyboard.press('Enter');
   await createLinkedPage(page, 'hi from another page');
   await page
-    .locator('.affine-reference-title:has-text("hi from another page")')
+    .locator('.lovenotes-reference-title:has-text("hi from another page")')
     .click({
       modifiers: ['ControlOrMeta'],
     });
@@ -128,10 +128,10 @@ test('reorder tabs', async ({ page }) => {
   const titles = ['aaa', 'bbb'];
   await createLinkedPage(page, titles[0]);
   await createLinkedPage(page, titles[1]);
-  await page.locator(`.affine-reference-title:has-text("${titles[0]}")`).click({
+  await page.locator(`.lovenotes-reference-title:has-text("${titles[0]}")`).click({
     modifiers: ['ControlOrMeta'],
   });
-  await page.locator(`.affine-reference-title:has-text("${titles[1]}")`).click({
+  await page.locator(`.lovenotes-reference-title:has-text("${titles[1]}")`).click({
     modifiers: ['ControlOrMeta'],
   });
 

@@ -1,5 +1,5 @@
-import { isNoteBlock } from '@blocksuite/affine-block-surface';
-import type { Connectable } from '@blocksuite/affine-model';
+import { isNoteBlock } from '@blocksuite/lovenotes-block-surface';
+import type { Connectable } from '@blocksuite/lovenotes-model';
 import type { GfxModel } from '@blocksuite/std/gfx';
 
 import type { EdgelessRootBlockComponent } from '../index.js';

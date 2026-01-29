@@ -1,7 +1,7 @@
 import {
   InlineDeltaToPlainTextAdapterExtension,
   type TextBuffer,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 export const latexDeltaMarkdownAdapterMatch =
   InlineDeltaToPlainTextAdapterExtension({

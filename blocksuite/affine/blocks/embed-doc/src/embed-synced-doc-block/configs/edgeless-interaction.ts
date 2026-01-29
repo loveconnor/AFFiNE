@@ -2,7 +2,7 @@ import {
   EmbedSyncedDocBlockSchema,
   SYNCED_MIN_HEIGHT,
   SYNCED_MIN_WIDTH,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { clamp } from '@blocksuite/global/gfx';
 import { GfxViewInteractionExtension } from '@blocksuite/std/gfx';
 

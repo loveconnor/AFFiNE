@@ -1,4 +1,4 @@
-import { MenuContext } from '@blocksuite/affine-components/toolbar';
+import { MenuContext } from '@blocksuite/lovenotes-components/toolbar';
 
 import type { CodeBlockComponent } from '../code-block';
 

@@ -1,5 +1,5 @@
-import { EditorChevronDown } from '@blocksuite/affine-components/toolbar';
-import type { ToolbarContext } from '@blocksuite/affine-shared/services';
+import { EditorChevronDown } from '@blocksuite/lovenotes-components/toolbar';
+import type { ToolbarContext } from '@blocksuite/lovenotes-shared/services';
 import type { BlockComponent } from '@blocksuite/std';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';

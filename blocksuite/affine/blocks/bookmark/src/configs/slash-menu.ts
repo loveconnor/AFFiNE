@@ -1,10 +1,10 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import { toggleEmbedCardCreateModal } from '@blocksuite/affine-components/embed-card-modal';
-import { BookmarkBlockSchema } from '@blocksuite/affine-model';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import { toggleEmbedCardCreateModal } from '@blocksuite/lovenotes-components/embed-card-modal';
+import { BookmarkBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   type SlashMenuConfig,
   SlashMenuConfigIdentifier,
-} from '@blocksuite/affine-widget-slash-menu';
+} from '@blocksuite/lovenotes-widget-slash-menu';
 import { LinkIcon } from '@blocksuite/icons/lit';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 import type { ExtensionType } from '@blocksuite/store';
@@ -23,7 +23,7 @@ const bookmarkSlashMenuConfig: SlashMenuConfig = {
       },
       group: '4_Content & Media@2',
       when: ({ model }) =>
-        model.store.schema.flavourSchemaMap.has('affine:bookmark'),
+        model.store.schema.flavourSchemaMap.has('lovenotes:bookmark'),
       action: ({ std, model }) => {
         const { host } = std;
         const parentModel = host.store.getParent(model);

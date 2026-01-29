@@ -1,5 +1,5 @@
-import type { Options, RoughCanvas } from '@blocksuite/affine-block-surface';
-import type { ShapeStyle } from '@blocksuite/affine-model';
+import type { Options, RoughCanvas } from '@blocksuite/lovenotes-block-surface';
+import type { ShapeStyle } from '@blocksuite/lovenotes-model';
 import type { XYWH } from '@blocksuite/global/gfx';
 
 export abstract class Shape {

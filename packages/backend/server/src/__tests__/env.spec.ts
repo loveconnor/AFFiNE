@@ -52,12 +52,12 @@ test('should read NAMESPACE', t => {
 
 test('should read DEPLOYMENT_TYPE', t => {
   t.deepEqual(
-    ['affine', 'selfhosted'].map(envVal => {
+    ['lovenotes', 'selfhosted'].map(envVal => {
       process.env.DEPLOYMENT_TYPE = envVal;
       const env = new Env();
       return env.DEPLOYMENT_TYPE;
     }),
-    ['affine', 'selfhosted']
+    ['lovenotes', 'selfhosted']
   );
 
   t.throws(() => {
@@ -137,7 +137,7 @@ test('should tell selfhosted correctly', t => {
   process.env.DEPLOYMENT_TYPE = 'selfhosted';
   t.true(new Env().selfhosted);
 
-  process.env.DEPLOYMENT_TYPE = 'affine';
+  process.env.DEPLOYMENT_TYPE = 'lovenotes';
   t.false(new Env().selfhosted);
 });
 

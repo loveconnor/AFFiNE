@@ -1,18 +1,18 @@
-import { test } from '@affine-test/kit/playwright';
-import { importAttachment } from '@affine-test/kit/utils/attachment';
-import { locateToolbar } from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@lovenotes-test/kit/playwright';
+import { importAttachment } from '@lovenotes-test/kit/utils/attachment';
+import { locateToolbar } from '@lovenotes-test/kit/utils/editor';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import {
   confirmExperimentalPrompt,
   openEditorSetting,
   openExperimentalFeaturesPanel,
-} from '@affine-test/kit/utils/setting';
+} from '@lovenotes-test/kit/utils/setting';
 import type { Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 
@@ -51,7 +51,7 @@ test('attachment preview should be shown', async ({ page }) => {
 
   await importAttachment(page, 'lorem-ipsum.pdf');
 
-  await page.locator('affine-attachment').first().dblclick();
+  await page.locator('lovenotes-attachment').first().dblclick();
 
   const attachmentViewer = page.getByTestId('pdf-viewer');
   await expect(attachmentViewer).toBeVisible();
@@ -89,7 +89,7 @@ test('attachment preview can be expanded', async ({ page }) => {
 
   await importAttachment(page, 'lorem-ipsum.pdf');
 
-  await page.locator('affine-attachment').first().dblclick();
+  await page.locator('lovenotes-attachment').first().dblclick();
 
   const attachmentViewer = page.getByTestId('pdf-viewer');
 
@@ -140,7 +140,7 @@ test('should preview PDF in embed view', async ({ page }) => {
 
   await importAttachment(page, 'lorem-ipsum.pdf');
 
-  const attachment = page.locator('affine-attachment');
+  const attachment = page.locator('lovenotes-attachment');
   await attachment.click();
 
   const toolbar = locateToolbar(page);
@@ -190,8 +190,8 @@ test('should preview PDF in embed view', async ({ page }) => {
     const doc1 = page.locator('.linked-doc-popover').getByText('PDF page');
     await doc1.click();
 
-    const inlineLink = page.locator('affine-reference').nth(0);
-    const inlineTitle = inlineLink.locator('.affine-reference-title');
+    const inlineLink = page.locator('lovenotes-reference').nth(0);
+    const inlineTitle = inlineLink.locator('.lovenotes-reference-title');
 
     await expect(inlineTitle).toHaveText('PDF preview');
 
@@ -220,8 +220,8 @@ test('should preview PDF in embed view', async ({ page }) => {
 
   // Chagnes origin title
   {
-    const inlineLink = page.locator('affine-reference').nth(1);
-    const inlineTitle = inlineLink.locator('.affine-reference-title');
+    const inlineLink = page.locator('lovenotes-reference').nth(1);
+    const inlineTitle = inlineLink.locator('.lovenotes-reference-title');
     await expect(inlineTitle).toHaveText('PDF page');
 
     await title.click();
@@ -246,21 +246,21 @@ test('should sync name in pdf embed view', async ({ page }) => {
 
   await importAttachment(page, 'lorem-ipsum.pdf');
 
-  const attachment = page.locator('affine-attachment');
+  const attachment = page.locator('lovenotes-attachment');
   await attachment.click();
 
   const toolbar = locateToolbar(page);
   await expect(toolbar).toBeVisible();
 
   const attachmentTitle = attachment.locator(
-    '.affine-attachment-content-title-text'
+    '.lovenotes-attachment-content-title-text'
   );
   await expect(attachmentTitle).toHaveText('lorem-ipsum.pdf');
 
   // Renames
   await toolbar.getByRole('button', { name: 'Rename' }).click();
   const input = page
-    .locator('.affine-attachment-rename-input-wrapper')
+    .locator('.lovenotes-attachment-rename-input-wrapper')
     .locator('input');
   await input.fill('What is Lorem Ipsum');
   await page.keyboard.press('Enter');
@@ -303,11 +303,11 @@ test('should enable pointer event in pdf viewer', async ({ page }) => {
 
   await importAttachment(page, 'lorem-ipsum.pdf');
 
-  const attachment = page.locator('affine-attachment');
+  const attachment = page.locator('lovenotes-attachment');
   await attachment.click();
 
   const attachmentSelection = attachment.locator(
-    '.affine-attachment-container.focused'
+    '.lovenotes-attachment-container.focused'
   );
 
   const toolbar = locateToolbar(page);
@@ -317,7 +317,7 @@ test('should enable pointer event in pdf viewer', async ({ page }) => {
   await toolbar.getByLabel('Embed view').click();
 
   await attachment
-    .locator('.affine-attachment-embed-container')
+    .locator('.lovenotes-attachment-embed-container')
     .waitFor({ state: 'visible' });
 
   const rect = await attachment.boundingBox();
@@ -360,7 +360,7 @@ test('should re-render pdf viewer', async ({ page }) => {
 
   await importAttachment(page, 'lorem-ipsum.pdf');
 
-  const attachment = page.locator('affine-attachment');
+  const attachment = page.locator('lovenotes-attachment');
   await attachment.click();
 
   const toolbar = locateToolbar(page);
@@ -401,7 +401,7 @@ test('should display status when an error is thrown in peek view', async ({
 
   await importAttachment(page, 'lorem-ipsum.pdf');
 
-  const attachment = page.locator('affine-attachment');
+  const attachment = page.locator('lovenotes-attachment');
   await attachment.click();
 
   const toolbar = locateToolbar(page);
@@ -434,7 +434,7 @@ test('should display 404 when attachment is not found', async ({ page }) => {
 
   await importAttachment(page, 'lorem-ipsum.pdf');
 
-  const attachment = page.locator('affine-attachment');
+  const attachment = page.locator('lovenotes-attachment');
   await attachment.click();
 
   const toolbar = locateToolbar(page);

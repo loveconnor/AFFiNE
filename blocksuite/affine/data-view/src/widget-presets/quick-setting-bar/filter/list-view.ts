@@ -1,7 +1,7 @@
 import {
   type PopupTarget,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import {
   ArrowDownSmallIcon,
@@ -38,12 +38,12 @@ export class FilterBar extends SignalWatcher(ShadowlessElement) {
       display: flex;
       align-items: center;
       padding: 4px;
-      background-color: var(--affine-white);
+      background-color: var(--lovenotes-white);
     }
 
     .filter-bar-add-filter {
       white-space: nowrap;
-      color: var(--affine-text-secondary-color);
+      color: var(--lovenotes-text-secondary-color);
       padding: 4px 8px;
       display: flex;
       align-items: center;
@@ -70,11 +70,11 @@ export class FilterBar extends SignalWatcher(ShadowlessElement) {
 
     filter-bar:hover::-webkit-scrollbar-thumb {
       border-radius: 16px;
-      background-color: var(--affine-black-30);
+      background-color: var(--lovenotes-black-30);
     }
 
     filter-bar:hover::-webkit-scrollbar-track {
-      //background-color: var(--affine-hover-color);
+      //background-color: var(--lovenotes-hover-color);
     }
   `;
 

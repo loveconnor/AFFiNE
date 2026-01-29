@@ -15,7 +15,7 @@
     "build": "typedoc"
   },
   "dependencies": {
-    "@blocksuite/affine": "workspace:*"
+    "@blocksuite/lovenotes": "workspace:*"
   },
   "version": "0.26.0"
 }

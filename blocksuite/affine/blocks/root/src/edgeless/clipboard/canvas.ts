@@ -2,9 +2,9 @@ import {
   CanvasElementType,
   type ClipboardConfigCreationContext,
   EdgelessCRUDIdentifier,
-} from '@blocksuite/affine-block-surface';
-import type { Connection } from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-block-surface';
+import type { Connection } from '@blocksuite/lovenotes-model';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
 import { Bound, type SerializedXYWH, Vec } from '@blocksuite/global/gfx';
 import type { BlockStdScope } from '@blocksuite/std';
 import type {

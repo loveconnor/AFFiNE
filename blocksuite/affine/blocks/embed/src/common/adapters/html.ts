@@ -1,4 +1,4 @@
-import type { BlockHtmlAdapterMatcher } from '@blocksuite/affine-shared/adapters';
+import type { BlockHtmlAdapterMatcher } from '@blocksuite/lovenotes-shared/adapters';
 
 export function createEmbedBlockHtmlAdapterMatcher(
   flavour: string,
@@ -23,7 +23,7 @@ export function createEmbedBlockHtmlAdapterMatcher(
               type: 'element',
               tagName: 'div',
               properties: {
-                className: ['affine-paragraph-block-container'],
+                className: ['lovenotes-paragraph-block-container'],
               },
               children: [],
             },

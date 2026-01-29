@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import { GroupElementView, GroupInteraction } from './element-view';
@@ -13,7 +13,7 @@ import {
 import { groupToolbarExtension } from './toolbar/config';
 
 export class GroupViewExtension extends ViewExtensionProvider {
-  override name = 'affine-group-gfx';
+  override name = 'lovenotes-group-gfx';
 
   override effect(): void {
     super.effect();

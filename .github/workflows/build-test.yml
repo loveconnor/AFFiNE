@@ -16,11 +16,11 @@ on:
 env:
   DEBUG: napi:*
   BUILD_TYPE: canary
-  APP_NAME: affine
+  APP_NAME: lovenotes
   AFFINE_ENV: dev
   COVERAGE: true
   MACOSX_DEPLOYMENT_TARGET: '11.6'
-  DEPLOYMENT_TYPE: affine
+  DEPLOYMENT_TYPE: lovenotes
   AFFINE_INDEXER_ENABLED: true
 
 concurrency:
@@ -42,7 +42,7 @@ jobs:
       fail-fast: false
       matrix:
         language: ['javascript', 'typescript']
-        project: ['affine', 'blocksuite']
+        project: ['lovenotes', 'blocksuite']
 
     steps:
       - name: Checkout repository
@@ -52,10 +52,10 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-          source-root: ${{ matrix.project == 'affine' && '.' || 'blocksuite' }}
+          source-root: ${{ matrix.project == 'lovenotes' && '.' || 'blocksuite' }}
 
       - name: Delete blocksuite before codeql analysis
-        if: ${{ matrix.project == 'affine' }}
+        if: ${{ matrix.project == 'lovenotes' }}
         run: rm -rf blocksuite
 
       - name: Autobuild
@@ -77,7 +77,7 @@ jobs:
           electron-install: false
           full-cache: true
       - name: Run i18n codegen
-        run: yarn affine @affine/i18n build
+        run: yarn lovenotes @lovenotes/i18n build
       - name: Run ESLint
         run: yarn lint:eslint --max-warnings=0
       - name: Run Prettier
@@ -101,15 +101,15 @@ jobs:
           electron-install: false
           full-cache: true
       - name: Run i18n codegen
-        run: yarn affine @affine/i18n build
+        run: yarn lovenotes @lovenotes/i18n build
       - name: Run Type Check
         run: yarn typecheck
       - name: Run BS Docs Build
         run: |
-          yarn affine bs-docs build
+          yarn lovenotes bs-docs build
           git checkout packages/frontend/i18n/src/i18n-completenesses.json
           git status --porcelain | grep . && {
-            echo "Run 'yarn typecheck && yarn affine bs-docs build' and make sure all changes are submitted"
+            echo "Run 'yarn typecheck && yarn lovenotes bs-docs build' and make sure all changes are submitted"
             exit 1
           } || {
             echo "All changes are submitted"
@@ -131,8 +131,8 @@ jobs:
       - name: Clippy
         run: |
           rustup component add clippy
-          cargo clippy --workspace --exclude affine_server_native --all-targets --all-features -- -D warnings
-          cargo clippy -p affine_server_native --all-targets --all-features -- -D warnings
+          cargo clippy --workspace --exclude lovenotes_server_native --all-targets --all-features -- -D warnings
+          cargo clippy -p lovenotes_server_native --all-targets --all-features -- -D warnings
 
   check-git-status:
     name: Check Git Status
@@ -154,13 +154,13 @@ jobs:
 
       - name: Run Check
         run: |
-          yarn affine init
-          yarn affine gql build
-          yarn affine i18n build
-          yarn affine server genconfig
+          yarn lovenotes init
+          yarn lovenotes gql build
+          yarn lovenotes i18n build
+          yarn lovenotes server genconfig
           git checkout packages/frontend/i18n/src/i18n-completenesses.json
           git status --porcelain | grep . && {
-            echo "Run 'yarn affine init && yarn affine gql build && yarn affine i18n build && yarn affine server genconfig' and make sure all changes are submitted"
+            echo "Run 'yarn lovenotes init && yarn lovenotes gql build && yarn lovenotes i18n build && yarn lovenotes server genconfig' and make sure all changes are submitted"
             exit 1
           } || {
             echo "All changes are submitted"
@@ -197,7 +197,7 @@ jobs:
         run: yarn workspace @blocksuite/playground build
 
       - name: Run playwright tests
-        run: yarn workspace @affine-test/blocksuite test --forbid-only --shard=${{ matrix.shard }}/${{ strategy.job-total }}
+        run: yarn workspace @lovenotes-test/blocksuite test --forbid-only --shard=${{ matrix.shard }}/${{ strategy.job-total }}
 
       - name: Upload test results
         if: always()
@@ -231,7 +231,7 @@ jobs:
       - name: Run playwright tests
         env:
           BROWSER: ${{ matrix.browser }}
-        run: yarn workspace @affine-test/blocksuite test "cross-platform/" --forbid-only --shard=${{ matrix.shard }}/${{ strategy.job-total }}
+        run: yarn workspace @lovenotes-test/blocksuite test "cross-platform/" --forbid-only --shard=${{ matrix.shard }}/${{ strategy.job-total }}
 
       - name: Upload test results
         if: always()
@@ -263,7 +263,7 @@ jobs:
           full-cache: true
 
       - name: Run playwright tests
-        run: yarn affine @affine-test/affine-local e2e --forbid-only --shard=${{ matrix.shard }}/${{ strategy.job-total }}
+        run: yarn lovenotes @lovenotes-test/lovenotes-local e2e --forbid-only --shard=${{ matrix.shard }}/${{ strategy.job-total }}
 
       - name: Upload test results
         if: always()
@@ -293,7 +293,7 @@ jobs:
           full-cache: true
 
       - name: Run playwright tests
-        run: yarn affine @affine-test/affine-mobile e2e --forbid-only --shard=${{ matrix.shard }}/${{ strategy.job-total }}
+        run: yarn lovenotes @lovenotes-test/lovenotes-mobile e2e --forbid-only --shard=${{ matrix.shard }}/${{ strategy.job-total }}
 
       - name: Upload test results
         if: always()
@@ -323,10 +323,10 @@ jobs:
           playwright-install: true
           full-cache: true
 
-      - name: Download affine.linux-x64-gnu.node
+      - name: Download lovenotes.linux-x64-gnu.node
         uses: actions/download-artifact@v4
         with:
-          name: affine.linux-x64-gnu.node
+          name: lovenotes.linux-x64-gnu.node
           path: ./packages/frontend/native
 
       - name: Unit Test
@@ -338,11 +338,11 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./.coverage/store/lcov.info
           flags: unittest
-          name: affine
+          name: lovenotes
           fail_ci_if_error: false
 
   build-native:
-    name: Build AFFiNE native (${{ matrix.spec.target }})
+    name: Build LoveNotes native (${{ matrix.spec.target }})
     runs-on: ${{ matrix.spec.os }}
     env:
       CARGO_PROFILE_RELEASE_DEBUG: '1'
@@ -359,7 +359,7 @@ jobs:
       - name: Setup Node.js
         uses: ./.github/actions/setup-node
         with:
-          extra-flags: workspaces focus @affine/native
+          extra-flags: workspaces focus @lovenotes/native
           electron-install: false
       - name: Setup filename
         id: filename
@@ -367,12 +367,12 @@ jobs:
         shell: bash
         run: |
           export PLATFORM_ARCH_ABI=$(node -e "console.log(require('@napi-rs/cli').parseTriple('${{ matrix.spec.target }}').platformArchABI)")
-          echo "filename=affine.$PLATFORM_ARCH_ABI.node" >> "$GITHUB_OUTPUT"
-      - name: Build AFFiNE native
+          echo "filename=lovenotes.$PLATFORM_ARCH_ABI.node" >> "$GITHUB_OUTPUT"
+      - name: Build LoveNotes native
         uses: ./.github/actions/build-rust
         with:
           target: ${{ matrix.spec.target }}
-          package: '@affine/native'
+          package: '@lovenotes/native'
       - name: Upload ${{ steps.filename.outputs.filename }}
         uses: actions/upload-artifact@v4
         if: always()
@@ -384,7 +384,7 @@ jobs:
   # Split Windows build because it's too slow
   # and other ci jobs required linux native
   build-windows-native:
-    name: Build AFFiNE native (${{ matrix.spec.target }})
+    name: Build LoveNotes native (${{ matrix.spec.target }})
     runs-on: ${{ matrix.spec.os }}
     env:
       CARGO_PROFILE_RELEASE_DEBUG: '1'
@@ -408,7 +408,7 @@ jobs:
       - name: Setup Node.js
         uses: ./.github/actions/setup-node
         with:
-          extra-flags: workspaces focus @affine/native
+          extra-flags: workspaces focus @lovenotes/native
           electron-install: false
       - name: Setup filename
         id: filename
@@ -416,12 +416,12 @@ jobs:
         shell: bash
         run: |
           export PLATFORM_ARCH_ABI=$(node -e "console.log(require('@napi-rs/cli').parseTriple('${{ matrix.spec.target }}').platformArchABI)")
-          echo "filename=affine.$PLATFORM_ARCH_ABI.node" >> "$GITHUB_OUTPUT"
-      - name: Build AFFiNE native
+          echo "filename=lovenotes.$PLATFORM_ARCH_ABI.node" >> "$GITHUB_OUTPUT"
+      - name: Build LoveNotes native
         uses: ./.github/actions/build-rust
         with:
           target: ${{ matrix.spec.target }}
-          package: '@affine/native'
+          package: '@lovenotes/native'
       - name: Upload ${{ steps.filename.outputs.filename }}
         uses: actions/upload-artifact@v4
         if: always()
@@ -440,13 +440,13 @@ jobs:
       - name: Setup Node.js
         uses: ./.github/actions/setup-node
         with:
-          extra-flags: workspaces focus @affine/server-native
+          extra-flags: workspaces focus @lovenotes/server-native
           electron-install: false
       - name: Build Rust
         uses: ./.github/actions/build-rust
         with:
           target: 'x86_64-unknown-linux-gnu'
-          package: '@affine/server-native'
+          package: '@lovenotes/server-native'
       - name: Upload server-native.node
         uses: actions/upload-artifact@v4
         if: always()
@@ -456,7 +456,7 @@ jobs:
           if-no-files-found: error
 
   build-electron-renderer:
-    name: Build @affine/electron renderer
+    name: Build @lovenotes/electron renderer
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -466,7 +466,7 @@ jobs:
           electron-install: false
           full-cache: true
       - name: Build Electron renderer
-        run: yarn affine @affine/electron-renderer build
+        run: yarn lovenotes @lovenotes/electron-renderer build
         env:
           DISTRIBUTION: desktop
       - name: zip web
@@ -489,15 +489,15 @@ jobs:
       - name: Setup Node.js
         uses: ./.github/actions/setup-node
         with:
-          extra-flags: workspaces focus @affine-tools/cli @affine/monorepo @affine/native
+          extra-flags: workspaces focus @lovenotes-tools/cli @lovenotes/monorepo @lovenotes/native
           electron-install: false
-      - name: Download affine.linux-x64-gnu.node
+      - name: Download lovenotes.linux-x64-gnu.node
         uses: actions/download-artifact@v4
         with:
-          name: affine.linux-x64-gnu.node
+          name: lovenotes.linux-x64-gnu.node
           path: ./packages/frontend/native
       - name: Unit Test
-        run: yarn affine @affine/native test
+        run: yarn lovenotes @lovenotes/native test
 
   server-test:
     name: Server Test
@@ -511,13 +511,13 @@ jobs:
         total_nodes: [4]
     env:
       NODE_ENV: test
-      DATABASE_URL: postgresql://affine:affine@localhost:5432/affine
+      DATABASE_URL: postgresql://lovenotes:lovenotes@localhost:5432/lovenotes
       REDIS_SERVER_HOST: localhost
     services:
       postgres:
         image: pgvector/pgvector:pg16
         env:
-          POSTGRES_PASSWORD: affine
+          POSTGRES_PASSWORD: lovenotes
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -557,7 +557,7 @@ jobs:
         uses: ./.github/actions/server-test-env
 
       - name: Run server tests
-        run: yarn affine @affine/server test:coverage --forbid-only
+        run: yarn lovenotes @lovenotes/server test:coverage --forbid-only
         env:
           CARGO_TARGET_DIR: '${{ github.workspace }}/target'
           CI_NODE_INDEX: ${{ matrix.node_index }}
@@ -569,7 +569,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./packages/backend/server/.coverage/lcov.info
           flags: server-test
-          name: affine
+          name: lovenotes
           fail_ci_if_error: false
 
   server-test-elasticsearch:
@@ -581,7 +581,7 @@ jobs:
       fail-fast: false
     env:
       NODE_ENV: test
-      DATABASE_URL: postgresql://affine:affine@localhost:5432/affine
+      DATABASE_URL: postgresql://lovenotes:lovenotes@localhost:5432/lovenotes
       REDIS_SERVER_HOST: localhost
       AFFINE_INDEXER_SEARCH_PROVIDER: elasticsearch
       AFFINE_INDEXER_SEARCH_ENDPOINT: http://localhost:9200
@@ -589,7 +589,7 @@ jobs:
       postgres:
         image: pgvector/pgvector:pg16
         env:
-          POSTGRES_PASSWORD: affine
+          POSTGRES_PASSWORD: lovenotes
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -639,7 +639,7 @@ jobs:
         uses: ./.github/actions/server-test-env
 
       - name: Run server tests with elasticsearch only
-        run: yarn affine @affine/server test:coverage "**/*/*elasticsearch.spec.ts" --forbid-only
+        run: yarn lovenotes @lovenotes/server test:coverage "**/*/*elasticsearch.spec.ts" --forbid-only
         env:
           CARGO_TARGET_DIR: '${{ github.workspace }}/target'
           CI_NODE_INDEX: ${{ matrix.node_index }}
@@ -651,7 +651,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./packages/backend/server/.coverage/lcov.info
           flags: server-test
-          name: affine
+          name: lovenotes
           fail_ci_if_error: false
 
   server-e2e-test:
@@ -662,13 +662,13 @@ jobs:
       - build-server-native
     env:
       NODE_ENV: test
-      DATABASE_URL: postgresql://affine:affine@localhost:5432/affine
+      DATABASE_URL: postgresql://lovenotes:lovenotes@localhost:5432/lovenotes
       REDIS_SERVER_HOST: localhost
     services:
       postgres:
         image: pgvector/pgvector:pg16
         env:
-          POSTGRES_PASSWORD: affine
+          POSTGRES_PASSWORD: lovenotes
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -703,7 +703,7 @@ jobs:
         uses: ./.github/actions/server-test-env
 
       - name: Run server tests
-        run: yarn affine @affine/server e2e:coverage --forbid-only
+        run: yarn lovenotes @lovenotes/server e2e:coverage --forbid-only
 
       - name: Upload server test coverage results
         uses: codecov/codecov-action@v5
@@ -711,7 +711,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./packages/backend/server/.coverage/lcov.info
           flags: server-test
-          name: affine
+          name: lovenotes
           fail_ci_if_error: false
 
   miri:
@@ -808,7 +808,7 @@ jobs:
       - name: Setup Rust
         uses: ./.github/actions/build-rust
         with:
-          package: 'affine'
+          package: 'lovenotes'
           no-build: 'true'
 
       - name: Install latest nextest release
@@ -817,7 +817,7 @@ jobs:
           tool: nextest@0.9.98
 
       - name: Run tests
-        run: cargo nextest run --workspace --exclude affine_server_native --features use-as-lib --release --no-fail-fast
+        run: cargo nextest run --workspace --exclude lovenotes_server_native --features use-as-lib --release --no-fail-fast
 
   copilot-api-test:
     name: Server Copilot Api Test
@@ -827,13 +827,13 @@ jobs:
     env:
       NODE_ENV: test
       DISTRIBUTION: web
-      DATABASE_URL: postgresql://affine:affine@localhost:5432/affine
+      DATABASE_URL: postgresql://lovenotes:lovenotes@localhost:5432/lovenotes
       REDIS_SERVER_HOST: localhost
     services:
       postgres:
         image: pgvector/pgvector:pg16
         env:
-          POSTGRES_PASSWORD: affine
+          POSTGRES_PASSWORD: lovenotes
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -898,7 +898,7 @@ jobs:
 
       - name: Run server tests
         if: ${{ steps.check-blocksuite-update.outputs.skip != 'true' || steps.apifilter.outputs.changed == 'true' }}
-        run: yarn affine @affine/server test:copilot:coverage --forbid-only
+        run: yarn lovenotes @lovenotes/server test:copilot:coverage --forbid-only
         env:
           CARGO_TARGET_DIR: '${{ github.workspace }}/target'
 
@@ -909,7 +909,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./packages/backend/server/.coverage/lcov.info
           flags: server-test
-          name: affine
+          name: lovenotes
           fail_ci_if_error: false
 
   copilot-e2e-test:
@@ -917,10 +917,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DISTRIBUTION: web
-      DATABASE_URL: postgresql://affine:affine@localhost:5432/affine
+      DATABASE_URL: postgresql://lovenotes:lovenotes@localhost:5432/lovenotes
       IN_CI_TEST: true
       REDIS_SERVER_HOST: localhost
-      DEPLOYMENT_TYPE: affine
+      DEPLOYMENT_TYPE: lovenotes
     strategy:
       fail-fast: false
       matrix:
@@ -932,7 +932,7 @@ jobs:
       postgres:
         image: pgvector/pgvector:pg16
         env:
-          POSTGRES_PASSWORD: affine
+          POSTGRES_PASSWORD: lovenotes
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -971,7 +971,7 @@ jobs:
               - 'packages/backend/server/tests/copilot.*'
               - 'packages/frontend/core/src/blocksuite/ai/**'
               - 'packages/frontend/core/src/modules/workspace-indexer-embedding/**'
-              - 'tests/affine-cloud-copilot/**'
+              - 'tests/lovenotes-cloud-copilot/**'
 
       - name: Setup Node.js
         if: ${{ steps.check-blocksuite-update.outputs.skip != 'true' || steps.e2efilter.outputs.changed == 'true' }}
@@ -999,7 +999,7 @@ jobs:
         if: ${{ steps.check-blocksuite-update.outputs.skip != 'true' || steps.e2efilter.outputs.changed == 'true' }}
         uses: ./.github/actions/copilot-test
         with:
-          script: yarn affine @affine-test/affine-cloud-copilot e2e --forbid-only --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+          script: yarn lovenotes @lovenotes-test/lovenotes-cloud-copilot e2e --forbid-only --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
   cloud-e2e-test:
     name: ${{ matrix.tests.name }}
@@ -1009,7 +1009,7 @@ jobs:
       - build-native
     env:
       DISTRIBUTION: web
-      DATABASE_URL: postgresql://affine:affine@localhost:5432/affine
+      DATABASE_URL: postgresql://lovenotes:lovenotes@localhost:5432/lovenotes
       REDIS_SERVER_HOST: localhost
       IN_CI_TEST: true
     strategy:
@@ -1018,33 +1018,33 @@ jobs:
         tests:
           - name: 'Cloud E2E Test 1/10'
             shard: 1
-            script: yarn affine @affine-test/affine-cloud e2e --forbid-only --shard=1/10
+            script: yarn lovenotes @lovenotes-test/lovenotes-cloud e2e --forbid-only --shard=1/10
           - name: 'Cloud E2E Test 2/10'
             shard: 2
-            script: yarn affine @affine-test/affine-cloud e2e --forbid-only --shard=2/10
+            script: yarn lovenotes @lovenotes-test/lovenotes-cloud e2e --forbid-only --shard=2/10
           - name: 'Cloud E2E Test 3/10'
             shard: 3
-            script: yarn affine @affine-test/affine-cloud e2e --forbid-only --shard=3/10
+            script: yarn lovenotes @lovenotes-test/lovenotes-cloud e2e --forbid-only --shard=3/10
           - name: 'Cloud E2E Test 4/10'
             shard: 4
-            script: yarn affine @affine-test/affine-cloud e2e --forbid-only --shard=4/10
+            script: yarn lovenotes @lovenotes-test/lovenotes-cloud e2e --forbid-only --shard=4/10
           - name: 'Cloud E2E Test 5/10'
             shard: 5
-            script: yarn affine @affine-test/affine-cloud e2e --forbid-only --shard=5/10
+            script: yarn lovenotes @lovenotes-test/lovenotes-cloud e2e --forbid-only --shard=5/10
           - name: 'Cloud Desktop E2E Test'
             shard: desktop
             script: |
-              yarn affine @affine/electron build:dev
+              yarn lovenotes @lovenotes/electron build:dev
               # Workaround for Electron apps failing to initialize on Ubuntu 24.04 due to AppArmor restrictions
               # Disables unprivileged user namespaces restriction to allow Electron apps to run
               # Reference: https://github.com/electron/electron/issues/42510
               sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
-              xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- yarn affine @affine-test/affine-desktop-cloud e2e
+              xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- yarn lovenotes @lovenotes-test/lovenotes-desktop-cloud e2e
     services:
       postgres:
         image: pgvector/pgvector:pg16
         env:
-          POSTGRES_PASSWORD: affine
+          POSTGRES_PASSWORD: lovenotes
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -1080,10 +1080,10 @@ jobs:
           name: server-native.node
           path: ./packages/backend/native
 
-      - name: Download affine.linux-x64-gnu.node
+      - name: Download lovenotes.linux-x64-gnu.node
         uses: actions/download-artifact@v4
         with:
-          name: affine.linux-x64-gnu.node
+          name: lovenotes.linux-x64-gnu.node
           path: ./packages/frontend/native
 
       - name: Prepare Server Test Environment
@@ -1147,7 +1147,7 @@ jobs:
         uses: ./.github/actions/setup-node
         timeout-minutes: 10
         with:
-          extra-flags: workspaces focus @affine/electron @affine/monorepo @affine-test/affine-desktop @affine/nbstore @toeverything/infra
+          extra-flags: workspaces focus @lovenotes/electron @lovenotes/monorepo @lovenotes-test/lovenotes-desktop @lovenotes/nbstore @toeverything/infra
           playwright-install: true
           hard-link-nm: false
           enableScripts: false
@@ -1157,7 +1157,7 @@ jobs:
         shell: bash
         run: |
           export PLATFORM_ARCH_ABI=$(node -e "console.log(require('@napi-rs/cli').parseTriple('${{ matrix.spec.target }}').platformArchABI)")
-          echo "filename=affine.$PLATFORM_ARCH_ABI.node" >> "$GITHUB_OUTPUT"
+          echo "filename=lovenotes.$PLATFORM_ARCH_ABI.node" >> "$GITHUB_OUTPUT"
 
       - name: Download ${{ steps.filename.outputs.filename }}
         uses: actions/download-artifact@v4
@@ -1168,7 +1168,7 @@ jobs:
       - name: Run unit tests
         if: ${{ matrix.spec.test }}
         shell: bash
-        run: yarn affine @affine/electron vitest
+        run: yarn lovenotes @lovenotes/electron vitest
 
       - name: Download web artifact
         uses: ./.github/actions/download-web
@@ -1176,7 +1176,7 @@ jobs:
           path: packages/frontend/apps/electron/resources/web-static
 
       - name: Build Desktop Layers
-        run: yarn affine @affine/electron build
+        run: yarn lovenotes @lovenotes/electron build
 
       - name: Run desktop tests
         if: ${{ matrix.spec.os == 'ubuntu-latest' }}
@@ -1185,11 +1185,11 @@ jobs:
           # Disables unprivileged user namespaces restriction to allow Electron apps to run
           # Reference: https://github.com/electron/electron/issues/42510
           sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
-          xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- yarn affine @affine-test/affine-desktop e2e
+          xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- yarn lovenotes @lovenotes-test/lovenotes-desktop e2e
 
       - name: Run desktop tests
         if: ${{ matrix.spec.test && matrix.spec.os != 'ubuntu-latest' }}
-        run: yarn affine @affine-test/affine-desktop e2e
+        run: yarn lovenotes @lovenotes-test/lovenotes-desktop e2e
 
       - name: Upload test results
         if: always()
@@ -1243,7 +1243,7 @@ jobs:
         uses: ./.github/actions/setup-node
         timeout-minutes: 10
         with:
-          extra-flags: workspaces focus @affine/electron @affine/monorepo @affine-test/affine-desktop @affine/nbstore @toeverything/infra
+          extra-flags: workspaces focus @lovenotes/electron @lovenotes/monorepo @lovenotes-test/lovenotes-desktop @lovenotes/nbstore @toeverything/infra
           playwright-install: true
           hard-link-nm: false
           enableScripts: false
@@ -1253,7 +1253,7 @@ jobs:
         shell: bash
         run: |
           export PLATFORM_ARCH_ABI=$(node -e "console.log(require('@napi-rs/cli').parseTriple('${{ matrix.spec.target }}').platformArchABI)")
-          echo "filename=affine.$PLATFORM_ARCH_ABI.node" >> "$GITHUB_OUTPUT"
+          echo "filename=lovenotes.$PLATFORM_ARCH_ABI.node" >> "$GITHUB_OUTPUT"
 
       - name: Download ${{ steps.filename.outputs.filename }}
         uses: actions/download-artifact@v4
@@ -1267,7 +1267,7 @@ jobs:
           path: packages/frontend/apps/electron/resources/web-static
 
       - name: Build Desktop Layers
-        run: yarn affine @affine/electron build
+        run: yarn lovenotes @lovenotes/electron build
 
       - name: Make bundle (macOS)
         if: ${{ matrix.spec.target == 'aarch64-apple-darwin' }}
@@ -1275,7 +1275,7 @@ jobs:
           SKIP_BUNDLE: true
           SKIP_WEB_BUILD: true
           HOIST_NODE_MODULES: 1
-        run: yarn affine @affine/electron package --platform=darwin --arch=arm64
+        run: yarn lovenotes @lovenotes/electron package --platform=darwin --arch=arm64
 
       - name: Make Bundle (Windows)
         if: ${{ matrix.spec.target == 'x86_64-pc-windows-msvc' }}
@@ -1285,9 +1285,9 @@ jobs:
           SKIP_WEB_BUILD: true
           HOIST_NODE_MODULES: 1
         run: |
-          rm -rf packages/frontend/apps/electron/node_modules/@affine/nbstore/node_modules/@blocksuite/affine/node_modules
-          rm -rf packages/frontend/apps/electron/node_modules/@affine/native/node_modules
-          yarn affine @affine/electron package --platform=win32 --arch=x64
+          rm -rf packages/frontend/apps/electron/node_modules/@lovenotes/nbstore/node_modules/@blocksuite/lovenotes/node_modules
+          rm -rf packages/frontend/apps/electron/node_modules/@lovenotes/native/node_modules
+          yarn lovenotes @lovenotes/electron package --platform=win32 --arch=x64
 
       - name: Make Bundle (Linux)
         run: |
@@ -1297,7 +1297,7 @@ jobs:
           flatpak update
           # some flatpak deps need git protocol.file.allow
           git config --global protocol.file.allow always
-          yarn affine @affine/electron make --platform=linux --arch=x64
+          yarn lovenotes @lovenotes/electron make --platform=linux --arch=x64
         if: ${{ matrix.spec.target == 'x86_64-unknown-linux-gnu' }}
         env:
           SKIP_WEB_BUILD: 1
@@ -1306,7 +1306,7 @@ jobs:
       - name: Output check
         if: ${{ matrix.spec.os == 'macos-latest' && matrix.spec.arch == 'arm64' }}
         run: |
-          yarn affine @affine/electron node ./scripts/macos-arm64-output-check.ts
+          yarn lovenotes @lovenotes/electron node ./scripts/macos-arm64-output-check.ts
 
   test-done:
     needs:

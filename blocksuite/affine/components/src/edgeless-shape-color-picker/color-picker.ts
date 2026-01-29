@@ -7,12 +7,12 @@ import {
   resolveColor,
   type ShapeProps,
   type StrokeStyle,
-} from '@blocksuite/affine-model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-model';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import {
   type ColorEvent,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { batch, signal } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';

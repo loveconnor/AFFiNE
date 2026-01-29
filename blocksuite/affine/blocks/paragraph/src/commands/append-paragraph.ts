@@ -1,5 +1,5 @@
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import { getLastNoteBlock } from '@blocksuite/affine-shared/utils';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import { getLastNoteBlock } from '@blocksuite/lovenotes-shared/utils';
 import type { Command } from '@blocksuite/std';
 import { Text } from '@blocksuite/store';
 
@@ -17,10 +17,10 @@ export const appendParagraphCommand: Command<{ text?: string }> = (
   const note = getLastNoteBlock(store);
   let noteId = note?.id;
   if (!noteId) {
-    noteId = store.addBlock('affine:note', {}, store.root.id);
+    noteId = store.addBlock('lovenotes:note', {}, store.root.id);
   }
   const id = store.addBlock(
-    'affine:paragraph',
+    'lovenotes:paragraph',
     { text: new Text(text) },
     noteId
   );

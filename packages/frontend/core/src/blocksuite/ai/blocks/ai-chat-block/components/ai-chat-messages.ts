@@ -1,9 +1,9 @@
-import type { TextRendererOptions } from '@affine/core/blocksuite/ai/components/text-renderer';
-import type { EditorHost } from '@blocksuite/affine/std';
+import type { TextRendererOptions } from '@lovenotes/core/blocksuite/ai/components/text-renderer';
+import type { EditorHost } from '@blocksuite/lovenotes/std';
 import {
   NotificationProvider,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
@@ -75,8 +75,8 @@ export class AIChatBlockMessage extends LitElement {
       .host=${this.host}
       .state=${this.state}
       .extensions=${this.textRendererOptions.extensions}
-      .affineFeatureFlagService=${this.textRendererOptions
-        .affineFeatureFlagService}
+      .lovenotesFeatureFlagService=${this.textRendererOptions
+        .lovenotesFeatureFlagService}
       .notificationService=${notificationService}
       .independentMode=${false}
       .theme=${this.host.std.get(ThemeProvider).app$}
@@ -88,8 +88,8 @@ export class AIChatBlockMessage extends LitElement {
       .text=${text}
       .state=${this.state}
       .extensions=${this.textRendererOptions.extensions}
-      .affineFeatureFlagService=${this.textRendererOptions
-        .affineFeatureFlagService}
+      .lovenotesFeatureFlagService=${this.textRendererOptions
+        .lovenotesFeatureFlagService}
       .theme=${this.host.std.get(ThemeProvider).app$}
     ></chat-content-rich-text>`;
   }

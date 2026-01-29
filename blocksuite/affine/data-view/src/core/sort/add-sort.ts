@@ -2,7 +2,7 @@ import {
   menu,
   popMenu,
   type PopupTarget,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import type { Middleware } from '@floating-ui/dom';
 
 import { renderUniLit } from '../utils/index.js';

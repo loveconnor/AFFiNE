@@ -1,4 +1,4 @@
-import type { EmbedIframeBlockProps } from '@blocksuite/affine-model';
+import type { EmbedIframeBlockProps } from '@blocksuite/lovenotes-model';
 import type { Command } from '@blocksuite/std';
 import type { BlockModel } from '@blocksuite/store';
 
@@ -26,9 +26,9 @@ export const insertEmptyEmbedIframeCommand: Command<
       : selectedModels[selectedModels.length - 1];
 
   const embedIframeBlockProps: Partial<EmbedIframeBlockProps> & {
-    flavour: 'affine:embed-iframe';
+    flavour: 'lovenotes:embed-iframe';
   } = {
-    flavour: 'affine:embed-iframe',
+    flavour: 'lovenotes:embed-iframe',
   };
 
   const result = std.store.addSiblingBlocks(

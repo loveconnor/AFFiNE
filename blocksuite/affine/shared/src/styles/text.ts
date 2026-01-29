@@ -1,9 +1,9 @@
 import type { StyleInfo } from 'lit/directives/style-map.js';
 
-import type { AffineTextAttributes } from '../types';
+import type { LoveNotesTextAttributes } from '../types';
 
-export function affineTextStyles(
-  props: AffineTextAttributes,
+export function lovenotesTextStyles(
+  props: LoveNotesTextAttributes,
   override?: Readonly<StyleInfo>
 ): StyleInfo {
   let textDecorations = '';
@@ -17,11 +17,11 @@ export function affineTextStyles(
   let inlineCodeStyle = {};
   if (props.code) {
     inlineCodeStyle = {
-      'font-family': 'var(--affine-font-code-family)',
-      background: 'var(--affine-background-code-block)',
-      border: '1px solid var(--affine-border-color)',
+      'font-family': 'var(--lovenotes-font-code-family)',
+      background: 'var(--lovenotes-background-code-block)',
+      border: '1px solid var(--lovenotes-border-color)',
       'border-radius': '4px',
-      color: 'var(--affine-text-primary-color)',
+      color: 'var(--lovenotes-text-primary-color)',
       'font-variant-ligatures': 'none',
       'vertical-align': 'bottom',
       'line-height': 'inherit',

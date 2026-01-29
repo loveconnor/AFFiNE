@@ -1,8 +1,8 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { useMutation } from '@affine/admin/use-mutation';
-import { notify } from '@affine/component';
-import type { UserFriendlyError } from '@affine/error';
-import { sendTestEmailMutation } from '@affine/graphql';
+import { Button } from '@lovenotes/admin/components/ui/button';
+import { useMutation } from '@lovenotes/admin/use-mutation';
+import { notify } from '@lovenotes/component';
+import type { UserFriendlyError } from '@lovenotes/error';
+import { sendTestEmailMutation } from '@lovenotes/graphql';
 import { useCallback } from 'react';
 
 import type { AppConfig } from '../config';

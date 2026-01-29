@@ -1,5 +1,5 @@
-import { EdgelessCRUDExtension } from '@blocksuite/affine-block-surface';
-import { type SurfaceRefProps } from '@blocksuite/affine-model';
+import { EdgelessCRUDExtension } from '@blocksuite/lovenotes-block-surface';
+import { type SurfaceRefProps } from '@blocksuite/lovenotes-model';
 import type { Command } from '@blocksuite/std';
 import { GfxPrimitiveElementModel } from '@blocksuite/std/gfx';
 import type { BlockModel } from '@blocksuite/store';
@@ -24,9 +24,9 @@ export const insertSurfaceRefBlockCommand: Command<
       : selectedModels[selectedModels.length - 1];
 
   const surfaceRefProps: Partial<SurfaceRefProps> & {
-    flavour: 'affine:surface-ref';
+    flavour: 'lovenotes:surface-ref';
   } = {
-    flavour: 'affine:surface-ref',
+    flavour: 'lovenotes:surface-ref',
     reference,
   };
 

@@ -1,5 +1,5 @@
-import { ViewExtensionManager } from '@blocksuite/affine/ext-loader';
-import { getInternalViewExtensions } from '@blocksuite/affine/extensions/view';
+import { ViewExtensionManager } from '@blocksuite/lovenotes/ext-loader';
+import { getInternalViewExtensions } from '@blocksuite/lovenotes/extensions/view';
 
 const manager = new ViewExtensionManager(getInternalViewExtensions());
 

@@ -1,10 +1,10 @@
-import { ImageBlockSchema } from '@blocksuite/affine-model';
+import { ImageBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   FetchUtils,
   FULL_FILE_PATH_KEY,
   getImageFullPath,
-} from '@blocksuite/affine-shared/adapters';
-import { getFilenameFromContentDisposition } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/adapters';
+import { getFilenameFromContentDisposition } from '@blocksuite/lovenotes-shared/utils';
 import { sha } from '@blocksuite/global/utils';
 import {
   type AssetsManager,

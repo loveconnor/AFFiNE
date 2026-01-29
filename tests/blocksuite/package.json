@@ -1,13 +1,13 @@
 {
-  "name": "@affine-test/blocksuite",
+  "name": "@lovenotes-test/blocksuite",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "yarn playwright test"
   },
   "dependencies": {
-    "@blocksuite/affine": "workspace:*",
     "@blocksuite/integration-test": "workspace:*",
+    "@blocksuite/lovenotes": "workspace:*",
     "@playwright/test": "=1.52.0",
     "@toeverything/theme": "^1.1.23",
     "json-stable-stringify": "^1.2.1",

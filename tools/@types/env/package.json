@@ -1,11 +1,11 @@
 {
-  "name": "@types/affine__env",
+  "name": "@types/lovenotes__env",
   "private": true,
   "types": "./__all.d.ts",
   "type": "module",
   "dependencies": {
-    "@affine/env": "workspace:*",
-    "@blocksuite/affine": "workspace:*"
+    "@blocksuite/lovenotes": "workspace:*",
+    "@lovenotes/env": "workspace:*"
   },
   "version": "0.26.0"
 }

@@ -1,7 +1,7 @@
-import { selectBlock } from '@blocksuite/affine-block-note';
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
-import type { LatexBlockModel } from '@blocksuite/affine-model';
+import { selectBlock } from '@blocksuite/lovenotes-block-note';
+import { CaptionedBlockComponent } from '@blocksuite/lovenotes-components/caption';
+import { createLitPortal } from '@blocksuite/lovenotes-components/portal';
+import type { LatexBlockModel } from '@blocksuite/lovenotes-model';
 import { BlockSelection } from '@blocksuite/std';
 import type { Placement } from '@floating-ui/dom';
 import { effect } from '@preact/signals-core';
@@ -134,7 +134,7 @@ export class LatexBlockComponent extends CaptionedBlockComponent<LatexBlockModel
       abortController: this._editorAbortController,
       shadowDom: false,
       portalStyles: {
-        zIndex: 'var(--affine-z-index-popover)',
+        zIndex: 'var(--lovenotes-z-index-popover)',
       },
     });
 
@@ -153,6 +153,6 @@ export class LatexBlockComponent extends CaptionedBlockComponent<LatexBlockModel
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-latex': LatexBlockComponent;
+    'lovenotes-latex': LatexBlockComponent;
   }
 }

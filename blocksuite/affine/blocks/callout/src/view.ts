@@ -1,8 +1,8 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { SlashMenuConfigExtension } from '@blocksuite/affine-widget-slash-menu';
+} from '@blocksuite/lovenotes-ext-loader';
+import { SlashMenuConfigExtension } from '@blocksuite/lovenotes-widget-slash-menu';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 
@@ -12,7 +12,7 @@ import { createBuiltinToolbarConfigExtension } from './configs/toolbar';
 import { effects } from './effects';
 
 export class CalloutViewExtension extends ViewExtensionProvider {
-  override name = 'affine-callout-block';
+  override name = 'lovenotes-callout-block';
 
   override effect() {
     super.effect();
@@ -22,11 +22,11 @@ export class CalloutViewExtension extends ViewExtensionProvider {
   override setup(context: ViewExtensionContext) {
     super.setup(context);
     context.register([
-      FlavourExtension('affine:callout'),
-      BlockViewExtension('affine:callout', literal`affine-callout`),
+      FlavourExtension('lovenotes:callout'),
+      BlockViewExtension('lovenotes:callout', literal`lovenotes-callout`),
       CalloutKeymapExtension,
-      SlashMenuConfigExtension('affine:callout', calloutSlashMenuConfig),
-      ...createBuiltinToolbarConfigExtension('affine:callout'),
+      SlashMenuConfigExtension('lovenotes:callout', calloutSlashMenuConfig),
+      ...createBuiltinToolbarConfigExtension('lovenotes:callout'),
     ]);
   }
 }

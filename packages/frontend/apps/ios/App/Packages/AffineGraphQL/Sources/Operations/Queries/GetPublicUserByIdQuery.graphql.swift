@@ -18,11 +18,11 @@ public class GetPublicUserByIdQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["id": id] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("publicUserById", PublicUserById?.self, arguments: ["id": .variable("id")]),
     ] }
@@ -33,11 +33,11 @@ public class GetPublicUserByIdQuery: GraphQLQuery {
     /// PublicUserById
     ///
     /// Parent Type: `PublicUserType`
-    public struct PublicUserById: AffineGraphQL.SelectionSet {
+    public struct PublicUserById: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PublicUserType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PublicUserType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", String.self),

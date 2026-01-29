@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-fragment-adapter-panel/view';
+export * from '@blocksuite/lovenotes-fragment-adapter-panel/view';

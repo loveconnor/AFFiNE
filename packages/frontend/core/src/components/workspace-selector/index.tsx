@@ -1,12 +1,12 @@
-import { Menu, type MenuProps } from '@affine/component';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { WorkbenchService } from '@affine/core/modules/workbench';
+import { Menu, type MenuProps } from '@lovenotes/component';
+import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
+import { GlobalContextService } from '@lovenotes/core/modules/global-context';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { track } from '@affine/track';
+} from '@lovenotes/core/modules/workspace';
+import { track } from '@lovenotes/track';
 import {
   useLiveData,
   useServiceOptional,

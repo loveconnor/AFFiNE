@@ -1,7 +1,7 @@
 import {
   type HtmlAST,
   HtmlASTToDeltaExtension,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { Element } from 'hast';
 
 const isElement = (ast: HtmlAST): ast is Element => {

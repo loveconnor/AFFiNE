@@ -2,14 +2,14 @@ import {
   type DropTargetDropEvent,
   type DropTargetOptions,
   toast,
-} from '@affine/component';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import type { Tag } from '@affine/core/modules/tag';
-import { TagService } from '@affine/core/modules/tag';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@lovenotes/component';
+import { GlobalContextService } from '@lovenotes/core/modules/global-context';
+import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
+import type { Tag } from '@lovenotes/core/modules/tag';
+import { TagService } from '@lovenotes/core/modules/tag';
+import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
@@ -88,7 +88,7 @@ export const NavigationPanelTagNode = ({
       dropTarget: {
         at: 'navigation-panel:tag',
       },
-    } satisfies AffineDNDData;
+    } satisfies LoveNotesDNDData;
   }, [location, tagId]);
 
   const handleRename = useCallback(
@@ -104,7 +104,7 @@ export const NavigationPanelTagNode = ({
   );
 
   const handleDropOnTag = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>) => {
+    (data: DropTargetDropEvent<LoveNotesDNDData>) => {
       if (data.treeInstruction?.type === 'make-child' && tagRecord) {
         if (data.source.data.entity?.type === 'doc') {
           tagRecord.tag(data.source.data.entity.id);
@@ -115,7 +115,7 @@ export const NavigationPanelTagNode = ({
             type: data.source.data.entity.type,
           });
         } else {
-          toast(t['com.affine.rootAppSidebar.tag.doc-only']());
+          toast(t['com.lovenotes.rootAppSidebar.tag.doc-only']());
         }
       } else {
         onDrop?.(data);
@@ -139,19 +139,19 @@ export const NavigationPanelTagNode = ({
   );
 
   const handleDropOnPlaceholder = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>) => {
+    (data: DropTargetDropEvent<LoveNotesDNDData>) => {
       if (tagRecord) {
         if (data.source.data.entity?.type === 'doc') {
           tagRecord.tag(data.source.data.entity.id);
         } else {
-          toast(t['com.affine.rootAppSidebar.tag.doc-only']());
+          toast(t['com.lovenotes.rootAppSidebar.tag.doc-only']());
         }
       }
     },
     [t, tagRecord]
   );
 
-  const handleCanDrop = useMemo<DropTargetOptions<AffineDNDData>['canDrop']>(
+  const handleCanDrop = useMemo<DropTargetOptions<LoveNotesDNDData>['canDrop']>(
     () => args => {
       const entityType = args.source.data.entity?.type;
       return args.treeInstruction?.type !== 'make-child'

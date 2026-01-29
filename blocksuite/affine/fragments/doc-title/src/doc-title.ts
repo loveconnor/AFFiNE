@@ -5,9 +5,9 @@ import {
   NoteDisplayMode,
   ParagraphBlockModel,
   type RootBlockModel,
-} from '@blocksuite/affine-model';
-import { focusTextModel, type RichText } from '@blocksuite/affine-rich-text';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel, type RichText } from '@blocksuite/lovenotes-rich-text';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import type { Store } from '@blocksuite/store';
@@ -27,23 +27,23 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
     .doc-icon-container,
     .doc-title-container {
       box-sizing: border-box;
-      font-family: var(--affine-font-family);
-      color: var(--affine-text-primary-color);
+      font-family: var(--lovenotes-font-family);
+      color: var(--lovenotes-text-primary-color);
       outline: none;
       resize: none;
       border: 0;
       width: 100%;
-      max-width: var(--affine-editor-width);
+      max-width: var(--lovenotes-editor-width);
       margin-left: auto;
       margin-right: auto;
       padding: 38px 0;
 
       padding-left: var(
-        --affine-editor-side-padding,
+        --lovenotes-editor-side-padding,
         ${DOC_BLOCK_CHILD_PADDING}px
       );
       padding-right: var(
-        --affine-editor-side-padding,
+        --lovenotes-editor-side-padding,
         ${DOC_BLOCK_CHILD_PADDING}px
       );
     }
@@ -63,7 +63,7 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
 
     .doc-title-container-empty::before {
       content: 'Title';
-      color: var(--affine-placeholder-color);
+      color: var(--lovenotes-placeholder-color);
       position: absolute;
       opacity: 0.5;
       pointer-events: none;
@@ -82,7 +82,7 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
     );
     if (note) return note;
 
-    const noteId = this.doc.addBlock('affine:note', {}, this._rootModel, 0);
+    const noteId = this.doc.addBlock('lovenotes:note', {}, this._rootModel, 0);
     return this.doc.getBlock(noteId)?.model as NoteBlockModel;
   }
 
@@ -99,7 +99,7 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
       if (inlineRange) {
         const rightText = this._rootModel?.props.title.split(inlineRange.index);
         const newFirstParagraphId = this.doc.addBlock(
-          'affine:paragraph',
+          'lovenotes:paragraph',
           { text: rightText },
           this._getOrCreateFirstPageVisibleNote(),
           0
@@ -123,7 +123,7 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
         if (this._std) focusTextModel(this._std, firstText.id);
       } else {
         const newFirstParagraphId = this.doc.addBlock(
-          'affine:paragraph',
+          'lovenotes:paragraph',
           {},
           note,
           0
@@ -153,8 +153,8 @@ export class DocTitle extends WithDisposable(ShadowlessElement) {
 
   private get _viewport() {
     return (
-      this.closest<HTMLElement>('.affine-page-viewport') ??
-      this.closest<HTMLElement>('.affine-edgeless-viewport')
+      this.closest<HTMLElement>('.lovenotes-page-viewport') ??
+      this.closest<HTMLElement>('.lovenotes-edgeless-viewport')
     );
   }
 

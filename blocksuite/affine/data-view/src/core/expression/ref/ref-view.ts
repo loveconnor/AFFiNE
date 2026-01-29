@@ -2,7 +2,7 @@ import {
   menu,
   popFilterableSimpleMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { css, html } from 'lit';
@@ -25,14 +25,14 @@ export class VariableRefView extends WithDisposable(ShadowlessElement) {
     }
 
     variable-ref-view:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
 
     variable-ref-view svg {
       width: 16px;
       height: 16px;
-      fill: var(--affine-icon-color);
-      color: var(--affine-icon-color);
+      fill: var(--lovenotes-icon-color);
+      color: var(--lovenotes-icon-color);
     }
   `;
 

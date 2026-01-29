@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   clickView,
@@ -7,17 +7,17 @@ import {
   locateEditorContainer,
   locateToolbar,
   toViewCoord,
-} from '@affine-test/kit/utils/editor';
+} from '@lovenotes-test/kit/utils/editor';
 import {
   pressBackspace,
   pressEscape,
   selectAllByKeyboard,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/keyboard';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
@@ -58,7 +58,7 @@ test('should update zindex of element when moving it into frame', async ({
   const isNoteAboveFrame = await page.evaluate(point => {
     return !!document
       .elementFromPoint(point[0], point[1])
-      ?.closest('affine-edgeless-note');
+      ?.closest('lovenotes-edgeless-note');
   }, point);
   expect(isNoteAboveFrame).toBe(true);
 });

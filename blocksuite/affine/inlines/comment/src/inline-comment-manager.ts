@@ -1,13 +1,13 @@
-import { getInlineEditorByModel } from '@blocksuite/affine-rich-text';
-import { getSelectedBlocksCommand } from '@blocksuite/affine-shared/commands';
+import { getInlineEditorByModel } from '@blocksuite/lovenotes-rich-text';
+import { getSelectedBlocksCommand } from '@blocksuite/lovenotes-shared/commands';
 import {
   BlockElementCommentManager,
   type CommentId,
   CommentProviderIdentifier,
   findAllCommentedBlocks,
   findAllCommentedElements,
-} from '@blocksuite/affine-shared/services';
-import type { AffineInlineEditor } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-shared/services';
+import type { LoveNotesInlineEditor } from '@blocksuite/lovenotes-shared/types';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import {
   LifeCycleWatcher,
@@ -126,7 +126,7 @@ export class InlineCommentManager extends LifeCycleWatcher {
         .filter(
           (
             pair
-          ): pair is [MakeRequired<BlockModel, 'text'>, AffineInlineEditor] =>
+          ): pair is [MakeRequired<BlockModel, 'text'>, LoveNotesInlineEditor] =>
             !!pair[0].text && !!pair[1]
         )
         .map(([model, inlineEditor]) => {

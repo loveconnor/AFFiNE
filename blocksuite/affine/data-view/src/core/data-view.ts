@@ -1,7 +1,7 @@
 import type {
   DatabaseAllEvents,
   EventTraceFn,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import type { DisposableMember } from '@blocksuite/global/disposable';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { BlockSuiteError } from '@blocksuite/global/exceptions';
@@ -143,10 +143,10 @@ export class DataViewRootUILogic {
   }
 
   render() {
-    return html` <affine-data-view-renderer
+    return html` <lovenotes-data-view-renderer
       ${ref(this._uiRef)}
       .logic="${this}"
-    ></affine-data-view-renderer>`;
+    ></lovenotes-data-view-renderer>`;
   }
 }
 
@@ -154,9 +154,9 @@ export class DataViewRootUI extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = css`
-    ${unsafeCSS(dataViewCommonStyle('affine-data-view-renderer'))}
-    affine-data-view-renderer {
-      background-color: var(--affine-background-primary-color);
+    ${unsafeCSS(dataViewCommonStyle('lovenotes-data-view-renderer'))}
+    lovenotes-data-view-renderer {
+      background-color: var(--lovenotes-background-primary-color);
       display: contents;
     }
   `;
@@ -206,6 +206,6 @@ export class DataViewRootUI extends SignalWatcher(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-data-view-renderer': DataViewRootUI;
+    'lovenotes-data-view-renderer': DataViewRootUI;
   }
 }

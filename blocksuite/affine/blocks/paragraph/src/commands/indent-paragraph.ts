@@ -1,10 +1,10 @@
-import { ListBlockModel, ParagraphBlockModel } from '@blocksuite/affine-model';
-import type { IndentContext } from '@blocksuite/affine-shared/types';
+import { ListBlockModel, ParagraphBlockModel } from '@blocksuite/lovenotes-model';
+import type { IndentContext } from '@blocksuite/lovenotes-shared/types';
 import {
   calculateCollapsedSiblings,
   getNearestHeadingBefore,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { type Command, TextSelection } from '@blocksuite/std';
 
 export const canIndentParagraphCommand: Command<
@@ -56,7 +56,7 @@ export const canIndentParagraphCommand: Command<
       blockId,
       inlineIndex,
       type: 'indent',
-      flavour: 'affine:paragraph',
+      flavour: 'lovenotes:paragraph',
     },
   });
 };
@@ -70,7 +70,7 @@ export const indentParagraphCommand: Command<{
   if (
     !indentContext ||
     indentContext.type !== 'indent' ||
-    indentContext.flavour !== 'affine:paragraph'
+    indentContext.flavour !== 'lovenotes:paragraph'
   ) {
     console.warn(
       'you need to use `canIndentParagraph` command before running `indentParagraph` command'
@@ -133,7 +133,7 @@ export const indentParagraphCommand: Command<{
     }
   }
 
-  // update collapsed state of affine list
+  // update collapsed state of lovenotes list
   if (
     matchModels(previousSibling, [ListBlockModel]) &&
     previousSibling.props.collapsed

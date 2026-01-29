@@ -63,20 +63,20 @@ test(scoped`basic init with external text`, async ({ page }) => {
 
   await page.evaluate(() => {
     const { doc } = window;
-    const rootId = doc.addBlock('affine:page', {
+    const rootId = doc.addBlock('lovenotes:page', {
       title: new window.$blocksuite.store.Text('hello'),
     });
-    const note = doc.addBlock('affine:note', {}, rootId);
+    const note = doc.addBlock('lovenotes:note', {}, rootId);
 
     const text = new window.$blocksuite.store.Text('world');
-    doc.addBlock('affine:paragraph', { text }, note);
+    doc.addBlock('lovenotes:paragraph', { text }, note);
 
     const delta = [
       { insert: 'foo ' },
       { insert: 'bar', attributes: { bold: true } },
     ];
     doc.addBlock(
-      'affine:paragraph',
+      'lovenotes:paragraph',
       {
         text: new window.$blocksuite.store.Text(delta as DeltaInsert[]),
       },
@@ -416,17 +416,17 @@ test('when no note block, click editing area auto add a new note block', async (
   await initEmptyEdgelessState(page);
 
   await switchEditorMode(page);
-  await page.locator('affine-edgeless-note').click({ force: true });
+  await page.locator('lovenotes-edgeless-note').click({ force: true });
   await pressBackspace(page);
   await switchEditorMode(page);
   const edgelessNote = await page.evaluate(() => {
-    return document.querySelector('affine-edgeless-note');
+    return document.querySelector('lovenotes-edgeless-note');
   });
   expect(edgelessNote).toBeNull();
   await click(page, { x: 200, y: 280 });
 
   const pageNote = await page.evaluate(() => {
-    return document.querySelector('affine-note');
+    return document.querySelector('lovenotes-note');
   });
   expect(pageNote).not.toBeNull();
 });

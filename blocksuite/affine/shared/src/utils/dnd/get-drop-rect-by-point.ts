@@ -1,4 +1,4 @@
-import { DatabaseBlockModel } from '@blocksuite/affine-model';
+import { DatabaseBlockModel } from '@blocksuite/lovenotes-model';
 import type { Point } from '@blocksuite/global/gfx';
 import { BLOCK_ID_ATTR } from '@blocksuite/std';
 import type { BlockModel } from '@blocksuite/store';
@@ -71,7 +71,7 @@ export function getDropRectByPoint(
     for (; i < len; i++) {
       e = elements[i];
 
-      if (e.classList.contains('affine-database-block-row-cell-content')) {
+      if (e.classList.contains('lovenotes-database-block-row-cell-content')) {
         const cellRect = getCellRect(e, bounds);
         if (!cellRect) {
           return null;
@@ -80,7 +80,7 @@ export function getDropRectByPoint(
         return result;
       }
 
-      if (e.classList.contains('affine-database-block-row')) {
+      if (e.classList.contains('lovenotes-database-block-row')) {
         e = e.querySelector(ATTR_SELECTOR);
         if (!e) {
           return null;
@@ -98,7 +98,7 @@ export function getDropRectByPoint(
   }
 
   const parent = element.parentElement;
-  if (parent?.classList.contains('affine-database-block-row-cell-content')) {
+  if (parent?.classList.contains('lovenotes-database-block-row-cell-content')) {
     result.flag = DropFlags.Database;
     const cellRect = getCellRect(parent);
     if (!cellRect) {
@@ -115,37 +115,37 @@ export function getDropRectByPoint(
  * Gets the table of the database.
  */
 function getDatabaseBlockTableElement(element: Element) {
-  return element.querySelector('.affine-database-block-table');
+  return element.querySelector('.lovenotes-database-block-table');
 }
 
 /**
  * Gets the column header of the database.
  */
 function getDatabaseBlockColumnHeaderElement(element: Element) {
-  return element.querySelector('.affine-database-column-header');
+  return element.querySelector('.lovenotes-database-column-header');
 }
 
 /**
  * Gets the rows of the database.
  */
 function getDatabaseBlockRowsElement(element: Element) {
-  return element.querySelector('.affine-database-block-rows');
+  return element.querySelector('.lovenotes-database-block-rows');
 }
 
 function getCellRect(element: Element, bounds?: DOMRect) {
   if (!bounds) {
-    const table = element.closest('.affine-database-block-table');
+    const table = element.closest('.lovenotes-database-block-table');
     if (!table) {
       return null;
     }
     bounds = table.getBoundingClientRect();
   }
-  // affine-database-block-row-cell
+  // lovenotes-database-block-row-cell
   const col = element.parentElement;
   if (!col) {
     return null;
   }
-  // affine-database-block-row
+  // lovenotes-database-block-row
   const row = col.parentElement;
   if (!row) {
     return null;

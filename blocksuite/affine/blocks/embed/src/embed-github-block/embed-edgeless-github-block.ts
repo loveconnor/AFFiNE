@@ -1,4 +1,4 @@
-import { EmbedGithubBlockSchema } from '@blocksuite/affine-model';
+import { EmbedGithubBlockSchema } from '@blocksuite/lovenotes-model';
 
 import { createEmbedEdgelessBlockInteraction } from '../common/embed-block-element.js';
 import { toEdgelessEmbedBlock } from '../common/to-edgeless-embed-block.js';

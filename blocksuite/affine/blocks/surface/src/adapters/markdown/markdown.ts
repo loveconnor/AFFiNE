@@ -1,16 +1,16 @@
-import { getMindMapNodeMap } from '@blocksuite/affine-model';
+import { getMindMapNodeMap } from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 import { MarkdownElementModelAdapter } from './element-adapter/index.js';
 import { ElementToMarkdownAdapterMatcherIdentifier } from './element-adapter/type.js';
 
 export const surfaceBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
-  flavour: 'affine:surface',
+  flavour: 'lovenotes:surface',
   toMatch: () => false,
-  fromMatch: o => o.node.flavour === 'affine:surface',
+  fromMatch: o => o.node.flavour === 'lovenotes:surface',
   toBlockSnapshot: {},
   fromBlockSnapshot: {
     enter: (_, context) => {
@@ -24,9 +24,9 @@ export const SurfaceBlockMarkdownAdapterExtension =
 
 export const edgelessSurfaceBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
   {
-    flavour: 'affine:surface',
+    flavour: 'lovenotes:surface',
     toMatch: () => false,
-    fromMatch: o => o.node.flavour === 'affine:surface',
+    fromMatch: o => o.node.flavour === 'lovenotes:surface',
     toBlockSnapshot: {},
     fromBlockSnapshot: {
       enter: (o, context) => {

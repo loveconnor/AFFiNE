@@ -1,5 +1,5 @@
-import { textKeymap } from '@blocksuite/affine-inline-preset';
-import { CodeBlockSchema } from '@blocksuite/affine-model';
+import { textKeymap } from '@blocksuite/lovenotes-inline-preset';
+import { CodeBlockSchema } from '@blocksuite/lovenotes-model';
 import { KeymapExtension } from '@blocksuite/std';
 
 export const CodeKeymapExtension = KeymapExtension(textKeymap, {

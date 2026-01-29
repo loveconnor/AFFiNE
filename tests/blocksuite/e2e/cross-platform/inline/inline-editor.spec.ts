@@ -1,5 +1,5 @@
-import type { InlineEditor, InlineRange } from '@blocksuite/affine/std/inline';
-import type { DeltaInsert } from '@blocksuite/affine/store';
+import type { InlineEditor, InlineRange } from '@blocksuite/lovenotes/std/inline';
+import type { DeltaInsert } from '@blocksuite/lovenotes/store';
 import { expect, type Page, test } from '@playwright/test';
 
 import { press } from '../../database/actions.js';

@@ -1,8 +1,8 @@
-import { ColorScheme } from '@blocksuite/affine-model';
-import type { RichText } from '@blocksuite/affine-rich-text';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { unsafeCSSVar } from '@blocksuite/affine-shared/theme';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import { ColorScheme } from '@blocksuite/lovenotes-model';
+import type { RichText } from '@blocksuite/lovenotes-rich-text';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVar } from '@blocksuite/lovenotes-shared/theme';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { noop } from '@blocksuite/global/utils';
 import { DoneIcon } from '@blocksuite/icons/lit';
@@ -17,7 +17,7 @@ import * as Y from 'yjs';
 import { LatexEditorUnitSpecExtension } from '../inline-spec';
 
 export const LatexEditorInlineManagerExtension =
-  InlineManagerExtension<AffineTextAttributes>({
+  InlineManagerExtension<LoveNotesTextAttributes>({
     id: 'latex-inline-editor',
     enableMarkdown: false,
     specs: [LatexEditorUnitSpecExtension.identifier],

@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/citation';
+export * from '@blocksuite/lovenotes-components/citation';

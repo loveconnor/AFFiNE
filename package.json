@@ -1,5 +1,5 @@
 {
-  "name": "@affine/monorepo",
+  "name": "@lovenotes/monorepo",
   "version": "0.26.0",
   "private": true,
   "author": "toeverything",
@@ -18,10 +18,10 @@
     "node": "<23.0.0"
   },
   "scripts": {
-    "affine": "r affine.ts",
-    "af": "r affine.ts",
-    "dev": "yarn affine dev",
-    "build": "yarn affine build",
+    "lovenotes": "r tools/cli/src/lovenotes.ts",
+    "af": "r lovenotes.ts",
+    "dev": "yarn lovenotes dev",
+    "build": "yarn lovenotes build",
     "lint:eslint": "cross-env NODE_OPTIONS=\"--max-old-space-size=8192\" eslint --report-unused-disable-directives-severity=off . --cache",
     "lint:eslint:fix": "yarn lint:eslint --fix --fix-type problem,suggestion,layout",
     "lint:prettier": "prettier --ignore-unknown --cache --check .",
@@ -33,7 +33,7 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "typecheck": "tsc -b tsconfig.json --verbose",
-    "postinstall": "yarn affine init && yarn husky"
+    "postinstall": "yarn lovenotes init && yarn husky"
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown --cache",
@@ -49,11 +49,11 @@
     ]
   },
   "devDependencies": {
-    "@affine-tools/cli": "workspace:*",
     "@capacitor/cli": "^7.0.0",
     "@eslint/js": "^9.16.0",
     "@faker-js/faker": "^10.1.0",
     "@istanbuljs/schema": "^0.1.3",
+    "@lovenotes-tools/cli": "workspace:*",
     "@magic-works/i18n-codegen": "^0.6.1",
     "@playwright/test": "=1.52.0",
     "@smarttools/eslint-plugin-rxjs": "^1.0.8",

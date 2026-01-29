@@ -110,10 +110,10 @@ export abstract class CalendarProvider {
   protected readonly logger = new Logger(this.constructor.name);
 
   @Inject() private readonly factory!: CalendarProviderFactory;
-  @Inject() private readonly AFFiNEConfig!: Config;
+  @Inject() private readonly LoveNotesConfig!: Config;
 
   get config() {
-    return (this.AFFiNEConfig.calendar as Record<string, any>)[this.provider];
+    return (this.LoveNotesConfig.calendar as Record<string, any>)[this.provider];
   }
 
   get configured() {

@@ -1,8 +1,8 @@
-import { getShapeText } from '@blocksuite/affine-gfx-shape';
+import { getShapeText } from '@blocksuite/lovenotes-gfx-shape';
 import {
   buildMindMapTree,
   type MindMapTreeNode,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 
 /**
  * traverse the mindMapTree and construct the content string

@@ -1,6 +1,6 @@
-import type { ButtonProps } from '@affine/admin/components/ui/button';
-import { buttonVariants } from '@affine/admin/components/ui/button';
-import { cn } from '@affine/admin/utils';
+import type { ButtonProps } from '@lovenotes/admin/components/ui/button';
+import { buttonVariants } from '@lovenotes/admin/components/ui/button';
+import { cn } from '@lovenotes/admin/utils';
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
 import * as React from 'react';
 

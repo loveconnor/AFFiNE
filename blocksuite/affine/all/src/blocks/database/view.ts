@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-block-database/view';
+export * from '@blocksuite/lovenotes-block-database/view';

@@ -1,8 +1,8 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { SlashMenuConfigExtension } from '@blocksuite/affine-widget-slash-menu';
+} from '@blocksuite/lovenotes-ext-loader';
+import { SlashMenuConfigExtension } from '@blocksuite/lovenotes-widget-slash-menu';
 import { BlockViewExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 
@@ -10,7 +10,7 @@ import { latexSlashMenuConfig } from './configs/slash-menu';
 import { effects } from './effects';
 
 export class LatexViewExtension extends ViewExtensionProvider {
-  override name = 'affine-latex-block';
+  override name = 'lovenotes-latex-block';
 
   override effect() {
     super.effect();
@@ -20,8 +20,8 @@ export class LatexViewExtension extends ViewExtensionProvider {
   override setup(context: ViewExtensionContext) {
     super.setup(context);
     context.register([
-      BlockViewExtension('affine:latex', literal`affine-latex`),
-      SlashMenuConfigExtension('affine:latex', latexSlashMenuConfig),
+      BlockViewExtension('lovenotes:latex', literal`lovenotes-latex`),
+      SlashMenuConfigExtension('lovenotes:latex', latexSlashMenuConfig),
     ]);
   }
 }

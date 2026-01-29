@@ -1,7 +1,7 @@
 import {
   EmbedSyncedDocBlockSchema,
   type EmbedSyncedDocModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { type BlockStdScope, ConfigExtensionFactory } from '@blocksuite/std';
 import type { TemplateResult } from 'lit';
 

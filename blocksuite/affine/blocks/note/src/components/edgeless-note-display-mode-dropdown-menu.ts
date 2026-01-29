@@ -1,5 +1,5 @@
-import { EditorChevronDown } from '@blocksuite/affine-components/toolbar';
-import { NoteDisplayMode } from '@blocksuite/affine-model';
+import { EditorChevronDown } from '@blocksuite/lovenotes-components/toolbar';
+import { NoteDisplayMode } from '@blocksuite/lovenotes-model';
 import { ShadowlessElement } from '@blocksuite/std';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';

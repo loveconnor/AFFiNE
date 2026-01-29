@@ -2,8 +2,8 @@ import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-components/context-menu';
+import type { InsertToPosition } from '@blocksuite/lovenotes-shared/utils';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { css } from '@emotion/css';
 import { computed, signal } from '@preact/signals-core';
@@ -207,12 +207,12 @@ export class KanbanViewUI extends DataViewUIBase<KanbanViewUILogic> {
     );
 
     return html`${safeGroups.map(group => {
-      return html` <affine-data-view-kanban-group
+      return html` <lovenotes-data-view-kanban-group
         ${sortable(group.key)}
         data-key="${group.key}"
         .kanbanViewLogic="${this.logic}"
         .group="${group}"
-      ></affine-data-view-kanban-group>`;
+      ></lovenotes-data-view-kanban-group>`;
     })}`;
   }
 
@@ -306,11 +306,11 @@ const kanbanGroupsStyle = css({
 
   '&:hover::-webkit-scrollbar-thumb': {
     borderRadius: '16px',
-    backgroundColor: 'var(--affine-black-30)',
+    backgroundColor: 'var(--lovenotes-black-30)',
   },
 
   '&:hover::-webkit-scrollbar-track': {
-    backgroundColor: 'var(--affine-hover-color)',
+    backgroundColor: 'var(--lovenotes-hover-color)',
   },
 });
 
@@ -322,14 +322,14 @@ const addGroupIconStyle = css({
   cursor: 'pointer',
 
   '&:hover': {
-    backgroundColor: 'var(--affine-hover-color)',
+    backgroundColor: 'var(--lovenotes-hover-color)',
   },
 
   '& svg': {
     width: '16px',
     height: '16px',
-    fill: 'var(--affine-icon-color)',
-    color: 'var(--affine-icon-color)',
+    fill: 'var(--lovenotes-icon-color)',
+    color: 'var(--lovenotes-icon-color)',
   },
 });
 

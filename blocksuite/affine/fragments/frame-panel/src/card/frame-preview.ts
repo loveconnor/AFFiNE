@@ -1,10 +1,10 @@
-import { ViewExtensionManagerIdentifier } from '@blocksuite/affine-ext-loader';
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+import { ViewExtensionManagerIdentifier } from '@blocksuite/lovenotes-ext-loader';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
 import {
   DocModeExtension,
   DocModeProvider,
   ViewportElementExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { Bound, deserializeXYWH } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';
@@ -54,7 +54,7 @@ const styles = css`
 
   .frame-preview-viewport
     > editor-host
-    > affine-edgeless-root-preview
+    > lovenotes-edgeless-root-preview
     > .edgeless-background {
     background-color: transparent;
     background-image: none;
@@ -75,7 +75,7 @@ export class FramePreview extends WithDisposable(ShadowlessElement) {
     mode: 'loose',
     match: [
       {
-        flavour: 'affine:frame',
+        flavour: 'lovenotes:frame',
         viewType: 'hidden',
       },
     ],
@@ -136,7 +136,7 @@ export class FramePreview extends WithDisposable(ShadowlessElement) {
           if (
             payload.type !== 'block' ||
             payload.method !== 'add' ||
-            payload.view.model.flavour !== 'affine:page'
+            payload.view.model.flavour !== 'lovenotes:page'
           ) {
             return;
           }

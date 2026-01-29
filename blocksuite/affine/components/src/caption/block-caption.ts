@@ -1,5 +1,5 @@
-import type { DocMode } from '@blocksuite/affine-model';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
+import type { DocMode } from '@blocksuite/lovenotes-model';
+import { stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import type { BlockStdScope } from '@blocksuite/std';
 import {
@@ -31,8 +31,8 @@ export class BlockCaptionEditor<
       outline: none;
       border: 0;
       background: transparent;
-      color: var(--affine-icon-color);
-      font-size: var(--affine-font-sm);
+      color: var(--lovenotes-icon-color);
+      font-size: var(--lovenotes-font-sm);
       font-family: inherit;
       text-align: center;
       field-sizing: content;
@@ -40,7 +40,7 @@ export class BlockCaptionEditor<
       margin-top: 4px;
     }
     .block-caption-editor::placeholder {
-      color: var(--affine-placeholder-color);
+      color: var(--lovenotes-placeholder-color);
     }
   `;
 
@@ -52,7 +52,7 @@ export class BlockCaptionEditor<
   };
 
   get mode(): DocMode {
-    return this.doc.getParent(this.model)?.flavour === 'affine:surface'
+    return this.doc.getParent(this.model)?.flavour === 'lovenotes:surface'
       ? 'edgeless'
       : 'page';
   }
@@ -86,7 +86,7 @@ export class BlockCaptionEditor<
       const nextBlockText = value.slice(start);
       const index = parent.children.indexOf(model);
       const id = doc.addBlock(
-        'affine:paragraph',
+        'lovenotes:paragraph',
         { text: new Text(nextBlockText) },
         parent,
         index + 1

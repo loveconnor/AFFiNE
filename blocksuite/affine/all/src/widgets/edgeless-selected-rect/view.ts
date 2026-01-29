@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-widget-edgeless-selected-rect/view';
+export * from '@blocksuite/lovenotes-widget-edgeless-selected-rect/view';

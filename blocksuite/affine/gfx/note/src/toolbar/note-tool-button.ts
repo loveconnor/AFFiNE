@@ -2,7 +2,7 @@ import {
   createPopper,
   type MenuPopper,
   QuickToolMixin,
-} from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { PageIcon } from '@blocksuite/icons/lit';
 import { effect } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
@@ -72,7 +72,7 @@ export class EdgelessNoteToolButton extends QuickToolMixin(LitElement) {
     this._disposables.add(
       effect(() => {
         const value = this.gfx.tool.currentToolName$.value;
-        if (value !== 'affine:note') {
+        if (value !== 'lovenotes:note') {
           this._disposeMenu();
         }
       })
@@ -91,10 +91,10 @@ export class EdgelessNoteToolButton extends QuickToolMixin(LitElement) {
         class="edgeless-note-button"
         .tooltip=${this._noteMenu
           ? ''
-          : html`<affine-tooltip-content-with-shortcut
+          : html`<lovenotes-tooltip-content-with-shortcut
               data-tip="${'Note'}"
               data-shortcut="${'N'}"
-            ></affine-tooltip-content-with-shortcut>`}
+            ></lovenotes-tooltip-content-with-shortcut>`}
         .tooltipOffset=${17}
         .active=${active}
         .iconContainerPadding=${6}
@@ -110,7 +110,7 @@ export class EdgelessNoteToolButton extends QuickToolMixin(LitElement) {
   }
 
   @state()
-  accessor childFlavour: NoteToolOption['childFlavour'] = 'affine:paragraph';
+  accessor childFlavour: NoteToolOption['childFlavour'] = 'lovenotes:paragraph';
 
   @state()
   accessor childType = 'text';

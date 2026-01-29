@@ -34,179 +34,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "affine_common"
-version = "0.1.0"
-dependencies = [
- "assert-json-diff",
- "cc",
- "chrono",
- "criterion",
- "docx-parser",
- "infer",
- "nanoid",
- "path-ext",
- "pdf-extract",
- "pulldown-cmark",
- "rand 0.9.2",
- "rayon",
- "readability",
- "serde",
- "serde_json",
- "sha3",
- "strum_macros",
- "tempfile",
- "text-splitter",
- "thiserror 2.0.17",
- "tiktoken-rs",
- "tree-sitter",
- "tree-sitter-c",
- "tree-sitter-c-sharp",
- "tree-sitter-cpp",
- "tree-sitter-go",
- "tree-sitter-java",
- "tree-sitter-javascript",
- "tree-sitter-kotlin-ng",
- "tree-sitter-python",
- "tree-sitter-rust",
- "tree-sitter-scala",
- "tree-sitter-typescript",
- "url",
- "y-octo",
-]
-
-[[package]]
-name = "affine_media_capture"
-version = "0.0.0"
-dependencies = [
- "block2",
- "core-foundation",
- "coreaudio-rs 0.12.1",
- "cpal",
- "criterion2",
- "crossbeam-channel",
- "dispatch2",
- "libc",
- "napi",
- "napi-build",
- "napi-derive",
- "objc2",
- "objc2-foundation",
- "rubato",
- "screencapturekit",
- "symphonia",
- "thiserror 2.0.17",
- "uuid",
- "windows 0.61.3",
- "windows-core 0.61.2",
-]
-
-[[package]]
-name = "affine_mobile_native"
-version = "0.0.0"
-dependencies = [
- "affine_common",
- "affine_nbstore",
- "anyhow",
- "base64-simd",
- "chrono",
- "homedir",
- "objc2",
- "objc2-foundation",
- "sqlx",
- "thiserror 2.0.17",
- "uniffi",
-]
-
-[[package]]
-name = "affine_native"
-version = "0.0.0"
-dependencies = [
- "affine_common",
- "affine_media_capture",
- "affine_nbstore",
- "affine_sqlite_v1",
- "chrono",
- "napi",
- "napi-build",
- "napi-derive",
- "once_cell",
- "serde_json",
- "sqlx",
- "thiserror 2.0.17",
- "tokio",
- "uuid",
-]
-
-[[package]]
-name = "affine_nbstore"
-version = "0.0.0"
-dependencies = [
- "affine_common",
- "affine_schema",
- "anyhow",
- "bincode",
- "chrono",
- "dotenvy",
- "memory-indexer",
- "napi",
- "napi-build",
- "napi-derive",
- "serde",
- "serde_json",
- "sqlx",
- "thiserror 2.0.17",
- "tokio",
- "uniffi",
- "uuid",
- "y-octo",
- "zstd",
-]
-
-[[package]]
-name = "affine_schema"
-version = "0.0.0"
-dependencies = [
- "sqlx",
-]
-
-[[package]]
-name = "affine_server_native"
-version = "1.0.0"
-dependencies = [
- "affine_common",
- "chrono",
- "file-format",
- "infer",
- "mimalloc",
- "mp4parse",
- "napi",
- "napi-build",
- "napi-derive",
- "rand 0.9.2",
- "rayon",
- "sha3",
- "tiktoken-rs",
- "tokio",
- "v_htmlescape",
- "y-octo",
-]
-
-[[package]]
-name = "affine_sqlite_v1"
-version = "0.0.0"
-dependencies = [
- "affine_schema",
- "anyhow",
- "chrono",
- "dotenvy",
- "napi",
- "napi-build",
- "napi-derive",
- "sqlx",
- "tokio",
-]
-
-[[package]]
 name = "ahash"
 version = "0.8.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2568,6 +2395,179 @@ dependencies = [
  "stringprep",
  "thiserror 2.0.17",
  "weezl",
+]
+
+[[package]]
+name = "lovenotes_common"
+version = "0.1.0"
+dependencies = [
+ "assert-json-diff",
+ "cc",
+ "chrono",
+ "criterion",
+ "docx-parser",
+ "infer",
+ "nanoid",
+ "path-ext",
+ "pdf-extract",
+ "pulldown-cmark",
+ "rand 0.9.2",
+ "rayon",
+ "readability",
+ "serde",
+ "serde_json",
+ "sha3",
+ "strum_macros",
+ "tempfile",
+ "text-splitter",
+ "thiserror 2.0.17",
+ "tiktoken-rs",
+ "tree-sitter",
+ "tree-sitter-c",
+ "tree-sitter-c-sharp",
+ "tree-sitter-cpp",
+ "tree-sitter-go",
+ "tree-sitter-java",
+ "tree-sitter-javascript",
+ "tree-sitter-kotlin-ng",
+ "tree-sitter-python",
+ "tree-sitter-rust",
+ "tree-sitter-scala",
+ "tree-sitter-typescript",
+ "url",
+ "y-octo",
+]
+
+[[package]]
+name = "lovenotes_media_capture"
+version = "0.0.0"
+dependencies = [
+ "block2",
+ "core-foundation",
+ "coreaudio-rs 0.12.1",
+ "cpal",
+ "criterion2",
+ "crossbeam-channel",
+ "dispatch2",
+ "libc",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "objc2",
+ "objc2-foundation",
+ "rubato",
+ "screencapturekit",
+ "symphonia",
+ "thiserror 2.0.17",
+ "uuid",
+ "windows 0.61.3",
+ "windows-core 0.61.2",
+]
+
+[[package]]
+name = "lovenotes_mobile_native"
+version = "0.0.0"
+dependencies = [
+ "anyhow",
+ "base64-simd",
+ "chrono",
+ "homedir",
+ "lovenotes_common",
+ "lovenotes_nbstore",
+ "objc2",
+ "objc2-foundation",
+ "sqlx",
+ "thiserror 2.0.17",
+ "uniffi",
+]
+
+[[package]]
+name = "lovenotes_native"
+version = "0.0.0"
+dependencies = [
+ "chrono",
+ "lovenotes_common",
+ "lovenotes_media_capture",
+ "lovenotes_nbstore",
+ "lovenotes_sqlite_v1",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "once_cell",
+ "serde_json",
+ "sqlx",
+ "thiserror 2.0.17",
+ "tokio",
+ "uuid",
+]
+
+[[package]]
+name = "lovenotes_nbstore"
+version = "0.0.0"
+dependencies = [
+ "anyhow",
+ "bincode",
+ "chrono",
+ "dotenvy",
+ "lovenotes_common",
+ "lovenotes_schema",
+ "memory-indexer",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "serde",
+ "serde_json",
+ "sqlx",
+ "thiserror 2.0.17",
+ "tokio",
+ "uniffi",
+ "uuid",
+ "y-octo",
+ "zstd",
+]
+
+[[package]]
+name = "lovenotes_schema"
+version = "0.0.0"
+dependencies = [
+ "sqlx",
+]
+
+[[package]]
+name = "lovenotes_server_native"
+version = "1.0.0"
+dependencies = [
+ "chrono",
+ "file-format",
+ "infer",
+ "lovenotes_common",
+ "mimalloc",
+ "mp4parse",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "rand 0.9.2",
+ "rayon",
+ "sha3",
+ "tiktoken-rs",
+ "tokio",
+ "v_htmlescape",
+ "y-octo",
+]
+
+[[package]]
+name = "lovenotes_sqlite_v1"
+version = "0.0.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "dotenvy",
+ "lovenotes_schema",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "sqlx",
+ "tokio",
 ]
 
 [[package]]

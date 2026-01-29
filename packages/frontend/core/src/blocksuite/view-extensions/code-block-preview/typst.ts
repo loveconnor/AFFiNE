@@ -1,11 +1,11 @@
 import { $typst, type BeforeBuildFn, loadFonts } from '@myriaddreamin/typst.ts';
 
 const FONT_CDN_URLS = [
-  'https://cdn.affine.pro/fonts/Inter-Regular.woff',
-  'https://cdn.affine.pro/fonts/Inter-SemiBold.woff',
-  'https://cdn.affine.pro/fonts/Inter-Italic.woff',
-  'https://cdn.affine.pro/fonts/Inter-SemiBoldItalic.woff',
-  'https://cdn.affine.pro/fonts/SarasaGothicCL-Regular.ttf',
+  'https://cdn.lovenotes.pro/fonts/Inter-Regular.woff',
+  'https://cdn.lovenotes.pro/fonts/Inter-SemiBold.woff',
+  'https://cdn.lovenotes.pro/fonts/Inter-Italic.woff',
+  'https://cdn.lovenotes.pro/fonts/Inter-SemiBoldItalic.woff',
+  'https://cdn.lovenotes.pro/fonts/SarasaGothicCL-Regular.ttf',
 ] as const;
 
 const getBeforeBuildHooks = (): BeforeBuildFn[] => [

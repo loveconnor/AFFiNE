@@ -5,7 +5,7 @@ import {
   filePathMiddleware,
   HtmlAdapter,
   titleMiddleware,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { Container } from '@blocksuite/global/di';
 import { sha } from '@blocksuite/global/utils';
 import type {

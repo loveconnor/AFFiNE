@@ -1,4 +1,4 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@lovenotes/debug';
 import { nanoid } from 'nanoid';
 
 import type { TelemetryEvent } from './telemetry';
@@ -14,11 +14,11 @@ type Middleware = (
   properties?: TrackProperties
 ) => Record<string, unknown>;
 
-const CLIENT_ID_KEY = 'affine_telemetry_client_id';
-const SESSION_ID_KEY = 'affine_telemetry_session_id';
-const SESSION_NUMBER_KEY = 'affine_telemetry_session_number';
-const SESSION_NUMBER_CURRENT_KEY = 'affine_telemetry_session_number_current';
-const LAST_ACTIVITY_KEY = 'affine_telemetry_last_activity_ms';
+const CLIENT_ID_KEY = 'lovenotes_telemetry_client_id';
+const SESSION_ID_KEY = 'lovenotes_telemetry_session_id';
+const SESSION_NUMBER_KEY = 'lovenotes_telemetry_session_number';
+const SESSION_NUMBER_CURRENT_KEY = 'lovenotes_telemetry_session_number_current';
+const LAST_ACTIVITY_KEY = 'lovenotes_telemetry_last_activity_ms';
 const SESSION_TIMEOUT_MS = 30 * 60 * 1000;
 
 let enabled = true;

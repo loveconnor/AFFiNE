@@ -1,8 +1,8 @@
-import { EdgelessClipboardConfig } from '@blocksuite/affine-block-surface';
+import { EdgelessClipboardConfig } from '@blocksuite/lovenotes-block-surface';
 import { type BlockSnapshot } from '@blocksuite/store';
 
 export class EdgelessClipboardEmbedLoomConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:embed-loom';
+  static override readonly key = 'lovenotes:embed-loom';
 
   override createBlock(loomEmbed: BlockSnapshot): string | null {
     if (!this.surface) return null;
@@ -10,7 +10,7 @@ export class EdgelessClipboardEmbedLoomConfig extends EdgelessClipboardConfig {
       loomEmbed.props;
 
     const embedLoomId = this.crud.addBlock(
-      'affine:embed-loom',
+      'lovenotes:embed-loom',
       {
         xywh,
         style,

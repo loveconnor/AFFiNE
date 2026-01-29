@@ -36,7 +36,8 @@ export class DocCRUD {
     const parent = this._yBlocks.get(parentId);
     if (!parent) return null;
 
-    const children = parent.get('sys:children');
+    const children = parent.get('sys:children') as Y.Array<string> | undefined;
+    if (!children) return null;
     const index = children.toArray().indexOf(id);
     if (index === -1) return null;
 
@@ -247,7 +248,10 @@ export class DocCRUD {
       const parentYBlock = this._yBlocks.get(parentId);
       if (!parentYBlock) return null;
 
-      const children = parentYBlock.get('sys:children');
+      const children = parentYBlock.get('sys:children') as
+        | Y.Array<string>
+        | undefined;
+      if (!children) return null;
 
       for (const childId of children.toArray()) {
         if (childId === targetId) return parentId;

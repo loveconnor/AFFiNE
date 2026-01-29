@@ -1,5 +1,5 @@
-import type { IconData } from '@blocksuite/affine-shared/services';
-import type { UniComponent } from '@blocksuite/affine-shared/types';
+import type { IconData } from '@blocksuite/lovenotes-shared/services';
+import type { UniComponent } from '@blocksuite/lovenotes-shared/types';
 import { ShadowlessElement } from '@blocksuite/std';
 import { type Signal } from '@preact/signals-core';
 import { html, type TemplateResult } from 'lit';

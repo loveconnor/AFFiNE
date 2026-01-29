@@ -1,7 +1,7 @@
-import { AIStoreExtension } from '@affine/core/blocksuite/store-extensions/ai';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { StoreExtensionManager } from '@blocksuite/affine/ext-loader';
-import { getInternalStoreExtensions } from '@blocksuite/affine/extensions/store';
+import { AIStoreExtension } from '@lovenotes/core/blocksuite/store-extensions/ai';
+import type { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { StoreExtensionManager } from '@blocksuite/lovenotes/ext-loader';
+import { getInternalStoreExtensions } from '@blocksuite/lovenotes/extensions/store';
 
 import { FeatureFlagStoreExtension } from '../store-extensions/feature-flag';
 

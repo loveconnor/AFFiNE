@@ -1,7 +1,7 @@
-import { getViewManager } from '@affine/core/blocksuite/manager/view';
-import { DebugLogger } from '@affine/debug';
-import { BlockStdScope } from '@blocksuite/affine/std';
-import type { Store } from '@blocksuite/affine/store';
+import { getViewManager } from '@lovenotes/core/blocksuite/manager/view';
+import { DebugLogger } from '@lovenotes/debug';
+import { BlockStdScope } from '@blocksuite/lovenotes/std';
+import type { Store } from '@blocksuite/lovenotes/store';
 import { useMemo } from 'react';
 
 const logger = new DebugLogger('doc-info');

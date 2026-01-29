@@ -1,6 +1,6 @@
-import type { InlineHtmlAST } from '@blocksuite/affine-shared/adapters';
-import { InlineDeltaToHtmlAdapterExtension } from '@blocksuite/affine-shared/adapters';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+import type { InlineHtmlAST } from '@blocksuite/lovenotes-shared/adapters';
+import { InlineDeltaToHtmlAdapterExtension } from '@blocksuite/lovenotes-shared/adapters';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 
 export const boldDeltaToHtmlAdapterMatcher = InlineDeltaToHtmlAdapterExtension({
   name: 'bold',

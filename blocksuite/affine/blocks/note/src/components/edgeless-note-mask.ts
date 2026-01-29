@@ -1,4 +1,4 @@
-import type { NoteBlockModel } from '@blocksuite/affine-model';
+import type { NoteBlockModel } from '@blocksuite/lovenotes-model';
 import { almostEqual, Bound } from '@blocksuite/global/gfx';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { type EditorHost, ShadowlessElement } from '@blocksuite/std';
@@ -12,7 +12,7 @@ export class EdgelessNoteMask extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   protected override firstUpdated() {
-    const maskDOM = this.renderRoot!.querySelector('.affine-note-mask');
+    const maskDOM = this.renderRoot!.querySelector('.lovenotes-note-mask');
     const observer = new ResizeObserver(entries => {
       if (this.model.store.readonly) return;
       for (const entry of entries) {
@@ -44,7 +44,7 @@ export class EdgelessNoteMask extends SignalWatcher(
     const extra = this.editing ? ACTIVE_NOTE_EXTRA_PADDING : 0;
     return html`
       <div
-        class="affine-note-mask"
+        class="lovenotes-note-mask"
         style=${styleMap({
           position: 'absolute',
           top: `${-extra}px`,

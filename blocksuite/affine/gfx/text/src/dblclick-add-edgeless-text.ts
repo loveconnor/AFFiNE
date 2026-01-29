@@ -1,7 +1,7 @@
 import {
   FeatureFlagService,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   type GfxInteractivityContext,
   InteractivityExtension,

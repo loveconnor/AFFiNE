@@ -1,20 +1,20 @@
 import { type BlockStdScope, ConfigExtensionFactory } from '@blocksuite/std';
 import type { TemplateResult } from 'lit';
 
-import type { AffineReference } from './reference-node';
+import type { LoveNotesReference } from './reference-node';
 
 export interface ReferenceNodeConfig {
-  customContent?: (reference: AffineReference) => TemplateResult;
+  customContent?: (reference: LoveNotesReference) => TemplateResult;
   interactable?: boolean;
   hidePopup?: boolean;
 }
 
 export const ReferenceNodeConfigExtension =
-  ConfigExtensionFactory<ReferenceNodeConfig>('AffineReferenceNodeConfig');
+  ConfigExtensionFactory<ReferenceNodeConfig>('LoveNotesReferenceNodeConfig');
 
 export class ReferenceNodeConfigProvider {
   private _customContent:
-    | ((reference: AffineReference) => TemplateResult)
+    | ((reference: LoveNotesReference) => TemplateResult)
     | undefined = undefined;
 
   private _hidePopup = false;

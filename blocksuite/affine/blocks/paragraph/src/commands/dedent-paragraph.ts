@@ -1,9 +1,9 @@
-import { ParagraphBlockModel } from '@blocksuite/affine-model';
-import type { IndentContext } from '@blocksuite/affine-shared/types';
+import { ParagraphBlockModel } from '@blocksuite/lovenotes-model';
+import type { IndentContext } from '@blocksuite/lovenotes-shared/types';
 import {
   calculateCollapsedSiblings,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { type Command, TextSelection } from '@blocksuite/std';
 
 export const canDedentParagraphCommand: Command<
@@ -53,7 +53,7 @@ export const canDedentParagraphCommand: Command<
       blockId,
       inlineIndex,
       type: 'dedent',
-      flavour: 'affine:paragraph',
+      flavour: 'lovenotes:paragraph',
     },
   });
 };
@@ -67,7 +67,7 @@ export const dedentParagraphCommand: Command<{
   if (
     !dedentContext ||
     dedentContext.type !== 'dedent' ||
-    dedentContext.flavour !== 'affine:paragraph'
+    dedentContext.flavour !== 'lovenotes:paragraph'
   ) {
     console.warn(
       'you need to use `canDedentParagraph` command before running `dedentParagraph` command'

@@ -1,6 +1,6 @@
 apiVersion: v2
-name: affine
-description: AFFiNE cloud chart
+name: lovenotes
+description: LoveNotes cloud chart
 type: application
 version: 0.0.0
 appVersion: "0.26.0"

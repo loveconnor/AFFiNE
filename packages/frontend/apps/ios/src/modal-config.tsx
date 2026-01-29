@@ -1,6 +1,6 @@
-import { ModalConfigContext } from '@affine/component';
-import { NavigationGestureService } from '@affine/core/mobile/modules/navigation-gesture';
-import { globalVars } from '@affine/core/mobile/styles/variables.css';
+import { ModalConfigContext } from '@lovenotes/component';
+import { NavigationGestureService } from '@lovenotes/core/mobile/modules/navigation-gesture';
+import { globalVars } from '@lovenotes/core/mobile/styles/variables.css';
 import { useService } from '@toeverything/infra';
 import { type PropsWithChildren, useCallback } from 'react';
 

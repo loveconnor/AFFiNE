@@ -1,12 +1,12 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   createRandomUser,
   deleteUser,
   enableCloudWorkspace,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
-import { getPageByTitle } from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@lovenotes-test/kit/utils/cloud';
+import { getPageByTitle } from '@lovenotes-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@lovenotes-test/kit/utils/sidebar';
 import { expect } from '@playwright/test';
 
 let user: {

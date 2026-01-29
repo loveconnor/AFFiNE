@@ -1,19 +1,19 @@
 import {
   CaptionedBlockComponent,
   SelectedStyle,
-} from '@blocksuite/affine-components/caption';
+} from '@blocksuite/lovenotes-components/caption';
 import type {
   BookmarkBlockModel,
   LinkPreviewData,
-} from '@blocksuite/affine-model';
-import { ImageProxyService } from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-model';
+import { ImageProxyService } from '@blocksuite/lovenotes-shared/adapters';
 import {
   BlockElementCommentManager,
   CitationProvider,
   DocModeProvider,
   LinkPreviewServiceIdentifier,
-} from '@blocksuite/affine-shared/services';
-import { normalizeUrl } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { normalizeUrl } from '@blocksuite/lovenotes-shared/utils';
 import { BlockSelection } from '@blocksuite/std';
 import { computed, type ReadonlySignal, signal } from '@preact/signals-core';
 import { html } from 'lit';
@@ -141,7 +141,7 @@ export class BookmarkBlockComponent extends CaptionedBlockComponent<BookmarkBloc
     event.stopPropagation();
 
     if (
-      this.model.parent?.flavour !== 'affine:surface' &&
+      this.model.parent?.flavour !== 'lovenotes:surface' &&
       !this.store.readonly
     ) {
       this.selectBlock();
@@ -158,7 +158,7 @@ export class BookmarkBlockComponent extends CaptionedBlockComponent<BookmarkBloc
     const { icon, title, description } = this.linkPreview$.value;
     const iconSrc = icon ? this.imageProxyService.buildUrl(icon) : undefined;
     return html`
-      <affine-citation-card
+      <lovenotes-citation-card
         .icon=${iconSrc}
         .citationTitle=${title || url}
         .citationContent=${description}
@@ -166,7 +166,7 @@ export class BookmarkBlockComponent extends CaptionedBlockComponent<BookmarkBloc
         .onClickCallback=${this.handleClick}
         .onDoubleClickCallback=${this.handleDoubleClick}
         .active=${this.selected$.value}
-      ></affine-citation-card>
+      ></lovenotes-citation-card>
     `;
   };
 
@@ -254,7 +254,7 @@ export class BookmarkBlockComponent extends CaptionedBlockComponent<BookmarkBloc
       <div
         draggable="${this.blockDraggable ? 'true' : 'false'}"
         class=${classMap({
-          'affine-bookmark-container': true,
+          'lovenotes-bookmark-container': true,
           ...this.selectedStyle$?.value,
         })}
         style=${this.containerStyleMap}
@@ -286,6 +286,6 @@ export class BookmarkBlockComponent extends CaptionedBlockComponent<BookmarkBloc
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-bookmark': BookmarkBlockComponent;
+    'lovenotes-bookmark': BookmarkBlockComponent;
   }
 }

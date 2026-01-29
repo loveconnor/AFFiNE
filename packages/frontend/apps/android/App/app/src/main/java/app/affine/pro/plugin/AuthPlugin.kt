@@ -1,8 +1,8 @@
-package app.affine.pro.plugin
+package app.lovenotes.pro.plugin
 
 import android.annotation.SuppressLint
-import app.affine.pro.service.CookieStore
-import app.affine.pro.service.OkHttp
+import app.lovenotes.pro.service.CookieStore
+import app.lovenotes.pro.service.OkHttp
 import com.getcapacitor.JSObject
 import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall

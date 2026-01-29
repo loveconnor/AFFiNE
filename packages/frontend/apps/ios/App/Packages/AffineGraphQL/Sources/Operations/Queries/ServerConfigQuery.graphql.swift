@@ -13,11 +13,11 @@ public class ServerConfigQuery: GraphQLQuery {
 
   public init() {}
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("serverConfig", ServerConfig.self),
     ] }
@@ -28,18 +28,18 @@ public class ServerConfigQuery: GraphQLQuery {
     /// ServerConfig
     ///
     /// Parent Type: `ServerConfigType`
-    public struct ServerConfig: AffineGraphQL.SelectionSet {
+    public struct ServerConfig: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.ServerConfigType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.ServerConfigType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("version", String.self),
         .field("baseUrl", String.self),
         .field("name", String.self),
-        .field("features", [GraphQLEnum<AffineGraphQL.ServerFeature>].self),
-        .field("type", GraphQLEnum<AffineGraphQL.ServerDeploymentType>.self),
+        .field("features", [GraphQLEnum<LoveNotesGraphQL.ServerFeature>].self),
+        .field("type", GraphQLEnum<LoveNotesGraphQL.ServerDeploymentType>.self),
         .field("initialized", Bool.self),
         .field("credentialsRequirement", CredentialsRequirement.self),
       ] }
@@ -51,9 +51,9 @@ public class ServerConfigQuery: GraphQLQuery {
       /// server identical name could be shown as badge on user interface
       public var name: String { __data["name"] }
       /// enabled server features
-      public var features: [GraphQLEnum<AffineGraphQL.ServerFeature>] { __data["features"] }
+      public var features: [GraphQLEnum<LoveNotesGraphQL.ServerFeature>] { __data["features"] }
       /// server type
-      public var type: GraphQLEnum<AffineGraphQL.ServerDeploymentType> { __data["type"] }
+      public var type: GraphQLEnum<LoveNotesGraphQL.ServerDeploymentType> { __data["type"] }
       /// whether server has been initialized
       public var initialized: Bool { __data["initialized"] }
       /// credentials requirement
@@ -62,11 +62,11 @@ public class ServerConfigQuery: GraphQLQuery {
       /// ServerConfig.CredentialsRequirement
       ///
       /// Parent Type: `CredentialsRequirementType`
-      public struct CredentialsRequirement: AffineGraphQL.SelectionSet {
+      public struct CredentialsRequirement: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CredentialsRequirementType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CredentialsRequirementType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .fragment(CredentialsRequirements.self),

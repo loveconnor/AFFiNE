@@ -1,10 +1,10 @@
 import {
-  type AffineCommand,
-  AffineCommandRegistry,
+  type LoveNotesCommand,
+  LoveNotesCommandRegistry,
   type CommandCategory,
   PreconditionStrategy,
-} from '@affine/core/commands';
-import type { DocMode } from '@blocksuite/affine/model';
+} from '@lovenotes/core/commands';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import { Entity, LiveData } from '@toeverything/infra';
 import Fuse from 'fuse.js';
 
@@ -15,83 +15,83 @@ import type { QuickSearchItem } from '../types/item';
 import { highlighter } from '../utils/highlighter';
 
 const categories = {
-  'affine:recent': {
-    id: 'command:affine:recent',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.recent' },
+  'lovenotes:recent': {
+    id: 'command:lovenotes:recent',
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.recent' },
     score: 10,
   },
-  'affine:navigation': {
-    id: 'command:affine:navigation',
+  'lovenotes:navigation': {
+    id: 'command:lovenotes:navigation',
     label: {
-      i18nKey: 'com.affine.cmdk.affine.category.affine.navigation',
+      i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.navigation',
     },
     score: 10,
   },
-  'affine:creation': {
-    id: 'command:affine:creation',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.creation' },
+  'lovenotes:creation': {
+    id: 'command:lovenotes:creation',
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.creation' },
     score: 10,
   },
-  'affine:general': {
-    id: 'command:affine:general',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.general' },
+  'lovenotes:general': {
+    id: 'command:lovenotes:general',
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.general' },
     score: 10,
   },
-  'affine:layout': {
-    id: 'command:affine:layout',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.layout' },
+  'lovenotes:layout': {
+    id: 'command:lovenotes:layout',
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.layout' },
     score: 10,
   },
-  'affine:pages': {
-    id: 'command:affine:pages',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.pages' },
+  'lovenotes:pages': {
+    id: 'command:lovenotes:pages',
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.pages' },
     score: 10,
   },
-  'affine:edgeless': {
-    id: 'command:affine:edgeless',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.edgeless' },
+  'lovenotes:edgeless': {
+    id: 'command:lovenotes:edgeless',
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.edgeless' },
     score: 10,
   },
-  'affine:collections': {
-    id: 'command:affine:collections',
+  'lovenotes:collections': {
+    id: 'command:lovenotes:collections',
     label: {
-      i18nKey: 'com.affine.cmdk.affine.category.affine.collections',
+      i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.collections',
     },
     score: 10,
   },
-  'affine:settings': {
-    id: 'command:affine:settings',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.settings' },
+  'lovenotes:settings': {
+    id: 'command:lovenotes:settings',
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.settings' },
     score: 10,
   },
-  'affine:updates': {
-    id: 'command:affine:updates',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.updates' },
+  'lovenotes:updates': {
+    id: 'command:lovenotes:updates',
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.updates' },
     score: 10,
   },
-  'affine:help': {
-    id: 'command:affine:help',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.help' },
+  'lovenotes:help': {
+    id: 'command:lovenotes:help',
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.help' },
     score: 10,
   },
   'editor:edgeless': {
     id: 'command:editor:edgeless',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.editor.edgeless' },
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.editor.edgeless' },
     score: 10,
   },
   'editor:insert-object': {
     id: 'command:editor:insert-object',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.editor.insert-object' },
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.editor.insert-object' },
     score: 10,
   },
   'editor:page': {
     id: 'command:editor:page',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.editor.page' },
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.editor.page' },
     score: 10,
   },
-  'affine:results': {
-    id: 'command:affine:results',
-    label: { i18nKey: 'com.affine.cmdk.affine.category.results' },
+  'lovenotes:results': {
+    id: 'command:lovenotes:results',
+    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.results' },
     score: 10,
   },
 } satisfies Required<{
@@ -99,7 +99,7 @@ const categories = {
 }>;
 
 function filterCommandByContext(
-  command: AffineCommand,
+  command: LoveNotesCommand,
   context: {
     docMode: DocMode | undefined;
   }
@@ -126,7 +126,7 @@ function filterCommandByContext(
 }
 
 function getAllCommand(context: { docMode: DocMode | undefined }) {
-  const commands = AffineCommandRegistry.getAll();
+  const commands = LoveNotesCommandRegistry.getAll();
   return commands.filter(command => {
     return filterCommandByContext(command, context);
   });
@@ -134,7 +134,7 @@ function getAllCommand(context: { docMode: DocMode | undefined }) {
 
 export class CommandsQuickSearchSession
   extends Entity
-  implements QuickSearchSession<'commands', AffineCommand>
+  implements QuickSearchSession<'commands', LoveNotesCommand>
 {
   constructor(private readonly contextService: GlobalContextService) {
     super();
@@ -160,7 +160,7 @@ export class CommandsQuickSearchSession
       ? fuse.search(query)
       : commands.map(item => ({ item, matches: [], score: 0 }));
 
-    return result.map<QuickSearchItem<'commands', AffineCommand>>(
+    return result.map<QuickSearchItem<'commands', LoveNotesCommand>>(
       ({ item, matches, score = 1 }) => {
         const normalizedRange = ([start, end]: [number, number]) =>
           [

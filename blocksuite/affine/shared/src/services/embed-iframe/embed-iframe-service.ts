@@ -1,4 +1,4 @@
-import type { EmbedIframeBlockProps } from '@blocksuite/affine-model';
+import type { EmbedIframeBlockProps } from '@blocksuite/lovenotes-model';
 import { type Store, StoreExtension } from '@blocksuite/store';
 
 import {
@@ -143,7 +143,7 @@ export class EmbedIframeService
     index?: number
   ): string | undefined => {
     const blockId = this.store.addBlock(
-      'affine:embed-iframe',
+      'lovenotes:embed-iframe',
       props,
       parentId,
       index

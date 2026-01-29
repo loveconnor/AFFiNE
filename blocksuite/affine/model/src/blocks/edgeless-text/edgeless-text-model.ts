@@ -47,7 +47,7 @@ export const EdgelessTextZodSchema = z
   });
 
 export const EdgelessTextBlockSchema = defineBlockSchema({
-  flavour: 'affine:edgeless-text',
+  flavour: 'lovenotes:edgeless-text',
   props: (): EdgelessTextProps => ({
     xywh: '[0,0,16,16]',
     index: 'a0',
@@ -61,16 +61,16 @@ export const EdgelessTextBlockSchema = defineBlockSchema({
   metadata: {
     version: 1,
     role: 'hub',
-    parent: ['affine:surface'],
+    parent: ['lovenotes:surface'],
     children: [
-      'affine:paragraph',
-      'affine:list',
-      'affine:code',
-      'affine:image',
-      'affine:bookmark',
-      'affine:attachment',
-      'affine:embed-!(synced-doc)',
-      'affine:latex',
+      'lovenotes:paragraph',
+      'lovenotes:list',
+      'lovenotes:code',
+      'lovenotes:image',
+      'lovenotes:bookmark',
+      'lovenotes:attachment',
+      'lovenotes:embed-!(synced-doc)',
+      'lovenotes:latex',
     ],
   },
   toModel: () => new EdgelessTextBlockModel(),

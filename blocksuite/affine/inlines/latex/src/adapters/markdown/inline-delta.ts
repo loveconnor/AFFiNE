@@ -1,4 +1,4 @@
-import { InlineDeltaToMarkdownAdapterExtension } from '@blocksuite/affine-shared/adapters';
+import { InlineDeltaToMarkdownAdapterExtension } from '@blocksuite/lovenotes-shared/adapters';
 import type { PhrasingContent } from 'mdast';
 
 export const latexDeltaToMarkdownAdapterMatcher =

@@ -1,11 +1,11 @@
-import { waitNextFrame } from '@affine-test/kit/bs/misc';
-import { createTable, getCellText } from '@affine-test/kit/bs/table';
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { waitNextFrame } from '@lovenotes-test/kit/bs/misc';
+import { createTable, getCellText } from '@lovenotes-test/kit/bs/table';
+import { test } from '@lovenotes-test/kit/playwright';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 /**
@@ -26,14 +26,14 @@ test.describe('Table edge case insertion operations', () => {
 
     // Create a simple table with default 2x2 cells
     await createTable(page);
-    const table = page.locator('affine-table');
+    const table = page.locator('lovenotes-table');
     await expect(table).toBeVisible();
 
     // Wait for table rendering to complete
     await waitNextFrame(page);
 
     // Initialize all cell contents
-    const cells = table.locator('affine-table-cell');
+    const cells = table.locator('lovenotes-table-cell');
     expect(await cells.count()).toBe(4);
 
     // Clear and set cell contents
@@ -62,13 +62,13 @@ test.describe('Table edge case insertion operations', () => {
     await columnOptionButton.click();
 
     // Click on the "Insert Left" option in the menu
-    const menu = page.locator('affine-menu');
+    const menu = page.locator('lovenotes-menu');
     await expect(menu).toBeVisible();
     await menu.getByText('Insert Left').click();
     await waitNextFrame(page);
 
     // Verify: Now we should have 6 cells (3x2 table)
-    const cellsAfterLeftEdgeInsert = table.locator('affine-table-cell');
+    const cellsAfterLeftEdgeInsert = table.locator('lovenotes-table-cell');
     expect(await cellsAfterLeftEdgeInsert.count()).toBe(6);
 
     // Input text to verify insertion position
@@ -117,7 +117,7 @@ test.describe('Table edge case insertion operations', () => {
     await waitNextFrame(page);
 
     // Verify: Now we should have 9 cells (3x3 table)
-    const cellsAfterAboveEdgeInsert = table.locator('affine-table-cell');
+    const cellsAfterAboveEdgeInsert = table.locator('lovenotes-table-cell');
     expect(await cellsAfterAboveEdgeInsert.count()).toBe(9);
 
     // Input text to verify insertion position
@@ -152,7 +152,7 @@ test.describe('Table edge case insertion operations', () => {
     await waitNextFrame(page);
 
     // Verify: Now we should have 12 cells (4x3 table)
-    const cellsAfterRightEdgeInsert = table.locator('affine-table-cell');
+    const cellsAfterRightEdgeInsert = table.locator('lovenotes-table-cell');
     expect(await cellsAfterRightEdgeInsert.count()).toBe(12);
 
     // Input text to verify insertion position
@@ -184,7 +184,7 @@ test.describe('Table edge case insertion operations', () => {
     await waitNextFrame(page);
 
     // Verify: Now we should have 16 cells (4x4 table)
-    const cellsAfterBelowEdgeInsert = table.locator('affine-table-cell');
+    const cellsAfterBelowEdgeInsert = table.locator('lovenotes-table-cell');
     expect(await cellsAfterBelowEdgeInsert.count()).toBe(16);
 
     // Input text to verify insertion position

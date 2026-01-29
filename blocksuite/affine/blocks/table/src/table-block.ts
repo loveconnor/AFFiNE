@@ -1,8 +1,8 @@
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
-import type { TableBlockModel } from '@blocksuite/affine-model';
-import { EDGELESS_TOP_CONTENTEDITABLE_SELECTOR } from '@blocksuite/affine-shared/consts';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
-import { VirtualPaddingController } from '@blocksuite/affine-shared/utils';
+import { CaptionedBlockComponent } from '@blocksuite/lovenotes-components/caption';
+import type { TableBlockModel } from '@blocksuite/lovenotes-model';
+import { EDGELESS_TOP_CONTENTEDITABLE_SELECTOR } from '@blocksuite/lovenotes-shared/consts';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
+import { VirtualPaddingController } from '@blocksuite/lovenotes-shared/utils';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import type { BlockComponent } from '@blocksuite/std';
 import { RANGE_SYNC_EXCLUDE_ATTR } from '@blocksuite/std/inline';
@@ -21,7 +21,7 @@ import {
 } from './table-block-css';
 import { TableDataManager } from './table-data-manager';
 
-export const TableBlockComponentName = 'affine-table';
+export const TableBlockComponentName = 'lovenotes-table';
 export class TableBlockComponent extends CaptionedBlockComponent<TableBlockModel> {
   private _dataManager: TableDataManager | null = null;
 
@@ -174,7 +174,7 @@ export class TableBlockComponent extends CaptionedBlockComponent<TableBlockModel
                             column.columnId
                           );
                           return html`
-                            <affine-table-cell
+                            <lovenotes-table-cell
                               style="display: contents;"
                               .rowIndex=${rowIndex}
                               .columnIndex=${columnIndex}
@@ -183,7 +183,7 @@ export class TableBlockComponent extends CaptionedBlockComponent<TableBlockModel
                               .text=${cell?.text}
                               .dataManager=${this.dataManager}
                               .selectionController=${this.selectionController}
-                            ></affine-table-cell>
+                            ></lovenotes-table-cell>
                           `;
                         }
                       )}
@@ -194,17 +194,17 @@ export class TableBlockComponent extends CaptionedBlockComponent<TableBlockModel
             </tbody>
             ${IS_MOBILE || this.dataManager.readonly$.value
               ? nothing
-              : html`<affine-table-add-button
+              : html`<lovenotes-table-add-button
                   style="display: contents;"
                   .dataManager=${this.dataManager}
-                ></affine-table-add-button>`}
-            ${html`<affine-table-selection-layer
+                ></lovenotes-table-add-button>`}
+            ${html`<lovenotes-table-selection-layer
               style="display: contents;"
               .selectionController=${this.selectionController}
               .getRowRect=${this.getRowRect}
               .getColumnRect=${this.getColumnRect}
               .getAreaRect=${this.getAreaRect}
-            ></affine-table-selection-layer>`}
+            ></lovenotes-table-selection-layer>`}
           </table>
         </div>
       </div>

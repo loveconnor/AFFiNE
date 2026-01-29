@@ -1,8 +1,8 @@
 import {
   CalloutBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import {
   BlockSelection,
   KeymapExtension,

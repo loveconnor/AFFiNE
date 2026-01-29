@@ -4,14 +4,14 @@ import {
   Menu,
   MenuItem,
   PropertyValue,
-} from '@affine/component';
-import { MobileJournalConflictList } from '@affine/core/mobile/pages/workspace/detail/menu/journal-conflicts';
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { DocService } from '@affine/core/modules/doc';
-import { JournalService } from '@affine/core/modules/journal';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { ViewService } from '@affine/core/modules/workbench/services/view';
-import { i18nTime, useI18n } from '@affine/i18n';
+} from '@lovenotes/component';
+import { MobileJournalConflictList } from '@lovenotes/core/mobile/pages/workspace/detail/menu/journal-conflicts';
+import type { FilterParams } from '@lovenotes/core/modules/collection-rules';
+import { DocService } from '@lovenotes/core/modules/doc';
+import { JournalService } from '@lovenotes/core/modules/journal';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { ViewService } from '@lovenotes/core/modules/workbench/services/view';
+import { i18nTime, useI18n } from '@lovenotes/i18n';
 import { TodayIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
@@ -134,9 +134,9 @@ export const JournalValue = ({ readonly }: PropertyValueProps) => {
             }}
             items={
               <DatePicker
-                weekDays={t['com.affine.calendar-date-picker.week-days']()}
-                monthNames={t['com.affine.calendar-date-picker.month-names']()}
-                todayLabel={t['com.affine.calendar-date-picker.today']()}
+                weekDays={t['com.lovenotes.calendar-date-picker.week-days']()}
+                monthNames={t['com.lovenotes.calendar-date-picker.month-names']()}
+                todayLabel={t['com.lovenotes.calendar-date-picker.today']()}
                 value={selectedDate}
                 onChange={handleDateSelect}
               />
@@ -163,7 +163,7 @@ export const JournalValue = ({ readonly }: PropertyValueProps) => {
                 className={styles.duplicateTag}
                 onClick={stopPropagation}
               >
-                {t['com.affine.page-properties.property.journal-duplicated']()}
+                {t['com.lovenotes.page-properties.property.journal-duplicated']()}
               </div>
             </Menu>
           ) : (
@@ -172,7 +172,7 @@ export const JournalValue = ({ readonly }: PropertyValueProps) => {
               className={styles.duplicateTag}
               onClick={handleOpenDuplicate}
             >
-              {t['com.affine.page-properties.property.journal-duplicated']()}
+              {t['com.lovenotes.page-properties.property.journal-duplicated']()}
             </div>
           )
         ) : null}
@@ -247,8 +247,8 @@ export const JournalGroupHeader = ({ groupId, docCount }: GroupHeaderProps) => {
   const t = useI18n();
   const text =
     groupId === 'true'
-      ? t['com.affine.all-docs.group.is-journal']()
-      : t['com.affine.all-docs.group.is-not-journal']();
+      ? t['com.lovenotes.all-docs.group.is-journal']()
+      : t['com.lovenotes.all-docs.group.is-not-journal']();
   return (
     <PlainTextDocGroupHeader groupId={groupId} docCount={docCount}>
       {text}

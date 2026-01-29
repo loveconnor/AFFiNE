@@ -30,11 +30,11 @@ public class SendVerifyChangeEmailMutation: GraphQLMutation {
     "callbackUrl": callbackUrl
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("sendVerifyChangeEmail", Bool.self, arguments: [
         "token": .variable("token"),

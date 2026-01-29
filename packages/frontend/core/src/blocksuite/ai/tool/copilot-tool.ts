@@ -1,23 +1,23 @@
 /* oxlint-disable @typescript-eslint/no-non-null-assertion */
-import { DefaultTool } from '@blocksuite/affine/blocks/surface';
-import { IS_MAC } from '@blocksuite/affine/global/env';
+import { DefaultTool } from '@blocksuite/lovenotes/blocks/surface';
+import { IS_MAC } from '@blocksuite/lovenotes/global/env';
 import {
   Bound,
   getCommonBoundWithRotation,
-} from '@blocksuite/affine/global/gfx';
-import type { PointerEventState } from '@blocksuite/affine/std';
+} from '@blocksuite/lovenotes/global/gfx';
+import type { PointerEventState } from '@blocksuite/lovenotes/std';
 import {
   BaseTool,
   type GfxModel,
   MouseButton,
-} from '@blocksuite/affine/std/gfx';
-import { on } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes/std/gfx';
+import { on } from '@blocksuite/lovenotes-shared/utils';
 import { isEqual } from 'lodash-es';
 import { Subject } from 'rxjs';
 
 import {
   AFFINE_AI_PANEL_WIDGET,
-  type AffineAIPanelWidget,
+  type LoveNotesAIPanelWidget,
 } from '../widgets/ai-panel/ai-panel.js';
 
 export class CopilotTool extends BaseTool {
@@ -53,7 +53,7 @@ export class CopilotTool extends BaseTool {
     const aiPanel = this.gfx.std.view.getWidget(
       AFFINE_AI_PANEL_WIDGET,
       this.doc.root!.id
-    ) as AffineAIPanelWidget;
+    ) as LoveNotesAIPanelWidget;
     return aiPanel && aiPanel.state !== 'hidden';
   }
 

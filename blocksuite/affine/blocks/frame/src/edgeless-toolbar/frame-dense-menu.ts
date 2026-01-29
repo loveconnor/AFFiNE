@@ -1,6 +1,6 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import { menu } from '@blocksuite/affine-components/context-menu';
-import type { DenseMenuBuilder } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import { menu } from '@blocksuite/lovenotes-components/context-menu';
+import type { DenseMenuBuilder } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { FrameIcon } from '@blocksuite/icons/lit';
 
 import { EdgelessFrameManagerIdentifier } from '../frame-manager.js';

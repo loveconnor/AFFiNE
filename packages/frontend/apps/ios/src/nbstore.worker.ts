@@ -1,20 +1,20 @@
 import './setup-worker';
 
-import { broadcastChannelStorages } from '@affine/nbstore/broadcast-channel';
+import { broadcastChannelStorages } from '@lovenotes/nbstore/broadcast-channel';
 import {
   cloudStorages,
   configureSocketAuthMethod,
-} from '@affine/nbstore/cloud';
-import { idbStoragesIndexerOnly } from '@affine/nbstore/idb';
+} from '@lovenotes/nbstore/cloud';
+import { idbStoragesIndexerOnly } from '@lovenotes/nbstore/idb';
 import {
   bindNativeDBApis,
   type NativeDBApis,
   sqliteStorages,
-} from '@affine/nbstore/sqlite';
+} from '@lovenotes/nbstore/sqlite';
 import {
   StoreManagerConsumer,
   type WorkerManagerOps,
-} from '@affine/nbstore/worker/consumer';
+} from '@lovenotes/nbstore/worker/consumer';
 import { type MessageCommunicapable, OpConsumer } from '@toeverything/infra/op';
 import { AsyncCall } from 'async-call-rpc';
 

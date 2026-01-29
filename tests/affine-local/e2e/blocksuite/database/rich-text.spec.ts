@@ -1,9 +1,9 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@lovenotes-test/kit/playwright';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 import {
@@ -55,7 +55,7 @@ test.describe('Database Rich Text Column', () => {
     }, pageUrl);
 
     // Step 9: Verify the result
-    const referenceTitle = richTextCell.locator('.affine-reference-title');
+    const referenceTitle = richTextCell.locator('.lovenotes-reference-title');
     await expect(referenceTitle).toBeVisible();
     await expect(referenceTitle).toContainText('Test Page');
   });
@@ -92,7 +92,7 @@ test.describe('Database Rich Text Column', () => {
     await targetPage.click();
 
     // Step 8: Verify the result
-    const referenceTitle = richTextCell.locator('.affine-reference-title');
+    const referenceTitle = richTextCell.locator('.lovenotes-reference-title');
     await expect(referenceTitle).toBeVisible();
     await expect(referenceTitle).toContainText('Reference Target');
   });

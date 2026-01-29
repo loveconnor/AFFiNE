@@ -2,17 +2,17 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@affine/admin/components/ui/avatar';
-import { Input } from '@affine/admin/components/ui/input';
-import { Label } from '@affine/admin/components/ui/label';
-import { Separator } from '@affine/admin/components/ui/separator';
-import { Switch } from '@affine/admin/components/ui/switch';
+} from '@lovenotes/admin/components/ui/avatar';
+import { Input } from '@lovenotes/admin/components/ui/input';
+import { Label } from '@lovenotes/admin/components/ui/label';
+import { Separator } from '@lovenotes/admin/components/ui/separator';
+import { Switch } from '@lovenotes/admin/components/ui/switch';
 import {
   adminUpdateWorkspaceMutation,
   adminWorkspaceQuery,
   adminWorkspacesQuery,
   FeatureType,
-} from '@affine/graphql';
+} from '@lovenotes/graphql';
 import { AccountIcon } from '@blocksuite/icons/rc';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useCallback, useEffect, useMemo, useState } from 'react';

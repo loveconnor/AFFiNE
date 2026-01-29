@@ -5,33 +5,33 @@ import { EmbedSyncedDocCard } from './embed-synced-doc-block/components/embed-sy
 import { EmbedEdgelessSyncedDocBlockComponent } from './embed-synced-doc-block/embed-edgeless-synced-doc-block';
 
 export function effects() {
-  customElements.define('affine-embed-synced-doc-card', EmbedSyncedDocCard);
+  customElements.define('lovenotes-embed-synced-doc-card', EmbedSyncedDocCard);
 
   customElements.define(
-    'affine-embed-edgeless-linked-doc-block',
+    'lovenotes-embed-edgeless-linked-doc-block',
     EmbedEdgelessLinkedDocBlockComponent
   );
   customElements.define(
-    'affine-embed-linked-doc-block',
+    'lovenotes-embed-linked-doc-block',
     EmbedLinkedDocBlockComponent
   );
 
   customElements.define(
-    'affine-embed-edgeless-synced-doc-block',
+    'lovenotes-embed-edgeless-synced-doc-block',
     EmbedEdgelessSyncedDocBlockComponent
   );
   customElements.define(
-    'affine-embed-synced-doc-block',
+    'lovenotes-embed-synced-doc-block',
     EmbedSyncedDocBlockComponent
   );
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-embed-synced-doc-card': EmbedSyncedDocCard;
-    'affine-embed-synced-doc-block': EmbedSyncedDocBlockComponent;
-    'affine-embed-edgeless-synced-doc-block': EmbedEdgelessSyncedDocBlockComponent;
-    'affine-embed-linked-doc-block': EmbedLinkedDocBlockComponent;
-    'affine-embed-edgeless-linked-doc-block': EmbedEdgelessLinkedDocBlockComponent;
+    'lovenotes-embed-synced-doc-card': EmbedSyncedDocCard;
+    'lovenotes-embed-synced-doc-block': EmbedSyncedDocBlockComponent;
+    'lovenotes-embed-edgeless-synced-doc-block': EmbedEdgelessSyncedDocBlockComponent;
+    'lovenotes-embed-linked-doc-block': EmbedLinkedDocBlockComponent;
+    'lovenotes-embed-edgeless-linked-doc-block': EmbedEdgelessLinkedDocBlockComponent;
   }
 }

@@ -1,12 +1,42 @@
 import {
   replaceIdMiddleware,
   titleMiddleware,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { sha } from '@blocksuite/global/utils';
 import type { DocSnapshot, Schema, Store, Workspace } from '@blocksuite/store';
 import { extMimeMap, getAssetName, Transformer } from '@blocksuite/store';
 
 import { download, Unzip, Zip } from './utils.js';
+
+const LEGACY_FLAVOUR_PREFIX = 'affine:';
+const CURRENT_FLAVOUR_PREFIX = 'lovenotes:';
+
+const replaceLegacyFlavour = (value: string) =>
+  value.startsWith(LEGACY_FLAVOUR_PREFIX)
+    ? `${CURRENT_FLAVOUR_PREFIX}${value.slice(LEGACY_FLAVOUR_PREFIX.length)}`
+    : value;
+
+const normalizeLegacyFlavours = <T>(input: T): T => {
+  if (typeof input === 'string') {
+    return replaceLegacyFlavour(input) as T;
+  }
+
+  if (Array.isArray(input)) {
+    return input.map(item => normalizeLegacyFlavours(item)) as T;
+  }
+
+  if (input && typeof input === 'object') {
+    const result: Record<string, unknown> = {};
+
+    for (const [key, value] of Object.entries(input)) {
+      result[replaceLegacyFlavour(key)] = normalizeLegacyFlavours(value);
+    }
+
+    return result as T;
+  }
+
+  return input;
+};
 
 async function exportDocs(
   collection: Workspace,
@@ -134,7 +164,9 @@ async function importDocs(
   return Promise.all(
     snapshotsBlobs.map(async blob => {
       const json = await blob.text();
-      const snapshot = JSON.parse(json) as DocSnapshot;
+      const snapshot = normalizeLegacyFlavours(
+        JSON.parse(json) as DocSnapshot
+      );
       const tasks: Promise<void>[] = [];
 
       job.walk(snapshot, block => {

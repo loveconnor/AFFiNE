@@ -1,5 +1,5 @@
-import { generateElementId, sortIndex } from '@blocksuite/affine-block-surface';
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
+import { generateElementId, sortIndex } from '@blocksuite/lovenotes-block-surface';
+import type { ConnectorElementModel } from '@blocksuite/lovenotes-model';
 import { Bound } from '@blocksuite/global/gfx';
 import { assertType } from '@blocksuite/global/utils';
 import type { BlockSnapshot, SnapshotNode } from '@blocksuite/store';
@@ -33,7 +33,7 @@ export const replaceIdMiddleware = (job: TemplateJob) => {
       ? (regeneratedIdMap.get(data.parent) ?? data.parent)
       : undefined;
 
-    if (blockJson.flavour === 'affine:surface-ref') {
+    if (blockJson.flavour === 'lovenotes:surface-ref') {
       assertType<
         SnapshotNode<{
           reference: string;
@@ -44,7 +44,7 @@ export const replaceIdMiddleware = (job: TemplateJob) => {
         regeneratedIdMap.get(blockJson.props['reference']) ?? '';
     }
 
-    if (blockJson.flavour === 'affine:surface') {
+    if (blockJson.flavour === 'lovenotes:surface') {
       const elements: Record<string, Record<string, unknown>> = {};
       const defered: string[] = [];
 
@@ -113,7 +113,7 @@ export const replaceIdMiddleware = (job: TemplateJob) => {
     }
 
     // remap childElementIds of frame
-    if (blockJson.flavour === 'affine:frame') {
+    if (blockJson.flavour === 'lovenotes:frame') {
       assertType<Record<string, boolean>>(blockJson.props.childElementIds);
       const newChildElementIds: Record<string, boolean> = {};
       Object.entries(blockJson.props.childElementIds).forEach(([key, val]) => {
@@ -165,7 +165,7 @@ export const createInsertPlaceMiddleware = (targetPlace: Bound) => {
         ).serialize();
       }
 
-      if (blockJson.flavour === 'affine:surface') {
+      if (blockJson.flavour === 'lovenotes:surface') {
         Object.entries(
           blockJson.props.elements as Record<string, Record<string, unknown>>
         ).forEach(([_, val]) => {
@@ -218,7 +218,7 @@ export const createStickerMiddleware = (
     });
 
     const changeInserPosition = (blockJson: BlockSnapshot) => {
-      if (blockJson.flavour === 'affine:image' && blockJson.props.xywh) {
+      if (blockJson.flavour === 'lovenotes:image' && blockJson.props.xywh) {
         const bound = Bound.deserialize(blockJson.props['xywh'] as string);
 
         blockJson.props['xywh'] = new Bound(
@@ -271,7 +271,7 @@ export const createRegenerateIndexMiddleware = (
 
       job.walk(block => {
         if (block.props.index) {
-          if (block.flavour === 'affine:frame') {
+          if (block.flavour === 'lovenotes:frame') {
             frameList.push({
               id: block.id,
               index: block.props.index as string,
@@ -285,7 +285,7 @@ export const createRegenerateIndexMiddleware = (
           }
         }
 
-        if (block.flavour === 'affine:surface') {
+        if (block.flavour === 'lovenotes:surface') {
           Object.entries(
             block.props.elements as Record<string, Record<string, unknown>>
           ).forEach(([_, element]) => {
@@ -330,7 +330,7 @@ export const createRegenerateIndexMiddleware = (
           indexMap.get(blockJson.id) ?? blockJson.props.index;
       }
 
-      if (blockJson.flavour === 'affine:surface') {
+      if (blockJson.flavour === 'lovenotes:surface') {
         Object.entries(
           blockJson.props.elements as Record<string, Record<string, unknown>>
         ).forEach(([_, element]) => {

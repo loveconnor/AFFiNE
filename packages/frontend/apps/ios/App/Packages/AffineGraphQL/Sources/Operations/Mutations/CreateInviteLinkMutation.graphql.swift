@@ -26,11 +26,11 @@ public class CreateInviteLinkMutation: GraphQLMutation {
     "expireTime": expireTime
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("createInviteLink", CreateInviteLink.self, arguments: [
         "workspaceId": .variable("workspaceId"),
@@ -43,21 +43,21 @@ public class CreateInviteLinkMutation: GraphQLMutation {
     /// CreateInviteLink
     ///
     /// Parent Type: `InviteLink`
-    public struct CreateInviteLink: AffineGraphQL.SelectionSet {
+    public struct CreateInviteLink: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.InviteLink }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.InviteLink }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("link", String.self),
-        .field("expireTime", AffineGraphQL.DateTime.self),
+        .field("expireTime", LoveNotesGraphQL.DateTime.self),
       ] }
 
       /// Invite link
       public var link: String { __data["link"] }
       /// Invite link expire time
-      public var expireTime: AffineGraphQL.DateTime { __data["expireTime"] }
+      public var expireTime: LoveNotesGraphQL.DateTime { __data["expireTime"] }
     }
   }
 }

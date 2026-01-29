@@ -1,4 +1,4 @@
-import type { CodeBlockModel } from '@blocksuite/affine-model';
+import type { CodeBlockModel } from '@blocksuite/lovenotes-model';
 import { createIdentifier } from '@blocksuite/global/di';
 import type { ExtensionType } from '@blocksuite/store';
 import type { HTMLTemplateResult } from 'lit';

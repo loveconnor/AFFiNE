@@ -1,9 +1,9 @@
-import { toast } from '@blocksuite/affine-components/toast';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import type {
   ListBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { insertContent } from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-model';
+import { insertContent } from '@blocksuite/lovenotes-rich-text';
 import {
   ArrowDownBigIcon,
   ArrowUpBigIcon,

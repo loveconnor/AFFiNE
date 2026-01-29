@@ -1,6 +1,6 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
+import { EdgelessToolbarToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { css, html, LitElement } from 'lit';
 
 import { EraserTool } from '../../../eraser-tool';
@@ -60,10 +60,10 @@ export class EdgelessEraserToolButton extends EdgelessToolbarToolMixin(
     return html`
       <edgeless-toolbar-button
         class="edgeless-eraser-button"
-        .tooltip=${html`<affine-tooltip-content-with-shortcut
+        .tooltip=${html`<lovenotes-tooltip-content-with-shortcut
           data-tip="${'Eraser'}"
           data-shortcut="${'E'}"
-        ></affine-tooltip-content-with-shortcut>`}
+        ></lovenotes-tooltip-content-with-shortcut>`}
         .tooltipOffset=${4}
         .active=${type === EraserTool}
         @click=${() => this.setEdgelessTool(EraserTool)}

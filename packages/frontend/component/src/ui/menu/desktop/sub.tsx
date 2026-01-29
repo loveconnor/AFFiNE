@@ -42,7 +42,10 @@ export const DesktopMenuSub = ({
         <ContextMenu.Portal {...portalOptions}>
           <ContextMenu.SubContent
             className={contentClassName}
-            style={{ zIndex: 'var(--affine-z-index-popover)', ...contentStyle }}
+            style={{
+              zIndex: 'var(--lovenotes-z-index-popover, 1000)',
+              ...contentStyle,
+            }}
             {...otherSubContentOptions}
           >
             {items}
@@ -60,7 +63,10 @@ export const DesktopMenuSub = ({
       <DropdownMenu.Portal {...portalOptions}>
         <DropdownMenu.SubContent
           className={contentClassName}
-          style={{ zIndex: 'var(--affine-z-index-popover)', ...contentStyle }}
+          style={{
+            zIndex: 'var(--lovenotes-z-index-popover, 1000)',
+            ...contentStyle,
+          }}
           {...otherSubContentOptions}
         >
           {items}

@@ -1,7 +1,7 @@
-import '@affine/env/constant';
-import '@blocksuite/affine/global/types'
+import '@lovenotes/env/constant';
+import '@blocksuite/lovenotes/global/types'
 
-declare module '@blocksuite/affine/store' {
+declare module '@blocksuite/lovenotes/store' {
   interface DocMeta {
     /**
      * @deprecated

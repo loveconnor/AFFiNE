@@ -1,5 +1,5 @@
-import { getSelectedModelsCommand } from '@blocksuite/affine-shared/commands';
-import { type VirtualKeyboardProviderWithAction } from '@blocksuite/affine-shared/services';
+import { getSelectedModelsCommand } from '@blocksuite/lovenotes-shared/commands';
+import { type VirtualKeyboardProviderWithAction } from '@blocksuite/lovenotes-shared/services';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { ArrowLeftBigIcon, KeyboardIcon } from '@blocksuite/icons/lit';
 import {
@@ -29,13 +29,13 @@ import {
   isKeyboardToolPanelConfig,
 } from './utils';
 
-export const AFFINE_KEYBOARD_TOOLBAR = 'affine-keyboard-toolbar';
+export const AFFINE_KEYBOARD_TOOLBAR = 'lovenotes-keyboard-toolbar';
 
 @requiredProperties({
   config: PropTypes.object,
   rootComponent: PropTypes.instanceOf(BlockComponent),
 })
-export class AffineKeyboardToolbar extends SignalWatcher(
+export class LoveNotesKeyboardToolbar extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = keyboardToolbarStyles;
@@ -374,14 +374,14 @@ export class AffineKeyboardToolbar extends SignalWatcher(
         <div class="divider"></div>
         ${this._renderKeyboardButton()}
       </div>
-      <affine-keyboard-tool-panel
+      <lovenotes-keyboard-tool-panel
         .config=${this._currentPanelConfig}
         .context=${this._context}
         style=${styleMap({
           height: this.panelHeight,
           paddingBottom: this.keyboard.appTabSafeArea$.value,
         })}
-      ></affine-keyboard-tool-panel>
+      ></lovenotes-keyboard-tool-panel>
     `;
   }
 

@@ -1,10 +1,10 @@
-import type { CommentChangeAction, PublicUserType } from '@affine/graphql';
-import type { DocMode } from '@blocksuite/affine/model';
+import type { CommentChangeAction, PublicUserType } from '@lovenotes/graphql';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import type {
   BaseSelection,
   DocSnapshot,
   Store,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/store';
 
 export type CommentId = string;
 

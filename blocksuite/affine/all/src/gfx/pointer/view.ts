@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-gfx-pointer/view';
+export * from '@blocksuite/lovenotes-gfx-pointer/view';

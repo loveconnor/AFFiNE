@@ -2,22 +2,22 @@
 import {
   DefaultTool,
   EdgelessLegacySlotIdentifier,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   type MenuHandler,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import {
   darkToolbarStyles,
   lightToolbarStyles,
-} from '@blocksuite/affine-components/toolbar';
-import { ColorScheme, type RootBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-components/toolbar';
+import { ColorScheme, type RootBlockModel } from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import {
   ArrowLeftSmallIcon,
   ArrowRightSmallIcon,
@@ -143,7 +143,7 @@ export class EdgelessToolbarWidget extends WidgetComponent<RootBlockModel> {
       display: block;
       width: 1px;
       height: 100%;
-      background-color: var(--affine-border-color);
+      background-color: var(--lovenotes-border-color);
     }
     .pen-and-eraser {
       display: flex;
@@ -528,9 +528,9 @@ export class EdgelessToolbarWidget extends WidgetComponent<RootBlockModel> {
             .some(tool => tool.type === this.edgelessTool)}
         >
           ${MoreHorizontalIcon({ width: '20px', height: '20px' })}
-          <affine-tooltip tip-position="top" .offset=${25}>
+          <lovenotes-tooltip tip-position="top" .offset=${25}>
             More Tools
-          </affine-tooltip>
+          </lovenotes-tooltip>
         </icon-button>
       </div>
       <div class="full-divider"></div>
@@ -544,9 +544,9 @@ export class EdgelessToolbarWidget extends WidgetComponent<RootBlockModel> {
           ${ArrowLeftSmallIcon({ width: '20px', height: '20px' })}
           ${cache(
             this._seniorPrevTooltip
-              ? html` <affine-tooltip tip-position="top" .offset=${4}>
+              ? html` <lovenotes-tooltip tip-position="top" .offset=${4}>
                   ${this._seniorPrevTooltip}
-                </affine-tooltip>`
+                </lovenotes-tooltip>`
               : nothing
           )}
         </icon-button>
@@ -571,9 +571,9 @@ export class EdgelessToolbarWidget extends WidgetComponent<RootBlockModel> {
           ${ArrowRightSmallIcon({ width: '20px', height: '20px' })}
           ${cache(
             this._seniorNextTooltip
-              ? html` <affine-tooltip tip-position="top" .offset=${4}>
+              ? html` <lovenotes-tooltip tip-position="top" .offset=${4}>
                   ${this._seniorNextTooltip}
-                </affine-tooltip>`
+                </lovenotes-tooltip>`
               : nothing
           )}
         </icon-button>
@@ -678,8 +678,8 @@ export class EdgelessToolbarWidget extends WidgetComponent<RootBlockModel> {
             .borderRadius=${16}
             .smooth=${0.7}
             .borderWidth=${1}
-            .bgColor=${'var(--affine-background-overlay-panel-color)'}
-            .borderColor=${'var(--affine-border-color)'}
+            .bgColor=${'var(--lovenotes-background-overlay-panel-color)'}
+            .borderColor=${'var(--lovenotes-border-color)'}
             style="filter: drop-shadow(${cssVar('toolbarShadow')})"
           >
             <div
@@ -725,7 +725,7 @@ export class EdgelessToolbarWidget extends WidgetComponent<RootBlockModel> {
 }
 
 export const edgelessToolbarWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   EDGELESS_TOOLBAR_WIDGET,
   literal`${unsafeStatic(EDGELESS_TOOLBAR_WIDGET)}`
 );

@@ -5,24 +5,24 @@ import {
   EdgelessCRUDIdentifier,
   EXCLUDING_MOUSE_OUT_CLASS_LIST,
   type SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   DEFAULT_NOTE_HEIGHT,
   DEFAULT_NOTE_WIDTH,
   NOTE_MIN_HEIGHT,
   type NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
 import {
   EditPropsStore,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import type { NoteChildrenFlavour } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-shared/services';
+import type { NoteChildrenFlavour } from '@blocksuite/lovenotes-shared/types';
 import {
   handleNativeRangeAtPoint,
   hasClassNameInList,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { type IPoint, Point, serializeXYWH } from '@blocksuite/global/gfx';
 import type { BlockStdScope, PointerEventState } from '@blocksuite/std';
 import {
@@ -41,7 +41,7 @@ export type NoteToolOption = {
 };
 
 export class NoteTool extends BaseTool<NoteToolOption> {
-  static override toolName = 'affine:note';
+  static override toolName = 'lovenotes:note';
 
   private _draggingNoteOverlay: DraggingNoteOverlay | null = null;
 
@@ -109,7 +109,7 @@ export class NoteTool extends BaseTool<NoteToolOption> {
 
   override activate() {
     const attributes =
-      this.std.get(EditPropsStore).lastProps$.value['affine:note'];
+      this.std.get(EditPropsStore).lastProps$.value['lovenotes:note'];
     const background = attributes.background;
     this._noteOverlay = new NoteOverlay(this.gfx, background);
     this._noteOverlay.text = this.activatedOption.tip;
@@ -173,7 +173,7 @@ export class NoteTool extends BaseTool<NoteToolOption> {
     this._clearOverlay();
 
     const attributes =
-      this.std.get(EditPropsStore).lastProps$.value['affine:note'];
+      this.std.get(EditPropsStore).lastProps$.value['lovenotes:note'];
     const background = attributes.background;
     this._draggingNoteOverlay = new DraggingNoteOverlay(this.gfx, background);
     this._surfaceComponent?.renderer.addOverlay(this._draggingNoteOverlay);
@@ -254,7 +254,7 @@ function addNote(
   requestAnimationFrame(() => {
     const blocks =
       (doc.root?.children.filter(
-        child => child.flavour === 'affine:note'
+        child => child.flavour === 'lovenotes:note'
       ) as GfxBlockElementModel[]) ?? [];
     const element = blocks.find(b => b.id === noteId);
     if (element) {
@@ -304,7 +304,7 @@ function addNoteAtPoint(
   } = options;
   const [x, y] = gfx.viewport.toModelCoord(point.x, point.y);
   const blockId = crud.addBlock(
-    'affine:note',
+    'lovenotes:note',
     {
       xywh: serializeXYWH(
         x - offsetX * scale,

@@ -8,7 +8,7 @@ import type { Page } from '@playwright/test';
  * ```
  */
 export function getCodeBlock(page: Page) {
-  const codeBlock = page.locator('affine-code');
+  const codeBlock = page.locator('lovenotes-code');
   const languageButton = page.getByTestId('lang-button');
 
   const clickLanguageButton = async () => {
@@ -16,10 +16,10 @@ export function getCodeBlock(page: Page) {
     await languageButton.click({ delay: 50 });
   };
 
-  const langList = page.locator('affine-filterable-list');
+  const langList = page.locator('lovenotes-filterable-list');
   const langFilterInput = langList.locator('#filter-input');
 
-  const codeToolbar = page.locator('affine-code-toolbar');
+  const codeToolbar = page.locator('lovenotes-code-toolbar');
 
   const copyButton = codeToolbar.getByRole('button', { name: 'Copy code' });
   const captionButton = codeToolbar.getByRole('button', { name: 'Caption' });

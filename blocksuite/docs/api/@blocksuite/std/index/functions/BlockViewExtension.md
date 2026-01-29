@@ -36,7 +36,7 @@ The view is a lit template that is used to render the block.
 import { BlockViewExtension } from '@blocksuite/std';
 
 const MyListBlockViewExtension = BlockViewExtension(
-  'affine:list',
+  'lovenotes:list',
   literal`my-list-block`
 );
 ```

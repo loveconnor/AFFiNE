@@ -2,13 +2,13 @@ import {
   type FilterableListItem,
   type FilterableListOptions,
   showPopFilterableList,
-} from '@blocksuite/affine-components/filterable-list';
-import { ArrowDownIcon } from '@blocksuite/affine-components/icons';
+} from '@blocksuite/lovenotes-components/filterable-list';
+import { ArrowDownIcon } from '@blocksuite/lovenotes-components/icons';
 import {
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { noop } from '@blocksuite/global/utils';
 import { css, LitElement, nothing } from 'lit';
@@ -101,7 +101,7 @@ export class LanguageListButton extends WithDisposable(
       abortController: this._abortController,
       // stacking-context(editor-host)
       portalStyles: {
-        zIndex: 'var(--affine-z-index-popover)',
+        zIndex: 'var(--lovenotes-z-index-popover)',
       },
     });
   };
@@ -133,7 +133,7 @@ export class LanguageListButton extends WithDisposable(
   override render() {
     const textStyles = styleMap({
       fontFamily: 'Inter',
-      fontSize: 'var(--affine-font-xs)',
+      fontSize: 'var(--lovenotes-font-xs)',
       fontStyle: 'normal',
       fontWeight: '500',
       lineHeight: '20px',

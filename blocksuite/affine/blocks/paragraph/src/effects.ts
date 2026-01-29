@@ -3,11 +3,11 @@ import { ParagraphBlockComponent } from './paragraph-block.js';
 
 export function effects() {
   ParagraphHeadingIconEffects();
-  customElements.define('affine-paragraph', ParagraphBlockComponent);
+  customElements.define('lovenotes-paragraph', ParagraphBlockComponent);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-paragraph': ParagraphBlockComponent;
+    'lovenotes-paragraph': ParagraphBlockComponent;
   }
 }

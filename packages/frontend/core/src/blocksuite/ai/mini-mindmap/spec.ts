@@ -1,18 +1,18 @@
-import { SurfaceBlockSchema } from '@blocksuite/affine/blocks/surface';
-import { ConnectorElementRendererExtension } from '@blocksuite/affine/gfx/connector';
+import { SurfaceBlockSchema } from '@blocksuite/lovenotes/blocks/surface';
+import { ConnectorElementRendererExtension } from '@blocksuite/lovenotes/gfx/connector';
 import {
   MindmapElementRendererExtension,
   MindMapView,
-} from '@blocksuite/affine/gfx/mindmap';
-import { ShapeElementRendererExtension } from '@blocksuite/affine/gfx/shape';
-import { TextElementRendererExtension } from '@blocksuite/affine/gfx/text';
-import { RootBlockSchema } from '@blocksuite/affine/model';
+} from '@blocksuite/lovenotes/gfx/mindmap';
+import { ShapeElementRendererExtension } from '@blocksuite/lovenotes/gfx/shape';
+import { TextElementRendererExtension } from '@blocksuite/lovenotes/gfx/text';
+import { RootBlockSchema } from '@blocksuite/lovenotes/model';
 import {
   DocModeService,
   ThemeService,
-} from '@blocksuite/affine/shared/services';
-import { BlockViewExtension, FlavourExtension } from '@blocksuite/affine/std';
-import type { BlockSchema, ExtensionType } from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/shared/services';
+import { BlockViewExtension, FlavourExtension } from '@blocksuite/lovenotes/std';
+import type { BlockSchema, ExtensionType } from '@blocksuite/lovenotes/store';
 import { literal } from 'lit/static-html.js';
 import type { z } from 'zod';
 
@@ -22,13 +22,13 @@ import { MindmapSurfaceBlockService } from './surface-service.js';
 export const MiniMindmapSpecs: ExtensionType[] = [
   DocModeService,
   ThemeService,
-  FlavourExtension('affine:page'),
+  FlavourExtension('lovenotes:page'),
   MindmapService,
-  BlockViewExtension('affine:page', literal`mini-mindmap-root-block`),
-  FlavourExtension('affine:surface'),
+  BlockViewExtension('lovenotes:page', literal`mini-mindmap-root-block`),
+  FlavourExtension('lovenotes:surface'),
   MindMapView,
   MindmapSurfaceBlockService,
-  BlockViewExtension('affine:surface', literal`mini-mindmap-surface-block`),
+  BlockViewExtension('lovenotes:surface', literal`mini-mindmap-surface-block`),
   TextElementRendererExtension,
   MindmapElementRendererExtension,
   ShapeElementRendererExtension,

@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   clickView,
@@ -9,14 +9,14 @@ import {
   locateEditorContainer,
   resizeElementByHandle,
   scaleElementByHandle,
-} from '@affine-test/kit/utils/editor';
-import { pressEnter } from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/editor';
+import { pressEnter } from '@lovenotes-test/kit/utils/keyboard';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   createLinkedPage,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 const title = 'Synced Block Test';
@@ -35,7 +35,7 @@ test.beforeEach(async ({ page }) => {
 test('should not show hidden note in embed view page mode', async ({
   page,
 }) => {
-  const note = page.locator('affine-edgeless-note');
+  const note = page.locator('lovenotes-edgeless-note');
   await note.dblclick();
   await page.keyboard.type('visible content');
   await createEdgelessNoteBlock(page, [100, 100]);
@@ -45,7 +45,7 @@ test('should not show hidden note in embed view page mode', async ({
 
   // create a new page and navigate
   await createLinkedPage(page, 'Test Page');
-  const inlineLink = page.locator('affine-reference');
+  const inlineLink = page.locator('lovenotes-reference');
   await inlineLink.dblclick();
 
   // reference the previous page
@@ -57,12 +57,12 @@ test('should not show hidden note in embed view page mode', async ({
 
   // switch to embed view
   await inlineLink.hover();
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const toolbar = page.locator('lovenotes-toolbar-widget editor-toolbar');
   await toolbar.getByLabel('Switch view').click();
   await toolbar.getByLabel('Embed view').click();
 
   // check the content
-  const embedLink = page.locator('affine-embed-synced-doc-block');
+  const embedLink = page.locator('lovenotes-embed-synced-doc-block');
   await expect(embedLink.getByText(/visible content/)).toBeVisible();
   await expect(embedLink.getByText(/hidden content/)).toBeHidden();
 });
@@ -83,7 +83,7 @@ test.describe('edgeless', () => {
 
   test.describe('header of edgeless embed synced doc', () => {
     test('should fold button works', async ({ page }) => {
-      const embedBlock = page.locator('affine-embed-edgeless-synced-doc-block');
+      const embedBlock = page.locator('lovenotes-embed-edgeless-synced-doc-block');
       const foldButton = embedBlock.getByTestId(
         'edgeless-embed-synced-doc-fold-button'
       );
@@ -99,7 +99,7 @@ test.describe('edgeless', () => {
     });
 
     test('should show title in header', async ({ page }) => {
-      const embedBlock = page.locator('affine-embed-edgeless-synced-doc-block');
+      const embedBlock = page.locator('lovenotes-embed-edgeless-synced-doc-block');
       const headerTitle = embedBlock.getByTestId(
         'edgeless-embed-synced-doc-title'
       );
@@ -118,7 +118,7 @@ test.describe('edgeless', () => {
       const [, , , h] = await getSelectedXYWH(page);
       await resizeElementByHandle(page, [0, -(h - 10)], 'bottom-right');
 
-      const embedBlock = page.locator('affine-embed-edgeless-synced-doc-block');
+      const embedBlock = page.locator('lovenotes-embed-edgeless-synced-doc-block');
       const foldButton = embedBlock.getByTestId(
         'edgeless-embed-synced-doc-fold-button'
       );
@@ -142,7 +142,7 @@ test.describe('edgeless', () => {
     test('should be able to adjust height the folded embed synced doc', async ({
       page,
     }) => {
-      const embedBlock = page.locator('affine-embed-edgeless-synced-doc-block');
+      const embedBlock = page.locator('lovenotes-embed-edgeless-synced-doc-block');
 
       const content = embedBlock.locator('editor-host');
       const foldButton = embedBlock.getByTestId(

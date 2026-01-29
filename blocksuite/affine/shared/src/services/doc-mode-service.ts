@@ -1,4 +1,4 @@
-import type { DocMode } from '@blocksuite/affine-model';
+import type { DocMode } from '@blocksuite/lovenotes-model';
 import type { Container } from '@blocksuite/global/di';
 import { createIdentifier } from '@blocksuite/global/di';
 import { noop } from '@blocksuite/global/utils';
@@ -57,7 +57,7 @@ export interface DocModeProvider {
 }
 
 export const DocModeProvider = createIdentifier<DocModeProvider>(
-  'AffineDocModeService'
+  'LoveNotesDocModeService'
 );
 
 const modeMap = new Map<string, DocMode>();

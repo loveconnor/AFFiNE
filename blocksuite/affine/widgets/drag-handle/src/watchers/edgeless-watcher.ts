@@ -1,5 +1,5 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
-import { getSelectedRect } from '@blocksuite/affine-shared/utils';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
+import { getSelectedRect } from '@blocksuite/lovenotes-shared/utils';
 import { type IVec, Rect } from '@blocksuite/global/gfx';
 import {
   GfxControllerIdentifier,
@@ -12,7 +12,7 @@ import {
   DRAG_HANDLE_CONTAINER_WIDTH_TOP_LEVEL,
   HOVER_AREA_RECT_PADDING_TOP_LEVEL,
 } from '../config.js';
-import type { AffineDragHandleWidget } from '../drag-handle.js';
+import type { LoveNotesDragHandleWidget } from '../drag-handle.js';
 
 /**
  * Used to control the drag handle visibility in edgeless mode
@@ -158,7 +158,7 @@ export class EdgelessWatcher {
     };
   }
 
-  constructor(readonly widget: AffineDragHandleWidget) {}
+  constructor(readonly widget: LoveNotesDragHandleWidget) {}
 
   watch() {
     if (this.widget.mode === 'page') {

@@ -1,15 +1,15 @@
-import { EdgelessFrameManagerIdentifier } from '@blocksuite/affine-block-frame';
+import { EdgelessFrameManagerIdentifier } from '@blocksuite/lovenotes-block-frame';
 import {
   EdgelessCRUDIdentifier,
   EdgelessLegacySlotIdentifier,
   getSurfaceBlock,
   type SurfaceBlockModel,
   type SurfaceContext,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   type ConnectorElementModel,
   RootBlockSchema,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import { BlockService, type BlockStdScope } from '@blocksuite/std';
 import type {

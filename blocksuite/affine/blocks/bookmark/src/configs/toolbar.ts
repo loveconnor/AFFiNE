@@ -3,18 +3,18 @@ import {
   canEmbedAsIframe,
   EMBED_IFRAME_DEFAULT_HEIGHT_IN_SURFACE,
   EMBED_IFRAME_DEFAULT_WIDTH_IN_SURFACE,
-} from '@blocksuite/affine-block-embed';
-import { reassociateConnectorsCommand } from '@blocksuite/affine-block-surface';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@blocksuite/lovenotes-block-embed';
+import { reassociateConnectorsCommand } from '@blocksuite/lovenotes-block-surface';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import {
   BookmarkBlockModel,
   BookmarkStyles,
   type EmbedCardStyle,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   ActionPlacement,
   EmbedIframeService,
@@ -25,8 +25,8 @@ import {
   type ToolbarContext,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
-import { getBlockProps } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { getBlockProps } from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   CaptionIcon,
@@ -57,7 +57,7 @@ const previewAction = {
 
     const { url } = model.props;
 
-    return html`<affine-link-preview .url=${url}></affine-link-preview>`;
+    return html`<lovenotes-link-preview .url=${url}></lovenotes-link-preview>`;
   },
 } satisfies ToolbarAction;
 
@@ -122,7 +122,7 @@ const builtinToolbarConfig = {
 
             const text = new Text(yText);
 
-            ctx.store.addBlock('affine:paragraph', { text }, parent, index);
+            ctx.store.addBlock('lovenotes:paragraph', { text }, parent, index);
 
             ctx.store.deleteBlock(model);
 
@@ -233,12 +233,12 @@ const builtinToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-view-dropdown-menu
+          html`<lovenotes-view-dropdown-menu
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
             .viewType$=${viewType$}
-          ></affine-view-dropdown-menu>`
+          ></lovenotes-view-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -278,12 +278,12 @@ const builtinToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-card-style-dropdown-menu
+          html`<lovenotes-card-style-dropdown-menu
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
             .style$=${model.props.style$}
-          ></affine-card-style-dropdown-menu>`
+          ></lovenotes-card-style-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -423,7 +423,7 @@ const builtinSurfaceToolbarConfig = {
                 heightInSurface ?? EMBED_IFRAME_DEFAULT_HEIGHT_IN_SURFACE;
 
               newId = ctx.store.addBlock(
-                'affine:embed-iframe',
+                'lovenotes:embed-iframe',
                 { url, caption, title, description, xywh: bound.serialize() },
                 parent
               );
@@ -468,12 +468,12 @@ const builtinSurfaceToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-view-dropdown-menu
+          html`<lovenotes-view-dropdown-menu
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
             .viewType$=${viewType$}
-          ></affine-view-dropdown-menu>`
+          ></lovenotes-view-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -530,12 +530,12 @@ const builtinSurfaceToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-card-style-dropdown-menu
+          html`<lovenotes-card-style-dropdown-menu
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
             .style$=${style$}
-          ></affine-card-style-dropdown-menu>`
+          ></lovenotes-card-style-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -587,12 +587,12 @@ const builtinSurfaceToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-size-dropdown-menu
+          html`<lovenotes-size-dropdown-menu
             @select=${onSelect}
             @toggle=${onToggle}
             .format=${format}
             .size$=${scale$}
-          ></affine-size-dropdown-menu>`
+          ></lovenotes-size-dropdown-menu>`
         )}`;
       },
     },
@@ -613,7 +613,7 @@ export const createBuiltinToolbarConfigExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier(`affine:surface:${name}`),
+      id: BlockFlavourIdentifier(`lovenotes:surface:${name}`),
       config: builtinSurfaceToolbarConfig,
     }),
   ];

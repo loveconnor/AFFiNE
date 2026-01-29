@@ -1,11 +1,11 @@
 import {
   type ClipboardConfigCreationContext,
   EdgelessClipboardConfig,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import { type BlockSnapshot, fromJSON } from '@blocksuite/store';
 
 export class EdgelessClipboardFrameConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:frame';
+  static override readonly key = 'lovenotes:frame';
 
   override createBlock(
     frame: BlockSnapshot,
@@ -28,7 +28,7 @@ export class EdgelessClipboardFrameConfig extends EdgelessClipboardConfig {
     }
 
     const frameId = this.crud.addBlock(
-      'affine:frame',
+      'lovenotes:frame',
       {
         xywh,
         background,

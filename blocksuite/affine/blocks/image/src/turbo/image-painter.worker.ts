@@ -1,11 +1,11 @@
 import type {
   BlockLayout,
   BlockLayoutPainter,
-} from '@blocksuite/affine-gfx-turbo-renderer';
-import { BlockLayoutPainterExtension } from '@blocksuite/affine-gfx-turbo-renderer/painter';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer';
+import { BlockLayoutPainterExtension } from '@blocksuite/lovenotes-gfx-turbo-renderer/painter';
 
 export interface ImageLayout extends BlockLayout {
-  type: 'affine:image';
+  type: 'lovenotes:image';
   rect: {
     x: number;
     y: number;
@@ -15,7 +15,7 @@ export interface ImageLayout extends BlockLayout {
 }
 
 function isImageLayout(layout: BlockLayout): layout is ImageLayout {
-  return layout.type === 'affine:image';
+  return layout.type === 'lovenotes:image';
 }
 
 class ImageLayoutPainter implements BlockLayoutPainter {
@@ -51,6 +51,6 @@ class ImageLayoutPainter implements BlockLayoutPainter {
 }
 
 export const ImageLayoutPainterExtension = BlockLayoutPainterExtension(
-  'affine:image',
+  'lovenotes:image',
   ImageLayoutPainter
 );

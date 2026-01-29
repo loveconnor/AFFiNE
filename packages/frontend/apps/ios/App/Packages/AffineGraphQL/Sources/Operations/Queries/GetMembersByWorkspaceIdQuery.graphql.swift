@@ -34,11 +34,11 @@ public class GetMembersByWorkspaceIdQuery: GraphQLQuery {
     "query": query
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -49,11 +49,11 @@ public class GetMembersByWorkspaceIdQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("memberCount", Int.self),
@@ -72,24 +72,24 @@ public class GetMembersByWorkspaceIdQuery: GraphQLQuery {
       /// Workspace.Member
       ///
       /// Parent Type: `InviteUserType`
-      public struct Member: AffineGraphQL.SelectionSet {
+      public struct Member: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.InviteUserType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.InviteUserType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", AffineGraphQL.ID.self),
+          .field("id", LoveNotesGraphQL.ID.self),
           .field("name", String?.self),
           .field("email", String?.self),
           .field("avatarUrl", String?.self),
-          .field("permission", GraphQLEnum<AffineGraphQL.Permission>.self),
+          .field("permission", GraphQLEnum<LoveNotesGraphQL.Permission>.self),
           .field("inviteId", String.self),
           .field("emailVerified", Bool?.self),
-          .field("status", GraphQLEnum<AffineGraphQL.WorkspaceMemberStatus>.self),
+          .field("status", GraphQLEnum<LoveNotesGraphQL.WorkspaceMemberStatus>.self),
         ] }
 
-        public var id: AffineGraphQL.ID { __data["id"] }
+        public var id: LoveNotesGraphQL.ID { __data["id"] }
         /// User name
         public var name: String? { __data["name"] }
         /// User email
@@ -98,13 +98,13 @@ public class GetMembersByWorkspaceIdQuery: GraphQLQuery {
         public var avatarUrl: String? { __data["avatarUrl"] }
         /// User permission in workspace
         @available(*, deprecated, message: "Use role instead")
-        public var permission: GraphQLEnum<AffineGraphQL.Permission> { __data["permission"] }
+        public var permission: GraphQLEnum<LoveNotesGraphQL.Permission> { __data["permission"] }
         /// Invite id
         public var inviteId: String { __data["inviteId"] }
         /// User email verified
         public var emailVerified: Bool? { __data["emailVerified"] }
         /// Member invite status in workspace
-        public var status: GraphQLEnum<AffineGraphQL.WorkspaceMemberStatus> { __data["status"] }
+        public var status: GraphQLEnum<LoveNotesGraphQL.WorkspaceMemberStatus> { __data["status"] }
       }
     }
   }

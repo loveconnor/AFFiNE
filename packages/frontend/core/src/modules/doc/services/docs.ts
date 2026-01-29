@@ -1,14 +1,16 @@
-import { DebugLogger } from '@affine/debug';
-import { Unreachable } from '@affine/env/constant';
-import { replaceIdMiddleware } from '@blocksuite/affine/shared/adapters';
-import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
-import type { DeltaInsert } from '@blocksuite/affine/store';
-import { Slice, Text, Transformer } from '@blocksuite/affine/store';
+import { DebugLogger } from '@lovenotes/debug';
+import { Unreachable } from '@lovenotes/env/constant';
+import { replaceIdMiddleware } from '@blocksuite/lovenotes/shared/adapters';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes/shared/types';
+import type { DeltaInsert } from '@blocksuite/lovenotes/store';
+import { Slice, Text, Transformer } from '@blocksuite/lovenotes/store';
 import { ObjectPool, Service } from '@toeverything/infra';
+import { encodeStateAsUpdate } from 'yjs';
 import { combineLatest, map } from 'rxjs';
 
 import { initDocFromProps } from '../../../blocksuite/initialization';
-import { getAFFiNEWorkspaceSchema } from '../../workspace';
+import { getLoveNotesWorkspaceSchema } from '../../workspace';
+import type { WorkspaceService } from '../../workspace';
 import type { Doc } from '../entities/doc';
 import { DocRecordList } from '../entities/record-list';
 import { DocCreated, DocInitialized } from '../events';
@@ -88,7 +90,8 @@ export class DocsService extends Service {
   constructor(
     private readonly store: DocsStore,
     private readonly docPropertiesStore: DocPropertiesStore,
-    private readonly docCreateMiddlewares: DocCreateMiddleware[]
+    private readonly docCreateMiddlewares: DocCreateMiddleware[],
+    private readonly workspaceService: WorkspaceService
   ) {
     super();
   }
@@ -153,6 +156,18 @@ export class DocsService extends Service {
     }
     if (options.skipInit !== true) {
       initDocFromProps(docStore, options.docProps, options);
+      const docStorage = this.workspaceService.workspace.engine.doc.storage;
+      docStorage
+        .pushDocUpdate({
+          docId: docStore.spaceDoc.guid,
+          bin: encodeStateAsUpdate(docStore.spaceDoc),
+        })
+        .catch(error => {
+          logger.error('Failed to persist new doc content', {
+            docId: docStore.spaceDoc.guid,
+            error,
+          });
+        });
     }
     const docRecord = this.list.doc$(id).value;
     if (!docRecord) {
@@ -191,11 +206,11 @@ export class DocsService extends Service {
           },
         },
       },
-    ] as DeltaInsert<AffineTextAttributes>[]);
-    const [frame] = doc.blockSuiteDoc.getBlocksByFlavour('affine:note');
+    ] as DeltaInsert<LoveNotesTextAttributes>[]);
+    const [frame] = doc.blockSuiteDoc.getBlocksByFlavour('lovenotes:note');
     frame &&
       doc.blockSuiteDoc.addBlock(
-        'affine:paragraph' as never, // TODO(eyhn): fix type
+        'lovenotes:paragraph' as never, // TODO(eyhn): fix type
         { text },
         frame.id
       );
@@ -240,7 +255,7 @@ export class DocsService extends Service {
 
       const collection = this.store.getBlocksuiteCollection();
       const transformer = new Transformer({
-        schema: getAFFiNEWorkspaceSchema(),
+        schema: getLoveNotesWorkspaceSchema(),
         blobCRUD: collection.blobSync,
         docCRUD: {
           create: (id: string) => {
@@ -340,7 +355,7 @@ export class DocsService extends Service {
 
       const collection = this.store.getBlocksuiteCollection();
       const transformer = new Transformer({
-        schema: getAFFiNEWorkspaceSchema(),
+        schema: getLoveNotesWorkspaceSchema(),
         blobCRUD: collection.blobSync,
         docCRUD: {
           create: (id: string) => {

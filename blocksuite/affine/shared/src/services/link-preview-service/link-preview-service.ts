@@ -1,4 +1,4 @@
-import { type LinkPreviewData } from '@blocksuite/affine-model';
+import { type LinkPreviewData } from '@blocksuite/lovenotes-model';
 import { type Container, createIdentifier } from '@blocksuite/global/di';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import { Extension } from '@blocksuite/store';
@@ -43,7 +43,7 @@ export interface LinkPreviewProvider {
 }
 
 export const LinkPreviewServiceIdentifier =
-  createIdentifier<LinkPreviewProvider>('AffineLinkPreviewService');
+  createIdentifier<LinkPreviewProvider>('LoveNotesLinkPreviewService');
 
 export class LinkPreviewService
   extends Extension

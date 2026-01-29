@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-shared/consts';
+export * from '@blocksuite/lovenotes-shared/consts';

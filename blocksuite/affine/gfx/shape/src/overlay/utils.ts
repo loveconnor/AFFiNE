@@ -1,5 +1,5 @@
-import type { Options } from '@blocksuite/affine-block-surface';
-import { shapeMethods } from '@blocksuite/affine-model';
+import type { Options } from '@blocksuite/lovenotes-block-surface';
+import { shapeMethods } from '@blocksuite/lovenotes-model';
 import { Bound, type XYWH } from '@blocksuite/global/gfx';
 
 export const drawGeneralShape = (

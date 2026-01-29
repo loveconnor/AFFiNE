@@ -1,8 +1,8 @@
-import { Divider, Loading, toast } from '@affine/component';
-import { Button, IconButton } from '@affine/component/ui/button';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import type { ImageBlockModel } from '@blocksuite/affine/model';
-import type { BlockModel, Workspace } from '@blocksuite/affine/store';
+import { Divider, Loading, toast } from '@lovenotes/component';
+import { Button, IconButton } from '@lovenotes/component/ui/button';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import type { ImageBlockModel } from '@blocksuite/lovenotes/model';
+import type { BlockModel, Workspace } from '@blocksuite/lovenotes/store';
 import {
   ArrowLeftSmallIcon,
   ArrowRightSmallIcon,
@@ -424,7 +424,7 @@ const ImagePreviewModalImpl = ({
 };
 
 const filterImageBlock = (block: BlockModel): block is ImageBlockModel => {
-  return block.flavour === 'affine:image';
+  return block.flavour === 'lovenotes:image';
 };
 
 export const ImagePreviewPeekView = (

@@ -1,10 +1,10 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+import { test } from '@lovenotes-test/kit/playwright';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@lovenotes-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
-test('Open last workspace when back to affine', async ({ page }) => {
+test('Open last workspace when back to lovenotes', async ({ page }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await createLocalWorkspace({ name: 'New Workspace 2' }, page);

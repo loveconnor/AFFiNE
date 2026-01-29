@@ -1,9 +1,9 @@
-import { Button, Tooltip } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { Button, Tooltip } from '@lovenotes/component';
+import { SettingRow } from '@lovenotes/component/setting-components';
+import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
+import { useWorkspaceInfo } from '@lovenotes/core/components/hooks/use-workspace-info';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
 import { useService } from '@toeverything/infra';
 import type { ReactElement } from 'react';
 
@@ -25,12 +25,12 @@ export const MembersPanel = ({
     return <MembersPanelLocal onCloseSetting={onCloseSetting} />;
   }
   return (
-    <AffineErrorBoundary>
+    <LoveNotesErrorBoundary>
       <CloudWorkspaceMembersPanel
         onChangeSettingState={onChangeSettingState}
         isTeam={isTeam}
       />
-    </AffineErrorBoundary>
+    </LoveNotesErrorBoundary>
   );
 };
 
@@ -42,7 +42,7 @@ const MembersPanelLocal = ({
   const t = useI18n();
   return (
     <div className={styles.localMembersPanel}>
-      <Tooltip content={t['com.affine.settings.member-tooltip']()}>
+      <Tooltip content={t['com.lovenotes.settings.member-tooltip']()}>
         <div className={styles.fakeWrapper}>
           <SettingRow name={`${t['Members']()} (0)`} desc={t['Members hint']()}>
             <Button>{t['Invite Members']()}</Button>

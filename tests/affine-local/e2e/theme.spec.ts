@@ -1,8 +1,8 @@
 import { resolve } from 'node:path';
 
-import { test, testResultDir } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
+import { test, testResultDir } from '@lovenotes-test/kit/playwright';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test.use({
@@ -17,7 +17,7 @@ test('default white', async ({ page }) => {
   const themeMode = await root.evaluate(element => element.dataset.theme);
   expect(themeMode).toBe('light');
   await page.screenshot({
-    path: resolve(testResultDir, 'affine-light-theme.png'),
+    path: resolve(testResultDir, 'lovenotes-light-theme.png'),
   });
   await page.getByTestId('settings-modal-trigger').click();
   await page.getByTestId('appearance-panel-trigger').click();
@@ -26,6 +26,6 @@ test('default white', async ({ page }) => {
   const darkMode = await root.evaluate(element => element.dataset.theme);
   expect(darkMode).toBe('dark');
   await page.screenshot({
-    path: resolve(testResultDir, 'affine-dark-theme.png'),
+    path: resolve(testResultDir, 'lovenotes-dark-theme.png'),
   });
 });

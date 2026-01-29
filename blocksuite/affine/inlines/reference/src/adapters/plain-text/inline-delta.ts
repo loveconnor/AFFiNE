@@ -2,7 +2,7 @@ import {
   AdapterTextUtils,
   InlineDeltaToPlainTextAdapterExtension,
   type TextBuffer,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 export const referenceDeltaMarkdownAdapterMatch =
   InlineDeltaToPlainTextAdapterExtension({

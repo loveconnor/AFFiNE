@@ -34,11 +34,11 @@ public class SubmitAudioTranscriptionMutation: GraphQLMutation {
     "blobs": blobs
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("submitAudioTranscription", SubmitAudioTranscription?.self, arguments: [
         "blob": .variable("blob"),
@@ -53,19 +53,19 @@ public class SubmitAudioTranscriptionMutation: GraphQLMutation {
     /// SubmitAudioTranscription
     ///
     /// Parent Type: `TranscriptionResultType`
-    public struct SubmitAudioTranscription: AffineGraphQL.SelectionSet {
+    public struct SubmitAudioTranscription: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.TranscriptionResultType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.TranscriptionResultType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", AffineGraphQL.ID.self),
-        .field("status", GraphQLEnum<AffineGraphQL.AiJobStatus>.self),
+        .field("id", LoveNotesGraphQL.ID.self),
+        .field("status", GraphQLEnum<LoveNotesGraphQL.AiJobStatus>.self),
       ] }
 
-      public var id: AffineGraphQL.ID { __data["id"] }
-      public var status: GraphQLEnum<AffineGraphQL.AiJobStatus> { __data["status"] }
+      public var id: LoveNotesGraphQL.ID { __data["id"] }
+      public var status: GraphQLEnum<LoveNotesGraphQL.AiJobStatus> { __data["status"] }
     }
   }
 }

@@ -1,6 +1,6 @@
-import { test } from '@affine-test/kit/playwright';
-import { clickPageModeButton } from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@lovenotes-test/kit/playwright';
+import { clickPageModeButton } from '@lovenotes-test/kit/utils/editor';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   clickPageMoreActions,
@@ -9,8 +9,8 @@ import {
   getPageByTitle,
   waitForEditorLoad,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
-import { getCurrentDocIdFromUrl } from '@affine-test/kit/utils/url';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { getCurrentDocIdFromUrl } from '@lovenotes-test/kit/utils/url';
 import { expect } from '@playwright/test';
 
 test('Show favorite items in sidebar', async ({ page, workspace }) => {
@@ -103,7 +103,7 @@ test("Deleted page's reference will not be shown in sidebar", async ({
   await favoriteBtn.click();
 
   // goto "Another page"
-  await page.locator('.affine-reference-title').click();
+  await page.locator('.lovenotes-reference-title').click();
 
   await expect(
     page.locator('.doc-title-container:has-text("Another page")')

@@ -1,8 +1,8 @@
-import { Checkbox } from '@affine/admin/components/ui/checkbox';
-import { Label } from '@affine/admin/components/ui/label';
-import { Separator } from '@affine/admin/components/ui/separator';
-import { Switch } from '@affine/admin/components/ui/switch';
-import type { FeatureType } from '@affine/graphql';
+import { Checkbox } from '@lovenotes/admin/components/ui/checkbox';
+import { Label } from '@lovenotes/admin/components/ui/label';
+import { Separator } from '@lovenotes/admin/components/ui/separator';
+import { Switch } from '@lovenotes/admin/components/ui/switch';
+import type { FeatureType } from '@lovenotes/graphql';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useCallback } from 'react';
 

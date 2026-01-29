@@ -1,4 +1,4 @@
-import { parseStringToRgba } from '@blocksuite/affine-components/color-picker';
+import { parseStringToRgba } from '@blocksuite/lovenotes-components/color-picker';
 import { cssVarV2, darkThemeV2, lightThemeV2 } from '@toeverything/theme/v2';
 
 type Rgb = { r: number; g: number; b: number };

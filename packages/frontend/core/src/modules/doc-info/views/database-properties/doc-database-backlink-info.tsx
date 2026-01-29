@@ -3,12 +3,12 @@ import {
   PropertyCollapsibleContent,
   PropertyCollapsibleSection,
   PropertyName,
-} from '@affine/component';
-import { AffinePageReference } from '@affine/core/components/affine/reference-link';
-import { DocService } from '@affine/core/modules/doc';
-import { TemplateDocService } from '@affine/core/modules/template-doc';
-import { useI18n } from '@affine/i18n';
-import type { DatabaseBlockDataSource } from '@blocksuite/affine/blocks/database';
+} from '@lovenotes/component';
+import { LoveNotesPageReference } from '@lovenotes/core/components/lovenotes/reference-link';
+import { DocService } from '@lovenotes/core/modules/doc';
+import { TemplateDocService } from '@lovenotes/core/modules/template-doc';
+import { useI18n } from '@lovenotes/i18n';
+import type { DatabaseBlockDataSource } from '@blocksuite/lovenotes/blocks/database';
 import { DatabaseTableViewIcon, PageIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { useMemo } from 'react';
@@ -142,7 +142,7 @@ const DatabaseBacklinkRow = ({
         defaultCollapsed={!defaultOpen}
         icon={<DatabaseTableViewIcon />}
         suffix={
-          <AffinePageReference
+          <LoveNotesPageReference
             className={
               BUILD_CONFIG.isMobileEdition
                 ? styles.mobileDocRefLink

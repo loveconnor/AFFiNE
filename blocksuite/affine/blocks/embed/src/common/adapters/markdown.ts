@@ -1,4 +1,4 @@
-import type { BlockMarkdownAdapterMatcher } from '@blocksuite/affine-shared/adapters';
+import type { BlockMarkdownAdapterMatcher } from '@blocksuite/lovenotes-shared/adapters';
 
 export function createEmbedBlockMarkdownAdapterMatcher(
   flavour: string,

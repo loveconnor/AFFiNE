@@ -1,4 +1,4 @@
-import { ParagraphBlockModel } from '@blocksuite/affine-model';
+import { ParagraphBlockModel } from '@blocksuite/lovenotes-model';
 import type { BlockModel } from '@blocksuite/store';
 
 import { matchModels } from '../model/checker.js';

@@ -1,6 +1,6 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import { toggleEmbedCardCreateModal } from '@blocksuite/affine-components/embed-card-modal';
-import type { SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import { toggleEmbedCardCreateModal } from '@blocksuite/lovenotes-components/embed-card-modal';
+import type { SlashMenuConfig } from '@blocksuite/lovenotes-widget-slash-menu';
 import { GithubDuotoneIcon } from '@blocksuite/icons/lit';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
 
@@ -18,7 +18,7 @@ export const embedGithubSlashMenuConfig: SlashMenuConfig = {
       },
       group: '4_Content & Media@7',
       when: ({ model }) =>
-        model.store.schema.flavourSchemaMap.has('affine:embed-github'),
+        model.store.schema.flavourSchemaMap.has('lovenotes:embed-github'),
       action: ({ std, model }) => {
         (async () => {
           const { host } = std;

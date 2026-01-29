@@ -4,7 +4,7 @@ import {
   EmbedSyncedDocModel,
   MindmapElementModel,
   NoteBlockModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { Bound } from '@blocksuite/global/gfx';
 import { GfxControllerIdentifier, type GfxModel } from '@blocksuite/std/gfx';
 import chunk from 'lodash-es/chunk';

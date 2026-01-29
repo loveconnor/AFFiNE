@@ -1,4 +1,4 @@
-package app.affine.pro.ai
+package app.lovenotes.pro.ai
 
 import android.content.Intent
 import android.os.Bundle
@@ -38,12 +38,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.core.view.ViewCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import app.affine.pro.ai.chat.ChatViewModel
-import app.affine.pro.ai.chat.ui.ChatAppBar
-import app.affine.pro.ai.chat.ui.Message
-import app.affine.pro.ai.chat.ui.UserInput
-import app.affine.pro.theme.AFFiNETheme
-import app.affine.pro.theme.ThemeMode
+import app.lovenotes.pro.ai.chat.ChatViewModel
+import app.lovenotes.pro.ai.chat.ui.ChatAppBar
+import app.lovenotes.pro.ai.chat.ui.Message
+import app.lovenotes.pro.ai.chat.ui.UserInput
+import app.lovenotes.pro.theme.LoveNotesTheme
+import app.lovenotes.pro.theme.ThemeMode
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -66,7 +66,7 @@ class AIActivity : AppCompatActivity() {
             val scrollState = rememberLazyListState()
             val topBarState = rememberTopAppBarState()
             val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(topBarState)
-            AFFiNETheme(mode = ThemeMode.Dark) {
+            LoveNotesTheme(mode = ThemeMode.Dark) {
                 Scaffold(
                     topBar = {
                         ChatAppBar(
@@ -79,7 +79,7 @@ class AIActivity : AppCompatActivity() {
                         .exclude(WindowInsets.navigationBars)
                         .exclude(WindowInsets.ime),
                     modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-                    containerColor = AFFiNETheme.colors.backgroundPrimary,
+                    containerColor = LoveNotesTheme.colors.backgroundPrimary,
                 ) { paddingValues ->
                     val messageUiState by viewModel.messagesUiState.collectAsStateWithLifecycle()
                     val sendBtnEnable by viewModel.sendBtnUiState.collectAsStateWithLifecycle()

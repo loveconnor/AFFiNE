@@ -1,4 +1,4 @@
-import { menu } from '@blocksuite/affine-components/context-menu';
+import { menu } from '@blocksuite/lovenotes-components/context-menu';
 import { html } from 'lit/static-html.js';
 
 import { renderUniLit } from '../utils/uni-component/index.js';
@@ -7,7 +7,7 @@ import type { Property } from '../view-manager/property.js';
 export const inputConfig = (property: Property) => {
   return menu.input({
     prefix: html`
-      <div class="affine-database-column-type-menu-icon">
+      <div class="lovenotes-database-column-type-menu-icon">
         ${renderUniLit(property.icon)}
       </div>
     `,
@@ -25,8 +25,8 @@ export const typeConfig = (property: Property) => {
         name: 'Type',
         hide: () => !property.typeCanSet,
         postfix: html` <div
-          class="affine-database-column-type-icon"
-          style="color: var(--affine-text-secondary-color);gap:4px;font-size: 14px;"
+          class="lovenotes-database-column-type-icon"
+          style="color: var(--lovenotes-text-secondary-color);gap:4px;font-size: 14px;"
         >
           ${renderUniLit(property.icon)}
           ${property.view.propertyMetas$.value.find(

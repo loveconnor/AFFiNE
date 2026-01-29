@@ -67,12 +67,12 @@ export abstract class CopilotProvider<C = any> {
   abstract readonly models: CopilotProviderModel[];
   abstract configured(): boolean;
 
-  @Inject() protected readonly AFFiNEConfig!: Config;
+  @Inject() protected readonly LoveNotesConfig!: Config;
   @Inject() protected readonly factory!: CopilotProviderFactory;
   @Inject() protected readonly moduleRef!: ModuleRef;
 
   get config(): C {
-    return this.AFFiNEConfig.copilot.providers[this.type] as C;
+    return this.LoveNotesConfig.copilot.providers[this.type] as C;
   }
 
   @OnEvent('config.init')
@@ -238,7 +238,7 @@ export abstract class CopilotProvider<C = any> {
             break;
           }
           case 'docKeywordSearch': {
-            if (this.AFFiNEConfig.indexer.enabled) {
+            if (this.LoveNotesConfig.indexer.enabled) {
               const indexerService = this.moduleRef.get(IndexerService, {
                 strict: false,
               });
@@ -279,8 +279,8 @@ export abstract class CopilotProvider<C = any> {
             break;
           }
           case 'webSearch': {
-            tools.web_search_exa = createExaSearchTool(this.AFFiNEConfig);
-            tools.web_crawl_exa = createExaCrawlTool(this.AFFiNEConfig);
+            tools.web_search_exa = createExaSearchTool(this.LoveNotesConfig);
+            tools.web_crawl_exa = createExaCrawlTool(this.LoveNotesConfig);
             break;
           }
           case 'docCompose': {

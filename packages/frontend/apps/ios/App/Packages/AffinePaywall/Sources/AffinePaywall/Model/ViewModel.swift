@@ -1,6 +1,6 @@
 //
 //  ViewModel.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //

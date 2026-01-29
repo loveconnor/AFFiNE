@@ -1,9 +1,9 @@
 import {
   getSurfaceComponent,
   ToolOverlay,
-} from '@blocksuite/affine-block-surface';
-import { type Color, DefaultTheme } from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-block-surface';
+import { type Color, DefaultTheme } from '@blocksuite/lovenotes-model';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import type { XYWH } from '@blocksuite/global/gfx';
 import type { GfxController } from '@blocksuite/std/gfx';
 import { effect } from '@preact/signals-core';
@@ -33,7 +33,7 @@ export class NoteOverlay extends ToolOverlay {
     this.disposables.add(
       effect(() => {
         // when change note child type, update overlay text
-        if (this.gfx.tool.currentToolName$.value !== 'affine:note') return;
+        if (this.gfx.tool.currentToolName$.value !== 'lovenotes:note') return;
         const tool = this.gfx.tool.currentTool$.peek() as NoteTool;
         this.text = this._getOverlayText(tool.activatedOption.tip);
         const surface = getSurfaceComponent(this.gfx.std);

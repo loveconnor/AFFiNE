@@ -9,7 +9,7 @@ import type {
   EmbedSyncedDocModel,
   EmbedYoutubeModel,
   ImageBlockModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { Bound } from '@blocksuite/global/gfx';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';

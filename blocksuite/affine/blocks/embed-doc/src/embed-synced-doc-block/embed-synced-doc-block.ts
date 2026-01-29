@@ -1,21 +1,21 @@
 import {
   EmbedBlockComponent,
   isEmptyDoc,
-} from '@blocksuite/affine-block-embed';
-import { Peekable } from '@blocksuite/affine-components/peek';
-import { ViewExtensionManagerIdentifier } from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-block-embed';
+import { Peekable } from '@blocksuite/lovenotes-components/peek';
+import { ViewExtensionManagerIdentifier } from '@blocksuite/lovenotes-ext-loader';
 import {
   type DocLinkClickedEvent,
   RefNodeSlotsProvider,
-} from '@blocksuite/affine-inline-reference';
+} from '@blocksuite/lovenotes-inline-reference';
 import {
   type AliasInfo,
   type DocMode,
   type EmbedSyncedDocModel,
   NoteDisplayMode,
   type ReferenceInfo,
-} from '@blocksuite/affine-model';
-import { REFERENCE_NODE } from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-model';
+import { REFERENCE_NODE } from '@blocksuite/lovenotes-shared/consts';
 import {
   DocDisplayMetaProvider,
   DocModeProvider,
@@ -24,8 +24,8 @@ import {
   GeneralSettingSchema,
   ThemeExtensionIdentifier,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import { cloneReferenceInfo } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { cloneReferenceInfo } from '@blocksuite/lovenotes-shared/utils';
 import { Bound, getCommonBound } from '@blocksuite/global/gfx';
 import {
   BlockSelection,
@@ -107,7 +107,7 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
     mode: 'loose',
     match: [
       {
-        flavour: 'affine:note',
+        flavour: 'lovenotes:note',
         props: {
           displayMode: NoteDisplayMode.EdgelessOnly,
         },
@@ -133,7 +133,7 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
         view.viewUpdated.subscribe(payload => {
           if (
             payload.type !== 'block' ||
-            payload.view.model.flavour !== 'affine:embed-synced-doc'
+            payload.view.model.flavour !== 'lovenotes:embed-synced-doc'
           ) {
             return;
           }
@@ -203,7 +203,7 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
         [
           'page',
           () => html`
-            <div class="affine-page-viewport" data-theme=${appTheme}>
+            <div class="lovenotes-page-viewport" data-theme=${appTheme}>
               ${new BlockStdScope({
                 store: syncedDoc,
                 extensions: this._buildPreviewSpec('preview-page'),
@@ -214,7 +214,7 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
         [
           'edgeless',
           () => html`
-            <div class="affine-edgeless-viewport" data-theme=${edgelessTheme}>
+            <div class="lovenotes-edgeless-viewport" data-theme=${edgelessTheme}>
               ${new BlockStdScope({
                 store: syncedDoc,
                 extensions: this._buildPreviewSpec('preview-edgeless'),
@@ -229,7 +229,7 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
       () => html`
         <div
           class=${classMap({
-            'affine-embed-synced-doc-container': true,
+            'lovenotes-embed-synced-doc-container': true,
             [editorMode]: true,
             [theme]: true,
             surface: false,
@@ -241,10 +241,10 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
           style=${containerStyleMap}
           ?data-scale=${undefined}
         >
-          <div class="affine-embed-synced-doc-editor">
+          <div class="lovenotes-embed-synced-doc-editor">
             ${isPageMode && this._isEmptySyncedDoc
               ? html`
-                  <div class="affine-embed-synced-doc-editor-empty">
+                  <div class="lovenotes-embed-synced-doc-editor-empty">
                     <span>
                       This is a linked doc, you can add content here.
                     </span>
@@ -257,15 +257,15 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
           </div>
           <div
             class=${classMap({
-              'affine-embed-synced-doc-header-wrapper': true,
+              'lovenotes-embed-synced-doc-header-wrapper': true,
               selected: this.selected$.value,
             })}
           >
-            <div class="affine-embed-synced-doc-header">
-              <span class="affine-embed-synced-doc-icon"
+            <div class="lovenotes-embed-synced-doc-header">
+              <span class="lovenotes-embed-synced-doc-icon"
                 >${this.icon$.value}</span
               >
-              <span class="affine-embed-synced-doc-title">${this.title$}</span>
+              <span class="lovenotes-embed-synced-doc-title">${this.title$}</span>
             </div>
           </div>
         </div>
@@ -293,7 +293,7 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
     const index = parent.children.indexOf(this.model);
 
     const blockId = store.addBlock(
-      'affine:embed-linked-doc',
+      'lovenotes:embed-linked-doc',
       { caption, ...this.referenceInfo, ...aliasInfo },
       parent,
       index
@@ -328,7 +328,7 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
     const text = new Text(yText);
 
     store.addBlock(
-      'affine:paragraph',
+      'lovenotes:paragraph',
       {
         text,
       },
@@ -580,10 +580,10 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
     ) {
       return this.renderEmbed(
         () => html`
-          <affine-embed-synced-doc-card
+          <lovenotes-embed-synced-doc-card
             style=${this.cardStyleMap}
             .block=${this}
-          ></affine-embed-synced-doc-card>
+          ></lovenotes-embed-synced-doc-card>
         `
       );
     }
@@ -627,12 +627,12 @@ export class EmbedSyncedDocBlockComponent extends EmbedBlockComponent<EmbedSynce
   accessor depth = 0;
 
   @query(
-    ':scope > .affine-block-component > .embed-block-container > affine-embed-synced-doc-card'
+    ':scope > .lovenotes-block-component > .embed-block-container > lovenotes-embed-synced-doc-card'
   )
   accessor syncedDocCard: EmbedSyncedDocCard | null = null;
 
   @query(
-    ':scope > .affine-block-component > .embed-block-container > .affine-embed-synced-doc-container > .affine-embed-synced-doc-editor > div > editor-host'
+    ':scope > .lovenotes-block-component > .embed-block-container > .lovenotes-embed-synced-doc-container > .lovenotes-embed-synced-doc-editor > div > editor-host'
   )
   accessor syncedDocEditorHost: EditorHost | null = null;
 

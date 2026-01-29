@@ -1,5 +1,5 @@
-import { ReferenceInfoSchema } from '@blocksuite/affine-model';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import { ReferenceInfoSchema } from '@blocksuite/lovenotes-model';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { StdIdentifier } from '@blocksuite/std';
 import { InlineSpecExtension } from '@blocksuite/std/inline';
 import { html } from 'lit';
@@ -11,7 +11,7 @@ import {
 } from './reference-node/reference-config';
 
 export const ReferenceInlineSpecExtension =
-  InlineSpecExtension<AffineTextAttributes>('reference', provider => {
+  InlineSpecExtension<LoveNotesTextAttributes>('reference', provider => {
     const std = provider.get(StdIdentifier);
     const configProvider = new ReferenceNodeConfigProvider(std);
     const config =
@@ -45,12 +45,12 @@ export const ReferenceInlineSpecExtension =
         return !!delta.attributes?.reference;
       },
       renderer: ({ delta, selected }) => {
-        return html`<affine-reference
+        return html`<lovenotes-reference
           .std=${std}
           .delta=${delta}
           .selected=${selected}
           .config=${configProvider}
-        ></affine-reference>`;
+        ></lovenotes-reference>`;
       },
       embed: true,
     };

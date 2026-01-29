@@ -1,5 +1,5 @@
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import type { DocMode } from '@blocksuite/affine/model';
+import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import { useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';

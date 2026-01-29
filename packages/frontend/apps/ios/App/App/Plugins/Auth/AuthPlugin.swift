@@ -133,7 +133,7 @@ public class AuthPlugin: CAPPlugin, CAPBridgedPlugin {
     }
 
     if let cookie = HTTPCookieStorage.shared.cookies(for: endpointUrl)?.first(where: {
-      $0.name == "affine_session"
+      $0.name == "lovenotes_session"
     }) {
       return cookie.value
     } else {
@@ -156,7 +156,7 @@ public class AuthPlugin: CAPPlugin, CAPBridgedPlugin {
       request.setValue("application/json", forHTTPHeaderField: "Content-Type")
       request.httpBody = try JSONEncoder().encode(body!)
     }
-    request.setValue(AppConfigManager.getAffineVersion(), forHTTPHeaderField: "x-affine-version")
+    request.setValue(AppConfigManager.getLoveNotesVersion(), forHTTPHeaderField: "x-lovenotes-version")
     request.timeoutInterval = 10 // time out 10s
 
     let (data, response) = try await URLSession.shared.data(for: request)

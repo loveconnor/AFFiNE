@@ -1,4 +1,4 @@
-import { NoteDisplayMode } from '@blocksuite/affine-model';
+import { NoteDisplayMode } from '@blocksuite/lovenotes-model';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { CloseIcon, SortIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -10,7 +10,7 @@ import { type TocContext, tocContext } from '../config';
 import { getNotesFromStore } from '../utils/query';
 import * as styles from './outline-notice.css';
 
-export const AFFINE_OUTLINE_NOTICE = 'affine-outline-notice';
+export const AFFINE_OUTLINE_NOTICE = 'lovenotes-outline-notice';
 
 export class OutlineNotice extends SignalWatcher(
   WithDisposable(ShadowlessElement)

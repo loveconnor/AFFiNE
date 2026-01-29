@@ -1,16 +1,16 @@
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
-import type { CodeBlockModel } from '@blocksuite/affine-model';
-import { focusTextModel, type RichText } from '@blocksuite/affine-rich-text';
+import { CaptionedBlockComponent } from '@blocksuite/lovenotes-components/caption';
+import type { CodeBlockModel } from '@blocksuite/lovenotes-model';
+import { focusTextModel, type RichText } from '@blocksuite/lovenotes-rich-text';
 import {
   BRACKET_PAIRS,
   EDGELESS_TOP_CONTENTEDITABLE_SELECTOR,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   BlockElementCommentManager,
   DocModeProvider,
   NotificationProvider,
-} from '@blocksuite/affine-shared/services';
-import { getViewportElement } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { getViewportElement } from '@blocksuite/lovenotes-shared/utils';
 import { IS_MAC, IS_MOBILE } from '@blocksuite/global/env';
 import { noop } from '@blocksuite/global/utils';
 import type { BlockComponent } from '@blocksuite/std';
@@ -364,7 +364,7 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
         const index = parent.children.indexOf(model);
         if (index === -1) return;
         const id = this.store.addBlock(
-          'affine:paragraph',
+          'lovenotes:paragraph',
           {},
           parent,
           index + 1
@@ -421,7 +421,7 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
     return html`
       <div
         class=${classMap({
-          'affine-code-block-container': true,
+          'lovenotes-code-block-container': true,
           'highlight-comment': this.isCommentHighlighted,
           mobile: IS_MOBILE,
           wrap: this.model.props.wrap,
@@ -458,7 +458,7 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
             display: shouldRenderPreview ? undefined : 'none',
           })}
           contenteditable="false"
-          class="affine-code-block-preview"
+          class="lovenotes-code-block-preview"
         >
           ${shouldRenderPreview && previewContext?.renderer(this.model)}
         </div>
@@ -493,6 +493,6 @@ export class CodeBlockComponent extends CaptionedBlockComponent<CodeBlockModel> 
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-code': CodeBlockComponent;
+    'lovenotes-code': CodeBlockComponent;
   }
 }

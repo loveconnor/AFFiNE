@@ -18,11 +18,11 @@ public class GetWorkspaceInfoQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["workspaceId": workspaceId] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -33,19 +33,19 @@ public class GetWorkspaceInfoQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("role", GraphQLEnum<AffineGraphQL.Permission>.self),
+        .field("role", GraphQLEnum<LoveNotesGraphQL.Permission>.self),
         .field("team", Bool.self),
       ] }
 
       /// Role of current signed in user in workspace
-      public var role: GraphQLEnum<AffineGraphQL.Permission> { __data["role"] }
+      public var role: GraphQLEnum<LoveNotesGraphQL.Permission> { __data["role"] }
       /// if workspace is team workspace
       public var team: Bool { __data["team"] }
     }

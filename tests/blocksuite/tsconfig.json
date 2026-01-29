@@ -7,7 +7,7 @@
   },
   "include": ["e2e"],
   "references": [
-    { "path": "../../blocksuite/affine/all" },
-    { "path": "../../blocksuite/integration-test" }
+    { "path": "../../blocksuite/integration-test" },
+    { "path": "../../blocksuite/affine/all" }
   ]
 }

@@ -1,4 +1,4 @@
-import { GroupElementModel } from '@blocksuite/affine-model';
+import { GroupElementModel } from '@blocksuite/lovenotes-model';
 import {
   GfxElementModelView,
   GfxViewInteractionExtension,

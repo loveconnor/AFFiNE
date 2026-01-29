@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
 import { query } from 'lit/decorators.js';
@@ -13,7 +13,7 @@ const playCheckAnimation = async (
   { left = 0, size = 20 }: { left?: number; size?: number } = {}
 ) => {
   const sparkingEl = document.createElement('div');
-  sparkingEl.classList.add('affine-check-animation');
+  sparkingEl.classList.add('lovenotes-check-animation');
   if (size < 20) {
     console.warn('If the size is less than 20, the animation may be abnormal.');
   }
@@ -50,17 +50,17 @@ const playCheckAnimation = async (
 
 export class CheckboxCell extends BaseCellRenderer<boolean> {
   static override styles = css`
-    affine-database-checkbox-cell {
+    lovenotes-database-checkbox-cell {
       display: block;
       width: 100%;
       cursor: pointer;
     }
 
-    .affine-database-checkbox-container {
+    .lovenotes-database-checkbox-container {
       height: 100%;
     }
 
-    .affine-database-checkbox {
+    .lovenotes-database-checkbox {
       display: flex;
       align-items: center;
       height: var(--data-view-cell-text-line-height);
@@ -99,16 +99,16 @@ export class CheckboxCell extends BaseCellRenderer<boolean> {
     const icon = checked
       ? CheckBoxCheckSolidIcon({ style: `color:#1E96EB` })
       : CheckBoxUnIcon();
-    return html` <div class="affine-database-checkbox-container">
+    return html` <div class="lovenotes-database-checkbox-container">
       <div
-        class="affine-database-checkbox checkbox ${checked ? 'checked' : ''}"
+        class="lovenotes-database-checkbox checkbox ${checked ? 'checked' : ''}"
       >
         ${icon}
       </div>
     </div>`;
   }
 
-  @query('.affine-database-checkbox')
+  @query('.lovenotes-database-checkbox')
   private accessor _checkbox!: HTMLDivElement;
 }
 

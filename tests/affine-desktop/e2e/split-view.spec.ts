@@ -1,16 +1,16 @@
-import { test } from '@affine-test/kit/electron';
+import { test } from '@lovenotes-test/kit/electron';
 import {
   expectActiveTab,
   expectTabTitle,
-} from '@affine-test/kit/utils/app-tabs';
+} from '@lovenotes-test/kit/utils/app-tabs';
 import {
   clickNewPageButton,
   createLinkedPage,
   dragTo,
   getPageByTitle,
   waitForAllPagesLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@lovenotes-test/kit/utils/sidebar';
 import { expect } from '@playwright/test';
 
 test('open split view', async ({ page }) => {
@@ -19,7 +19,7 @@ test('open split view', async ({ page }) => {
   await page.keyboard.press('Enter');
   await createLinkedPage(page, 'hi from another page');
   await page
-    .locator('.affine-reference-title:has-text("hi from another page")')
+    .locator('.lovenotes-reference-title:has-text("hi from another page")')
     .click({
       modifiers: ['ControlOrMeta', 'Alt'],
     });

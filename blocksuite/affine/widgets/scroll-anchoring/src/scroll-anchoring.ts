@@ -1,5 +1,5 @@
-import type { DocMode } from '@blocksuite/affine-model';
-import { HighlightSelection } from '@blocksuite/affine-shared/selection';
+import type { DocMode } from '@blocksuite/lovenotes-model';
+import { HighlightSelection } from '@blocksuite/lovenotes-shared/selection';
 import { Bound, deserializeXYWH } from '@blocksuite/global/gfx';
 import { WidgetComponent } from '@blocksuite/std';
 import { GfxControllerIdentifier, type GfxModel } from '@blocksuite/std/gfx';
@@ -15,9 +15,9 @@ type Anchor = {
   highlight: boolean;
 };
 
-export const AFFINE_SCROLL_ANCHORING_WIDGET = 'affine-scroll-anchoring-widget';
+export const AFFINE_SCROLL_ANCHORING_WIDGET = 'lovenotes-scroll-anchoring-widget';
 
-export class AffineScrollAnchoringWidget extends WidgetComponent {
+export class LoveNotesScrollAnchoringWidget extends WidgetComponent {
   static override styles = css`
     :host {
       pointer-events: none;
@@ -38,12 +38,12 @@ export class AffineScrollAnchoringWidget extends WidgetComponent {
           border-color: ${unsafeCSS(
             cssVarV2('layer/insideBorder/primaryBorder')
           )};
-          box-shadow: var(--affine-active-shadow);
+          box-shadow: var(--lovenotes-active-shadow);
         }
 
         &.page {
           border-radius: 5px;
-          background-color: var(--affine-hover-color);
+          background-color: var(--lovenotes-hover-color);
         }
       }
     }
@@ -124,7 +124,7 @@ export class AffineScrollAnchoringWidget extends WidgetComponent {
     const viewport = controller.viewport;
     const blockComponent = this.std.view.getBlock(id);
     const parentComponent = blockComponent?.parentComponent;
-    if (parentComponent && parentComponent.flavour === 'affine:note') {
+    if (parentComponent && parentComponent.flavour === 'lovenotes:note') {
       const { left: x, width: w } = parentComponent.getBoundingClientRect();
       const { top: y, height: h } = blockComponent.getBoundingClientRect();
       const coord = viewport.toModelCoordFromClientCoord([x, y]);

@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/date-picker';
+export * from '@blocksuite/lovenotes-components/date-picker';

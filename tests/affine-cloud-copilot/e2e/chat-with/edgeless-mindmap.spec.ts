@@ -1,4 +1,4 @@
-import type { EdgelessRootBlockComponent } from '@blocksuite/affine/blocks/root';
+import type { EdgelessRootBlockComponent } from '@blocksuite/lovenotes/blocks/root';
 import type { GfxModel } from '@blocksuite/std/gfx';
 import { expect } from '@playwright/test';
 
@@ -38,7 +38,7 @@ test.describe('AIChatWith/EdgelessMindMap', () => {
     // Expect original mindmap to be replaced
     const mindmaps = await page.evaluate(() => {
       const edgelessBlock = document.querySelector(
-        'affine-edgeless-root'
+        'lovenotes-edgeless-root'
       ) as EdgelessRootBlockComponent;
       const mindmaps = edgelessBlock?.gfx.gfxElements
         .filter((el: GfxModel) => 'type' in el && el.type === 'mindmap')

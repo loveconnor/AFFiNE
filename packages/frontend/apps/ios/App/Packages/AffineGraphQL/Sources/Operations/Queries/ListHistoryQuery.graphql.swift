@@ -34,11 +34,11 @@ public class ListHistoryQuery: GraphQLQuery {
     "before": before
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -49,11 +49,11 @@ public class ListHistoryQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("histories", [History].self, arguments: [
@@ -68,30 +68,30 @@ public class ListHistoryQuery: GraphQLQuery {
       /// Workspace.History
       ///
       /// Parent Type: `DocHistoryType`
-      public struct History: AffineGraphQL.SelectionSet {
+      public struct History: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.DocHistoryType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.DocHistoryType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", String.self),
-          .field("timestamp", AffineGraphQL.DateTime.self),
+          .field("timestamp", LoveNotesGraphQL.DateTime.self),
           .field("editor", Editor?.self),
         ] }
 
         public var id: String { __data["id"] }
-        public var timestamp: AffineGraphQL.DateTime { __data["timestamp"] }
+        public var timestamp: LoveNotesGraphQL.DateTime { __data["timestamp"] }
         public var editor: Editor? { __data["editor"] }
 
         /// Workspace.History.Editor
         ///
         /// Parent Type: `EditorType`
-        public struct Editor: AffineGraphQL.SelectionSet {
+        public struct Editor: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.EditorType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.EditorType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("name", String.self),

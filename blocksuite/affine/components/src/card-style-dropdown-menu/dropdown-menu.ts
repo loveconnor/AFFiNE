@@ -1,8 +1,8 @@
-import type { ColorScheme } from '@blocksuite/affine-model';
+import type { ColorScheme } from '@blocksuite/lovenotes-model';
 import {
   type ToolbarAction,
   ToolbarContext,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import { PaletteIcon } from '@blocksuite/icons/lit';
 import { PropTypes, requiredProperties } from '@blocksuite/std';
@@ -113,6 +113,6 @@ export class CardStyleDropdownMenu extends SignalWatcher(LitElement) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-card-style-dropdown-menu': CardStyleDropdownMenu;
+    'lovenotes-card-style-dropdown-menu': CardStyleDropdownMenu;
   }
 }

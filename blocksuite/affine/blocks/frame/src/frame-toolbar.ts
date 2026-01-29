@@ -1,9 +1,9 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine-block-surface';
+import { EdgelessCRUDIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   packColor,
   type PickColorEvent,
-} from '@blocksuite/affine-components/color-picker';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@blocksuite/lovenotes-components/color-picker';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import {
   DEFAULT_NOTE_HEIGHT,
   DefaultTheme,
@@ -14,18 +14,18 @@ import {
   NoteDisplayMode,
   resolveColor,
   SurfaceRefBlockSchema,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   NotificationProvider,
   type ToolbarContext,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   getMostCommonResolvedValue,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
-import { mountFrameTitleEditor } from '@blocksuite/affine-widget-frame-title';
+} from '@blocksuite/lovenotes-shared/utils';
+import { mountFrameTitleEditor } from '@blocksuite/lovenotes-widget-frame-title';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   EditIcon,
@@ -208,7 +208,7 @@ const createFrameToolbarConfig = (flavour: string): ExtensionType => {
   const name = flavour.split(':').pop();
 
   return ToolbarModuleExtension({
-    id: BlockFlavourIdentifier(`affine:surface:${name}`),
+    id: BlockFlavourIdentifier(`lovenotes:surface:${name}`),
     config: builtinSurfaceToolbarConfig,
   });
 };

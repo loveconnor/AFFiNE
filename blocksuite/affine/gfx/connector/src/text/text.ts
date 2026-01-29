@@ -1,8 +1,8 @@
 import {
   DefaultTool,
   EdgelessCRUDIdentifier,
-} from '@blocksuite/affine-block-surface';
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { ConnectorElementModel } from '@blocksuite/lovenotes-model';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import type { IVec } from '@blocksuite/global/gfx';
 import { Bound } from '@blocksuite/global/gfx';

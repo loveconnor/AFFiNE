@@ -1,8 +1,8 @@
-package app.affine.pro.service
+package app.lovenotes.pro.service
 
-import app.affine.pro.utils.getCurrentDocContentInMarkdown
-import app.affine.pro.utils.getCurrentDocId
-import app.affine.pro.utils.getCurrentWorkspaceId
+import app.lovenotes.pro.utils.getCurrentDocContentInMarkdown
+import app.lovenotes.pro.utils.getCurrentDocId
+import app.lovenotes.pro.utils.getCurrentWorkspaceId
 import com.getcapacitor.Bridge
 import javax.inject.Inject
 import javax.inject.Singleton

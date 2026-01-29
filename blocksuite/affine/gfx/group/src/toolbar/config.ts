@@ -1,4 +1,4 @@
-import { toast } from '@blocksuite/affine-components/toast';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import {
   DEFAULT_NOTE_HEIGHT,
   GroupElementModel,
@@ -6,13 +6,13 @@ import {
   NoteBlockSchema,
   NoteDisplayMode,
   SurfaceRefBlockSchema,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
-import { matchModels } from '@blocksuite/affine-shared/utils';
-import { getRootBlock } from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-shared/services';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
+import { getRootBlock } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   EditIcon,
@@ -101,6 +101,6 @@ export const groupToolbarConfig = {
 } as const satisfies ToolbarModuleConfig;
 
 export const groupToolbarExtension = ToolbarModuleExtension({
-  id: BlockFlavourIdentifier('affine:surface:group'),
+  id: BlockFlavourIdentifier('lovenotes:surface:group'),
   config: groupToolbarConfig,
 });

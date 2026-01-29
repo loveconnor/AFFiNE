@@ -1,5 +1,5 @@
-import { EmbedGithubBlockSchema } from '@blocksuite/affine-model';
-import { BlockNotionHtmlAdapterExtension } from '@blocksuite/affine-shared/adapters';
+import { EmbedGithubBlockSchema } from '@blocksuite/lovenotes-model';
+import { BlockNotionHtmlAdapterExtension } from '@blocksuite/lovenotes-shared/adapters';
 
 import { createEmbedBlockNotionHtmlAdapterMatcher } from '../../common/adapters/notion-html.js';
 import { githubUrlRegex } from '../embed-github-model.js';

@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/mobile';
+import { test } from '@lovenotes-test/kit/mobile';
 import { expect } from '@playwright/test';
 
 import { expandCollapsibleSection } from './utils';

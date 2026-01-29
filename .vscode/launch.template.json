@@ -2,33 +2,33 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch AFFiNE Cloud",
+      "name": "Launch LoveNotes Cloud",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "yarn",
       "cwd": "${workspaceFolder}",
       "runtimeArgs": [
-        "affine",
-        "@affine/server",
+        "lovenotes",
+        "@lovenotes/server",
         "dev"
       ]
     },
     {
-      "name": "Lanuch AFFiNE Web",
+      "name": "Lanuch LoveNotes Web",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "yarn",
       "cwd": "${workspaceFolder}",
       "runtimeArgs": [
-        "affine",
-        "@affine/web",
+        "lovenotes",
+        "@lovenotes/web",
         "dev"
       ]
     },
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Debug AFFiNE Web",
+      "name": "Debug LoveNotes Web",
       "url": "http://localhost:8080"
     }
   ]

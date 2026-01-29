@@ -1,15 +1,15 @@
-import { addAttachments } from '@blocksuite/affine-block-attachment';
-import { insertLinkByQuickSearchCommand } from '@blocksuite/affine-block-bookmark';
-import { addImages } from '@blocksuite/affine-block-image';
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import { MAX_IMAGE_WIDTH } from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import type { NoteChildrenFlavour } from '@blocksuite/affine-shared/types';
+import { addAttachments } from '@blocksuite/lovenotes-block-attachment';
+import { insertLinkByQuickSearchCommand } from '@blocksuite/lovenotes-block-bookmark';
+import { addImages } from '@blocksuite/lovenotes-block-image';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import { MAX_IMAGE_WIDTH } from '@blocksuite/lovenotes-model';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
+import type { NoteChildrenFlavour } from '@blocksuite/lovenotes-shared/types';
 import {
   getImageFilesFromLocal,
   openSingleFileWith,
-} from '@blocksuite/affine-shared/utils';
-import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-shared/utils';
+import { EdgelessToolbarToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { AttachmentIcon, ImageIcon, LinkIcon } from '@blocksuite/icons/lit';
 import type { ToolOptions } from '@blocksuite/std/gfx';
 import { effect } from '@preact/signals-core';
@@ -37,7 +37,7 @@ export class EdgelessNoteMenu extends EdgelessToolbarToolMixin(LitElement) {
       justify-content: center;
       align-items: center;
       gap: 14px;
-      fill: var(--affine-icon-color);
+      fill: var(--lovenotes-icon-color);
     }
     .button-group-container svg {
       width: 20px;
@@ -46,7 +46,7 @@ export class EdgelessNoteMenu extends EdgelessToolbarToolMixin(LitElement) {
     .divider {
       width: 1px;
       height: 24px;
-      background: var(--affine-border-color);
+      background: var(--lovenotes-border-color);
       transform: scaleX(0.5);
       margin: 0 14px;
     }
@@ -124,10 +124,10 @@ export class EdgelessNoteMenu extends EdgelessToolbarToolMixin(LitElement) {
 
             <edgeless-tool-icon-button
               .activeMode=${'background'}
-              .tooltip=${html`<affine-tooltip-content-with-shortcut
+              .tooltip=${html`<lovenotes-tooltip-content-with-shortcut
                 data-tip="${'Link'}"
                 data-shortcut="${'@'}"
-              ></affine-tooltip-content-with-shortcut>`}
+              ></lovenotes-tooltip-content-with-shortcut>`}
               @click=${() => {
                 this._onHandleLinkButtonClick();
               }}

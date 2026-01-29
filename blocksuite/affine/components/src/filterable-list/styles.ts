@@ -1,7 +1,7 @@
 import {
   panelBaseStyle,
   scrollbarStyle,
-} from '@blocksuite/affine-shared/styles';
+} from '@blocksuite/lovenotes-shared/styles';
 import { css } from 'lit';
 
 export const filterableListStyles = css`
@@ -13,10 +13,10 @@ export const filterableListStyles = css`
     max-height: 100%;
     pointer-events: auto;
     overflow: hidden;
-    z-index: var(--affine-z-index-popover);
+    z-index: var(--lovenotes-z-index-popover);
   }
 
-  .affine-filterable-list {
+  .lovenotes-filterable-list {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -27,7 +27,7 @@ export const filterableListStyles = css`
     overflow: hidden;
   }
 
-  .affine-filterable-list.flipped {
+  .lovenotes-filterable-list.flipped {
     flex-direction: column-reverse;
   }
 
@@ -58,8 +58,8 @@ export const filterableListStyles = css`
   }
 
   .input-wrapper:focus-within {
-    border-color: var(--affine-blue-700);
-    box-shadow: var(--affine-active-shadow);
+    border-color: var(--lovenotes-blue-700);
+    box-shadow: var(--lovenotes-active-shadow);
   }
 
   ${scrollbarStyle('.items-container')}
@@ -82,8 +82,8 @@ export const filterableListStyles = css`
   }
 
   .filterable-item.focussed {
-    color: var(--affine-blue-700);
-    background: var(--affine-hover-color-filled);
+    color: var(--lovenotes-blue-700);
+    background: var(--lovenotes-hover-color-filled);
   }
 
   #filter-input {
@@ -103,7 +103,7 @@ export const filterableListStyles = css`
   }
 
   #filter-input::placeholder {
-    color: var(--affine-placeholder-color);
-    font-size: var(--affine-font-sm);
+    color: var(--lovenotes-placeholder-color);
+    font-size: var(--lovenotes-font-sm);
   }
 `;

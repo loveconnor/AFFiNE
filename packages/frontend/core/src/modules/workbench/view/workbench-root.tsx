@@ -1,6 +1,6 @@
-import { ResizePanel } from '@affine/component/resize-panel';
-import { AffineErrorComponent } from '@affine/core/components/affine/affine-error-boundary/affine-error-fallback';
-import { workbenchRoutes } from '@affine/core/desktop/workbench-router';
+import { ResizePanel } from '@lovenotes/component/resize-panel';
+import { LoveNotesErrorComponent } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary/lovenotes-error-fallback';
+import { workbenchRoutes } from '@lovenotes/core/desktop/workbench-router';
 import {
   appSettingAtom,
   FrameworkScope,
@@ -29,7 +29,7 @@ const useAdapter = BUILD_CONFIG.isElectron
 const routes: RouteObject[] = [
   {
     element: <RouteContainer />,
-    errorElement: <AffineErrorComponent />,
+    errorElement: <LoveNotesErrorComponent />,
     children: workbenchRoutes,
   },
 ];

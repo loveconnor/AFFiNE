@@ -1,5 +1,5 @@
-import type { DocProps } from '@affine/core/blocksuite/initialization';
-import type { DocMode } from '@blocksuite/affine/model';
+import type { DocProps } from '@lovenotes/core/blocksuite/initialization';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 
 export interface DocCreateOptions {
   id?: string;

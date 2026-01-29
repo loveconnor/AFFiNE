@@ -30,19 +30,19 @@ public class RecoverDocMutation: GraphQLMutation {
     "timestamp": timestamp
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
-      .field("recoverDoc", AffineGraphQL.DateTime.self, arguments: [
+      .field("recoverDoc", LoveNotesGraphQL.DateTime.self, arguments: [
         "workspaceId": .variable("workspaceId"),
         "guid": .variable("docId"),
         "timestamp": .variable("timestamp")
       ]),
     ] }
 
-    public var recoverDoc: AffineGraphQL.DateTime { __data["recoverDoc"] }
+    public var recoverDoc: LoveNotesGraphQL.DateTime { __data["recoverDoc"] }
   }
 }

@@ -3,13 +3,13 @@ import {
   popMenu,
   type PopupTarget,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { TextBackgroundDuotoneIcon } from '@blocksuite/affine-components/icons';
-import { DefaultInlineManagerExtension } from '@blocksuite/affine-inline-preset';
-import type { TableColumn, TableRow } from '@blocksuite/affine-model';
-import { RichText } from '@blocksuite/affine-rich-text';
-import { cssVarV2 } from '@blocksuite/affine-shared/theme';
-import { getViewportElement } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { TextBackgroundDuotoneIcon } from '@blocksuite/lovenotes-components/icons';
+import { DefaultInlineManagerExtension } from '@blocksuite/lovenotes-inline-preset';
+import type { TableColumn, TableRow } from '@blocksuite/lovenotes-model';
+import { RichText } from '@blocksuite/lovenotes-rich-text';
+import { cssVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import { getViewportElement } from '@blocksuite/lovenotes-shared/utils';
 import { IS_MAC } from '@blocksuite/global/env';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
@@ -59,7 +59,7 @@ import {
   threePointerIconStyle,
 } from './table-cell-css';
 import type { TableDataManager } from './table-data-manager';
-export const TableCellComponentName = 'affine-table-cell';
+export const TableCellComponentName = 'lovenotes-table-cell';
 export class TableCell extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
@@ -101,13 +101,13 @@ export class TableCell extends SignalWatcher(
     return this.dataManager.hoverRowIndex$;
   }
   get inlineManager() {
-    return this.closest<TableBlockComponent>('affine-table')?.std.get(
+    return this.closest<TableBlockComponent>('lovenotes-table')?.std.get(
       DefaultInlineManagerExtension.identifier
     );
   }
 
   get topContenteditableElement() {
-    return this.closest<TableBlockComponent>('affine-table')
+    return this.closest<TableBlockComponent>('lovenotes-table')
       ?.topContenteditableElement;
   }
 
@@ -771,7 +771,7 @@ export class TableCell extends SignalWatcher(
             this.topContenteditableElement?.host
               ? getViewportElement(this.topContenteditableElement.host)
               : null}"
-          data-parent-flavour="affine:table"
+          data-parent-flavour="lovenotes:table"
         ></rich-text>
         ${this.renderOptionsButton()} ${this.renderColumnIndicator()}
         ${this.renderRowIndicator()}

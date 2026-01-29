@@ -1,10 +1,10 @@
 import path from 'node:path';
 
-import { DocStorage } from '@affine/native';
+import { DocStorage } from '@lovenotes/native';
 import {
   parseUniversalId,
   universalId as generateUniversalId,
-} from '@affine/nbstore';
+} from '@lovenotes/nbstore';
 import fs from 'fs-extra';
 import { applyUpdate, Doc as YDoc } from 'yjs';
 

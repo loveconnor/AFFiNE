@@ -1,6 +1,6 @@
-import { test } from '@affine-test/kit/playwright';
-import { createRandomUser, loginUser } from '@affine-test/kit/utils/cloud';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
+import { test } from '@lovenotes-test/kit/playwright';
+import { createRandomUser, loginUser } from '@lovenotes-test/kit/utils/cloud';
+import { waitForEditorLoad } from '@lovenotes-test/kit/utils/page-logic';
 
 test.beforeEach(async ({ page }) => {
   const user = await createRandomUser();
@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('import from template should work', async ({ page }) => {
-  await page.goto('https://affine.pro/templates', { waitUntil: 'load' });
+  await page.goto('https://lovenotes.pro/templates', { waitUntil: 'load' });
 
   await page.click('.template-list > a:first-child');
   const importLink = page.getByText('Use this template');

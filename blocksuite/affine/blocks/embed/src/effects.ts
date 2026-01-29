@@ -19,14 +19,14 @@ import { EmbedEdgelessYoutubeBlockComponent } from './embed-youtube-block/embed-
 
 export function effects() {
   customElements.define(
-    'affine-embed-edgeless-figma-block',
+    'lovenotes-embed-edgeless-figma-block',
     EmbedEdgelessBlockComponent
   );
-  customElements.define('affine-embed-figma-block', EmbedFigmaBlockComponent);
+  customElements.define('lovenotes-embed-figma-block', EmbedFigmaBlockComponent);
 
-  customElements.define('affine-embed-html-block', EmbedHtmlBlockComponent);
+  customElements.define('lovenotes-embed-html-block', EmbedHtmlBlockComponent);
   customElements.define(
-    'affine-embed-edgeless-html-block',
+    'lovenotes-embed-edgeless-html-block',
     EmbedEdgelessHtmlBlockComponent
   );
 
@@ -35,31 +35,31 @@ export function effects() {
     EmbedHtmlFullscreenToolbar
   );
   customElements.define(
-    'affine-embed-edgeless-github-block',
+    'lovenotes-embed-edgeless-github-block',
     EmbedEdgelessGithubBlockComponent
   );
-  customElements.define('affine-embed-github-block', EmbedGithubBlockComponent);
+  customElements.define('lovenotes-embed-github-block', EmbedGithubBlockComponent);
 
   customElements.define(
-    'affine-embed-edgeless-youtube-block',
+    'lovenotes-embed-edgeless-youtube-block',
     EmbedEdgelessYoutubeBlockComponent
   );
   customElements.define(
-    'affine-embed-youtube-block',
+    'lovenotes-embed-youtube-block',
     EmbedYoutubeBlockComponent
   );
 
   customElements.define(
-    'affine-embed-edgeless-loom-block',
+    'lovenotes-embed-edgeless-loom-block',
     EmbedEdgelessLoomBlockComponent
   );
-  customElements.define('affine-embed-loom-block', EmbedLoomBlockComponent);
+  customElements.define('lovenotes-embed-loom-block', EmbedLoomBlockComponent);
 
   customElements.define(
-    'affine-embed-edgeless-iframe-block',
+    'lovenotes-embed-edgeless-iframe-block',
     EmbedEdgelessIframeBlockComponent
   );
-  customElements.define('affine-embed-iframe-block', EmbedIframeBlockComponent);
+  customElements.define('lovenotes-embed-iframe-block', EmbedIframeBlockComponent);
   customElements.define(
     'embed-iframe-link-input-popup',
     EmbedIframeLinkInputPopup
@@ -75,18 +75,18 @@ export function effects() {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-embed-figma-block': EmbedFigmaBlockComponent;
-    'affine-embed-edgeless-figma-block': EmbedEdgelessBlockComponent;
-    'affine-embed-github-block': EmbedGithubBlockComponent;
-    'affine-embed-edgeless-github-block': EmbedEdgelessGithubBlockComponent;
-    'affine-embed-html-block': EmbedHtmlBlockComponent;
-    'affine-embed-edgeless-html-block': EmbedEdgelessHtmlBlockComponent;
+    'lovenotes-embed-figma-block': EmbedFigmaBlockComponent;
+    'lovenotes-embed-edgeless-figma-block': EmbedEdgelessBlockComponent;
+    'lovenotes-embed-github-block': EmbedGithubBlockComponent;
+    'lovenotes-embed-edgeless-github-block': EmbedEdgelessGithubBlockComponent;
+    'lovenotes-embed-html-block': EmbedHtmlBlockComponent;
+    'lovenotes-embed-edgeless-html-block': EmbedEdgelessHtmlBlockComponent;
     'embed-html-fullscreen-toolbar': EmbedHtmlFullscreenToolbar;
-    'affine-embed-edgeless-loom-block': EmbedEdgelessLoomBlockComponent;
-    'affine-embed-loom-block': EmbedLoomBlockComponent;
-    'affine-embed-youtube-block': EmbedYoutubeBlockComponent;
-    'affine-embed-edgeless-youtube-block': EmbedEdgelessYoutubeBlockComponent;
-    'affine-embed-iframe-block': EmbedIframeBlockComponent;
+    'lovenotes-embed-edgeless-loom-block': EmbedEdgelessLoomBlockComponent;
+    'lovenotes-embed-loom-block': EmbedLoomBlockComponent;
+    'lovenotes-embed-youtube-block': EmbedYoutubeBlockComponent;
+    'lovenotes-embed-edgeless-youtube-block': EmbedEdgelessYoutubeBlockComponent;
+    'lovenotes-embed-iframe-block': EmbedIframeBlockComponent;
     'embed-iframe-link-input-popup': EmbedIframeLinkInputPopup;
     'embed-iframe-loading-card': EmbedIframeLoadingCard;
     'embed-iframe-error-card': EmbedIframeErrorCard;

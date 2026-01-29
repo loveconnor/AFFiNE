@@ -5,7 +5,7 @@
 yarn install
 
 # Build Server Dependencies
-yarn affine @affine/server-native build
+yarn lovenotes @lovenotes/server-native build
 
 # Create database
-yarn affine @affine/server prisma migrate reset -f
+yarn lovenotes @lovenotes/server prisma migrate reset -f

@@ -1,15 +1,15 @@
-import { autoResizeElementsCommand } from '@blocksuite/affine-block-surface';
-import { toast } from '@blocksuite/affine-components/toast';
+import { autoResizeElementsCommand } from '@blocksuite/lovenotes-block-surface';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import {
   type AttachmentBlockProps,
   type ImageBlockModel,
   type ImageBlockProps,
   ImageBlockSchema,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   FileSizeLimitProvider,
   NativeClipboardProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   convertToPng,
   formatSize,
@@ -18,7 +18,7 @@ import {
   readImageSize,
   transformModel,
   withTempBlobData,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { Bound, type IVec, Vec } from '@blocksuite/global/gfx';
 import { BlockSelection, type BlockStdScope } from '@blocksuite/std';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';
@@ -31,7 +31,7 @@ import {
 import type { ImageBlockComponent } from './image-block';
 import type { ImageEdgelessBlockComponent } from './image-edgeless-block';
 
-const DEFAULT_ATTACHMENT_NAME = 'affine-attachment';
+const DEFAULT_ATTACHMENT_NAME = 'lovenotes-attachment';
 
 async function getImageBlob(model: ImageBlockModel) {
   const sourceId = model.props.sourceId$.peek();
@@ -173,7 +173,7 @@ export async function turnImageIntoCardView(
   block: ImageBlockComponent | ImageEdgelessBlockComponent
 ) {
   const doc = block.store;
-  if (!doc.schema.flavourSchemaMap.has('affine:attachment')) {
+  if (!doc.schema.flavourSchemaMap.has('lovenotes:attachment')) {
     console.error('The attachment flavour is not supported!');
     return;
   }
@@ -200,7 +200,7 @@ export async function turnImageIntoCardView(
     caption: model.props.caption,
     ...attachmentConvertData,
   };
-  transformModel(model, 'affine:attachment', attachmentProp);
+  transformModel(model, 'lovenotes:attachment', attachmentProp);
 }
 
 export function shouldResizeImage(node: Node, target: EventTarget | null) {

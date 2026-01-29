@@ -1,7 +1,7 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 import {
   EmbedFigmaBlockSchemaExtension,
   EmbedGithubBlockSchemaExtension,
@@ -11,8 +11,8 @@ import {
   EmbedLoomBlockSchemaExtension,
   EmbedSyncedDocBlockSchemaExtension,
   EmbedYoutubeBlockSchemaExtension,
-} from '@blocksuite/affine-model';
-import { EmbedIframeService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { EmbedIframeService } from '@blocksuite/lovenotes-shared/services';
 
 import { EmbedFigmaBlockAdapterExtensions } from './embed-figma-block/adapters/extension';
 import { EmbedGithubBlockAdapterExtensions } from './embed-github-block/adapters/extension';
@@ -22,7 +22,7 @@ import { EmbedLoomBlockAdapterExtensions } from './embed-loom-block/adapters/ext
 import { EmbedYoutubeBlockAdapterExtensions } from './embed-youtube-block/adapters/extension';
 
 export class EmbedStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-embed-block';
+  override name = 'lovenotes-embed-block';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

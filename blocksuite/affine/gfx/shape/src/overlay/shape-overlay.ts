@@ -3,13 +3,13 @@ import {
   type Options,
   type RoughCanvas,
   ToolOverlay,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   type Color,
   DefaultTheme,
   type ShapeStyle,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import type { XYWH } from '@blocksuite/global/gfx';
 import { assertType } from '@blocksuite/global/utils';
 import type { GfxController } from '@blocksuite/std/gfx';

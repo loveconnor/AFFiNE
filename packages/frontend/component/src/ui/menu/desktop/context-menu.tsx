@@ -44,7 +44,7 @@ export const ContextMenu = ({
               contentProps?.className
             )}
             style={{
-              zIndex: 'var(--affine-z-index-popover)',
+              zIndex: 'var(--lovenotes-z-index-popover, 1000)',
               ...contentProps?.style,
             }}
             {...contentProps}

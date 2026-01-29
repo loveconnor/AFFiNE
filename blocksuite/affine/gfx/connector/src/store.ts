@@ -1,7 +1,7 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import {
   connectorToMarkdownAdapterMatcher,
@@ -10,7 +10,7 @@ import {
 import { connectorWatcherExtension } from './connector-watcher';
 
 export class ConnectorStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-connector-gfx';
+  override name = 'lovenotes-connector-gfx';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

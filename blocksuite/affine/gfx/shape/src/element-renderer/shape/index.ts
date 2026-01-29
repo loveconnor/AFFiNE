@@ -3,7 +3,7 @@ import {
   type ElementRenderer,
   ElementRendererExtension,
   type RoughCanvas,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   getFontMetrics,
   getFontString,
@@ -11,13 +11,13 @@ import {
   isRTL,
   measureTextInDOM,
   wrapTextDeltas,
-} from '@blocksuite/affine-gfx-text';
+} from '@blocksuite/lovenotes-gfx-text';
 import type {
   LocalShapeElementModel,
   ShapeElementModel,
   ShapeType,
-} from '@blocksuite/affine-model';
-import { DefaultTheme, TextAlign } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
+import { DefaultTheme, TextAlign } from '@blocksuite/lovenotes-model';
 import type { IBound } from '@blocksuite/global/gfx';
 import { Bound } from '@blocksuite/global/gfx';
 import { deltaInsertsToChunks } from '@blocksuite/std/inline';

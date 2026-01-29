@@ -1,12 +1,12 @@
-import { EdgelessFrameManagerIdentifier } from '@blocksuite/affine-block-frame';
-import { EdgelessCRUDExtension } from '@blocksuite/affine-block-surface';
-import { MindmapStyle, SurfaceRefBlockSchema } from '@blocksuite/affine-model';
+import { EdgelessFrameManagerIdentifier } from '@blocksuite/lovenotes-block-frame';
+import { EdgelessCRUDExtension } from '@blocksuite/lovenotes-block-surface';
+import { MindmapStyle, SurfaceRefBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   type SlashMenuActionItem,
   type SlashMenuConfig,
   SlashMenuConfigExtension,
   type SlashMenuItem,
-} from '@blocksuite/affine-widget-slash-menu';
+} from '@blocksuite/lovenotes-widget-slash-menu';
 import { Bound } from '@blocksuite/global/gfx';
 import { FrameIcon, GroupingIcon, MindmapIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@blocksuite/std';

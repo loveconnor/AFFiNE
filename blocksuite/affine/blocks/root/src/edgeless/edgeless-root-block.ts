@@ -1,32 +1,32 @@
-import { NoteConfigExtension } from '@blocksuite/affine-block-note';
+import { NoteConfigExtension } from '@blocksuite/lovenotes-block-note';
 import {
   DefaultTool,
   getBgGridGap,
   normalizeWheelDeltaY,
   type SurfaceBlockComponent,
   type SurfaceBlockModel,
-} from '@blocksuite/affine-block-surface';
-import { isSingleMindMapNode } from '@blocksuite/affine-gfx-mindmap';
-import { PanTool } from '@blocksuite/affine-gfx-pointer';
-import { mountShapeTextEditor } from '@blocksuite/affine-gfx-shape';
+} from '@blocksuite/lovenotes-block-surface';
+import { isSingleMindMapNode } from '@blocksuite/lovenotes-gfx-mindmap';
+import { PanTool } from '@blocksuite/lovenotes-gfx-pointer';
+import { mountShapeTextEditor } from '@blocksuite/lovenotes-gfx-shape';
 import {
   NoteBlockModel,
   type RootBlockModel,
   type ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EditorSettingProvider,
   EditPropsStore,
   FontLoaderService,
   ThemeProvider,
   ViewportElementProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   isTouchPadPinchEvent,
   matchModels,
   requestConnectedFrame,
   requestThrottledConnectedFrame,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { IS_WINDOWS } from '@blocksuite/global/env';
 import { Bound, Point, Vec } from '@blocksuite/global/gfx';
 import {
@@ -53,7 +53,7 @@ export class EdgelessRootBlockComponent extends BlockComponent<
   EdgelessRootService
 > {
   static override styles = css`
-    affine-edgeless-root {
+    lovenotes-edgeless-root {
       -webkit-user-select: none;
       user-select: none;
       display: block;
@@ -77,15 +77,15 @@ export class EdgelessRootBlockComponent extends BlockComponent<
 
     .edgeless-background {
       height: 100%;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--lovenotes-background-primary-color);
       background-image: radial-gradient(
-        var(--affine-edgeless-grid-color) 1px,
-        var(--affine-background-primary-color) 1px
+        var(--lovenotes-edgeless-grid-color) 1px,
+        var(--lovenotes-background-primary-color) 1px
       );
     }
 
     .edgeless-container {
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
       position: relative;
     }
 
@@ -125,7 +125,7 @@ export class EdgelessRootBlockComponent extends BlockComponent<
 
   get surfaceBlockModel() {
     return this.model.children.find(
-      child => child.flavour === 'affine:surface'
+      child => child.flavour === 'lovenotes:surface'
     ) as SurfaceBlockModel;
   }
 
@@ -519,6 +519,6 @@ export class EdgelessRootBlockComponent extends BlockComponent<
   @query('.edgeless-mount-point')
   accessor mountElm: HTMLDivElement | null = null;
 
-  @query('affine-surface')
+  @query('lovenotes-surface')
   accessor surface!: SurfaceBlockComponent;
 }

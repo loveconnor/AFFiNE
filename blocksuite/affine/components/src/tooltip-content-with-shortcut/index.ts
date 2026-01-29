@@ -74,13 +74,13 @@ export class TooltipContentWithShortcut extends LitElement {
 
 export function effects() {
   customElements.define(
-    'affine-tooltip-content-with-shortcut',
+    'lovenotes-tooltip-content-with-shortcut',
     TooltipContentWithShortcut
   );
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-tooltip-content-with-shortcut': TooltipContentWithShortcut;
+    'lovenotes-tooltip-content-with-shortcut': TooltipContentWithShortcut;
   }
 }

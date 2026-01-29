@@ -1,7 +1,7 @@
-import { IconButton } from '@affine/component';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { IconButton } from '@lovenotes/component';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
 import { InformationIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useCallback } from 'react';
@@ -18,7 +18,7 @@ export const InfoButton = ({ docId }: { docId: string }) => {
   return (
     <IconButton
       size="20"
-      tooltip={t['com.affine.page-properties.page-info.view']()}
+      tooltip={t['com.lovenotes.page-properties.page-info.view']()}
       data-testid="header-info-button"
       onClick={onOpenInfoModal}
     >

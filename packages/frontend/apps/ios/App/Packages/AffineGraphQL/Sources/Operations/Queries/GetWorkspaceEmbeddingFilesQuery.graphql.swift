@@ -26,11 +26,11 @@ public class GetWorkspaceEmbeddingFilesQuery: GraphQLQuery {
     "pagination": pagination
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -41,11 +41,11 @@ public class GetWorkspaceEmbeddingFilesQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("embedding", Embedding.self),
@@ -56,11 +56,11 @@ public class GetWorkspaceEmbeddingFilesQuery: GraphQLQuery {
       /// Workspace.Embedding
       ///
       /// Parent Type: `CopilotWorkspaceConfig`
-      public struct Embedding: AffineGraphQL.SelectionSet {
+      public struct Embedding: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotWorkspaceConfig }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotWorkspaceConfig }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("files", Files.self, arguments: ["pagination": .variable("pagination")]),
@@ -71,11 +71,11 @@ public class GetWorkspaceEmbeddingFilesQuery: GraphQLQuery {
         /// Workspace.Embedding.Files
         ///
         /// Parent Type: `PaginatedCopilotWorkspaceFileType`
-        public struct Files: AffineGraphQL.SelectionSet {
+        public struct Files: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PaginatedCopilotWorkspaceFileType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PaginatedCopilotWorkspaceFileType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("totalCount", Int.self),
@@ -90,11 +90,11 @@ public class GetWorkspaceEmbeddingFilesQuery: GraphQLQuery {
           /// Workspace.Embedding.Files.PageInfo
           ///
           /// Parent Type: `PageInfo`
-          public struct PageInfo: AffineGraphQL.SelectionSet {
+          public struct PageInfo: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PageInfo }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PageInfo }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("endCursor", String?.self),
@@ -108,11 +108,11 @@ public class GetWorkspaceEmbeddingFilesQuery: GraphQLQuery {
           /// Workspace.Embedding.Files.Edge
           ///
           /// Parent Type: `CopilotWorkspaceFileTypeEdge`
-          public struct Edge: AffineGraphQL.SelectionSet {
+          public struct Edge: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotWorkspaceFileTypeEdge }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotWorkspaceFileTypeEdge }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("node", Node.self),
@@ -123,27 +123,27 @@ public class GetWorkspaceEmbeddingFilesQuery: GraphQLQuery {
             /// Workspace.Embedding.Files.Edge.Node
             ///
             /// Parent Type: `CopilotWorkspaceFile`
-            public struct Node: AffineGraphQL.SelectionSet {
+            public struct Node: LoveNotesGraphQL.SelectionSet {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotWorkspaceFile }
+              public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotWorkspaceFile }
               public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("fileId", String.self),
                 .field("fileName", String.self),
                 .field("blobId", String.self),
                 .field("mimeType", String.self),
-                .field("size", AffineGraphQL.SafeInt.self),
-                .field("createdAt", AffineGraphQL.DateTime.self),
+                .field("size", LoveNotesGraphQL.SafeInt.self),
+                .field("createdAt", LoveNotesGraphQL.DateTime.self),
               ] }
 
               public var fileId: String { __data["fileId"] }
               public var fileName: String { __data["fileName"] }
               public var blobId: String { __data["blobId"] }
               public var mimeType: String { __data["mimeType"] }
-              public var size: AffineGraphQL.SafeInt { __data["size"] }
-              public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
+              public var size: LoveNotesGraphQL.SafeInt { __data["size"] }
+              public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
             }
           }
         }

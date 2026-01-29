@@ -1,5 +1,5 @@
-import { EmbedGithubBlockSchema } from '@blocksuite/affine-model';
-import { SlashMenuConfigExtension } from '@blocksuite/affine-widget-slash-menu';
+import { EmbedGithubBlockSchema } from '@blocksuite/lovenotes-model';
+import { SlashMenuConfigExtension } from '@blocksuite/lovenotes-widget-slash-menu';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import type { ExtensionType } from '@blocksuite/store';
 import { literal } from 'lit/static-html.js';
@@ -19,9 +19,9 @@ export const EmbedGithubViewExtensions: ExtensionType[] = [
   FlavourExtension(flavour),
   EmbedGithubBlockService,
   BlockViewExtension(flavour, model => {
-    return model.parent?.flavour === 'affine:surface'
-      ? literal`affine-embed-edgeless-github-block`
-      : literal`affine-embed-github-block`;
+    return model.parent?.flavour === 'lovenotes:surface'
+      ? literal`lovenotes-embed-edgeless-github-block`
+      : literal`lovenotes-embed-github-block`;
   }),
   EmbedGithubBlockOptionConfig,
   EmbedGithubBlockInteraction,

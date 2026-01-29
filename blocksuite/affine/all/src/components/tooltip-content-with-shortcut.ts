@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/tooltip-content-with-shortcut';
+export * from '@blocksuite/lovenotes-components/tooltip-content-with-shortcut';

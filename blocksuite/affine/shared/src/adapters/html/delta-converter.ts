@@ -5,7 +5,7 @@ import {
 } from '@blocksuite/global/di';
 import type { DeltaInsert, ExtensionType } from '@blocksuite/store';
 
-import type { AffineTextAttributes } from '../../types/index.js';
+import type { LoveNotesTextAttributes } from '../../types/index.js';
 import {
   type ASTToDeltaMatcher,
   DeltaASTConverter,
@@ -56,7 +56,7 @@ export function HtmlASTToDeltaExtension(
 }
 
 export class HtmlDeltaConverter extends DeltaASTConverter<
-  AffineTextAttributes,
+  LoveNotesTextAttributes,
   HtmlAST
 > {
   constructor(
@@ -69,7 +69,7 @@ export class HtmlDeltaConverter extends DeltaASTConverter<
   }
 
   private _applyTextFormatting(
-    delta: DeltaInsert<AffineTextAttributes>
+    delta: DeltaInsert<LoveNotesTextAttributes>
   ): InlineHtmlAST {
     let hast: InlineHtmlAST = {
       type: 'text',
@@ -96,7 +96,7 @@ export class HtmlDeltaConverter extends DeltaASTConverter<
   private _spreadAstToDelta(
     ast: HtmlAST,
     options: DeltaASTConverterOptions = Object.create(null)
-  ): DeltaInsert<AffineTextAttributes>[] {
+  ): DeltaInsert<LoveNotesTextAttributes>[] {
     const context = {
       configs: this.configs,
       options,
@@ -116,14 +116,14 @@ export class HtmlDeltaConverter extends DeltaASTConverter<
   astToDelta(
     ast: HtmlAST,
     options: DeltaASTConverterOptions = Object.create(null)
-  ): DeltaInsert<AffineTextAttributes>[] {
+  ): DeltaInsert<LoveNotesTextAttributes>[] {
     return this._spreadAstToDelta(ast, options).reduce((acc, cur) => {
       return AdapterTextUtils.mergeDeltas(acc, cur);
-    }, [] as DeltaInsert<AffineTextAttributes>[]);
+    }, [] as DeltaInsert<LoveNotesTextAttributes>[]);
   }
 
   deltaToAST(
-    deltas: DeltaInsert<AffineTextAttributes>[],
+    deltas: DeltaInsert<LoveNotesTextAttributes>[],
     depth = 0
   ): InlineHtmlAST[] {
     if (depth > 0) {

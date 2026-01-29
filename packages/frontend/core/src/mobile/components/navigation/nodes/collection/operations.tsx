@@ -4,16 +4,16 @@ import {
   MenuSeparator,
   notify,
   useConfirmModal,
-} from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { CollectionService } from '@affine/core/modules/collection';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@lovenotes/component';
+import { usePageHelper } from '@lovenotes/core/blocksuite/block-suite-page-list/utils';
+import { IsFavoriteIcon } from '@lovenotes/core/components/pure/icons';
+import type { NodeOperation } from '@lovenotes/core/desktop/components/navigation-panel';
+import { CollectionService } from '@lovenotes/core/modules/collection';
+import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
 import {
   DeleteIcon,
   FilterIcon,
@@ -76,8 +76,8 @@ export const useNavigationPanelCollectionNodeOperations = (
 
   const handleAddDocToCollection = useCallback(() => {
     openConfirmModal({
-      title: t['com.affine.collection.add-doc.confirm.title'](),
-      description: t['com.affine.collection.add-doc.confirm.description'](),
+      title: t['com.lovenotes.collection.add-doc.confirm.title'](),
+      description: t['com.lovenotes.collection.add-doc.confirm.description'](),
       cancelText: t['Cancel'](),
       confirmText: t['Confirm'](),
       confirmButtonOptions: {
@@ -121,7 +121,7 @@ export const useNavigationPanelCollectionNodeOperations = (
         track.$.navigationPanel.organize.renameOrganizeItem({
           type: 'collection',
         });
-        notify.success({ message: t['com.affine.toastMessage.rename']() });
+        notify.success({ message: t['com.lovenotes.toastMessage.rename']() });
       }
     },
     [collectionId, collectionService, t]
@@ -183,7 +183,7 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
             size="16"
             onClick={handleAddDocToCollection}
             tooltip={t[
-              'com.affine.rootAppSidebar.explorer.collection-add-tooltip'
+              'com.lovenotes.rootAppSidebar.explorer.collection-add-tooltip'
             ]()}
           >
             <PlusIcon />
@@ -202,7 +202,7 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
         index: 99,
         view: (
           <MenuItem prefixIcon={<FilterIcon />} onClick={handleShowEdit}>
-            {t['com.affine.collection.menu.edit']()}
+            {t['com.lovenotes.collection.menu.edit']()}
           </MenuItem>
         ),
       },
@@ -225,8 +225,8 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
             onClick={handleToggleFavoriteCollection}
           >
             {favorite
-              ? t['com.affine.favoritePageOperation.remove']()
-              : t['com.affine.favoritePageOperation.add']()}
+              ? t['com.lovenotes.favoritePageOperation.remove']()
+              : t['com.lovenotes.favoritePageOperation.add']()}
           </MenuItem>
         ),
       },
@@ -234,7 +234,7 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
         index: 99,
         view: (
           <MenuItem prefixIcon={<OpenInNewIcon />} onClick={handleOpenInNewTab}>
-            {t['com.affine.workbench.tab.page-menu-open']()}
+            {t['com.lovenotes.workbench.tab.page-menu-open']()}
           </MenuItem>
         ),
       },
@@ -247,7 +247,7 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
                   prefixIcon={<SplitViewIcon />}
                   onClick={handleOpenInSplitView}
                 >
-                  {t['com.affine.workbench.split-view.page-menu-open']()}
+                  {t['com.lovenotes.workbench.split-view.page-menu-open']()}
                 </MenuItem>
               ),
             },

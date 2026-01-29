@@ -1,4 +1,4 @@
-import { DefaultTheme } from '@blocksuite/affine-model';
+import { DefaultTheme } from '@blocksuite/lovenotes-model';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import {
   type AssetsManager,
@@ -15,7 +15,7 @@ import {
   type Transformer,
 } from '@blocksuite/store';
 
-import type { AffineTextAttributes } from '../types';
+import type { LoveNotesTextAttributes } from '../types';
 import { AdapterFactoryIdentifier } from './types/adapter';
 
 type NotionEditingStyle = {
@@ -93,7 +93,7 @@ export class NotionTextAdapter extends BaseAdapter<NotionText> {
   ): SliceSnapshot | null {
     const notionText = JSON.parse(payload.file) as NotionTextSerialized;
     const content: SliceSnapshot['content'] = [];
-    const deltas: DeltaInsert<AffineTextAttributes>[] = [];
+    const deltas: DeltaInsert<LoveNotesTextAttributes>[] = [];
 
     // Check if the notionText.editing is an array
     if (!Array.isArray(notionText.editing)) {
@@ -101,7 +101,7 @@ export class NotionTextAdapter extends BaseAdapter<NotionText> {
     }
 
     for (const editing of notionText.editing) {
-      const delta: DeltaInsert<AffineTextAttributes> = {
+      const delta: DeltaInsert<LoveNotesTextAttributes> = {
         insert: editing[0],
       };
 
@@ -145,7 +145,7 @@ export class NotionTextAdapter extends BaseAdapter<NotionText> {
     content.push({
       type: 'block',
       id: nanoid(),
-      flavour: 'affine:note',
+      flavour: 'lovenotes:note',
       props: {
         xywh: '[0,0,800,95]',
         background: DefaultTheme.noteBackgrounColor,
@@ -157,7 +157,7 @@ export class NotionTextAdapter extends BaseAdapter<NotionText> {
         {
           type: 'block',
           id: nanoid(),
-          flavour: 'affine:paragraph',
+          flavour: 'lovenotes:paragraph',
           props: {
             type: 'text',
             text: {

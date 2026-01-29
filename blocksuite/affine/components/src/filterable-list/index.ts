@@ -1,4 +1,4 @@
-import { PAGE_HEADER_HEIGHT } from '@blocksuite/affine-shared/consts';
+import { PAGE_HEADER_HEIGHT } from '@blocksuite/lovenotes-shared/consts';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { DoneIcon, SearchIcon } from '@blocksuite/icons/lit';
 import { autoPlacement, offset, type Placement, size } from '@floating-ui/dom';
@@ -125,7 +125,7 @@ export class FilterableListComponent<Props = unknown> extends WithDisposable(
 
     return html`
       <div
-        class=${classMap({ 'affine-filterable-list': true, flipped: isFlip })}
+        class=${classMap({ 'lovenotes-filterable-list': true, flipped: isFlip })}
       >
         <div class="input-wrapper">
           ${SearchIcon()}
@@ -254,6 +254,6 @@ export function showPopFilterableList({
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-filterable-list': FilterableListComponent;
+    'lovenotes-filterable-list': FilterableListComponent;
   }
 }

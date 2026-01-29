@@ -1,9 +1,9 @@
 import {
   EdgelessFrameManager,
   EdgelessFrameManagerIdentifier,
-} from '@blocksuite/affine-block-frame';
-import type { FrameBlockProps } from '@blocksuite/affine-model';
-import { encodeClipboardBlobs } from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-block-frame';
+import type { FrameBlockProps } from '@blocksuite/lovenotes-model';
+import { encodeClipboardBlobs } from '@blocksuite/lovenotes-shared/adapters';
 import { Bound, getBoundWithRotation } from '@blocksuite/global/gfx';
 import type { BlockStdScope } from '@blocksuite/std';
 import {
@@ -28,7 +28,7 @@ export function createNewPresentationIndexes(
   const frames = raw
     .filter((block): block is FrameSnapshot => {
       const { data } = BlockSnapshotSchema.safeParse(block);
-      return data?.flavour === 'affine:frame';
+      return data?.flavour === 'lovenotes:frame';
     })
     .sort((a, b) => EdgelessFrameManager.framePresentationComparator(a, b));
 

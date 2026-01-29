@@ -1,9 +1,9 @@
-import { ListBlockSchema } from '@blocksuite/affine-model';
+import { ListBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockNotionHtmlAdapterExtension,
   type BlockNotionHtmlAdapterMatcher,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert } from '@blocksuite/store';
 import { nanoid } from '@blocksuite/store';
 
@@ -67,7 +67,7 @@ export const listBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatcher =
               {
                 type: 'block',
                 id: nanoid(),
-                flavour: 'affine:list',
+                flavour: 'lovenotes:list',
                 props: {
                   type: listType,
                   text: {

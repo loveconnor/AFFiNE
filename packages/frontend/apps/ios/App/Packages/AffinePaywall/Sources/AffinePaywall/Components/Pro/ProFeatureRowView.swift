@@ -1,11 +1,11 @@
 //
 //  ProFeatureRowView.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //
 
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 struct ProFeatureRowView: View {
@@ -16,12 +16,12 @@ struct ProFeatureRowView: View {
     HStack(alignment: .firstTextBaseline, spacing: 8) {
       Image(systemName: "checkmark")
         .font(.system(size: 16))
-        .foregroundColor(AffineColors.buttonPrimary.color)
+        .foregroundColor(LoveNotesColors.buttonPrimary.color)
 
       Text(feature.text)
         .font(.system(size: 16))
         .contentTransition(.numericText())
-        .foregroundColor(feature.isHighlighted ? AffineColors.buttonPrimary.color : AffineColors.textPrimary.color)
+        .foregroundColor(feature.isHighlighted ? LoveNotesColors.buttonPrimary.color : LoveNotesColors.textPrimary.color)
         .lineLimit(nil)
         .fixedSize(horizontal: false, vertical: true)
 

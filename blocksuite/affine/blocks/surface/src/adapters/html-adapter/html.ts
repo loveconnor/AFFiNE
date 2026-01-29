@@ -1,12 +1,12 @@
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 export const surfaceBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
-  flavour: 'affine:surface',
+  flavour: 'lovenotes:surface',
   toMatch: () => false,
-  fromMatch: o => o.node.flavour === 'affine:surface',
+  fromMatch: o => o.node.flavour === 'lovenotes:surface',
   toBlockSnapshot: {},
   fromBlockSnapshot: {
     enter: (_, context) => {

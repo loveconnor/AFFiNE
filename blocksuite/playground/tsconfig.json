@@ -8,11 +8,11 @@
   },
   "include": ["./apps", "./examples"],
   "references": [
+    { "path": "../affine/data-view" },
+    { "path": "../integration-test" },
     { "path": "../affine/all" },
     { "path": "../affine/components" },
     { "path": "../affine/model" },
-    { "path": "../affine/shared" },
-    { "path": "../affine/data-view" },
-    { "path": "../integration-test" }
+    { "path": "../affine/shared" }
   ]
 }

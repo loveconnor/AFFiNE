@@ -1,23 +1,23 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   locateToolbar,
-} from '@affine-test/kit/utils/editor';
-import { pressBackspace, pressEnter } from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/editor';
+import { pressBackspace, pressEnter } from '@lovenotes-test/kit/utils/keyboard';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   createLinkedPage,
   dragTo,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@lovenotes-test/kit/utils/sidebar';
 import {
   getCurrentCollectionIdFromUrl,
   getCurrentDocIdFromUrl,
   getDocIdFromUrl,
-} from '@affine-test/kit/utils/url';
+} from '@lovenotes-test/kit/utils/url';
 import type { Locator, Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 
@@ -239,7 +239,7 @@ test.skip('drag a page link in editor to favourites', async ({ page }) => {
 
   const pageReference = page.locator('a').filter({
     has: page.locator(
-      '.affine-reference-title:has-text("hi from another page")'
+      '.lovenotes-reference-title:has-text("hi from another page")'
     ),
   });
 
@@ -257,7 +257,7 @@ test.skip('drag a page link in editor to favourites', async ({ page }) => {
 
   await dragToFavourites(
     page,
-    page.locator('.affine-reference-title:has-text("hi from another page")'),
+    page.locator('.lovenotes-reference-title:has-text("hi from another page")'),
     pageId
   );
 });
@@ -270,7 +270,7 @@ test('drag a page card block to another page', async ({ page }) => {
 
   const pageReference = page.locator('a').filter({
     has: page.locator(
-      '.affine-reference-title:has-text("hi from another page")'
+      '.lovenotes-reference-title:has-text("hi from another page")'
     ),
   });
 
@@ -288,14 +288,14 @@ test('drag a page card block to another page', async ({ page }) => {
 
   await pageReference.hover();
 
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const toolbar = page.locator('lovenotes-toolbar-widget editor-toolbar');
 
   // convert page reference to card block
   await toolbar.getByRole('button', { name: 'Switch view' }).click();
   await toolbar.getByRole('button', { name: 'Card view' }).click();
 
   // hover the card block to show the drag handle
-  const box = await page.locator('affine-embed-linked-doc-block').boundingBox();
+  const box = await page.locator('lovenotes-embed-linked-doc-block').boundingBox();
 
   expect(box).toBeTruthy();
 
@@ -307,7 +307,7 @@ test('drag a page card block to another page', async ({ page }) => {
 
   await dragToFavourites(
     page,
-    page.locator('.affine-drag-handle-container'),
+    page.locator('.lovenotes-drag-handle-container'),
     pageId
   );
 });
@@ -325,10 +325,10 @@ test('drag a favourite page into note on page mode', async ({ page }) => {
   await dragTo(
     page,
     item,
-    page.locator('.affine-paragraph-block-container').first()
+    page.locator('.lovenotes-paragraph-block-container').first()
   );
 
-  await expect(page.locator('affine-embed-linked-doc-block')).toContainText(
+  await expect(page.locator('lovenotes-embed-linked-doc-block')).toContainText(
     'hi from page'
   );
 });
@@ -348,9 +348,9 @@ test('drag a favourite page into canvas on edgeless mode', async ({ page }) => {
   await clickEdgelessModeButton(page);
 
   // drag item into blocksuite editor
-  await dragTo(page, item, page.locator('affine-edgeless-root').first());
+  await dragTo(page, item, page.locator('lovenotes-edgeless-root').first());
 
-  const embedDoc = page.locator('affine-embed-edgeless-synced-doc-block');
+  const embedDoc = page.locator('lovenotes-embed-edgeless-synced-doc-block');
   await expect(embedDoc).toContainText('Hello world');
   await embedDoc.click();
 
@@ -358,7 +358,7 @@ test('drag a favourite page into canvas on edgeless mode', async ({ page }) => {
   const switchViewButton = toolbar.getByLabel('Switch view');
   await switchViewButton.click();
   await toolbar.getByLabel('Card view').click(); // this will record the view as preferred view
-  const cardDoc = page.locator('affine-embed-edgeless-linked-doc-block');
+  const cardDoc = page.locator('lovenotes-embed-edgeless-linked-doc-block');
   await expect(embedDoc).toBeHidden();
   await expect(cardDoc).toBeVisible();
 
@@ -366,7 +366,7 @@ test('drag a favourite page into canvas on edgeless mode', async ({ page }) => {
   await expect(embedDoc).toBeHidden();
   await expect(cardDoc).toBeHidden();
 
-  await dragTo(page, item, page.locator('affine-edgeless-root').first());
+  await dragTo(page, item, page.locator('lovenotes-edgeless-root').first());
   await expect(cardDoc).toBeVisible();
   await expect(embedDoc).toBeHidden();
 
@@ -374,7 +374,7 @@ test('drag a favourite page into canvas on edgeless mode', async ({ page }) => {
   await cardDoc.click();
   await pressBackspace(page);
 
-  await dragTo(page, item, page.locator('affine-edgeless-root').first());
+  await dragTo(page, item, page.locator('lovenotes-edgeless-root').first());
   await expect(cardDoc, 'prefer view should be persistence').toBeVisible();
   await expect(embedDoc).toBeHidden();
 });
@@ -393,11 +393,11 @@ test('drag a favourite page into note on edgeless mode', async ({ page }) => {
   await clickNewPageButton(page, 'edgeless page');
   await clickEdgelessModeButton(page);
 
-  const edgelessNote = page.locator('affine-edgeless-note');
+  const edgelessNote = page.locator('lovenotes-edgeless-note');
   await dragTo(page, item, edgelessNote);
 
-  const embedDocInNote = edgelessNote.locator('affine-embed-synced-doc-block');
-  const cardDocInNote = edgelessNote.locator('affine-embed-linked-doc-block');
+  const embedDocInNote = edgelessNote.locator('lovenotes-embed-synced-doc-block');
+  const cardDocInNote = edgelessNote.locator('lovenotes-embed-linked-doc-block');
 
   await expect(embedDocInNote).toBeHidden();
   await expect(cardDocInNote).toBeVisible();

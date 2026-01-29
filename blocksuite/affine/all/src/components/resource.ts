@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/resource';
+export * from '@blocksuite/lovenotes-components/resource';

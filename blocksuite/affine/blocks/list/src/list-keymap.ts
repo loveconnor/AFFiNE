@@ -1,6 +1,6 @@
-import { textKeymap } from '@blocksuite/affine-inline-preset';
-import { ListBlockSchema } from '@blocksuite/affine-model';
-import { getSelectedModelsCommand } from '@blocksuite/affine-shared/commands';
+import { textKeymap } from '@blocksuite/lovenotes-inline-preset';
+import { ListBlockSchema } from '@blocksuite/lovenotes-model';
+import { getSelectedModelsCommand } from '@blocksuite/lovenotes-shared/commands';
 import { IS_MAC } from '@blocksuite/global/env';
 import { KeymapExtension, TextSelection } from '@blocksuite/std';
 

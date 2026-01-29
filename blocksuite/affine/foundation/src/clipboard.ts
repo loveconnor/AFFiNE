@@ -5,7 +5,7 @@ import {
   ImageAdapter,
   MixTextAdapter,
   NotionTextAdapter,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { ClipboardAdapterConfigExtension } from '@blocksuite/std';
 import type { ExtensionType } from '@blocksuite/store';
 

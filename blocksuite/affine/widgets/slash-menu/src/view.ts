@@ -1,13 +1,13 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import { SlashMenuExtension } from './extensions';
 
 export class SlashMenuViewExtension extends ViewExtensionProvider {
-  override name = 'affine-slash-menu-widget';
+  override name = 'lovenotes-slash-menu-widget';
 
   override effect() {
     super.effect();

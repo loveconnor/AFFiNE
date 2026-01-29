@@ -1,10 +1,10 @@
-import { test } from '@affine-test/kit/electron';
-import { importImage } from '@affine-test/kit/utils/image';
-import { pasteByKeyboard } from '@affine-test/kit/utils/keyboard';
+import { test } from '@lovenotes-test/kit/electron';
+import { importImage } from '@lovenotes-test/kit/utils/image';
+import { pasteByKeyboard } from '@lovenotes-test/kit/utils/keyboard';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test('should be able to insert SVG images', async ({ page }) => {
@@ -14,9 +14,9 @@ test('should be able to insert SVG images', async ({ page }) => {
   await title.focus();
   await page.keyboard.press('Enter');
 
-  await importImage(page, 'affine.svg');
+  await importImage(page, 'lovenotes.svg');
 
-  const svg = page.locator('affine-image').first();
+  const svg = page.locator('lovenotes-image').first();
   await expect(svg).toBeVisible();
 });
 
@@ -27,15 +27,15 @@ test('should paste it as PNG after copying SVG', async ({ page }) => {
   await title.focus();
   await page.keyboard.press('Enter');
 
-  await importImage(page, 'affine.svg');
+  await importImage(page, 'lovenotes.svg');
 
-  const svg = page.locator('affine-image').first();
+  const svg = page.locator('lovenotes-image').first();
   await expect(svg).toBeVisible();
 
   await svg.hover();
 
   await page.waitForTimeout(500);
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const toolbar = page.locator('lovenotes-toolbar-widget editor-toolbar');
   await expect(toolbar).toBeVisible();
 
   const moreMenu = toolbar.getByLabel('More menu');
@@ -48,6 +48,6 @@ test('should paste it as PNG after copying SVG', async ({ page }) => {
   await page.keyboard.press('Enter');
   await pasteByKeyboard(page);
 
-  const png = page.locator('affine-image').nth(1);
+  const png = page.locator('lovenotes-image').nth(1);
   await expect(png).toBeVisible();
 });

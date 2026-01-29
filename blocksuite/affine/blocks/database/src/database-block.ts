@@ -1,14 +1,14 @@
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
+import { CaptionedBlockComponent } from '@blocksuite/lovenotes-components/caption';
 import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { DropIndicator } from '@blocksuite/affine-components/drop-indicator';
-import { PeekViewProvider } from '@blocksuite/affine-components/peek';
-import { toast } from '@blocksuite/affine-components/toast';
-import type { DatabaseBlockModel } from '@blocksuite/affine-model';
-import { EDGELESS_TOP_CONTENTEDITABLE_SELECTOR } from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { DropIndicator } from '@blocksuite/lovenotes-components/drop-indicator';
+import { PeekViewProvider } from '@blocksuite/lovenotes-components/peek';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import type { DatabaseBlockModel } from '@blocksuite/lovenotes-model';
+import { EDGELESS_TOP_CONTENTEDITABLE_SELECTOR } from '@blocksuite/lovenotes-shared/consts';
 import {
   BlockElementCommentManager,
   CommentProviderIdentifier,
@@ -17,8 +17,8 @@ import {
   NotificationProvider,
   type TelemetryEventMap,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { getDropResult } from '@blocksuite/affine-widget-drag-handle';
+} from '@blocksuite/lovenotes-shared/services';
+import { getDropResult } from '@blocksuite/lovenotes-widget-drag-handle';
 import {
   createRecordDetail,
   createUniComponentFromWebComponent,
@@ -159,11 +159,11 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
   });
 
   private readonly renderTitle = (dataViewLogic: DataViewUILogicBase) => {
-    return html` <affine-database-title
+    return html` <lovenotes-database-title
       class="${databaseTitleStyles}"
       .titleText="${this.model.props.title}"
       .dataViewLogic="${dataViewLogic}"
-    ></affine-database-title>`;
+    ></lovenotes-database-title>`;
   };
 
   createTemplate = (
@@ -509,6 +509,6 @@ export class DatabaseBlockComponent extends CaptionedBlockComponent<DatabaseBloc
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-database': DatabaseBlockComponent;
+    'lovenotes-database': DatabaseBlockComponent;
   }
 }

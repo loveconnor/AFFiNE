@@ -1,6 +1,6 @@
 // eslint-disable-next-line import-x/no-extraneous-dependencies
-import { PanTool } from '@blocksuite/affine-gfx-pointer';
-import { on } from '@blocksuite/affine-shared/utils';
+import { PanTool } from '@blocksuite/lovenotes-gfx-pointer';
+import { on } from '@blocksuite/lovenotes-shared/utils';
 import type { PointerEventState } from '@blocksuite/std';
 import {
   BaseTool,
@@ -20,10 +20,10 @@ type SelectionEntry = {
 const pointerUpHandlers: unknown[] = [];
 const pointerUpDisposers: Array<ReturnType<typeof vi.fn>> = [];
 
-vi.mock('@blocksuite/affine-shared/utils', async () => {
+vi.mock('@blocksuite/lovenotes-shared/utils', async () => {
   const actual = await vi.importActual<
-    typeof import('@blocksuite/affine-shared/utils')
-  >('@blocksuite/affine-shared/utils');
+    typeof import('@blocksuite/lovenotes-shared/utils')
+  >('@blocksuite/lovenotes-shared/utils');
 
   return {
     ...actual,

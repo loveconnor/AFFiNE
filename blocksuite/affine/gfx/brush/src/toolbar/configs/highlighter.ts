@@ -1,25 +1,25 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine-block-surface';
+import { EdgelessCRUDIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   adjustColorAlpha,
   keepColor,
   packColor,
   type PickColorEvent,
-} from '@blocksuite/affine-components/color-picker';
+} from '@blocksuite/lovenotes-components/color-picker';
 import {
   DEFAULT_HIGHLIGHTER_LINE_WIDTH,
   DefaultTheme,
   HIGHLIGHTER_LINE_WIDTHS,
   HighlighterElementModel,
   resolveColor,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   getMostCommonResolvedValue,
   getMostCommonValue,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { BlockFlavourIdentifier } from '@blocksuite/std';
 import { html } from 'lit';
 
@@ -134,6 +134,6 @@ export const highlighterToolbarConfig = {
 } as const satisfies ToolbarModuleConfig;
 
 export const highlighterToolbarExtension = ToolbarModuleExtension({
-  id: BlockFlavourIdentifier('affine:surface:highlighter'),
+  id: BlockFlavourIdentifier('lovenotes:surface:highlighter'),
   config: highlighterToolbarConfig,
 });

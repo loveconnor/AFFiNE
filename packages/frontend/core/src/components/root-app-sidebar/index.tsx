@@ -1,23 +1,22 @@
 // Import is already correct, no changes needed
 import {
   AddPageButton,
-  AppDownloadButton,
   AppSidebar,
   MenuItem,
   MenuLinkItem,
   QuickSearchInput,
   SidebarContainer,
   SidebarScrollableContainer,
-} from '@affine/core/modules/app-sidebar/views';
-import { ExternalMenuLinkItem } from '@affine/core/modules/app-sidebar/views/menu-item/external-menu-link-item';
-import { AuthService, ServerService } from '@affine/core/modules/cloud';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { CMDKQuickSearchService } from '@affine/core/modules/quicksearch/services/cmdk';
-import type { Workspace } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
-import type { Store } from '@blocksuite/affine/store';
+} from '@lovenotes/core/modules/app-sidebar/views';
+import { ExternalMenuLinkItem } from '@lovenotes/core/modules/app-sidebar/views/menu-item/external-menu-link-item';
+import { AuthService, ServerService } from '@lovenotes/core/modules/cloud';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { CMDKQuickSearchService } from '@lovenotes/core/modules/quicksearch/services/cmdk';
+import type { Workspace } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
+import type { Store } from '@blocksuite/lovenotes/store';
 import {
   AiOutlineIcon,
   AllDocsIcon,
@@ -82,7 +81,7 @@ const AllDocsButton = () => {
   return (
     <MenuLinkItem icon={<AllDocsIcon />} active={allPageActive} to={'/all'}>
       <span data-testid="all-pages">
-        {t['com.affine.workspaceSubPath.all']()}
+        {t['com.lovenotes.workspaceSubPath.all']()}
       </span>
     </MenuLinkItem>
   );
@@ -110,15 +109,15 @@ const AIChatButton = () => {
   return (
     <MenuLinkItem icon={<AiOutlineIcon />} active={aiChatActive} to={'/chat'}>
       <span data-testid="ai-chat">
-        {t['com.affine.workspaceSubPath.chat']()}
+        {t['com.lovenotes.workspaceSubPath.chat']()}
       </span>
     </MenuLinkItem>
   );
 };
 
 /**
- * This is for the whole affine app sidebar.
- * This component wraps the app sidebar in `@affine/component` with logic and data.
+ * This is for the whole lovenotes app sidebar.
+ * This component wraps the app sidebar in `@lovenotes/component` with logic and data.
  *
  */
 export const RootAppSidebar = memo((): ReactElement => {
@@ -221,7 +220,7 @@ export const RootAppSidebar = memo((): ReactElement => {
           onClick={onOpenSettingModal}
         >
           <span data-testid="settings-modal-trigger">
-            {t['com.affine.settingSidebar.title']()}
+            {t['com.lovenotes.settingSidebar.title']()}
           </span>
         </MenuItem>
       </SidebarContainer>
@@ -233,7 +232,7 @@ export const RootAppSidebar = memo((): ReactElement => {
         <NavigationPanelCollections />
         <CollapsibleSection
           path={['others']}
-          title={t['com.affine.rootAppSidebar.others']()}
+          title={t['com.lovenotes.rootAppSidebar.others']()}
           contentStyle={{ padding: '6px 8px 0 8px' }}
         >
           <TrashButton />
@@ -247,15 +246,15 @@ export const RootAppSidebar = memo((): ReactElement => {
           <InviteMembersButton />
           <TemplateDocEntrance />
           <ExternalMenuLinkItem
-            href="https://affine.pro/blog?tag=Release+Note"
+            href="https://lovenotes.pro/blog?tag=Release+Note"
             icon={<JournalIcon />}
-            label={t['com.affine.app-sidebar.learn-more']()}
+            label={t['com.lovenotes.app-sidebar.learn-more']()}
           />
         </CollapsibleSection>
       </SidebarScrollableContainer>
       <SidebarContainer className={bottomContainer}>
         <SidebarAudioPlayer />
-        {BUILD_CONFIG.isElectron ? <UpdaterButton /> : <AppDownloadButton />}
+        {BUILD_CONFIG.isElectron ? <UpdaterButton /> : null}
       </SidebarContainer>
     </AppSidebar>
   );

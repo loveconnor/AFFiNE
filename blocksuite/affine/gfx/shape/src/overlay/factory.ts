@@ -1,5 +1,5 @@
-import type { Options } from '@blocksuite/affine-block-surface';
-import type { ShapeStyle } from '@blocksuite/affine-model';
+import type { Options } from '@blocksuite/lovenotes-block-surface';
+import type { ShapeStyle } from '@blocksuite/lovenotes-model';
 import type { XYWH } from '@blocksuite/global/gfx';
 
 import { DiamondShape } from './diamond';

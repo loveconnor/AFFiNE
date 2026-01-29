@@ -1,20 +1,20 @@
 import {
   convertToDatabase,
   DATABASE_CONVERT_WHITE_LIST,
-} from '@blocksuite/affine-block-database';
+} from '@blocksuite/lovenotes-block-database';
 import {
   convertSelectedBlocksToLinkedDoc,
   getTitleFromSelectedModels,
   notifyDocCreated,
   promptDocTitle,
-} from '@blocksuite/affine-block-embed';
+} from '@blocksuite/lovenotes-block-embed';
 import {
   updateBlockAlign,
   updateBlockType,
-} from '@blocksuite/affine-block-note';
-import type { HighlightType } from '@blocksuite/affine-components/highlight-dropdown-menu';
-import { toast } from '@blocksuite/affine-components/toast';
-import { EditorChevronDown } from '@blocksuite/affine-components/toolbar';
+} from '@blocksuite/lovenotes-block-note';
+import type { HighlightType } from '@blocksuite/lovenotes-components/highlight-dropdown-menu';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import { EditorChevronDown } from '@blocksuite/lovenotes-components/toolbar';
 import {
   deleteTextCommand,
   formatBlockCommand,
@@ -22,16 +22,16 @@ import {
   formatTextCommand,
   isFormatSupported,
   textFormatConfigs,
-} from '@blocksuite/affine-inline-preset';
+} from '@blocksuite/lovenotes-inline-preset';
 import {
   EmbedLinkedDocBlockSchema,
   EmbedSyncedDocBlockSchema,
   type TextAlign,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   textAlignConfigs,
   textConversionConfigs,
-} from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-rich-text';
 import {
   copySelectedModelsCommand,
   deleteSelectedModelsCommand,
@@ -42,18 +42,18 @@ import {
   getSelectedBlocksCommand,
   getSelectedModelsCommand,
   getTextSelectionCommand,
-} from '@blocksuite/affine-shared/commands';
+} from '@blocksuite/lovenotes-shared/commands';
 import type {
   ToolbarAction,
   ToolbarActionGenerator,
   ToolbarActionGroup,
   ToolbarModuleConfig,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   ActionPlacement,
   blockCommentToolbarButton,
-} from '@blocksuite/affine-shared/services';
-import { getMostCommonValue } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { getMostCommonValue } from '@blocksuite/lovenotes-shared/utils';
 import { tableViewMeta } from '@blocksuite/data-view/view-presets';
 import {
   CopyIcon,
@@ -119,7 +119,7 @@ const conversionsActionGroup = {
         >
           <div data-size="large" data-orientation="vertical">
             ${repeat(
-              textConversionConfigs.filter(c => c.flavour !== 'affine:divider'),
+              textConversionConfigs.filter(c => c.flavour !== 'lovenotes:divider'),
               item => item.name,
               ({ flavour, type, name, icon }) => html`
                 <editor-menu-action
@@ -230,9 +230,9 @@ const highlightActionGroup = {
         .run();
     };
     return html`
-      <affine-highlight-dropdown-menu
+      <lovenotes-highlight-dropdown-menu
         .updateHighlight=${updateHighlight}
-      ></affine-highlight-dropdown-menu>
+      ></lovenotes-highlight-dropdown-menu>
     `;
   },
 } as const satisfies ToolbarAction;

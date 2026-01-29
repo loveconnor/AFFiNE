@@ -1,4 +1,4 @@
-import type { UniComponent } from '@blocksuite/affine-shared/types';
+import type { UniComponent } from '@blocksuite/lovenotes-shared/types';
 
 import { createUniComponentFromWebComponent } from '../utils/uni-component/index.js';
 import type { BaseCellRenderer } from './base-cell.js';

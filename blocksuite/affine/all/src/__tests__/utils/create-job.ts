@@ -1,4 +1,4 @@
-import { defaultImageProxyMiddleware } from '@blocksuite/affine-shared/adapters';
+import { defaultImageProxyMiddleware } from '@blocksuite/lovenotes-shared/adapters';
 import {
   Schema,
   Transformer,
@@ -6,7 +6,7 @@ import {
 } from '@blocksuite/store';
 import { TestWorkspace } from '@blocksuite/store/test';
 
-import { AffineSchemas } from '../../schemas.js';
+import { LoveNotesSchemas } from '../../schemas.js';
 import { testStoreExtensions } from './store.js';
 
 declare global {
@@ -25,7 +25,7 @@ export function createJob(middlewares?: TransformerMiddleware[]) {
   window.happyDOM.settings.fetch.disableSameOriginPolicy = true;
   const testMiddlewares = middlewares ?? [];
   testMiddlewares.push(defaultImageProxyMiddleware);
-  const schema = new Schema().register(AffineSchemas);
+  const schema = new Schema().register(LoveNotesSchemas);
   const docCollection = new TestWorkspace();
   docCollection.storeExtensions = testStoreExtensions;
   docCollection.meta.initialize();

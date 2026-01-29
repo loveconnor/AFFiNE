@@ -1,5 +1,5 @@
 // eslint-disable no-empty-pattern
-import { test as base } from '@affine-test/kit/playwright';
+import { test as base } from '@lovenotes-test/kit/playwright';
 import type { Page } from '@playwright/test';
 
 import { ChatPanelUtils } from '../utils/chat-panel-utils';

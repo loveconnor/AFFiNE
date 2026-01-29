@@ -1,4 +1,4 @@
-import type { DatabaseBlockModel } from '@blocksuite/affine-model';
+import type { DatabaseBlockModel } from '@blocksuite/lovenotes-model';
 import type { Command } from '@blocksuite/std';
 import type { BlockModel, Store } from '@blocksuite/store';
 
@@ -30,7 +30,7 @@ export const insertDatabaseBlockCommand: Command<
 
   const result = std.store.addSiblingBlocks(
     targetModel,
-    [{ flavour: 'affine:database' }],
+    [{ flavour: 'lovenotes:database' }],
     place
   );
   const string = result[0];
@@ -64,6 +64,6 @@ export const initDatabaseBlock = (
   if (isAppendNewRow) {
     const parent = doc.getParent(model);
     if (!parent) return;
-    doc.addBlock('affine:paragraph', {}, parent.id);
+    doc.addBlock('lovenotes:paragraph', {}, parent.id);
   }
 };

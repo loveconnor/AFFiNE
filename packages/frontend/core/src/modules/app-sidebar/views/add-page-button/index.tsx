@@ -1,16 +1,16 @@
-import { Button, IconButton, Menu, MenuItem, MenuSub } from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { DocsService } from '@affine/core/modules/doc';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { TemplateDocService } from '@affine/core/modules/template-doc';
-import { TemplateListMenuContentScrollable } from '@affine/core/modules/template-doc/view/template-list-menu';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { inferOpenMode } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
-import type { DocMode } from '@blocksuite/affine/model';
+import { Button, IconButton, Menu, MenuItem, MenuSub } from '@lovenotes/component';
+import { usePageHelper } from '@lovenotes/core/blocksuite/block-suite-page-list/utils';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { DocsService } from '@lovenotes/core/modules/doc';
+import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
+import { TemplateDocService } from '@lovenotes/core/modules/template-doc';
+import { TemplateListMenuContentScrollable } from '@lovenotes/core/modules/template-doc/view/template-list-menu';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { inferOpenMode } from '@lovenotes/core/utils';
+import { useI18n } from '@lovenotes/i18n';
+import track from '@lovenotes/track';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import {
   ArrowDownSmallIcon,
   EdgelessIcon,

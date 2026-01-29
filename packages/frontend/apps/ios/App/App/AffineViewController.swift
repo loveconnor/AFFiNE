@@ -2,7 +2,7 @@ import Capacitor
 import Intelligents
 import UIKit
 
-class AFFiNEViewController: CAPBridgeViewController {
+class LoveNotesViewController: CAPBridgeViewController {
   var intelligentsButton: IntelligentsButton?
 
   override func viewDidLoad() {

@@ -1,8 +1,8 @@
-import { Overlay } from '@blocksuite/affine-block-surface';
+import { Overlay } from '@blocksuite/lovenotes-block-surface';
 import {
   ConnectorElementModel,
   MindmapElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { almostEqual, Bound, type IVec, Point } from '@blocksuite/global/gfx';
 import type { GfxModel } from '@blocksuite/std/gfx';
 

@@ -2,18 +2,18 @@ import { createIdentifier } from '@blocksuite/global/di';
 import type { ExtensionType } from '@blocksuite/store';
 import type { Signal } from '@preact/signals-core';
 
-import type { AffineUserInfo } from './types';
+import type { LoveNotesUserInfo } from './types';
 
 export interface UserService {
-  currentUserInfo$: Signal<AffineUserInfo | null>;
-  userInfo$(id: string): Signal<AffineUserInfo | null>;
+  currentUserInfo$: Signal<LoveNotesUserInfo | null>;
+  userInfo$(id: string): Signal<LoveNotesUserInfo | null>;
   isLoading$(id: string): Signal<boolean>;
   error$(id: string): Signal<string | null>; // user friendly error string
   revalidateUserInfo(id: string): void;
 }
 
 export const UserProvider = createIdentifier<UserService>(
-  'affine-user-service'
+  'lovenotes-user-service'
 );
 
 export function UserServiceExtension(service: UserService): ExtensionType {

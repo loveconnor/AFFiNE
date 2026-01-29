@@ -1,8 +1,8 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
-import { NoteBlockSchema } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-ext-loader';
+import { NoteBlockSchema } from '@blocksuite/lovenotes-model';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 
@@ -16,7 +16,7 @@ import { NoteKeymapExtension } from './note-keymap';
 const flavour = NoteBlockSchema.model.flavour;
 
 export class NoteViewExtension extends ViewExtensionProvider {
-  override name = 'affine-note-block';
+  override name = 'lovenotes-note-block';
 
   override effect() {
     super.effect();
@@ -35,13 +35,13 @@ export class NoteViewExtension extends ViewExtensionProvider {
 
     if (isEdgeless) {
       context.register(
-        BlockViewExtension(flavour, literal`affine-edgeless-note`)
+        BlockViewExtension(flavour, literal`lovenotes-edgeless-note`)
       );
       context.register(createBuiltinToolbarConfigExtension(flavour));
       context.register(EdgelessClipboardNoteConfig);
       context.register(EdgelessNoteInteraction);
     } else {
-      context.register(BlockViewExtension(flavour, literal`affine-note`));
+      context.register(BlockViewExtension(flavour, literal`lovenotes-note`));
     }
   }
 }

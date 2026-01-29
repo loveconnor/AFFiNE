@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "AffineGraphQL",
+  name: "LoveNotesGraphQL",
   platforms: [
     .iOS(.v12),
     .macOS(.v10_14),
@@ -11,14 +11,14 @@ let package = Package(
     .watchOS(.v5),
   ],
   products: [
-    .library(name: "AffineGraphQL", targets: ["AffineGraphQL"]),
+    .library(name: "LoveNotesGraphQL", targets: ["LoveNotesGraphQL"]),
   ],
   dependencies: [
     .package(url: "https://github.com/apollographql/apollo-ios", exact: "1.23.0"),
   ],
   targets: [
     .target(
-      name: "AffineGraphQL",
+      name: "LoveNotesGraphQL",
       dependencies: [
         .product(name: "ApolloAPI", package: "apollo-ios"),
       ],

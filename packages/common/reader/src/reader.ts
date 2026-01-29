@@ -1,14 +1,14 @@
-import { Container } from '@blocksuite/affine/global/di';
+import { Container } from '@blocksuite/lovenotes/global/di';
 import type {
   AttachmentBlockModel,
   BookmarkBlockModel,
   EmbedBlockModel,
   ImageBlockModel,
   TableBlockModel,
-} from '@blocksuite/affine/model';
-import { AffineSchemas } from '@blocksuite/affine/schemas';
-import { MarkdownAdapter } from '@blocksuite/affine/shared/adapters';
-import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
+} from '@blocksuite/lovenotes/model';
+import { LoveNotesSchemas } from '@blocksuite/lovenotes/schemas';
+import { MarkdownAdapter } from '@blocksuite/lovenotes/shared/adapters';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes/shared/types';
 import {
   createYProxy,
   type DeltaInsert,
@@ -17,7 +17,7 @@ import {
   Transformer,
   type TransformerMiddleware,
   type YBlock,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/store';
 import { uniqBy } from 'lodash-es';
 import {
   Array as YArray,
@@ -29,7 +29,7 @@ import {
 import { getStoreManager } from './bs-store';
 
 const blocksuiteSchema = new Schema();
-blocksuiteSchema.register([...AffineSchemas]);
+blocksuiteSchema.register([...LoveNotesSchemas]);
 
 export interface BlockDocumentInfo {
   docId: string;
@@ -51,15 +51,15 @@ export interface BlockDocumentInfo {
 }
 
 const bookmarkFlavours = new Set([
-  'affine:bookmark',
-  'affine:embed-youtube',
-  'affine:embed-figma',
-  'affine:embed-github',
-  'affine:embed-loom',
+  'lovenotes:bookmark',
+  'lovenotes:embed-youtube',
+  'lovenotes:embed-figma',
+  'lovenotes:embed-github',
+  'lovenotes:embed-loom',
 ]);
 
 const collectInlineReferences = (
-  deltas: DeltaInsert<AffineTextAttributes>[]
+  deltas: DeltaInsert<LoveNotesTextAttributes>[]
 ): { refDocId: string; ref: string }[] =>
   uniqBy(
     deltas
@@ -83,19 +83,19 @@ const collectInlineReferences = (
 
 const getTextDeltasFromCellValue = (
   value: unknown
-): DeltaInsert<AffineTextAttributes>[] | null => {
+): DeltaInsert<LoveNotesTextAttributes>[] | null => {
   if (!value) {
     return null;
   }
 
   if (value instanceof YText) {
-    return value.toDelta() as DeltaInsert<AffineTextAttributes>[];
+    return value.toDelta() as DeltaInsert<LoveNotesTextAttributes>[];
   }
 
   if (typeof value === 'object' && value !== null) {
     const maybeText = value as { yText?: unknown };
     if (maybeText.yText instanceof YText) {
-      return maybeText.yText.toDelta() as DeltaInsert<AffineTextAttributes>[];
+      return maybeText.yText.toDelta() as DeltaInsert<LoveNotesTextAttributes>[];
     }
   }
 
@@ -107,11 +107,11 @@ const getTextDeltasFromCellValue = (
         return delta
           .toArray()
           .map(entry => (entry instanceof YMap ? entry.toJSON() : entry)) as
-          | DeltaInsert<AffineTextAttributes>[]
+          | DeltaInsert<LoveNotesTextAttributes>[]
           | null;
       }
       if (Array.isArray(delta)) {
-        return delta as DeltaInsert<AffineTextAttributes>[];
+        return delta as DeltaInsert<LoveNotesTextAttributes>[];
       }
     }
   }
@@ -123,10 +123,10 @@ const getTextDeltasFromCellValue = (
   ) {
     const delta = (value as { delta?: unknown }).delta;
     if (delta instanceof YArray) {
-      return delta.toArray() as DeltaInsert<AffineTextAttributes>[];
+      return delta.toArray() as DeltaInsert<LoveNotesTextAttributes>[];
     }
     if (Array.isArray(delta)) {
-      return delta as DeltaInsert<AffineTextAttributes>[];
+      return delta as DeltaInsert<LoveNotesTextAttributes>[];
     }
   }
 
@@ -250,7 +250,7 @@ function generateMarkdownPreviewBuilder(
       );
 
       // reach the root block. do not count it.
-      if (!currentBlock || currentBlock.flavour !== 'affine:list') {
+      if (!currentBlock || currentBlock.flavour !== 'lovenotes:list') {
         break;
       }
       parentBlockCount++;
@@ -274,7 +274,7 @@ function generateMarkdownPreviewBuilder(
 
   const generateDatabaseMarkdownPreview = (block: BlockDocumentInfo) => {
     const isDatabaseBlock = (block: BlockDocumentInfo) => {
-      return block.flavour === 'affine:database';
+      return block.flavour === 'lovenotes:database';
     };
 
     const model = yblockToDraftModal(block.yblock);
@@ -309,7 +309,7 @@ function generateMarkdownPreviewBuilder(
     const isImageModel = (
       model: DraftModel | null
     ): model is DraftModel<ImageBlockModel> => {
-      return model?.flavour === 'affine:image';
+      return model?.flavour === 'lovenotes:image';
     };
 
     const model = yblockToDraftModal(block.yblock);
@@ -336,8 +336,8 @@ function generateMarkdownPreviewBuilder(
       model: DraftModel | null
     ): model is DraftModel<EmbedBlockModel> => {
       return (
-        model?.flavour === 'affine:embed-linked-doc' ||
-        model?.flavour === 'affine:embed-synced-doc'
+        model?.flavour === 'lovenotes:embed-linked-doc' ||
+        model?.flavour === 'lovenotes:embed-synced-doc'
       );
     };
 
@@ -382,7 +382,7 @@ function generateMarkdownPreviewBuilder(
     const isAttachmentModel = (
       model: DraftModel | null
     ): model is DraftModel<AttachmentBlockModel> => {
-      return model?.flavour === 'affine:attachment';
+      return model?.flavour === 'lovenotes:attachment';
     };
 
     const draftModel = yblockToDraftModal(block.yblock);
@@ -397,7 +397,7 @@ function generateMarkdownPreviewBuilder(
     const isTableModel = (
       model: DraftModel | null
     ): model is DraftModel<TableBlockModel> => {
-      return model?.flavour === 'affine:table';
+      return model?.flavour === 'lovenotes:table';
     };
 
     const draftModel = yblockToDraftModal(block.yblock);
@@ -418,48 +418,48 @@ function generateMarkdownPreviewBuilder(
     let markdown: string | null = null;
 
     if (
-      flavour === 'affine:paragraph' ||
-      flavour === 'affine:list' ||
-      flavour === 'affine:code'
+      flavour === 'lovenotes:paragraph' ||
+      flavour === 'lovenotes:list' ||
+      flavour === 'lovenotes:code'
     ) {
       const draftModel = yblockToDraftModal(block.yblock);
       markdown =
-        block.parentFlavour === 'affine:database'
+        block.parentFlavour === 'lovenotes:database'
           ? generateDatabaseMarkdownPreview(block)
           : ((draftModel ? await markdownAdapter.fromBlock(draftModel) : null)
               ?.file ?? null);
 
       if (markdown) {
-        if (flavour === 'affine:code') {
+        if (flavour === 'lovenotes:code') {
           markdown = trimCodeBlock(markdown);
-        } else if (flavour === 'affine:paragraph') {
+        } else if (flavour === 'lovenotes:paragraph') {
           markdown = trimParagraph(markdown);
         }
       }
-    } else if (flavour === 'affine:database') {
+    } else if (flavour === 'lovenotes:database') {
       markdown = generateDatabaseMarkdownPreview(block);
     } else if (
-      flavour === 'affine:embed-linked-doc' ||
-      flavour === 'affine:embed-synced-doc'
+      flavour === 'lovenotes:embed-linked-doc' ||
+      flavour === 'lovenotes:embed-synced-doc'
     ) {
       markdown = generateEmbedMarkdownPreview(block);
-    } else if (flavour === 'affine:attachment') {
+    } else if (flavour === 'lovenotes:attachment') {
       markdown = generateAttachmentMarkdownPreview(block);
-    } else if (flavour === 'affine:image') {
+    } else if (flavour === 'lovenotes:image') {
       markdown = generateImageMarkdownPreview(block);
-    } else if (flavour === 'affine:surface' || flavour === 'affine:page') {
+    } else if (flavour === 'lovenotes:surface' || flavour === 'lovenotes:page') {
       // skip
-    } else if (flavour === 'affine:latex') {
+    } else if (flavour === 'lovenotes:latex') {
       markdown = generateLatexMarkdownPreview(block);
     } else if (bookmarkFlavours.has(flavour)) {
       markdown = generateBookmarkMarkdownPreview(block);
-    } else if (flavour === 'affine:table') {
+    } else if (flavour === 'lovenotes:table') {
       markdown = generateTableMarkdownPreview(block);
     } else {
       console.warn(`unknown flavour: ${flavour}`);
     }
 
-    if (markdown && flavour === 'affine:list') {
+    if (markdown && flavour === 'lovenotes:list') {
       const blockDepth = getListDepth(block);
       markdown = indentMarkdown(markdown, Math.max(0, blockDepth));
     }
@@ -579,7 +579,7 @@ export async function readAllBlocksFromDoc({
   for (const block of blocks.values()) {
     const flavour = block.get('sys:flavour')?.toString();
     const blockId = block.get('sys:id')?.toString();
-    if (flavour === 'affine:page' && blockId) {
+    if (flavour === 'lovenotes:page' && blockId) {
       rootBlockId = blockId;
     }
   }
@@ -620,7 +620,7 @@ export async function readAllBlocksFromDoc({
 
     const flavour = block.get('sys:flavour')?.toString();
     const parentFlavour = parentBlock?.get('sys:flavour')?.toString();
-    const noteBlock = nearestByFlavour(blockId, 'affine:note');
+    const noteBlock = nearestByFlavour(blockId, 'lovenotes:note');
 
     // display mode:
     // - both: page and edgeless -> fallback to page
@@ -647,13 +647,13 @@ export async function readAllBlocksFromDoc({
       additional: { displayMode, noteBlockId },
     };
 
-    if (flavour === 'affine:page') {
+    if (flavour === 'lovenotes:page') {
       docTitle = block.get('prop:title').toString();
       blockDocuments.push({ ...commonBlockProps, content: docTitle });
     } else if (
-      flavour === 'affine:paragraph' ||
-      flavour === 'affine:list' ||
-      flavour === 'affine:code'
+      flavour === 'lovenotes:paragraph' ||
+      flavour === 'lovenotes:list' ||
+      flavour === 'lovenotes:code'
     ) {
       const text = block.get('prop:text') as YText;
 
@@ -661,11 +661,11 @@ export async function readAllBlocksFromDoc({
         continue;
       }
 
-      const deltas: DeltaInsert<AffineTextAttributes>[] = text.toDelta();
+      const deltas: DeltaInsert<LoveNotesTextAttributes>[] = text.toDelta();
       const refs = collectInlineReferences(deltas);
 
       const databaseName =
-        flavour === 'affine:paragraph' && parentFlavour === 'affine:database' // if block is a database row
+        flavour === 'lovenotes:paragraph' && parentFlavour === 'lovenotes:database' // if block is a database row
           ? parentBlock?.get('prop:title')?.toString()
           : undefined;
 
@@ -690,8 +690,8 @@ export async function readAllBlocksFromDoc({
         maxSummaryLength -= text.length;
       }
     } else if (
-      flavour === 'affine:embed-linked-doc' ||
-      flavour === 'affine:embed-synced-doc'
+      flavour === 'lovenotes:embed-linked-doc' ||
+      flavour === 'lovenotes:embed-synced-doc'
     ) {
       const pageId = block.get('prop:pageId');
       if (typeof pageId === 'string') {
@@ -705,7 +705,7 @@ export async function readAllBlocksFromDoc({
           parentBlockId,
         });
       }
-    } else if (flavour === 'affine:attachment') {
+    } else if (flavour === 'lovenotes:attachment') {
       const blobId = block.get('prop:sourceId');
       if (typeof blobId === 'string') {
         blockDocuments.push({
@@ -716,7 +716,7 @@ export async function readAllBlocksFromDoc({
           parentBlockId,
         });
       }
-    } else if (flavour === 'affine:image') {
+    } else if (flavour === 'lovenotes:image') {
       const blobId = block.get('prop:sourceId');
       if (typeof blobId === 'string') {
         blockDocuments.push({
@@ -727,7 +727,7 @@ export async function readAllBlocksFromDoc({
           parentBlockId,
         });
       }
-    } else if (flavour === 'affine:surface') {
+    } else if (flavour === 'lovenotes:surface') {
       const texts = [];
 
       const elementsObj = block.get('prop:elements');
@@ -762,7 +762,7 @@ export async function readAllBlocksFromDoc({
         parentFlavour,
         parentBlockId,
       });
-    } else if (flavour === 'affine:database') {
+    } else if (flavour === 'lovenotes:database') {
       const texts = [];
       const columnsObj = block.get('prop:columns');
       const databaseTitle = block.get('prop:title');
@@ -839,12 +839,12 @@ export async function readAllBlocksFromDoc({
             )
           : {}),
       });
-    } else if (flavour === 'affine:latex') {
+    } else if (flavour === 'lovenotes:latex') {
       blockDocuments.push({
         ...commonBlockProps,
         content: block.get('prop:latex')?.toString() ?? '',
       });
-    } else if (flavour === 'affine:table') {
+    } else if (flavour === 'lovenotes:table') {
       const contents = Array.from<string>(block.keys())
         .map(key => {
           if (key.startsWith('prop:cells.') && key.endsWith('.text')) {
@@ -871,13 +871,13 @@ export async function readAllBlocksFromDoc({
     if (block.ref?.length) {
       const target = block;
 
-      // should only generate the markdown preview belong to the same affine:note
-      const noteBlock = nearestByFlavour(block.blockId, 'affine:note');
+      // should only generate the markdown preview belong to the same lovenotes:note
+      const noteBlock = nearestByFlavour(block.blockId, 'lovenotes:note');
 
       const sameNoteBlocks = noteBlock
         ? blockDocuments.filter(
             candidate =>
-              nearestByFlavour(candidate.blockId, 'affine:note') === noteBlock
+              nearestByFlavour(candidate.blockId, 'lovenotes:note') === noteBlock
           )
         : [];
 

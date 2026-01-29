@@ -18,11 +18,11 @@ public class ValidateConfigMutation: GraphQLMutation {
 
   public var __variables: Variables? { ["updates": updates] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("validateAppConfig", [ValidateAppConfig].self, arguments: ["updates": .variable("updates")]),
     ] }
@@ -33,23 +33,23 @@ public class ValidateConfigMutation: GraphQLMutation {
     /// ValidateAppConfig
     ///
     /// Parent Type: `AppConfigValidateResult`
-    public struct ValidateAppConfig: AffineGraphQL.SelectionSet {
+    public struct ValidateAppConfig: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.AppConfigValidateResult }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.AppConfigValidateResult }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("module", String.self),
         .field("key", String.self),
-        .field("value", AffineGraphQL.JSON.self),
+        .field("value", LoveNotesGraphQL.JSON.self),
         .field("valid", Bool.self),
         .field("error", String?.self),
       ] }
 
       public var module: String { __data["module"] }
       public var key: String { __data["key"] }
-      public var value: AffineGraphQL.JSON { __data["value"] }
+      public var value: LoveNotesGraphQL.JSON { __data["value"] }
       public var valid: Bool { __data["valid"] }
       public var error: String? { __data["error"] }
     }

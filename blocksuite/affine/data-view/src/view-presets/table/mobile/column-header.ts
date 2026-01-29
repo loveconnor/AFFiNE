@@ -3,8 +3,8 @@ import {
   type MenuConfig,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
   DeleteIcon,
@@ -94,7 +94,7 @@ export class MobileTableColumnHeader extends SignalWatcher(
                         return menu.action({
                           isSelected: data.format === format.type,
                           prefix: html`<span
-                            style="font-size: var(--affine-font-base); scale: 1.2;"
+                            style="font-size: var(--lovenotes-font-base); scale: 1.2;"
                             >${format.symbol}</span
                           >`,
                           name: format.label,
@@ -260,9 +260,9 @@ export class MobileTableColumnHeader extends SignalWatcher(
 
 function numberFormatConfig(column: Property): MenuConfig {
   return () =>
-    html` <affine-database-number-format-bar
+    html` <lovenotes-database-number-format-bar
       .column="${column}"
-    ></affine-database-number-format-bar>`;
+    ></lovenotes-database-number-format-bar>`;
 }
 
 declare global {

@@ -2,13 +2,13 @@ import {
   type TableBlockPropsSerialized,
   TableBlockSchema,
   TableModelFlavour,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   HastUtils,
   type InlineHtmlAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 import type { Element } from 'hast';
 

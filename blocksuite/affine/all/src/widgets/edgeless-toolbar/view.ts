@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-widget-edgeless-toolbar/view';
+export * from '@blocksuite/lovenotes-widget-edgeless-toolbar/view';

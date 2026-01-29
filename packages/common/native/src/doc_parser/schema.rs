@@ -1,6 +1,6 @@
-pub(super) const PAGE_FLAVOUR: &str = "affine:page";
-pub(super) const NOTE_FLAVOUR: &str = "affine:note";
-pub(super) const SURFACE_FLAVOUR: &str = "affine:surface";
+pub(super) const PAGE_FLAVOUR: &str = "lovenotes:page";
+pub(super) const NOTE_FLAVOUR: &str = "lovenotes:note";
+pub(super) const SURFACE_FLAVOUR: &str = "lovenotes:surface";
 
 pub(super) const SYS_ID: &str = "sys:id";
 pub(super) const SYS_FLAVOUR: &str = "sys:flavour";

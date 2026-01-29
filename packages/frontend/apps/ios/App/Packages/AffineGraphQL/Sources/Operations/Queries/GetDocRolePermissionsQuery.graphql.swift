@@ -26,11 +26,11 @@ public class GetDocRolePermissionsQuery: GraphQLQuery {
     "docId": docId
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -41,11 +41,11 @@ public class GetDocRolePermissionsQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("doc", Doc.self, arguments: ["docId": .variable("docId")]),
@@ -57,11 +57,11 @@ public class GetDocRolePermissionsQuery: GraphQLQuery {
       /// Workspace.Doc
       ///
       /// Parent Type: `DocType`
-      public struct Doc: AffineGraphQL.SelectionSet {
+      public struct Doc: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.DocType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.DocType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("permissions", Permissions.self),
@@ -72,11 +72,11 @@ public class GetDocRolePermissionsQuery: GraphQLQuery {
         /// Workspace.Doc.Permissions
         ///
         /// Parent Type: `DocPermissions`
-        public struct Permissions: AffineGraphQL.SelectionSet {
+        public struct Permissions: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.DocPermissions }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.DocPermissions }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("Doc_Copy", Bool.self),

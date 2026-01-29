@@ -1,4 +1,4 @@
-import { FrameBlockModel } from '@blocksuite/affine-model';
+import { FrameBlockModel } from '@blocksuite/lovenotes-model';
 import type { EditorHost } from '@blocksuite/std';
 import type { BlockModel } from '@blocksuite/store';
 
@@ -35,7 +35,7 @@ export function getPrevContentBlock(
       let prev = parent.children[tmpIndex];
 
       if (parent.role === 'root' && model.role === 'hub') {
-        while (prev && prev.flavour !== 'affine:note') {
+        while (prev && prev.flavour !== 'lovenotes:note') {
           prev = parent.children[tmpIndex];
           tmpIndex--;
         }
@@ -100,7 +100,7 @@ export function getPrevContentBlock(
  *   - paragraph <- 4
  * ```
  *
- * NOTE: this method will skip the `affine:note` block
+ * NOTE: this method will skip the `lovenotes:note` block
  */
 export function getNextContentBlock(
   editorHost: EditorHost,
@@ -121,7 +121,7 @@ export function getNextContentBlock(
   while (currentBlock) {
     const nextSibling = doc.getNext(currentBlock);
     if (nextSibling) {
-      // Assert nextSibling is not possible to be `affine:page`
+      // Assert nextSibling is not possible to be `lovenotes:page`
       if (nextSibling.role === 'hub') {
         // in edgeless mode, limit search for the next block within the same note
         if (

@@ -1,22 +1,22 @@
-import { notifyLinkedDocSwitchedToEmbed } from '@blocksuite/affine-components/notification';
+import { notifyLinkedDocSwitchedToEmbed } from '@blocksuite/lovenotes-components/notification';
 import {
   ActionPlacement,
   DocDisplayMetaProvider,
   type ToolbarAction,
   type ToolbarActionGroup,
   type ToolbarModuleConfig,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   cloneReferenceInfoWithoutAliases,
   isInsideBlockByFlavour,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { DeleteIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@blocksuite/std';
 import { signal } from '@preact/signals-core';
 import { html } from 'lit-html';
 import { keyed } from 'lit-html/directives/keyed.js';
 
-import { AffineReference } from '../reference-node';
+import { LoveNotesReference } from '../reference-node';
 
 const trackBaseProps = {
   segment: 'doc',
@@ -32,7 +32,7 @@ export const builtinInlineReferenceToolbarConfig = {
       id: 'a.doc-title',
       content(ctx) {
         const target = ctx.message$.peek()?.element;
-        if (!(target instanceof AffineReference)) return null;
+        if (!(target instanceof LoveNotesReference)) return null;
         if (!target.referenceInfo.title) return null;
 
         const originalTitle =
@@ -40,10 +40,10 @@ export const builtinInlineReferenceToolbarConfig = {
             .value || 'Untitled';
         const open = (event: MouseEvent) => target.open({ event });
 
-        return html`<affine-linked-doc-title
+        return html`<lovenotes-linked-doc-title
           .title=${originalTitle}
           .open=${open}
-        ></affine-linked-doc-title>`;
+        ></lovenotes-linked-doc-title>`;
       },
     },
     {
@@ -59,7 +59,7 @@ export const builtinInlineReferenceToolbarConfig = {
           label: 'Card view',
           run(ctx) {
             const target = ctx.message$.peek()?.element;
-            if (!(target instanceof AffineReference)) return;
+            if (!(target instanceof LoveNotesReference)) return;
             if (!target.block) return;
 
             const {
@@ -78,7 +78,7 @@ export const builtinInlineReferenceToolbarConfig = {
             const index = parent.children.indexOf(model);
 
             const blockId = ctx.store.addBlock(
-              'affine:embed-linked-doc',
+              'lovenotes:embed-linked-doc',
               referenceInfo,
               parent,
               index + 1
@@ -108,20 +108,20 @@ export const builtinInlineReferenceToolbarConfig = {
           label: 'Embed view',
           disabled(ctx) {
             const target = ctx.message$.peek()?.element;
-            if (!(target instanceof AffineReference)) return true;
+            if (!(target instanceof LoveNotesReference)) return true;
             if (!target.block) return true;
 
             if (
               isInsideBlockByFlavour(
                 ctx.store,
                 target.block.model,
-                'affine:edgeless-text'
+                'lovenotes:edgeless-text'
               )
             )
               return true;
 
             // nesting is not supported
-            if (target.closest('affine-embed-synced-doc-block')) return true;
+            if (target.closest('lovenotes-embed-synced-doc-block')) return true;
 
             // same doc
             if (target.referenceInfo.pageId === ctx.store.id) return true;
@@ -133,7 +133,7 @@ export const builtinInlineReferenceToolbarConfig = {
           },
           run(ctx) {
             const target = ctx.message$.peek()?.element;
-            if (!(target instanceof AffineReference)) return;
+            if (!(target instanceof LoveNotesReference)) return;
             if (!target.block) return;
 
             const {
@@ -152,7 +152,7 @@ export const builtinInlineReferenceToolbarConfig = {
             const index = parent.children.indexOf(model);
 
             const blockId = ctx.store.addBlock(
-              'affine:embed-synced-doc',
+              'lovenotes:embed-synced-doc',
               cloneReferenceInfoWithoutAliases(referenceInfo),
               parent,
               index + 1
@@ -186,7 +186,7 @@ export const builtinInlineReferenceToolbarConfig = {
       ],
       content(ctx) {
         const target = ctx.message$.peek()?.element;
-        if (!(target instanceof AffineReference)) return null;
+        if (!(target instanceof LoveNotesReference)) return null;
 
         const actions = this.actions.map(action => ({ ...action }));
         const viewType$ = signal(actions[0].label);
@@ -202,23 +202,23 @@ export const builtinInlineReferenceToolbarConfig = {
 
         return html`${keyed(
           target,
-          html`<affine-view-dropdown-menu
+          html`<lovenotes-view-dropdown-menu
             .actions=${actions}
             .context=${ctx}
             .onToggle=${onToggle}
             .viewType$=${viewType$}
-          ></affine-view-dropdown-menu>`
+          ></lovenotes-view-dropdown-menu>`
         )}`;
       },
       when(ctx) {
         const target = ctx.message$.peek()?.element;
-        if (!(target instanceof AffineReference)) return false;
+        if (!(target instanceof LoveNotesReference)) return false;
         if (!target.block) return false;
 
         if (ctx.flags.isNative()) return false;
         if (
-          target.block.closest('affine-database') ||
-          target.block.closest('affine-table')
+          target.block.closest('lovenotes-database') ||
+          target.block.closest('lovenotes-table')
         )
           return false;
 
@@ -233,7 +233,7 @@ export const builtinInlineReferenceToolbarConfig = {
       variant: 'destructive',
       run(ctx) {
         const target = ctx.message$.peek()?.element;
-        if (!(target instanceof AffineReference)) return;
+        if (!(target instanceof LoveNotesReference)) return;
 
         const { inlineEditor, selfInlineRange } = target;
         if (!inlineEditor || !selfInlineRange) return;

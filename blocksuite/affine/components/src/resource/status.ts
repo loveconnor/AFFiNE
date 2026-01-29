@@ -1,12 +1,12 @@
 import {
   fontBaseStyle,
   panelBaseColorsStyle,
-} from '@blocksuite/affine-shared/styles';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-shared/styles';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import {
   createButtonPopper,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { InformationIcon } from '@blocksuite/icons/lit';
 import { PropTypes, requiredProperties } from '@blocksuite/std';

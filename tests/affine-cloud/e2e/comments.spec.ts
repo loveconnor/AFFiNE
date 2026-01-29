@@ -1,15 +1,15 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   createRandomUser,
   enableCloudWorkspace,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
+} from '@lovenotes-test/kit/utils/cloud';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 test.describe('comments', () => {

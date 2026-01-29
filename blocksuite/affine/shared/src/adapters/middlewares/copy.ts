@@ -1,4 +1,4 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import type { RootBlockModel } from '@blocksuite/lovenotes-model';
 import {
   type BlockStdScope,
   type EditorHost,
@@ -14,7 +14,7 @@ import type {
 
 const isRootDraftModel = (
   model: DraftModel
-): model is DraftModel<RootBlockModel> => model.flavour === 'affine:root';
+): model is DraftModel<RootBlockModel> => model.flavour === 'lovenotes:root';
 
 const handlePoint = (
   point: TextRangePoint,

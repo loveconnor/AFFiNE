@@ -1,4 +1,4 @@
-import { createButtonPopper } from '@blocksuite/affine-shared/utils';
+import { createButtonPopper } from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { SettingsIcon, SortIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -10,7 +10,7 @@ import { query } from 'lit/decorators.js';
 import { type TocContext, tocContext } from '../config';
 import * as styles from './outline-panel-header.css';
 
-export const AFFINE_OUTLINE_PANEL_HEADER = 'affine-outline-panel-header';
+export const AFFINE_OUTLINE_PANEL_HEADER = 'lovenotes-outline-panel-header';
 
 export class OutlinePanelHeader extends SignalWatcher(
   WithDisposable(ShadowlessElement)
@@ -69,7 +69,7 @@ export class OutlinePanelHeader extends SignalWatcher(
         </edgeless-tool-icon-button>
       </div>
       <div class=${styles.notePreviewSettingContainer}>
-        <affine-outline-note-preview-setting-menu></affine-outline-note-preview-setting-menu>
+        <lovenotes-outline-note-preview-setting-menu></lovenotes-outline-note-preview-setting-menu>
       </div>`;
   }
 

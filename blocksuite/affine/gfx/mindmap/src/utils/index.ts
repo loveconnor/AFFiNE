@@ -1,4 +1,4 @@
-import { MindmapElementModel } from '@blocksuite/affine-model';
+import { MindmapElementModel } from '@blocksuite/lovenotes-model';
 import type {
   GfxBlockElementModel,
   GfxModel,

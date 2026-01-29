@@ -2,6 +2,7 @@ import type { Disposable } from '@blocksuite/global/disposable';
 import { computed, type Signal, signal } from '@preact/signals-core';
 import { Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
+import * as Y from 'yjs';
 
 import type { Text } from '../../reactive/index.js';
 import type { Store } from '../store/store.js';
@@ -116,13 +117,24 @@ export class BlockModel<Props extends object = object> {
   constructor() {
     this._onCreated = {
       dispose: this.created.pipe(take(1)).subscribe(() => {
-        this._children.value = this.yBlock.get('sys:children').toArray();
-        this.yBlock.get('sys:children').observe(event => {
-          this._children.value = event.target.toArray();
-        });
+        const yChildren = this.yBlock.get('sys:children') as
+          | Y.Array<string>
+          | undefined;
+        if (!yChildren) {
+          this._children.value = [];
+          this.yBlock.set('sys:children', Y.Array.from<string>([]));
+        } else {
+          this._children.value = yChildren.toArray();
+          yChildren.observe(event => {
+            this._children.value = event.target.toArray();
+          });
+        }
         this.yBlock.observe(event => {
           if (event.keysChanged.has('sys:children')) {
-            this._children.value = this.yBlock.get('sys:children').toArray();
+            const nextChildren = this.yBlock.get('sys:children') as
+              | Y.Array<string>
+              | undefined;
+            this._children.value = nextChildren ? nextChildren.toArray() : [];
           }
         });
       }).unsubscribe,

@@ -1,28 +1,28 @@
-import { addSiblingAttachmentBlocks } from '@blocksuite/affine-block-attachment';
-import { insertDatabaseBlockCommand } from '@blocksuite/affine-block-database';
-import { insertEmptyEmbedIframeCommand } from '@blocksuite/affine-block-embed';
-import { insertImagesCommand } from '@blocksuite/affine-block-image';
-import { insertLatexBlockCommand } from '@blocksuite/affine-block-latex';
+import { addSiblingAttachmentBlocks } from '@blocksuite/lovenotes-block-attachment';
+import { insertDatabaseBlockCommand } from '@blocksuite/lovenotes-block-database';
+import { insertEmptyEmbedIframeCommand } from '@blocksuite/lovenotes-block-embed';
+import { insertImagesCommand } from '@blocksuite/lovenotes-block-image';
+import { insertLatexBlockCommand } from '@blocksuite/lovenotes-block-latex';
 import {
   canDedentListCommand,
   canIndentListCommand,
   dedentListCommand,
   indentListCommand,
-} from '@blocksuite/affine-block-list';
-import { updateBlockType } from '@blocksuite/affine-block-note';
+} from '@blocksuite/lovenotes-block-list';
+import { updateBlockType } from '@blocksuite/lovenotes-block-note';
 import {
   canDedentParagraphCommand,
   canIndentParagraphCommand,
   dedentParagraphCommand,
   indentParagraphCommand,
-} from '@blocksuite/affine-block-paragraph';
-import { DefaultTool, getSurfaceBlock } from '@blocksuite/affine-block-surface';
-import { insertSurfaceRefBlockCommand } from '@blocksuite/affine-block-surface-ref';
-import { insertTableBlockCommand } from '@blocksuite/affine-block-table';
-import { toggleEmbedCardCreateModal } from '@blocksuite/affine-components/embed-card-modal';
-import { toast } from '@blocksuite/affine-components/toast';
-import { insertInlineLatex } from '@blocksuite/affine-inline-latex';
-import { toggleLink } from '@blocksuite/affine-inline-link';
+} from '@blocksuite/lovenotes-block-paragraph';
+import { DefaultTool, getSurfaceBlock } from '@blocksuite/lovenotes-block-surface';
+import { insertSurfaceRefBlockCommand } from '@blocksuite/lovenotes-block-surface-ref';
+import { insertTableBlockCommand } from '@blocksuite/lovenotes-block-table';
+import { toggleEmbedCardCreateModal } from '@blocksuite/lovenotes-components/embed-card-modal';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import { insertInlineLatex } from '@blocksuite/lovenotes-inline-latex';
+import { toggleLink } from '@blocksuite/lovenotes-inline-link';
 import {
   formatBlockCommand,
   formatNativeCommand,
@@ -33,9 +33,9 @@ import {
   toggleItalic,
   toggleStrike,
   toggleUnderline,
-} from '@blocksuite/affine-inline-preset';
-import type { FrameBlockModel } from '@blocksuite/affine-model';
-import { insertContent } from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-inline-preset';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
+import { insertContent } from '@blocksuite/lovenotes-rich-text';
 import {
   copySelectedModelsCommand,
   deleteSelectedModelsCommand,
@@ -45,17 +45,17 @@ import {
   getBlockSelectionsCommand,
   getSelectedModelsCommand,
   getTextSelectionCommand,
-} from '@blocksuite/affine-shared/commands';
-import { REFERENCE_NODE } from '@blocksuite/affine-shared/consts';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import type { AffineTextStyleAttributes } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-shared/commands';
+import { REFERENCE_NODE } from '@blocksuite/lovenotes-shared/consts';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
+import type { LoveNotesTextStyleAttributes } from '@blocksuite/lovenotes-shared/types';
 import {
   createDefaultDoc,
   isInsideBlockByFlavour,
   openSingleFileWith,
   type Signal,
-} from '@blocksuite/affine-shared/utils';
-import type { AffineLinkedDocWidget } from '@blocksuite/affine-widget-linked-doc';
+} from '@blocksuite/lovenotes-shared/utils';
+import type { LoveNotesLinkedDocWidget } from '@blocksuite/lovenotes-widget-linked-doc';
 import { viewPresets } from '@blocksuite/data-view/view-presets';
 import { assertType } from '@blocksuite/global/utils';
 import {
@@ -192,10 +192,10 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     name: 'Text',
     icon: TextIcon(),
     showWhen: ({ std }) =>
-      std.store.schema.flavourSchemaMap.has('affine:paragraph'),
+      std.store.schema.flavourSchemaMap.has('lovenotes:paragraph'),
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
-        flavour: 'affine:paragraph',
+        flavour: 'lovenotes:paragraph',
         props: { type: 'text' },
       });
     },
@@ -204,32 +204,32 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     name: `Heading ${i}`,
     icon: HeadingIcon(i),
     showWhen: ({ std }: KeyboardToolbarContext) =>
-      std.store.schema.flavourSchemaMap.has('affine:paragraph'),
+      std.store.schema.flavourSchemaMap.has('lovenotes:paragraph'),
     action: ({ std }: KeyboardToolbarContext) => {
       std.command.exec(updateBlockType, {
-        flavour: 'affine:paragraph',
+        flavour: 'lovenotes:paragraph',
         props: { type: `h${i}` },
       });
     },
   })),
   {
     name: 'CodeBlock',
-    showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:code'),
+    showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('lovenotes:code'),
     icon: CodeBlockIcon(),
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
-        flavour: 'affine:code',
+        flavour: 'lovenotes:code',
       });
     },
   },
   {
     name: 'Quote',
     showWhen: ({ std }) =>
-      std.store.schema.flavourSchemaMap.has('affine:paragraph'),
+      std.store.schema.flavourSchemaMap.has('lovenotes:paragraph'),
     icon: QuoteIcon(),
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
-        flavour: 'affine:paragraph',
+        flavour: 'lovenotes:paragraph',
         props: { type: 'quote' },
       });
     },
@@ -238,10 +238,10 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     name: 'Divider',
     icon: DividerIcon(),
     showWhen: ({ std }) =>
-      std.store.schema.flavourSchemaMap.has('affine:divider'),
+      std.store.schema.flavourSchemaMap.has('lovenotes:divider'),
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
-        flavour: 'affine:divider',
+        flavour: 'lovenotes:divider',
         props: { type: 'divider' },
       });
     },
@@ -250,7 +250,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     name: 'Inline equation',
     icon: TeXIcon(),
     showWhen: ({ std }) =>
-      std.store.schema.flavourSchemaMap.has('affine:paragraph'),
+      std.store.schema.flavourSchemaMap.has('lovenotes:paragraph'),
     action: ({ std }) => {
       std.command
         .chain()
@@ -263,8 +263,8 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
     name: 'Table',
     icon: TableIcon(),
     showWhen: ({ std, rootComponent: { model } }) =>
-      std.store.schema.flavourSchemaMap.has('affine:table') &&
-      !isInsideBlockByFlavour(std.store, model, 'affine:edgeless-text'),
+      std.store.schema.flavourSchemaMap.has('lovenotes:table') &&
+      !isInsideBlockByFlavour(std.store, model, 'lovenotes:edgeless-text'),
     action: ({ std }) => {
       std.command
         .chain()
@@ -277,7 +277,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
           if (insertedTableBlockId) {
             const telemetry = std.getOptional(TelemetryProvider);
             telemetry?.track('BlockCreated', {
-              blockType: 'affine:table',
+              blockType: 'lovenotes:table',
             });
           }
         })
@@ -291,7 +291,7 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
       return !isInsideBlockByFlavour(
         model.store,
         model,
-        'affine:edgeless-text'
+        'lovenotes:edgeless-text'
       );
     },
     action: ({ rootComponent: { model }, std }) => {
@@ -301,9 +301,9 @@ const textToolActionItems: KeyboardToolbarActionItem[] = [
 
       const index = parent.children.indexOf(model);
       if (index === -1) return;
-      const calloutId = store.addBlock('affine:callout', {}, parent, index + 1);
+      const calloutId = store.addBlock('lovenotes:callout', {}, parent, index + 1);
       if (!calloutId) return;
-      const paragraphId = store.addBlock('affine:paragraph', {}, calloutId);
+      const paragraphId = store.addBlock('lovenotes:paragraph', {}, calloutId);
       if (!paragraphId) return;
       std.host.updateComplete
         .then(() => {
@@ -322,10 +322,10 @@ const listToolActionItems: KeyboardToolbarActionItem[] = [
   {
     name: 'BulletedList',
     icon: BulletedListIcon(),
-    showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:list'),
+    showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('lovenotes:list'),
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
-        flavour: 'affine:list',
+        flavour: 'lovenotes:list',
         props: {
           type: 'bulleted',
         },
@@ -335,10 +335,10 @@ const listToolActionItems: KeyboardToolbarActionItem[] = [
   {
     name: 'NumberedList',
     icon: NumberedListIcon(),
-    showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:list'),
+    showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('lovenotes:list'),
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
-        flavour: 'affine:list',
+        flavour: 'lovenotes:list',
         props: {
           type: 'numbered',
         },
@@ -348,10 +348,10 @@ const listToolActionItems: KeyboardToolbarActionItem[] = [
   {
     name: 'CheckBox',
     icon: CheckBoxCheckLinearIcon(),
-    showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('affine:list'),
+    showWhen: ({ std }) => std.store.schema.flavourSchemaMap.has('lovenotes:list'),
     action: ({ std }) => {
       std.command.exec(updateBlockType, {
-        flavour: 'affine:list',
+        flavour: 'lovenotes:list',
         props: {
           type: 'todo',
         },
@@ -367,7 +367,7 @@ const pageToolGroup: KeyboardToolPanelGroup = {
       name: 'NewPage',
       icon: NewPageIcon(),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:embed-linked-doc'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:embed-linked-doc'),
       action: ({ std }) => {
         std.command
           .chain()
@@ -390,22 +390,22 @@ const pageToolGroup: KeyboardToolPanelGroup = {
       icon: LinkedPageIcon(),
       showWhen: ({ std, rootComponent }) => {
         const linkedDocWidget = std.view.getWidget(
-          'affine-linked-doc-widget',
+          'lovenotes-linked-doc-widget',
           rootComponent.model.id
         );
         if (!linkedDocWidget) return false;
 
-        return std.store.schema.flavourSchemaMap.has('affine:embed-linked-doc');
+        return std.store.schema.flavourSchemaMap.has('lovenotes:embed-linked-doc');
       },
       action: ({ rootComponent, closeToolPanel }) => {
         const { std } = rootComponent;
 
         const linkedDocWidget = std.view.getWidget(
-          'affine-linked-doc-widget',
+          'lovenotes-linked-doc-widget',
           rootComponent.model.id
         );
         if (!linkedDocWidget) return;
-        assertType<AffineLinkedDocWidget>(linkedDocWidget);
+        assertType<LoveNotesLinkedDocWidget>(linkedDocWidget);
         linkedDocWidget.show({
           mode: 'mobile',
           addTriggerKey: true,
@@ -423,7 +423,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
       name: 'Image',
       icon: ImageIcon(),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:image'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:image'),
       action: ({ std }) => {
         std.command
           .chain()
@@ -436,7 +436,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
       name: 'Link',
       icon: LinkIcon(),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:bookmark'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:bookmark'),
       action: async ({ std }) => {
         const [_, { selectedModels }] = std.command.exec(
           getSelectedModelsCommand
@@ -489,7 +489,7 @@ const contentMediaToolGroup: KeyboardToolPanelGroup = {
       name: 'Equation',
       icon: TeXIcon(),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:latex'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:latex'),
       action: ({ std }) => {
         std.command
           .chain()
@@ -511,7 +511,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
       name: 'Embed',
       icon: EmbedIcon({ style: `color: black` }),
       showWhen: ({ std }) => {
-        return std.store.schema.flavourSchemaMap.has('affine:embed-iframe');
+        return std.store.schema.flavourSchemaMap.has('lovenotes:embed-iframe');
       },
       action: async ({ std }) => {
         std.command
@@ -535,7 +535,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
         style: `color: white`,
       }),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:embed-youtube'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:embed-youtube'),
       action: async ({ std }) => {
         const [_, { selectedModels }] = std.command.exec(
           getSelectedModelsCommand
@@ -568,7 +568,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
       name: 'Github',
       icon: GithubIcon({ style: `color: black` }),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:embed-github'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:embed-github'),
       action: async ({ std }) => {
         const [_, { selectedModels }] = std.command.exec(
           getSelectedModelsCommand
@@ -601,7 +601,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
       name: 'Figma',
       icon: FigmaDuotoneIcon,
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:embed-figma'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:embed-figma'),
       action: async ({ std }) => {
         const [_, { selectedModels }] = std.command.exec(
           getSelectedModelsCommand
@@ -635,7 +635,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
       name: 'Loom',
       icon: LoomLogoIcon({ style: `color: #625DF5` }),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:embed-loom'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:embed-loom'),
       action: async ({ std }) => {
         const [_, { selectedModels }] = std.command.exec(
           getSelectedModelsCommand
@@ -668,7 +668,7 @@ const embedToolGroup: KeyboardToolPanelGroup = {
       name: 'Equation',
       icon: TeXIcon(),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:latex'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:latex'),
       action: ({ std }) => {
         std.command
           .chain()
@@ -689,7 +689,7 @@ const documentGroupFrameToolGroup: DynamicKeyboardToolPanelGroup = ({
   const { store } = std;
 
   const frameModels = store
-    .getBlocksByFlavour('affine:frame')
+    .getBlocksByFlavour('lovenotes:frame')
     .map(block => block.model) as FrameBlockModel[];
 
   const frameItems = frameModels.map<KeyboardToolbarActionItem>(frameModel => ({
@@ -809,7 +809,7 @@ const databaseToolGroup: KeyboardToolPanelGroup = {
       name: 'Table view',
       icon: DatabaseTableViewIcon(),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:database'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:database'),
       action: ({ std }) => {
         std.command
           .chain()
@@ -826,7 +826,7 @@ const databaseToolGroup: KeyboardToolPanelGroup = {
       name: 'Kanban view',
       icon: DatabaseKanbanViewIcon(),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:database'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:database'),
       action: ({ std }) => {
         std.command
           .chain()
@@ -974,7 +974,7 @@ const highlightToolPanel: KeyboardToolPanelConfig = {
             const payload = {
               styles: {
                 color: cssVarV2(`text/highlight/fg/${color}`),
-              } satisfies AffineTextStyleAttributes,
+              } satisfies LoveNotesTextStyleAttributes,
             };
             std.command
               .chain()
@@ -1019,7 +1019,7 @@ const highlightToolPanel: KeyboardToolPanelConfig = {
             const payload = {
               styles: {
                 background: cssVarV2(`text/highlight/bg/${color}`),
-              } satisfies AffineTextStyleAttributes,
+              } satisfies LoveNotesTextStyleAttributes,
             };
             std.command
               .chain()
@@ -1071,14 +1071,14 @@ const textSubToolbarConfig: KeyboardSubToolbarConfig = {
 export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
   items: [
     moreToolPanel,
-    // TODO(@L-Sun): add ai function in AFFiNE side
+    // TODO(@L-Sun): add ai function in LoveNotes side
     // { icon: AiIcon(iconStyle) },
     textSubToolbarConfig,
     {
       name: 'Image',
       icon: ImageIcon(),
       showWhen: ({ std }) =>
-        std.store.schema.flavourSchemaMap.has('affine:image'),
+        std.store.schema.flavourSchemaMap.has('lovenotes:image'),
       action: ({ std }) => {
         std.command
           .chain()
@@ -1215,4 +1215,4 @@ export const defaultKeyboardToolbarConfig: KeyboardToolbarConfig = {
 
 export const KeyboardToolbarConfigExtension = ConfigExtensionFactory<
   Partial<KeyboardToolbarConfig>
->('affine:keyboard-toolbar');
+>('lovenotes:keyboard-toolbar');

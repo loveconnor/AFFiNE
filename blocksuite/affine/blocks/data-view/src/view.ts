@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 
@@ -11,7 +11,7 @@ import { effects } from './effects';
 const flavour = DataViewBlockSchema.model.flavour;
 
 export class DataViewViewExtension extends ViewExtensionProvider {
-  override name = 'affine-data-view-block';
+  override name = 'lovenotes-data-view-block';
 
   override effect() {
     super.effect();
@@ -22,7 +22,7 @@ export class DataViewViewExtension extends ViewExtensionProvider {
     super.setup(context);
     context.register([
       FlavourExtension(flavour),
-      BlockViewExtension(flavour, literal`affine-data-view`),
+      BlockViewExtension(flavour, literal`lovenotes-data-view`),
     ]);
   }
 }

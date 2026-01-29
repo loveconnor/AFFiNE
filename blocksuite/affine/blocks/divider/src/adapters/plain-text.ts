@@ -1,8 +1,8 @@
-import { DividerBlockSchema } from '@blocksuite/affine-model';
+import { DividerBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 export const dividerBlockPlainTextAdapterMatcher: BlockPlainTextAdapterMatcher =
   {

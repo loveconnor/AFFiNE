@@ -1,22 +1,22 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine-block-surface';
+import { EdgelessCRUDIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   packColor,
   type PickColorEvent,
-} from '@blocksuite/affine-components/color-picker';
+} from '@blocksuite/lovenotes-components/color-picker';
 import {
   BrushElementModel,
   DefaultTheme,
   LineWidth,
   resolveColor,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   getMostCommonResolvedValue,
   getMostCommonValue,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { BlockFlavourIdentifier } from '@blocksuite/std';
 import { html } from 'lit';
 
@@ -115,6 +115,6 @@ export const brushToolbarConfig = {
 } as const satisfies ToolbarModuleConfig;
 
 export const brushToolbarExtension = ToolbarModuleExtension({
-  id: BlockFlavourIdentifier('affine:surface:brush'),
+  id: BlockFlavourIdentifier('lovenotes:surface:brush'),
   config: brushToolbarConfig,
 });

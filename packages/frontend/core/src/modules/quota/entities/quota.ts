@@ -1,5 +1,5 @@
-import { DebugLogger } from '@affine/debug';
-import type { WorkspaceQuotaQuery } from '@affine/graphql';
+import { DebugLogger } from '@lovenotes/debug';
+import type { WorkspaceQuotaQuery } from '@lovenotes/graphql';
 import {
   catchErrorInto,
   effect,
@@ -20,7 +20,7 @@ import type { WorkspaceQuotaStore } from '../stores/quota';
 
 type QuotaType = WorkspaceQuotaQuery['workspace']['quota'];
 
-const logger = new DebugLogger('affine:workspace-permission');
+const logger = new DebugLogger('lovenotes:workspace-permission');
 
 export class WorkspaceQuota extends Entity {
   quota$ = new LiveData<QuotaType | null>(null);

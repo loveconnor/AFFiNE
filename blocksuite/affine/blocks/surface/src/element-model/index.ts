@@ -6,7 +6,7 @@ import {
   MindmapElementModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 
 import { SurfaceElementModel } from './base.js';
 

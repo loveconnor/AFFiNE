@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/highlight-dropdown-menu';
+export * from '@blocksuite/lovenotes-components/highlight-dropdown-menu';

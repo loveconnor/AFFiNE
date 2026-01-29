@@ -1,5 +1,5 @@
-import { AuthService } from '@affine/core/modules/cloud';
-import type { DocMode } from '@blocksuite/affine/model';
+import { AuthService } from '@lovenotes/core/modules/cloud';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import { ImportTemplateButton } from './import-template';

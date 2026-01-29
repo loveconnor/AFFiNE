@@ -6,12 +6,12 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { isNothingSelectedCommand } from '../../../commands/selection/is-nothing-selected';
 import { ImageSelection } from '../../../selection';
-import { affine } from '../../../test-utils';
+import { lovenotes } from '../../../test-utils';
 
 describe('commands/selection', () => {
   describe('isNothingSelectedCommand', () => {
     it('should return true when nothing is selected', () => {
-      const host = affine`<affine-page></affine-page>`;
+      const host = lovenotes`<lovenotes-page></lovenotes-page>`;
 
       const [_, { isNothingSelected }] = host.command.exec(
         isNothingSelectedCommand,
@@ -22,12 +22,12 @@ describe('commands/selection', () => {
     });
 
     it('should return false when text selection exists', () => {
-      const host = affine`
-        <affine-page>
-          <affine-note id="note-1">
-            <affine-paragraph id="paragraph-1">Test paragraph</affine-paragraph>
-          </affine-note>
-        </affine-page>
+      const host = lovenotes`
+        <lovenotes-page>
+          <lovenotes-note id="note-1">
+            <lovenotes-paragraph id="paragraph-1">Test paragraph</lovenotes-paragraph>
+          </lovenotes-note>
+        </lovenotes-page>
       `;
 
       // Mock text selection
@@ -55,12 +55,12 @@ describe('commands/selection', () => {
     });
 
     it('should return false when block selection exists', () => {
-      const host = affine`
-        <affine-page>
-          <affine-note id="note-1">
-            <affine-paragraph id="paragraph-1">Test paragraph</affine-paragraph>
-          </affine-note>
-        </affine-page>
+      const host = lovenotes`
+        <lovenotes-page>
+          <lovenotes-note id="note-1">
+            <lovenotes-paragraph id="paragraph-1">Test paragraph</lovenotes-paragraph>
+          </lovenotes-note>
+        </lovenotes-page>
       `;
 
       // Mock block selection
@@ -79,12 +79,12 @@ describe('commands/selection', () => {
     });
 
     it('should return false when image selection exists', () => {
-      const host = affine`
-        <affine-page>
-          <affine-note id="note-1">
-            <affine-image id="image-1">Test paragraph</affine-image>
-          </affine-note>
-        </affine-page>
+      const host = lovenotes`
+        <lovenotes-page>
+          <lovenotes-note id="note-1">
+            <lovenotes-image id="image-1">Test paragraph</lovenotes-image>
+          </lovenotes-note>
+        </lovenotes-page>
       `;
 
       // Mock image selection
@@ -103,12 +103,12 @@ describe('commands/selection', () => {
     });
 
     it('should return false when no selection is provided but selection is found in context', () => {
-      const host = affine`
-        <affine-page>
-          <affine-note id="note-1">
-            <affine-paragraph id="paragraph-1">Test paragraph</affine-paragraph>
-          </affine-note>
-        </affine-page>
+      const host = lovenotes`
+        <lovenotes-page>
+          <lovenotes-note id="note-1">
+            <lovenotes-paragraph id="paragraph-1">Test paragraph</lovenotes-paragraph>
+          </lovenotes-note>
+        </lovenotes-page>
       `;
 
       // Mock selection behavior via vi.spyOn before executing the command

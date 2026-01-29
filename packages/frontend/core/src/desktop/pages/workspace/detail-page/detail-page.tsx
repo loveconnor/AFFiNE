@@ -1,30 +1,30 @@
-import { Scrollable } from '@affine/component';
-import { PageDetailLoading } from '@affine/component/page-detail-skeleton';
-import type { AIChatParams } from '@affine/core/blocksuite/ai';
-import { AIProvider } from '@affine/core/blocksuite/ai';
-import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
-import { EditorOutlineViewer } from '@affine/core/blocksuite/outline-viewer';
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-// import { PageAIOnboarding } from '@affine/core/components/affine/ai-onboarding';
-import { GlobalPageHistoryModal } from '@affine/core/components/affine/page-history-modal';
-import { CommentSidebar } from '@affine/core/components/comment/sidebar';
-import { useGuard } from '@affine/core/components/guard';
-import { useAppSettingHelper } from '@affine/core/components/hooks/affine/use-app-setting-helper';
-import { useEnableAI } from '@affine/core/components/hooks/affine/use-enable-ai';
-import { useRegisterBlocksuiteEditorCommands } from '@affine/core/components/hooks/affine/use-register-blocksuite-editor-commands';
-import { useActiveBlocksuiteEditor } from '@affine/core/components/hooks/use-block-suite-editor';
-import { PageDetailEditor } from '@affine/core/components/page-detail-editor';
-import { WorkspacePropertySidebar } from '@affine/core/components/properties/sidebar';
-import { TrashPageFooter } from '@affine/core/components/pure/trash-page-footer';
-import { TopTip } from '@affine/core/components/top-tip';
-import { ServerService } from '@affine/core/modules/cloud';
-import { DocService } from '@affine/core/modules/doc';
-import { EditorService } from '@affine/core/modules/editor';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { JournalService } from '@affine/core/modules/journal';
-import { PeekViewService } from '@affine/core/modules/peek-view';
-import { RecentDocsService } from '@affine/core/modules/quicksearch';
+import { Scrollable } from '@lovenotes/component';
+import { PageDetailLoading } from '@lovenotes/component/page-detail-skeleton';
+import type { AIChatParams } from '@lovenotes/core/blocksuite/ai';
+import { AIProvider } from '@lovenotes/core/blocksuite/ai';
+import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor';
+import { EditorOutlineViewer } from '@lovenotes/core/blocksuite/outline-viewer';
+import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
+// import { PageAIOnboarding } from '@lovenotes/core/components/lovenotes/ai-onboarding';
+import { GlobalPageHistoryModal } from '@lovenotes/core/components/lovenotes/page-history-modal';
+import { CommentSidebar } from '@lovenotes/core/components/comment/sidebar';
+import { useGuard } from '@lovenotes/core/components/guard';
+import { useAppSettingHelper } from '@lovenotes/core/components/hooks/lovenotes/use-app-setting-helper';
+import { useEnableAI } from '@lovenotes/core/components/hooks/lovenotes/use-enable-ai';
+import { useRegisterBlocksuiteEditorCommands } from '@lovenotes/core/components/hooks/lovenotes/use-register-blocksuite-editor-commands';
+import { useActiveBlocksuiteEditor } from '@lovenotes/core/components/hooks/use-block-suite-editor';
+import { PageDetailEditor } from '@lovenotes/core/components/page-detail-editor';
+import { WorkspacePropertySidebar } from '@lovenotes/core/components/properties/sidebar';
+import { TrashPageFooter } from '@lovenotes/core/components/pure/trash-page-footer';
+import { TopTip } from '@lovenotes/core/components/top-tip';
+import { ServerService } from '@lovenotes/core/modules/cloud';
+import { DocService } from '@lovenotes/core/modules/doc';
+import { EditorService } from '@lovenotes/core/modules/editor';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { GlobalContextService } from '@lovenotes/core/modules/global-context';
+import { JournalService } from '@lovenotes/core/modules/journal';
+import { PeekViewService } from '@lovenotes/core/modules/peek-view';
+import { RecentDocsService } from '@lovenotes/core/modules/quicksearch';
 import {
   useIsActiveView,
   ViewBody,
@@ -32,15 +32,15 @@ import {
   ViewService,
   ViewSidebarTab,
   WorkbenchService,
-} from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { isNewTabTrigger } from '@affine/core/utils';
-import { ServerFeature } from '@affine/graphql';
-import track from '@affine/track';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { focusBlockEnd } from '@blocksuite/affine/shared/commands';
-import { getLastNoteBlock } from '@blocksuite/affine/shared/utils';
+} from '@lovenotes/core/modules/workbench';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { isNewTabTrigger } from '@lovenotes/core/utils';
+import { ServerFeature } from '@lovenotes/graphql';
+import track from '@lovenotes/track';
+import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
+import { focusBlockEnd } from '@blocksuite/lovenotes/shared/commands';
+import { getLastNoteBlock } from '@blocksuite/lovenotes/shared/utils';
 import {
   AiIcon,
   CommentIcon,
@@ -190,7 +190,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
   const isJournal = !!useLiveData(journalService.journalDate$(doc.id));
 
   const onLoad = useCallback(
-    (editorContainer: AffineEditorContainer) => {
+    (editorContainer: LoveNotesEditorContainer) => {
       const std = editorContainer.std;
       const disposable = new DisposableGroup();
 
@@ -221,7 +221,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
         const refNodeSlots = std.getOptional(RefNodeSlotsProvider);
         if (refNodeSlots) {
           disposable.add(
-            // the event should not be emitted by AffineReference
+            // the event should not be emitted by LoveNotesReference
             refNodeSlots.docLinkClicked.subscribe(
               ({ pageId, params, openMode, event, host }) => {
                 if (host !== editorContainer.host) {
@@ -335,7 +335,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
           data-has-scroll-top={hasScrollTop}
         >
           {/* Add a key to force rerender when page changed, to avoid error boundary persisting. */}
-          <AffineErrorBoundary key={doc.id}>
+          <LoveNotesErrorBoundary key={doc.id}>
             <TopTip pageId={doc.id} workspace={workspace} />
             <Scrollable.Root>
               <Scrollable.Viewport
@@ -343,8 +343,8 @@ const DetailPageImpl = memo(function DetailPageImpl() {
                 ref={scrollViewportRef}
                 data-dragging={dragging}
                 className={clsx(
-                  'affine-page-viewport',
-                  styles.affineDocViewport,
+                  'lovenotes-page-viewport',
+                  styles.lovenotesDocViewport,
                   styles.editorContainer
                 )}
               >
@@ -361,7 +361,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
               show={mode === 'page' && !isSideBarOpen}
               openOutlinePanel={openOutlinePanel}
             />
-          </AffineErrorBoundary>
+          </LoveNotesErrorBoundary>
           {isInTrash ? <TrashPageFooter /> : null}
         </div>
       </ViewBody>

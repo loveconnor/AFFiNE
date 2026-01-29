@@ -1,4 +1,4 @@
-package app.affine.pro.theme
+package app.lovenotes.pro.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -6,30 +6,30 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 
-object AFFiNETheme {
-    val colors: AFFiNEColorScheme
+object LoveNotesTheme {
+    val colors: LoveNotesColorScheme
         @ReadOnlyComposable
         @Composable
-        get() = LocalAFFiNEColors.current
+        get() = LocalLoveNotesColors.current
 
-    val typography: AFFiNETypography
+    val typography: LoveNotesTypography
         @ReadOnlyComposable
         @Composable
-        get() = LocalAFFiNETypography.current
+        get() = LocalLoveNotesTypography.current
 }
 
 @Composable
-fun AFFiNETheme(
+fun LoveNotesTheme(
     mode: ThemeMode = ThemeMode.System,
     content: @Composable () -> Unit
 ) {
     val colors = when (mode) {
-        ThemeMode.Light -> affineLightScheme
-        ThemeMode.Dark -> affineDarkScheme
-        ThemeMode.System -> if (isSystemInDarkTheme()) affineDarkScheme else affineLightScheme
+        ThemeMode.Light -> lovenotesLightScheme
+        ThemeMode.Dark -> lovenotesDarkScheme
+        ThemeMode.System -> if (isSystemInDarkTheme()) lovenotesDarkScheme else lovenotesLightScheme
     }
 
-    CompositionLocalProvider(LocalAFFiNEColors provides colors) {
+    CompositionLocalProvider(LocalLoveNotesColors provides colors) {
         MaterialTheme {
             content()
         }

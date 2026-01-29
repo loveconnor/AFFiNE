@@ -1,9 +1,9 @@
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import { ThemedImg } from '../../ui/themed-img';
-import { AffineOtherPageLayout } from '../affine-other-page-layout';
-import illustrationDark from '../affine-other-page-layout/assets/other-page.dark.png';
-import illustrationLight from '../affine-other-page-layout/assets/other-page.light.png';
+import { LoveNotesOtherPageLayout } from '../lovenotes-other-page-layout';
+import illustrationDark from '../lovenotes-other-page-layout/assets/other-page.dark.png';
+import illustrationLight from '../lovenotes-other-page-layout/assets/other-page.light.png';
 import {
   authPageContainer,
   hideInSmallScreen,
@@ -14,10 +14,11 @@ export const AuthPageContainer: FC<
   PropsWithChildren<{
     title?: ReactNode;
     subtitle?: ReactNode;
+    hideHeader?: boolean;
   }>
-> = ({ children, title, subtitle }) => {
+> = ({ children, title, subtitle, hideHeader = true }) => {
   return (
-    <AffineOtherPageLayout>
+    <LoveNotesOtherPageLayout hideHeader={hideHeader}>
       <div className={authPageContainer}>
         <div className="wrapper">
           <div className="content">
@@ -35,6 +36,6 @@ export const AuthPageContainer: FC<
           </div>
         </div>
       </div>
-    </AffineOtherPageLayout>
+    </LoveNotesOtherPageLayout>
   );
 };

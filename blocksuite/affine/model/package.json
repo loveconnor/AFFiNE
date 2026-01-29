@@ -1,6 +1,6 @@
 {
-  "name": "@blocksuite/affine-model",
-  "description": "Models for BlockSuite in Affine.",
+  "name": "@blocksuite/lovenotes-model",
+  "description": "Models for BlockSuite in LoveNotes.",
   "type": "module",
   "scripts": {
     "build": "tsc"

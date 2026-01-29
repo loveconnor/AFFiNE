@@ -1,4 +1,4 @@
-import type { AIToolsConfig } from '@affine/core/modules/ai-button';
+import type { AIToolsConfig } from '@lovenotes/core/modules/ai-button';
 import type {
   AddContextFileInput,
   ContextMatchedDocChunk,
@@ -15,10 +15,10 @@ import type {
   RequestOptions,
   StreamObject,
   UpdateChatSessionInput,
-} from '@affine/graphql';
-import type { EditorHost } from '@blocksuite/affine/std';
-import type { GfxModel } from '@blocksuite/affine/std/gfx';
-import type { BlockModel } from '@blocksuite/affine/store';
+} from '@lovenotes/graphql';
+import type { EditorHost } from '@blocksuite/lovenotes/std';
+import type { GfxModel } from '@blocksuite/lovenotes/std/gfx';
+import type { BlockModel } from '@blocksuite/lovenotes/store';
 
 import type { AIEmbeddingStatus } from '../provider';
 import type { PromptKey } from '../provider/prompt';

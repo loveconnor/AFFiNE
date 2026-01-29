@@ -21,15 +21,15 @@ function createTestOptions() {
 }
 
 const TestCustomNoteBlockSchema = defineBlockSchema({
-  flavour: 'affine:note-block-video',
+  flavour: 'lovenotes:note-block-video',
   props: internal => ({
     text: internal.Text(),
   }),
   metadata: {
     version: 1,
     role: 'content',
-    tag: literal`affine-note-block-video`,
-    parent: ['affine:note'],
+    tag: literal`lovenotes-note-block-video`,
+    parent: ['lovenotes:note'],
   },
 });
 
@@ -38,15 +38,15 @@ const TestCustomNoteBlockSchemaExtension = BlockSchemaExtension(
 );
 
 const TestInvalidNoteBlockSchema = defineBlockSchema({
-  flavour: 'affine:note-invalid-block-video',
+  flavour: 'lovenotes:note-invalid-block-video',
   props: internal => ({
     text: internal.Text(),
   }),
   metadata: {
     version: 1,
     role: 'content',
-    tag: literal`affine-invalid-note-block-video`,
-    parent: ['affine:note'],
+    tag: literal`lovenotes-invalid-note-block-video`,
+    parent: ['lovenotes:note'],
   },
 });
 
@@ -55,11 +55,11 @@ const TestInvalidNoteBlockSchemaExtension = BlockSchemaExtension(
 );
 
 const TestRoleBlockSchema = defineBlockSchema({
-  flavour: 'affine:note-block-role-test',
+  flavour: 'lovenotes:note-block-role-test',
   metadata: {
     version: 1,
     role: 'content',
-    parent: ['affine:note'],
+    parent: ['lovenotes:note'],
     children: ['@test'],
   },
   props: internal => ({
@@ -70,7 +70,7 @@ const TestRoleBlockSchema = defineBlockSchema({
 const TestRoleBlockSchemaExtension = BlockSchemaExtension(TestRoleBlockSchema);
 
 const TestParagraphBlockSchema = defineBlockSchema({
-  flavour: 'affine:test-paragraph',
+  flavour: 'lovenotes:test-paragraph',
   metadata: {
     version: 1,
     role: 'test',
@@ -111,11 +111,11 @@ describe('schema', () => {
       .spyOn(console, 'error')
       .mockImplementation(() => undefined);
     const doc = createTestDoc();
-    const rootId = doc.addBlock('affine:page', {});
-    const noteId = doc.addBlock('affine:note', {}, rootId);
-    const paragraphId = doc.addBlock('affine:paragraph', {}, noteId);
+    const rootId = doc.addBlock('lovenotes:page', {});
+    const noteId = doc.addBlock('lovenotes:note', {}, rootId);
+    const paragraphId = doc.addBlock('lovenotes:paragraph', {}, noteId);
 
-    doc.addBlock('affine:note', {});
+    doc.addBlock('lovenotes:note', {});
     expect(consoleMock.mock.calls[0]).toSatisfy((call: unknown[]) => {
       return typeof call[0] === 'string';
     });
@@ -125,7 +125,7 @@ describe('schema', () => {
 
     consoleMock.mockClear();
     // add paragraph to root should throw
-    doc.addBlock('affine:paragraph', {}, rootId);
+    doc.addBlock('lovenotes:paragraph', {}, rootId);
     expect(consoleMock.mock.calls[0]).toSatisfy((call: unknown[]) => {
       return typeof call[0] === 'string';
     });
@@ -134,9 +134,9 @@ describe('schema', () => {
     });
 
     consoleMock.mockClear();
-    doc.addBlock('affine:note', {}, rootId);
-    doc.addBlock('affine:paragraph', {}, noteId);
-    doc.addBlock('affine:paragraph', {}, paragraphId);
+    doc.addBlock('lovenotes:note', {}, rootId);
+    doc.addBlock('lovenotes:paragraph', {}, noteId);
+    doc.addBlock('lovenotes:paragraph', {}, paragraphId);
     expect(consoleMock).not.toBeCalled();
   });
 
@@ -145,13 +145,13 @@ describe('schema', () => {
       .spyOn(console, 'error')
       .mockImplementation(() => undefined);
     const doc = createTestDoc();
-    const rootId = doc.addBlock('affine:page', {});
-    const noteId = doc.addBlock('affine:note', {}, rootId);
+    const rootId = doc.addBlock('lovenotes:page', {});
+    const noteId = doc.addBlock('lovenotes:note', {}, rootId);
 
-    doc.addBlock('affine:note-block-video', {}, noteId);
+    doc.addBlock('lovenotes:note-block-video', {}, noteId);
     expect(consoleMock).not.toBeCalled();
 
-    doc.addBlock('affine:note-invalid-block-video', {}, noteId);
+    doc.addBlock('lovenotes:note-invalid-block-video', {}, noteId);
     expect(consoleMock.mock.calls[0]).toSatisfy((call: unknown[]) => {
       return typeof call[0] === 'string';
     });
@@ -165,22 +165,22 @@ describe('schema', () => {
       .spyOn(console, 'error')
       .mockImplementation(() => undefined);
     const doc = createTestDoc();
-    const rootId = doc.addBlock('affine:page', {});
-    const noteId = doc.addBlock('affine:note', {}, rootId);
-    const roleId = doc.addBlock('affine:note-block-role-test', {}, noteId);
+    const rootId = doc.addBlock('lovenotes:page', {});
+    const noteId = doc.addBlock('lovenotes:note', {}, rootId);
+    const roleId = doc.addBlock('lovenotes:note-block-role-test', {}, noteId);
 
-    doc.addBlock('affine:paragraph', {}, roleId);
-    doc.addBlock('affine:paragraph', {}, roleId);
+    doc.addBlock('lovenotes:paragraph', {}, roleId);
+    doc.addBlock('lovenotes:paragraph', {}, roleId);
 
     expect(consoleMock.mock.calls[1]).toSatisfy((call: unknown[]) => {
       return call[0] instanceof SchemaValidateError;
     });
 
     consoleMock.mockClear();
-    doc.addBlock('affine:test-paragraph', {}, roleId);
-    doc.addBlock('affine:test-paragraph', {}, roleId);
+    doc.addBlock('lovenotes:test-paragraph', {}, roleId);
+    doc.addBlock('lovenotes:test-paragraph', {}, roleId);
     expect(consoleMock).not.toBeCalled();
 
-    expect(doc.getBlocksByFlavour('affine:test-paragraph')).toHaveLength(2);
+    expect(doc.getBlocksByFlavour('lovenotes:test-paragraph')).toHaveLength(2);
   });
 });

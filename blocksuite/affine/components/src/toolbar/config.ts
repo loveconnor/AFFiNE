@@ -4,4 +4,4 @@ import type { ToolbarMoreMenuConfig } from './types';
 
 export const ToolbarMoreMenuConfigExtension = ConfigExtensionFactory<
   Partial<ToolbarMoreMenuConfig>
->('affine-toolbar-more-menu');
+>('lovenotes-toolbar-more-menu');

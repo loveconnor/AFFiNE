@@ -11,7 +11,7 @@ yarn
 ### Build Native binding
 
 ```bash
-yarn affine @affine/server-native build
+yarn lovenotes @lovenotes/server-native build
 ```
 
 ### Run server

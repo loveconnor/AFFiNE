@@ -1,4 +1,4 @@
-import { EmbedIframeService } from '@blocksuite/affine-shared/services';
+import { EmbedIframeService } from '@blocksuite/lovenotes-shared/services';
 import type { BlockStdScope } from '@blocksuite/std';
 
 /**

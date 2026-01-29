@@ -9,7 +9,7 @@ import { LEFT_TOOL_BAR_WIDTH, STATS_BAR_HEIGHT } from '../consts.js';
 import type { TableViewUILogic } from '../pc/table-view-ui-logic.js';
 
 const styles = css`
-  affine-database-column-stats {
+  lovenotes-database-column-stats {
     margin-left: ${LEFT_TOOL_BAR_WIDTH}px;
     height: ${STATS_BAR_HEIGHT}px;
     display: flex;
@@ -28,10 +28,10 @@ export class DataBaseColumnStats extends SignalWatcher(
         cols,
         col => col.id,
         col => {
-          return html`<affine-database-column-stats-cell
+          return html`<lovenotes-database-column-stats-cell
             .column=${col}
             .group=${this.group}
-          ></affine-database-column-stats-cell>`;
+          ></lovenotes-database-column-stats-cell>`;
         }
       )}
     `;
@@ -50,6 +50,6 @@ export class DataBaseColumnStats extends SignalWatcher(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-database-column-stats': DataBaseColumnStats;
+    'lovenotes-database-column-stats': DataBaseColumnStats;
   }
 }

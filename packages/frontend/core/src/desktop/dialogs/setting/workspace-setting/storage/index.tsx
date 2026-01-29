@@ -1,10 +1,10 @@
 import {
   SettingHeader,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { WorkspacePermissionService } from '@affine/core/modules/permissions';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/component/setting-components';
+import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import { EnableCloudPanel } from '../preference/enable-cloud';
@@ -30,7 +30,7 @@ export const WorkspaceSettingStorage = ({
     <>
       <SettingHeader
         title={t['Storage']()}
-        subtitle={t['com.affine.settings.workspace.storage.subtitle']()}
+        subtitle={t['com.lovenotes.settings.workspace.storage.subtitle']()}
       />
       {workspace.flavour === 'local' ? (
         <>

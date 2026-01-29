@@ -1,5 +1,5 @@
-import { AuthService } from '@affine/core/modules/cloud';
-import { OAuthProviderType } from '@affine/graphql';
+import { AuthService } from '@lovenotes/core/modules/cloud';
+import { OAuthProviderType } from '@lovenotes/graphql';
 import { useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 import {

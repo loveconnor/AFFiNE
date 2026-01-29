@@ -1,5 +1,5 @@
-import { toast } from '@blocksuite/affine-components/toast';
-import { EditorChevronDown } from '@blocksuite/affine-components/toolbar';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import { EditorChevronDown } from '@blocksuite/lovenotes-components/toolbar';
 import {
   DEFAULT_NOTE_HEIGHT,
   DEFAULT_NOTE_WIDTH,
@@ -8,12 +8,12 @@ import {
   NoteDisplayMode,
   type NoteProps,
   type ParagraphProps,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   draftSelectedModelsCommand,
   duplicateSelectedModelsCommand,
-} from '@blocksuite/affine-shared/commands';
-import { REFERENCE_NODE } from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/commands';
+import { REFERENCE_NODE } from '@blocksuite/lovenotes-shared/consts';
 import {
   ActionPlacement,
   EditorSettingProvider,
@@ -24,9 +24,9 @@ import {
   type ToolbarContext,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import { getBlockProps, matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
+import { getBlockProps, matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   CaptionIcon,
@@ -166,7 +166,7 @@ const conversionsActionGroup = {
           const editorSetting = ctx.std.getOptional(EditorSettingProvider);
           editorSetting?.set?.(
             'docCanvasPreferView',
-            'affine:embed-linked-doc'
+            'lovenotes:embed-linked-doc'
           );
         }
 
@@ -195,12 +195,12 @@ const conversionsActionGroup = {
 
     return html`${keyed(
       model,
-      html`<affine-view-dropdown-menu
+      html`<lovenotes-view-dropdown-menu
         @toggle=${onToggle}
         .actions=${actions}
         .context=${ctx}
         .viewType$=${viewType$}
-      ></affine-view-dropdown-menu>`
+      ></lovenotes-view-dropdown-menu>`
     )}`;
   },
 } as const satisfies ToolbarActionGroup<ToolbarAction>;
@@ -295,7 +295,7 @@ const builtinSurfaceToolbarConfig = {
         if (!model) return;
 
         const lastVisibleNote = ctx.store
-          .getModelsByFlavour('affine:note')
+          .getModelsByFlavour('lovenotes:note')
           .findLast(
             (note): note is NoteBlockModel =>
               matchModels(note, [NoteBlockModel]) &&
@@ -314,7 +314,7 @@ const builtinSurfaceToolbarConfig = {
           page: 'whiteboard editor',
           module: 'toolbar',
           segment: 'toolbar',
-          blockType: 'affine:embed-linked-doc',
+          blockType: 'lovenotes:embed-linked-doc',
           control: 'toolbar:general',
           other: 'insert to page',
         });
@@ -339,7 +339,7 @@ const builtinSurfaceToolbarConfig = {
           const store = doc?.getStore({ readonly: true });
           if (!store) return;
           contentModels = store
-            .getModelsByFlavour('affine:note')
+            .getModelsByFlavour('lovenotes:note')
             .filter(
               (note): note is NoteBlockModel =>
                 matchModels(note, [NoteBlockModel]) &&
@@ -365,7 +365,7 @@ const builtinSurfaceToolbarConfig = {
 
               const children = await draftedModels;
               const noteId = std.store.addBlock(
-                'affine:note',
+                'lovenotes:note',
                 {
                   xywh: new Bound(
                     x,
@@ -380,9 +380,9 @@ const builtinSurfaceToolbarConfig = {
               );
 
               std.store.addBlock(
-                'affine:paragraph',
+                'lovenotes:paragraph',
                 {
-                  text: new Text<AffineTextAttributes>([
+                  text: new Text<LoveNotesTextAttributes>([
                     {
                       insert: REFERENCE_NODE,
                       attributes: {
@@ -462,12 +462,12 @@ const builtinSurfaceToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-size-dropdown-menu
+          html`<lovenotes-size-dropdown-menu
             @select=${onSelect}
             @toggle=${onToggle}
             .format=${format}
             .size$=${scale$}
-          ></affine-size-dropdown-menu>`
+          ></lovenotes-size-dropdown-menu>`
         )}`;
       },
     },
@@ -488,7 +488,7 @@ export const createBuiltinToolbarConfigExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier(`affine:surface:${name}`),
+      id: BlockFlavourIdentifier(`lovenotes:surface:${name}`),
       config: builtinSurfaceToolbarConfig,
     }),
   ];

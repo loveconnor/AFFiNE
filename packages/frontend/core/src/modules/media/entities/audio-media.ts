@@ -1,4 +1,4 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@lovenotes/debug';
 import {
   catchErrorInto,
   effect,

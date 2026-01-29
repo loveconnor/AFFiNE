@@ -4,8 +4,8 @@ import {
   EmbedGithubModel,
   EmbedLinkedDocModel,
   NoteBlockModel,
-} from '@blocksuite/affine-model';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { BlockStdScope } from '@blocksuite/std';
 import type { TransformerMiddleware } from '@blocksuite/store';
 

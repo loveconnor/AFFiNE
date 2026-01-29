@@ -7,9 +7,9 @@ import type {
   ListBlockModel,
   ParagraphBlockModel,
   RootBlockModel,
-} from '@blocksuite/affine-model';
-import { DocDisplayMetaProvider } from '@blocksuite/affine-shared/services';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-model';
+import { DocDisplayMetaProvider } from '@blocksuite/lovenotes-shared/services';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { noop } from '@blocksuite/global/utils';
 import { LinkedPageIcon } from '@blocksuite/icons/lit';
@@ -33,7 +33,7 @@ function assertType<T>(value: unknown): asserts value is T {
   noop(value);
 }
 
-export const AFFINE_OUTLINE_BLOCK_PREVIEW = 'affine-outline-block-preview';
+export const AFFINE_OUTLINE_BLOCK_PREVIEW = 'lovenotes-outline-block-preview';
 
 export class OutlineBlockPreview extends SignalWatcher(
   WithDisposable(ShadowlessElement)
@@ -43,7 +43,7 @@ export class OutlineBlockPreview extends SignalWatcher(
   }
 
   private _TextBlockPreview(block: ParagraphBlockModel | ListBlockModel) {
-    const deltas: DeltaInsert<AffineTextAttributes>[] =
+    const deltas: DeltaInsert<LoveNotesTextAttributes>[] =
       block.props.text.yText.toDelta();
     if (!block.props.text.length) return nothing;
     const iconClass = this.disabledIcon ? styles.iconDisabled : styles.icon;
@@ -128,7 +128,7 @@ export class OutlineBlockPreview extends SignalWatcher(
     const showPreviewIcon = this._context.showIcons$.value;
 
     switch (block.flavour) {
-      case 'affine:page':
+      case 'lovenotes:page':
         assertType<RootBlockModel>(block);
         return block.props.title.length > 0
           ? html`<span
@@ -138,13 +138,13 @@ export class OutlineBlockPreview extends SignalWatcher(
               ${block.props.title$.value}
             </span>`
           : nothing;
-      case 'affine:paragraph':
+      case 'lovenotes:paragraph':
         assertType<ParagraphBlockModel>(block);
         return this._TextBlockPreview(block);
-      case 'affine:list':
+      case 'lovenotes:list':
         assertType<ListBlockModel>(block);
         return this._TextBlockPreview(block);
-      case 'affine:bookmark':
+      case 'lovenotes:bookmark':
         assertType<BookmarkBlockModel>(block);
         return html`
           <span class="${styles.text} ${styles.textGeneral}"
@@ -158,7 +158,7 @@ export class OutlineBlockPreview extends SignalWatcher(
               >`
             : nothing}
         `;
-      case 'affine:code':
+      case 'lovenotes:code':
         assertType<CodeBlockModel>(block);
         return html`
           <span class="${styles.text} ${styles.textGeneral}"
@@ -168,7 +168,7 @@ export class OutlineBlockPreview extends SignalWatcher(
             ? html`<span class=${iconClass}>${previewIconMap['code']}</span>`
             : nothing}
         `;
-      case 'affine:database':
+      case 'lovenotes:database':
         assertType<DatabaseBlockModel>(block);
         return html`
           <span class="${styles.text} ${styles.textGeneral}"
@@ -180,7 +180,7 @@ export class OutlineBlockPreview extends SignalWatcher(
             ? html`<span class=${iconClass}>${previewIconMap['table']}</span>`
             : nothing}
         `;
-      case 'affine:image':
+      case 'lovenotes:image':
         assertType<ImageBlockModel>(block);
         return html`
           <span class="${styles.text} ${styles.textGeneral}"
@@ -192,7 +192,7 @@ export class OutlineBlockPreview extends SignalWatcher(
             ? html`<span class=${iconClass}>${previewIconMap['image']}</span>`
             : nothing}
         `;
-      case 'affine:attachment':
+      case 'lovenotes:attachment':
         assertType<AttachmentBlockModel>(block);
         return html`
           <span class="${styles.text} ${styles.textGeneral}"

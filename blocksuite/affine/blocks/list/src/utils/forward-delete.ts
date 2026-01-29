@@ -1,8 +1,8 @@
-import { ListBlockModel } from '@blocksuite/affine-model';
+import { ListBlockModel } from '@blocksuite/lovenotes-model';
 import {
   getNextContentBlock,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { type BlockStdScope, TextSelection } from '@blocksuite/std';
 import type { Text } from '@blocksuite/store';
 

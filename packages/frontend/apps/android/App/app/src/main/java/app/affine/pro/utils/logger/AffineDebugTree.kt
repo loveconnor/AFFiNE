@@ -1,10 +1,10 @@
-package app.affine.pro.utils.logger
+package app.lovenotes.pro.utils.logger
 
 import timber.log.Timber
 
-class AffineDebugTree : Timber.DebugTree() {
+class LoveNotesDebugTree : Timber.DebugTree() {
 
     override fun createStackElementTag(element: StackTraceElement): String {
-        return "Affine:${super.createStackElementTag(element)}:${element.lineNumber}"
+        return "LoveNotes:${super.createStackElementTag(element)}:${element.lineNumber}"
     }
 }

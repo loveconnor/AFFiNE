@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { css } from 'lit';
 
 export const frameTitleStyleVars = {
@@ -21,7 +21,7 @@ export const frameTitleStyle = css`
     transform-origin: left bottom;
     background-color: var(--bg-color);
 
-    font-family: var(--affine-font-family);
+    font-family: var(--lovenotes-font-family);
     font-size: ${frameTitleStyleVars.fontSize}px;
     cursor: default;
     white-space: nowrap;

@@ -1,8 +1,8 @@
-import { EdgelessClipboardConfig } from '@blocksuite/affine-block-surface';
+import { EdgelessClipboardConfig } from '@blocksuite/lovenotes-block-surface';
 import { type BlockSnapshot } from '@blocksuite/store';
 
 export class EdgelessClipboardEmbedYoutubeConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:embed-youtube';
+  static override readonly key = 'lovenotes:embed-youtube';
 
   override createBlock(youtubeEmbed: BlockSnapshot): string | null {
     if (!this.surface) return null;
@@ -21,7 +21,7 @@ export class EdgelessClipboardEmbedYoutubeConfig extends EdgelessClipboardConfig
     } = youtubeEmbed.props;
 
     const embedYoutubeId = this.crud.addBlock(
-      'affine:embed-youtube',
+      'lovenotes:embed-youtube',
       {
         xywh,
         style,

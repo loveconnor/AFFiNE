@@ -1,14 +1,14 @@
 //
-//  AffinePaywallPageView.swift
-//  AffinePaywall
+//  LoveNotesPaywallPageView.swift
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //
 
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
-struct AffinePaywallPageView: View {
+struct LoveNotesPaywallPageView: View {
   @StateObject var viewModel = ViewModel()
 
   @Environment(\.dismiss) var dismiss
@@ -27,14 +27,14 @@ struct AffinePaywallPageView: View {
         Button {
           viewModel.dismiss()
         } label: {
-          AffineIcons.close.image
+          LoveNotesIcons.close.image
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 24, height: 24)
             .foregroundStyle(.primary)
         }
         .buttonStyle(.plain)
-        .foregroundColor(AffineColors.textSecondary.color)
+        .foregroundColor(LoveNotesColors.textSecondary.color)
         .opacity(showCloseButton ? 1 : 0)
         .disabled(!showCloseButton)
         .animation(.spring, value: showCloseButton)
@@ -69,7 +69,7 @@ struct AffinePaywallPageView: View {
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(
-      AffineColors.layerBackgroundSecondary.color
+      LoveNotesColors.layerBackgroundSecondary.color
         .ignoresSafeArea()
     )
   }
@@ -89,7 +89,7 @@ struct AffinePaywallPageView: View {
   struct PreviewWrapper: View {
     @StateObject var viewModel = ViewModel()
     var body: some View {
-      AffinePaywallPageView(viewModel: viewModel)
+      LoveNotesPaywallPageView(viewModel: viewModel)
     }
   }
   return PreviewWrapper()

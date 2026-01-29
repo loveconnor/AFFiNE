@@ -1,17 +1,17 @@
 import path from 'node:path';
 
-import type { apis } from '@affine/electron-api';
-import { test } from '@affine-test/kit/electron';
+import type { apis } from '@lovenotes/electron-api';
+import { test } from '@lovenotes-test/kit/electron';
 import {
   getBlockSuiteEditorTitle,
   getPageByTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import {
   clickNewPageButton,
   clickSideBarCurrentWorkspaceBanner,
-} from '@affine-test/kit/utils/sidebar';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@lovenotes-test/kit/utils/sidebar';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 import fs from 'fs-extra';
 
@@ -67,7 +67,7 @@ test('export then add', async ({ page, appInfo, workspace }) => {
   }, tmpPath);
 
   await page.getByTestId('workspace-setting:storage').click();
-  await page.getByTestId('export-affine-backup').click();
+  await page.getByTestId('export-lovenotes-backup').click();
   await page.waitForSelector('text="Export success"');
   expect(await fs.exists(tmpPath)).toBe(true);
 

@@ -2,7 +2,7 @@ import {
   HastUtils,
   type HtmlAST,
   NotionHtmlASTToDeltaExtension,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { ExtensionType } from '@blocksuite/store';
 import { collapseWhiteSpace } from 'collapse-white-space';
 import type { Element, Text } from 'hast';

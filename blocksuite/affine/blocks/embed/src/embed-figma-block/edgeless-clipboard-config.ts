@@ -1,15 +1,15 @@
-import { EdgelessClipboardConfig } from '@blocksuite/affine-block-surface';
+import { EdgelessClipboardConfig } from '@blocksuite/lovenotes-block-surface';
 import { type BlockSnapshot } from '@blocksuite/store';
 
 export class EdgelessClipboardEmbedFigmaConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:embed-figma';
+  static override readonly key = 'lovenotes:embed-figma';
 
   override createBlock(figmaEmbed: BlockSnapshot): string | null {
     if (!this.surface) return null;
     const { xywh, style, url, caption, title, description } = figmaEmbed.props;
 
     const embedFigmaId = this.crud.addBlock(
-      'affine:embed-figma',
+      'lovenotes:embed-figma',
       {
         xywh,
         style,

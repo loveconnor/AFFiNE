@@ -1,9 +1,9 @@
-import { ParagraphBlockModel } from '@blocksuite/affine-model';
+import { ParagraphBlockModel } from '@blocksuite/lovenotes-model';
 import {
   calculateCollapsedSiblings,
   getNearestHeadingBefore,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { type Command, TextSelection } from '@blocksuite/std';
 
 import { indentBlock } from './indent-block';

@@ -1,7 +1,7 @@
-import { CodeBlockPreviewExtension } from '@blocksuite/affine/blocks/code';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import type { CodeBlockModel } from '@blocksuite/affine/model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
+import { CodeBlockPreviewExtension } from '@blocksuite/lovenotes/blocks/code';
+import { SignalWatcher, WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import type { CodeBlockModel } from '@blocksuite/lovenotes/model';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes/shared/theme';
 import { ShadowlessElement } from '@blocksuite/std';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

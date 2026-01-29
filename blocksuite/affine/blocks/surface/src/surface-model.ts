@@ -1,7 +1,7 @@
 import type {
   ConnectorElementModel,
   SurfaceElementModelMap,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import type { SurfaceBlockProps } from '@blocksuite/std/gfx';
 import { SurfaceBlockModel as BaseSurfaceModel } from '@blocksuite/std/gfx';
@@ -13,7 +13,7 @@ import { surfaceMiddlewareIdentifier } from './extensions/surface-middleware.js'
 import { SurfaceBlockTransformer } from './surface-transformer.js';
 
 export const SurfaceBlockSchema = defineBlockSchema({
-  flavour: 'affine:surface',
+  flavour: 'lovenotes:surface',
   props: (internalPrimitives): SurfaceBlockProps => ({
     elements: internalPrimitives.Boxed(new Y.Map()),
   }),
@@ -22,12 +22,12 @@ export const SurfaceBlockSchema = defineBlockSchema({
     role: 'hub',
     parent: ['@root'],
     children: [
-      'affine:frame',
-      'affine:image',
-      'affine:bookmark',
-      'affine:attachment',
-      'affine:embed-*',
-      'affine:edgeless-text',
+      'lovenotes:frame',
+      'lovenotes:image',
+      'lovenotes:bookmark',
+      'lovenotes:attachment',
+      'lovenotes:embed-*',
+      'lovenotes:edgeless-text',
     ],
   },
   transformer: transformerConfigs =>

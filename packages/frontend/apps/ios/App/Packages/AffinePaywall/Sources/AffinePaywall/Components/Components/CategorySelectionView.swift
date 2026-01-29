@@ -1,11 +1,11 @@
 //
 //  CategorySelectionView.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/17/25.
 //
 
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 struct CategorySelectionView: View {
@@ -36,9 +36,9 @@ struct CategorySelectionView: View {
 
     var color: Color {
       if isSelected {
-        AffineColors.textPrimary.color
+        LoveNotesColors.textPrimary.color
       } else {
-        AffineColors.textSecondary.color
+        LoveNotesColors.textSecondary.color
       }
     }
 

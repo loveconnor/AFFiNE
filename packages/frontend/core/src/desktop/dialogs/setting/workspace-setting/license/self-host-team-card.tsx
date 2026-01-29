@@ -1,22 +1,22 @@
-import { Button, ConfirmModal, Input, Modal, notify } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useMutation } from '@affine/core/components/hooks/use-mutation';
+import { Button, ConfirmModal, Input, Modal, notify } from '@lovenotes/component';
+import { SettingRow } from '@lovenotes/component/setting-components';
+import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { useMutation } from '@lovenotes/core/components/hooks/use-mutation';
 import {
   SelfhostLicenseService,
   WorkspaceSubscriptionService,
-} from '@affine/core/modules/cloud';
-import { WorkspacePermissionService } from '@affine/core/modules/permissions';
-import { WorkspaceQuotaService } from '@affine/core/modules/quota';
-import { UrlService } from '@affine/core/modules/url';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { UserFriendlyError } from '@affine/error';
+} from '@lovenotes/core/modules/cloud';
+import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions';
+import { WorkspaceQuotaService } from '@lovenotes/core/modules/quota';
+import { UrlService } from '@lovenotes/core/modules/url';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { UserFriendlyError } from '@lovenotes/error';
 import {
   createSelfhostCustomerPortalMutation,
   SubscriptionVariant,
-} from '@affine/graphql';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@lovenotes/graphql';
+import { Trans, useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import clsx from 'clsx';
@@ -67,7 +67,7 @@ export const SelfHostTeamCard = () => {
         <div>
           <p>
             {t[
-              'com.affine.settings.workspace.license.self-host-team.team.description'
+              'com.lovenotes.settings.workspace.license.self-host-team.team.description'
             ]({
               expirationDate: new Date(
                 license?.expiredAt || 0
@@ -81,7 +81,7 @@ export const SelfHostTeamCard = () => {
           {isOneTimePurchase ? (
             <p>
               <Trans
-                i18nKey="com.affine.settings.workspace.license.self-host-team.team.license"
+                i18nKey="com.lovenotes.settings.workspace.license.self-host-team.team.license"
                 components={{ 1: <strong /> }}
               />
             </p>
@@ -90,7 +90,7 @@ export const SelfHostTeamCard = () => {
       );
     }
     return t[
-      'com.affine.settings.workspace.license.self-host-team.free.description'
+      'com.lovenotes.settings.workspace.license.self-host-team.free.description'
     ]({
       memberCount: workspaceQuota?.humanReadable.memberLimit || '10',
     });
@@ -118,7 +118,7 @@ export const SelfHostTeamCard = () => {
           revalidate();
           notify.success({
             title:
-              t['com.affine.settings.workspace.license.activate-success'](),
+              t['com.lovenotes.settings.workspace.license.activate-success'](),
           });
         })
         .catch(e => {
@@ -146,7 +146,7 @@ export const SelfHostTeamCard = () => {
         revalidate();
         notify.success({
           title:
-            t['com.affine.settings.workspace.license.deactivate-success'](),
+            t['com.lovenotes.settings.workspace.license.deactivate-success'](),
         });
       })
       .catch(e => {
@@ -181,7 +181,7 @@ export const SelfHostTeamCard = () => {
             <SettingRow
               spreadCol={false}
               name={t[
-                `com.affine.settings.workspace.license.self-host${isTeam ? '-team' : ''}`
+                `com.lovenotes.settings.workspace.license.self-host${isTeam ? '-team' : ''}`
               ]()}
               desc={description}
             />
@@ -193,7 +193,7 @@ export const SelfHostTeamCard = () => {
           >
             <span className={styles.seat}>
               {t[
-                'com.affine.settings.workspace.license.self-host-team.seats'
+                'com.lovenotes.settings.workspace.license.self-host-team.seats'
               ]()}
             </span>
             <span>
@@ -215,7 +215,7 @@ export const SelfHostTeamCard = () => {
               onClick={handleOpenUploadModal}
             >
               {t[
-                'com.affine.settings.workspace.license.self-host-team.upload-license-file'
+                'com.lovenotes.settings.workspace.license.self-host-team.upload-license-file'
               ]()}
             </Button>
           ) : null}
@@ -225,7 +225,7 @@ export const SelfHostTeamCard = () => {
             onClick={handleClick}
           >
             {t[
-              `com.affine.settings.workspace.license.self-host-team.${isTeam ? 'deactivate-license' : 'use-purchased-key'}`
+              `com.lovenotes.settings.workspace.license.self-host-team.${isTeam ? 'deactivate-license' : 'use-purchased-key'}`
             ]()}
           </Button>
         </div>
@@ -312,10 +312,10 @@ const ActionModal = ({
         open={open}
         onOpenChange={handleOpenChange}
         title={t[
-          `com.affine.settings.workspace.license.deactivate-modal.title`
+          `com.lovenotes.settings.workspace.license.deactivate-modal.title`
         ]()}
         description={t[
-          'com.affine.settings.workspace.license.deactivate-modal.description-license'
+          'com.lovenotes.settings.workspace.license.deactivate-modal.description-license'
         ]()}
         cancelText={t['Cancel']()}
         cancelButtonOptions={{
@@ -340,11 +340,11 @@ const ActionModal = ({
         open={open}
         onOpenChange={handleOpenChange}
         title={t[
-          `com.affine.settings.workspace.license.deactivate-modal.title`
+          `com.lovenotes.settings.workspace.license.deactivate-modal.title`
         ]()}
         description={
           <Trans
-            i18nKey="com.affine.settings.workspace.license.deactivate-modal.description"
+            i18nKey="com.lovenotes.settings.workspace.license.deactivate-modal.description"
             components={{
               1: <strong />,
             }}
@@ -359,7 +359,7 @@ const ActionModal = ({
             disabled={isMutating}
           >
             {t[
-              'com.affine.settings.workspace.license.deactivate-modal.manage-payment'
+              'com.lovenotes.settings.workspace.license.deactivate-modal.manage-payment'
             ]()}
           </Button>
           <div className={styles.rightActions}>
@@ -380,9 +380,9 @@ const ActionModal = ({
       width={480}
       open={open}
       onOpenChange={handleOpenChange}
-      title={t['com.affine.settings.workspace.license.activate-modal.title']()}
+      title={t['com.lovenotes.settings.workspace.license.activate-modal.title']()}
       description={t[
-        'com.affine.settings.workspace.license.activate-modal.description'
+        'com.lovenotes.settings.workspace.license.activate-modal.description'
       ]()}
       cancelText={t['Cancel']()}
       cancelButtonOptions={{
@@ -410,11 +410,11 @@ const ActionModal = ({
       />
       <span className={styles.tips}>
         <Trans
-          i18nKey="com.affine.settings.workspace.license.activate-modal.tips"
+          i18nKey="com.lovenotes.settings.workspace.license.activate-modal.tips"
           components={{
             1: (
               <a
-                href="https://affine.pro/pricing/?type=selfhost#table"
+                href="https://lovenotes.pro/pricing/?type=selfhost#table"
                 target="_blank"
                 rel="noreferrer"
                 style={{ color: cssVarV2('text/link') }}

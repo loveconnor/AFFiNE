@@ -1,11 +1,11 @@
 import type {
   CanvasRenderer,
   RoughCanvas,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import type {
   LocalShapeElementModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 
 import { type Colors, drawGeneralShape } from './utils.js';
 

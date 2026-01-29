@@ -3,35 +3,35 @@ import {
   pressArrowUp,
   pressBackspace,
   pressEnter,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/keyboard';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   type,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect, test } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await openHomePage(page);
   await clickNewPageButton(page);
   await waitForEmptyEditor(page);
-  await page.locator('affine-paragraph v-line div').click();
+  await page.locator('lovenotes-paragraph v-line div').click();
 });
 
 test('add callout block using slash menu and change emoji', async ({
   page,
 }) => {
   await type(page, '/callout\naaaa\nbbbb');
-  const callout = page.locator('affine-callout');
-  const emoji = page.locator('affine-callout').getByTestId('callout-emoji');
+  const callout = page.locator('lovenotes-callout');
+  const emoji = page.locator('lovenotes-callout').getByTestId('callout-emoji');
   await expect(callout).toBeVisible();
   await expect(emoji).toContainText('💡');
 
-  const paragraph = page.locator('affine-callout affine-paragraph');
+  const paragraph = page.locator('lovenotes-callout lovenotes-paragraph');
   await expect(paragraph).toHaveCount(2);
 
-  const vLine = page.locator('affine-callout v-line');
+  const vLine = page.locator('lovenotes-callout v-line');
   await expect(vLine).toHaveCount(2);
   expect(await vLine.nth(0).innerText()).toBe('aaaa');
   expect(await vLine.nth(1).innerText()).toBe('bbbb');
@@ -43,8 +43,8 @@ test('press backspace after callout block', async ({ page }) => {
   await type(page, '/callout\n');
   await pressArrowDown(page);
 
-  const paragraph = page.locator('affine-paragraph');
-  const callout = page.locator('affine-callout');
+  const paragraph = page.locator('lovenotes-paragraph');
+  const callout = page.locator('lovenotes-callout');
   expect(await paragraph.count()).toBe(3);
   expect(await callout.count()).toBe(1);
 
@@ -58,8 +58,8 @@ test('press backspace after callout block', async ({ page }) => {
 });
 
 test('press backspace in callout block', async ({ page }) => {
-  const paragraph = page.locator('affine-paragraph');
-  const callout = page.locator('affine-callout');
+  const paragraph = page.locator('lovenotes-paragraph');
+  const callout = page.locator('lovenotes-callout');
 
   await type(page, '/callout\n');
 

@@ -1,10 +1,10 @@
-import type { TextAlign } from '@blocksuite/affine-model';
+import type { TextAlign } from '@blocksuite/lovenotes-model';
 import {
   getBlockSelectionsCommand,
   getImageSelectionsCommand,
   getSelectedBlocksCommand,
   getTextSelectionCommand,
-} from '@blocksuite/affine-shared/commands';
+} from '@blocksuite/lovenotes-shared/commands';
 import {
   type BlockComponent,
   type Command,

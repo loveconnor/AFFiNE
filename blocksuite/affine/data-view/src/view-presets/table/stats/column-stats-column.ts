@@ -3,7 +3,7 @@ import {
   type MenuConfig,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { ArrowDownSmallIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -25,7 +25,7 @@ const styles = css`
     cursor: pointer;
     transition: opacity 230ms ease;
     font-size: 12px;
-    color: var(--affine-text-secondary-color);
+    color: var(--lovenotes-text-secondary-color);
     display: flex;
     opacity: 0;
     justify-content: flex-end;
@@ -34,14 +34,14 @@ const styles = css`
     user-select: none;
   }
 
-  affine-database-column-stats:hover .stats-cell {
+  lovenotes-database-column-stats:hover .stats-cell {
     opacity: 1;
   }
 
   .stats-cell:hover,
-  affine-database-column-stats-cell.active .stats-cell {
+  lovenotes-database-column-stats-cell.active .stats-cell {
     opacity: 1;
-    background-color: var(--affine-hover-color);
+    background-color: var(--lovenotes-hover-color);
     cursor: pointer;
   }
 
@@ -59,11 +59,11 @@ const styles = css`
 
   .stats-cell .label {
     text-transform: uppercase;
-    color: var(--affine-text-secondary-color);
+    color: var(--lovenotes-text-secondary-color);
   }
 
   .stats-cell .value {
-    color: var(--affine-text-primary-color);
+    color: var(--lovenotes-text-primary-color);
   }
 `;
 
@@ -241,6 +241,6 @@ export class DatabaseColumnStatsCell extends SignalWatcher(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-database-column-stats-cell': DatabaseColumnStatsCell;
+    'lovenotes-database-column-stats-cell': DatabaseColumnStatsCell;
   }
 }

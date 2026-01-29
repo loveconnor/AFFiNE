@@ -1,13 +1,13 @@
-import { toast } from '@affine/component';
-import type { TagMeta } from '@affine/core/components/page-list';
-import type { CollectionMeta } from '@affine/core/modules/collection';
-import track, { type EventArgs } from '@affine/track';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { scrollbarStyle } from '@blocksuite/affine/shared/styles';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { openFilesWith } from '@blocksuite/affine/shared/utils';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { DocMeta } from '@blocksuite/affine/store';
+import { toast } from '@lovenotes/component';
+import type { TagMeta } from '@lovenotes/core/components/page-list';
+import type { CollectionMeta } from '@lovenotes/core/modules/collection';
+import track, { type EventArgs } from '@lovenotes/track';
+import { SignalWatcher, WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import { scrollbarStyle } from '@blocksuite/lovenotes/shared/styles';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes/shared/theme';
+import { openFilesWith } from '@blocksuite/lovenotes/shared/utils';
+import { ShadowlessElement } from '@blocksuite/lovenotes/std';
+import type { DocMeta } from '@blocksuite/lovenotes/store';
 import {
   CollectionsIcon,
   ImageIcon,
@@ -90,7 +90,7 @@ export class ChatPanelAddPopover extends SignalWatcher(
       border: none;
       line-height: 20px;
       height: 20px;
-      font-size: var(--affine-font-sm);
+      font-size: var(--lovenotes-font-sm);
       color: ${unsafeCSSVarV2('text/primary')};
       flex-grow: 1;
       background-color: transparent;
@@ -108,7 +108,7 @@ export class ChatPanelAddPopover extends SignalWatcher(
     }
     .no-result {
       padding: 4px;
-      font-size: var(--affine-font-sm);
+      font-size: var(--lovenotes-font-sm);
       color: ${unsafeCSSVarV2('text/secondary')};
     }
     .menu-items icon-button {

@@ -1,14 +1,14 @@
 import {
   DomElementRendererExtension,
   type DomRenderer,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   type ConnectorElementModel,
   ConnectorMode,
   DefaultTheme,
   type LocalConnectorElementModel,
   type PointStyle,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import { PointLocation, SVGPathBuilder } from '@blocksuite/global/gfx';
 
 import { isConnectorWithLabel } from '../connector-manager';

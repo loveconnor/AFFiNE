@@ -3,7 +3,7 @@ import { type BlockStdScope, StdIdentifier } from '@blocksuite/std';
 import { Extension, Slice, type SliceSnapshot } from '@blocksuite/store';
 
 export const DndApiExtensionIdentifier = createIdentifier<DNDAPIExtension>(
-  'AffineDndApiIdentifier'
+  'LoveNotesDndApiIdentifier'
 );
 
 export class DNDAPIExtension extends Extension {
@@ -34,7 +34,7 @@ export class DNDAPIExtension extends Extension {
     blockId?: string;
     props?: Record<string, unknown>;
   }): SliceSnapshot | null {
-    const { docId, flavour = 'affine:embed-linked-doc', blockId } = options;
+    const { docId, flavour = 'lovenotes:embed-linked-doc', blockId } = options;
 
     const slice = Slice.fromModels(this.std.store, []);
     const job = this.std.store.getTransformer();
@@ -47,7 +47,7 @@ export class DNDAPIExtension extends Extension {
       ...options.props,
       ...(blockId ? { blockId } : {}),
       pageId: docId,
-      style: flavour === 'affine:embed-synced-doc' ? 'syncedDoc' : 'vertical',
+      style: flavour === 'lovenotes:embed-synced-doc' ? 'syncedDoc' : 'vertical',
     };
     return {
       ...snapshot,

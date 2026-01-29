@@ -7,18 +7,18 @@ import {
   Overlay,
   OverlayIdentifier,
   type RoughCanvas,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   type ConnectionOverlay,
   ConnectorPathGenerator,
-} from '@blocksuite/affine-gfx-connector';
-import { mountShapeTextEditor } from '@blocksuite/affine-gfx-shape';
+} from '@blocksuite/lovenotes-gfx-connector';
+import { mountShapeTextEditor } from '@blocksuite/lovenotes-gfx-shape';
 import type {
   Connection,
   ConnectorElementModel,
   NoteBlockModel,
   ShapeType,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   DEFAULT_NOTE_HEIGHT,
   DefaultTheme,
@@ -26,10 +26,10 @@ import {
   MindmapElementModel,
   ShapeElementModel,
   shapeMethods,
-} from '@blocksuite/affine-model';
-import { ToolbarRegistryIdentifier } from '@blocksuite/affine-shared/services';
-import type { SelectedRect } from '@blocksuite/affine-shared/types';
-import { handleNativeRangeAtPoint } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { ToolbarRegistryIdentifier } from '@blocksuite/lovenotes-shared/services';
+import type { SelectedRect } from '@blocksuite/lovenotes-shared/types';
+import { handleNativeRangeAtPoint } from '@blocksuite/lovenotes-shared/utils';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import type { Bound, IVec } from '@blocksuite/global/gfx';
 import { Vec } from '@blocksuite/global/gfx';
@@ -126,23 +126,23 @@ export class EdgelessAutoComplete extends WithDisposable(LitElement) {
 
     .edgeless-auto-complete-arrow-wrapper:hover
       > .edgeless-auto-complete-arrow {
-      border: 1px solid var(--affine-border-color);
-      box-shadow: var(--affine-shadow-1);
-      background: var(--affine-white);
+      border: 1px solid var(--lovenotes-border-color);
+      box-shadow: var(--lovenotes-shadow-1);
+      background: var(--lovenotes-white);
     }
 
     .edgeless-auto-complete-arrow-wrapper
       > .edgeless-auto-complete-arrow:hover {
-      border: 1px solid var(--affine-white-10);
-      box-shadow: var(--affine-shadow-1);
-      background: var(--affine-primary-color);
+      border: 1px solid var(--lovenotes-white-10);
+      box-shadow: var(--lovenotes-shadow-1);
+      background: var(--lovenotes-primary-color);
     }
 
     .edgeless-auto-complete-arrow-wrapper.mindmap
       > .edgeless-auto-complete-arrow {
-      border: 1px solid var(--affine-border-color);
-      box-shadow: var(--affine-shadow-1);
-      background: var(--affine-white);
+      border: 1px solid var(--lovenotes-border-color);
+      box-shadow: var(--lovenotes-shadow-1);
+      background: var(--lovenotes-white);
 
       transition:
         background 0.3s linear,
@@ -151,9 +151,9 @@ export class EdgelessAutoComplete extends WithDisposable(LitElement) {
 
     .edgeless-auto-complete-arrow-wrapper.mindmap
       > .edgeless-auto-complete-arrow:hover {
-      border: 1px solid var(--affine-white-10);
-      box-shadow: var(--affine-shadow-1);
-      background: var(--affine-primary-color);
+      border: 1px solid var(--lovenotes-white-10);
+      box-shadow: var(--lovenotes-shadow-1);
+      background: var(--lovenotes-primary-color);
     }
 
     .edgeless-auto-complete-arrow svg {

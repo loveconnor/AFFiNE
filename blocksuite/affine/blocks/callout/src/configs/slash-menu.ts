@@ -1,6 +1,6 @@
-import { focusBlockEnd } from '@blocksuite/affine-shared/commands';
-import { isInsideBlockByFlavour } from '@blocksuite/affine-shared/utils';
-import { type SlashMenuConfig } from '@blocksuite/affine-widget-slash-menu';
+import { focusBlockEnd } from '@blocksuite/lovenotes-shared/commands';
+import { isInsideBlockByFlavour } from '@blocksuite/lovenotes-shared/utils';
+import { type SlashMenuConfig } from '@blocksuite/lovenotes-widget-slash-menu';
 import { FontIcon } from '@blocksuite/icons/lit';
 
 import { calloutTooltip } from './tooltips';
@@ -21,7 +21,7 @@ export const calloutSlashMenuConfig: SlashMenuConfig = {
         return !isInsideBlockByFlavour(
           model.store,
           model,
-          'affine:edgeless-text'
+          'lovenotes:edgeless-text'
         );
       },
       action: ({ model, std }) => {
@@ -32,13 +32,13 @@ export const calloutSlashMenuConfig: SlashMenuConfig = {
         const index = parent.children.indexOf(model);
         if (index === -1) return;
         const calloutId = store.addBlock(
-          'affine:callout',
+          'lovenotes:callout',
           {},
           parent,
           index + 1
         );
         if (!calloutId) return;
-        const paragraphId = store.addBlock('affine:paragraph', {}, calloutId);
+        const paragraphId = store.addBlock('lovenotes:paragraph', {}, calloutId);
         if (!paragraphId) return;
         std.host.updateComplete
           .then(() => {

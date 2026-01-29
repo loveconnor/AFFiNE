@@ -1,9 +1,9 @@
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import type { Tag } from '@affine/core/modules/tag';
-import { TagService } from '@affine/core/modules/tag';
-import { useI18n } from '@affine/i18n';
+import type { NodeOperation } from '@lovenotes/core/desktop/components/navigation-panel';
+import { GlobalContextService } from '@lovenotes/core/modules/global-context';
+import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
+import type { Tag } from '@lovenotes/core/modules/tag';
+import { TagService } from '@lovenotes/core/modules/tag';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';

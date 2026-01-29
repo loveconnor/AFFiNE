@@ -1,4 +1,4 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import type { RootBlockModel } from '@blocksuite/lovenotes-model';
 import { BLOCK_ID_ATTR, type BlockComponent } from '@blocksuite/std';
 import type { BlockModel } from '@blocksuite/store';
 
@@ -29,11 +29,11 @@ export function getRootByElement(
 export function getPageRootByElement(
   element: Element
 ): BlockComponent<RootBlockModel> | null {
-  return element.closest('affine-page-root');
+  return element.closest('lovenotes-page-root');
 }
 
 export function getEdgelessRootByElement(
   element: Element
 ): BlockComponent<RootBlockModel> | null {
-  return element.closest('affine-edgeless-root');
+  return element.closest('lovenotes-edgeless-root');
 }

@@ -27,7 +27,7 @@ import {
   TextAlign,
   TextAlignSchema,
   TextVerticalAlign,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   z,
   ZodDefault,
@@ -180,9 +180,9 @@ export const NodePropsSchema = z.object({
   highlighter: HighlighterSchema,
   text: TextSchema,
   mindmap: MindmapSchema,
-  'affine:edgeless-text': EdgelessTextZodSchema,
-  'affine:note': NoteZodSchema,
-  'affine:frame': FrameZodSchema,
+  'lovenotes:edgeless-text': EdgelessTextZodSchema,
+  'lovenotes:note': NoteZodSchema,
+  'lovenotes:frame': FrameZodSchema,
   // shapes
   'shape:diamond': ShapeSchema,
   'shape:ellipse': ShapeSchema,

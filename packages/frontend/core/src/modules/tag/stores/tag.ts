@@ -1,4 +1,4 @@
-import type { DocsPropertiesMeta } from '@blocksuite/affine/store';
+import type { DocsPropertiesMeta } from '@blocksuite/lovenotes/store';
 import {
   LiveData,
   Store,

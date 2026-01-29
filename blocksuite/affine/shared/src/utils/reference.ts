@@ -1,4 +1,4 @@
-import type { ReferenceInfo } from '@blocksuite/affine-model';
+import type { ReferenceInfo } from '@blocksuite/lovenotes-model';
 import cloneDeep from 'lodash-es/cloneDeep';
 
 /**

@@ -1,7 +1,7 @@
-import { ConfirmIcon } from '@blocksuite/affine-components/icons';
-import { toast } from '@blocksuite/affine-components/toast';
-import type { AttachmentBlockModel } from '@blocksuite/affine-model';
-import { CitationProvider } from '@blocksuite/affine-shared/services';
+import { ConfirmIcon } from '@blocksuite/lovenotes-components/icons';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import type { AttachmentBlockModel } from '@blocksuite/lovenotes-model';
+import { CitationProvider } from '@blocksuite/lovenotes-shared/services';
 import type { EditorHost } from '@blocksuite/std';
 import { html } from 'lit';
 import { createRef, ref } from 'lit/directives/ref.js';
@@ -71,9 +71,9 @@ export const RenameModal = ({
     <style>
       ${renameStyles}
     </style>
-    <div class="affine-attachment-rename-overlay-mask" @click="${abort}"></div>
-    <div class="affine-attachment-rename-container">
-      <div class="affine-attachment-rename-input-wrapper">
+    <div class="lovenotes-attachment-rename-overlay-mask" @click="${abort}"></div>
+    <div class="lovenotes-attachment-rename-container">
+      <div class="lovenotes-attachment-rename-input-wrapper">
         <input
           ${ref(inputRef)}
           type="text"
@@ -81,10 +81,10 @@ export const RenameModal = ({
           @input=${onInput}
           @keydown=${onKeydown}
         />
-        <span class="affine-attachment-rename-extension">${extension}</span>
+        <span class="lovenotes-attachment-rename-extension">${extension}</span>
       </div>
       <editor-icon-button
-        class="affine-confirm-button"
+        class="lovenotes-confirm-button"
         .iconSize=${'24px'}
         @click=${onConfirm}
       >

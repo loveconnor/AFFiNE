@@ -1,17 +1,17 @@
 import {
   AFFINE_SCROLL_ANCHORING_WIDGET,
-  AffineScrollAnchoringWidget,
+  LoveNotesScrollAnchoringWidget,
 } from './scroll-anchoring.js';
 
 export function effects() {
   customElements.define(
     AFFINE_SCROLL_ANCHORING_WIDGET,
-    AffineScrollAnchoringWidget
+    LoveNotesScrollAnchoringWidget
   );
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    [AFFINE_SCROLL_ANCHORING_WIDGET]: AffineScrollAnchoringWidget;
+    [AFFINE_SCROLL_ANCHORING_WIDGET]: LoveNotesScrollAnchoringWidget;
   }
 }

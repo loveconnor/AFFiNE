@@ -18,11 +18,11 @@ public class WorkspaceBlobQuotaQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["id": id] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("id")]),
     ] }
@@ -33,11 +33,11 @@ public class WorkspaceBlobQuotaQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("quota", Quota.self),
@@ -49,28 +49,28 @@ public class WorkspaceBlobQuotaQuery: GraphQLQuery {
       /// Workspace.Quota
       ///
       /// Parent Type: `WorkspaceQuotaType`
-      public struct Quota: AffineGraphQL.SelectionSet {
+      public struct Quota: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceQuotaType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceQuotaType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("blobLimit", AffineGraphQL.SafeInt.self),
+          .field("blobLimit", LoveNotesGraphQL.SafeInt.self),
           .field("humanReadable", HumanReadable.self),
         ] }
 
-        public var blobLimit: AffineGraphQL.SafeInt { __data["blobLimit"] }
+        public var blobLimit: LoveNotesGraphQL.SafeInt { __data["blobLimit"] }
         public var humanReadable: HumanReadable { __data["humanReadable"] }
 
         /// Workspace.Quota.HumanReadable
         ///
         /// Parent Type: `WorkspaceQuotaHumanReadableType`
-        public struct HumanReadable: AffineGraphQL.SelectionSet {
+        public struct HumanReadable: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceQuotaHumanReadableType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceQuotaHumanReadableType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("blobLimit", String.self),

@@ -1,4 +1,4 @@
-import type { SpaceType } from '@affine/nbstore';
+import type { SpaceType } from '@lovenotes/nbstore';
 
 import type { MainEventRegister } from '../../type';
 import { ensureSQLiteDB } from './ensure-db';

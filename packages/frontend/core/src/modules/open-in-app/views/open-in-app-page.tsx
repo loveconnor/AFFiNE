@@ -1,7 +1,7 @@
-import { Button } from '@affine/component/ui/button';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { appIconMap, appNames } from '@affine/core/utils/channel';
-import { Trans, useI18n } from '@affine/i18n';
+import { Button } from '@lovenotes/component/ui/button';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { appIconMap, appNames } from '@lovenotes/core/utils/channel';
+import { Trans, useI18n } from '@lovenotes/i18n';
 import { LocalWorkspaceIcon, Logo1Icon } from '@blocksuite/icons/rc';
 import { useServiceOptional } from '@toeverything/infra';
 import type { MouseEvent } from 'react';
@@ -19,7 +19,7 @@ interface OpenAppProps {
 }
 const channel = BUILD_CONFIG.appBuildType;
 const url =
-  'https://affine.pro/download' + (channel !== 'stable' ? '/beta-canary' : '');
+  'https://lovenotes.pro/download' + (channel !== 'stable' ? '/beta-canary' : '');
 
 export const OpenInAppPage = ({
   urlToOpen,
@@ -60,13 +60,13 @@ export const OpenInAppPage = ({
   return (
     <div className={styles.root}>
       <div className={styles.topNav}>
-        <a href="/" rel="noreferrer" className={styles.affineLogo}>
+        <a href="/" rel="noreferrer" className={styles.lovenotesLogo}>
           <Logo1Icon width={24} height={24} />
         </a>
 
         <div className={styles.topNavLinks}>
           <a
-            href="https://affine.pro"
+            href="https://lovenotes.pro"
             target="_blank"
             rel="noreferrer"
             className={styles.topNavLink}
@@ -74,7 +74,7 @@ export const OpenInAppPage = ({
             Official Website
           </a>
           <a
-            href="https://affine.pro/blog"
+            href="https://lovenotes.pro/blog"
             target="_blank"
             rel="noreferrer"
             className={styles.topNavLink}
@@ -82,7 +82,7 @@ export const OpenInAppPage = ({
             Blog
           </a>
           <a
-            href="https://affine.pro/about-us"
+            href="https://lovenotes.pro/about-us"
             target="_blank"
             rel="noreferrer"
             className={styles.topNavLink}
@@ -92,7 +92,7 @@ export const OpenInAppPage = ({
         </div>
 
         <Button onClick={openDownloadLink}>
-          {t['com.affine.auth.open.affine.download-app']()}
+          {t['com.lovenotes.auth.open.lovenotes.download-app']()}
         </Button>
       </div>
 
@@ -101,11 +101,11 @@ export const OpenInAppPage = ({
 
         <div className={styles.prompt}>
           {mode === 'open-doc' ? (
-            <Trans i18nKey="com.affine.auth.open.affine.open-doc-prompt">
+            <Trans i18nKey="com.lovenotes.auth.open.lovenotes.open-doc-prompt">
               This doc is now opened in {appName}
             </Trans>
           ) : (
-            <Trans i18nKey="com.affine.auth.open.affine.prompt">
+            <Trans i18nKey="com.lovenotes.auth.open.lovenotes.prompt">
               Open {appName} app now
             </Trans>
           )}
@@ -119,7 +119,7 @@ export const OpenInAppPage = ({
               target="_blank"
               rel="noreferrer"
             >
-              {t['com.affine.auth.open.affine.doc.open-here']()}
+              {t['com.lovenotes.auth.open.lovenotes.doc.open-here']()}
             </a>
           )}
           <a
@@ -128,7 +128,7 @@ export const OpenInAppPage = ({
             target="_blank"
             rel="noreferrer"
           >
-            {t['com.affine.auth.open.affine.try-again']()}
+            {t['com.lovenotes.auth.open.lovenotes.try-again']()}
           </a>
         </div>
       </div>
@@ -139,12 +139,12 @@ export const OpenInAppPage = ({
             className={styles.editSettingsLink}
             onClick={goToAppearanceSetting}
           >
-            {t['com.affine.auth.open.affine.doc.edit-settings']()}
+            {t['com.lovenotes.auth.open.lovenotes.doc.edit-settings']()}
           </button>
 
           <div className={styles.docFooterText}>
             <LocalWorkspaceIcon width={16} height={16} />
-            {t['com.affine.auth.open.affine.doc.footer-text']()}
+            {t['com.lovenotes.auth.open.lovenotes.doc.footer-text']()}
           </div>
         </div>
       ) : null}

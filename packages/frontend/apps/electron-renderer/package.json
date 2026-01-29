@@ -1,22 +1,22 @@
 {
-  "name": "@affine/electron-renderer",
+  "name": "@lovenotes/electron-renderer",
   "private": true,
   "version": "0.26.0",
   "type": "module",
   "scripts": {
-    "build": "affine bundle",
-    "dev": "affine bundle --dev"
+    "build": "lovenotes bundle",
+    "dev": "lovenotes bundle --dev"
   },
   "dependencies": {
-    "@affine/component": "workspace:*",
-    "@affine/core": "workspace:*",
-    "@affine/debug": "workspace:*",
-    "@affine/electron-api": "workspace:*",
-    "@affine/i18n": "workspace:*",
-    "@affine/nbstore": "workspace:*",
-    "@affine/track": "workspace:*",
-    "@blocksuite/affine": "workspace:*",
+    "@blocksuite/lovenotes": "workspace:*",
     "@emotion/react": "^11.14.0",
+    "@lovenotes/component": "workspace:*",
+    "@lovenotes/core": "workspace:*",
+    "@lovenotes/debug": "workspace:*",
+    "@lovenotes/electron-api": "workspace:*",
+    "@lovenotes/i18n": "workspace:*",
+    "@lovenotes/nbstore": "workspace:*",
+    "@lovenotes/track": "workspace:*",
     "@sentry/react": "^9.47.1",
     "@toeverything/infra": "workspace:*",
     "@toeverything/theme": "^1.1.23",
@@ -30,7 +30,7 @@
     "webm-muxer": "^5.0.3"
   },
   "devDependencies": {
-    "@affine-tools/utils": "workspace:*",
+    "@lovenotes-tools/utils": "workspace:*",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
     "cross-env": "^10.1.0",

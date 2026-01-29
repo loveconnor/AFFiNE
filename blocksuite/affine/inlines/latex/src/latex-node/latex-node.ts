@@ -1,6 +1,6 @@
-import { createLitPortal } from '@blocksuite/affine-components/portal';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import { createLitPortal } from '@blocksuite/lovenotes-components/portal';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
   type BlockComponent,
@@ -18,19 +18,19 @@ import katex from 'katex';
 import { css, html, render } from 'lit';
 import { property } from 'lit/decorators.js';
 
-export class AffineLatexNode extends SignalWatcher(
+export class LoveNotesLatexNode extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = css`
-    affine-latex-node {
+    lovenotes-latex-node {
       display: inline-block;
     }
 
-    affine-latex-node .affine-latex {
+    lovenotes-latex-node .lovenotes-latex {
       white-space: nowrap;
       word-break: break-word;
       color: ${unsafeCSSVar('textPrimaryColor')};
-      fill: var(--affine-icon-color);
+      fill: var(--lovenotes-icon-color);
       border-radius: 4px;
       text-decoration: none;
       cursor: pointer;
@@ -42,14 +42,14 @@ export class AffineLatexNode extends SignalWatcher(
       padding: 0 4px;
       margin: 0 2px;
     }
-    affine-latex-node .affine-latex:hover {
+    lovenotes-latex-node .lovenotes-latex:hover {
       background: ${unsafeCSSVar('hoverColor')};
     }
-    affine-latex-node .affine-latex[data-selected='true'] {
+    lovenotes-latex-node .lovenotes-latex[data-selected='true'] {
       background: ${unsafeCSSVar('hoverColor')};
     }
 
-    affine-latex-node .error-placeholder {
+    lovenotes-latex-node .error-placeholder {
       display: flex;
       padding: 2px 4px;
       justify-content: center;
@@ -66,7 +66,7 @@ export class AffineLatexNode extends SignalWatcher(
       line-height: normal;
     }
 
-    affine-latex-node .placeholder {
+    lovenotes-latex-node .placeholder {
       display: flex;
       padding: 2px 4px;
       justify-content: center;
@@ -175,7 +175,7 @@ export class AffineLatexNode extends SignalWatcher(
   }
 
   override render() {
-    return html`<span class="affine-latex" data-selected=${this.selected}
+    return html`<span class="lovenotes-latex" data-selected=${this.selected}
       ><div class="latex-container"></div>
       <v-text .str=${ZERO_WIDTH_FOR_EMBED_NODE}></v-text
     ></span>`;
@@ -208,7 +208,7 @@ export class AffineLatexNode extends SignalWatcher(
       abortController: this._editorAbortController,
       shadowDom: false,
       portalStyles: {
-        zIndex: 'var(--affine-z-index-popover)',
+        zIndex: 'var(--lovenotes-z-index-popover)',
       },
     });
 
@@ -244,12 +244,12 @@ export class AffineLatexNode extends SignalWatcher(
   }
 
   @property({ attribute: false })
-  accessor delta: DeltaInsert<AffineTextAttributes> = {
+  accessor delta: DeltaInsert<LoveNotesTextAttributes> = {
     insert: ZERO_WIDTH_FOR_EMPTY_LINE,
   };
 
   @property({ attribute: false })
-  accessor editor!: InlineEditor<AffineTextAttributes>;
+  accessor editor!: InlineEditor<LoveNotesTextAttributes>;
 
   @property({ attribute: false })
   accessor endOffset!: number;

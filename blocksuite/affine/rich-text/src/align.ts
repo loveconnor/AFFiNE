@@ -1,4 +1,4 @@
-import { TextAlign } from '@blocksuite/affine-model';
+import { TextAlign } from '@blocksuite/lovenotes-model';
 import {
   TextAlignCenterIcon,
   TextAlignLeftIcon,

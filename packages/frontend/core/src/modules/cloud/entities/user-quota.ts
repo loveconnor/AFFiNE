@@ -1,4 +1,4 @@
-import type { QuotaQuery } from '@affine/graphql';
+import type { QuotaQuery } from '@lovenotes/graphql';
 import {
   catchErrorInto,
   effect,

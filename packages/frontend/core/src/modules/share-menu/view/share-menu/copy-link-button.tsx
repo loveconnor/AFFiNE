@@ -1,11 +1,11 @@
-import { Button, Menu, MenuItem, MenuTrigger } from '@affine/component';
+import { Button, Menu, MenuItem, MenuTrigger } from '@lovenotes/component';
 import {
   getSelectedNodes,
   useSharingUrl,
-} from '@affine/core/components/hooks/affine/use-share-url';
-import { EditorService } from '@affine/core/modules/editor';
-import { useI18n } from '@affine/i18n';
-import type { DocMode } from '@blocksuite/affine/model';
+} from '@lovenotes/core/components/hooks/lovenotes/use-share-url';
+import { EditorService } from '@lovenotes/core/modules/editor';
+import { useI18n } from '@lovenotes/i18n';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import { BlockIcon, EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
@@ -64,7 +64,7 @@ export const CopyLinkButton = ({
             secondary: secondary,
           })}
         >
-          {t['com.affine.share-menu.copy']()}
+          {t['com.lovenotes.share-menu.copy']()}
         </span>
         {BUILD_CONFIG.isDesktopEdition && (
           <span
@@ -87,21 +87,21 @@ export const CopyLinkButton = ({
               onSelect={onCopyPageLink}
               data-testid="share-link-menu-copy-page"
             >
-              {t['com.affine.share-menu.copy.page']()}
+              {t['com.lovenotes.share-menu.copy.page']()}
             </MenuItem>
             <MenuItem
               prefixIcon={<EdgelessIcon />}
               onSelect={onCopyEdgelessLink}
               data-testid="share-link-menu-copy-edgeless"
             >
-              {t['com.affine.share-menu.copy.edgeless']()}
+              {t['com.lovenotes.share-menu.copy.edgeless']()}
             </MenuItem>
             <MenuItem
               prefixIcon={<BlockIcon />}
               onSelect={onCopyBlockLink}
               disabled={blockIds.length + elementIds.length === 0}
             >
-              {t['com.affine.share-menu.copy.block']()}
+              {t['com.lovenotes.share-menu.copy.block']()}
             </MenuItem>
           </>
         }

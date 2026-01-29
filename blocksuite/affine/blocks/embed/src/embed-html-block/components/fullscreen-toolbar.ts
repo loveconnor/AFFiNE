@@ -2,8 +2,8 @@ import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { EditPropsStore } from '@blocksuite/lovenotes-shared/services';
 import {
   CopyIcon,
   DoneIcon,
@@ -45,9 +45,9 @@ export class EmbedHtmlFullscreenToolbar extends LitElement {
     }
 
     .fullscreen-toolbar-container {
-      background: var(--affine-background-overlay-panel-color);
-      box-shadow: var(--affine-menu-shadow);
-      border: 1px solid var(--affine-border-color);
+      background: var(--lovenotes-background-overlay-panel-color);
+      box-shadow: var(--lovenotes-menu-shadow);
+      border: 1px solid var(--lovenotes-border-color);
       border-radius: 40px;
 
       display: flex;
@@ -62,7 +62,7 @@ export class EmbedHtmlFullscreenToolbar extends LitElement {
 
     .short-v-divider {
       display: inline-block;
-      background-color: var(--affine-border-color);
+      background-color: var(--lovenotes-border-color);
       width: 1px;
       height: 36px;
     }

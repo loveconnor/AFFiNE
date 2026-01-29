@@ -1,3 +1,3 @@
-# @affine/error
+# @lovenotes/error
 
-AFFiNE error handler utilities
+LoveNotes error handler utilities

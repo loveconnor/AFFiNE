@@ -11,7 +11,7 @@ import {
   EdgelessNoteBlockComponent,
 } from './note-edgeless-block';
 export function effects() {
-  customElements.define('affine-note', NoteBlockComponent);
+  customElements.define('lovenotes-note', NoteBlockComponent);
   customElements.define(AFFINE_EDGELESS_NOTE, EdgelessNoteBlockComponent);
   customElements.define('edgeless-note-mask', EdgelessNoteMask);
   customElements.define('edgeless-note-background', EdgelessNoteBackground);

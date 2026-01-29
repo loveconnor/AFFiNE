@@ -3,9 +3,9 @@ import {
   getLineHeight,
   getLineWidth,
   truncateTextByWidth,
-} from '@blocksuite/affine-gfx-text';
-import type { GroupElementModel } from '@blocksuite/affine-model';
-import { FontWeight } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-gfx-text';
+import type { GroupElementModel } from '@blocksuite/lovenotes-model';
+import { FontWeight } from '@blocksuite/lovenotes-model';
 import { Bound } from '@blocksuite/global/gfx';
 
 import {

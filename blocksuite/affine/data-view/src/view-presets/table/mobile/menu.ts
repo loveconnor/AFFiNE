@@ -2,7 +2,7 @@ import {
   menu,
   popFilterableSimpleMenu,
   type PopupTarget,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { DeleteIcon, ExpandFullIcon } from '@blocksuite/icons/lit';
 
 import type { SingleView } from '../../../core/index.js';

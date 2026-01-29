@@ -2,9 +2,9 @@ import type {
   DatabaseAllEvents,
   DatabaseAllViewEvents,
   EventTraceFn,
-} from '@blocksuite/affine-shared/services';
-import type { UniComponent } from '@blocksuite/affine-shared/types';
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import type { UniComponent } from '@blocksuite/lovenotes-shared/types';
+import type { InsertToPosition } from '@blocksuite/lovenotes-shared/utils';
 import type { DisposableMember } from '@blocksuite/global/disposable';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {

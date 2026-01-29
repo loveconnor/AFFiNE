@@ -2,11 +2,11 @@ import {
   getBlockSelectionsCommand,
   getSelectedBlocksCommand,
   getTextSelectionCommand,
-} from '@blocksuite/affine-shared/commands';
+} from '@blocksuite/lovenotes-shared/commands';
 import type {
-  AffineInlineEditor,
-  AffineTextAttributes,
-} from '@blocksuite/affine-shared/types';
+  LoveNotesInlineEditor,
+  LoveNotesTextAttributes,
+} from '@blocksuite/lovenotes-shared/types';
 import {
   BLOCK_ID_ATTR,
   type BlockComponent,
@@ -27,9 +27,9 @@ import {
 } from './consts.js';
 
 function getCombinedFormatFromInlineEditors(
-  inlineEditors: [AffineInlineEditor, InlineRange | null][]
-): AffineTextAttributes {
-  const formatArr: AffineTextAttributes[] = [];
+  inlineEditors: [LoveNotesInlineEditor, InlineRange | null][]
+): LoveNotesTextAttributes {
+  const formatArr: LoveNotesTextAttributes[] = [];
   inlineEditors.forEach(([inlineEditor, inlineRange]) => {
     if (!inlineRange) return;
 
@@ -41,9 +41,9 @@ function getCombinedFormatFromInlineEditors(
 
   // format will be active only when all inline editors have the same format.
   return formatArr.reduce((acc, cur) => {
-    const newFormat: AffineTextAttributes = {};
+    const newFormat: LoveNotesTextAttributes = {};
     for (const key in acc) {
-      const typedKey = key as keyof AffineTextAttributes;
+      const typedKey = key as keyof LoveNotesTextAttributes;
       if (acc[typedKey] === cur[typedKey]) {
         // This cast is secure because we have checked that the value of the key is the same.
 
@@ -57,12 +57,12 @@ function getCombinedFormatFromInlineEditors(
 function getSelectedInlineEditors(
   blocks: BlockComponent[],
   filter: (
-    inlineRoot: InlineRootElement<AffineTextAttributes>
-  ) => InlineEditor<AffineTextAttributes> | []
+    inlineRoot: InlineRootElement<LoveNotesTextAttributes>
+  ) => InlineEditor<LoveNotesTextAttributes> | []
 ) {
   return blocks.flatMap(el => {
     const inlineRoot = el.querySelector<
-      InlineRootElement<AffineTextAttributes>
+      InlineRootElement<LoveNotesTextAttributes>
     >(`[${INLINE_ROOT_ATTR}]`);
 
     if (inlineRoot) {
@@ -76,9 +76,9 @@ function handleCurrentSelection(
   chain: Chain<InitCommandCtx>,
   handler: (
     type: 'text' | 'block' | 'native',
-    inlineEditors: InlineEditor<AffineTextAttributes>[]
-  ) => { textAttributes: AffineTextAttributes } | boolean | void
-): Chain<InitCommandCtx & { textAttributes: AffineTextAttributes }> {
+    inlineEditors: InlineEditor<LoveNotesTextAttributes>[]
+  ) => { textAttributes: LoveNotesTextAttributes } | boolean | void
+): Chain<InitCommandCtx & { textAttributes: LoveNotesTextAttributes }> {
   return chain.try(chain => [
     // text selection, corresponding to `formatText` command
     chain
@@ -162,7 +162,7 @@ function handleCurrentSelection(
           }
           return false;
         })
-        .map((el): AffineInlineEditor => el.inlineEditor);
+        .map((el): LoveNotesInlineEditor => el.inlineEditor);
 
       const result = handler('native', selectedInlineEditors);
       if (!result) return false;

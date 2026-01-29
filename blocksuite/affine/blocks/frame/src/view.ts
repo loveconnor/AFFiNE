@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { EdgelessClipboardFrameConfig } from './edgeless-clipboard-config';
 import { frameQuickTool } from './edgeless-toolbar';
@@ -15,7 +15,7 @@ import { edgelessNavigatorBgWidget } from './present/navigator-bg-widget';
 import { PresentTool } from './present-tool';
 
 export class FrameViewExtension extends ViewExtensionProvider {
-  override name = 'affine-frame-block';
+  override name = 'lovenotes-frame-block';
 
   override effect(): void {
     super.effect();

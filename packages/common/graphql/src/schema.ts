@@ -2777,7 +2777,7 @@ export interface ServerConfigType {
 }
 
 export enum ServerDeploymentType {
-  Affine = 'Affine',
+  LoveNotes = 'LoveNotes',
   Selfhosted = 'Selfhosted',
 }
 

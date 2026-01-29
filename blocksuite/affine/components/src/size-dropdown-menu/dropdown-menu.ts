@@ -1,4 +1,4 @@
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
+import { stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { DoneIcon } from '@blocksuite/icons/lit';
 import { PropTypes, requiredProperties } from '@blocksuite/std';
@@ -37,30 +37,30 @@ export class SizeDropdownMenu extends SignalWatcher(
 
     editor-menu-action {
       justify-content: space-between;
-      color: var(--affine-icon-color);
+      color: var(--lovenotes-icon-color);
     }
 
     :host([data-type='check']) editor-menu-action[data-selected] {
-      color: var(--affine-primary-color);
+      color: var(--lovenotes-primary-color);
       background-color: unset;
     }
 
     input {
       display: flex;
       align-self: stretch;
-      border: 0.5px solid var(--affine-border-color);
+      border: 0.5px solid var(--lovenotes-border-color);
       border-radius: 8px;
       padding: 4px 8px;
       box-sizing: border-box;
     }
 
     input:focus {
-      outline-color: var(--affine-primary-color);
+      outline-color: var(--lovenotes-primary-color);
       outline-width: 0.5px;
     }
 
     input::placeholder {
-      color: var(--affine-placeholder-color);
+      color: var(--lovenotes-placeholder-color);
     }
   `;
 
@@ -206,6 +206,6 @@ export class SizeDropdownMenu extends SignalWatcher(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-size-dropdown-menu': SizeDropdownMenu;
+    'lovenotes-size-dropdown-menu': SizeDropdownMenu;
   }
 }

@@ -1,11 +1,11 @@
 //
 //  SKUnitProDetailView.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/17/25.
 //
 
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 struct SKUnitProDetailView: View {
@@ -49,7 +49,7 @@ struct SKUnitProDetailView: View {
           if !headerText.isEmpty {
             Text(headerText)
               .font(.system(size: 13))
-              .foregroundColor(AffineColors.textSecondary.color)
+              .foregroundColor(LoveNotesColors.textSecondary.color)
               .contentTransition(.numericText())
               .transition(.opacity)
               .padding(.horizontal, 4)
@@ -62,9 +62,9 @@ struct SKUnitProDetailView: View {
         }
         .clipped()
         .padding(16)
-        .background(AffineColors.layerBackgroundPrimary.color)
+        .background(LoveNotesColors.layerBackgroundPrimary.color)
         .cornerRadius(16)
-        .shadow(color: AffineColors.layerBorder.color.opacity(0.08), radius: 8, y: 2)
+        .shadow(color: LoveNotesColors.layerBorder.color.opacity(0.08), radius: 8, y: 2)
         .padding(16)
       }
       .padding(-16)
@@ -95,7 +95,7 @@ struct SKUnitProDetailView: View {
   SKUnitProDetailView(viewModel: .vmPreviewForPro)
     .padding()
     .background(
-      AffineColors.layerBackgroundSecondary
+      LoveNotesColors.layerBackgroundSecondary
         .color
         .ignoresSafeArea()
     )

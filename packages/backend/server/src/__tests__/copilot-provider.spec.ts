@@ -108,7 +108,7 @@ test.serial.before(async t => {
   }
 
   const user = await models.user.create({
-    email: `${randomUUID()}@affine.pro`,
+    email: `${randomUUID()}@lovenotes.pro`,
   });
   await service.updateConfig(user.id, [
     {
@@ -123,7 +123,7 @@ test.serial.before(async t => {
           coding: 'gpt-5-mini',
           quick_decision_making: 'gpt-5-mini',
           quick_text_generation: 'gpt-5-mini',
-          polish_and_summarize: 'gemini-2.5-flash',
+          polish_and_summarize: 'gpt-5',
         },
       },
     },
@@ -318,7 +318,7 @@ test('should validate markdown list', t => {
 const actions = [
   {
     name: 'Should chat with histories',
-    promptName: ['Chat With AFFiNE AI'],
+    promptName: ['Chat With LoveNotes AI'],
     messages: [
       {
         role: 'user' as const,
@@ -373,11 +373,11 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
   },
   {
     name: 'Should not have citation',
-    promptName: ['Chat With AFFiNE AI'],
+    promptName: ['Chat With LoveNotes AI'],
     messages: [
       {
         role: 'user' as const,
-        content: 'what is AFFiNE AI?',
+        content: 'what is LoveNotes AI?',
         params: {
           files: [
             {
@@ -408,7 +408,7 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
   },
   {
     name: 'Should have citation',
-    promptName: ['Chat With AFFiNE AI'],
+    promptName: ['Chat With LoveNotes AI'],
     messages: [
       {
         role: 'user' as const,
@@ -433,11 +433,11 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
   },
   {
     name: 'stream objects',
-    promptName: ['Chat With AFFiNE AI'],
+    promptName: ['Chat With LoveNotes AI'],
     messages: [
       {
         role: 'user' as const,
-        content: 'what is AFFiNE AI',
+        content: 'what is LoveNotes AI',
       },
     ],
     verifier: (t: ExecutionContext<Tester>, result: string) => {
@@ -453,7 +453,7 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
         role: 'user' as const,
         content: 'transcript the audio',
         attachments: [
-          'https://cdn.affine.pro/copilot-test/MP9qDGuYgnY+ILoEAmHpp3h9Npuw2403EAYMEA.mp3',
+          'https://cdn.lovenotes.pro/copilot-test/MP9qDGuYgnY+ILoEAmHpp3h9Npuw2403EAYMEA.mp3',
         ],
         params: {
           schema: TranscriptionResponseSchema,
@@ -476,7 +476,7 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
         role: 'user' as const,
         content: 'transcript the audio',
         attachments: [
-          'https://cdn.affine.pro/copilot-test/2ed05eo1KvZ2tWB_BAjFo67EAPZZY-w4LylUAw.m4a',
+          'https://cdn.lovenotes.pro/copilot-test/2ed05eo1KvZ2tWB_BAjFo67EAPZZY-w4LylUAw.m4a',
         ],
         params: {
           schema: TranscriptionResponseSchema,
@@ -499,7 +499,7 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
         role: 'user' as const,
         content: 'transcript the audio',
         attachments: [
-          'https://cdn.affine.pro/copilot-test/nC9-e7P85PPI2rU29QWwf8slBNRMy92teLIIMw.opus',
+          'https://cdn.lovenotes.pro/copilot-test/nC9-e7P85PPI2rU29QWwf8slBNRMy92teLIIMw.opus',
         ],
         params: {
           schema: TranscriptionResponseSchema,
@@ -561,7 +561,7 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
       'Make it longer',
       'Make it shorter',
       'Section Edit',
-      'Chat With AFFiNE AI',
+      'Chat With LoveNotes AI',
     ],
     messages: [{ role: 'user' as const, content: TestAssets.SSOT }],
     verifier: (t: ExecutionContext<Tester>, result: string) => {
@@ -578,7 +578,7 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
   },
   {
     promptName: ['Continue writing'],
-    messages: [{ role: 'user' as const, content: TestAssets.AFFiNE }],
+    messages: [{ role: 'user' as const, content: TestAssets.LoveNotes }],
     verifier: (t: ExecutionContext<Tester>, result: string) => {
       assertNotWrappedInCodeBlock(t, result);
       t.assert(result.length > 0, 'should not be empty');
@@ -587,7 +587,7 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
   },
   {
     promptName: ['Brainstorm ideas about this', 'Brainstorm mindmap'],
-    messages: [{ role: 'user' as const, content: TestAssets.AFFiNE }],
+    messages: [{ role: 'user' as const, content: TestAssets.LoveNotes }],
     verifier: (t: ExecutionContext<Tester>, result: string) => {
       assertNotWrappedInCodeBlock(t, result);
       t.assert(checkMDList(result), 'should be a markdown list');
@@ -651,7 +651,7 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
         role: 'user' as const,
         content: '',
         attachments: [
-          'https://cdn.affine.pro/copilot-test/Qgqy9qZT3VGIEuMIotJYoCCH.jpg',
+          'https://cdn.lovenotes.pro/copilot-test/Qgqy9qZT3VGIEuMIotJYoCCH.jpg',
         ],
       },
     ],
@@ -674,7 +674,7 @@ The term **“CRDT”** was first introduced by Marc Shapiro, Nuno Preguiça, Ca
         role: 'user' as const,
         content: '',
         attachments: [
-          'https://cdn.affine.pro/copilot-test/Zkas098lkjdf-908231.jpg',
+          'https://cdn.lovenotes.pro/copilot-test/Zkas098lkjdf-908231.jpg',
         ],
       },
     ],

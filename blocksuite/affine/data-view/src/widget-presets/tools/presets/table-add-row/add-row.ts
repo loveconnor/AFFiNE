@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { PlusIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
@@ -33,7 +33,7 @@ export class DataViewHeaderToolsAddRow extends WidgetBase {
       return;
     }
     return html` <data-view-component-button
-      class="affine-database-toolbar-item new-record"
+      class="lovenotes-database-toolbar-item new-record"
       .onClick="${this.onAddNewRecord}"
       .icon="${PlusIcon()}"
       .text="${IS_MOBILE

@@ -1,12 +1,12 @@
-package app.affine.pro.ai.chat
+package app.lovenotes.pro.ai.chat
 
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import app.affine.pro.AFFiNEApp
-import app.affine.pro.service.GraphQLService
-import app.affine.pro.service.SSEService
-import app.affine.pro.service.WebService
+import app.lovenotes.pro.LoveNotesApp
+import app.lovenotes.pro.service.GraphQLService
+import app.lovenotes.pro.service.SSEService
+import app.lovenotes.pro.service.WebService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -74,7 +74,7 @@ class ChatViewModel @Inject constructor(
                 message = message,
             ).getOrElse {
                 Timber.e(it, "Send message fail.")
-                Toast.makeText(AFFiNEApp.context(), "Loading.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(LoveNotesApp.context(), "Loading.", Toast.LENGTH_SHORT).show()
                 return@launch
             }
             Timber.i("Send message: $messageId")

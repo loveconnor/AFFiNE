@@ -1,9 +1,9 @@
-import { Button, IconButton, Loading, notify } from '@affine/component';
-import { AuthPageContainer } from '@affine/component/auth-components';
-import { SelfhostGenerateLicenseService } from '@affine/core/modules/cloud';
-import { OpenInAppService } from '@affine/core/modules/open-in-app';
-import { copyTextToClipboard } from '@affine/core/utils/clipboard';
-import { Trans, useI18n } from '@affine/i18n';
+import { Button, IconButton, Loading, notify } from '@lovenotes/component';
+import { AuthPageContainer } from '@lovenotes/component/auth-components';
+import { SelfhostGenerateLicenseService } from '@lovenotes/core/modules/cloud';
+import { OpenInAppService } from '@lovenotes/core/modules/open-in-app';
+import { copyTextToClipboard } from '@lovenotes/core/utils/clipboard';
+import { Trans, useI18n } from '@lovenotes/i18n';
 import { CopyIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
@@ -55,7 +55,7 @@ const Success = ({ licenseKey }: { licenseKey: string | null }) => {
   const t = useI18n();
   const openInAppService = useService(OpenInAppService);
 
-  const openAFFiNE = useCallback(() => {
+  const openLoveNotes = useCallback(() => {
     openInAppService.showOpenInAppPage();
   }, [openInAppService]);
 
@@ -68,7 +68,7 @@ const Success = ({ licenseKey }: { licenseKey: string | null }) => {
       .then(success => {
         if (success) {
           notify.success({
-            title: t['com.affine.payment.license-success.copy'](),
+            title: t['com.lovenotes.payment.license-success.copy'](),
           });
         }
       })
@@ -80,10 +80,10 @@ const Success = ({ licenseKey }: { licenseKey: string | null }) => {
 
   const subtitle = (
     <span className={styles.leftContentText}>
-      <span>{t['com.affine.payment.license-success.text-1']()}</span>
+      <span>{t['com.lovenotes.payment.license-success.text-1']()}</span>
       <span>
         <Trans
-          i18nKey={'com.affine.payment.license-success.text-2'}
+          i18nKey={'com.lovenotes.payment.license-success.text-2'}
           components={{
             1: (
               <a
@@ -98,7 +98,7 @@ const Success = ({ licenseKey }: { licenseKey: string | null }) => {
   );
   return (
     <AuthPageContainer
-      title={t['com.affine.payment.license-success.title']()}
+      title={t['com.lovenotes.payment.license-success.title']()}
       subtitle={subtitle}
     >
       <div className={styles.content}>
@@ -112,10 +112,10 @@ const Success = ({ licenseKey }: { licenseKey: string | null }) => {
             onClick={onCopy}
           />
         </div>
-        <div>{t['com.affine.payment.license-success.hint']()}</div>
+        <div>{t['com.lovenotes.payment.license-success.hint']()}</div>
         <div>
-          <Button variant="primary" size="extraLarge" onClick={openAFFiNE}>
-            {t['com.affine.payment.license-success.open-affine']()}
+          <Button variant="primary" size="extraLarge" onClick={openLoveNotes}>
+            {t['com.lovenotes.payment.license-success.open-lovenotes']()}
           </Button>
         </div>
       </div>

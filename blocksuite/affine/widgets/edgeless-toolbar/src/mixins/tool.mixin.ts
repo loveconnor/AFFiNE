@@ -1,4 +1,4 @@
-import type { ColorScheme } from '@blocksuite/affine-model';
+import type { ColorScheme } from '@blocksuite/lovenotes-model';
 import {
   // oxlint-disable-next-line no-unused-vars
   type DisposableClass,

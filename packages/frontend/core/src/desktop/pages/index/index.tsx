@@ -1,11 +1,11 @@
-import { DefaultServerService } from '@affine/core/modules/cloud';
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
-import { WorkspacesService } from '@affine/core/modules/workspace';
+import { DefaultServerService } from '@lovenotes/core/modules/cloud';
+import { DesktopApiService } from '@lovenotes/core/modules/desktop-api';
+import { WorkspacesService } from '@lovenotes/core/modules/workspace';
 import {
   buildShowcaseWorkspace,
   createFirstAppData,
-} from '@affine/core/utils/first-app-data';
-import { ServerFeature } from '@affine/graphql';
+} from '@lovenotes/core/utils/first-app-data';
+import { ServerFeature } from '@lovenotes/graphql';
 import {
   useLiveData,
   useService,
@@ -75,7 +75,7 @@ export const Component = ({
     if (createOnceRef.current) return;
     createOnceRef.current = true;
     // TODO: support selfhosted
-    buildShowcaseWorkspace(workspacesService, 'affine-cloud', 'AFFiNE Cloud')
+    buildShowcaseWorkspace(workspacesService, 'lovenotes-cloud', 'LoveNotes Cloud')
       .then(({ meta, defaultDocId }) => {
         if (defaultDocId) {
           jumpToPage(meta.id, defaultDocId);
@@ -104,14 +104,14 @@ export const Component = ({
     // check is user logged in && has cloud workspace
     if (searchParams.get('initCloud') === 'true') {
       if (loggedIn) {
-        if (list.every(w => w.flavour !== 'affine-cloud')) {
+        if (list.every(w => w.flavour !== 'lovenotes-cloud')) {
           createCloudWorkspace();
           return;
         }
 
         // open first cloud workspace
         const openWorkspace =
-          list.find(w => w.flavour === 'affine-cloud') ?? list[0];
+          list.find(w => w.flavour === 'lovenotes-cloud') ?? list[0];
         openPage(openWorkspace.id, defaultIndexRoute);
       } else {
         return;

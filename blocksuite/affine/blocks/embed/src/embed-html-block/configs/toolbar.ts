@@ -1,13 +1,13 @@
-import { toast } from '@blocksuite/affine-components/toast';
-import { EmbedHtmlModel } from '@blocksuite/affine-model';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import { EmbedHtmlModel } from '@blocksuite/lovenotes-model';
 import {
   ActionPlacement,
   type ToolbarAction,
   type ToolbarActionGroup,
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
-import { getBlockProps } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { getBlockProps } from '@blocksuite/lovenotes-shared/utils';
 import {
   CaptionIcon,
   CopyIcon,
@@ -96,12 +96,12 @@ const builtinToolbarConfig = {
 
         return html`${keyed(
           model,
-          html`<affine-card-style-dropdown-menu
+          html`<lovenotes-card-style-dropdown-menu
             @toggle=${onToggle}
             .actions=${actions}
             .context=${ctx}
             .style=${model.props.style$}
-          ></affine-card-style-dropdown-menu>`
+          ></lovenotes-card-style-dropdown-menu>`
         )}`;
       },
     } satisfies ToolbarActionGroup<ToolbarAction>,
@@ -186,7 +186,7 @@ export const createBuiltinToolbarConfigExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier(`affine:surface:${name}`),
+      id: BlockFlavourIdentifier(`lovenotes:surface:${name}`),
       config: builtinSurfaceToolbarConfig,
     }),
   ];

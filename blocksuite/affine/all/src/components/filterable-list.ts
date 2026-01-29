@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/filterable-list';
+export * from '@blocksuite/lovenotes-components/filterable-list';

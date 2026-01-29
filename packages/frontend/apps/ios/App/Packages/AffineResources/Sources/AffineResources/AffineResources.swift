@@ -4,22 +4,22 @@
 import SwiftUI
 import UIKit
 
-public enum AffineColors: String, CaseIterable {
-  case buttonPrimary = "affine.button.primary"
-  case iconActivated = "affine.icon.activated"
-  case iconPrimary = "affine.icon.primary"
-  case layerBackgroundPrimary = "affine.layer.background.primary"
-  case layerBackgroundSecondary = "affine.layer.background.secondary"
-  case layerBorder = "affine.layer.border"
-  case layerPureWhite = "affine.layer.pureWhite"
-  case textEmphasis = "affine.text.emphasis"
-  case textLink = "affine.text.link"
-  case textListDotAndNumber = "affine.text.listDotAndNumber"
-  case textPlaceholder = "affine.text.placeholder"
-  case textPrimary = "affine.text.primary"
-  case textPureWhite = "affine.text.pureWhite"
-  case textSecondary = "affine.text.secondary"
-  case textTertiary = "affine.text.tertiary"
+public enum LoveNotesColors: String, CaseIterable {
+  case buttonPrimary = "lovenotes.button.primary"
+  case iconActivated = "lovenotes.icon.activated"
+  case iconPrimary = "lovenotes.icon.primary"
+  case layerBackgroundPrimary = "lovenotes.layer.background.primary"
+  case layerBackgroundSecondary = "lovenotes.layer.background.secondary"
+  case layerBorder = "lovenotes.layer.border"
+  case layerPureWhite = "lovenotes.layer.pureWhite"
+  case textEmphasis = "lovenotes.text.emphasis"
+  case textLink = "lovenotes.text.link"
+  case textListDotAndNumber = "lovenotes.text.listDotAndNumber"
+  case textPlaceholder = "lovenotes.text.placeholder"
+  case textPrimary = "lovenotes.text.primary"
+  case textPureWhite = "lovenotes.text.pureWhite"
+  case textSecondary = "lovenotes.text.secondary"
+  case textTertiary = "lovenotes.text.tertiary"
 
   @available(iOS 13.0, *)
   public var color: Color {
@@ -31,7 +31,7 @@ public enum AffineColors: String, CaseIterable {
   }
 }
 
-public enum AffineIcons: String, CaseIterable {
+public enum LoveNotesIcons: String, CaseIterable {
   case arrowDown = "ArrowDown"
   case arrowUpBig = "ArrowUpBig"
   case box = "Box"

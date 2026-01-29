@@ -2,7 +2,7 @@ import {
   CanvasElementType,
   DefaultTool,
   OverlayIdentifier,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   type Connection,
   type ConnectorElementModel,
@@ -10,8 +10,8 @@ import {
   GroupElementModel,
   ShapeElementModel,
   ShapeType,
-} from '@blocksuite/affine-model';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
 import type { IBound, IVec } from '@blocksuite/global/gfx';
 import { Bound } from '@blocksuite/global/gfx';
 import type { PointerEventState } from '@blocksuite/std';

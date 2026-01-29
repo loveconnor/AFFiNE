@@ -1,10 +1,10 @@
-import { LoadingIcon, OpenIcon } from '@blocksuite/affine-components/icons';
+import { LoadingIcon, OpenIcon } from '@blocksuite/lovenotes-components/icons';
 import type {
   EmbedGithubModel,
   EmbedGithubStyles,
-} from '@blocksuite/affine-model';
-import { ImageProxyService } from '@blocksuite/affine-shared/adapters';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { ImageProxyService } from '@blocksuite/lovenotes-shared/adapters';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import { BlockSelection, isGfxBlockComponent } from '@blocksuite/std';
 import { html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -163,7 +163,7 @@ export class EmbedGithubBlockComponent extends EmbedBlockComponent<
       () => html`
         <div
           class=${classMap({
-            'affine-embed-github-block': true,
+            'lovenotes-embed-github-block': true,
             loading,
             [style]: true,
             edgeless: isGfxBlockComponent(this),
@@ -176,17 +176,17 @@ export class EmbedGithubBlockComponent extends EmbedBlockComponent<
           @click=${this._handleClick}
           @dblclick=${this._handleDoubleClick}
         >
-          <div class="affine-embed-github-content">
-            <div class="affine-embed-github-content-title">
-              <div class="affine-embed-github-content-title-icons">
-                <div class="affine-embed-github-content-title-site-icon">
+          <div class="lovenotes-embed-github-content">
+            <div class="lovenotes-embed-github-content-title">
+              <div class="lovenotes-embed-github-content-title-icons">
+                <div class="lovenotes-embed-github-content-title-site-icon">
                   ${titleIcon}
                 </div>
 
                 ${status && statusText
                   ? html`<div
                       class=${classMap({
-                        'affine-embed-github-content-title-status-icon': true,
+                        'lovenotes-embed-github-content-title-status-icon': true,
                         [githubType]: true,
                         [status]: true,
                         success: statusReason === 'completed',
@@ -200,30 +200,30 @@ export class EmbedGithubBlockComponent extends EmbedBlockComponent<
                   : nothing}
               </div>
 
-              <div class="affine-embed-github-content-title-text">
+              <div class="lovenotes-embed-github-content-title-text">
                 ${titleText}
               </div>
             </div>
 
-            <div class="affine-embed-github-content-description">
+            <div class="lovenotes-embed-github-content-description">
               ${descriptionText}
             </div>
 
             ${githubType === 'issue' && assignees
               ? html`
-                  <div class="affine-embed-github-content-assignees">
+                  <div class="lovenotes-embed-github-content-assignees">
                     <div
-                      class="affine-embed-github-content-assignees-text label"
+                      class="lovenotes-embed-github-content-assignees-text label"
                     >
                       Assignees
                     </div>
 
                     <div
-                      class="affine-embed-github-content-assignees-text users"
+                      class="lovenotes-embed-github-content-assignees-text users"
                     >
                       ${assignees.length === 0
                         ? html`<span
-                            class="affine-embed-github-content-assignees-text-users placeholder"
+                            class="lovenotes-embed-github-content-assignees-text-users placeholder"
                             >No one</span
                           >`
                         : repeat(
@@ -231,7 +231,7 @@ export class EmbedGithubBlockComponent extends EmbedBlockComponent<
                             assignee => assignee,
                             (assignee, index) =>
                               html`<span
-                                  class="affine-embed-github-content-assignees-text-users user"
+                                  class="lovenotes-embed-github-content-assignees-text-users user"
                                   @click=${() =>
                                     this._handleAssigneeClick(assignee)}
                                   >${`@${assignee}`}</span
@@ -243,24 +243,24 @@ export class EmbedGithubBlockComponent extends EmbedBlockComponent<
                 `
               : nothing}
 
-            <div class="affine-embed-github-content-url" @click=${this.open}>
-              <span class="affine-embed-github-content-repo"
+            <div class="lovenotes-embed-github-content-url" @click=${this.open}>
+              <span class="lovenotes-embed-github-content-repo"
                 >${`${owner}/${repo} |`}</span
               >
 
               ${createdAt
-                ? html`<span class="affine-embed-github-content-date"
+                ? html`<span class="lovenotes-embed-github-content-date"
                     >${dateText} |</span
                   >`
                 : nothing}
               <span>github.com</span>
 
-              <div class="affine-embed-github-content-url-icon">
+              <div class="lovenotes-embed-github-content-url-icon">
                 ${OpenIcon}
               </div>
             </div>
           </div>
-          <div class="affine-embed-github-banner">${bannerImage}</div>
+          <div class="lovenotes-embed-github-banner">${bannerImage}</div>
         </div>
       `
     );

@@ -1,4 +1,4 @@
-import { ShapeStyle } from '@blocksuite/affine-model';
+import { ShapeStyle } from '@blocksuite/lovenotes-model';
 import { StyleGeneralIcon, StyleScribbleIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';

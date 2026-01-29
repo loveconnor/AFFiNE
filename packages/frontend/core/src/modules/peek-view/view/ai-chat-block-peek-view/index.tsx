@@ -1,18 +1,18 @@
-import { toReactNode } from '@affine/component';
-import { AIChatBlockPeekViewTemplate } from '@affine/core/blocksuite/ai';
-import type { AIChatBlockModel } from '@affine/core/blocksuite/ai/blocks/ai-chat-block/model/ai-chat-model';
-import { registerAIAppEffects } from '@affine/core/blocksuite/ai/effects/app';
-import { useAIChatConfig } from '@affine/core/components/hooks/affine/use-ai-chat-config';
-import { useAISubscribe } from '@affine/core/components/hooks/affine/use-ai-subscribe';
+import { toReactNode } from '@lovenotes/component';
+import { AIChatBlockPeekViewTemplate } from '@lovenotes/core/blocksuite/ai';
+import type { AIChatBlockModel } from '@lovenotes/core/blocksuite/ai/blocks/ai-chat-block/model/ai-chat-model';
+import { registerAIAppEffects } from '@lovenotes/core/blocksuite/ai/effects/app';
+import { useAIChatConfig } from '@lovenotes/core/components/hooks/lovenotes/use-ai-chat-config';
+import { useAISubscribe } from '@lovenotes/core/components/hooks/lovenotes/use-ai-subscribe';
 import {
   AIDraftService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
-import { AIModelService } from '@affine/core/modules/ai-button/services/models';
-import { ServerService, SubscriptionService } from '@affine/core/modules/cloud';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import type { EditorHost } from '@blocksuite/affine/std';
+} from '@lovenotes/core/modules/ai-button';
+import { AIModelService } from '@lovenotes/core/modules/ai-button/services/models';
+import { ServerService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import type { EditorHost } from '@blocksuite/lovenotes/std';
 import { useFramework } from '@toeverything/infra';
 import { useMemo } from 'react';
 
@@ -32,8 +32,8 @@ export const AIChatBlockPeekView = ({
 
   const framework = useFramework();
   const serverService = framework.get(ServerService);
-  const affineFeatureFlagService = framework.get(FeatureFlagService);
-  const affineWorkspaceDialogService = framework.get(WorkspaceDialogService);
+  const lovenotesFeatureFlagService = framework.get(FeatureFlagService);
+  const lovenotesWorkspaceDialogService = framework.get(WorkspaceDialogService);
   const aiDraftService = framework.get(AIDraftService);
   const aiToolsConfigService = framework.get(AIToolsConfigService);
   const subscriptionService = framework.get(SubscriptionService);
@@ -48,8 +48,8 @@ export const AIChatBlockPeekView = ({
       searchMenuConfig,
       reasoningConfig,
       serverService,
-      affineFeatureFlagService,
-      affineWorkspaceDialogService,
+      lovenotesFeatureFlagService,
+      lovenotesWorkspaceDialogService,
       aiDraftService,
       aiToolsConfigService,
       subscriptionService,
@@ -64,8 +64,8 @@ export const AIChatBlockPeekView = ({
     searchMenuConfig,
     reasoningConfig,
     serverService,
-    affineFeatureFlagService,
-    affineWorkspaceDialogService,
+    lovenotesFeatureFlagService,
+    lovenotesWorkspaceDialogService,
     aiDraftService,
     aiToolsConfigService,
     subscriptionService,

@@ -5,7 +5,7 @@ import {
 } from '@blocksuite/store';
 
 export const DividerBlockSchema = defineBlockSchema({
-  flavour: 'affine:divider',
+  flavour: 'lovenotes:divider',
   metadata: {
     version: 1,
     role: 'content',

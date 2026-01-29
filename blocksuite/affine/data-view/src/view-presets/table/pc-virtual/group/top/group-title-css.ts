@@ -1,4 +1,4 @@
-import { cssVarV2 } from '@blocksuite/affine-shared/theme';
+import { cssVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { css } from '@emotion/css';
 
 export const groupHeaderCount = css({
@@ -6,7 +6,7 @@ export const groupHeaderCount = css({
   width: '20px',
   height: '20px',
   borderRadius: '4px',
-  backgroundColor: 'var(--affine-background-secondary-color)',
+  backgroundColor: 'var(--lovenotes-background-secondary-color)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

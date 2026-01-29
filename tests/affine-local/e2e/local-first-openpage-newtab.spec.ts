@@ -1,13 +1,13 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@lovenotes-test/kit/playwright';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   getPageByTitle,
   getPageOperationButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { getCurrentDocIdFromUrl } from '@affine-test/kit/utils/url';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { getCurrentDocIdFromUrl } from '@lovenotes-test/kit/utils/url';
 import { expect } from '@playwright/test';
 
 test('click btn new page and open in tab', async ({ page, workspace }) => {
@@ -118,19 +118,19 @@ test('ctrl click embedded doc link and open in new tab', async ({ page }) => {
   );
 
   const referenceNode = page.locator(
-    'affine-reference:has-text("this is a new page")'
+    'lovenotes-reference:has-text("this is a new page")'
   );
 
   // hover on the reference node and change it to embedded card mode
   await referenceNode.hover();
 
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const toolbar = page.locator('lovenotes-toolbar-widget editor-toolbar');
 
   await expect(toolbar).toBeVisible();
   await toolbar.getByRole('button', { name: 'Switch view' }).click();
   await page.getByRole('button', { name: 'Card view' }).click();
 
-  const embededDocBlock = page.locator('affine-embed-linked-doc-block');
+  const embededDocBlock = page.locator('lovenotes-embed-linked-doc-block');
 
   await expect(embededDocBlock).toBeVisible();
 

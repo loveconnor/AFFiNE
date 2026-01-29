@@ -18,11 +18,11 @@ public class WorkspaceQuotaQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["id": id] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("id")]),
     ] }
@@ -33,11 +33,11 @@ public class WorkspaceQuotaQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("quota", Quota.self),
@@ -49,18 +49,18 @@ public class WorkspaceQuotaQuery: GraphQLQuery {
       /// Workspace.Quota
       ///
       /// Parent Type: `WorkspaceQuotaType`
-      public struct Quota: AffineGraphQL.SelectionSet {
+      public struct Quota: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceQuotaType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceQuotaType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("name", String.self),
-          .field("blobLimit", AffineGraphQL.SafeInt.self),
-          .field("storageQuota", AffineGraphQL.SafeInt.self),
-          .field("usedStorageQuota", AffineGraphQL.SafeInt.self),
-          .field("historyPeriod", AffineGraphQL.SafeInt.self),
+          .field("blobLimit", LoveNotesGraphQL.SafeInt.self),
+          .field("storageQuota", LoveNotesGraphQL.SafeInt.self),
+          .field("usedStorageQuota", LoveNotesGraphQL.SafeInt.self),
+          .field("historyPeriod", LoveNotesGraphQL.SafeInt.self),
           .field("memberLimit", Int.self),
           .field("memberCount", Int.self),
           .field("overcapacityMemberCount", Int.self),
@@ -68,10 +68,10 @@ public class WorkspaceQuotaQuery: GraphQLQuery {
         ] }
 
         public var name: String { __data["name"] }
-        public var blobLimit: AffineGraphQL.SafeInt { __data["blobLimit"] }
-        public var storageQuota: AffineGraphQL.SafeInt { __data["storageQuota"] }
-        public var usedStorageQuota: AffineGraphQL.SafeInt { __data["usedStorageQuota"] }
-        public var historyPeriod: AffineGraphQL.SafeInt { __data["historyPeriod"] }
+        public var blobLimit: LoveNotesGraphQL.SafeInt { __data["blobLimit"] }
+        public var storageQuota: LoveNotesGraphQL.SafeInt { __data["storageQuota"] }
+        public var usedStorageQuota: LoveNotesGraphQL.SafeInt { __data["usedStorageQuota"] }
+        public var historyPeriod: LoveNotesGraphQL.SafeInt { __data["historyPeriod"] }
         public var memberLimit: Int { __data["memberLimit"] }
         public var memberCount: Int { __data["memberCount"] }
         public var overcapacityMemberCount: Int { __data["overcapacityMemberCount"] }
@@ -80,11 +80,11 @@ public class WorkspaceQuotaQuery: GraphQLQuery {
         /// Workspace.Quota.HumanReadable
         ///
         /// Parent Type: `WorkspaceQuotaHumanReadableType`
-        public struct HumanReadable: AffineGraphQL.SelectionSet {
+        public struct HumanReadable: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceQuotaHumanReadableType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceQuotaHumanReadableType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("name", String.self),

@@ -1,18 +1,18 @@
-import { Path, skipOnboarding, test } from '@affine-test/kit/playwright';
+import { Path, skipOnboarding, test } from '@lovenotes-test/kit/playwright';
 import {
   addUserToWorkspace,
   createRandomUser,
   enableCloudWorkspace,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
+} from '@lovenotes-test/kit/utils/cloud';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickUserInfoCard } from '@affine-test/kit/utils/setting';
-import { clickSideBarSettingButton } from '@affine-test/kit/utils/sidebar';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { clickUserInfoCard } from '@lovenotes-test/kit/utils/setting';
+import { clickSideBarSettingButton } from '@lovenotes-test/kit/utils/sidebar';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 let user: {
@@ -144,7 +144,7 @@ test('can sync svg between different browsers', async ({ page, browser }) => {
   // upload local svg
 
   const slashMenu = page.locator(`.slash-menu`);
-  const image = page.locator('affine-image');
+  const image = page.locator('lovenotes-image');
 
   await page.evaluate(async () => {
     // https://github.com/toeverything/blocksuite/blob/master/packages/blocks/src/_common/utils/filesys.ts#L20
@@ -168,8 +168,8 @@ test('can sync svg between different browsers', async ({ page, browser }) => {
   await expect(image).toBeVisible();
 
   // the user should see the svg
-  // get the image src under "affine-image img"
-  const src1 = await page.locator('affine-image img').getAttribute('src');
+  // get the image src under "lovenotes-image img"
+  const src1 = await page.locator('lovenotes-image img').getAttribute('src');
   expect(src1).not.toBeNull();
 
   // fetch the actual src1 resource in the browser
@@ -189,8 +189,8 @@ test('can sync svg between different browsers', async ({ page, browser }) => {
     await page2.goto(page.url());
 
     // second user should see the svg
-    // get the image src under "affine-image img"
-    const src2 = await page2.locator('affine-image img').getAttribute('src');
+    // get the image src under "lovenotes-image img"
+    const src2 = await page2.locator('lovenotes-image img').getAttribute('src');
     expect(src2).not.toBeNull();
 
     // fetch the actual src2 resource in the browser

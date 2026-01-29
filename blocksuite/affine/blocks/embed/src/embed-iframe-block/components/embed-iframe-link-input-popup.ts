@@ -1,8 +1,8 @@
 import {
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { CloseIcon } from '@blocksuite/icons/lit';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, nothing, unsafeCSS } from 'lit';
@@ -59,16 +59,16 @@ export class EmbedIframeLinkInputPopup extends EmbedIframeLinkInputBase {
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      color: var(--affine-icon-color);
+      color: var(--lovenotes-icon-color);
       border-radius: 4px;
     }
     .popup-close-button:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
 
     .title {
       /* Client/h6 */
-      font-size: var(--affine-font-base);
+      font-size: var(--lovenotes-font-base);
       font-style: normal;
       font-weight: 500;
       line-height: 24px;
@@ -80,7 +80,7 @@ export class EmbedIframeLinkInputPopup extends EmbedIframeLinkInputBase {
       font-feature-settings:
         'liga' off,
         'clig' off;
-      font-size: var(--affine-font-sm);
+      font-size: var(--lovenotes-font-sm);
       font-style: normal;
       font-weight: 400;
       line-height: 22px;
@@ -102,8 +102,8 @@ export class EmbedIframeLinkInputPopup extends EmbedIframeLinkInputBase {
       }
 
       .link-input:focus {
-        border-color: var(--affine-blue-700);
-        box-shadow: var(--affine-active-shadow);
+        border-color: var(--lovenotes-blue-700);
+        box-shadow: var(--lovenotes-active-shadow);
         outline: none;
       }
       .link-input::placeholder {

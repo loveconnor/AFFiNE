@@ -1,7 +1,7 @@
 import {
   type ToolbarAction,
   ToolbarContext,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import { PropTypes, requiredProperties } from '@blocksuite/std';
 import type { ReadonlySignal, Signal } from '@preact/signals-core';
@@ -81,6 +81,6 @@ export class ViewDropdownMenu extends SignalWatcher(LitElement) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-view-dropdown-menu': ViewDropdownMenu;
+    'lovenotes-view-dropdown-menu': ViewDropdownMenu;
   }
 }

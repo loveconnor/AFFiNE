@@ -1,7 +1,7 @@
 import {
   AttachmentBlockSchema,
   FootNoteReferenceParamsSchema,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
@@ -9,7 +9,7 @@ import {
   getFootnoteDefinitionText,
   isFootnoteDefinitionNode,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 
 const isAttachmentFootnoteDefinitionNode = (node: MarkdownAST) => {

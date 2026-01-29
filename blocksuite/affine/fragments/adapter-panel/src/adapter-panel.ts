@@ -1,4 +1,4 @@
-import type { Store, TransformerMiddleware } from '@blocksuite/affine/store';
+import type { Store, TransformerMiddleware } from '@blocksuite/lovenotes/store';
 import {
   type HtmlAdapter,
   HtmlAdapterFactoryIdentifier,
@@ -6,7 +6,7 @@ import {
   MarkdownAdapterFactoryIdentifier,
   type PlainTextAdapter,
   PlainTextAdapterFactoryIdentifier,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { provide } from '@lit/context';
 import { effect, signal } from '@preact/signals-core';
@@ -20,7 +20,7 @@ import {
   ADAPTERS,
 } from './config';
 
-export const AFFINE_ADAPTER_PANEL = 'affine-adapter-panel';
+export const AFFINE_ADAPTER_PANEL = 'lovenotes-adapter-panel';
 
 export class AdapterPanel extends SignalWatcher(WithDisposable(LitElement)) {
   static override styles = css`
@@ -34,7 +34,7 @@ export class AdapterPanel extends SignalWatcher(WithDisposable(LitElement)) {
     .adapters-container {
       width: 100%;
       height: 100%;
-      background-color: var(--affine-background-primary-color);
+      background-color: var(--lovenotes-background-primary-color);
       box-sizing: border-box;
       font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
     }
@@ -152,10 +152,10 @@ export class AdapterPanel extends SignalWatcher(WithDisposable(LitElement)) {
   override render() {
     return html`
       <div class="adapters-container">
-        <affine-adapter-panel-header
+        <lovenotes-adapter-panel-header
           .updateActiveContent=${this._updateActiveContent}
-        ></affine-adapter-panel-header>
-        <affine-adapter-panel-body></affine-adapter-panel-body>
+        ></lovenotes-adapter-panel-header>
+        <lovenotes-adapter-panel-body></lovenotes-adapter-panel-body>
       </div>
     `;
   }

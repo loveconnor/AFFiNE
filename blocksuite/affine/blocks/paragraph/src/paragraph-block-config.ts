@@ -1,4 +1,4 @@
-import type { ParagraphBlockModel } from '@blocksuite/affine-model';
+import type { ParagraphBlockModel } from '@blocksuite/lovenotes-model';
 import { ConfigExtensionFactory } from '@blocksuite/std';
 
 export interface ParagraphBlockConfig {
@@ -6,4 +6,4 @@ export interface ParagraphBlockConfig {
 }
 
 export const ParagraphBlockConfigExtension =
-  ConfigExtensionFactory<ParagraphBlockConfig>('affine:paragraph');
+  ConfigExtensionFactory<ParagraphBlockConfig>('lovenotes:paragraph');

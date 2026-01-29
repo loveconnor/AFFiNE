@@ -1,7 +1,7 @@
-import { getDocTitleByEditorHost } from '@blocksuite/affine-fragment-doc-title';
-import { NoteDisplayMode } from '@blocksuite/affine-model';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
-import type { Viewport } from '@blocksuite/affine-shared/types';
+import { getDocTitleByEditorHost } from '@blocksuite/lovenotes-fragment-doc-title';
+import { NoteDisplayMode } from '@blocksuite/lovenotes-model';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
+import type { Viewport } from '@blocksuite/lovenotes-shared/types';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { clamp } from '@blocksuite/global/gfx';
 import type { EditorHost } from '@blocksuite/std';
@@ -91,7 +91,7 @@ function highlightBlock(host: EditorHost, blockId: string) {
 
   const rootComponent = host.querySelector<
     HTMLElement & { viewport: Viewport }
-  >('affine-page-root');
+  >('lovenotes-page-root');
   if (!rootComponent) return emptyClear;
 
   if (!rootComponent.viewport) {
@@ -123,7 +123,7 @@ function highlightBlock(host: EditorHost, blockId: string) {
     left: `${left - offsetX + scrollLeft}px`,
     width: `${width}px`,
     height: `${height}px`,
-    background: 'var(--affine-hover-color)',
+    background: 'var(--lovenotes-hover-color)',
     borderRadius: '4px',
     display: 'block',
   });

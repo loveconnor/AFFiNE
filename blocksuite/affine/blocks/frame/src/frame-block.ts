@@ -1,11 +1,11 @@
-import { OverlayIdentifier } from '@blocksuite/affine-block-surface';
+import { OverlayIdentifier } from '@blocksuite/lovenotes-block-surface';
 import {
   DefaultTheme,
   type FrameBlockModel,
   FrameBlockSchema,
   isTransparent,
-} from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import { Bound } from '@blocksuite/global/gfx';
 import { GfxBlockComponent } from '@blocksuite/std';
 import {
@@ -96,7 +96,7 @@ export class FrameBlockComponent extends GfxBlockComponent<FrameBlockModel> {
 
     return html`
       <div
-        class="affine-frame-container"
+        class="lovenotes-frame-container"
         style=${styleMap({
           zIndex: `${frameIndex}`,
           backgroundColor,
@@ -119,7 +119,7 @@ export class FrameBlockComponent extends GfxBlockComponent<FrameBlockModel> {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-frame': FrameBlockComponent;
+    'lovenotes-frame': FrameBlockComponent;
   }
 }
 

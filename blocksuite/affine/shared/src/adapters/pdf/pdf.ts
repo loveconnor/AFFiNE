@@ -2,7 +2,7 @@ import type {
   TableCellSerialized,
   TableColumn,
   TableRow,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { ServiceProvider } from '@blocksuite/global/di';
 import {
   BaseAdapter,
@@ -52,16 +52,16 @@ import {
 
 pdfMake.fonts = {
   Inter: {
-    normal: 'https://cdn.affine.pro/fonts/Inter-Regular.woff',
-    bold: 'https://cdn.affine.pro/fonts/Inter-SemiBold.woff',
-    italics: 'https://cdn.affine.pro/fonts/Inter-Italic.woff',
-    bolditalics: 'https://cdn.affine.pro/fonts/Inter-SemiBoldItalic.woff',
+    normal: 'https://cdn.lovenotes.pro/fonts/Inter-Regular.woff',
+    bold: 'https://cdn.lovenotes.pro/fonts/Inter-SemiBold.woff',
+    italics: 'https://cdn.lovenotes.pro/fonts/Inter-Italic.woff',
+    bolditalics: 'https://cdn.lovenotes.pro/fonts/Inter-SemiBoldItalic.woff',
   },
   SarasaGothicCL: {
-    normal: 'https://cdn.affine.pro/fonts/SarasaGothicCL-Regular.ttf',
-    bold: 'https://cdn.affine.pro/fonts/SarasaGothicCL-Regular.ttf',
-    italics: 'https://cdn.affine.pro/fonts/SarasaGothicCL-Regular.ttf',
-    bolditalics: 'https://cdn.affine.pro/fonts/SarasaGothicCL-Regular.ttf',
+    normal: 'https://cdn.lovenotes.pro/fonts/SarasaGothicCL-Regular.ttf',
+    bold: 'https://cdn.lovenotes.pro/fonts/SarasaGothicCL-Regular.ttf',
+    italics: 'https://cdn.lovenotes.pro/fonts/SarasaGothicCL-Regular.ttf',
+    bolditalics: 'https://cdn.lovenotes.pro/fonts/SarasaGothicCL-Regular.ttf',
   },
 };
 
@@ -197,7 +197,7 @@ export class PdfAdapter extends BaseAdapter<PdfAdapterFile> {
         ? parentTextStart
         : depth * BLOCK_CHILDREN_CONTAINER_PADDING_LEFT;
 
-    if (flavour === 'affine:paragraph') {
+    if (flavour === 'lovenotes:paragraph') {
       content.push(
         ...(await this._createParagraphContent(
           props,
@@ -208,7 +208,7 @@ export class PdfAdapter extends BaseAdapter<PdfAdapterFile> {
           depth
         ))
       );
-    } else if (flavour === 'affine:list') {
+    } else if (flavour === 'lovenotes:list') {
       content.push(
         ...(await this._createListContent(
           props,
@@ -218,9 +218,9 @@ export class PdfAdapter extends BaseAdapter<PdfAdapterFile> {
           block
         ))
       );
-    } else if (flavour === 'affine:code') {
+    } else if (flavour === 'lovenotes:code') {
       content.push(...this._createCodeContent(props, textContent, baseIndent));
-    } else if (flavour === 'affine:divider') {
+    } else if (flavour === 'lovenotes:divider') {
       content.push({
         canvas: [
           {
@@ -235,7 +235,7 @@ export class PdfAdapter extends BaseAdapter<PdfAdapterFile> {
         ],
         margin: [0, 10, 0, 10],
       });
-    } else if (flavour === 'affine:callout') {
+    } else if (flavour === 'lovenotes:callout') {
       const calloutContent = await this._createCalloutContent(
         props,
         textContent,
@@ -246,14 +246,14 @@ export class PdfAdapter extends BaseAdapter<PdfAdapterFile> {
       );
       content.push(...calloutContent);
       return content;
-    } else if (flavour === 'affine:bookmark') {
+    } else if (flavour === 'lovenotes:bookmark') {
       content.push({
         text: props.title || props.url || '',
         link: props.url,
         color: PDF_COLORS.link,
         margin: [0, 2, 0, 2],
       });
-    } else if (flavour === 'affine:image') {
+    } else if (flavour === 'lovenotes:image') {
       const imageContent = await this._createImageContent(
         props.sourceId,
         props.caption || '',
@@ -263,7 +263,7 @@ export class PdfAdapter extends BaseAdapter<PdfAdapterFile> {
         props.height
       );
       content.push(...imageContent);
-    } else if (flavour === 'affine:latex') {
+    } else if (flavour === 'lovenotes:latex') {
       content.push({
         text: props.latex || '',
         margin: [baseIndent, 5, 0, 5],
@@ -271,17 +271,17 @@ export class PdfAdapter extends BaseAdapter<PdfAdapterFile> {
         color: PDF_COLORS.textMuted,
         alignment: 'center',
       });
-    } else if (flavour === 'affine:database') {
+    } else if (flavour === 'lovenotes:database') {
       content.push(...this._createDatabaseContent(props));
       return content;
-    } else if (flavour === 'affine:table') {
+    } else if (flavour === 'lovenotes:table') {
       const tableContent = await this._createTableContent(props);
       if (tableContent) {
         content.push(tableContent);
       }
     } else if (
-      flavour === 'affine:embed-linked-doc' ||
-      flavour === 'affine:embed-synced-doc'
+      flavour === 'lovenotes:embed-linked-doc' ||
+      flavour === 'lovenotes:embed-synced-doc'
     ) {
       content.push(this._createLinkedDocContent(props, baseIndent));
     } else if (hasTextContent(textContent)) {
@@ -293,18 +293,18 @@ export class PdfAdapter extends BaseAdapter<PdfAdapterFile> {
 
     if (block.children && block.children.length) {
       const shouldIncrementDepth =
-        flavour !== 'affine:page' && flavour !== 'affine:note';
+        flavour !== 'lovenotes:page' && flavour !== 'lovenotes:note';
       const childDepth = shouldIncrementDepth ? depth + 1 : depth;
 
       const childListNestingLevel =
-        flavour === 'affine:list'
+        flavour === 'lovenotes:list'
           ? listNestingLevel + 1
           : parentTextStart > 0
             ? listNestingLevel
             : 0;
 
       const childParentTextStart =
-        flavour === 'affine:list'
+        flavour === 'lovenotes:list'
           ? baseIndent + BLOCK_CHILDREN_CONTAINER_PADDING_LEFT
           : parentTextStart > 0
             ? parentTextStart
@@ -444,7 +444,7 @@ export class PdfAdapter extends BaseAdapter<PdfAdapterFile> {
         : textContent
       : textContent;
 
-    const blueColor = resolveCssVariable('var(--affine-blue-700)') || '#1E96EB';
+    const blueColor = resolveCssVariable('var(--lovenotes-blue-700)') || '#1E96EB';
 
     const iconCell: Content = prefixSvg
       ? {
@@ -566,8 +566,8 @@ export class PdfAdapter extends BaseAdapter<PdfAdapterFile> {
     const backgroundColorName = props.backgroundColorName || 'grey';
     const colorVar =
       backgroundColorName === 'default' || backgroundColorName === 'grey'
-        ? 'var(--affine-v2-block-callout-background-grey)'
-        : `var(--affine-v2-block-callout-background-${backgroundColorName})`;
+        ? 'var(--lovenotes-v2-block-callout-background-grey)'
+        : `var(--lovenotes-v2-block-callout-background-${backgroundColorName})`;
     const backgroundColor = resolveCssVariable(colorVar) || '#f5f5f5';
 
     const calloutContent: Content[] = [];

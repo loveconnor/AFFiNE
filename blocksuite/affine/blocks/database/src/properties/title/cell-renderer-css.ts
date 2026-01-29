@@ -1,4 +1,4 @@
-import { cssVarV2 } from '@blocksuite/affine-shared/theme';
+import { cssVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { css } from '@emotion/css';
 
 export const titleCellStyle = css({
@@ -27,5 +27,5 @@ export const headerAreaIconStyle = css({
   borderRadius: '4px',
   marginTop: '2px',
   color: cssVarV2.icon.primary,
-  backgroundColor: 'var(--affine-background-secondary-color)',
+  backgroundColor: 'var(--lovenotes-background-secondary-color)',
 });

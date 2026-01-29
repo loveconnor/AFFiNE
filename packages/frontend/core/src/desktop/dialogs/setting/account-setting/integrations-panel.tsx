@@ -1,7 +1,7 @@
-import { Button, Loading, Menu, MenuItem, notify } from '@affine/component';
-import { GraphQLService } from '@affine/core/modules/cloud';
-import { UrlService } from '@affine/core/modules/url';
-import { UserFriendlyError } from '@affine/error';
+import { Button, Loading, Menu, MenuItem, notify } from '@lovenotes/component';
+import { GraphQLService } from '@lovenotes/core/modules/cloud';
+import { UrlService } from '@lovenotes/core/modules/url';
+import { UserFriendlyError } from '@lovenotes/error';
 import {
   type CalendarAccountsQuery,
   calendarAccountsQuery,
@@ -9,8 +9,8 @@ import {
   CalendarProviderType,
   linkCalendarAccountMutation,
   unlinkCalendarAccountMutation,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
 import { GoogleIcon, LinkIcon, TodayIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import {
@@ -161,14 +161,14 @@ export const IntegrationsPanel = () => {
 
   return (
     <CollapsibleWrapper
-      title={t['com.affine.integration.integrations']()}
-      caption={t['com.affine.integration.setting.description']()}
+      title={t['com.lovenotes.integration.integrations']()}
+      caption={t['com.lovenotes.integration.setting.description']()}
     >
       <div className={styles.panel}>
         <div className={styles.panelHeader}>
           <div className={styles.panelTitle}>
             <TodayIcon />
-            <span>{t['com.affine.integration.calendar.name']()}</span>
+            <span>{t['com.lovenotes.integration.calendar.name']()}</span>
           </div>
           {providerOptions.length ? (
             <Menu

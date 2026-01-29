@@ -2,7 +2,7 @@ import {
   menu,
   popFilterableSimpleMenu,
   type PopupTarget,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import {
   CopyIcon,
   DeleteIcon,

@@ -7,10 +7,10 @@ global:
     # hosts for ingress rules
     # e.g.
     # hosts:
-    #  - affine.pro
-    #  - www.affine.pro
+    #  - lovenotes.pro
+    #  - www.lovenotes.pro
     hosts:
-      - affine.pro
+      - lovenotes.pro
     tls: []
   secret:
     secretName: 'server-private-key'
@@ -19,7 +19,7 @@ global:
     user: 'postgres'
     host: 'pg-postgresql'
     port: '5432'
-    name: 'affine'
+    name: 'lovenotes'
     password: ''
   redis:
     host: 'redis-master'
@@ -33,11 +33,11 @@ global:
     username: ''
     password: ''
   docService:
-    name: 'affine-doc'
+    name: 'lovenotes-doc'
     port: 3020
   deployment:
     # change to 'selfhosted' and 'unknown' if this chart is ready to be used for selfhosted deployment
-    type: 'affine'
+    type: 'lovenotes'
     platform: 'gcp'
 
 graphql:
@@ -45,27 +45,27 @@ graphql:
     type: ClusterIP
     port: 3000
     annotations:
-      cloud.google.com/backend-config: '{"default": "affine-api-backendconfig"}'
+      cloud.google.com/backend-config: '{"default": "lovenotes-api-backendconfig"}'
 
 sync:
   service:
     type: ClusterIP
     port: 3010
     annotations:
-      cloud.google.com/backend-config: '{"default": "affine-api-backendconfig"}'
+      cloud.google.com/backend-config: '{"default": "lovenotes-api-backendconfig"}'
 
 renderer:
   service:
     type: ClusterIP
     port: 3000
     annotations:
-      cloud.google.com/backend-config: '{"default": "affine-api-backendconfig"}'
+      cloud.google.com/backend-config: '{"default": "lovenotes-api-backendconfig"}'
 
 doc:
   service:
     type: ClusterIP
     annotations:
-      cloud.google.com/backend-config: '{"default": "affine-api-backendconfig"}'
+      cloud.google.com/backend-config: '{"default": "lovenotes-api-backendconfig"}'
 
 web:
   service:

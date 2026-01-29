@@ -1,8 +1,8 @@
-import { Avatar, type AvatarProps } from '@affine/component';
+import { Avatar, type AvatarProps } from '@lovenotes/component';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
+} from '@lovenotes/core/modules/workspace';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect, useLayoutEffect, useState } from 'react';
 

@@ -1,5 +1,5 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import { EdgelessToolbarToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { css, html, LitElement } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 
@@ -25,8 +25,8 @@ export class EdgelessFrameMenu extends EdgelessToolbarToolMixin(LitElement) {
       width: 40px;
       height: 24px;
       border-radius: 4px;
-      border: 1px solid var(--affine-border-color);
-      color: var(--affine-text-primary-color);
+      border: 1px solid var(--lovenotes-border-color);
+      color: var(--lovenotes-text-primary-color);
       line-height: 20px;
       font-weight: 400;
       font-size: 12px;
@@ -50,18 +50,18 @@ export class EdgelessFrameMenu extends EdgelessToolbarToolMixin(LitElement) {
       pointer-events: none;
     }
     .frame-add-button:hover::before {
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
 
     .custom {
       width: 60px;
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
 
     .divider {
       width: 1px;
       height: 20px;
-      background: var(--affine-border-color);
+      background: var(--lovenotes-border-color);
       transform: scaleX(0.5);
     }
   `;

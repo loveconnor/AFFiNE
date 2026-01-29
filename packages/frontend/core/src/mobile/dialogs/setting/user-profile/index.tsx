@@ -1,7 +1,7 @@
-import { Avatar } from '@affine/component';
-import { useSignOut } from '@affine/core/components/hooks/affine/use-sign-out';
-import { AuthService } from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
+import { Avatar } from '@lovenotes/component';
+import { useSignOut } from '@lovenotes/core/components/hooks/lovenotes/use-sign-out';
+import { AuthService } from '@lovenotes/core/modules/cloud';
+import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { type ReactNode } from 'react';
@@ -81,7 +81,7 @@ const UnauthorizedUserProfile = () => {
       onClick={() => globalDialogService.open('sign-in', {})}
       avatar={<Avatar size={48} rounded={4} />}
       title="Sign up / Sign in"
-      caption="Sync with AFFiNE Cloud"
+      caption="Sync with LoveNotes Cloud"
     />
   );
 };

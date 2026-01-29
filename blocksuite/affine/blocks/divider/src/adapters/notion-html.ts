@@ -1,9 +1,9 @@
-import { DividerBlockSchema } from '@blocksuite/affine-model';
+import { DividerBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockNotionHtmlAdapterExtension,
   type BlockNotionHtmlAdapterMatcher,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 
 export const dividerBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatcher =

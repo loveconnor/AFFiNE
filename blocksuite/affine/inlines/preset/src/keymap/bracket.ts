@@ -1,8 +1,8 @@
-import { insertLinkedNode } from '@blocksuite/affine-inline-reference';
-import { CodeBlockModel } from '@blocksuite/affine-model';
-import { getInlineEditorByModel } from '@blocksuite/affine-rich-text';
-import { BRACKET_PAIRS } from '@blocksuite/affine-shared/consts';
-import { createDefaultDoc, matchModels } from '@blocksuite/affine-shared/utils';
+import { insertLinkedNode } from '@blocksuite/lovenotes-inline-reference';
+import { CodeBlockModel } from '@blocksuite/lovenotes-model';
+import { getInlineEditorByModel } from '@blocksuite/lovenotes-rich-text';
+import { BRACKET_PAIRS } from '@blocksuite/lovenotes-shared/consts';
+import { createDefaultDoc, matchModels } from '@blocksuite/lovenotes-shared/utils';
 import {
   type BlockStdScope,
   TextSelection,
@@ -128,7 +128,7 @@ function tryConvertToLinkedDoc(std: BlockStdScope, inlineEditor: InlineEditor) {
   const root = std.store.root;
   if (!root) return false;
   const linkedDocWidgetEle = std.view.getWidget(
-    'affine-linked-doc-widget',
+    'lovenotes-linked-doc-widget',
     root.id
   );
   if (!linkedDocWidgetEle) return false;

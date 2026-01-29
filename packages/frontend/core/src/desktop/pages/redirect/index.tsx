@@ -1,4 +1,4 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@lovenotes/debug';
 import { type LoaderFunction, Navigate, useLoaderData } from 'react-router-dom';
 
 const trustedDomain = [
@@ -10,7 +10,7 @@ const trustedDomain = [
   'youtube.com',
   't.me',
   'reddit.com',
-  'affine.pro',
+  'lovenotes.pro',
 ];
 
 const logger = new DebugLogger('redirect_proxy');

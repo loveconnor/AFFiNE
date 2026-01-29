@@ -1,4 +1,4 @@
-import { NoteBlockModel, RootBlockModel } from '@blocksuite/affine-model';
+import { NoteBlockModel, RootBlockModel } from '@blocksuite/lovenotes-model';
 import { clamp, type Point, type Rect } from '@blocksuite/global/gfx';
 import { BLOCK_ID_ATTR, type BlockComponent } from '@blocksuite/std';
 import { SurfaceBlockModel } from '@blocksuite/std/gfx';
@@ -9,7 +9,7 @@ import { matchModels } from '../model/checker.js';
 
 const ATTR_SELECTOR = `[${BLOCK_ID_ATTR}]`;
 
-// margin-top: calc(var(--affine-paragraph-space) + 24px);
+// margin-top: calc(var(--lovenotes-paragraph-space) + 24px);
 // h1.margin-top = 8px + 24px = 32px;
 const MAX_SPACE = 32;
 const STEPS = MAX_SPACE / 2 / 2;
@@ -150,7 +150,7 @@ export function getClosestBlockComponentByPoint(
       bounds = getRectByBlockComponent(element);
       // Indented paragraphs or list
       childBounds = element
-        .querySelector('.affine-block-children-container')
+        .querySelector('.lovenotes-block-children-container')
         ?.firstElementChild?.getBoundingClientRect();
 
       if (childBounds && childBounds.height) {
@@ -304,7 +304,7 @@ export function getBlockComponentsExcludeSubtrees(
 
 /**
  * Find block element from an `Element[]`.
- * In Chrome/Safari, `document.elementsFromPoint` does not include `affine-image`.
+ * In Chrome/Safari, `document.elementsFromPoint` does not include `lovenotes-image`.
  */
 function findBlockComponent(elements: Element[], parent?: Element) {
   const len = elements.length;
@@ -330,5 +330,5 @@ function findBlockComponent(elements: Element[], parent?: Element) {
  * Gets the rows of the database.
  */
 function getDatabaseBlockRowsElement(element: Element) {
-  return element.querySelector('.affine-database-block-rows');
+  return element.querySelector('.lovenotes-database-block-rows');
 }

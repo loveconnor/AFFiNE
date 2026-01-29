@@ -3,8 +3,8 @@ import {
   GroupElementModel,
   MindmapElementModel,
   ShapeElementModel,
-} from '@blocksuite/affine-model';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-model';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import {
   EdgelessIcon,
   FrameIcon,

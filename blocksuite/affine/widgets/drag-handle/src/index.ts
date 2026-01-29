@@ -9,7 +9,7 @@ export * from './utils';
 export type { DragBlockPayload } from './watchers/drag-event-watcher';
 
 export const dragHandleWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   AFFINE_DRAG_HANDLE_WIDGET,
   literal`${unsafeStatic(AFFINE_DRAG_HANDLE_WIDGET)}`
 );

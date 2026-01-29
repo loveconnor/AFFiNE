@@ -1,5 +1,5 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import { QuickToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import { QuickToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { HandIcon, SelectIcon } from '@blocksuite/icons/lit';
 import { effect } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
@@ -82,10 +82,10 @@ export class EdgelessDefaultToolButton extends QuickToolMixin(LitElement) {
     return html`
       <edgeless-tool-icon-button
         class="edgeless-default-button ${type}"
-        .tooltip=${html`<affine-tooltip-content-with-shortcut
+        .tooltip=${html`<lovenotes-tooltip-content-with-shortcut
           data-tip="${tipInfo.tip}"
           data-shortcut="${tipInfo.shortcut}"
-        ></affine-tooltip-content-with-shortcut>`}
+        ></lovenotes-tooltip-content-with-shortcut>`}
         .tooltipOffset=${17}
         .active=${active}
         .iconContainerPadding=${6}

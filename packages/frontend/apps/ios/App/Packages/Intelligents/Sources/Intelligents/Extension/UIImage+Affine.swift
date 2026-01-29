@@ -1,94 +1,94 @@
-import AffineResources
+import LoveNotesResources
 import UIKit
 
 extension UIImage {
   /// Check circle icon
-  static var affineCheckCircle: UIImage {
-    AffineIcons.checkCircle.uiImage
+  static var lovenotesCheckCircle: UIImage {
+    LoveNotesIcons.checkCircle.uiImage
   }
 
   /// More options icon
-  static var affineMore: UIImage {
-    AffineIcons.more.uiImage
+  static var lovenotesMore: UIImage {
+    LoveNotesIcons.more.uiImage
   }
 
   /// Arrow down icon
-  static var affineArrowDown: UIImage {
-    AffineIcons.arrowDown.uiImage
+  static var lovenotesArrowDown: UIImage {
+    LoveNotesIcons.arrowDown.uiImage
   }
 
   /// Tools icon
-  static var affineTools: UIImage {
-    AffineIcons.tools.uiImage
+  static var lovenotesTools: UIImage {
+    LoveNotesIcons.tools.uiImage
   }
 
   /// Box icon
-  static var affineBox: UIImage {
-    AffineIcons.box.uiImage
+  static var lovenotesBox: UIImage {
+    LoveNotesIcons.box.uiImage
   }
 
   /// Think icon
-  static var affineThink: UIImage {
-    AffineIcons.think.uiImage
+  static var lovenotesThink: UIImage {
+    LoveNotesIcons.think.uiImage
   }
 
   /// Web icon
-  static var affineWeb: UIImage {
-    AffineIcons.web.uiImage
+  static var lovenotesWeb: UIImage {
+    LoveNotesIcons.web.uiImage
   }
 
   /// Calendar icon
-  static var affineCalendar: UIImage {
-    AffineIcons.calendar.uiImage
+  static var lovenotesCalendar: UIImage {
+    LoveNotesIcons.calendar.uiImage
   }
 
   /// Camera icon
-  static var affineCamera: UIImage {
-    AffineIcons.camera.uiImage
+  static var lovenotesCamera: UIImage {
+    LoveNotesIcons.camera.uiImage
   }
 
   /// Close icon
-  static var affineClose: UIImage {
-    AffineIcons.close.uiImage
+  static var lovenotesClose: UIImage {
+    LoveNotesIcons.close.uiImage
   }
 
   /// Big arrow up icon
-  static var affineArrowUpBig: UIImage {
-    AffineIcons.arrowUpBig.uiImage
+  static var lovenotesArrowUpBig: UIImage {
+    LoveNotesIcons.arrowUpBig.uiImage
   }
 
   /// Broom icon
-  static var affineBroom: UIImage {
-    AffineIcons.broom.uiImage
+  static var lovenotesBroom: UIImage {
+    LoveNotesIcons.broom.uiImage
   }
 
   /// Bubble icon
-  static var affineBubble: UIImage {
-    AffineIcons.bubble.uiImage
+  static var lovenotesBubble: UIImage {
+    LoveNotesIcons.bubble.uiImage
   }
 
   /// Image icon
-  static var affineImage: UIImage {
-    AffineIcons.image.uiImage
+  static var lovenotesImage: UIImage {
+    LoveNotesIcons.image.uiImage
   }
 
   /// Page icon
-  static var affinePage: UIImage {
-    AffineIcons.page.uiImage
+  static var lovenotesPage: UIImage {
+    LoveNotesIcons.page.uiImage
   }
 
   /// Plus icon
-  static var affinePlus: UIImage {
-    AffineIcons.plus.uiImage
+  static var lovenotesPlus: UIImage {
+    LoveNotesIcons.plus.uiImage
   }
 
   /// Settings icon
-  static var affineSettings: UIImage {
-    AffineIcons.settings.uiImage
+  static var lovenotesSettings: UIImage {
+    LoveNotesIcons.settings.uiImage
   }
 
   /// Upload icon
-  static var affineUpload: UIImage {
-    AffineIcons.upload.uiImage
+  static var lovenotesUpload: UIImage {
+    LoveNotesIcons.upload.uiImage
   }
 }

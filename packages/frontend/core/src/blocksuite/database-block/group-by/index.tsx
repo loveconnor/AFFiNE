@@ -1,11 +1,11 @@
-import { Avatar, uniReactRoot } from '@affine/component';
+import { Avatar, uniReactRoot } from '@lovenotes/component';
 import {
   createGroupByConfig,
   type GroupRenderProps,
   t,
   ungroups,
-} from '@blocksuite/affine/blocks/database';
-import type { UserService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes/blocks/database';
+import type { UserService } from '@blocksuite/lovenotes-shared/services';
 
 import { useMemberInfo } from '../hooks/use-member-info';
 import {

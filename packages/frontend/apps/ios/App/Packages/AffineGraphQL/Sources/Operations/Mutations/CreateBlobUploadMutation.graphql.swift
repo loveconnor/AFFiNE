@@ -34,11 +34,11 @@ public class CreateBlobUploadMutation: GraphQLMutation {
     "mime": mime
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("createBlobUpload", CreateBlobUpload.self, arguments: [
         "workspaceId": .variable("workspaceId"),
@@ -53,30 +53,30 @@ public class CreateBlobUploadMutation: GraphQLMutation {
     /// CreateBlobUpload
     ///
     /// Parent Type: `BlobUploadInit`
-    public struct CreateBlobUpload: AffineGraphQL.SelectionSet {
+    public struct CreateBlobUpload: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.BlobUploadInit }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.BlobUploadInit }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("method", GraphQLEnum<AffineGraphQL.BlobUploadMethod>.self),
+        .field("method", GraphQLEnum<LoveNotesGraphQL.BlobUploadMethod>.self),
         .field("blobKey", String.self),
         .field("alreadyUploaded", Bool?.self),
         .field("uploadUrl", String?.self),
-        .field("headers", AffineGraphQL.JSONObject?.self),
-        .field("expiresAt", AffineGraphQL.DateTime?.self),
+        .field("headers", LoveNotesGraphQL.JSONObject?.self),
+        .field("expiresAt", LoveNotesGraphQL.DateTime?.self),
         .field("uploadId", String?.self),
         .field("partSize", Int?.self),
         .field("uploadedParts", [UploadedPart]?.self),
       ] }
 
-      public var method: GraphQLEnum<AffineGraphQL.BlobUploadMethod> { __data["method"] }
+      public var method: GraphQLEnum<LoveNotesGraphQL.BlobUploadMethod> { __data["method"] }
       public var blobKey: String { __data["blobKey"] }
       public var alreadyUploaded: Bool? { __data["alreadyUploaded"] }
       public var uploadUrl: String? { __data["uploadUrl"] }
-      public var headers: AffineGraphQL.JSONObject? { __data["headers"] }
-      public var expiresAt: AffineGraphQL.DateTime? { __data["expiresAt"] }
+      public var headers: LoveNotesGraphQL.JSONObject? { __data["headers"] }
+      public var expiresAt: LoveNotesGraphQL.DateTime? { __data["expiresAt"] }
       public var uploadId: String? { __data["uploadId"] }
       public var partSize: Int? { __data["partSize"] }
       public var uploadedParts: [UploadedPart]? { __data["uploadedParts"] }
@@ -84,11 +84,11 @@ public class CreateBlobUploadMutation: GraphQLMutation {
       /// CreateBlobUpload.UploadedPart
       ///
       /// Parent Type: `BlobUploadedPart`
-      public struct UploadedPart: AffineGraphQL.SelectionSet {
+      public struct UploadedPart: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.BlobUploadedPart }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.BlobUploadedPart }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("partNumber", Int.self),

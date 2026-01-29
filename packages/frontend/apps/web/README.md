@@ -1,3 +1,3 @@
 # web
 
-AFFiNE Desktop Edition Web app.
+LoveNotes Desktop Edition Web app.

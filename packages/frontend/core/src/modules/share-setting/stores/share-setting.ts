@@ -1,10 +1,10 @@
-import type { WorkspaceServerService } from '@affine/core/modules/cloud';
+import type { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
 import {
   getWorkspaceConfigQuery,
   setEnableAiMutation,
   setEnableSharingMutation,
   setEnableUrlPreviewMutation,
-} from '@affine/graphql';
+} from '@lovenotes/graphql';
 import { Store } from '@toeverything/infra';
 
 export class WorkspaceShareSettingStore extends Store {

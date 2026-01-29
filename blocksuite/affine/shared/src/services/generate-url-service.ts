@@ -1,4 +1,4 @@
-import type { ReferenceParams } from '@blocksuite/affine-model';
+import type { ReferenceParams } from '@blocksuite/lovenotes-model';
 import { createIdentifier } from '@blocksuite/global/di';
 import type { ExtensionType } from '@blocksuite/store';
 

@@ -1,5 +1,5 @@
-import { Button, IconButton } from '@affine/component';
-import { useI18n } from '@affine/i18n';
+import { Button, IconButton } from '@lovenotes/component';
+import { useI18n } from '@lovenotes/i18n';
 import { ToggleRightIcon } from '@blocksuite/icons/rc';
 import { useLiveData } from '@toeverything/infra';
 import clsx from 'clsx';
@@ -91,8 +91,8 @@ export const DocGroupHeader = ({
       >
         {t[
           isGroupAllSelected
-            ? 'com.affine.page.group-header.clear'
-            : 'com.affine.page.group-header.select-all'
+            ? 'com.lovenotes.page.group-header.clear'
+            : 'com.lovenotes.page.group-header.select-all'
         ]()}
       </Button>
     </div>

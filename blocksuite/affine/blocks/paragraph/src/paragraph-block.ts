@@ -1,22 +1,22 @@
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
-import { TOGGLE_BUTTON_PARENT_CLASS } from '@blocksuite/affine-components/toggle-button';
-import { DefaultInlineManagerExtension } from '@blocksuite/affine-inline-preset';
-import type { ParagraphBlockModel } from '@blocksuite/affine-model';
-import type { RichText } from '@blocksuite/affine-rich-text';
+import { CaptionedBlockComponent } from '@blocksuite/lovenotes-components/caption';
+import { TOGGLE_BUTTON_PARENT_CLASS } from '@blocksuite/lovenotes-components/toggle-button';
+import { DefaultInlineManagerExtension } from '@blocksuite/lovenotes-inline-preset';
+import type { ParagraphBlockModel } from '@blocksuite/lovenotes-model';
+import type { RichText } from '@blocksuite/lovenotes-rich-text';
 import {
   BLOCK_CHILDREN_CONTAINER_PADDING_LEFT,
   EDGELESS_TOP_CONTENTEDITABLE_SELECTOR,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   BlockElementCommentManager,
   CitationProvider,
   DocModeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   calculateCollapsedSiblings,
   getNearestHeadingBefore,
   getViewportElement,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { BlockComponent } from '@blocksuite/std';
 import { TextSelection } from '@blocksuite/std';
 import {
@@ -54,7 +54,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
   private readonly _isInDatabase = () => {
     let parent = this.parentElement;
     while (parent && parent !== document.body) {
-      if (parent.tagName.toLowerCase() === 'affine-database') {
+      if (parent.tagName.toLowerCase() === 'lovenotes-database') {
         return true;
       }
       parent = parent.parentElement;
@@ -91,7 +91,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
   get inEdgelessText() {
     return (
       this.topContenteditableElement?.tagName.toLowerCase() ===
-      'affine-edgeless-text'
+      'lovenotes-edgeless-text'
     );
   }
 
@@ -269,7 +269,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
     });
 
     const children = html`<div
-      class="affine-block-children-container"
+      class="lovenotes-block-children-container"
       style=${styleMap({
         paddingLeft: `${BLOCK_CHILDREN_CONTAINER_PADDING_LEFT}px`,
         display: collapsed ? 'none' : undefined,
@@ -281,15 +281,15 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
     return html`
       ${style}
       <style>
-        .affine-paragraph-block-container[data-has-collapsed-siblings='false']
-          affine-paragraph-heading-icon
+        .lovenotes-paragraph-block-container[data-has-collapsed-siblings='false']
+          lovenotes-paragraph-heading-icon
           .heading-icon {
           transform: translateX(-48px);
         }
       </style>
       <div
         class=${classMap({
-          'affine-paragraph-block-container': true,
+          'lovenotes-paragraph-block-container': true,
           'highlight-comment': this.isCommentHighlighted,
         })}
         style="${textAlignStyle}"
@@ -297,16 +297,16 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
       >
         <div
           class=${classMap({
-            'affine-paragraph-rich-text-wrapper': true,
+            'lovenotes-paragraph-rich-text-wrapper': true,
             [type$.value]: true,
             [TOGGLE_BUTTON_PARENT_CLASS]: true,
           })}
         >
           ${this.model.props.type$.value.startsWith('h')
             ? html`
-                <affine-paragraph-heading-icon
+                <lovenotes-paragraph-heading-icon
                   .model=${this.model}
-                ></affine-paragraph-heading-icon>
+                ></lovenotes-paragraph-heading-icon>
               `
             : nothing}
           ${this.model.props.type$.value.startsWith('h') &&
@@ -355,7 +355,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
                 <div
                   contenteditable="false"
                   class=${classMap({
-                    'affine-paragraph-placeholder': true,
+                    'lovenotes-paragraph-placeholder': true,
                     visible: this._displayPlaceholder.value,
                   })}
                 >
@@ -376,6 +376,6 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
   private accessor _richTextElement: RichText | null = null;
 
   override accessor blockContainerStyles = {
-    margin: 'var(--affine-paragraph-margin, 10px 0)',
+    margin: 'var(--lovenotes-paragraph-margin, 10px 0)',
   };
 }

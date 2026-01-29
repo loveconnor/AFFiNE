@@ -1,4 +1,4 @@
-import { toNumberedList } from '@blocksuite/affine-shared/utils';
+import { toNumberedList } from '@blocksuite/lovenotes-shared/utils';
 import type { Command, EditorHost } from '@blocksuite/std';
 
 export const convertToNumberedListCommand: Command<

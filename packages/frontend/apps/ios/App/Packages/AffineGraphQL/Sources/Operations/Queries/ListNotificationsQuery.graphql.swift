@@ -18,11 +18,11 @@ public class ListNotificationsQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["pagination": pagination] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("currentUser", CurrentUser?.self),
     ] }
@@ -33,11 +33,11 @@ public class ListNotificationsQuery: GraphQLQuery {
     /// CurrentUser
     ///
     /// Parent Type: `UserType`
-    public struct CurrentUser: AffineGraphQL.SelectionSet {
+    public struct CurrentUser: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("notifications", Notifications.self, arguments: ["pagination": .variable("pagination")]),
@@ -49,11 +49,11 @@ public class ListNotificationsQuery: GraphQLQuery {
       /// CurrentUser.Notifications
       ///
       /// Parent Type: `PaginatedNotificationObjectType`
-      public struct Notifications: AffineGraphQL.SelectionSet {
+      public struct Notifications: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PaginatedNotificationObjectType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PaginatedNotificationObjectType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("totalCount", Int.self),
@@ -68,11 +68,11 @@ public class ListNotificationsQuery: GraphQLQuery {
         /// CurrentUser.Notifications.Edge
         ///
         /// Parent Type: `NotificationObjectTypeEdge`
-        public struct Edge: AffineGraphQL.SelectionSet {
+        public struct Edge: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.NotificationObjectTypeEdge }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.NotificationObjectTypeEdge }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("cursor", String.self),
@@ -85,46 +85,46 @@ public class ListNotificationsQuery: GraphQLQuery {
           /// CurrentUser.Notifications.Edge.Node
           ///
           /// Parent Type: `NotificationObjectType`
-          public struct Node: AffineGraphQL.SelectionSet {
+          public struct Node: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.NotificationObjectType }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.NotificationObjectType }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
-              .field("id", AffineGraphQL.ID.self),
-              .field("type", GraphQLEnum<AffineGraphQL.NotificationType>.self),
-              .field("level", GraphQLEnum<AffineGraphQL.NotificationLevel>.self),
+              .field("id", LoveNotesGraphQL.ID.self),
+              .field("type", GraphQLEnum<LoveNotesGraphQL.NotificationType>.self),
+              .field("level", GraphQLEnum<LoveNotesGraphQL.NotificationLevel>.self),
               .field("read", Bool.self),
-              .field("createdAt", AffineGraphQL.DateTime.self),
-              .field("updatedAt", AffineGraphQL.DateTime.self),
-              .field("body", AffineGraphQL.JSONObject.self),
+              .field("createdAt", LoveNotesGraphQL.DateTime.self),
+              .field("updatedAt", LoveNotesGraphQL.DateTime.self),
+              .field("body", LoveNotesGraphQL.JSONObject.self),
             ] }
 
-            public var id: AffineGraphQL.ID { __data["id"] }
+            public var id: LoveNotesGraphQL.ID { __data["id"] }
             /// The type of the notification
-            public var type: GraphQLEnum<AffineGraphQL.NotificationType> { __data["type"] }
+            public var type: GraphQLEnum<LoveNotesGraphQL.NotificationType> { __data["type"] }
             /// The level of the notification
-            public var level: GraphQLEnum<AffineGraphQL.NotificationLevel> { __data["level"] }
+            public var level: GraphQLEnum<LoveNotesGraphQL.NotificationLevel> { __data["level"] }
             /// Whether the notification has been read
             public var read: Bool { __data["read"] }
             /// The created at time of the notification
-            public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
+            public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
             /// The updated at time of the notification
-            public var updatedAt: AffineGraphQL.DateTime { __data["updatedAt"] }
+            public var updatedAt: LoveNotesGraphQL.DateTime { __data["updatedAt"] }
             /// The body of the notification, different types have different fields, see UnionNotificationBodyType
-            public var body: AffineGraphQL.JSONObject { __data["body"] }
+            public var body: LoveNotesGraphQL.JSONObject { __data["body"] }
           }
         }
 
         /// CurrentUser.Notifications.PageInfo
         ///
         /// Parent Type: `PageInfo`
-        public struct PageInfo: AffineGraphQL.SelectionSet {
+        public struct PageInfo: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PageInfo }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PageInfo }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("startCursor", String?.self),

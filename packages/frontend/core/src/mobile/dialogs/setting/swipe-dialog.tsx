@@ -2,8 +2,8 @@ import {
   InsideModalContext,
   ModalConfigContext,
   Scrollable,
-} from '@affine/component';
-import { PageHeader } from '@affine/core/mobile/components';
+} from '@lovenotes/component';
+import { PageHeader } from '@lovenotes/core/mobile/components';
 import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { animate } from 'animejs';

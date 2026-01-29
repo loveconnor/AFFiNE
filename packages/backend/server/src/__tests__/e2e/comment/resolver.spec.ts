@@ -12,7 +12,7 @@ import {
   resolveCommentMutation,
   updateCommentMutation,
   updateReplyMutation,
-} from '@affine/graphql';
+} from '@lovenotes/graphql';
 
 import { DocRole } from '../../../models';
 import { Mockers } from '../../mocks';

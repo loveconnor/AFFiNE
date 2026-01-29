@@ -1,13 +1,13 @@
-import { AffineReference, ReferencePopup } from './reference-node';
+import { LoveNotesReference, ReferencePopup } from './reference-node';
 
 export function effects() {
   customElements.define('reference-popup', ReferencePopup);
-  customElements.define('affine-reference', AffineReference);
+  customElements.define('lovenotes-reference', LoveNotesReference);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-reference': AffineReference;
+    'lovenotes-reference': LoveNotesReference;
     'reference-popup': ReferencePopup;
   }
 }

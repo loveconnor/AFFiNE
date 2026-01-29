@@ -1,8 +1,8 @@
 import {
   EmbedOptionProvider,
   VirtualKeyboardProvider,
-} from '@blocksuite/affine-shared/services';
-import { isValidUrl, stopPropagation } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { isValidUrl, stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import type { EditorHost } from '@blocksuite/std';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -40,7 +40,7 @@ export class EmbedCardCreateModal extends SignalWatcher(
     const { mode } = this.createOptions;
     if (mode === 'page') {
       const { parentModel, index } = this.createOptions;
-      let flavour = 'affine:bookmark';
+      let flavour = 'lovenotes:bookmark';
 
       if (embedOptions) {
         flavour = embedOptions.flavour;

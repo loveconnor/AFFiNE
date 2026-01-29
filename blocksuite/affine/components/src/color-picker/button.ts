@@ -1,6 +1,6 @@
-import type { Color, ColorScheme, Palette } from '@blocksuite/affine-model';
-import { DefaultTheme, resolveColor } from '@blocksuite/affine-model';
-import type { ColorEvent } from '@blocksuite/affine-shared/utils';
+import type { Color, ColorScheme, Palette } from '@blocksuite/lovenotes-model';
+import { DefaultTheme, resolveColor } from '@blocksuite/lovenotes-model';
+import type { ColorEvent } from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { html, LitElement } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

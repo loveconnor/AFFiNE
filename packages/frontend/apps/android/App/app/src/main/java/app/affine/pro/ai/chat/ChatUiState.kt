@@ -1,8 +1,8 @@
-package app.affine.pro.ai.chat
+package app.lovenotes.pro.ai.chat
 
-import com.affine.pro.graphql.GetCopilotHistoriesQuery
-import com.affine.pro.graphql.fragment.CopilotChatHistory
-import com.affine.pro.graphql.fragment.CopilotChatMessage
+import com.lovenotes.pro.graphql.GetCopilotHistoriesQuery
+import com.lovenotes.pro.graphql.fragment.CopilotChatHistory
+import com.lovenotes.pro.graphql.fragment.CopilotChatMessage
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 

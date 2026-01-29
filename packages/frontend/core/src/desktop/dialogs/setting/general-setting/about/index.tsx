@@ -1,23 +1,23 @@
-import { Switch } from '@affine/component';
+import { Switch } from '@lovenotes/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { useAppUpdater } from '@affine/core/components/hooks/use-app-updater';
-import { UrlService } from '@affine/core/modules/url';
-import { appIconMap, appNames } from '@affine/core/utils/channel';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/component/setting-components';
+import { useAppUpdater } from '@lovenotes/core/components/hooks/use-app-updater';
+import { UrlService } from '@lovenotes/core/modules/url';
+import { appIconMap, appNames } from '@lovenotes/core/utils/channel';
+import { useI18n } from '@lovenotes/i18n';
 import { ArrowRightSmallIcon, OpenInNewIcon } from '@blocksuite/icons/rc';
 import { useServices } from '@toeverything/infra';
 import { useCallback } from 'react';
 
-import { useAppSettingHelper } from '../../../../../components/hooks/affine/use-app-setting-helper';
+import { useAppSettingHelper } from '../../../../../components/hooks/lovenotes/use-app-setting-helper';
 import { relatedLinks } from './config';
 import * as styles from './style.css';
 import { UpdateCheckSection } from './update-check-section';
 
-export const AboutAffine = () => {
+export const AboutLoveNotes = () => {
   const t = useI18n();
   const { appSettings, updateSettings } = useAppSettingHelper();
   const { toggleAutoCheck, toggleAutoDownload } = useAppUpdater();
@@ -54,11 +54,11 @@ export const AboutAffine = () => {
   return (
     <>
       <SettingHeader
-        title={t['com.affine.aboutAFFiNE.title']()}
-        subtitle={t['com.affine.aboutAFFiNE.subtitle']()}
+        title={t['com.lovenotes.aboutLoveNotes.title']()}
+        subtitle={t['com.lovenotes.aboutLoveNotes.subtitle']()}
         data-testid="about-title"
       />
-      <SettingWrapper title={t['com.affine.aboutAFFiNE.version.title']()}>
+      <SettingWrapper title={t['com.lovenotes.aboutLoveNotes.version.title']()}>
         <SettingRow
           name={appName}
           desc={BUILD_CONFIG.appVersion}
@@ -67,15 +67,15 @@ export const AboutAffine = () => {
           <img src={appIcon} alt={appName} width={56} height={56} />
         </SettingRow>
         <SettingRow
-          name={t['com.affine.aboutAFFiNE.version.editor.title']()}
+          name={t['com.lovenotes.aboutLoveNotes.version.editor.title']()}
           desc={BUILD_CONFIG.editorVersion}
         />
         {BUILD_CONFIG.isElectron ? (
           <>
             <UpdateCheckSection />
             <SettingRow
-              name={t['com.affine.aboutAFFiNE.autoCheckUpdate.title']()}
-              desc={t['com.affine.aboutAFFiNE.autoCheckUpdate.description']()}
+              name={t['com.lovenotes.aboutLoveNotes.autoCheckUpdate.title']()}
+              desc={t['com.lovenotes.aboutLoveNotes.autoCheckUpdate.description']()}
             >
               <Switch
                 checked={appSettings.autoCheckUpdate}
@@ -83,9 +83,9 @@ export const AboutAffine = () => {
               />
             </SettingRow>
             <SettingRow
-              name={t['com.affine.aboutAFFiNE.autoDownloadUpdate.title']()}
+              name={t['com.lovenotes.aboutLoveNotes.autoDownloadUpdate.title']()}
               desc={t[
-                'com.affine.aboutAFFiNE.autoDownloadUpdate.description'
+                'com.lovenotes.aboutLoveNotes.autoDownloadUpdate.description'
               ]()}
             >
               <Switch
@@ -94,8 +94,8 @@ export const AboutAffine = () => {
               />
             </SettingRow>
             <SettingRow
-              name={t['com.affine.aboutAFFiNE.changelog.title']()}
-              desc={t['com.affine.aboutAFFiNE.changelog.description']()}
+              name={t['com.lovenotes.aboutLoveNotes.changelog.title']()}
+              desc={t['com.lovenotes.aboutLoveNotes.changelog.description']()}
               style={{ cursor: 'pointer' }}
               onClick={() => {
                 urlService.openPopupWindow(BUILD_CONFIG.changelogUrl);
@@ -106,8 +106,8 @@ export const AboutAffine = () => {
           </>
         ) : null}
         <SettingRow
-          name={t['com.affine.telemetry.enable']()}
-          desc={t['com.affine.telemetry.enable.desc']()}
+          name={t['com.lovenotes.telemetry.enable']()}
+          desc={t['com.lovenotes.telemetry.enable.desc']()}
         >
           <Switch
             checked={appSettings.enableTelemetry !== false}
@@ -115,27 +115,27 @@ export const AboutAffine = () => {
           />
         </SettingRow>
       </SettingWrapper>
-      <SettingWrapper title={t['com.affine.aboutAFFiNE.contact.title']()}>
+      <SettingWrapper title={t['com.lovenotes.aboutLoveNotes.contact.title']()}>
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://affine.pro"
+          href="https://lovenotes.pro"
           target="_blank"
         >
-          {t['com.affine.aboutAFFiNE.contact.website']()}
+          {t['com.lovenotes.aboutLoveNotes.contact.website']()}
           <OpenInNewIcon className="icon" />
         </a>
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://community.affine.pro"
+          href="https://community.lovenotes.pro"
           target="_blank"
         >
-          {t['com.affine.aboutAFFiNE.contact.community']()}
+          {t['com.lovenotes.aboutLoveNotes.contact.community']()}
           <OpenInNewIcon className="icon" />
         </a>
       </SettingWrapper>
-      <SettingWrapper title={t['com.affine.aboutAFFiNE.community.title']()}>
+      <SettingWrapper title={t['com.lovenotes.aboutLoveNotes.community.title']()}>
         <div className={styles.communityWrapper}>
           {relatedLinks.map(({ icon, title, link }) => {
             return (
@@ -153,23 +153,23 @@ export const AboutAffine = () => {
           })}
         </div>
       </SettingWrapper>
-      <SettingWrapper title={t['com.affine.aboutAFFiNE.legal.title']()}>
+      <SettingWrapper title={t['com.lovenotes.aboutLoveNotes.legal.title']()}>
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://affine.pro/privacy"
+          href="https://lovenotes.pro/privacy"
           target="_blank"
         >
-          {t['com.affine.aboutAFFiNE.legal.privacy']()}
+          {t['com.lovenotes.aboutLoveNotes.legal.privacy']()}
           <OpenInNewIcon className="icon" />
         </a>
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://affine.pro/terms"
+          href="https://lovenotes.pro/terms"
           target="_blank"
         >
-          {t['com.affine.aboutAFFiNE.legal.tos']()}
+          {t['com.lovenotes.aboutLoveNotes.legal.tos']()}
           <OpenInNewIcon className="icon" />
         </a>
       </SettingWrapper>

@@ -1,4 +1,4 @@
-package app.affine.pro
+package app.lovenotes.pro
 
 enum class Prompt(val value: String) {
     Summary("Summary"),
@@ -16,5 +16,5 @@ enum class Prompt(val value: String) {
     MakeItLonger("Make it longer"),
     MakeItShorter("Make it shorter"),
     ContinueWriting("Continue writing"),
-    ChatWithAFFiNEAI("Chat With AFFiNE AI"),
+    ChatWithLoveNotesAI("Chat With LoveNotes AI"),
 }

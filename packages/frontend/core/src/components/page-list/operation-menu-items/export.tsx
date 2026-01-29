@@ -1,7 +1,7 @@
-import { MenuItem, MenuSeparator, MenuSub } from '@affine/component';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { MenuItem, MenuSeparator, MenuSub } from '@lovenotes/component';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
 import {
   ExportIcon,
   ExportToHtmlIcon,
@@ -63,7 +63,7 @@ export const PrintMenuItems = ({
       className={className}
       type="pdf"
       icon={<PrinterIcon />}
-      label={t['com.affine.export.print']()}
+      label={t['com.lovenotes.export.print']()}
     />
   );
 };

@@ -1,4 +1,4 @@
-package app.affine.pro.ai.chat.ui
+package app.lovenotes.pro.ai.chat.ui
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
@@ -12,10 +12,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import app.affine.pro.R
-import app.affine.pro.components.AFFiNEAppBar
-import app.affine.pro.components.AFFiNEDropMenu
-import app.affine.pro.components.AFFiNEIcon
+import app.lovenotes.pro.R
+import app.lovenotes.pro.components.LoveNotesAppBar
+import app.lovenotes.pro.components.LoveNotesDropMenu
+import app.lovenotes.pro.components.LoveNotesIcon
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -26,7 +26,7 @@ fun ChatAppBar(
     onClearHistory: () -> Unit = { },
     onSaveAsChatBlock: () -> Unit = { },
 ) {
-    AFFiNEAppBar(
+    LoveNotesAppBar(
         modifier = modifier,
         scrollBehavior = scrollBehavior,
         onNavIconPressed = onBackClick,
@@ -38,21 +38,21 @@ fun ChatAppBar(
             }
         },
         actions = {
-            AFFiNEDropMenu(
+            LoveNotesDropMenu(
                 R.drawable.ic_more_horizontal,
                 modifier = Modifier.size(44.dp),
                 menuItems = {
                     DropdownMenuItem(
                         text = { Text("Clear history") },
                         trailingIcon = {
-                            AFFiNEIcon(R.drawable.ic_broom)
+                            LoveNotesIcon(R.drawable.ic_broom)
                         },
                         onClick = onClearHistory,
                     )
                     DropdownMenuItem(
                         text = { Text("Save as chat block") },
                         trailingIcon = {
-                            AFFiNEIcon(R.drawable.ic_bubble)
+                            LoveNotesIcon(R.drawable.ic_bubble)
                         },
                         onClick = onSaveAsChatBlock,
                     )

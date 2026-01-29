@@ -1,15 +1,15 @@
 /* oxlint-disable unicorn/prefer-dom-node-dataset */
-import { test } from '@affine-test/kit/playwright';
-import { getPagesCount } from '@affine-test/kit/utils/filter';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@lovenotes-test/kit/playwright';
+import { getPagesCount } from '@lovenotes-test/kit/utils/filter';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getAllPage,
   getBlockSuiteEditorTitle,
   waitForAllPagesLoad,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@lovenotes-test/kit/utils/sidebar';
 import { expect } from '@playwright/test';
 
 test('all page', async ({ page }) => {
@@ -37,7 +37,7 @@ test('all page can create new edgeless page', async ({ page }) => {
   await waitForEditorLoad(page);
   await clickSideBarAllPageButton(page);
   await clickNewEdgelessDropdown();
-  await expect(page.locator('affine-edgeless-root')).toBeVisible();
+  await expect(page.locator('lovenotes-edgeless-root')).toBeVisible();
 });
 
 test('enable selection and use ESC to disable selection', async ({ page }) => {

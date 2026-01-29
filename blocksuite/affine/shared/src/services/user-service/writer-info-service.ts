@@ -1,14 +1,14 @@
 import { createIdentifier } from '@blocksuite/global/di';
 import type { ExtensionType } from '@blocksuite/store';
 
-import type { AffineUserInfo } from './types';
+import type { LoveNotesUserInfo } from './types';
 
 export interface WriterInfoService {
-  getWriterInfo(): AffineUserInfo | null;
+  getWriterInfo(): LoveNotesUserInfo | null;
 }
 
 export const WriterInfoProvider = createIdentifier<WriterInfoService>(
-  'affine-writer-info-service'
+  'lovenotes-writer-info-service'
 );
 
 export function WriterInfoServiceExtension(

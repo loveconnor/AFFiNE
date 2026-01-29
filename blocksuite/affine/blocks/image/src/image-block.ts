@@ -1,15 +1,15 @@
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
-import { whenHover } from '@blocksuite/affine-components/hover';
-import { LoadingIcon } from '@blocksuite/affine-components/icons';
-import { Peekable } from '@blocksuite/affine-components/peek';
-import { ResourceController } from '@blocksuite/affine-components/resource';
-import type { ImageBlockModel } from '@blocksuite/affine-model';
-import { ImageSelection } from '@blocksuite/affine-shared/selection';
+import { CaptionedBlockComponent } from '@blocksuite/lovenotes-components/caption';
+import { whenHover } from '@blocksuite/lovenotes-components/hover';
+import { LoadingIcon } from '@blocksuite/lovenotes-components/icons';
+import { Peekable } from '@blocksuite/lovenotes-components/peek';
+import { ResourceController } from '@blocksuite/lovenotes-components/resource';
+import type { ImageBlockModel } from '@blocksuite/lovenotes-model';
+import { ImageSelection } from '@blocksuite/lovenotes-shared/selection';
 import {
   BlockElementCommentManager,
   ToolbarRegistryIdentifier,
-} from '@blocksuite/affine-shared/services';
-import { formatSize } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { formatSize } from '@blocksuite/lovenotes-shared/utils';
 import { IS_MOBILE } from '@blocksuite/global/env';
 import { BrokenImageIcon, ImageIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@blocksuite/std';
@@ -164,19 +164,19 @@ export class ImageBlockComponent extends CaptionedBlockComponent<ImageBlockModel
     });
 
     return html`
-      <div class="affine-image-container" style=${containerStyleMap}>
+      <div class="lovenotes-image-container" style=${containerStyleMap}>
         ${when(
           blobUrl,
           () =>
-            html`<affine-page-image
+            html`<lovenotes-page-image
               .block=${this}
               .state=${resovledState}
               style="${alignItemsStyleMap}"
-            ></affine-page-image>`,
+            ></lovenotes-page-image>`,
           () =>
-            html`<affine-image-fallback-card
+            html`<lovenotes-image-fallback-card
               .state=${resovledState}
-            ></affine-image-fallback-card>`
+            ></lovenotes-image-fallback-card>`
         )}
       </div>
 
@@ -186,10 +186,10 @@ export class ImageBlockComponent extends CaptionedBlockComponent<ImageBlockModel
 
   override accessor blockContainerStyles = { margin: '18px 0' };
 
-  @query('affine-page-image')
+  @query('lovenotes-page-image')
   private accessor pageImage: ImageBlockPageComponent | null = null;
 
-  @query('.affine-image-container')
+  @query('.lovenotes-image-container')
   accessor hoverableContainer!: HTMLDivElement;
 
   override accessor useCaptionEditor = true;
@@ -199,6 +199,6 @@ export class ImageBlockComponent extends CaptionedBlockComponent<ImageBlockModel
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-image': ImageBlockComponent;
+    'lovenotes-image': ImageBlockComponent;
   }
 }

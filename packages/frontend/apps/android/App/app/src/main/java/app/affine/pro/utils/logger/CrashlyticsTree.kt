@@ -1,4 +1,4 @@
-package app.affine.pro.utils.logger
+package app.lovenotes.pro.utils.logger
 
 import android.util.Log
 import com.google.firebase.crashlytics.ktx.crashlytics

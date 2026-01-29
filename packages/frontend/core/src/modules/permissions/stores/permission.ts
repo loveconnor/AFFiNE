@@ -1,5 +1,5 @@
-import type { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { getWorkspaceInfoQuery, leaveWorkspaceMutation } from '@affine/graphql';
+import type { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
+import { getWorkspaceInfoQuery, leaveWorkspaceMutation } from '@lovenotes/graphql';
 import { Store } from '@toeverything/infra';
 
 import type { WorkspaceLocalState } from '../../workspace';

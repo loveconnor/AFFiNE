@@ -1,6 +1,6 @@
-import { toDocSearchParams } from '@affine/core/modules/navigation';
-import type { IndexerPreferOptions, IndexerSyncState } from '@affine/nbstore';
-import type { ReferenceParams } from '@blocksuite/affine/model';
+import { toDocSearchParams } from '@lovenotes/core/modules/navigation';
+import type { IndexerPreferOptions, IndexerSyncState } from '@lovenotes/nbstore';
+import type { ReferenceParams } from '@blocksuite/lovenotes/model';
 import { fromPromise, LiveData, Service } from '@toeverything/infra';
 import { isEmpty, omit } from 'lodash-es';
 import { map, type Observable, of, switchMap } from 'rxjs';
@@ -106,7 +106,7 @@ export class DocsSearchService extends Service {
                   query: {
                     type: 'match',
                     field: 'flavour',
-                    match: 'affine:page',
+                    match: 'lovenotes:page',
                   },
                 },
               ],
@@ -142,7 +142,7 @@ export class DocsSearchService extends Service {
 
           for (const bucket of buckets) {
             const firstMatchFlavour = bucket.hits.nodes[0]?.fields.flavour;
-            if (firstMatchFlavour === 'affine:page') {
+            if (firstMatchFlavour === 'lovenotes:page') {
               // is title match
               const blockContent = this.normalizeHighlight(
                 bucket.hits.nodes[1]?.highlights.content[0]
@@ -274,7 +274,7 @@ export class DocsSearchService extends Service {
             {
               type: 'match',
               field: 'parentFlavour',
-              match: 'affine:database',
+              match: 'lovenotes:database',
             },
           ],
         },

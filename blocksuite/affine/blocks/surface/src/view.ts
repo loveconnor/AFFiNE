@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import { literal } from 'lit/static-html.js';
 
@@ -15,7 +15,7 @@ import { ExportManagerExtension } from './extensions/export-manager/export-manag
 import { DefaultTool } from './tool/default-tool';
 
 export class SurfaceViewExtension extends ViewExtensionProvider {
-  override name = 'affine-surface-block';
+  override name = 'lovenotes-surface-block';
 
   override effect() {
     super.effect();
@@ -25,7 +25,7 @@ export class SurfaceViewExtension extends ViewExtensionProvider {
   override setup(context: ViewExtensionContext) {
     super.setup(context);
     context.register([
-      FlavourExtension('affine:surface'),
+      FlavourExtension('lovenotes:surface'),
       EdgelessCRUDExtension,
       EdgelessLegacySlotExtension,
       ExportManagerExtension,
@@ -33,12 +33,12 @@ export class SurfaceViewExtension extends ViewExtensionProvider {
     if (this.isEdgeless(context.scope)) {
       context.register(DefaultTool);
       context.register(
-        BlockViewExtension('affine:surface', literal`affine-surface`)
+        BlockViewExtension('lovenotes:surface', literal`lovenotes-surface`)
       );
       context.register(EditPropsMiddlewareBuilder);
     } else {
       context.register(
-        BlockViewExtension('affine:surface', literal`affine-surface-void`)
+        BlockViewExtension('lovenotes:surface', literal`lovenotes-surface-void`)
       );
     }
   }

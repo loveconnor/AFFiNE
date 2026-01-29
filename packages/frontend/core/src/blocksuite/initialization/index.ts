@@ -1,12 +1,12 @@
-import type { DocCreateOptions } from '@affine/core/modules/doc/types';
+import type { DocCreateOptions } from '@lovenotes/core/modules/doc/types';
 import {
   NoteDisplayMode,
   type NoteProps,
   type ParagraphProps,
   type RootBlockProps,
-} from '@blocksuite/affine/model';
-import type { SurfaceBlockProps } from '@blocksuite/affine/std/gfx';
-import { type Store, Text } from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/model';
+import type { SurfaceBlockProps } from '@blocksuite/lovenotes/std/gfx';
+import { type Store, Text } from '@blocksuite/lovenotes/store';
 
 export interface DocProps {
   page?: Partial<RootBlockProps>;
@@ -30,16 +30,16 @@ export function initDocFromProps(
 ) {
   doc.load(() => {
     const pageBlockId = doc.addBlock(
-      'affine:page',
+      'lovenotes:page',
       props?.page || { title: new Text(options.title || '') }
     );
     const surfaceId = doc.addBlock(
-      'affine:surface' as never,
+      'lovenotes:surface' as never,
       props?.surface || {},
       pageBlockId
     );
     const noteBlockId = doc.addBlock(
-      'affine:note',
+      'lovenotes:note',
       {
         ...props?.note,
         displayMode: NoteDisplayMode.DocAndEdgeless,
@@ -47,7 +47,7 @@ export function initDocFromProps(
       pageBlockId
     );
     const paragraphBlockId = doc.addBlock(
-      'affine:paragraph',
+      'lovenotes:paragraph',
       props?.paragraph || {},
       noteBlockId
     );

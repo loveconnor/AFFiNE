@@ -1,9 +1,9 @@
-import { ImageBlockSchema } from '@blocksuite/affine-model';
+import { ImageBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { getAssetName } from '@blocksuite/store';
 
 import { processImageNodeToBlock } from './utils';
@@ -59,7 +59,7 @@ export const imageBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
             type: 'element',
             tagName: 'figure',
             properties: {
-              className: ['affine-image-block-container'],
+              className: ['lovenotes-image-block-container'],
             },
             children: [],
           },

@@ -1,10 +1,10 @@
 import {
   ResizablePanel,
   ResizablePanelGroup,
-} from '@affine/admin/components/ui/resizable';
-import { Separator } from '@affine/admin/components/ui/separator';
-import { TooltipProvider } from '@affine/admin/components/ui/tooltip';
-import { cn } from '@affine/admin/utils';
+} from '@lovenotes/admin/components/ui/resizable';
+import { Separator } from '@lovenotes/admin/components/ui/separator';
+import { TooltipProvider } from '@lovenotes/admin/components/ui/tooltip';
+import { cn } from '@lovenotes/admin/utils';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { AlignJustifyIcon } from 'lucide-react';
 import type { PropsWithChildren, ReactNode, RefObject } from 'react';
@@ -202,7 +202,7 @@ export const LeftPanel = ({
           </Button>
         </SheetTrigger>
         <SheetHeader className="hidden">
-          <SheetTitle>AFFiNE</SheetTitle>
+          <SheetTitle>LoveNotes</SheetTitle>
           <SheetDescription>
             Admin panel for managing accounts, AI, config, and settings
           </SheetDescription>
@@ -215,7 +215,7 @@ export const LeftPanel = ({
               )}
             >
               <Logo />
-              AFFiNE
+              LoveNotes
             </div>
             <Separator />
             <Nav />
@@ -265,7 +265,7 @@ export const LeftPanel = ({
           >
             <Logo />
           </span>
-          {!isCollapsed && 'AFFiNE'}
+          {!isCollapsed && 'LoveNotes'}
         </div>
         <Nav isCollapsed={isCollapsed} />
       </div>

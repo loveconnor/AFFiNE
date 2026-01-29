@@ -1,15 +1,15 @@
-import type { IconButton } from '@blocksuite/affine-components/icon-button';
-import { LoadingIcon } from '@blocksuite/affine-components/icons';
+import type { IconButton } from '@blocksuite/lovenotes-components/icon-button';
+import { LoadingIcon } from '@blocksuite/lovenotes-components/icons';
 import {
   cleanSpecifiedTail,
   getTextContentFromInlineRange,
-} from '@blocksuite/affine-rich-text';
-import { unsafeCSSVar } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-rich-text';
+import { unsafeCSSVar } from '@blocksuite/lovenotes-shared/theme';
 import {
   createKeydownObserver,
   getPopperPosition,
   getViewportElement,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import { PropTypes, requiredProperties } from '@blocksuite/std';
@@ -294,14 +294,14 @@ export class LinkedDocPopover extends SignalWatcher(
             <div class="group" style=${group.styles ?? ''}>
               ${group.items.map(({ key, name, icon, action }) => {
                 const tooltip = this._showTooltip
-                  ? html`<affine-tooltip
+                  ? html`<lovenotes-tooltip
                       tip-position=${'right'}
                       .tooltipStyle=${css`
                         * {
                           color: ${unsafeCSSVar('white')} !important;
                         }
                       `}
-                      >${name}</affine-tooltip
+                      >${name}</lovenotes-tooltip
                     >`
                   : nothing;
                 return html`<icon-button

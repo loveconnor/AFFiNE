@@ -1,4 +1,4 @@
-import { LineWidth, StrokeStyle } from '@blocksuite/affine-model';
+import { LineWidth, StrokeStyle } from '@blocksuite/lovenotes-model';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { BanIcon, DashLineIcon, StraightLineIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement } from 'lit';

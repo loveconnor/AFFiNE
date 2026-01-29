@@ -1,5 +1,5 @@
-import { Input } from '@affine/admin/components/ui/input';
-import { Label } from '@affine/admin/components/ui/label';
+import { Input } from '@lovenotes/admin/components/ui/input';
+import { Label } from '@lovenotes/admin/components/ui/label';
 import { useCallback } from 'react';
 
 type CreateAdminProps = {
@@ -56,7 +56,7 @@ export const CreateAdmin = ({
             Create Administrator Account
           </h1>
           <p className="text-sm text-muted-foreground">
-            This account can also be used to log in as an AFFiNE user.
+            This account can also be used to log in as an LoveNotes user.
           </p>
         </div>
         <div className="flex flex-col gap-9">

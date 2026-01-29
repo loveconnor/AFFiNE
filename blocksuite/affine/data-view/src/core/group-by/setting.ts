@@ -5,7 +5,7 @@ import {
   type MenuOptions,
   popMenu,
   type PopupTarget,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { DeleteIcon, InvisibleIcon, ViewIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -119,11 +119,11 @@ export class GroupSetting extends SignalWatcher(
       border-radius: 4px;
     }
     .group-item-op-icon:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
     .group-item-op-icon svg {
-      fill: var(--affine-icon-color);
-      color: var(--affine-icon-color);
+      fill: var(--lovenotes-icon-color);
+      color: var(--lovenotes-icon-color);
       width: 20px;
       height: 20px;
     }
@@ -145,7 +145,7 @@ export class GroupSetting extends SignalWatcher(
     }
 
     .properties-group-op:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
   `;
 
@@ -205,7 +205,7 @@ export class GroupSetting extends SignalWatcher(
         style="padding:7px 0;display:flex;justify-content:space-between;align-items:center;"
       >
         <div
-          style="padding:0 4px;font-size:12px;color:var(--affine-text-secondary-color);line-height:20px;"
+          style="padding:0 4px;font-size:12px;color:var(--lovenotes-text-secondary-color);line-height:20px;"
         >
           Groups
         </div>
@@ -357,7 +357,7 @@ export const popGroupSetting = (
               name: 'Group By',
               postfix: html`
                 <div
-                  style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:8px;"
+                  style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--lovenotes-text-secondary-color);margin-left:8px;"
                   class="dv-icon-16"
                 >
                   ${renderUniLit(icon, {})} ${gProp.name$.value}
@@ -414,7 +414,7 @@ export const popGroupSetting = (
                       autoHeight: true,
                       postfix: html`
                         <div
-                          style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:30px;"
+                          style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--lovenotes-text-secondary-color);margin-left:30px;"
                         >
                           ${dateModeLabel(group.groupInfo$.value?.config.name)}
                         </div>
@@ -446,8 +446,8 @@ export const popGroupSetting = (
                                       key;
                                     return html`<span
                                       style="font-size:14px;color:${isSelected
-                                        ? 'var(--affine-text-emphasis-color)'
-                                        : 'var(--affine-text-secondary-color)'}"
+                                        ? 'var(--lovenotes-text-emphasis-color)'
+                                        : 'var(--lovenotes-text-secondary-color)'}"
                                       >${label}</span
                                     >`;
                                   },
@@ -476,7 +476,7 @@ export const popGroupSetting = (
                             name: 'Start week on',
                             postfix: html`
                               <div
-                                style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:8px;"
+                                style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--lovenotes-text-secondary-color);margin-left:8px;"
                               >
                                 ${group.groupInfo$.value?.config.name ===
                                 'date-week-mon'
@@ -501,8 +501,8 @@ export const popGroupSetting = (
                                             .name === key;
                                         return html`<span
                                           style="font-size:14px;color:${isSelected
-                                            ? 'var(--affine-text-emphasis-color)'
-                                            : 'var(--affine-text-secondary-color)'}"
+                                            ? 'var(--lovenotes-text-emphasis-color)'
+                                            : 'var(--lovenotes-text-secondary-color)'}"
                                           >${label}</span
                                         >`;
                                       },
@@ -534,7 +534,7 @@ export const popGroupSetting = (
                       autoHeight: true,
                       postfix: html`
                         <div
-                          style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--affine-text-secondary-color);margin-left:8px;"
+                          style="display:flex;align-items:center;gap:4px;font-size:14px;line-height:20px;color:var(--lovenotes-text-secondary-color);margin-left:8px;"
                         >
                           ${group.sortAsc$.value
                             ? 'Oldest first'
@@ -550,8 +550,8 @@ export const popGroupSetting = (
                                 const isSelected = group.sortAsc$.value;
                                 return html`<span
                                   style="font-size:14px;color:${isSelected
-                                    ? 'var(--affine-text-emphasis-color)'
-                                    : 'var(--affine-text-secondary-color)'}"
+                                    ? 'var(--lovenotes-text-emphasis-color)'
+                                    : 'var(--lovenotes-text-secondary-color)'}"
                                   >Oldest first</span
                                 >`;
                               },
@@ -567,8 +567,8 @@ export const popGroupSetting = (
                                 const isSelected = !group.sortAsc$.value;
                                 return html`<span
                                   style="font-size:14px;color:${isSelected
-                                    ? 'var(--affine-text-emphasis-color)'
-                                    : 'var(--affine-text-secondary-color)'}"
+                                    ? 'var(--lovenotes-text-emphasis-color)'
+                                    : 'var(--lovenotes-text-secondary-color)'}"
                                   >Newest first</span
                                 >`;
                               },

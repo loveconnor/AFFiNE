@@ -1,11 +1,11 @@
 import {
   createCustomToolbarExtension,
   createToolbarMoreMenuConfig,
-} from '@affine/core/blocksuite/view-extensions/editor-config/toolbar';
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { ToolbarMoreMenuConfigExtension } from '@blocksuite/affine/components/toolbar';
-import { EditorSettingExtension } from '@blocksuite/affine/shared/services';
+} from '@lovenotes/core/blocksuite/view-extensions/editor-config/toolbar';
+import { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
+import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
+import { ToolbarMoreMenuConfigExtension } from '@blocksuite/lovenotes/components/toolbar';
+import { EditorSettingExtension } from '@blocksuite/lovenotes/shared/services';
 import type { ExtensionType } from '@blocksuite/store';
 import type { FrameworkProvider } from '@toeverything/infra';
 

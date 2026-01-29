@@ -1,9 +1,9 @@
-import track from '@affine/track';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { type EditorHost, ShadowlessElement } from '@blocksuite/affine/std';
-import { LoadingIcon } from '@blocksuite/affine-components/icons';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+import track from '@lovenotes/track';
+import { WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/lovenotes/shared/theme';
+import { type EditorHost, ShadowlessElement } from '@blocksuite/lovenotes/std';
+import { LoadingIcon } from '@blocksuite/lovenotes-components/icons';
+import type { NotificationService } from '@blocksuite/lovenotes-shared/services';
 import {
   CloseIcon,
   CopyIcon,
@@ -83,7 +83,7 @@ export class DocEditTool extends WithDisposable(ShadowlessElement) {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      background: ${unsafeCSSVar('--affine-overlay-panel-shadow')};
+      background: ${unsafeCSSVar('--lovenotes-overlay-panel-shadow')};
       box-shadow: ${unsafeCSSVar('shadow1')};
       border-radius: 8px;
       width: 100%;
@@ -434,13 +434,13 @@ export class DocEditTool extends WithDisposable(ShadowlessElement) {
                   <div class="doc-edit-tool-result-card-header-operations">
                     <button @click=${() => this._toggleCollapse()}>
                       ${this.isCollapsed ? ExpandFullIcon() : ExpandCloseIcon()}
-                      <affine-tooltip>
+                      <lovenotes-tooltip>
                         ${this.isCollapsed ? 'Expand' : 'Collapse'}
-                      </affine-tooltip>
+                      </lovenotes-tooltip>
                     </button>
                     <button @click=${() => this._handleCopy(changedContent)}>
                       ${CopyIcon()}
-                      <affine-tooltip>Copy</affine-tooltip>
+                      <lovenotes-tooltip>Copy</lovenotes-tooltip>
                     </button>
                     <button
                       @click=${() => this._handleApply(op, updates)}

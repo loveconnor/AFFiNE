@@ -1,32 +1,32 @@
-import { useThemeColorV2 } from '@affine/component';
-import { PageDetailLoading } from '@affine/component/page-detail-skeleton';
-import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-import { useGuard } from '@affine/core/components/guard';
-import { useActiveBlocksuiteEditor } from '@affine/core/components/hooks/use-block-suite-editor';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import { PageDetailEditor } from '@affine/core/components/page-detail-editor';
-import { DetailPageWrapper } from '@affine/core/desktop/pages/workspace/detail-page/detail-page-wrapper';
-import { PageHeader } from '@affine/core/mobile/components';
-import { useGlobalEvent } from '@affine/core/mobile/hooks/use-global-events';
-import { AIButtonService } from '@affine/core/modules/ai-button';
-import { ServerService } from '@affine/core/modules/cloud';
-import { DocService } from '@affine/core/modules/doc';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { EditorService } from '@affine/core/modules/editor';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { JournalService } from '@affine/core/modules/journal';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { ViewService } from '@affine/core/modules/workbench/services/view';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { i18nTime } from '@affine/i18n';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
+import { useThemeColorV2 } from '@lovenotes/component';
+import { PageDetailLoading } from '@lovenotes/component/page-detail-skeleton';
+import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor';
+import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
+import { useGuard } from '@lovenotes/core/components/guard';
+import { useActiveBlocksuiteEditor } from '@lovenotes/core/components/hooks/use-block-suite-editor';
+import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
+import { PageDetailEditor } from '@lovenotes/core/components/page-detail-editor';
+import { DetailPageWrapper } from '@lovenotes/core/desktop/pages/workspace/detail-page/detail-page-wrapper';
+import { PageHeader } from '@lovenotes/core/mobile/components';
+import { useGlobalEvent } from '@lovenotes/core/mobile/hooks/use-global-events';
+import { AIButtonService } from '@lovenotes/core/modules/ai-button';
+import { ServerService } from '@lovenotes/core/modules/cloud';
+import { DocService } from '@lovenotes/core/modules/doc';
+import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
+import { EditorService } from '@lovenotes/core/modules/editor';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { GlobalContextService } from '@lovenotes/core/modules/global-context';
+import { JournalService } from '@lovenotes/core/modules/journal';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { ViewService } from '@lovenotes/core/modules/workbench/services/view';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { i18nTime } from '@lovenotes/i18n';
+import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
 import {
   customImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/affine/shared/adapters';
+} from '@blocksuite/lovenotes/shared/adapters';
 import {
   FrameworkScope,
   useLiveData,
@@ -131,7 +131,7 @@ const DetailPageImpl = () => {
   const server = useService(ServerService).server;
 
   const onLoad = useCallback(
-    (editorContainer: AffineEditorContainer) => {
+    (editorContainer: LoveNotesEditorContainer) => {
       // provide image proxy endpoint to blocksuite
       const imageProxyUrl = new URL(
         BUILD_CONFIG.imageProxyUrl,
@@ -196,15 +196,15 @@ const DetailPageImpl = () => {
           data-mode={mode}
           ref={scrollViewportRef}
           className={clsx(
-            'affine-page-viewport',
-            styles.affineDocViewport,
+            'lovenotes-page-viewport',
+            styles.lovenotesDocViewport,
             styles.editorContainer
           )}
         >
           {/* Add a key to force rerender when page changed, to avoid error boundary persisting. */}
-          <AffineErrorBoundary key={doc.id} className={styles.errorBoundary}>
+          <LoveNotesErrorBoundary key={doc.id} className={styles.errorBoundary}>
             <PageDetailEditor onLoad={onLoad} readonly={readonly} />
-          </AffineErrorBoundary>
+          </LoveNotesErrorBoundary>
         </div>
       </div>
     </FrameworkScope>

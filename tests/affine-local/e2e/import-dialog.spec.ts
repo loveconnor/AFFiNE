@@ -1,9 +1,9 @@
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import test, { expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {

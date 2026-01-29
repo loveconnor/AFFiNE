@@ -5,7 +5,7 @@
 //  Created by 秋星桥 on 7/14/25.
 //
 
-import AffineGraphQL
+import LoveNotesGraphQL
 import Apollo
 import ApolloAPI
 import EventSource

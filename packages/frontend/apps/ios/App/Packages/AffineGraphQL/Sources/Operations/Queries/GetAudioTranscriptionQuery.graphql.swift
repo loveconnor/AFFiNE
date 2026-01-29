@@ -30,11 +30,11 @@ public class GetAudioTranscriptionQuery: GraphQLQuery {
     "blobId": blobId
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("currentUser", CurrentUser?.self),
     ] }
@@ -45,11 +45,11 @@ public class GetAudioTranscriptionQuery: GraphQLQuery {
     /// CurrentUser
     ///
     /// Parent Type: `UserType`
-    public struct CurrentUser: AffineGraphQL.SelectionSet {
+    public struct CurrentUser: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.UserType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.UserType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("copilot", Copilot.self, arguments: ["workspaceId": .variable("workspaceId")]),
@@ -60,11 +60,11 @@ public class GetAudioTranscriptionQuery: GraphQLQuery {
       /// CurrentUser.Copilot
       ///
       /// Parent Type: `Copilot`
-      public struct Copilot: AffineGraphQL.SelectionSet {
+      public struct Copilot: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Copilot }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Copilot }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("audioTranscription", AudioTranscription?.self, arguments: [
@@ -78,22 +78,22 @@ public class GetAudioTranscriptionQuery: GraphQLQuery {
         /// CurrentUser.Copilot.AudioTranscription
         ///
         /// Parent Type: `TranscriptionResultType`
-        public struct AudioTranscription: AffineGraphQL.SelectionSet {
+        public struct AudioTranscription: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.TranscriptionResultType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.TranscriptionResultType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("id", AffineGraphQL.ID.self),
-            .field("status", GraphQLEnum<AffineGraphQL.AiJobStatus>.self),
+            .field("id", LoveNotesGraphQL.ID.self),
+            .field("status", GraphQLEnum<LoveNotesGraphQL.AiJobStatus>.self),
             .field("title", String?.self),
             .field("summary", String?.self),
             .field("transcription", [Transcription]?.self),
           ] }
 
-          public var id: AffineGraphQL.ID { __data["id"] }
-          public var status: GraphQLEnum<AffineGraphQL.AiJobStatus> { __data["status"] }
+          public var id: LoveNotesGraphQL.ID { __data["id"] }
+          public var status: GraphQLEnum<LoveNotesGraphQL.AiJobStatus> { __data["status"] }
           public var title: String? { __data["title"] }
           public var summary: String? { __data["summary"] }
           public var transcription: [Transcription]? { __data["transcription"] }
@@ -101,11 +101,11 @@ public class GetAudioTranscriptionQuery: GraphQLQuery {
           /// CurrentUser.Copilot.AudioTranscription.Transcription
           ///
           /// Parent Type: `TranscriptionItemType`
-          public struct Transcription: AffineGraphQL.SelectionSet {
+          public struct Transcription: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.TranscriptionItemType }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.TranscriptionItemType }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("speaker", String.self),

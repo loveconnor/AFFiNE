@@ -1,4 +1,4 @@
-import { testResultDir } from '@affine-test/kit/playwright';
+import { testResultDir } from '@lovenotes-test/kit/playwright';
 import type { PlaywrightTestConfig } from '@playwright/test';
 // import { devices } from '@playwright/test';
 
@@ -23,7 +23,7 @@ const config: PlaywrightTestConfig = {
   webServer: [
     // Intentionally not building the web, reminds you to run it by yourself.
     {
-      command: 'yarn run -T affine dev -p @affine/electron-renderer',
+      command: 'yarn run -T lovenotes dev -p @lovenotes/electron-renderer',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       stdout: 'pipe',
@@ -34,7 +34,7 @@ const config: PlaywrightTestConfig = {
       url: 'http://localhost:8080',
     },
     {
-      command: 'yarn run -T affine dev -p @affine/server',
+      command: 'yarn run -T lovenotes dev -p @lovenotes/server',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       stdout: 'pipe',
@@ -42,10 +42,10 @@ const config: PlaywrightTestConfig = {
       env: {
         DATABASE_URL:
           process.env.DATABASE_URL ??
-          'postgresql://affine:affine@localhost:5432/affine',
+          'postgresql://lovenotes:lovenotes@localhost:5432/lovenotes',
         NODE_ENV: 'test',
         AFFINE_ENV: process.env.AFFINE_ENV ?? 'dev',
-        DEBUG: 'affine:*',
+        DEBUG: 'lovenotes:*',
         FORCE_COLOR: 'true',
         DEBUG_COLORS: 'true',
         MAILER_SENDER: 'noreply@toeverything.info',

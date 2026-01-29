@@ -1,8 +1,8 @@
-import { EmbedYoutubeBlockSchema } from '@blocksuite/affine-model';
+import { EmbedYoutubeBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockHtmlAdapterExtension,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 
 import { createEmbedBlockHtmlAdapterMatcher } from '../../common/adapters/html.js';
@@ -32,7 +32,7 @@ export const embedYoutubeBlockHtmlAdapterMatcher =
               {
                 type: 'block',
                 id: nanoid(),
-                flavour: 'affine:embed-youtube',
+                flavour: 'lovenotes:embed-youtube',
                 props: {
                   url: `https://www.youtube.com/watch?v=${videoId}`,
                 },

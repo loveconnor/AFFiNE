@@ -9,16 +9,16 @@ const packageJson = JSON.parse(
 );
 
 interface AppConfig {
-  affineVersion: string;
+  lovenotesVersion: string;
 }
 
 const config: CapacitorConfig & AppConfig = {
-  appId: 'app.affine.pro',
-  appName: 'AFFiNE',
+  appId: 'app.lovenotes.pro',
+  appName: 'LoveNotes',
   webDir: 'dist',
-  affineVersion: packageJson.version,
+  lovenotesVersion: packageJson.version,
   ios: {
-    scheme: 'AFFiNE',
+    scheme: 'LoveNotes',
     path: '.',
     webContentsDebuggingEnabled: true,
   },

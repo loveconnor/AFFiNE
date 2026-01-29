@@ -1,5 +1,5 @@
-import { DocsService } from '@affine/core/modules/doc';
-import { GlobalContextService } from '@affine/core/modules/global-context';
+import { DocsService } from '@lovenotes/core/modules/doc';
+import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import type { PropsWithChildren, ReactElement } from 'react';

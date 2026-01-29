@@ -1,6 +1,6 @@
-import { ListBlockModel } from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+import { ListBlockModel } from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { Command } from '@blocksuite/std';
 
 export const listToParagraphCommand: Command<
@@ -34,7 +34,7 @@ export const listToParagraphCommand: Command<
   });
 
   const listConvertedId = doc.addBlock(
-    'affine:paragraph',
+    'lovenotes:paragraph',
     blockProps,
     parent,
     index

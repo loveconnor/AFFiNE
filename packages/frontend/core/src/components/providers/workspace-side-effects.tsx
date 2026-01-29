@@ -1,39 +1,39 @@
-import { toast } from '@affine/component';
+import { toast } from '@lovenotes/component';
 import {
   pushGlobalLoadingEventAtom,
   resolveGlobalLoadingEventAtom,
-} from '@affine/component/global-loading';
+} from '@lovenotes/component/global-loading';
 import {
   AIProvider,
   CopilotClient,
   setupAIProvider,
-} from '@affine/core/blocksuite/ai';
-import { useRegisterFindInPageCommands } from '@affine/core/components/hooks/affine/use-register-find-in-page-commands';
-import { useRegisterWorkspaceCommands } from '@affine/core/components/hooks/use-register-workspace-commands';
-import { OverCapacityNotification } from '@affine/core/components/over-capacity';
+} from '@lovenotes/core/blocksuite/ai';
+import { useRegisterFindInPageCommands } from '@lovenotes/core/components/hooks/lovenotes/use-register-find-in-page-commands';
+import { useRegisterWorkspaceCommands } from '@lovenotes/core/components/hooks/use-register-workspace-commands';
+import { OverCapacityNotification } from '@lovenotes/core/components/over-capacity';
 import {
   AuthService,
   EventSourceService,
   FetchService,
   GraphQLService,
-} from '@affine/core/modules/cloud';
+} from '@lovenotes/core/modules/cloud';
 import {
   GlobalDialogService,
   WorkspaceDialogService,
-} from '@affine/core/modules/dialogs';
-import { DocsService } from '@affine/core/modules/doc';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { useRegisterNavigationCommands } from '@affine/core/modules/navigation/view/use-register-navigation-commands';
-import { QuickSearchContainer } from '@affine/core/modules/quicksearch';
-import { WorkbenchService } from '@affine/core/modules/workbench';
+} from '@lovenotes/core/modules/dialogs';
+import { DocsService } from '@lovenotes/core/modules/doc';
+import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
+import { useRegisterNavigationCommands } from '@lovenotes/core/modules/navigation/view/use-register-navigation-commands';
+import { QuickSearchContainer } from '@lovenotes/core/modules/quicksearch';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import {
-  getAFFiNEWorkspaceSchema,
+  getLoveNotesWorkspaceSchema,
   WorkspaceService,
-} from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
-import type { DocMode } from '@blocksuite/affine/model';
-import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
+} from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
+import track from '@lovenotes/track';
+import type { DocMode } from '@blocksuite/lovenotes/model';
+import { ZipTransformer } from '@blocksuite/lovenotes/widgets/linked-doc';
 import {
   effect,
   fromPromise,
@@ -71,7 +71,7 @@ export const WorkspaceSideEffects = () => {
           throwIfAborted(abort);
           const [doc] = await ZipTransformer.importDocs(
             currentWorkspace.docCollection,
-            getAFFiNEWorkspaceSchema(),
+            getLoveNotesWorkspaceSchema(),
             templateBlob
           );
           if (doc) {
@@ -94,7 +94,7 @@ export const WorkspaceSideEffects = () => {
           }),
           catchError(err => {
             console.error(err);
-            toast(t['com.affine.ai.template-insert.failed']());
+            toast(t['com.lovenotes.ai.template-insert.failed']());
             return EMPTY;
           }),
           finalize(() => {

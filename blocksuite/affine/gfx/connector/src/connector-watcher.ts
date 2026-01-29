@@ -2,8 +2,8 @@ import {
   type SurfaceBlockModel,
   type SurfaceMiddleware,
   surfaceMiddlewareExtension,
-} from '@blocksuite/affine-block-surface';
-import type { ConnectorElementModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { ConnectorElementModel } from '@blocksuite/lovenotes-model';
 import type { GfxModel } from '@blocksuite/std/gfx';
 
 import { ConnectorPathGenerator } from './connector-manager';

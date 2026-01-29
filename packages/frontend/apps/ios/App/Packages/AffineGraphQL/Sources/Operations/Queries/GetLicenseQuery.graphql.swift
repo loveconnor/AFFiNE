@@ -19,11 +19,11 @@ public class GetLicenseQuery: GraphQLQuery {
 
   public var __variables: Variables? { ["workspaceId": workspaceId] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -34,11 +34,11 @@ public class GetLicenseQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("license", License?.self),
@@ -50,22 +50,22 @@ public class GetLicenseQuery: GraphQLQuery {
       /// Workspace.License
       ///
       /// Parent Type: `License`
-      public struct License: AffineGraphQL.SelectionSet {
+      public struct License: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.License }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.License }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .fragment(LicenseBody.self),
         ] }
 
-        public var expiredAt: AffineGraphQL.DateTime? { __data["expiredAt"] }
-        public var installedAt: AffineGraphQL.DateTime { __data["installedAt"] }
+        public var expiredAt: LoveNotesGraphQL.DateTime? { __data["expiredAt"] }
+        public var installedAt: LoveNotesGraphQL.DateTime { __data["installedAt"] }
         public var quantity: Int { __data["quantity"] }
-        public var recurring: GraphQLEnum<AffineGraphQL.SubscriptionRecurring> { __data["recurring"] }
-        public var validatedAt: AffineGraphQL.DateTime { __data["validatedAt"] }
-        public var variant: GraphQLEnum<AffineGraphQL.SubscriptionVariant>? { __data["variant"] }
+        public var recurring: GraphQLEnum<LoveNotesGraphQL.SubscriptionRecurring> { __data["recurring"] }
+        public var validatedAt: LoveNotesGraphQL.DateTime { __data["validatedAt"] }
+        public var variant: GraphQLEnum<LoveNotesGraphQL.SubscriptionVariant>? { __data["variant"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict

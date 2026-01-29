@@ -1,8 +1,8 @@
-import type { Rect } from '@blocksuite/affine-gfx-turbo-renderer';
+import type { Rect } from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import {
   BlockLayoutHandlerExtension,
   BlockLayoutHandlersIdentifier,
-} from '@blocksuite/affine-gfx-turbo-renderer';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import type { Container } from '@blocksuite/global/di';
 import type { EditorHost, GfxBlockComponent } from '@blocksuite/std';
 import { clientToModelCoord, type ViewportRecord } from '@blocksuite/std/gfx';
@@ -11,7 +11,7 @@ import type { BlockModel } from '@blocksuite/store';
 import type { CodeLayout } from './code-painter.worker';
 
 export class CodeLayoutHandlerExtension extends BlockLayoutHandlerExtension<CodeLayout> {
-  readonly blockType = 'affine:code';
+  readonly blockType = 'lovenotes:code';
 
   static override setup(di: Container) {
     di.addImpl(
@@ -31,13 +31,13 @@ export class CodeLayoutHandlerExtension extends BlockLayoutHandlerExtension<Code
     if (!component) return null;
 
     const codeBlockElement = component.querySelector(
-      '.affine-code-block-container'
+      '.lovenotes-code-block-container'
     );
     if (!codeBlockElement) return null;
 
     const { zoom, viewScale } = viewportRecord;
     const codeLayout: CodeLayout = {
-      type: 'affine:code',
+      type: 'lovenotes:code',
       blockId: model.id,
       rect: { x: 0, y: 0, w: 0, h: 0 },
     };

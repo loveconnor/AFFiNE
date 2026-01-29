@@ -1,19 +1,19 @@
-import { test } from '@affine-test/kit/playwright';
-import { clickEdgelessModeButton } from '@affine-test/kit/utils/editor';
+import { test } from '@lovenotes-test/kit/playwright';
+import { clickEdgelessModeButton } from '@lovenotes-test/kit/utils/editor';
 import {
   copyByKeyboard,
   pasteByKeyboard,
   selectAllByKeyboard,
   withCtrlOrMeta,
   writeTextToClipboard,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/keyboard';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@lovenotes-test/kit/utils/sidebar';
 import type { Locator, Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 
@@ -44,7 +44,7 @@ const commandsIsVisible = async (page: Page, label: string) => {
 };
 
 async function assertTitle(page: Page, text: string) {
-  const edgeless = page.locator('affine-edgeless-root');
+  const edgeless = page.locator('lovenotes-edgeless-root');
   if (!edgeless) {
     const locator = getBlockSuiteEditorTitle(page);
     const actual = await locator.inputValue();
@@ -97,7 +97,7 @@ async function assertResultList(page: Page, texts: string[]) {
 }
 
 async function titleIsFocused(page: Page) {
-  const edgeless = page.locator('affine-edgeless-root');
+  const edgeless = page.locator('lovenotes-edgeless-root');
   if (!edgeless) {
     const title = getBlockSuiteEditorTitle(page);
     await expect(title).toBeVisible();
@@ -321,8 +321,8 @@ test('assert the recent browse pages are on the recent list', async ({
     const title = getBlockSuiteEditorTitle(page);
     await title.click();
     await page.waitForTimeout(200);
-    await title.pressSequentially('affine is the best', { delay: 100 });
-    await expect(title).toHaveText('affine is the best', { timeout: 500 });
+    await title.pressSequentially('lovenotes is the best', { delay: 100 });
+    await expect(title).toHaveText('lovenotes is the best', { timeout: 500 });
   }
   await page.waitForTimeout(1000);
   await openQuickSearchByShortcut(page);
@@ -330,7 +330,7 @@ test('assert the recent browse pages are on the recent list', async ({
     const quickSearchItems = page.locator(
       '[cmdk-item] [data-testid="cmdk-label"]'
     );
-    await expect(quickSearchItems.nth(0)).toHaveText('affine is the best');
+    await expect(quickSearchItems.nth(0)).toHaveText('lovenotes is the best');
   }
 });
 
@@ -382,7 +382,7 @@ test('can use cmdk to search page content and scroll to it, then the block will 
   }
   await page.keyboard.insertText('123456');
   const textBlock = page
-    .locator('[data-affine-editor-container]')
+    .locator('[data-lovenotes-editor-container]')
     .getByText('123456');
   await expect(textBlock).toBeVisible();
   await clickSideBarAllPageButton(page);
@@ -397,11 +397,11 @@ test('can use cmdk to search page content and scroll to it, then the block will 
   await waitForScrollToFinish(page);
   const isVisitable = await checkElementIsInView(
     page,
-    page.locator('[data-affine-editor-container]').getByText('123456')
+    page.locator('[data-lovenotes-editor-container]').getByText('123456')
   );
   expect(isVisitable).toBe(true);
   const selectionElement = page.locator(
-    'affine-scroll-anchoring-widget div.highlight'
+    'lovenotes-scroll-anchoring-widget div.highlight'
   );
   await expect(selectionElement).toBeVisible();
 });
@@ -450,7 +450,7 @@ test('disable quick search when the link-popup is visitable', async ({
   await page.getByText('1234567890').dblclick();
 
   await withCtrlOrMeta(page, () => page.keyboard.press('k'));
-  const linkPopup = page.locator('.affine-link-popover');
+  const linkPopup = page.locator('.lovenotes-link-popover');
   await expect(linkPopup).toBeVisible();
   const currentQuickSearch = page.locator('[data-testid=cmdk-quick-search]');
   await expect(currentQuickSearch).not.toBeVisible();
@@ -468,7 +468,7 @@ test('can use @ to open quick search to search for doc and insert into canvas', 
 
   await clickNewPageButton(page);
   await clickEdgelessModeButton(page);
-  await page.locator('affine-edgeless-root').press('@');
+  await page.locator('lovenotes-edgeless-root').press('@');
 
   const quickSearch = page.locator('[data-testid=cmdk-quick-search]');
   await expect(quickSearch).toBeVisible();
@@ -484,7 +484,7 @@ test('can use @ to open quick search to search for doc and insert into canvas', 
   // press enter to insert the page to canvas
   await page.keyboard.press('Enter');
   await expect(
-    page.locator('affine-embed-edgeless-synced-doc-block')
+    page.locator('lovenotes-embed-edgeless-synced-doc-block')
   ).toBeVisible();
   await expect(
     page.getByTestId('edgeless-embed-synced-doc-title')
@@ -493,12 +493,12 @@ test('can use @ to open quick search to search for doc and insert into canvas', 
   // focus on the note block
   await page.waitForTimeout(500);
   await page
-    .locator('affine-embed-edgeless-synced-doc-block')
+    .locator('lovenotes-embed-edgeless-synced-doc-block')
     .click({ force: true });
   await page.waitForTimeout(500);
   // double clock to show peek view
   await page
-    .locator('affine-embed-edgeless-synced-doc-block')
+    .locator('lovenotes-embed-edgeless-synced-doc-block')
     .dblclick({ force: true });
   await expect(page.getByTestId('peek-view-modal')).toBeVisible();
 });
@@ -516,13 +516,13 @@ test('can paste a doc link to create link reference', async ({ page }) => {
   await writeTextToClipboard(page, url);
 
   await expect(
-    page.locator('affine-reference:has-text("Getting Started")')
+    page.locator('lovenotes-reference:has-text("Getting Started")')
   ).toBeVisible();
 
   // can ctrl-z to revert to normal link
   await page.keyboard.press('ControlOrMeta+z');
 
-  await expect(page.locator(`affine-link:has-text("${url}")`)).toBeVisible();
+  await expect(page.locator(`lovenotes-link:has-text("${url}")`)).toBeVisible();
 });
 
 test('can use slash menu to insert an external link', async ({ page }) => {
@@ -539,19 +539,19 @@ test('can use slash menu to insert an external link', async ({ page }) => {
   await page.keyboard.press('Enter');
   await expect(page.getByTestId('cmdk-quick-search')).toBeVisible();
 
-  const link = 'affine.pro';
+  const link = 'lovenotes.pro';
   await page.locator('[cmdk-input]').fill(link);
 
   const insertLinkBtn = page.locator(
-    '[cmdk-item] [data-value="external-link:affine.pro"]'
+    '[cmdk-item] [data-value="external-link:lovenotes.pro"]'
   );
 
   await expect(insertLinkBtn).toBeVisible();
 
   await insertLinkBtn.click();
 
-  await expect(page.locator('affine-bookmark')).toBeVisible();
-  await expect(page.locator('.affine-bookmark-content-url')).toContainText(
+  await expect(page.locator('lovenotes-bookmark')).toBeVisible();
+  await expect(page.locator('.lovenotes-bookmark-content-url')).toContainText(
     link
   );
 });

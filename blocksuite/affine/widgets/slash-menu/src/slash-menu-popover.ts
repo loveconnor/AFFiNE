@@ -1,14 +1,14 @@
-import { createLitPortal } from '@blocksuite/affine-components/portal';
+import { createLitPortal } from '@blocksuite/lovenotes-components/portal';
 import {
   cleanSpecifiedTail,
   getInlineEditorByModel,
   getTextContentFromInlineRange,
-} from '@blocksuite/affine-rich-text';
+} from '@blocksuite/lovenotes-rich-text';
 import {
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import type { AffineInlineEditor } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-shared/services';
+import type { LoveNotesInlineEditor } from '@blocksuite/lovenotes-shared/types';
 import {
   createKeydownObserver,
   getCurrentNativeRange,
@@ -16,7 +16,7 @@ import {
   isControlledKeyboardEvent,
   isFuzzyMatch,
   substringMatchScore,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ArrowDownSmallIcon } from '@blocksuite/icons/lit';
 import { autoPlacement, offset } from '@floating-ui/dom';
@@ -94,7 +94,7 @@ export class SlashMenu extends WithDisposable(LitElement) {
         this._telemetry?.track('SelectSlashMenuItem', {
           page: this._editorMode ?? undefined,
           segment:
-            this.context.model.flavour === 'affine:edgeless-text'
+            this.context.model.flavour === 'lovenotes:edgeless-text'
               ? 'edgeless-text'
               : 'doc',
           module: 'slash menu',
@@ -189,7 +189,7 @@ export class SlashMenu extends WithDisposable(LitElement) {
   }
 
   constructor(
-    private readonly inlineEditor: AffineInlineEditor,
+    private readonly inlineEditor: LoveNotesInlineEditor,
     private readonly abortController = new AbortController()
   ) {
     super();
@@ -417,7 +417,7 @@ export class InnerSlashMenu extends WithDisposable(LitElement) {
       abortController: this._subMenuAbortController,
     });
 
-    subMenuElement.style.zIndex = `calc(var(--affine-z-index-popover) + ${this.depth})`;
+    subMenuElement.style.zIndex = `calc(var(--lovenotes-z-index-popover) + ${this.depth})`;
     subMenuElement.focus();
   };
 
@@ -442,7 +442,7 @@ export class InnerSlashMenu extends WithDisposable(LitElement) {
     >
       ${icon && html`<div class="slash-menu-item-icon">${icon}</div>`}
       ${tooltip &&
-      html`<affine-tooltip
+      html`<lovenotes-tooltip
         tip-position="right"
         .offset=${22}
         .tooltipStyle=${slashItemToolTipStyle}
@@ -453,7 +453,7 @@ export class InnerSlashMenu extends WithDisposable(LitElement) {
       >
         <div class="tooltip-figure">${tooltip.figure}</div>
         <div class="tooltip-caption">${tooltip.caption}</div>
-      </affine-tooltip>`}
+      </lovenotes-tooltip>`}
     </icon-button>`;
   };
 

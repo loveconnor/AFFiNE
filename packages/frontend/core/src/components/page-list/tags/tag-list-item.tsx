@@ -1,8 +1,8 @@
-import { Checkbox, useDraggable } from '@affine/component';
-import { WorkbenchLink } from '@affine/core/modules/workbench';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { stopPropagation } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
+import { Checkbox, useDraggable } from '@lovenotes/component';
+import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
+import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
+import { stopPropagation } from '@lovenotes/core/utils';
+import { useI18n } from '@lovenotes/i18n';
 import type { ForwardedRef, PropsWithChildren } from 'react';
 import { forwardRef, useCallback, useMemo } from 'react';
 
@@ -26,7 +26,7 @@ const TagListTitleCell = ({ title }: Pick<TagListItemProps, 'title'>) => {
         data-testid="page-list-item-preview-text"
         className={styles.titleCellPreview}
       >
-        {` · ${t['com.affine.tags.count']({ count: pageCount || 0 })}`}
+        {` · ${t['com.lovenotes.tags.count']({ count: pageCount || 0 })}`}
       </div> */}
     </div>
   );
@@ -81,7 +81,7 @@ const TagListOperationsCell = ({
 };
 
 export const TagListItem = (props: TagListItemProps) => {
-  const { dragRef, CustomDragPreview, dragging } = useDraggable<AffineDNDData>(
+  const { dragRef, CustomDragPreview, dragging } = useDraggable<LoveNotesDNDData>(
     () => ({
       canDrag: props.draggable,
       data: {

@@ -1,5 +1,5 @@
 {
-  "name": "@blocksuite/affine-gfx-turbo-renderer",
+  "name": "@blocksuite/lovenotes-gfx-turbo-renderer",
   "description": "Turbo renderer for viewport in BlockSuite.",
   "type": "module",
   "scripts": {

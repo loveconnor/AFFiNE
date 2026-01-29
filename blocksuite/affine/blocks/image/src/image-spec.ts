@@ -1,5 +1,5 @@
-import { ImageBlockSchema } from '@blocksuite/affine-model';
-import { SlashMenuConfigExtension } from '@blocksuite/affine-widget-slash-menu';
+import { ImageBlockSchema } from '@blocksuite/lovenotes-model';
+import { SlashMenuConfigExtension } from '@blocksuite/lovenotes-widget-slash-menu';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import type { ExtensionType } from '@blocksuite/store';
 import { literal } from 'lit/static-html.js';
@@ -16,11 +16,11 @@ export const ImageBlockSpec: ExtensionType[] = [
   BlockViewExtension(flavour, model => {
     const parent = model.store.getParent(model.id);
 
-    if (parent?.flavour === 'affine:surface') {
-      return literal`affine-edgeless-image`;
+    if (parent?.flavour === 'lovenotes:surface') {
+      return literal`lovenotes-edgeless-image`;
     }
 
-    return literal`affine-image`;
+    return literal`lovenotes-image`;
   }),
   ImageDropOption,
   ImageEdgelessBlockInteraction,

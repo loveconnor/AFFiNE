@@ -11,10 +11,10 @@ dependencies {
 }
 
 apollo {
-    service("affine") {
+    service("lovenotes") {
         srcDir("../../../../../common/graphql/src/graphql")
         schemaFiles.from("../../../../../backend/server/src/schema.gql")
-        packageName.set("com.affine.pro.graphql")
+        packageName.set("com.lovenotes.pro.graphql")
         mapScalar("DateTime", "kotlinx.datetime.Instant", "com.apollographql.adapter.datetime.KotlinxInstantAdapter")
     }
 }

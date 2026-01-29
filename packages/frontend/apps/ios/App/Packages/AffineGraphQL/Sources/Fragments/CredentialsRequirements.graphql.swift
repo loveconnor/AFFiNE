@@ -3,7 +3,7 @@
 
 @_exported import ApolloAPI
 
-public struct CredentialsRequirements: AffineGraphQL.SelectionSet, Fragment {
+public struct CredentialsRequirements: LoveNotesGraphQL.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment CredentialsRequirements on CredentialsRequirementType { __typename password { __typename ...PasswordLimits } }"#
   }
@@ -11,7 +11,7 @@ public struct CredentialsRequirements: AffineGraphQL.SelectionSet, Fragment {
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CredentialsRequirementType }
+  public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CredentialsRequirementType }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("password", Password.self),
@@ -22,11 +22,11 @@ public struct CredentialsRequirements: AffineGraphQL.SelectionSet, Fragment {
   /// Password
   ///
   /// Parent Type: `PasswordLimitsType`
-  public struct Password: AffineGraphQL.SelectionSet {
+  public struct Password: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PasswordLimitsType }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PasswordLimitsType }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .fragment(PasswordLimits.self),

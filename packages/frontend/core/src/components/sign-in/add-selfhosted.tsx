@@ -1,14 +1,14 @@
-import { Button } from '@affine/component';
+import { Button } from '@lovenotes/component';
 import {
   AuthContainer,
   AuthContent,
   AuthFooter,
   AuthHeader,
   AuthInput,
-} from '@affine/component/auth-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { ServersService } from '@affine/core/modules/cloud';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@lovenotes/component/auth-components';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { ServersService } from '@lovenotes/core/modules/cloud';
+import { Trans, useI18n } from '@lovenotes/i18n';
 import { useService } from '@toeverything/infra';
 import {
   type Dispatch,
@@ -90,18 +90,18 @@ export const AddSelfhostedStep = ({
   return (
     <AuthContainer>
       <AuthHeader
-        title={t['com.affine.auth.sign.add-selfhosted.title']()}
-        subTitle={t['com.affine.auth.sign.add-selfhosted']()}
+        title={t['com.lovenotes.auth.sign.add-selfhosted.title']()}
+        subTitle={t['com.lovenotes.auth.sign.add-selfhosted']()}
       />
       <AuthContent>
         <AuthInput
-          label={t['com.affine.auth.sign.add-selfhosted.baseurl']()}
+          label={t['com.lovenotes.auth.sign.add-selfhosted.baseurl']()}
           value={baseURL}
           onChange={onBaseURLChange}
           placeholder="https://your-server.com"
           error={!!error}
           disabled={isConnecting}
-          errorHint={t['com.affine.auth.sign.add-selfhosted.error']()}
+          errorHint={t['com.lovenotes.auth.sign.add-selfhosted.error']()}
           onEnter={onConnect}
         />
         <Button
@@ -113,17 +113,17 @@ export const AddSelfhostedStep = ({
           loading={isConnecting}
           onClick={onConnect}
         >
-          {t['com.affine.auth.sign.add-selfhosted.connect-button']()}
+          {t['com.lovenotes.auth.sign.add-selfhosted.connect-button']()}
         </Button>
       </AuthContent>
       <AuthFooter>
         <div className={styles.authMessage}>
           <Trans
-            i18nKey="com.affine.auth.sign.add-selfhosted.description"
+            i18nKey="com.lovenotes.auth.sign.add-selfhosted.description"
             components={{
               1: (
                 <a
-                  href="https://docs.affine.pro/docs/self-host-affine"
+                  href="https://docs.lovenotes.pro/docs/self-host-lovenotes"
                   target="_blank"
                   rel="noreferrer"
                 />

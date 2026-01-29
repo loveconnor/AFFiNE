@@ -1,8 +1,8 @@
-import { EdgelessClipboardConfig } from '@blocksuite/affine-block-surface';
+import { EdgelessClipboardConfig } from '@blocksuite/lovenotes-block-surface';
 import { type BlockSnapshot } from '@blocksuite/store';
 
 export class EdgelessClipboardEdgelessTextConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:edgeless-text';
+  static override readonly key = 'lovenotes:edgeless-text';
 
   override async createBlock(
     edgelessText: BlockSnapshot

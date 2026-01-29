@@ -1,8 +1,8 @@
-import { RootBlockSchema } from '@blocksuite/affine-model';
+import { RootBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert } from '@blocksuite/store';
 
 export const rootBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {

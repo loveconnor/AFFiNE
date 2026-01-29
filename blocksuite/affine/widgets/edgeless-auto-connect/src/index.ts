@@ -2,17 +2,17 @@ import {
   EdgelessCRUDIdentifier,
   EdgelessLegacySlotIdentifier,
   isNoteBlock,
-} from '@blocksuite/affine-block-surface';
-import { SmallDocIcon } from '@blocksuite/affine-components/icons';
+} from '@blocksuite/lovenotes-block-surface';
+import { SmallDocIcon } from '@blocksuite/lovenotes-components/icons';
 import {
   FrameBlockModel,
   NoteBlockModel,
   NoteDisplayMode,
   type RootBlockModel,
   SurfaceRefBlockModel,
-} from '@blocksuite/affine-model';
-import { FeatureFlagService } from '@blocksuite/affine-shared/services';
-import { matchModels, stopPropagation } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { FeatureFlagService } from '@blocksuite/lovenotes-shared/services';
+import { matchModels, stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   ArrowLeftSmallIcon,
@@ -86,7 +86,7 @@ function getIndexLabelTooltip(icon: TemplateResult, content: string) {
     }
 
     .index-label-tooltip-content {
-      font-size: var(--affine-font-sm);
+      font-size: var(--lovenotes-font-sm);
 
       display: flex;
       height: 16px;
@@ -112,7 +112,7 @@ function isAutoConnectElement(element: unknown): element is AutoConnectElement {
 }
 
 export const AFFINE_EDGELESS_AUTO_CONNECT_WIDGET =
-  'affine-edgeless-auto-connect-widget';
+  'lovenotes-edgeless-auto-connect-widget';
 
 export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
   static override styles = css`
@@ -125,7 +125,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
       height: 24px;
       min-width: 24px;
 
-      color: var(--affine-white);
+      color: var(--lovenotes-white);
       font-size: 15px;
       line-height: 22px;
       text-align: center;
@@ -134,7 +134,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
       user-select: none;
 
       border-radius: 25px;
-      background: var(--affine-primary-color);
+      background: var(--lovenotes-primary-color);
     }
 
     .navigator {
@@ -163,7 +163,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
     }
 
     .navigator div:hover {
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
 
     .navigator.show {
@@ -249,9 +249,9 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
           width: `${EDGELESS_ONLY_INDEX_LABEL_WIDTH}px`,
           height: `${EDGELESS_ONLY_INDEX_LABEL_HEIGHT}px`,
           borderRadius: '50%',
-          backgroundColor: 'var(--affine-text-secondary-color)',
-          border: '1px solid var(--affine-border-color)',
-          color: 'var(--affine-white)',
+          backgroundColor: 'var(--lovenotes-text-secondary-color)',
+          border: '1px solid var(--lovenotes-border-color)',
+          color: 'var(--lovenotes-white)',
           position: 'absolute',
           transform: `translate(${
             left + width / 2 - EDGELESS_ONLY_INDEX_LABEL_WIDTH / 2
@@ -264,9 +264,9 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
 
         return html`<div style=${style} class="edgeless-only-index-label">
           ${InvisibleIcon({ width: '20px', height: '20px' })}
-          <affine-tooltip tip-position="bottom">
+          <lovenotes-tooltip tip-position="bottom">
             ${getIndexLabelTooltip(SmallDocIcon, 'Hidden on page')}
-          </affine-tooltip>
+          </lovenotes-tooltip>
         </div>`;
       }
     )}`;
@@ -289,7 +289,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
       return;
     }
     const surfaceRefs = this.block.std.store
-      .getBlocksByFlavour('affine:surface-ref')
+      .getBlocksByFlavour('lovenotes:surface-ref')
       .map(block => block.model) as SurfaceRefBlockModel[];
 
     const getVisibility = () => {
@@ -318,7 +318,7 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
     );
     this._disposables.add(
       this.store.slots.blockUpdated.subscribe(payload => {
-        if (payload.flavour === 'affine:surface-ref') {
+        if (payload.flavour === 'lovenotes:surface-ref') {
           switch (payload.type) {
             case 'add':
               surfaceRefs.push(payload.model as SurfaceRefBlockModel);
@@ -485,9 +485,9 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
               }}
             >
               ${index}
-              <affine-tooltip tip-position="bottom">
+              <lovenotes-tooltip tip-position="bottom">
                 ${getIndexLabelTooltip(SmallDocIcon, 'Page mode index')}
-              </affine-tooltip>
+              </lovenotes-tooltip>
             </div>
           `);
         }
@@ -622,13 +622,13 @@ export class EdgelessAutoConnectWidget extends WidgetComponent<RootBlockModel> {
 }
 
 export const autoConnectWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   AFFINE_EDGELESS_AUTO_CONNECT_WIDGET,
   literal`${unsafeStatic(AFFINE_EDGELESS_AUTO_CONNECT_WIDGET)}`
 );
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-edgeless-auto-connect-widget': EdgelessAutoConnectWidget;
+    'lovenotes-edgeless-auto-connect-widget': EdgelessAutoConnectWidget;
   }
 }

@@ -1,14 +1,14 @@
-import type { EditorIconButton } from '@blocksuite/affine-components/toolbar';
-import type { ReferenceInfo } from '@blocksuite/affine-model';
-import { REFERENCE_NODE } from '@blocksuite/affine-shared/consts';
+import type { EditorIconButton } from '@blocksuite/lovenotes-components/toolbar';
+import type { ReferenceInfo } from '@blocksuite/lovenotes-model';
+import { REFERENCE_NODE } from '@blocksuite/lovenotes-shared/consts';
 import {
   type LinkEventType,
   type TelemetryEvent,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { fontXSStyle, panelBaseStyle } from '@blocksuite/affine-shared/styles';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import { stopPropagation } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { fontXSStyle, panelBaseStyle } from '@blocksuite/lovenotes-shared/styles';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
+import { stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { DoneIcon, ResetIcon } from '@blocksuite/icons/lit';
 import { type BlockStdScope, ShadowlessElement } from '@blocksuite/std';
@@ -29,7 +29,7 @@ export class ReferencePopup extends SignalWatcher(
 
     .overlay-mask {
       position: fixed;
-      z-index: var(--affine-z-index-popover);
+      z-index: var(--lovenotes-z-index-popover);
       top: 0;
       left: 0;
       width: 100vw;
@@ -44,11 +44,11 @@ export class ReferencePopup extends SignalWatcher(
       box-sizing: content-box;
       justify-content: space-between;
       align-items: center;
-      animation: affine-popover-fade-in 0.2s ease;
-      z-index: var(--affine-z-index-popover);
+      animation: lovenotes-popover-fade-in 0.2s ease;
+      z-index: var(--lovenotes-z-index-popover);
     }
 
-    @keyframes affine-popover-fade-in {
+    @keyframes lovenotes-popover-fade-in {
       from {
         opacity: 0;
         transform: translateY(-3px);
@@ -65,11 +65,11 @@ export class ReferencePopup extends SignalWatcher(
       padding: 0;
       border: none;
       background: transparent;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
     }
     ${fontXSStyle('input')}
     input::placeholder {
-      color: var(--affine-placeholder-color);
+      color: var(--lovenotes-placeholder-color);
     }
     input:focus {
       outline: none;
@@ -128,7 +128,7 @@ export class ReferencePopup extends SignalWatcher(
   }
 
   private _setTitle(title?: string) {
-    const reference: AffineTextAttributes['reference'] = {
+    const reference: LoveNotesTextAttributes['reference'] = {
       type: 'LinkedPage',
       ...this.referenceInfo,
     };
@@ -240,7 +240,7 @@ export class ReferencePopup extends SignalWatcher(
   accessor docTitle!: string;
 
   @property({ attribute: false })
-  accessor inlineEditor!: InlineEditor<AffineTextAttributes>;
+  accessor inlineEditor!: InlineEditor<LoveNotesTextAttributes>;
 
   @property({ attribute: false })
   accessor inlineRange!: InlineRange;

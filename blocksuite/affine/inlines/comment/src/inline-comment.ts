@@ -1,8 +1,8 @@
 import {
   type CommentId,
   CommentProviderIdentifier,
-} from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+} from '@blocksuite/lovenotes-shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { WithDisposable } from '@blocksuite/global/lit';
 import {
   type BlockStdScope,

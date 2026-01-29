@@ -1,9 +1,9 @@
-import { DatabaseBlockModel } from '@blocksuite/affine-model';
+import { DatabaseBlockModel } from '@blocksuite/lovenotes-model';
 import {
   asyncGetBlockComponent,
   getCurrentNativeRange,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { type BlockStdScope, TextSelection } from '@blocksuite/std';
 import type { InlineEditor, InlineRange } from '@blocksuite/std/inline';
 import { BlockModel } from '@blocksuite/store';

@@ -1,4 +1,4 @@
-import { openSingleFileWith } from '@blocksuite/affine-shared/utils';
+import { openSingleFileWith } from '@blocksuite/lovenotes-shared/utils';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import type { Bound } from '@blocksuite/global/gfx';
 import c from 'simple-xml-to-json';

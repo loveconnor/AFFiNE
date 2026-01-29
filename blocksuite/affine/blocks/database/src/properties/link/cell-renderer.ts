@@ -1,10 +1,10 @@
-import { RefNodeSlotsProvider } from '@blocksuite/affine-inline-reference';
-import { ParseDocUrlProvider } from '@blocksuite/affine-shared/services';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes-inline-reference';
+import { ParseDocUrlProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   isValidUrl,
   normalizeUrl,
   stopPropagation,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import {
   BaseCellRenderer,
   createFromBaseCellRenderer,

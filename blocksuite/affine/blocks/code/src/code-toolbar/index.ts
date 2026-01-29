@@ -1,13 +1,13 @@
-import { HoverController } from '@blocksuite/affine-components/hover';
+import { HoverController } from '@blocksuite/lovenotes-components/hover';
 import type {
   AdvancedMenuItem,
   MenuItemGroup,
-} from '@blocksuite/affine-components/toolbar';
+} from '@blocksuite/lovenotes-components/toolbar';
 import {
   cloneGroups,
   getMoreMenuConfig,
-} from '@blocksuite/affine-components/toolbar';
-import type { CodeBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-components/toolbar';
+import type { CodeBlockModel } from '@blocksuite/lovenotes-model';
 import {
   BlockSelection,
   TextSelection,
@@ -20,8 +20,8 @@ import type { CodeBlockComponent } from '../code-block.js';
 import { MORE_GROUPS, PRIMARY_GROUPS } from './config.js';
 import { CodeBlockToolbarContext } from './context.js';
 
-export const AFFINE_CODE_TOOLBAR_WIDGET = 'affine-code-toolbar-widget';
-export class AffineCodeToolbarWidget extends WidgetComponent<
+export const AFFINE_CODE_TOOLBAR_WIDGET = 'lovenotes-code-toolbar-widget';
+export class LoveNotesCodeToolbarWidget extends WidgetComponent<
   CodeBlockModel,
   CodeBlockComponent
 > {
@@ -72,16 +72,16 @@ export class AffineCodeToolbarWidget extends WidgetComponent<
         );
 
         return {
-          template: html`<affine-code-toolbar
+          template: html`<lovenotes-code-toolbar
             .context=${context}
             .primaryGroups=${this.primaryGroups}
             .moreGroups=${this.moreGroups}
             .onActiveStatusChange=${setActive}
-          ></affine-code-toolbar>`,
+          ></lovenotes-code-toolbar>`,
           container: this.block,
           // stacking-context(editor-host)
           portalStyles: {
-            zIndex: 'var(--affine-z-index-popover)',
+            zIndex: 'var(--lovenotes-z-index-popover)',
           },
           computePosition: {
             referenceElement: codeBlock,

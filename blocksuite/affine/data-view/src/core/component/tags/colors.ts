@@ -7,52 +7,52 @@ export type SelectOptionColor = {
 };
 export const selectOptionColors: SelectOptionColor[] = [
   {
-    oldColor: 'var(--affine-tag-red)',
+    oldColor: 'var(--lovenotes-tag-red)',
     color: cssVarV2('chip/label/red'),
     name: 'Red',
   },
   {
-    oldColor: 'var(--affine-tag-pink)',
+    oldColor: 'var(--lovenotes-tag-pink)',
     color: cssVarV2('chip/label/magenta'),
     name: 'Magenta',
   },
   {
-    oldColor: 'var(--affine-tag-orange)',
+    oldColor: 'var(--lovenotes-tag-orange)',
     color: cssVarV2('chip/label/orange'),
     name: 'Orange',
   },
   {
-    oldColor: 'var(--affine-tag-yellow)',
+    oldColor: 'var(--lovenotes-tag-yellow)',
     color: cssVarV2('chip/label/yellow'),
     name: 'Yellow',
   },
   {
-    oldColor: 'var(--affine-tag-green)',
+    oldColor: 'var(--lovenotes-tag-green)',
     color: cssVarV2('chip/label/green'),
     name: 'Green',
   },
   {
-    oldColor: 'var(--affine-tag-teal)',
+    oldColor: 'var(--lovenotes-tag-teal)',
     color: cssVarV2('chip/label/teal'),
     name: 'Teal',
   },
   {
-    oldColor: 'var(--affine-tag-blue)',
+    oldColor: 'var(--lovenotes-tag-blue)',
     color: cssVarV2('chip/label/blue'),
     name: 'Blue',
   },
   {
-    oldColor: 'var(--affine-tag-purple)',
+    oldColor: 'var(--lovenotes-tag-purple)',
     color: cssVarV2('chip/label/purple'),
     name: 'Purple',
   },
   {
-    oldColor: 'var(--affine-tag-gray)',
+    oldColor: 'var(--lovenotes-tag-gray)',
     color: cssVarV2('chip/label/grey'),
     name: 'Grey',
   },
   {
-    oldColor: 'var(--affine-tag-white)',
+    oldColor: 'var(--lovenotes-tag-white)',
     color: cssVarV2('chip/label/white'),
     name: 'White',
   },
@@ -63,7 +63,7 @@ const oldColorMap = Object.fromEntries(
 );
 
 export const getColorByColor = (color: string) => {
-  if (color.startsWith('--affine-tag')) {
+  if (color.startsWith('--lovenotes-tag')) {
     return oldColorMap[color] ?? color;
   }
   return color;

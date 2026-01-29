@@ -3,7 +3,7 @@ import type {
   AdminWorkspaceQuery,
   AdminWorkspacesQuery,
   FeatureType,
-} from '@affine/graphql';
+} from '@lovenotes/graphql';
 
 export type WorkspaceListItem = AdminWorkspacesQuery['adminWorkspaces'][0];
 export type WorkspaceDetail = NonNullable<

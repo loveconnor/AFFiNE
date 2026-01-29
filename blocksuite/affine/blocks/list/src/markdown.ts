@@ -3,15 +3,15 @@ import {
   ListBlockSchema,
   type ListType,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import { matchModels, toNumberedList } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
+import { matchModels, toNumberedList } from '@blocksuite/lovenotes-shared/utils';
 import type { BlockComponent } from '@blocksuite/std';
 import { InlineMarkdownExtension } from '@blocksuite/std/inline';
 
 export const ListMarkdownExtension =
-  InlineMarkdownExtension<AffineTextAttributes>({
+  InlineMarkdownExtension<LoveNotesTextAttributes>({
     name: 'list',
     // group 2: number
     // group 3: bullet

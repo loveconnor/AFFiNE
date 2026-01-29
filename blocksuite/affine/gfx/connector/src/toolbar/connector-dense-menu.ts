@@ -1,7 +1,7 @@
-import { menu } from '@blocksuite/affine-components/context-menu';
-import { ConnectorMode } from '@blocksuite/affine-model';
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
-import type { DenseMenuBuilder } from '@blocksuite/affine-widget-edgeless-toolbar';
+import { menu } from '@blocksuite/lovenotes-components/context-menu';
+import { ConnectorMode } from '@blocksuite/lovenotes-model';
+import { EditPropsStore } from '@blocksuite/lovenotes-shared/services';
+import type { DenseMenuBuilder } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import {
   ConnectorCIcon,
   ConnectorEIcon,

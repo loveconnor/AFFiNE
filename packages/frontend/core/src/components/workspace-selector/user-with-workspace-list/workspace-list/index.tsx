@@ -1,19 +1,19 @@
-import { IconButton, Menu, MenuItem } from '@affine/component';
-import { Divider } from '@affine/component/ui/divider';
-import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
-import { useSignOut } from '@affine/core/components/hooks/affine/use-sign-out';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import type { AuthAccountInfo, Server } from '@affine/core/modules/cloud';
-import { AuthService, ServersService } from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import { GlobalContextService } from '@affine/core/modules/global-context';
+import { IconButton, Menu, MenuItem } from '@lovenotes/component';
+import { Divider } from '@lovenotes/component/ui/divider';
+import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
+import { useSignOut } from '@lovenotes/core/components/hooks/lovenotes/use-sign-out';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
+import type { AuthAccountInfo, Server } from '@lovenotes/core/modules/cloud';
+import { AuthService, ServersService } from '@lovenotes/core/modules/cloud';
+import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
+import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import {
   type WorkspaceMetadata,
   WorkspaceService,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
 import {
   AccountIcon,
   CloudWorkspaceIcon,
@@ -61,8 +61,8 @@ const WorkspaceServerInfo = ({
 }) => {
   const t = useI18n();
   const isCloud = server !== 'local';
-  const isAffineCloud = server === 'affine-cloud';
-  const Icon = isAffineCloud
+  const isLoveNotesCloud = server === 'lovenotes-cloud';
+  const Icon = isLoveNotesCloud
     ? CloudWorkspaceIcon
     : isCloud
       ? SelfhostIcon
@@ -71,14 +71,14 @@ const WorkspaceServerInfo = ({
   const menuItems = useMemo(
     () =>
       [
-        server !== 'affine-cloud' && server !== 'local' && (
+        server !== 'lovenotes-cloud' && server !== 'local' && (
           <MenuItem
             prefixIcon={<DeleteIcon />}
             type="danger"
             key="delete-server"
             onClick={onDeleteServer}
           >
-            {t['com.affine.server.delete']()}
+            {t['com.lovenotes.server.delete']()}
           </MenuItem>
         ),
         accountStatus === 'authenticated' && (
@@ -213,7 +213,7 @@ const LocalWorkspaces = ({
     <>
       <WorkspaceServerInfo
         server="local"
-        name={t['com.affine.workspaceList.workspaceListType.local']()}
+        name={t['com.lovenotes.workspaceList.workspaceListType.local']()}
       />
       <WorkspaceList
         items={workspaces}
@@ -225,7 +225,7 @@ const LocalWorkspaces = ({
   );
 };
 
-export const AFFiNEWorkspaceList = ({
+export const LoveNotesWorkspaceList = ({
   onEventEnd,
   onClickWorkspace,
   showEnableCloudButton,
@@ -241,12 +241,12 @@ export const AFFiNEWorkspaceList = ({
 
   const serversService = useService(ServersService);
   const servers = useLiveData(serversService.servers$);
-  const affineCloudServer = useMemo(
-    () => servers.find(s => s.id === 'affine-cloud') as Server,
+  const lovenotesCloudServer = useMemo(
+    () => servers.find(s => s.id === 'lovenotes-cloud') as Server,
     [servers]
   );
   const selfhostServers = useMemo(
-    () => servers.filter(s => s.id !== 'affine-cloud'),
+    () => servers.filter(s => s.id !== 'lovenotes-cloud'),
     [servers]
   );
 
@@ -288,15 +288,15 @@ export const AFFiNEWorkspaceList = ({
 
   return (
     <>
-      {/* 1. affine-cloud */}
+      {/* 1. lovenotes-cloud */}
       <FrameworkScope
-        key={affineCloudServer.id}
-        scope={affineCloudServer.scope}
+        key={lovenotesCloudServer.id}
+        scope={lovenotesCloudServer.scope}
       >
         <CloudWorkSpaceList
-          server={affineCloudServer}
+          server={lovenotesCloudServer}
           workspaces={cloudWorkspaces.filter(
-            ({ flavour }) => flavour === affineCloudServer.id
+            ({ flavour }) => flavour === lovenotesCloudServer.id
           )}
           onClickWorkspace={handleClickWorkspace}
         />

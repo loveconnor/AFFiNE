@@ -1,14 +1,14 @@
-import { AppSidebarService } from '@affine/core/modules/app-sidebar';
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
+import { AppSidebarService } from '@lovenotes/core/modules/app-sidebar';
+import { DesktopApiService } from '@lovenotes/core/modules/desktop-api';
 import {
   GlobalDialogService,
   WorkspaceDialogService,
-} from '@affine/core/modules/dialogs';
-import { I18nService } from '@affine/core/modules/i18n';
-import { UrlService } from '@affine/core/modules/url';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/core/modules/dialogs';
+import { I18nService } from '@lovenotes/core/modules/i18n';
+import { UrlService } from '@lovenotes/core/modules/url';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
 import {
   useService,
   useServiceOptional,
@@ -21,24 +21,24 @@ import { useEffect } from 'react';
 import { usePageHelper } from '../../blocksuite/block-suite-page-list/utils';
 import {
   PreconditionStrategy,
-  registerAffineCommand,
-  registerAffineCreationCommands,
-  registerAffineHelpCommands,
-  registerAffineLanguageCommands,
-  registerAffineLayoutCommands,
-  registerAffineNavigationCommands,
-  registerAffineSettingsCommands,
-  registerAffineUpdatesCommands,
+  registerLoveNotesCommand,
+  registerLoveNotesCreationCommands,
+  registerLoveNotesHelpCommands,
+  registerLoveNotesLanguageCommands,
+  registerLoveNotesLayoutCommands,
+  registerLoveNotesNavigationCommands,
+  registerLoveNotesSettingsCommands,
+  registerLoveNotesUpdatesCommands,
 } from '../../commands';
 import { EditorSettingService } from '../../modules/editor-setting';
 import { CMDKQuickSearchService } from '../../modules/quicksearch/services/cmdk';
 import { useNavigateHelper } from './use-navigate-helper';
 
 function registerCMDKCommand(service: CMDKQuickSearchService) {
-  return registerAffineCommand({
-    id: 'affine:show-quick-search',
+  return registerLoveNotesCommand({
+    id: 'lovenotes:show-quick-search',
     preconditionStrategy: PreconditionStrategy.Never,
-    category: 'affine:general',
+    category: 'lovenotes:general',
     keyBinding: {
       binding: '$mod+K',
     },
@@ -89,13 +89,13 @@ export function useRegisterWorkspaceCommands() {
     };
   }, [cMDKQuickSearchService]);
 
-  // register AffineUpdatesCommands
+  // register LoveNotesUpdatesCommands
   useEffect(() => {
     if (!quitAndInstall) {
       return;
     }
 
-    const unsub = registerAffineUpdatesCommands({
+    const unsub = registerLoveNotesUpdatesCommands({
       store,
       t,
       quitAndInstall,
@@ -106,9 +106,9 @@ export function useRegisterWorkspaceCommands() {
     };
   }, [quitAndInstall, store, t]);
 
-  // register AffineNavigationCommands
+  // register LoveNotesNavigationCommands
   useEffect(() => {
-    const unsub = registerAffineNavigationCommands({
+    const unsub = registerLoveNotesNavigationCommands({
       t,
       docCollection: currentWorkspace.docCollection,
       navigationHelper,
@@ -129,9 +129,9 @@ export function useRegisterWorkspaceCommands() {
     workbenchService,
   ]);
 
-  // register AffineSettingsCommands
+  // register LoveNotesSettingsCommands
   useEffect(() => {
-    const unsub = registerAffineSettingsCommands({
+    const unsub = registerLoveNotesSettingsCommands({
       store,
       t,
       theme,
@@ -144,7 +144,7 @@ export function useRegisterWorkspaceCommands() {
   }, [editorSettingService, store, t, theme]);
 
   useEffect(() => {
-    const unsub = registerAffineLanguageCommands({
+    const unsub = registerLoveNotesLanguageCommands({
       i18n,
       t,
     });
@@ -154,18 +154,18 @@ export function useRegisterWorkspaceCommands() {
     };
   }, [i18n, t]);
 
-  // register AffineLayoutCommands
+  // register LoveNotesLayoutCommands
   useEffect(() => {
-    const unsub = registerAffineLayoutCommands({ t, appSidebarService });
+    const unsub = registerLoveNotesLayoutCommands({ t, appSidebarService });
 
     return () => {
       unsub();
     };
   }, [appSidebarService, store, t]);
 
-  // register AffineCreationCommands
+  // register LoveNotesCreationCommands
   useEffect(() => {
-    const unsub = registerAffineCreationCommands({
+    const unsub = registerLoveNotesCreationCommands({
       globalDialogService,
       pageHelper: pageHelper,
       t,
@@ -176,9 +176,9 @@ export function useRegisterWorkspaceCommands() {
     };
   }, [store, pageHelper, t, globalDialogService]);
 
-  // register AffineHelpCommands
+  // register LoveNotesHelpCommands
   useEffect(() => {
-    const unsub = registerAffineHelpCommands({
+    const unsub = registerLoveNotesHelpCommands({
       t,
       urlService,
       workspaceDialogService,

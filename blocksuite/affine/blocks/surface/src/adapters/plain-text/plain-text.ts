@@ -1,17 +1,17 @@
-import { getMindMapNodeMap } from '@blocksuite/affine-model';
+import { getMindMapNodeMap } from '@blocksuite/lovenotes-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 import { PlainTextElementModelAdapter } from './element-adapter/index.js';
 import { ElementToPlainTextAdapterMatcherIdentifier } from './element-adapter/type.js';
 
 export const surfaceBlockPlainTextAdapterMatcher: BlockPlainTextAdapterMatcher =
   {
-    flavour: 'affine:surface',
+    flavour: 'lovenotes:surface',
     toMatch: () => false,
-    fromMatch: o => o.node.flavour === 'affine:surface',
+    fromMatch: o => o.node.flavour === 'lovenotes:surface',
     toBlockSnapshot: {},
     fromBlockSnapshot: {
       enter: (_, context) => {
@@ -25,9 +25,9 @@ export const SurfaceBlockPlainTextAdapterExtension =
 
 export const edgelessSurfaceBlockPlainTextAdapterMatcher: BlockPlainTextAdapterMatcher =
   {
-    flavour: 'affine:surface',
+    flavour: 'lovenotes:surface',
     toMatch: () => false,
-    fromMatch: o => o.node.flavour === 'affine:surface',
+    fromMatch: o => o.node.flavour === 'lovenotes:surface',
     toBlockSnapshot: {},
     fromBlockSnapshot: {
       enter: (o, context) => {

@@ -7,7 +7,7 @@ import type {
 } from '@blocksuite/store';
 import { filter, from, map, mergeMap } from 'rxjs';
 
-const ALLOWED_FLAVOURS = new Set(['affine:attachment', 'affine:image']);
+const ALLOWED_FLAVOURS = new Set(['lovenotes:attachment', 'lovenotes:image']);
 
 export const uploadMiddleware = (
   std: BlockStdScope,

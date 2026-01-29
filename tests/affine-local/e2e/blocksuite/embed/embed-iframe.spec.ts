@@ -2,22 +2,22 @@ import {
   clickEdgelessModeButton,
   locateEditorContainer,
   locateToolbar,
-} from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/editor';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   type,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect, type Page, test } from '@playwright/test';
 
 const TEST_SPOTIFY_URL =
   'https://open.spotify.com/episode/7makk4oTQel546B0PZlDM5';
 
-const TEST_AFFINE_URL = 'https://app.affine.pro/';
+const TEST_AFFINE_URL = 'https://app.lovenotes.pro/';
 
-const EMBED_IFRAME_BLOCK = 'affine-embed-iframe-block';
-const EMBED_EDGELESS_IFRAME_BLOCK = 'affine-embed-edgeless-iframe-block';
+const EMBED_IFRAME_BLOCK = 'lovenotes-embed-iframe-block';
+const EMBED_EDGELESS_IFRAME_BLOCK = 'lovenotes-embed-edgeless-iframe-block';
 const IDLE_CARD = 'embed-iframe-idle-card';
 const LINK_INPUT_POPUP = 'embed-iframe-link-input-popup';
 
@@ -25,7 +25,7 @@ test.beforeEach(async ({ page }) => {
   await openHomePage(page);
   await clickNewPageButton(page);
   await waitForEmptyEditor(page);
-  await page.locator('affine-paragraph v-line div').click();
+  await page.locator('lovenotes-paragraph v-line div').click();
 });
 
 test.describe('embed iframe block', () => {
@@ -100,7 +100,7 @@ test.describe('embed iframe block', () => {
     await expect(embedIframeBlock).toHaveCount(0);
 
     // expect the bookmark block count is 1
-    const bookmarkBlock = page.locator('affine-bookmark');
+    const bookmarkBlock = page.locator('lovenotes-bookmark');
     await expect(bookmarkBlock).toHaveCount(1);
   });
 
@@ -157,11 +157,11 @@ test.describe('embed iframe block', () => {
       await openToolbarAndSwitchView(page);
       await page.getByRole('button', { name: 'Inline view' }).click();
 
-      const affineLink = page.locator('affine-link');
-      await expect(affineLink).toBeVisible();
+      const lovenotesLink = page.locator('lovenotes-link');
+      await expect(lovenotesLink).toBeVisible();
 
-      // hover affine link
-      await affineLink.hover();
+      // hover lovenotes link
+      await lovenotesLink.hover();
       await page.waitForTimeout(100);
 
       // convert back to embed iframe block
@@ -172,7 +172,7 @@ test.describe('embed iframe block', () => {
       await expect(embedIframeBlock).toHaveCount(1);
 
       // expect the link text content is the url
-      await expect(affineLink).toHaveCount(0);
+      await expect(lovenotesLink).toHaveCount(0);
     });
 
     test('embed iframe block to bookmark card', async ({ page }) => {
@@ -185,7 +185,7 @@ test.describe('embed iframe block', () => {
       await expect(embedIframeBlock).toHaveCount(0);
 
       // expect the bookmark block count is 1
-      const bookmarkBlock = page.locator('affine-bookmark');
+      const bookmarkBlock = page.locator('lovenotes-bookmark');
       await expect(bookmarkBlock).toHaveCount(1);
 
       // click the bookmark block
@@ -246,7 +246,7 @@ test.describe('embed iframe block', () => {
       await expect(embedEdgelessIframeBlock).toHaveCount(0);
 
       // expect the bookmark block count is 1
-      const bookmarkEdgelessBlock = page.locator('affine-edgeless-bookmark');
+      const bookmarkEdgelessBlock = page.locator('lovenotes-edgeless-bookmark');
       await expect(bookmarkEdgelessBlock).toHaveCount(1);
 
       // click the bookmark block

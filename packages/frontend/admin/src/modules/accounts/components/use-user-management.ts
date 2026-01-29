@@ -1,8 +1,8 @@
 import {
   useMutateQueryResource,
   useMutation,
-} from '@affine/admin/use-mutation';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+} from '@lovenotes/admin/use-mutation';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import {
   createChangePasswordUrlMutation,
   createUserMutation,
@@ -15,7 +15,7 @@ import {
   listUsersQuery,
   updateAccountFeaturesMutation,
   updateAccountMutation,
-} from '@affine/graphql';
+} from '@lovenotes/graphql';
 import { useCallback, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 

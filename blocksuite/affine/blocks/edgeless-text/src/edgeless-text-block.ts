@@ -1,5 +1,5 @@
-import { TextUtils } from '@blocksuite/affine-block-surface';
-import { formatBlockCommand } from '@blocksuite/affine-inline-preset';
+import { TextUtils } from '@blocksuite/lovenotes-block-surface';
+import { formatBlockCommand } from '@blocksuite/lovenotes-inline-preset';
 import {
   DefaultTheme,
   EDGELESS_TEXT_BLOCK_MIN_HEIGHT,
@@ -8,13 +8,13 @@ import {
   EdgelessTextBlockSchema,
   ListBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   handleNativeRangeAtPoint,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { Bound, clamp } from '@blocksuite/global/gfx';
 import type { BlockComponent } from '@blocksuite/std';
 import {
@@ -35,8 +35,8 @@ export class EdgelessTextBlockComponent extends GfxBlockComponent<EdgelessTextBl
       text-wrap: nowrap !important;
     }
 
-    .edgeless-text-block-container affine-paragraph,
-    affine-list {
+    .edgeless-text-block-container lovenotes-paragraph,
+    lovenotes-list {
       color: var(--edgeless-text-color);
       font-family: var(--edgeless-text-font-family);
       font-style: var(--edgeless-text-font-style);
@@ -189,7 +189,7 @@ export class EdgelessTextBlockComponent extends GfxBlockComponent<EdgelessTextBl
           !matchModels(firstChild, [ListBlockModel, ParagraphBlockModel])
         ) {
           newParagraphId = this.store.addBlock(
-            'affine:paragraph',
+            'lovenotes:paragraph',
             {},
             this.model.id,
             0
@@ -202,7 +202,7 @@ export class EdgelessTextBlockComponent extends GfxBlockComponent<EdgelessTextBl
           !matchModels(lastChild, [ListBlockModel, ParagraphBlockModel])
         ) {
           newParagraphId = this.store.addBlock(
-            'affine:paragraph',
+            'lovenotes:paragraph',
             {},
             this.model.id
           );
@@ -286,12 +286,12 @@ export class EdgelessTextBlockComponent extends GfxBlockComponent<EdgelessTextBl
     const containerStyle: StyleInfo = {
       transform: `rotate(${rotate}deg)`,
       transformOrigin: 'center',
-      border: `1px solid ${editing ? 'var(--affine—primary—color, #1e96eb)' : 'transparent'}`,
+      border: `1px solid ${editing ? 'var(--lovenotes—primary—color, #1e96eb)' : 'transparent'}`,
       borderRadius: '4px',
       boxSizing: 'border-box',
       boxShadow: editing ? '0px 0px 0px 2px rgba(30, 150, 235, 0.3)' : 'none',
       fontWeight: '400',
-      lineHeight: 'var(--affine-line-height)',
+      lineHeight: 'var(--lovenotes-line-height)',
       minWidth: !hasMaxWidth ? '220px' : undefined,
     };
 
@@ -331,12 +331,12 @@ export class EdgelessTextBlockComponent extends GfxBlockComponent<EdgelessTextBl
       '--edgeless-text-font-style': fontStyle,
       '--edgeless-text-font-weight': fontWeight,
       '--edgeless-text-text-align': textAlign,
-      '--affine-list-margin': '0',
-      '--affine-paragraph-margin': '0',
+      '--lovenotes-list-margin': '0',
+      '--lovenotes-paragraph-margin': '0',
     });
 
     return html`
-      <div style=${style} class="affine-block-children-container">
+      <div style=${style} class="lovenotes-block-children-container">
         ${this.renderChildren(this.model)}
       </div>
     `;
@@ -344,7 +344,7 @@ export class EdgelessTextBlockComponent extends GfxBlockComponent<EdgelessTextBl
 
   tryFocusEnd() {
     const paragraphOrLists = Array.from(
-      this.querySelectorAll<BlockComponent>('affine-paragraph, affine-list')
+      this.querySelectorAll<BlockComponent>('lovenotes-paragraph, lovenotes-list')
     );
     const last = paragraphOrLists.at(-1);
     if (last) {
@@ -367,13 +367,13 @@ export class EdgelessTextBlockComponent extends GfxBlockComponent<EdgelessTextBl
   @query('.edgeless-text-block-container')
   private accessor _textContainer!: HTMLDivElement;
 
-  @query('.affine-block-children-container')
+  @query('.lovenotes-block-children-container')
   accessor childrenContainer!: HTMLDivElement;
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-edgeless-text': EdgelessTextBlockComponent;
+    'lovenotes-edgeless-text': EdgelessTextBlockComponent;
   }
 }
 
@@ -469,7 +469,7 @@ export const EdgelessTextInteraction =
 
                   if (model.children.length === 0) {
                     const blockId = std.store.addBlock(
-                      'affine:paragraph',
+                      'lovenotes:paragraph',
                       { type: 'text' },
                       model.id
                     );
@@ -479,7 +479,7 @@ export const EdgelessTextInteraction =
                     }
                   } else {
                     const rect = view
-                      .querySelector('.affine-block-children-container')
+                      .querySelector('.lovenotes-block-children-container')
                       ?.getBoundingClientRect();
 
                     if (rect) {

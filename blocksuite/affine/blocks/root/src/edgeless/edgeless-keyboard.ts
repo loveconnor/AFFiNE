@@ -1,37 +1,37 @@
-import { insertLinkByQuickSearchCommand } from '@blocksuite/affine-block-bookmark';
-import { EdgelessTextBlockComponent } from '@blocksuite/affine-block-edgeless-text';
+import { insertLinkByQuickSearchCommand } from '@blocksuite/lovenotes-block-bookmark';
+import { EdgelessTextBlockComponent } from '@blocksuite/lovenotes-block-edgeless-text';
 import {
   FrameTool,
   type PresentToolOption,
-} from '@blocksuite/affine-block-frame';
+} from '@blocksuite/lovenotes-block-frame';
 import {
   DefaultTool,
   EdgelessLegacySlotIdentifier,
   isNoteBlock,
-} from '@blocksuite/affine-block-surface';
-import { toast } from '@blocksuite/affine-components/toast';
+} from '@blocksuite/lovenotes-block-surface';
+import { toast } from '@blocksuite/lovenotes-components/toast';
 import {
   BrushTool,
   EraserTool,
   HighlighterTool,
-} from '@blocksuite/affine-gfx-brush';
+} from '@blocksuite/lovenotes-gfx-brush';
 import {
   ConnectorTool,
   mountConnectorLabelEditor,
-} from '@blocksuite/affine-gfx-connector';
+} from '@blocksuite/lovenotes-gfx-connector';
 import {
   createGroupFromSelectedCommand,
   ungroupCommand,
-} from '@blocksuite/affine-gfx-group';
+} from '@blocksuite/lovenotes-gfx-group';
 import {
   getNearestTranslation,
   isElementOutsideViewport,
   isSingleMindMapNode,
-} from '@blocksuite/affine-gfx-mindmap';
-import { NoteTool } from '@blocksuite/affine-gfx-note';
-import { PanTool } from '@blocksuite/affine-gfx-pointer';
-import { mountShapeTextEditor, ShapeTool } from '@blocksuite/affine-gfx-shape';
-import { TextTool } from '@blocksuite/affine-gfx-text';
+} from '@blocksuite/lovenotes-gfx-mindmap';
+import { NoteTool } from '@blocksuite/lovenotes-gfx-note';
+import { PanTool } from '@blocksuite/lovenotes-gfx-pointer';
+import { mountShapeTextEditor, ShapeTool } from '@blocksuite/lovenotes-gfx-shape';
+import { TextTool } from '@blocksuite/lovenotes-gfx-text';
 import {
   ConnectorElementModel,
   type ConnectorMode,
@@ -42,12 +42,12 @@ import {
   NoteBlockModel,
   NoteDisplayMode,
   type ShapeElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { IS_MAC } from '@blocksuite/global/env';
 import { Bound, getCommonBound } from '@blocksuite/global/gfx';
 import { SurfaceSelection, TextSelection } from '@blocksuite/std';

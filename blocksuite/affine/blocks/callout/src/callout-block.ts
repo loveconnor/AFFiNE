@@ -1,22 +1,22 @@
-import { CaptionedBlockComponent } from '@blocksuite/affine-components/caption';
+import { CaptionedBlockComponent } from '@blocksuite/lovenotes-components/caption';
 import {
   createPopup,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { DefaultInlineManagerExtension } from '@blocksuite/affine-inline-preset';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { DefaultInlineManagerExtension } from '@blocksuite/lovenotes-inline-preset';
 import {
   type CalloutBlockModel,
   type ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import { EDGELESS_TOP_CONTENTEDITABLE_SELECTOR } from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import { EDGELESS_TOP_CONTENTEDITABLE_SELECTOR } from '@blocksuite/lovenotes-shared/consts';
 import {
   DocModeProvider,
   type IconData,
   IconPickerServiceIdentifier,
   IconType,
-} from '@blocksuite/affine-shared/services';
-import type { UniComponent } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-shared/services';
+import type { UniComponent } from '@blocksuite/lovenotes-shared/types';
 import * as icons from '@blocksuite/icons/lit';
 import type { BlockComponent } from '@blocksuite/std';
 import { type Signal } from '@preact/signals-core';
@@ -33,7 +33,7 @@ import {
   calloutHostStyles,
 } from './callout-block-styles.js';
 import { IconPickerWrapper } from './icon-picker-wrapper.js';
-// Copy of renderUniLit and UniLit from affine-data-view
+// Copy of renderUniLit and UniLit from lovenotes-data-view
 export const renderUniLit = <Props, Expose extends NonNullable<unknown>>(
   uni: UniComponent<Props, Expose> | undefined,
   props?: Props,
@@ -57,7 +57,7 @@ const getIcon = (icon?: IconData) => {
   if (icon.type === IconType.Emoji) {
     return icon.unicode;
   }
-  if (icon.type === IconType.AffineIcon) {
+  if (icon.type === IconType.LoveNotesIcon) {
     return (
       icons as Record<string, (props: { style: string }) => TemplateResult>
     )[`${icon.name}Icon`]?.({ style: `color:${icon.color}` });
@@ -81,16 +81,16 @@ export class CalloutBlockComponent extends CaptionedBlockComponent<CalloutBlockM
     const flavour = firstChild.flavour;
 
     const marginTopMap: Record<string, string> = {
-      'affine:paragraph:h1': '23px',
-      'affine:paragraph:h2': '20px',
-      'affine:paragraph:h3': '16px',
-      'affine:paragraph:h4': '15px',
-      'affine:paragraph:h5': '14px',
-      'affine:paragraph:h6': '13px',
+      'lovenotes:paragraph:h1': '23px',
+      'lovenotes:paragraph:h2': '20px',
+      'lovenotes:paragraph:h3': '16px',
+      'lovenotes:paragraph:h4': '15px',
+      'lovenotes:paragraph:h5': '14px',
+      'lovenotes:paragraph:h6': '13px',
     };
 
     // For heading blocks, use the type to determine margin
-    if (flavour === 'affine:paragraph') {
+    if (flavour === 'lovenotes:paragraph') {
       const paragraph = firstChild as ParagraphBlockModel;
       const type = paragraph.props.type$.value;
       const key = `${flavour}:${type}`;
@@ -142,7 +142,7 @@ export class CalloutBlockComponent extends CaptionedBlockComponent<CalloutBlockM
     wrapper.props = props;
     wrapper.style.position = 'absolute';
     wrapper.style.backgroundColor = cssVarV2.layer.background.overlayPanel;
-    wrapper.style.boxShadow = 'var(--affine-menu-shadow)';
+    wrapper.style.boxShadow = 'var(--lovenotes-menu-shadow)';
     wrapper.style.borderRadius = '8px';
 
     // Create popup target from the clicked element
@@ -160,8 +160,8 @@ export class CalloutBlockComponent extends CaptionedBlockComponent<CalloutBlockM
     // Check if the click target is emoji related element
     const target = event.target as HTMLElement;
     if (
-      target.closest('.affine-callout-emoji-container') ||
-      target.classList.contains('affine-callout-emoji')
+      target.closest('.lovenotes-callout-emoji-container') ||
+      target.classList.contains('lovenotes-callout-emoji')
     ) {
       return;
     }
@@ -182,7 +182,7 @@ export class CalloutBlockComponent extends CaptionedBlockComponent<CalloutBlockM
     event.stopPropagation();
 
     // Create a new paragraph block
-    const paragraphId = this.store.addBlock('affine:paragraph', {}, this.model);
+    const paragraphId = this.store.addBlock('lovenotes:paragraph', {}, this.model);
 
     // Focus the new paragraph
     focusTextModel(this.std, paragraphId);

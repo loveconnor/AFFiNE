@@ -18,6 +18,6 @@ export class HighlightDuotoneIcon extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-highlight-duotone-icon': HighlightDuotoneIcon;
+    'lovenotes-highlight-duotone-icon': HighlightDuotoneIcon;
   }
 }

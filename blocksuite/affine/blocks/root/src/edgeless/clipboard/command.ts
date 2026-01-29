@@ -3,7 +3,7 @@ import {
   EdgelessClipboardConfigIdentifier,
   EdgelessCRUDIdentifier,
   SurfaceGroupLikeModel,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import { Bound, type IVec, type SerializedXYWH } from '@blocksuite/global/gfx';
 import { assertType } from '@blocksuite/global/utils';
 import type { BlockStdScope, Command } from '@blocksuite/std';

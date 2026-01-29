@@ -1,4 +1,4 @@
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
 import {
   CommunityCanvasTextFonts,
   DocModeProvider,
@@ -6,9 +6,9 @@ import {
   FeatureFlagService,
   FontConfigExtension,
   ParseDocUrlExtension,
-} from '@blocksuite/affine/shared/services';
-import type { ExtensionType, Store, Workspace } from '@blocksuite/affine/store';
-import { type TestAffineEditorContainer } from '@blocksuite/integration-test';
+} from '@blocksuite/lovenotes/shared/services';
+import type { ExtensionType, Store, Workspace } from '@blocksuite/lovenotes/store';
+import { type TestLoveNotesEditorContainer } from '@blocksuite/integration-test';
 import { getTestViewManager } from '@blocksuite/integration-test/view';
 
 import {
@@ -20,7 +20,7 @@ import {
 const viewManager = getTestViewManager();
 
 export function getTestCommonExtensions(
-  editor: TestAffineEditorContainer
+  editor: TestLoveNotesEditorContainer
 ): ExtensionType[] {
   return [
     FontConfigExtension(CommunityCanvasTextFonts),
@@ -42,7 +42,7 @@ export function createTestEditor(store: Store, workspace: Workspace) {
     .get(FeatureFlagService)
     .setFlag('enable_advanced_block_visibility', true);
 
-  const editor = document.createElement('affine-editor-container');
+  const editor = document.createElement('lovenotes-editor-container');
 
   editor.autofocus = true;
   editor.doc = store;

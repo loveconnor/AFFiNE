@@ -1,4 +1,4 @@
-import type { FontFamily } from '@blocksuite/affine-model';
+import type { FontFamily } from '@blocksuite/lovenotes-model';
 import { IS_FIREFOX } from '@blocksuite/global/env';
 
 export function wrapFontFamily(fontFamily: FontFamily | string): string {

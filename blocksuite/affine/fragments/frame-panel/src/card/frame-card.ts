@@ -1,5 +1,5 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
-import { on, once } from '@blocksuite/affine-shared/utils';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
+import { on, once } from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { type BlockStdScope, ShadowlessElement } from '@blocksuite/std';
 import { css, html, nothing } from 'lit';
@@ -53,8 +53,8 @@ const styles = css`
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    border: 1px solid var(--affine-border-color);
-    background: var(--affine-background-primary-color);
+    border: 1px solid var(--lovenotes-border-color);
+    background: var(--lovenotes-background-primary-color);
     box-shadow: 0px 0px 12px 0px rgba(66, 65, 73, 0.18);
     cursor: pointer;
     position: relative;
@@ -70,7 +70,7 @@ const styles = css`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: calc(var(--affine-z-index-popover, 0) + 3);
+    z-index: calc(var(--lovenotes-z-index-popover, 0) + 3);
   }
 
   .frame-card-container.dragging frame-card-title {
@@ -89,8 +89,8 @@ const styles = css`
     min-width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: var(--affine-black);
-    color: var(--affine-white);
+    background: var(--lovenotes-black);
+    color: var(--lovenotes-white);
     font-size: 15px;
     line-height: 24px;
     text-align: center;
@@ -102,7 +102,7 @@ const styles = css`
   }
 `;
 
-export const AFFINE_FRAME_CARD = 'affine-frame-card';
+export const AFFINE_FRAME_CARD = 'lovenotes-frame-card';
 
 export class FrameCard extends WithDisposable(ShadowlessElement) {
   static override styles = styles;
@@ -195,10 +195,10 @@ export class FrameCard extends WithDisposable(ShadowlessElement) {
     >
       ${this.status === 'dragging'
         ? nothing
-        : html`<affine-frame-card-title
+        : html`<lovenotes-frame-card-title
             .cardIndex=${this.cardIndex}
             .frame=${this.frame}
-          ></affine-frame-card-title>`}
+          ></lovenotes-frame-card-title>`}
       <div
         class="frame-card-body"
         @click=${this._dispatchSelectEvent}

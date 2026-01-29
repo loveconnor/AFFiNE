@@ -30,11 +30,11 @@ public class ListCommentsQuery: GraphQLQuery {
     "pagination": pagination
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("workspaceId")]),
     ] }
@@ -45,11 +45,11 @@ public class ListCommentsQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("comments", Comments.self, arguments: [
@@ -64,11 +64,11 @@ public class ListCommentsQuery: GraphQLQuery {
       /// Workspace.Comments
       ///
       /// Parent Type: `PaginatedCommentObjectType`
-      public struct Comments: AffineGraphQL.SelectionSet {
+      public struct Comments: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PaginatedCommentObjectType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PaginatedCommentObjectType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("totalCount", Int.self),
@@ -83,11 +83,11 @@ public class ListCommentsQuery: GraphQLQuery {
         /// Workspace.Comments.Edge
         ///
         /// Parent Type: `CommentObjectTypeEdge`
-        public struct Edge: AffineGraphQL.SelectionSet {
+        public struct Edge: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CommentObjectTypeEdge }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CommentObjectTypeEdge }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("cursor", String.self),
@@ -100,31 +100,31 @@ public class ListCommentsQuery: GraphQLQuery {
           /// Workspace.Comments.Edge.Node
           ///
           /// Parent Type: `CommentObjectType`
-          public struct Node: AffineGraphQL.SelectionSet {
+          public struct Node: LoveNotesGraphQL.SelectionSet {
             public let __data: DataDict
             public init(_dataDict: DataDict) { __data = _dataDict }
 
-            public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CommentObjectType }
+            public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CommentObjectType }
             public static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
-              .field("id", AffineGraphQL.ID.self),
-              .field("content", AffineGraphQL.JSONObject.self),
+              .field("id", LoveNotesGraphQL.ID.self),
+              .field("content", LoveNotesGraphQL.JSONObject.self),
               .field("resolved", Bool.self),
-              .field("createdAt", AffineGraphQL.DateTime.self),
-              .field("updatedAt", AffineGraphQL.DateTime.self),
+              .field("createdAt", LoveNotesGraphQL.DateTime.self),
+              .field("updatedAt", LoveNotesGraphQL.DateTime.self),
               .field("user", User.self),
               .field("replies", [Reply].self),
             ] }
 
-            public var id: AffineGraphQL.ID { __data["id"] }
+            public var id: LoveNotesGraphQL.ID { __data["id"] }
             /// The content of the comment
-            public var content: AffineGraphQL.JSONObject { __data["content"] }
+            public var content: LoveNotesGraphQL.JSONObject { __data["content"] }
             /// Whether the comment is resolved
             public var resolved: Bool { __data["resolved"] }
             /// The created at time of the comment
-            public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
+            public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
             /// The updated at time of the comment
-            public var updatedAt: AffineGraphQL.DateTime { __data["updatedAt"] }
+            public var updatedAt: LoveNotesGraphQL.DateTime { __data["updatedAt"] }
             /// The user who created the comment
             public var user: User { __data["user"] }
             /// The replies of the comment
@@ -133,11 +133,11 @@ public class ListCommentsQuery: GraphQLQuery {
             /// Workspace.Comments.Edge.Node.User
             ///
             /// Parent Type: `PublicUserType`
-            public struct User: AffineGraphQL.SelectionSet {
+            public struct User: LoveNotesGraphQL.SelectionSet {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PublicUserType }
+              public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PublicUserType }
               public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
                 .field("id", String.self),
@@ -153,40 +153,40 @@ public class ListCommentsQuery: GraphQLQuery {
             /// Workspace.Comments.Edge.Node.Reply
             ///
             /// Parent Type: `ReplyObjectType`
-            public struct Reply: AffineGraphQL.SelectionSet {
+            public struct Reply: LoveNotesGraphQL.SelectionSet {
               public let __data: DataDict
               public init(_dataDict: DataDict) { __data = _dataDict }
 
-              public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.ReplyObjectType }
+              public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.ReplyObjectType }
               public static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
-                .field("commentId", AffineGraphQL.ID.self),
-                .field("id", AffineGraphQL.ID.self),
-                .field("content", AffineGraphQL.JSONObject.self),
-                .field("createdAt", AffineGraphQL.DateTime.self),
-                .field("updatedAt", AffineGraphQL.DateTime.self),
+                .field("commentId", LoveNotesGraphQL.ID.self),
+                .field("id", LoveNotesGraphQL.ID.self),
+                .field("content", LoveNotesGraphQL.JSONObject.self),
+                .field("createdAt", LoveNotesGraphQL.DateTime.self),
+                .field("updatedAt", LoveNotesGraphQL.DateTime.self),
                 .field("user", User.self),
               ] }
 
-              public var commentId: AffineGraphQL.ID { __data["commentId"] }
-              public var id: AffineGraphQL.ID { __data["id"] }
+              public var commentId: LoveNotesGraphQL.ID { __data["commentId"] }
+              public var id: LoveNotesGraphQL.ID { __data["id"] }
               /// The content of the reply
-              public var content: AffineGraphQL.JSONObject { __data["content"] }
+              public var content: LoveNotesGraphQL.JSONObject { __data["content"] }
               /// The created at time of the reply
-              public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
+              public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
               /// The updated at time of the reply
-              public var updatedAt: AffineGraphQL.DateTime { __data["updatedAt"] }
+              public var updatedAt: LoveNotesGraphQL.DateTime { __data["updatedAt"] }
               /// The user who created the reply
               public var user: User { __data["user"] }
 
               /// Workspace.Comments.Edge.Node.Reply.User
               ///
               /// Parent Type: `PublicUserType`
-              public struct User: AffineGraphQL.SelectionSet {
+              public struct User: LoveNotesGraphQL.SelectionSet {
                 public let __data: DataDict
                 public init(_dataDict: DataDict) { __data = _dataDict }
 
-                public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PublicUserType }
+                public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PublicUserType }
                 public static var __selections: [ApolloAPI.Selection] { [
                   .field("__typename", String.self),
                   .field("id", String.self),
@@ -205,11 +205,11 @@ public class ListCommentsQuery: GraphQLQuery {
         /// Workspace.Comments.PageInfo
         ///
         /// Parent Type: `PageInfo`
-        public struct PageInfo: AffineGraphQL.SelectionSet {
+        public struct PageInfo: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PageInfo }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PageInfo }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("startCursor", String?.self),

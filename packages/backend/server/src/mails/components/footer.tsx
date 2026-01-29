@@ -27,10 +27,10 @@ export const Footer = () => {
           {['Github', 'Twitter', 'Discord', 'Youtube', 'Reddit'].map(
             platform => (
               <td key={platform} style={{ padding: '0 10px' }}>
-                <Link href={`https://affine.pro/${platform.toLowerCase()}`}>
+                <Link href={`https://lovenotes.pro/${platform.toLowerCase()}`}>
                   <Img
-                    src={`https://cdn.affine.pro/mail/2023-8-9/${platform}.png`}
-                    alt={`affine ${platform.toLowerCase()} link`}
+                    src={`https://cdn.lovenotes.pro/mail/2023-8-9/${platform}.png`}
+                    alt={`lovenotes ${platform.toLowerCase()} link`}
                     height="16px"
                   />
                 </Link>
@@ -49,7 +49,7 @@ export const Footer = () => {
           <td>Copyright</td>
           <td>
             <Img
-              src="https://cdn.affine.pro/mail/2023-8-9/copyright.png"
+              src="https://cdn.lovenotes.pro/mail/2023-8-9/copyright.png"
               alt="copyright"
               height="14px"
               style={{ verticalAlign: 'middle', margin: '0 4px' }}

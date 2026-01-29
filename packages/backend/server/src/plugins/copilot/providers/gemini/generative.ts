@@ -41,7 +41,7 @@ export class GeminiGenerativeProvider extends GeminiProvider<GeminiGenerativeCon
     },
     {
       name: 'Gemini 2.5 Flash',
-      id: 'gemini-2.5-flash',
+      id: 'gpt-5',
       capabilities: [
         {
           input: [

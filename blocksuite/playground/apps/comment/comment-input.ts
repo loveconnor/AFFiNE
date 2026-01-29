@@ -1,6 +1,6 @@
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import type { RichText } from '@blocksuite/affine/rich-text';
-import { ShadowlessElement, TextSelection } from '@blocksuite/affine/std';
+import { WithDisposable } from '@blocksuite/lovenotes/global/lit';
+import type { RichText } from '@blocksuite/lovenotes/rich-text';
+import { ShadowlessElement, TextSelection } from '@blocksuite/lovenotes/std';
 import { css, html, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import * as Y from 'yjs';
@@ -15,9 +15,9 @@ export class CommentInput extends WithDisposable(ShadowlessElement) {
 
     .comment-quote {
       font-size: 10px;
-      color: var(--affine-text-secondary-color);
+      color: var(--lovenotes-text-secondary-color);
       padding-left: 8px;
-      border-left: 2px solid var(--affine-text-secondary-color);
+      border-left: 2px solid var(--lovenotes-text-secondary-color);
       margin-bottom: 8px;
     }
 

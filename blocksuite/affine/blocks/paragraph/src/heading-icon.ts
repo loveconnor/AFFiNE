@@ -5,8 +5,8 @@ import {
   Heading4Icon,
   Heading5Icon,
   Heading6Icon,
-} from '@blocksuite/affine-components/icons';
-import type { ParagraphBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-components/icons';
+import type { ParagraphBlockModel } from '@blocksuite/lovenotes-model';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import { cssVarV2 } from '@toeverything/theme/v2';
@@ -36,7 +36,7 @@ export class ParagraphHeadingIcon extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = css`
-    affine-paragraph-heading-icon .heading-icon {
+    lovenotes-paragraph-heading-icon .heading-icon {
       display: flex;
       align-items: start;
       margin-top: 0.3em;
@@ -82,11 +82,11 @@ export class ParagraphHeadingIcon extends SignalWatcher(
 }
 
 export function effects() {
-  customElements.define('affine-paragraph-heading-icon', ParagraphHeadingIcon);
+  customElements.define('lovenotes-paragraph-heading-icon', ParagraphHeadingIcon);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-paragraph-heading-icon': ParagraphHeadingIcon;
+    'lovenotes-paragraph-heading-icon': ParagraphHeadingIcon;
   }
 }

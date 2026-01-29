@@ -1,9 +1,9 @@
-import type { EmbedIframeBlockModel } from '@blocksuite/affine-model';
+import type { EmbedIframeBlockModel } from '@blocksuite/lovenotes-model';
 import {
   EmbedIframeService,
   NotificationProvider,
-} from '@blocksuite/affine-shared/services';
-import { isValidUrl, stopPropagation } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/services';
+import { isValidUrl, stopPropagation } from '@blocksuite/lovenotes-shared/utils';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { noop } from '@blocksuite/global/utils';
 import {
@@ -39,7 +39,7 @@ export class EmbedIframeLinkInputBase extends WithDisposable(LitElement) {
     const { model } = this;
     const { parent } = model;
     const index = parent?.children.indexOf(model);
-    const flavour = 'affine:bookmark';
+    const flavour = 'lovenotes:bookmark';
 
     this.store.transact(() => {
       const blockId = this.store.addBlock(flavour, { url }, parent, index);

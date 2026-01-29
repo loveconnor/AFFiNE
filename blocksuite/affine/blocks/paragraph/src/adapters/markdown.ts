@@ -1,11 +1,11 @@
-import { ParagraphBlockSchema } from '@blocksuite/affine-model';
+import { ParagraphBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   IN_PARAGRAPH_NODE_CONTEXT_KEY,
   isCalloutNode,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert } from '@blocksuite/store';
 import { nanoid } from '@blocksuite/store';
 import type { Heading } from 'mdast';
@@ -40,7 +40,7 @@ export const paragraphBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
                 {
                   type: 'block',
                   id: nanoid(),
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: 'text',
                     text: {
@@ -62,7 +62,7 @@ export const paragraphBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
                 {
                   type: 'block',
                   id: nanoid(),
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: `h${o.node.depth}`,
                     collapsed: isCollapsed,
@@ -88,7 +88,7 @@ export const paragraphBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
                 {
                   type: 'block',
                   id: nanoid(),
-                  flavour: 'affine:paragraph',
+                  flavour: 'lovenotes:paragraph',
                   props: {
                     type: 'quote',
                     text: {
@@ -117,7 +117,7 @@ export const paragraphBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
       enter: (o, context) => {
         const { walkerContext, deltaConverter } = context;
         const paragraphDepth = (walkerContext.getGlobalContext(
-          'affine:paragraph:depth'
+          'lovenotes:paragraph:depth'
         ) ?? 0) as number;
         const text = (o.node.props.text ?? { delta: [] }) as {
           delta: DeltaInsert[];
@@ -181,15 +181,15 @@ export const paragraphBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
           }
         }
         walkerContext.setGlobalContext(
-          'affine:paragraph:depth',
+          'lovenotes:paragraph:depth',
           paragraphDepth + 1
         );
       },
       leave: (_, context) => {
         const { walkerContext } = context;
         walkerContext.setGlobalContext(
-          'affine:paragraph:depth',
-          (walkerContext.getGlobalContext('affine:paragraph:depth') as number) -
+          'lovenotes:paragraph:depth',
+          (walkerContext.getGlobalContext('lovenotes:paragraph:depth') as number) -
             1
         );
       },

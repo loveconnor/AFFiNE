@@ -2,11 +2,11 @@ import {
   type ColumnDataType,
   DatabaseBlockSchema,
   type SerializedCells,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 import { formatTable, processTable } from './utils.js';
 

@@ -1,9 +1,9 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine-block-surface';
-import { TextElementModel } from '@blocksuite/affine-model';
+import { EdgelessCRUDIdentifier } from '@blocksuite/lovenotes-block-surface';
+import { TextElementModel } from '@blocksuite/lovenotes-model';
 import {
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { Bound } from '@blocksuite/global/gfx';
 import { BlockFlavourIdentifier } from '@blocksuite/std';
 
@@ -51,6 +51,6 @@ export const textToolbarConfig = {
 } as const satisfies ToolbarModuleConfig;
 
 export const textToolbarExtension = ToolbarModuleExtension({
-  id: BlockFlavourIdentifier('affine:surface:text'),
+  id: BlockFlavourIdentifier('lovenotes:surface:text'),
   config: textToolbarConfig,
 });

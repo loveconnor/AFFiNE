@@ -1,9 +1,9 @@
-package app.affine.pro.service
+package app.lovenotes.pro.service
 
-import app.affine.pro.AFFiNEApp
-import app.affine.pro.CapacitorConfig
-import app.affine.pro.utils.dataStore
-import app.affine.pro.utils.set
+import app.lovenotes.pro.LoveNotesApp
+import app.lovenotes.pro.CapacitorConfig
+import app.lovenotes.pro.utils.dataStore
+import app.lovenotes.pro.utils.set
 import com.google.firebase.crashlytics.ktx.crashlytics
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
@@ -37,7 +37,7 @@ object OkHttp {
             it.proceed(
                 it.request()
                     .newBuilder()
-                    .addHeader("x-affine-version", CapacitorConfig.getAffineVersion())
+                    .addHeader("x-lovenotes-version", CapacitorConfig.getLoveNotesVersion())
                     .build()
             )
         }
@@ -52,8 +52,8 @@ object OkHttp {
 
 object CookieStore {
 
-    const val AFFINE_SESSION = "affine_session"
-    const val AFFINE_USER_ID = "affine_user_id"
+    const val AFFINE_SESSION = "lovenotes_session"
+    const val AFFINE_USER_ID = "lovenotes_user_id"
 
     private val _cookies = ConcurrentHashMap<String, List<Cookie>>()
 
@@ -61,11 +61,11 @@ object CookieStore {
         _cookies[host] = cookies
         MainScope().launch(Dispatchers.IO) {
             cookies.find { it.name == AFFINE_SESSION }?.let {
-                AFFiNEApp.context().dataStore.set(host + AFFINE_SESSION, it.toString())
+                LoveNotesApp.context().dataStore.set(host + AFFINE_SESSION, it.toString())
             }
             cookies.find { it.name == AFFINE_USER_ID }?.let {
                 Timber.d("Update user id [${it.value}]")
-                AFFiNEApp.context().dataStore.set(host + AFFINE_USER_ID, it.toString())
+                LoveNotesApp.context().dataStore.set(host + AFFINE_USER_ID, it.toString())
                 Firebase.crashlytics.setUserId(it.value)
             }
         }

@@ -3,14 +3,14 @@ import {
   autoResizeElementsCommand,
   EdgelessCRUDIdentifier,
   updateXYWH,
-} from '@blocksuite/affine-block-surface';
-import { EditorChevronDown } from '@blocksuite/affine-components/toolbar';
-import type { ToolbarContext } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-block-surface';
+import { EditorChevronDown } from '@blocksuite/lovenotes-components/toolbar';
+import type { ToolbarContext } from '@blocksuite/lovenotes-shared/services';
 import type {
   Menu,
   MenuItem,
-} from '@blocksuite/affine-widget-edgeless-toolbar';
-import { renderMenuItems } from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-widget-edgeless-toolbar';
+import { renderMenuItems } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { Bound } from '@blocksuite/global/gfx';
 import {
   AlignBottomIcon,

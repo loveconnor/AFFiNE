@@ -1,14 +1,14 @@
-import { deleteTextCommand } from '@blocksuite/affine-inline-preset';
+import { deleteTextCommand } from '@blocksuite/lovenotes-inline-preset';
 import {
   HtmlAdapter,
   pasteMiddleware,
   PlainTextAdapter,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import {
   getBlockIndexCommand,
   getBlockSelectionsCommand,
   getTextSelectionCommand,
-} from '@blocksuite/affine-shared/commands';
+} from '@blocksuite/lovenotes-shared/commands';
 import { type Container, createIdentifier } from '@blocksuite/global/di';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import {
@@ -148,7 +148,7 @@ export class CodeBlockClipboardController extends LifeCycleWatcher {
     // add paste event listener for code block
     const subscription = this.std.view.viewUpdated.subscribe(
       ({ type, method, view }) => {
-        if (type !== 'block' || view.model.flavour !== 'affine:code') return;
+        if (type !== 'block' || view.model.flavour !== 'lovenotes:code') return;
 
         if (method === 'add') {
           view.handleEvent('paste', this.onPaste);

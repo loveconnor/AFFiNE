@@ -1,9 +1,9 @@
-import { ParagraphBlockModel } from '@blocksuite/affine-model';
+import { ParagraphBlockModel } from '@blocksuite/lovenotes-model';
 import {
   focusTextModel,
   getInlineEditorByModel,
-} from '@blocksuite/affine-rich-text';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-rich-text';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { type Command, TextSelection } from '@blocksuite/std';
 
 export const splitParagraphCommand: Command<

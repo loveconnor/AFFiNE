@@ -1,4 +1,4 @@
-import { PropertyValue } from '@affine/component';
+import { PropertyValue } from '@lovenotes/component';
 
 import * as styles from './styles.css';
 import type { PropertyValueProps } from './type';

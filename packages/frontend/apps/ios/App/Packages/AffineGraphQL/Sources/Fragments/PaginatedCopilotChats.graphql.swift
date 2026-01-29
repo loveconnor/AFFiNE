@@ -3,7 +3,7 @@
 
 @_exported import ApolloAPI
 
-public struct PaginatedCopilotChats: AffineGraphQL.SelectionSet, Fragment {
+public struct PaginatedCopilotChats: LoveNotesGraphQL.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment PaginatedCopilotChats on PaginatedCopilotHistoriesType { __typename pageInfo { __typename hasNextPage hasPreviousPage startCursor endCursor } edges { __typename cursor node { __typename ...CopilotChatHistory } } }"#
   }
@@ -11,7 +11,7 @@ public struct PaginatedCopilotChats: AffineGraphQL.SelectionSet, Fragment {
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PaginatedCopilotHistoriesType }
+  public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PaginatedCopilotHistoriesType }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("pageInfo", PageInfo.self),
@@ -24,11 +24,11 @@ public struct PaginatedCopilotChats: AffineGraphQL.SelectionSet, Fragment {
   /// PageInfo
   ///
   /// Parent Type: `PageInfo`
-  public struct PageInfo: AffineGraphQL.SelectionSet {
+  public struct PageInfo: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PageInfo }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PageInfo }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("hasNextPage", Bool.self),
@@ -46,11 +46,11 @@ public struct PaginatedCopilotChats: AffineGraphQL.SelectionSet, Fragment {
   /// Edge
   ///
   /// Parent Type: `CopilotHistoriesTypeEdge`
-  public struct Edge: AffineGraphQL.SelectionSet {
+  public struct Edge: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotHistoriesTypeEdge }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotHistoriesTypeEdge }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .field("cursor", String.self),
@@ -63,11 +63,11 @@ public struct PaginatedCopilotChats: AffineGraphQL.SelectionSet, Fragment {
     /// Edge.Node
     ///
     /// Parent Type: `CopilotHistories`
-    public struct Node: AffineGraphQL.SelectionSet {
+    public struct Node: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotHistories }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotHistories }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .fragment(CopilotChatHistory.self),
@@ -87,8 +87,8 @@ public struct PaginatedCopilotChats: AffineGraphQL.SelectionSet, Fragment {
       /// The number of tokens used in the session
       public var tokens: Int { __data["tokens"] }
       public var messages: [Message] { __data["messages"] }
-      public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
-      public var updatedAt: AffineGraphQL.DateTime { __data["updatedAt"] }
+      public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
+      public var updatedAt: LoveNotesGraphQL.DateTime { __data["updatedAt"] }
 
       public struct Fragments: FragmentContainer {
         public let __data: DataDict

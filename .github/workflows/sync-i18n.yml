@@ -61,7 +61,7 @@ jobs:
           full-cache: true
 
       - name: Run i18n codegen
-        run: yarn affine @affine/i18n build
+        run: yarn lovenotes @lovenotes/i18n build
 
       - name: Commit changes
         run: |

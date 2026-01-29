@@ -2,9 +2,9 @@ import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import type { InsertToPosition } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-components/context-menu';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import type { InsertToPosition } from '@blocksuite/lovenotes-shared/utils';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { css } from '@emotion/css';
 import { signal } from '@preact/signals-core';

@@ -1,4 +1,4 @@
-import { popupTargetFromElement } from '@blocksuite/affine-components/context-menu';
+import { popupTargetFromElement } from '@blocksuite/lovenotes-components/context-menu';
 import { computed } from '@preact/signals-core';
 import { html } from 'lit/static-html.js';
 
@@ -70,10 +70,10 @@ export class SelectCell extends BaseCellRenderer<
   override render() {
     return html`
       <div class="${selectStyle}">
-        <affine-multi-tag-view
+        <lovenotes-multi-tag-view
           .value="${this._value$.value}"
           .options="${this.options$.value}"
-        ></affine-multi-tag-view>
+        ></lovenotes-multi-tag-view>
       </div>
     `;
   }

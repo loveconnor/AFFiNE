@@ -1,5 +1,5 @@
-import type { CommentId } from '@blocksuite/affine-shared/services';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+import type { CommentId } from '@blocksuite/lovenotes-shared/services';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
 import { TextSelection } from '@blocksuite/std';
 import type { DeltaInsert, Store } from '@blocksuite/store';
 
@@ -54,7 +54,7 @@ export function findCommentedTexts(
 }
 
 export function extractCommentIdFromDelta(
-  delta: DeltaInsert<AffineTextAttributes>
+  delta: DeltaInsert<LoveNotesTextAttributes>
 ) {
   if (!delta.attributes) return [];
 

@@ -1,8 +1,8 @@
 import {
   type ElementRenderer,
   ElementRendererExtension,
-} from '@blocksuite/affine-block-surface';
-import { type BrushElementModel, DefaultTheme } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import { type BrushElementModel, DefaultTheme } from '@blocksuite/lovenotes-model';
 
 export const brush: ElementRenderer<BrushElementModel> = (
   model,

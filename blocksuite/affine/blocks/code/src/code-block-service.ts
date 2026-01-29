@@ -1,5 +1,5 @@
-import { ColorScheme } from '@blocksuite/affine-model';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+import { ColorScheme } from '@blocksuite/lovenotes-model';
+import { ThemeProvider } from '@blocksuite/lovenotes-shared/services';
 import { LifeCycleWatcher } from '@blocksuite/std';
 import { type Signal, signal } from '@preact/signals-core';
 import {

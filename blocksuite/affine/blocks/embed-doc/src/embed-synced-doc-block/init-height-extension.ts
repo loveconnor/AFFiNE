@@ -1,4 +1,4 @@
-import { EmbedSyncedDocBlockSchema } from '@blocksuite/affine-model';
+import { EmbedSyncedDocBlockSchema } from '@blocksuite/lovenotes-model';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { LifeCycleWatcher } from '@blocksuite/std';
 
@@ -17,7 +17,7 @@ export class HeightInitializationExtension extends LifeCycleWatcher {
           payload.type === 'add' &&
           payload.isLocal &&
           payload.flavour === EmbedSyncedDocBlockSchema.model.flavour &&
-          payload.model.parent?.flavour === 'affine:surface'
+          payload.model.parent?.flavour === 'lovenotes:surface'
         ) {
           this._initQueue.add(payload.id);
         }

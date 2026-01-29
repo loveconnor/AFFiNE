@@ -1,9 +1,9 @@
-import { LatexBlockSchema } from '@blocksuite/affine-model';
+import { LatexBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 
 const isLatexNode = (node: MarkdownAST) => node.type === 'math';
@@ -21,7 +21,7 @@ export const latexBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
           {
             type: 'block',
             id: nanoid(),
-            flavour: 'affine:latex',
+            flavour: 'lovenotes:latex',
             props: {
               latex,
             },

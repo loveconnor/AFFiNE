@@ -26,11 +26,11 @@ public class InviteByEmailsMutation: GraphQLMutation {
     "emails": emails
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("inviteMembers", [InviteMember].self, arguments: [
         "workspaceId": .variable("workspaceId"),
@@ -43,11 +43,11 @@ public class InviteByEmailsMutation: GraphQLMutation {
     /// InviteMember
     ///
     /// Parent Type: `InviteResult`
-    public struct InviteMember: AffineGraphQL.SelectionSet {
+    public struct InviteMember: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.InviteResult }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.InviteResult }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("email", String.self),

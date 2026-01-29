@@ -1,4 +1,4 @@
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -19,7 +19,7 @@ const styles = css`
     height: 20px;
     box-sizing: border-box;
     gap: 6px;
-    font-size: var(--affine-font-sm);
+    font-size: var(--lovenotes-font-sm);
     cursor: default;
     position: relative;
   }
@@ -33,10 +33,10 @@ const styles = css`
     height: 18px;
     box-sizing: border-box;
     border-radius: 2px;
-    background: var(--affine-black);
+    background: var(--lovenotes-black);
     margin-left: 2px;
 
-    color: var(--affine-white);
+    color: var(--lovenotes-white);
     text-align: center;
     font-weight: 500;
     line-height: 18px;
@@ -44,7 +44,7 @@ const styles = css`
 
   .frame-card-title-container .card-title {
     height: 20px;
-    color: var(--affine-text-primary-color);
+    color: var(--lovenotes-text-primary-color);
     font-weight: 400;
     line-height: 20px;
 
@@ -55,7 +55,7 @@ const styles = css`
   }
 `;
 
-export const AFFINE_FRAME_CARD_TITLE = 'affine-frame-card-title';
+export const AFFINE_FRAME_CARD_TITLE = 'lovenotes-frame-card-title';
 
 export class FrameCardTitle extends WithDisposable(ShadowlessElement) {
   static override styles = styles;

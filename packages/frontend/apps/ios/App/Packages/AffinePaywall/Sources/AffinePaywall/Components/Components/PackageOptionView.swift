@@ -1,11 +1,11 @@
 //
 //  PackageOptionView.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //
 
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 struct PackageOptionView: View {
@@ -37,7 +37,7 @@ struct PackageOptionView: View {
             .contentTransition(.numericText())
             .font(.system(size: 20, weight: .bold))
             .lineLimit(1)
-            .foregroundColor(isSelected ? AffineColors.buttonPrimary.color : AffineColors.textPrimary.color)
+            .foregroundColor(isSelected ? LoveNotesColors.buttonPrimary.color : LoveNotesColors.textPrimary.color)
         }
         .layoutPriority(.infinity)
         Spacer(minLength: 0)
@@ -47,10 +47,10 @@ struct PackageOptionView: View {
             .font(.system(size: 10))
             .bold()
             .lineLimit(1)
-            .foregroundColor(AffineColors.layerPureWhite.color)
+            .foregroundColor(LoveNotesColors.layerPureWhite.color)
             .padding(2)
             .padding(.horizontal, 2)
-            .background(AffineColors.buttonPrimary.color)
+            .background(LoveNotesColors.buttonPrimary.color)
             .clipShape(RoundedRectangle(cornerRadius: 4))
         }
       }
@@ -58,7 +58,7 @@ struct PackageOptionView: View {
       if !description.isEmpty {
         Text(description)
           .contentTransition(.numericText())
-          .foregroundColor(isSelected ? AffineColors.buttonPrimary.color : AffineColors.textSecondary.color)
+          .foregroundColor(isSelected ? LoveNotesColors.buttonPrimary.color : LoveNotesColors.textSecondary.color)
           .font(.system(size: 14))
       }
     }
@@ -70,10 +70,10 @@ struct PackageOptionView: View {
     .background {
       ZStack {
         Rectangle()
-          .foregroundColor(AffineColors.layerBackgroundPrimary.color)
+          .foregroundColor(LoveNotesColors.layerBackgroundPrimary.color)
         if isSelected {
           Rectangle()
-            .foregroundColor(AffineColors.buttonPrimary.color)
+            .foregroundColor(LoveNotesColors.buttonPrimary.color)
             .opacity(0.05)
         }
       }
@@ -82,15 +82,15 @@ struct PackageOptionView: View {
     .overlay {
       if isSelected {
         RoundedRectangle(cornerRadius: 8)
-          .stroke(AffineColors.buttonPrimary.color, lineWidth: 1.5)
+          .stroke(LoveNotesColors.buttonPrimary.color, lineWidth: 1.5)
           .foregroundColor(.clear)
       } else {
         RoundedRectangle(cornerRadius: 8)
-          .stroke(AffineColors.layerBorder.color.opacity(0.15), lineWidth: 1.5)
+          .stroke(LoveNotesColors.layerBorder.color.opacity(0.15), lineWidth: 1.5)
           .foregroundColor(.clear)
       }
     }
-    .shadow(color: AffineColors.layerBorder.color.opacity(0.05), radius: 4, x: 0, y: 0)
+    .shadow(color: LoveNotesColors.layerBorder.color.opacity(0.05), radius: 4, x: 0, y: 0)
     .animation(.interactiveSpring, value: isSelected)
     .contentShape(.rect)
     .onTapGesture {

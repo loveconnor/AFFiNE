@@ -11,19 +11,19 @@ import {
   NoteBlockModel,
   ParagraphBlockModel,
   type RootBlockModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   asyncSetInlineRange,
   focusTextModel,
-} from '@blocksuite/affine-rich-text';
-import { EMBED_BLOCK_MODEL_LIST } from '@blocksuite/affine-shared/consts';
-import type { ExtendedModel } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/lovenotes-rich-text';
+import { EMBED_BLOCK_MODEL_LIST } from '@blocksuite/lovenotes-shared/consts';
+import type { ExtendedModel } from '@blocksuite/lovenotes-shared/types';
 import {
   focusTitle,
   getDocTitleInlineEditor,
   getPrevContentBlock,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { IS_ANDROID, IS_MOBILE } from '@blocksuite/global/env';
 import { BlockSelection, type EditorHost } from '@blocksuite/std';
 import type { BlockModel, Text } from '@blocksuite/store';

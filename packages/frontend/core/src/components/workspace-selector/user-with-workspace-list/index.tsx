@@ -1,18 +1,18 @@
-import { ScrollableContainer } from '@affine/component';
-import { MenuItem } from '@affine/component/ui/menu';
-import { AuthService, DefaultServerService } from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import { type WorkspaceMetadata } from '@affine/core/modules/workspace';
-import { ServerFeature } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { ScrollableContainer } from '@lovenotes/component';
+import { MenuItem } from '@lovenotes/component/ui/menu';
+import { AuthService, DefaultServerService } from '@lovenotes/core/modules/cloud';
+import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
+import { type WorkspaceMetadata } from '@lovenotes/core/modules/workspace';
+import { ServerFeature } from '@lovenotes/graphql';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
 import { Logo1Icon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import { AddWorkspace } from './add-workspace';
 import * as styles from './index.css';
-import { AFFiNEWorkspaceList } from './workspace-list';
+import { LoveNotesWorkspaceList } from './workspace-list';
 
 export const SignInItem = () => {
   const globalDialogService = useService(GlobalDialogService);
@@ -37,10 +37,10 @@ export const SignInItem = () => {
 
         <div className={styles.signInTextContainer}>
           <div className={styles.signInTextPrimary}>
-            {t['com.affine.workspace.cloud.auth']()}
+            {t['com.lovenotes.workspace.cloud.auth']()}
           </div>
           <div className={styles.signInTextSecondary}>
-            {t['com.affine.workspace.cloud.description']()}
+            {t['com.lovenotes.workspace.cloud.description']()}
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@ export const UserWithWorkspaceList = ({
         scrollBarClassName={styles.scrollbar}
         scrollThumbClassName={styles.scrollbarThumb}
       >
-        <AFFiNEWorkspaceList
+        <LoveNotesWorkspaceList
           onEventEnd={onEventEnd}
           onClickWorkspace={onClickWorkspace}
           showEnableCloudButton={showEnableCloudButton}

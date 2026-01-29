@@ -1,7 +1,7 @@
-import { changeNoteDisplayMode } from '@blocksuite/affine-block-note';
-import { NoteBlockModel, NoteDisplayMode } from '@blocksuite/affine-model';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
-import { focusTitle, matchModels } from '@blocksuite/affine-shared/utils';
+import { changeNoteDisplayMode } from '@blocksuite/lovenotes-block-note';
+import { NoteBlockModel, NoteDisplayMode } from '@blocksuite/lovenotes-model';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
+import { focusTitle, matchModels } from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import {
@@ -44,7 +44,7 @@ import {
 } from '../utils/scroll';
 import * as styles from './outline-panel-body.css';
 
-export const AFFINE_OUTLINE_PANEL_BODY = 'affine-outline-panel-body';
+export const AFFINE_OUTLINE_PANEL_BODY = 'lovenotes-outline-panel-body';
 
 export class OutlinePanelBody extends SignalWatcher(
   WithDisposable(ShadowlessElement)
@@ -393,13 +393,13 @@ export class OutlinePanelBody extends SignalWatcher(
     const rootId = this.store.root.id;
     const active = rootId === this._activeHeadingId$.value;
 
-    return html`<affine-outline-block-preview
+    return html`<lovenotes-outline-block-preview
       class=${classMap({ active: active })}
       .block=${this.store.root}
       @click=${() => {
         this._scrollToBlock(rootId).catch(console.error);
       }}
-    ></affine-outline-block-preview>`;
+    ></lovenotes-outline-block-preview>`;
   }
 
   private _renderNoteCards(notes: NoteBlockModel[]) {
@@ -407,7 +407,7 @@ export class OutlinePanelBody extends SignalWatcher(
       notes,
       ({ id }) => id,
       (note, index) =>
-        html`<affine-outline-note-card
+        html`<lovenotes-outline-note-card
           data-note-id=${note.id}
           index=${index}
           .note=${note}
@@ -423,7 +423,7 @@ export class OutlinePanelBody extends SignalWatcher(
           @clickblock=${(e: ClickBlockEvent) => {
             this._scrollToBlock(e.detail.blockId).catch(console.error);
           }}
-        ></affine-outline-note-card>`
+        ></lovenotes-outline-note-card>`
     );
   }
 

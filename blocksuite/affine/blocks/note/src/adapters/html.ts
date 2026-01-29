@@ -1,8 +1,8 @@
-import { NoteBlockSchema, NoteDisplayMode } from '@blocksuite/affine-model';
+import { NoteBlockSchema, NoteDisplayMode } from '@blocksuite/lovenotes-model';
 import {
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 /**
  * Create a html adapter matcher for note block.

@@ -1,12 +1,12 @@
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
-import { AffineContext } from '@affine/core/components/context';
-import { AppFallback } from '@affine/core/mobile/components/app-fallback';
-import { configureMobileModules } from '@affine/core/mobile/modules';
-import { HapticProvider } from '@affine/core/mobile/modules/haptics';
-import { NavigationGestureProvider } from '@affine/core/mobile/modules/navigation-gesture';
-import { VirtualKeyboardProvider } from '@affine/core/mobile/modules/virtual-keyboard';
-import { router } from '@affine/core/mobile/router';
-import { configureCommonModules } from '@affine/core/modules';
+import { getStoreManager } from '@lovenotes/core/blocksuite/manager/store';
+import { LoveNotesContext } from '@lovenotes/core/components/context';
+import { AppFallback } from '@lovenotes/core/mobile/components/app-fallback';
+import { configureMobileModules } from '@lovenotes/core/mobile/modules';
+import { HapticProvider } from '@lovenotes/core/mobile/modules/haptics';
+import { NavigationGestureProvider } from '@lovenotes/core/mobile/modules/navigation-gesture';
+import { VirtualKeyboardProvider } from '@lovenotes/core/mobile/modules/virtual-keyboard';
+import { router } from '@lovenotes/core/mobile/router';
+import { configureCommonModules } from '@lovenotes/core/modules';
 import {
   AuthProvider,
   AuthService,
@@ -16,43 +16,43 @@ import {
   ServersService,
   SubscriptionService,
   ValidatorProvider,
-} from '@affine/core/modules/cloud';
-import { DocsService } from '@affine/core/modules/doc';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { I18nProvider } from '@affine/core/modules/i18n';
-import { LifecycleService } from '@affine/core/modules/lifecycle';
-import { NativePaywallProvider } from '@affine/core/modules/paywall';
+} from '@lovenotes/core/modules/cloud';
+import { DocsService } from '@lovenotes/core/modules/doc';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { GlobalContextService } from '@lovenotes/core/modules/global-context';
+import { I18nProvider } from '@lovenotes/core/modules/i18n';
+import { LifecycleService } from '@lovenotes/core/modules/lifecycle';
+import { NativePaywallProvider } from '@lovenotes/core/modules/paywall';
 import {
   configureLocalStorageStateStorageImpls,
   NbstoreProvider,
-} from '@affine/core/modules/storage';
-import { PopupWindowProvider } from '@affine/core/modules/url';
-import { ClientSchemeProvider } from '@affine/core/modules/url/providers/client-schema';
+} from '@lovenotes/core/modules/storage';
+import { PopupWindowProvider } from '@lovenotes/core/modules/url';
+import { ClientSchemeProvider } from '@lovenotes/core/modules/url/providers/client-schema';
 import {
   configureBrowserWorkbenchModule,
   WorkbenchService,
-} from '@affine/core/modules/workbench';
+} from '@lovenotes/core/modules/workbench';
 import {
-  getAFFiNEWorkspaceSchema,
+  getLoveNotesWorkspaceSchema,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { configureBrowserWorkspaceFlavours } from '@affine/core/modules/workspace-engine';
-import { getWorkerUrl } from '@affine/env/worker';
+} from '@lovenotes/core/modules/workspace';
+import { configureBrowserWorkspaceFlavours } from '@lovenotes/core/modules/workspace-engine';
+import { getWorkerUrl } from '@lovenotes/env/worker';
 import {
   refreshSubscriptionMutation,
   requestApplySubscriptionMutation,
-} from '@affine/graphql';
-import { I18n } from '@affine/i18n';
-import { StoreManagerClient } from '@affine/nbstore/worker/client';
-import { setTelemetryTransport } from '@affine/track';
-import { Container } from '@blocksuite/affine/global/di';
+} from '@lovenotes/graphql';
+import { I18n } from '@lovenotes/i18n';
+import { StoreManagerClient } from '@lovenotes/nbstore/worker/client';
+import { setTelemetryTransport } from '@lovenotes/track';
+import { Container } from '@blocksuite/lovenotes/global/di';
 import {
   docLinkBaseURLMiddleware,
   MarkdownAdapter,
   titleMiddleware,
-} from '@blocksuite/affine/shared/adapters';
-import { MarkdownTransformer } from '@blocksuite/affine/widgets/linked-doc';
+} from '@blocksuite/lovenotes/shared/adapters';
+import { MarkdownTransformer } from '@blocksuite/lovenotes/widgets/linked-doc';
 import { App as CapacitorApp } from '@capacitor/app';
 import { Browser } from '@capacitor/browser';
 import { Haptics } from '@capacitor/haptics';
@@ -111,7 +111,7 @@ framework.impl(PopupWindowProvider, {
 });
 framework.impl(ClientSchemeProvider, {
   getClientScheme() {
-    return 'affine';
+    return 'lovenotes';
   },
 });
 framework.impl(ValidatorProvider, {
@@ -328,7 +328,7 @@ const frameworkProvider = framework.provider();
     await workspace.engine.doc.waitForDocReady(workspace.id); // wait for root doc ready
     const docId = await MarkdownTransformer.importMarkdownToDoc({
       collection: workspace.docCollection,
-      schema: getAFFiNEWorkspaceSchema(),
+      schema: getLoveNotesWorkspaceSchema(),
       markdown,
       extensions: getStoreManager().config.init().value.get('store'),
     });
@@ -475,7 +475,7 @@ export function App() {
     <Suspense>
       <FrameworkRoot framework={frameworkProvider}>
         <I18nProvider>
-          <AffineContext store={getCurrentStore()}>
+          <LoveNotesContext store={getCurrentStore()}>
             <KeyboardThemeProvider />
             <ModalConfigProvider>
               <BlocksuiteMenuConfigProvider>
@@ -486,7 +486,7 @@ export function App() {
                 />
               </BlocksuiteMenuConfigProvider>
             </ModalConfigProvider>
-          </AffineContext>
+          </LoveNotesContext>
         </I18nProvider>
       </FrameworkRoot>
     </Suspense>

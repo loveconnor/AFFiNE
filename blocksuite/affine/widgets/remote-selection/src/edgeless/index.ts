@@ -1,10 +1,10 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine-block-surface';
-import type { RootBlockModel } from '@blocksuite/affine-model';
+import { EdgelessCRUDIdentifier } from '@blocksuite/lovenotes-block-surface';
+import type { RootBlockModel } from '@blocksuite/lovenotes-model';
 import {
   getSelectedRect,
   isTopLevelBlock,
   requestThrottledConnectedFrame,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { MultiCursorDuotoneIcon } from '@blocksuite/icons/lit';
 import { WidgetComponent } from '@blocksuite/std';
 import { GfxControllerIdentifier, type GfxModel } from '@blocksuite/std/gfx';
@@ -17,7 +17,7 @@ import { styleMap } from 'lit/directives/style-map.js';
 import { RemoteColorManager } from '../manager/remote-color-manager';
 
 export const AFFINE_EDGELESS_REMOTE_SELECTION_WIDGET =
-  'affine-edgeless-remote-selection-widget';
+  'lovenotes-edgeless-remote-selection-widget';
 
 export class EdgelessRemoteSelectionWidget extends WidgetComponent<RootBlockModel> {
   static override styles = css`
@@ -62,7 +62,7 @@ export class EdgelessRemoteSelectionWidget extends WidgetComponent<RootBlockMode
 
       max-width: 160px;
       padding: 0px 3px;
-      border: 1px solid var(--affine-pure-black-20);
+      border: 1px solid var(--lovenotes-pure-black-20);
 
       box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.16);
       border-radius: 4px;
@@ -269,7 +269,7 @@ export class EdgelessRemoteSelectionWidget extends WidgetComponent<RootBlockMode
     );
 
     return html`
-      <div class="affine-edgeless-remote-selection">${rects}${cursors}</div>
+      <div class="lovenotes-edgeless-remote-selection">${rects}${cursors}</div>
     `;
   }
 

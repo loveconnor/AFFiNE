@@ -8,18 +8,18 @@ const packageJson = JSON.parse(
 );
 
 interface AppConfig {
-  affineVersion: string;
+  lovenotesVersion: string;
 }
 
 const config: CapacitorConfig & AppConfig = {
-  appId: 'app.affine.pro',
-  appName: 'AFFiNE',
+  appId: 'app.lovenotes.pro',
+  appName: 'LoveNotes',
   webDir: 'dist',
-  affineVersion: packageJson.version,
+  lovenotesVersion: packageJson.version,
   android: {
     path: 'App',
     buildOptions: {
-      keystorePath: join(__dirname, 'affine.keystore'),
+      keystorePath: join(__dirname, 'lovenotes.keystore'),
       keystorePassword: process.env.AFFINE_ANDROID_KEYSTORE_PASSWORD,
       keystoreAlias: 'key0',
       keystoreAliasPassword: process.env.AFFINE_ANDROID_KEYSTORE_ALIAS_PASSWORD,

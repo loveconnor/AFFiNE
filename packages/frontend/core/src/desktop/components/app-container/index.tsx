@@ -1,14 +1,14 @@
-import { useAppSettingHelper } from '@affine/core/components/hooks/affine/use-app-setting-helper';
-import { RootAppSidebar } from '@affine/core/components/root-app-sidebar';
-import { AppSidebarService } from '@affine/core/modules/app-sidebar';
+import { useAppSettingHelper } from '@lovenotes/core/components/hooks/lovenotes/use-app-setting-helper';
+import { RootAppSidebar } from '@lovenotes/core/components/root-app-sidebar';
+import { AppSidebarService } from '@lovenotes/core/modules/app-sidebar';
 import {
   AppSidebarFallback,
   OpenInAppCard,
   SidebarSwitch,
-} from '@affine/core/modules/app-sidebar/views';
-import { AppTabsHeader } from '@affine/core/modules/app-tabs-header';
-import { NavigationButtons } from '@affine/core/modules/navigation';
-import { WorkspaceService } from '@affine/core/modules/workspace';
+} from '@lovenotes/core/modules/app-sidebar/views';
+import { AppTabsHeader } from '@lovenotes/core/modules/app-tabs-header';
+import { NavigationButtons } from '@lovenotes/core/modules/navigation';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import {
   useLiveData,
   useService,

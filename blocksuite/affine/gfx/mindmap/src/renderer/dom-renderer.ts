@@ -1,12 +1,12 @@
-import { DomElementRendererExtension } from '@blocksuite/affine-block-surface';
+import { DomElementRendererExtension } from '@blocksuite/lovenotes-block-surface';
 import {
   connectorBaseDomRenderer,
   ConnectorPathGenerator,
-} from '@blocksuite/affine-gfx-connector';
+} from '@blocksuite/lovenotes-gfx-connector';
 import type {
   MindmapElementModel,
   MindmapNode,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type { GfxModel } from '@blocksuite/std/gfx';
 
 export const MindmapDomRendererExtension = DomElementRendererExtension(

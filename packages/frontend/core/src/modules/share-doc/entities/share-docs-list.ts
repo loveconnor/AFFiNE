@@ -1,5 +1,5 @@
-import { DebugLogger } from '@affine/debug';
-import type { GetWorkspacePublicPagesQuery } from '@affine/graphql';
+import { DebugLogger } from '@lovenotes/debug';
+import type { GetWorkspacePublicPagesQuery } from '@lovenotes/graphql';
 import {
   catchErrorInto,
   effect,
@@ -19,7 +19,7 @@ import type { ShareDocsStore } from '../stores/share-docs';
 
 type ShareDocListType = GetWorkspacePublicPagesQuery['workspace']['publicDocs'];
 
-export const logger = new DebugLogger('affine:share-doc-list');
+export const logger = new DebugLogger('lovenotes:share-doc-list');
 
 export class ShareDocsList extends Entity {
   list$ = LiveData.from(

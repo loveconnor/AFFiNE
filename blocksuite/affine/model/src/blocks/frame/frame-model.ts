@@ -42,7 +42,7 @@ export const FrameZodSchema = z
   });
 
 export const FrameBlockSchema = defineBlockSchema({
-  flavour: 'affine:frame',
+  flavour: 'lovenotes:frame',
   props: (internal): FrameBlockProps => ({
     title: internal.Text(),
     background: 'transparent',
@@ -56,7 +56,7 @@ export const FrameBlockSchema = defineBlockSchema({
   metadata: {
     version: 1,
     role: 'content',
-    parent: ['affine:surface'],
+    parent: ['lovenotes:surface'],
     children: [],
   },
   toModel: () => {

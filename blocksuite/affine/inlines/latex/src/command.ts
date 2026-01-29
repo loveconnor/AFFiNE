@@ -1,7 +1,7 @@
 import {
   DocModeProvider,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import type { Command, TextSelection } from '@blocksuite/std';
 
 export const insertInlineLatex: Command<{
@@ -42,7 +42,7 @@ export const insertInlineLatex: Command<{
   });
 
   const mode = ctx.std.get(DocModeProvider).getEditorMode() ?? 'page';
-  const ifEdgelessText = blockComponent.closest('affine-edgeless-text');
+  const ifEdgelessText = blockComponent.closest('lovenotes-edgeless-text');
   ctx.std.getOptional(TelemetryProvider)?.track('Latex', {
     from:
       mode === 'page'
@@ -64,7 +64,7 @@ export const insertInlineLatex: Command<{
       const textPoint = inlineEditor.getTextPoint(textSelection.from.index + 1);
       if (!textPoint) return;
       const [text] = textPoint;
-      const latexNode = text.parentElement?.closest('affine-latex-node');
+      const latexNode = text.parentElement?.closest('lovenotes-latex-node');
       if (!latexNode) return;
       latexNode.toggleEditor();
     })

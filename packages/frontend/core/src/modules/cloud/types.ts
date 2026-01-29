@@ -3,7 +3,7 @@ import type {
   OAuthProviderType,
   ServerDeploymentType,
   ServerFeature,
-} from '@affine/graphql';
+} from '@lovenotes/graphql';
 
 export interface ServerMetadata {
   id: string;

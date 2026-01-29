@@ -2,8 +2,8 @@ import {
   EdgelessCRUDIdentifier,
   Overlay,
   type SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
-import { isTopLevelBlock } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-block-surface';
+import { isTopLevelBlock } from '@blocksuite/lovenotes-shared/utils';
 import {
   Bound,
   getStroke,

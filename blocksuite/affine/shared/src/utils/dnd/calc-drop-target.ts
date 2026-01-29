@@ -1,4 +1,4 @@
-import { DatabaseBlockModel, ListBlockModel } from '@blocksuite/affine-model';
+import { DatabaseBlockModel, ListBlockModel } from '@blocksuite/lovenotes-model';
 import { type Point, Rect } from '@blocksuite/global/gfx';
 import type { BlockComponent } from '@blocksuite/std';
 import type { BlockModel } from '@blocksuite/store';
@@ -45,7 +45,7 @@ export function calcDropTarget(
    */
   allowSublist: boolean = true
 ): DropTarget | null {
-  const schema = model.store.schema.get('affine:database');
+  const schema = model.store.schema.get('lovenotes:database');
   const children = schema?.model.children ?? [];
 
   let shouldAppendToDatabase = true;
@@ -58,7 +58,7 @@ export function calcDropTarget(
 
   if (!shouldAppendToDatabase && !matchModels(model, [DatabaseBlockModel])) {
     const databaseBlockComponent =
-      element.closest<BlockComponent>('affine-database');
+      element.closest<BlockComponent>('lovenotes-database');
     if (databaseBlockComponent) {
       element = databaseBlockComponent;
       model = databaseBlockComponent.model;

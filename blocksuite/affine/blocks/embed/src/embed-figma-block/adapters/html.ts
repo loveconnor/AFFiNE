@@ -1,5 +1,5 @@
-import { EmbedFigmaBlockSchema } from '@blocksuite/affine-model';
-import { BlockHtmlAdapterExtension } from '@blocksuite/affine-shared/adapters';
+import { EmbedFigmaBlockSchema } from '@blocksuite/lovenotes-model';
+import { BlockHtmlAdapterExtension } from '@blocksuite/lovenotes-shared/adapters';
 
 import { createEmbedBlockHtmlAdapterMatcher } from '../../common/adapters/html.js';
 

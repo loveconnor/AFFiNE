@@ -1,4 +1,4 @@
-import { getCurrentUserQuery } from '@affine/graphql';
+import { getCurrentUserQuery } from '@lovenotes/graphql';
 
 import { Mockers } from '../../mocks';
 import { app, e2e } from '../test';

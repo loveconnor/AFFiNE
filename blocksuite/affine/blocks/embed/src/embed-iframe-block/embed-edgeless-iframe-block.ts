@@ -1,5 +1,5 @@
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine-block-surface';
-import { EmbedIframeBlockSchema } from '@blocksuite/affine-model';
+import { EdgelessLegacySlotIdentifier } from '@blocksuite/lovenotes-block-surface';
+import { EmbedIframeBlockSchema } from '@blocksuite/lovenotes-model';
 import { Bound, clamp } from '@blocksuite/global/gfx';
 import { toGfxBlockComponent } from '@blocksuite/std';
 import { GfxViewInteractionExtension } from '@blocksuite/std/gfx';

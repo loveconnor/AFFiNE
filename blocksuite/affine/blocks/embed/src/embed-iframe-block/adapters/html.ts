@@ -1,5 +1,5 @@
-import { EmbedIframeBlockSchema } from '@blocksuite/affine-model';
-import { BlockHtmlAdapterExtension } from '@blocksuite/affine-shared/adapters';
+import { EmbedIframeBlockSchema } from '@blocksuite/lovenotes-model';
+import { BlockHtmlAdapterExtension } from '@blocksuite/lovenotes-shared/adapters';
 
 import { createEmbedBlockHtmlAdapterMatcher } from '../../common/adapters/html';
 
@@ -22,7 +22,7 @@ export const embedIframeBlockHtmlAdapterMatcher =
               type: 'element',
               tagName: 'div',
               properties: {
-                className: ['affine-paragraph-block-container'],
+                className: ['lovenotes-paragraph-block-container'],
               },
               children: [],
             },

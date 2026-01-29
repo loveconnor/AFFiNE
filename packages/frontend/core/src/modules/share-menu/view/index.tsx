@@ -1,9 +1,9 @@
-import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
-import { WorkspaceShareSettingService } from '@affine/core/modules/share-setting';
-import type { Workspace } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
-import type { Store } from '@blocksuite/affine/store';
+import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
+import { WorkspaceShareSettingService } from '@lovenotes/core/modules/share-setting';
+import type { Workspace } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
+import type { Store } from '@blocksuite/lovenotes/store';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 
@@ -37,14 +37,14 @@ export const SharePageButton = ({ workspace, page }: SharePageModalProps) => {
 
   const sharingDisabled = enableSharing === false;
   const disabledReason = sharingDisabled
-    ? t['com.affine.share-menu.workspace-sharing.disabled.tooltip']()
+    ? t['com.lovenotes.share-menu.workspace-sharing.disabled.tooltip']()
     : undefined;
 
   return (
     <ShareMenu
       workspaceMetadata={workspace.meta}
       currentPage={page}
-      onEnableAffineCloud={() =>
+      onEnableLoveNotesCloud={() =>
         confirmEnableCloud(workspace, {
           openPageId: page.id,
         })

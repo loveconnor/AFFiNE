@@ -2,8 +2,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@affine/admin/components/ui/avatar';
-import { FeatureType } from '@affine/graphql';
+} from '@lovenotes/admin/components/ui/avatar';
+import { FeatureType } from '@lovenotes/graphql';
 import {
   AccountIcon,
   EmailIcon,

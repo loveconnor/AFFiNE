@@ -4,30 +4,30 @@ import {
   observeIntersection,
   Skeleton,
   useLitPortalFactory,
-} from '@affine/component';
-import { getViewManager } from '@affine/core/blocksuite/manager/view';
+} from '@lovenotes/component';
+import { getViewManager } from '@lovenotes/core/blocksuite/manager/view';
 import {
   patchReferenceRenderer,
   type ReferenceReactRenderer,
-} from '@affine/core/blocksuite/view-extensions/editor-view/reference-renderer';
-import { useGuard } from '@affine/core/components/guard';
-import { useEnableAI } from '@affine/core/components/hooks/affine/use-enable-ai';
-import { DocService } from '@affine/core/modules/doc';
+} from '@lovenotes/core/blocksuite/view-extensions/editor-view/reference-renderer';
+import { useGuard } from '@lovenotes/core/components/guard';
+import { useEnableAI } from '@lovenotes/core/components/hooks/lovenotes/use-enable-ai';
+import { DocService } from '@lovenotes/core/modules/doc';
 import {
   type Backlink,
   DocLinksService,
   type Link,
-} from '@affine/core/modules/doc-link';
-import { toDocSearchParams } from '@affine/core/modules/navigation/utils';
-import { GlobalSessionStateService } from '@affine/core/modules/storage';
-import { WorkbenchLink } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@lovenotes/core/modules/doc-link';
+import { toDocSearchParams } from '@lovenotes/core/modules/navigation/utils';
+import { GlobalSessionStateService } from '@lovenotes/core/modules/storage';
+import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
+import track from '@lovenotes/track';
 import type {
   ExtensionType,
   TransformerMiddleware,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/store';
 import { ToggleDownIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import {
@@ -48,9 +48,9 @@ import {
 } from 'react';
 
 import {
-  AffinePageReference,
-  AffineSharedPageReference,
-} from '../../components/affine/reference-link';
+  LoveNotesPageReference,
+  LoveNotesSharedPageReference,
+} from '../../components/lovenotes/reference-link';
 import { LitTextRenderer } from '../ai/components/text-renderer';
 import * as styles from './bi-directional-link-panel.css';
 
@@ -154,7 +154,7 @@ const usePreviewExtensions = () => {
 
       if (workspaceService.workspace.openOptions.isSharedMode) {
         return (
-          <AffineSharedPageReference
+          <LoveNotesSharedPageReference
             docCollection={workspaceService.workspace.docCollection}
             pageId={pageId}
             params={params}
@@ -162,7 +162,7 @@ const usePreviewExtensions = () => {
         );
       }
 
-      return <AffinePageReference pageId={pageId} params={params} />;
+      return <LoveNotesPageReference pageId={pageId} params={params} />;
     };
   }, [workspaceService]);
 
@@ -251,7 +251,7 @@ export const BacklinkGroups = () => {
           <CollapsibleSection
             key={linkGroup.docId}
             title={
-              <AffinePageReference
+              <LoveNotesPageReference
                 pageId={linkGroup.docId}
                 onClick={() => {
                   track.doc.biDirectionalLinksPanel.backlinkTitle.navigate();
@@ -317,7 +317,7 @@ const BacklinkLinks = () => {
   return (
     <div className={styles.linksContainer} ref={containerRef}>
       <div className={styles.linksTitles}>
-        {t['com.affine.page-properties.backlinks']()}{' '}
+        {t['com.lovenotes.page-properties.backlinks']()}{' '}
         {backlinkCount !== undefined ? `· ${backlinkCount}` : ''}
       </div>
       <BacklinkGroups />
@@ -338,7 +338,7 @@ export const LinkPreview = ({
   if (!canAccess) {
     return (
       <span className={styles.notFound}>
-        {t['com.affine.share-menu.option.permission.no-access']()}
+        {t['com.lovenotes.share-menu.option.permission.no-access']()}
       </span>
     );
   }
@@ -353,8 +353,8 @@ export const LinkPreview = ({
         searchParams.set('mode', displayMode);
 
         let blockId = link.blockId;
-        if (link.parentFlavour === 'affine:database' && link.parentBlockId) {
-          // if parentBlockFlavour is 'affine:database',
+        if (link.parentFlavour === 'lovenotes:database' && link.parentBlockId) {
+          // if parentBlockFlavour is 'lovenotes:database',
           // we will fallback to the database block instead
           blockId = link.parentBlockId;
         } else if (displayMode === 'edgeless' && link.noteBlockId) {
@@ -387,7 +387,7 @@ export const LinkPreview = ({
             {edgelessLink ? (
               <>
                 [Edgeless]
-                <AffinePageReference
+                <LoveNotesPageReference
                   key={link.blockId}
                   pageId={linkGroup.docId}
                   params={searchParams}
@@ -438,8 +438,8 @@ export const BiDirectionalLinkPanel = () => {
         <div className={styles.title}>Bi-Directional Links</div>
         <Button className={styles.showButton} onClick={handleClickShow}>
           {show
-            ? t['com.affine.editor.bi-directional-link-panel.hide']()
-            : t['com.affine.editor.bi-directional-link-panel.show']()}
+            ? t['com.lovenotes.editor.bi-directional-link-panel.hide']()
+            : t['com.lovenotes.editor.bi-directional-link-panel.show']()}
         </Button>
       </div>
 
@@ -450,7 +450,7 @@ export const BiDirectionalLinkPanel = () => {
           <BacklinkLinks />
           <div className={styles.linksContainer}>
             <div className={styles.linksTitles}>
-              {t['com.affine.page-properties.outgoing-links']()} ·{' '}
+              {t['com.lovenotes.page-properties.outgoing-links']()} ·{' '}
               {links.length}
             </div>
             {links.map((link, i) => (
@@ -458,7 +458,7 @@ export const BiDirectionalLinkPanel = () => {
                 key={`${link.docId}-${link.params?.toString()}-${i}`}
                 className={styles.link}
               >
-                <AffinePageReference pageId={link.docId} params={link.params} />
+                <LoveNotesPageReference pageId={link.docId} params={link.params} />
               </div>
             ))}
           </div>

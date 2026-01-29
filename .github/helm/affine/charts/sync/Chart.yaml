@@ -1,6 +1,6 @@
 apiVersion: v2
 name: sync
-description: AFFiNE Sync Server
+description: LoveNotes Sync Server
 type: application
 version: 0.0.0
 appVersion: "0.26.0"

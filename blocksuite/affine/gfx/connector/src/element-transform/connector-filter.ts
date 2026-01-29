@@ -1,4 +1,4 @@
-import { ConnectorElementModel } from '@blocksuite/affine-model';
+import { ConnectorElementModel } from '@blocksuite/lovenotes-model';
 import {
   type DragExtensionInitializeContext,
   InteractivityExtension,

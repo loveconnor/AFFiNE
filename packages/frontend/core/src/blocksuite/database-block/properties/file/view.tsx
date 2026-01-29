@@ -1,16 +1,16 @@
-import { Popover, uniReactRoot } from '@affine/component';
-import { Button } from '@affine/component/ui/button';
-import { Menu, MenuItem } from '@affine/component/ui/menu';
-import { PeekViewService } from '@affine/core/modules/peek-view';
+import { Popover, uniReactRoot } from '@lovenotes/component';
+import { Button } from '@lovenotes/component/ui/button';
+import { Menu, MenuItem } from '@lovenotes/component/ui/menu';
+import { PeekViewService } from '@lovenotes/core/modules/peek-view';
 import {
   type Cell,
   type CellRenderProps,
   createIcon,
   type DataViewCellLifeCycle,
   EditorHostKey,
-} from '@blocksuite/affine/blocks/database';
-import { openFilesWith } from '@blocksuite/affine/shared/utils';
-import type { BlobEngine } from '@blocksuite/affine/sync';
+} from '@blocksuite/lovenotes/blocks/database';
+import { openFilesWith } from '@blocksuite/lovenotes/shared/utils';
+import type { BlobEngine } from '@blocksuite/lovenotes/sync';
 import {
   DeleteIcon,
   DownloadIcon,

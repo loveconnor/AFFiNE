@@ -1,9 +1,9 @@
-import { waitNextFrame } from '@affine-test/kit/bs/misc';
-import { test } from '@affine-test/kit/playwright';
+import { waitNextFrame } from '@lovenotes-test/kit/bs/misc';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   openHomePage,
   openJournalsPage,
-} from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/load-page';
 import {
   addDatabase,
   addDatabaseRow,
@@ -12,7 +12,7 @@ import {
   dragTo,
   waitForEditorLoad,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import {
   addCustomProperty,
   changePropertyVisibility,
@@ -26,7 +26,7 @@ import {
   removeSelectedTag,
   searchAndCreateTag,
   togglePropertyListVisibility,
-} from '@affine-test/kit/utils/properties';
+} from '@lovenotes-test/kit/utils/properties';
 import { expect } from '@playwright/test';
 
 import { addColumn } from './blocksuite/database/utils';
@@ -303,12 +303,12 @@ test('can show database backlink info', async ({ page }) => {
   await addDatabase(page, databaseTitle);
   await addColumn(page, 'select', 2);
 
-  await expect(page.locator('affine-database-title')).toContainText(
+  await expect(page.locator('lovenotes-database-title')).toContainText(
     databaseTitle
   );
 
   await expect(
-    page.locator(`affine-database-title:has-text("${databaseTitle}")`)
+    page.locator(`lovenotes-database-title:has-text("${databaseTitle}")`)
   ).toBeVisible();
 
   await addDatabaseRow(page, 0);
@@ -331,7 +331,7 @@ test('can show database backlink info', async ({ page }) => {
   await page.keyboard.press('Enter');
 
   // goto the linked page
-  await page.locator('.affine-reference-title:has-text("linked page")').click();
+  await page.locator('.lovenotes-reference-title:has-text("linked page")').click();
 
   // ensure the page properties are visible
   await ensurePagePropertiesVisible(page);
@@ -350,7 +350,7 @@ test('can show database backlink info', async ({ page }) => {
 
   await expect(
     linkedDatabaseSection.locator(
-      `.affine-reference-title:has-text("${pageTitle}")`
+      `.lovenotes-reference-title:has-text("${pageTitle}")`
     )
   ).toBeVisible();
 

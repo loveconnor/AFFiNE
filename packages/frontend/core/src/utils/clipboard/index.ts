@@ -1,4 +1,4 @@
-import { type Clipboard as BlockStdScopeClipboard } from '@blocksuite/affine/std';
+import { type Clipboard as BlockStdScopeClipboard } from '@blocksuite/lovenotes/std';
 
 import { fakeCopyAction } from './fake';
 

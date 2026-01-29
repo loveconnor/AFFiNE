@@ -1,15 +1,15 @@
-import { channelToScheme } from '@affine/core/utils';
-import type { ReferenceParams } from '@blocksuite/affine/model';
+import { channelToScheme } from '@lovenotes/core/utils';
+import type { ReferenceParams } from '@blocksuite/lovenotes/model';
 import { isNil, pick, pickBy } from 'lodash-es';
 import type { ParsedQuery, ParseOptions } from 'query-string';
 import queryString from 'query-string';
 
-function maybeAffineOrigin(origin: string, baseUrl: string) {
+function maybeLoveNotesOrigin(origin: string, baseUrl: string) {
   return (
     origin.startsWith('assets://') ||
-    origin.endsWith('affine.pro') || // stable/beta
-    origin.endsWith('apple.getaffineapp.com') || // stable/beta
-    origin.endsWith('affine.fail') || // canary
+    origin.endsWith('lovenotes.pro') || // stable/beta
+    origin.endsWith('apple.getlovenotesapp.com') || // stable/beta
+    origin.endsWith('lovenotes.fail') || // canary
     origin === baseUrl // localhost or self-hosted
   );
 }
@@ -19,19 +19,19 @@ export const resolveRouteLinkMeta = (
   baseUrl = location.origin
 ) => {
   try {
-    // if href is started with affine protocol, we need to convert it to http protocol to may URL happy
-    const affineProtocol = channelToScheme[BUILD_CONFIG.appBuildType] + '://';
+    // if href is started with lovenotes protocol, we need to convert it to http protocol to may URL happy
+    const lovenotesProtocol = channelToScheme[BUILD_CONFIG.appBuildType] + '://';
 
-    if (href.startsWith(affineProtocol)) {
-      href = href.replace(affineProtocol, 'http://');
+    if (href.startsWith(lovenotesProtocol)) {
+      href = href.replace(lovenotesProtocol, 'http://');
     }
 
     const url = new URL(href, baseUrl);
 
-    // check if origin is one of affine's origins
+    // check if origin is one of lovenotes's origins
     // check if origin is localhost or self-hosted
 
-    if (!maybeAffineOrigin(url.origin, baseUrl)) {
+    if (!maybeLoveNotesOrigin(url.origin, baseUrl)) {
       return null;
     }
 

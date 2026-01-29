@@ -18,7 +18,7 @@ type CodeBlockProps = {
 } & BlockMeta;
 
 export const CodeBlockSchema = defineBlockSchema({
-  flavour: 'affine:code',
+  flavour: 'lovenotes:code',
   props: internal =>
     ({
       text: internal.Text(),
@@ -37,10 +37,10 @@ export const CodeBlockSchema = defineBlockSchema({
     version: 1,
     role: 'content',
     parent: [
-      'affine:note',
-      'affine:paragraph',
-      'affine:list',
-      'affine:edgeless-text',
+      'lovenotes:note',
+      'lovenotes:paragraph',
+      'lovenotes:list',
+      'lovenotes:edgeless-text',
     ],
     children: [],
   },

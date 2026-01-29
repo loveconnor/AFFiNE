@@ -1,10 +1,10 @@
-import type { Rect } from '@blocksuite/affine-gfx-turbo-renderer';
+import type { Rect } from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import {
   BlockLayoutHandlerExtension,
   BlockLayoutHandlersIdentifier,
   getSentenceRects,
   segmentSentences,
-} from '@blocksuite/affine-gfx-turbo-renderer';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import type { Container } from '@blocksuite/global/di';
 import type { EditorHost, GfxBlockComponent } from '@blocksuite/std';
 import { clientToModelCoord, type ViewportRecord } from '@blocksuite/std/gfx';
@@ -13,7 +13,7 @@ import type { BlockModel } from '@blocksuite/store';
 import type { ListLayout } from './list-painter.worker';
 
 export class ListLayoutHandlerExtension extends BlockLayoutHandlerExtension<ListLayout> {
-  readonly blockType = 'affine:list';
+  readonly blockType = 'lovenotes:list';
 
   static override setup(di: Container) {
     di.addImpl(
@@ -34,14 +34,14 @@ export class ListLayoutHandlerExtension extends BlockLayoutHandlerExtension<List
 
     // Find the list items within this specific list component
     const listItemSelector =
-      '.affine-list-block-container .affine-list-rich-text-wrapper [data-v-text="true"]';
+      '.lovenotes-list-block-container .lovenotes-list-rich-text-wrapper [data-v-text="true"]';
     const listItemNodes = component.querySelectorAll(listItemSelector);
 
     if (listItemNodes.length === 0) return null;
 
     const { zoom, viewScale } = viewportRecord;
     const list: ListLayout = {
-      type: 'affine:list',
+      type: 'lovenotes:list',
       items: [],
       blockId: model.id,
       rect: { x: 0, y: 0, w: 0, h: 0 },
@@ -49,7 +49,7 @@ export class ListLayoutHandlerExtension extends BlockLayoutHandlerExtension<List
 
     listItemNodes.forEach(listItemNode => {
       const listItemWrapper = listItemNode.closest(
-        '.affine-list-rich-text-wrapper'
+        '.lovenotes-list-rich-text-wrapper'
       );
       if (!listItemWrapper) return;
 
@@ -59,12 +59,12 @@ export class ListLayoutHandlerExtension extends BlockLayoutHandlerExtension<List
       let collapsed = false;
       let prefix = '';
 
-      if (listItemWrapper.classList.contains('affine-list--checked')) {
+      if (listItemWrapper.classList.contains('lovenotes-list--checked')) {
         checked = true;
       }
 
       const parentListBlock = listItemWrapper.closest(
-        '.affine-list-block-container'
+        '.lovenotes-list-block-container'
       )?.parentElement;
       if (parentListBlock) {
         if (parentListBlock.dataset.listType === 'numbered') {

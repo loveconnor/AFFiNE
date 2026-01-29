@@ -1,5 +1,5 @@
-import { DefaultTool } from '@blocksuite/affine-block-surface';
-import type { GroupElementModel } from '@blocksuite/affine-model';
+import { DefaultTool } from '@blocksuite/lovenotes-block-surface';
+import type { GroupElementModel } from '@blocksuite/lovenotes-model';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import type { BlockComponent } from '@blocksuite/std';
 import { GfxControllerIdentifier } from '@blocksuite/std/gfx';

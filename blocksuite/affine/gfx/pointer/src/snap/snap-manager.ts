@@ -1,5 +1,5 @@
-import { OverlayIdentifier } from '@blocksuite/affine-block-surface';
-import { MindmapElementModel } from '@blocksuite/affine-model';
+import { OverlayIdentifier } from '@blocksuite/lovenotes-block-surface';
+import { MindmapElementModel } from '@blocksuite/lovenotes-model';
 import { type Bound } from '@blocksuite/global/gfx';
 import {
   type DragExtensionInitializeContext,

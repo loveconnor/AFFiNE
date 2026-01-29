@@ -1,17 +1,17 @@
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import track from '@affine/track';
-import type { Container } from '@blocksuite/affine/global/di';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import track from '@lovenotes/track';
+import type { Container } from '@blocksuite/lovenotes/global/di';
 import {
   FileSizeLimitProvider,
   type IFileSizeLimitService,
-} from '@blocksuite/affine/shared/services';
-import { Extension } from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/shared/services';
+import { Extension } from '@blocksuite/lovenotes/store';
 import type { FrameworkProvider } from '@toeverything/infra';
 
 export function patchFileSizeLimitExtension(framework: FrameworkProvider) {
   const workspaceDialogService = framework.get(WorkspaceDialogService);
 
-  class AffineFileSizeLimitService
+  class LoveNotesFileSizeLimitService
     extends Extension
     implements IFileSizeLimitService
   {
@@ -27,9 +27,9 @@ export function patchFileSizeLimitExtension(framework: FrameworkProvider) {
     }
 
     static override setup(di: Container) {
-      di.override(FileSizeLimitProvider, AffineFileSizeLimitService);
+      di.override(FileSizeLimitProvider, LoveNotesFileSizeLimitService);
     }
   }
 
-  return AffineFileSizeLimitService;
+  return LoveNotesFileSizeLimitService;
 }

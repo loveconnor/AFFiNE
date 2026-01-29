@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-widget-remote-selection';
+export * from '@blocksuite/lovenotes-widget-remote-selection';

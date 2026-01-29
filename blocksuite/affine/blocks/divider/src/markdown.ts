@@ -3,15 +3,15 @@ import {
   DividerBlockSchema,
   ParagraphBlockModel,
   ParagraphBlockSchema,
-} from '@blocksuite/affine-model';
-import { focusTextModel } from '@blocksuite/affine-rich-text';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
-import { matchModels } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { focusTextModel } from '@blocksuite/lovenotes-rich-text';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes-shared/types';
+import { matchModels } from '@blocksuite/lovenotes-shared/utils';
 import type { BlockComponent } from '@blocksuite/std';
 import { InlineMarkdownExtension } from '@blocksuite/std/inline';
 
 export const DividerMarkdownExtension =
-  InlineMarkdownExtension<AffineTextAttributes>({
+  InlineMarkdownExtension<LoveNotesTextAttributes>({
     name: 'divider',
     pattern: /^(-{3,}|\*{3,}|_{3,})\s$/,
     action: ({ inlineEditor, inlineRange }) => {

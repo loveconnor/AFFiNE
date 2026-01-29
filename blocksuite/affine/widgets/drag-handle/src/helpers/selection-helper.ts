@@ -1,4 +1,4 @@
-import { findNoteBlockModel } from '@blocksuite/affine-shared/utils';
+import { findNoteBlockModel } from '@blocksuite/lovenotes-shared/utils';
 import {
   type BlockComponent,
   BlockSelection,
@@ -6,7 +6,7 @@ import {
   TextSelection,
 } from '@blocksuite/std';
 
-import type { AffineDragHandleWidget } from '../drag-handle.js';
+import type { LoveNotesDragHandleWidget } from '../drag-handle.js';
 
 export class SelectionHelper {
   /** Check if given block component is selected */
@@ -63,5 +63,5 @@ export class SelectionHelper {
     return this.widget.std.selection;
   }
 
-  constructor(readonly widget: AffineDragHandleWidget) {}
+  constructor(readonly widget: LoveNotesDragHandleWidget) {}
 }

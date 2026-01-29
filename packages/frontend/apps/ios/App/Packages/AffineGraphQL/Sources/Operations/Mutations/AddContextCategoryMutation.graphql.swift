@@ -18,11 +18,11 @@ public class AddContextCategoryMutation: GraphQLMutation {
 
   public var __variables: Variables? { ["options": options] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("addContextCategory", AddContextCategory.self, arguments: ["options": .variable("options")]),
     ] }
@@ -33,42 +33,42 @@ public class AddContextCategoryMutation: GraphQLMutation {
     /// AddContextCategory
     ///
     /// Parent Type: `CopilotContextCategory`
-    public struct AddContextCategory: AffineGraphQL.SelectionSet {
+    public struct AddContextCategory: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotContextCategory }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotContextCategory }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("id", AffineGraphQL.ID.self),
-        .field("createdAt", AffineGraphQL.SafeInt.self),
-        .field("type", GraphQLEnum<AffineGraphQL.ContextCategories>.self),
+        .field("id", LoveNotesGraphQL.ID.self),
+        .field("createdAt", LoveNotesGraphQL.SafeInt.self),
+        .field("type", GraphQLEnum<LoveNotesGraphQL.ContextCategories>.self),
         .field("docs", [Doc].self),
       ] }
 
-      public var id: AffineGraphQL.ID { __data["id"] }
-      public var createdAt: AffineGraphQL.SafeInt { __data["createdAt"] }
-      public var type: GraphQLEnum<AffineGraphQL.ContextCategories> { __data["type"] }
+      public var id: LoveNotesGraphQL.ID { __data["id"] }
+      public var createdAt: LoveNotesGraphQL.SafeInt { __data["createdAt"] }
+      public var type: GraphQLEnum<LoveNotesGraphQL.ContextCategories> { __data["type"] }
       public var docs: [Doc] { __data["docs"] }
 
       /// AddContextCategory.Doc
       ///
       /// Parent Type: `CopilotContextDoc`
-      public struct Doc: AffineGraphQL.SelectionSet {
+      public struct Doc: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotContextDoc }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotContextDoc }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", AffineGraphQL.ID.self),
-          .field("createdAt", AffineGraphQL.SafeInt.self),
-          .field("status", GraphQLEnum<AffineGraphQL.ContextEmbedStatus>?.self),
+          .field("id", LoveNotesGraphQL.ID.self),
+          .field("createdAt", LoveNotesGraphQL.SafeInt.self),
+          .field("status", GraphQLEnum<LoveNotesGraphQL.ContextEmbedStatus>?.self),
         ] }
 
-        public var id: AffineGraphQL.ID { __data["id"] }
-        public var createdAt: AffineGraphQL.SafeInt { __data["createdAt"] }
-        public var status: GraphQLEnum<AffineGraphQL.ContextEmbedStatus>? { __data["status"] }
+        public var id: LoveNotesGraphQL.ID { __data["id"] }
+        public var createdAt: LoveNotesGraphQL.SafeInt { __data["createdAt"] }
+        public var status: GraphQLEnum<LoveNotesGraphQL.ContextEmbedStatus>? { __data["status"] }
       }
     }
   }

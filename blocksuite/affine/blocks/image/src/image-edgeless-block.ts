@@ -1,13 +1,13 @@
-import type { BlockCaptionEditor } from '@blocksuite/affine-components/caption';
-import { LoadingIcon } from '@blocksuite/affine-components/icons';
-import { Peekable } from '@blocksuite/affine-components/peek';
-import { ResourceController } from '@blocksuite/affine-components/resource';
+import type { BlockCaptionEditor } from '@blocksuite/lovenotes-components/caption';
+import { LoadingIcon } from '@blocksuite/lovenotes-components/icons';
+import { Peekable } from '@blocksuite/lovenotes-components/peek';
+import { ResourceController } from '@blocksuite/lovenotes-components/resource';
 import {
   type ImageBlockModel,
   ImageBlockSchema,
-} from '@blocksuite/affine-model';
-import { cssVarV2, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
-import { formatSize } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { cssVarV2, unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
+import { formatSize } from '@blocksuite/lovenotes-shared/utils';
 import { BrokenImageIcon, ImageIcon } from '@blocksuite/icons/lit';
 import { GfxBlockComponent } from '@blocksuite/std';
 import { GfxViewInteractionExtension } from '@blocksuite/std/gfx';
@@ -27,11 +27,11 @@ import {
 @Peekable()
 export class ImageEdgelessBlockComponent extends GfxBlockComponent<ImageBlockModel> {
   static override styles = css`
-    affine-edgeless-image {
+    lovenotes-edgeless-image {
       position: relative;
     }
 
-    affine-edgeless-image .loading {
+    lovenotes-edgeless-image .loading {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -52,14 +52,14 @@ export class ImageEdgelessBlockComponent extends GfxBlockComponent<ImageBlockMod
       }
     }
 
-    affine-edgeless-image .affine-image-status {
+    lovenotes-edgeless-image .lovenotes-image-status {
       position: absolute;
       left: 18px;
       bottom: 18px;
     }
 
-    affine-edgeless-image .resizable-img,
-    affine-edgeless-image .resizable-img img {
+    lovenotes-edgeless-image .resizable-img,
+    lovenotes-edgeless-image .resizable-img img {
       width: 100%;
       height: 100%;
     }
@@ -140,7 +140,7 @@ export class ImageEdgelessBlockComponent extends GfxBlockComponent<ImageBlockMod
     const { loading, icon, description, error, needUpload } = resovledState;
 
     return html`
-      <div class="affine-image-container" style=${containerStyleMap}>
+      <div class="lovenotes-image-container" style=${containerStyleMap}>
         ${when(
           blobUrl,
           () => html`
@@ -158,23 +158,23 @@ export class ImageEdgelessBlockComponent extends GfxBlockComponent<ImageBlockMod
             ${when(
               Boolean(error && description),
               () =>
-                html`<affine-resource-status
-                  class="affine-image-status"
+                html`<lovenotes-resource-status
+                  class="lovenotes-image-status"
                   .message=${description}
                   .needUpload=${needUpload}
                   .action=${() =>
                     needUpload
                       ? this.resourceController.upload()
                       : this.refreshData()}
-                ></affine-resource-status>`
+                ></lovenotes-resource-status>`
             )}
           `,
           () =>
-            html`<affine-image-fallback-card
+            html`<lovenotes-image-fallback-card
               .state=${resovledState}
-            ></affine-image-fallback-card>`
+            ></lovenotes-image-fallback-card>`
         )}
-        <affine-block-selection .block=${this}></affine-block-selection>
+        <lovenotes-block-selection .block=${this}></lovenotes-block-selection>
       </div>
       <block-caption-editor></block-caption-editor>
 
@@ -200,6 +200,6 @@ export const ImageEdgelessBlockInteraction = GfxViewInteractionExtension(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-edgeless-image': ImageEdgelessBlockComponent;
+    'lovenotes-edgeless-image': ImageEdgelessBlockComponent;
   }
 }

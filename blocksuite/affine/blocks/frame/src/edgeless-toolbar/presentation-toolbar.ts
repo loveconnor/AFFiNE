@@ -1,15 +1,15 @@
 import {
   DefaultTool,
   EdgelessLegacySlotIdentifier,
-} from '@blocksuite/affine-block-surface';
-import { toast } from '@blocksuite/affine-components/toast';
-import { PanTool } from '@blocksuite/affine-gfx-pointer';
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import { toast } from '@blocksuite/lovenotes-components/toast';
+import { PanTool } from '@blocksuite/lovenotes-gfx-pointer';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   ViewportElementProvider,
-} from '@blocksuite/affine-shared/services';
-import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-shared/services';
+import { EdgelessToolbarToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { Bound, clamp } from '@blocksuite/global/gfx';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import {
@@ -55,7 +55,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
       content: '';
       width: 1px;
       height: 100%;
-      background: var(--affine-border-color);
+      background: var(--lovenotes-border-color);
       transform: scaleX(0.5);
     }
     .config-buttons {
@@ -82,7 +82,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
     }
 
     .edgeless-frame-navigator-count {
-      color: var(--affine-text-secondary-color);
+      color: var(--lovenotes-text-secondary-color);
       white-space: nowrap;
     }
     .edgeless-frame-navigator-stop {
@@ -111,7 +111,7 @@ export class PresentationToolbar extends EdgelessToolbarToolMixin(
       border-radius: inherit;
     }
     .edgeless-frame-navigator-stop:hover::before {
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
   `;
 

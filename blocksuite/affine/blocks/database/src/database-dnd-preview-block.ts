@@ -1,12 +1,12 @@
-import type { DatabaseBlockModel } from '@blocksuite/affine-model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import type { DatabaseBlockModel } from '@blocksuite/lovenotes-model';
+import { unsafeCSSVarV2 } from '@blocksuite/lovenotes-shared/theme';
 import { DatabaseListViewIcon } from '@blocksuite/icons/lit';
 import { BlockComponent } from '@blocksuite/std';
 import { css, html } from 'lit';
 
 export class DatabaseDndPreviewBlockComponent extends BlockComponent<DatabaseBlockModel> {
   static override styles = css`
-    .affine-database-preview-container {
+    .lovenotes-database-preview-container {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -31,7 +31,7 @@ export class DatabaseDndPreviewBlockComponent extends BlockComponent<DatabaseBlo
     }
 
     .database-preview-content > .text {
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
       color: ${unsafeCSSVarV2('text/primary', '#121212')};
       font-size: 14px;
       line-height: 24px;
@@ -40,7 +40,7 @@ export class DatabaseDndPreviewBlockComponent extends BlockComponent<DatabaseBlo
 
   override renderBlock() {
     return html`<div
-      class="affine-database-preview-container"
+      class="lovenotes-database-preview-container"
       contenteditable="false"
     >
       <div class="database-preview-content">
@@ -53,6 +53,6 @@ export class DatabaseDndPreviewBlockComponent extends BlockComponent<DatabaseBlo
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-dnd-preview-database': DatabaseDndPreviewBlockComponent;
+    'lovenotes-dnd-preview-database': DatabaseDndPreviewBlockComponent;
   }
 }

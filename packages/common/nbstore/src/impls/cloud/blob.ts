@@ -1,4 +1,4 @@
-import { UserFriendlyError } from '@affine/error';
+import { UserFriendlyError } from '@lovenotes/error';
 import {
   abortBlobUploadMutation,
   BlobUploadMethod,
@@ -10,7 +10,7 @@ import {
   releaseDeletedBlobsMutation,
   setBlobMutation,
   workspaceBlobQuotaQuery,
-} from '@affine/graphql';
+} from '@lovenotes/graphql';
 
 import {
   type BlobRecord,
@@ -49,7 +49,7 @@ export class CloudBlobStorage extends BlobStorageBase {
       {
         cache: 'default',
         headers: {
-          'x-affine-version': BUILD_CONFIG.appVersion,
+          'x-lovenotes-version': BUILD_CONFIG.appVersion,
         },
         signal,
       }
@@ -73,7 +73,7 @@ export class CloudBlobStorage extends BlobStorageBase {
           const res = await this.connection.fetch(json.url, {
             cache: 'default',
             headers: {
-              'x-affine-version': BUILD_CONFIG.appVersion,
+              'x-lovenotes-version': BUILD_CONFIG.appVersion,
             },
             signal,
           });

@@ -1,12 +1,12 @@
 import {
   DefaultTool,
   OverlayIdentifier,
-} from '@blocksuite/affine-block-surface';
-import type { FrameBlockModel } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { FrameBlockModel } from '@blocksuite/lovenotes-model';
 import {
   EditPropsStore,
   TelemetryProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import type { IPoint, IVec } from '@blocksuite/global/gfx';
 import { Bound, Vec } from '@blocksuite/global/gfx';
 import type { PointerEventState } from '@blocksuite/std';
@@ -67,19 +67,19 @@ export class FrameTool extends BaseTool {
 
     if (!this._frame) {
       const frames = this.gfx.layer.blocks.filter(
-        block => block.flavour === 'affine:frame'
+        block => block.flavour === 'lovenotes:frame'
       ) as FrameBlockModel[];
 
       const props = this.std
         .get(EditPropsStore)
-        .applyLastProps('affine:frame', {
+        .applyLastProps('lovenotes:frame', {
           title: new Text(new Y.Text(`Frame ${frames.length + 1}`)),
           xywh: Bound.fromPoints([this._startPoint, currentPoint]).serialize(),
           index: this.gfx.layer.generateIndex(true),
           presentationIndex: this.frameManager.generatePresentationIndex(),
         });
 
-      const id = this.doc.addBlock('affine:frame', props, this.gfx.surface);
+      const id = this.doc.addBlock('lovenotes:frame', props, this.gfx.surface);
 
       this.std.getOptional(TelemetryProvider)?.track('CanvasElementAdded', {
         control: 'canvas:draw',

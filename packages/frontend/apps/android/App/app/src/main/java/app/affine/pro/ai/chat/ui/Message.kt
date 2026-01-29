@@ -1,4 +1,4 @@
-package app.affine.pro.ai.chat.ui
+package app.lovenotes.pro.ai.chat.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -18,11 +18,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import app.affine.pro.R
-import app.affine.pro.ai.chat.ChatMessage
-import app.affine.pro.components.AFFiNEIcon
-import app.affine.pro.components.Markdown
-import app.affine.pro.theme.AFFiNETheme
+import app.lovenotes.pro.R
+import app.lovenotes.pro.ai.chat.ChatMessage
+import app.lovenotes.pro.components.LoveNotesIcon
+import app.lovenotes.pro.components.Markdown
+import app.lovenotes.pro.theme.LoveNotesTheme
 import kotlinx.datetime.Clock
 
 @Composable
@@ -43,17 +43,17 @@ fun Message(message: ChatMessage) {
             .padding(8.dp)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            AFFiNEIcon(
+            LoveNotesIcon(
                 R.drawable.ic_ai,
-                tint = AFFiNETheme.colors.iconActivated
+                tint = LoveNotesTheme.colors.iconActivated
             )
             Spacer(Modifier.width(6.dp))
             Text(
                 text = when (message.role) {
                     ChatMessage.Role.User -> "You"
-                    ChatMessage.Role.AI -> "Affine AI"
+                    ChatMessage.Role.AI -> "LoveNotes AI"
                 },
-                color = AFFiNETheme.colors.textPrimary,
+                color = LoveNotesTheme.colors.textPrimary,
                 fontSize = 17.sp,
                 fontWeight = FontWeight.SemiBold,
             )

@@ -1,15 +1,15 @@
-import { createEmbedBlockMarkdownAdapterMatcher } from '@blocksuite/affine-block-embed';
+import { createEmbedBlockMarkdownAdapterMatcher } from '@blocksuite/lovenotes-block-embed';
 import {
   BookmarkBlockSchema,
   FootNoteReferenceParamsSchema,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   BlockMarkdownAdapterExtension,
   FOOTNOTE_DEFINITION_PREFIX,
   getFootnoteDefinitionText,
   isFootnoteDefinitionNode,
   type MarkdownAST,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 
 const isUrlFootnoteDefinitionNode = (node: MarkdownAST) => {

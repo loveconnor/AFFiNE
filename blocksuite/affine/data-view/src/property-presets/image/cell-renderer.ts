@@ -7,13 +7,13 @@ import { imagePropertyModelConfig } from './define.js';
 
 export class ImageCell extends BaseCellRenderer<string, string> {
   static override styles = css`
-    affine-database-image-cell {
+    lovenotes-database-image-cell {
       width: 100%;
       height: 100%;
       display: flex;
       align-items: center;
     }
-    affine-database-image-cell img {
+    lovenotes-database-image-cell img {
       width: 20px;
       height: 20px;
     }

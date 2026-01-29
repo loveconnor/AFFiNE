@@ -1,9 +1,9 @@
-import type { RootBlockModel } from '@blocksuite/affine-model';
-import { ViewportElementProvider } from '@blocksuite/affine-shared/services';
+import type { RootBlockModel } from '@blocksuite/lovenotes-model';
+import { ViewportElementProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   autoScroll,
   getScrollContainer,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import {
   BlockComponent,
   BlockSelection,
@@ -24,10 +24,10 @@ import {
 } from './utils';
 
 export const AFFINE_PAGE_DRAGGING_AREA_WIDGET =
-  'affine-page-dragging-area-widget';
+  'lovenotes-page-dragging-area-widget';
 
-export class AffinePageDraggingAreaWidget extends WidgetComponent<RootBlockModel> {
-  static excludeFlavours: string[] = ['affine:note', 'affine:surface'];
+export class LoveNotesPageDraggingAreaWidget extends WidgetComponent<RootBlockModel> {
+  static excludeFlavours: string[] = ['lovenotes:note', 'lovenotes:surface'];
 
   private _dragging = false;
 
@@ -130,7 +130,7 @@ export class AffinePageDraggingAreaWidget extends WidgetComponent<RootBlockModel
         }
         if (
           view.model.role !== 'root' &&
-          !AffinePageDraggingAreaWidget.excludeFlavours.includes(
+          !LoveNotesPageDraggingAreaWidget.excludeFlavours.includes(
             view.model.flavour
           )
         ) {
@@ -303,14 +303,14 @@ export class AffinePageDraggingAreaWidget extends WidgetComponent<RootBlockModel
     };
     return html`
       <style>
-        .affine-page-dragging-area {
+        .lovenotes-page-dragging-area {
           position: absolute;
-          background: var(--affine-hover-color);
+          background: var(--lovenotes-hover-color);
           z-index: 1;
           pointer-events: none;
         }
       </style>
-      <div class="affine-page-dragging-area" style=${styleMap(style)}></div>
+      <div class="lovenotes-page-dragging-area" style=${styleMap(style)}></div>
     `;
   }
 
@@ -319,13 +319,13 @@ export class AffinePageDraggingAreaWidget extends WidgetComponent<RootBlockModel
 }
 
 export const pageDraggingAreaWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   AFFINE_PAGE_DRAGGING_AREA_WIDGET,
   literal`${unsafeStatic(AFFINE_PAGE_DRAGGING_AREA_WIDGET)}`
 );
 
 declare global {
   interface HTMLElementTagNameMap {
-    [AFFINE_PAGE_DRAGGING_AREA_WIDGET]: AffinePageDraggingAreaWidget;
+    [AFFINE_PAGE_DRAGGING_AREA_WIDGET]: LoveNotesPageDraggingAreaWidget;
   }
 }

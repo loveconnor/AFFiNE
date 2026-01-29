@@ -3,11 +3,11 @@ import type {
   BlockLayoutPainter,
   TextRect,
   WorkerToHostMessage,
-} from '@blocksuite/affine-gfx-turbo-renderer';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer';
 import {
   BlockLayoutPainterExtension,
   getBaseline,
-} from '@blocksuite/affine-gfx-turbo-renderer/painter';
+} from '@blocksuite/lovenotes-gfx-turbo-renderer/painter';
 
 interface SentenceLayout {
   text: string;
@@ -16,14 +16,14 @@ interface SentenceLayout {
 }
 
 export interface ParagraphLayout extends BlockLayout {
-  type: 'affine:paragraph';
+  type: 'lovenotes:paragraph';
   sentences: SentenceLayout[];
 }
 
 const debugSentenceBorder = false;
 
 function isParagraphLayout(layout: BlockLayout): layout is ParagraphLayout {
-  return layout.type === 'affine:paragraph';
+  return layout.type === 'lovenotes:paragraph';
 }
 
 class ParagraphLayoutPainter implements BlockLayoutPainter {
@@ -67,7 +67,7 @@ class ParagraphLayoutPainter implements BlockLayoutPainter {
       const message: WorkerToHostMessage = {
         type: 'paintError',
         error: 'Font not loaded',
-        blockType: 'affine:paragraph',
+        blockType: 'lovenotes:paragraph',
       };
       self.postMessage(message);
       return;
@@ -110,6 +110,6 @@ class ParagraphLayoutPainter implements BlockLayoutPainter {
 }
 
 export const ParagraphLayoutPainterExtension = BlockLayoutPainterExtension(
-  'affine:paragraph',
+  'lovenotes:paragraph',
   ParagraphLayoutPainter
 );

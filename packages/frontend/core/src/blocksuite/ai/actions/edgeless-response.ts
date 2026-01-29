@@ -1,11 +1,11 @@
-import { CodeBlockPreviewIdentifier } from '@blocksuite/affine/blocks/code';
-import { addImages } from '@blocksuite/affine/blocks/image';
-import { getSurfaceBlock } from '@blocksuite/affine/blocks/surface';
-import { LoadingIcon } from '@blocksuite/affine/components/icons';
-import { addTree } from '@blocksuite/affine/gfx/mindmap';
-import { fitContent } from '@blocksuite/affine/gfx/shape';
-import { createTemplateJob } from '@blocksuite/affine/gfx/template';
-import { Bound } from '@blocksuite/affine/global/gfx';
+import { CodeBlockPreviewIdentifier } from '@blocksuite/lovenotes/blocks/code';
+import { addImages } from '@blocksuite/lovenotes/blocks/image';
+import { getSurfaceBlock } from '@blocksuite/lovenotes/blocks/surface';
+import { LoadingIcon } from '@blocksuite/lovenotes/components/icons';
+import { addTree } from '@blocksuite/lovenotes/gfx/mindmap';
+import { fitContent } from '@blocksuite/lovenotes/gfx/shape';
+import { createTemplateJob } from '@blocksuite/lovenotes/gfx/template';
+import { Bound } from '@blocksuite/lovenotes/global/gfx';
 import {
   EDGELESS_TEXT_BLOCK_MIN_HEIGHT,
   EDGELESS_TEXT_BLOCK_MIN_WIDTH,
@@ -14,15 +14,15 @@ import {
   type MindmapElementModel,
   NoteDisplayMode,
   type ShapeElementModel,
-} from '@blocksuite/affine/model';
-import { TelemetryProvider } from '@blocksuite/affine/shared/services';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
-import { Text } from '@blocksuite/affine/store';
+} from '@blocksuite/lovenotes/model';
+import { TelemetryProvider } from '@blocksuite/lovenotes/shared/services';
+import type { EditorHost } from '@blocksuite/lovenotes/std';
+import { GfxControllerIdentifier } from '@blocksuite/lovenotes/std/gfx';
+import { Text } from '@blocksuite/lovenotes/store';
 import {
   AFFINE_TOOLBAR_WIDGET,
-  type AffineToolbarWidget,
-} from '@blocksuite/affine/widgets/toolbar';
+  type LoveNotesToolbarWidget,
+} from '@blocksuite/lovenotes/widgets/toolbar';
 import {
   ChatWithAiIcon,
   DeleteIcon,
@@ -47,17 +47,17 @@ import {
   getCopilotSelectedElems,
   getSurfaceElementFromEditor,
 } from '../utils/selection-utils';
-import type { AffineAIPanelWidget } from '../widgets/ai-panel/ai-panel';
+import type { LoveNotesAIPanelWidget } from '../widgets/ai-panel/ai-panel';
 import type { EdgelessCopilotWidget } from '../widgets/edgeless-copilot';
 import { EXCLUDING_INSERT_ACTIONS, generatingStages } from './consts';
 
 type FinishConfig = Exclude<
-  AffineAIPanelWidget['config'],
+  LoveNotesAIPanelWidget['config'],
   null
 >['finishStateConfig'];
 
 type ErrorConfig = Exclude<
-  AffineAIPanelWidget['config'],
+  LoveNotesAIPanelWidget['config'],
   null
 >['errorStateConfig'];
 
@@ -66,7 +66,7 @@ export function getToolbar(host: EditorHost) {
   const toolbar = host.view.getWidget(
     AFFINE_TOOLBAR_WIDGET,
     rootBlockId
-  ) as AffineToolbarWidget;
+  ) as LoveNotesToolbarWidget;
 
   return toolbar.querySelector('editor-toolbar');
 }
@@ -78,7 +78,7 @@ export function getTriggerEntry(host: EditorHost) {
 }
 
 export function discard(
-  panel: AffineAIPanelWidget,
+  panel: LoveNotesAIPanelWidget,
   _: EdgelessCopilotWidget
 ): AIItemConfig {
   return {
@@ -92,7 +92,7 @@ export function discard(
   };
 }
 
-export function retry(panel: AffineAIPanelWidget): AIItemConfig {
+export function retry(panel: LoveNotesAIPanelWidget): AIItemConfig {
   return {
     name: 'Retry',
     icon: ResetIcon(),
@@ -252,10 +252,10 @@ function createBlockAndInsert(
       EDGELESS_TEXT_BLOCK_MIN_WIDTH,
       EDGELESS_TEXT_BLOCK_MIN_HEIGHT
     );
-    const surfaceBlock = doc.getBlocksByFlavour('affine:surface')[0];
+    const surfaceBlock = doc.getBlocksByFlavour('lovenotes:surface')[0];
     if (type === 'edgelessText') {
       blockId = doc.addBlock(
-        'affine:edgeless-text',
+        'lovenotes:edgeless-text',
         {
           xywh: bounds.serialize(),
         },
@@ -264,7 +264,7 @@ function createBlockAndInsert(
     } else {
       const bounds = edgelessCopilot.determineInsertionBounds(800, 95);
       blockId = doc.addBlock(
-        'affine:note',
+        'lovenotes:note',
         {
           xywh: bounds.serialize(),
           displayMode: NoteDisplayMode.EdgelessOnly,
@@ -504,20 +504,20 @@ function responseToMakeItReal(host: EditorHost, ctx: AIContext) {
 
     if (ifUseCodeBlock) {
       const note = host.store.addBlock(
-        'affine:note',
+        'lovenotes:note',
         {
           xywh: bounds.serialize(),
         },
         host.store.root
       );
       host.store.addBlock(
-        'affine:code',
+        'lovenotes:code',
         { text: new Text(html), language: 'html', preview: true },
         note
       );
     } else {
       host.store.addBlock(
-        'affine:embed-html',
+        'lovenotes:embed-html',
         {
           html,
           design: 'ai:makeItReal', // as tag
@@ -721,7 +721,7 @@ export function actionToGenerating<T extends keyof BlockSuitePresets.AIActions>(
 export function actionToErrorResponse<
   T extends keyof BlockSuitePresets.AIActions,
 >(
-  panel: AffineAIPanelWidget,
+  panel: LoveNotesAIPanelWidget,
   id: T,
   host: EditorHost,
   ctx: AIContext,

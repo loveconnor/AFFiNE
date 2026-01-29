@@ -11,8 +11,8 @@ export const GeneralSettingSchema = z
     edgelessScrollZoom: z.boolean().default(false),
     edgelessDisableScheduleUpdate: z.boolean().default(false),
     docCanvasPreferView: z
-      .enum(['affine:embed-linked-doc', 'affine:embed-synced-doc'])
-      .default('affine:embed-synced-doc'),
+      .enum(['lovenotes:embed-linked-doc', 'lovenotes:embed-synced-doc'])
+      .default('lovenotes:embed-synced-doc'),
   })
   .merge(NodePropsSchema);
 
@@ -27,7 +27,7 @@ export interface EditorSettingService {
 }
 
 export const EditorSettingProvider = createIdentifier<EditorSettingService>(
-  'AffineEditorSettingProvider'
+  'LoveNotesEditorSettingProvider'
 );
 
 export function EditorSettingExtension(

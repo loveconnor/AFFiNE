@@ -1,6 +1,6 @@
-import { Button } from '@affine/component';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import { useI18n } from '@affine/i18n';
+import { Button } from '@lovenotes/component';
+import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
+import { useI18n } from '@lovenotes/i18n';
 
 export const ImportTemplateButton = ({
   name,
@@ -16,7 +16,7 @@ export const ImportTemplateButton = ({
       variant="primary"
       onClick={() => jumpToImportTemplate(name, snapshotUrl)}
     >
-      {t['com.affine.share-page.header.import-template']()}
+      {t['com.lovenotes.share-page.header.import-template']()}
     </Button>
   );
 };

@@ -1,10 +1,10 @@
-import { ListBlockSchema } from '@blocksuite/affine-model';
+import { ListBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   AdapterTextUtils,
   BlockHtmlAdapterExtension,
   type BlockHtmlAdapterMatcher,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert } from '@blocksuite/store';
 import { nanoid } from '@blocksuite/store';
 import type { Element } from 'hast';
@@ -48,7 +48,7 @@ export const listBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
         {
           type: 'block',
           id: nanoid(),
-          flavour: 'affine:list',
+          flavour: 'lovenotes:list',
           props: {
             type: listType,
             text: {
@@ -116,7 +116,7 @@ export const listBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
       }
       // check if the list is of the same type
       if (
-        walkerContext.getNodeContext('affine:list:parent') === o.parent &&
+        walkerContext.getNodeContext('lovenotes:list:parent') === o.parent &&
         currentTNode.type === 'element' &&
         currentTNode.tagName ===
           (o.node.props.type === 'numbered' ? 'ol' : 'ul') &&
@@ -148,7 +148,7 @@ export const listBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
           },
           'children'
         );
-        walkerContext.setNodeContext('affine:list:parent', o.parent);
+        walkerContext.setNodeContext('lovenotes:list:parent', o.parent);
       }
 
       walkerContext.openNode(
@@ -156,7 +156,7 @@ export const listBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
           type: 'element',
           tagName: 'li',
           properties: {
-            className: ['affine-list-block-container'],
+            className: ['lovenotes-list-block-container'],
           },
           children: liChildren,
         },
@@ -168,7 +168,7 @@ export const listBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
       const currentTNode = walkerContext.currentNode() as Element;
       const previousTNode = walkerContext.previousNode() as Element;
       if (
-        walkerContext.getPreviousNodeContext('affine:list:parent') ===
+        walkerContext.getPreviousNodeContext('lovenotes:list:parent') ===
           o.parent &&
         currentTNode.tagName === 'li' &&
         previousTNode.tagName ===
@@ -185,7 +185,7 @@ export const listBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
       ) {
         walkerContext.closeNode();
         if (
-          o.next?.flavour !== 'affine:list' ||
+          o.next?.flavour !== 'lovenotes:list' ||
           o.next.props.type !== o.node.props.type
         ) {
           // If the next node is not a list or different type of list, close the list

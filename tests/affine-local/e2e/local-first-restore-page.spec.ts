@@ -1,13 +1,13 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@lovenotes-test/kit/playwright';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   getPageByTitle,
   getPageOperationButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { getCurrentDocIdFromUrl } from '@affine-test/kit/utils/url';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { getCurrentDocIdFromUrl } from '@lovenotes-test/kit/utils/url';
 import { expect } from '@playwright/test';
 
 test('New a page , then delete it in all pages, restore it', async ({

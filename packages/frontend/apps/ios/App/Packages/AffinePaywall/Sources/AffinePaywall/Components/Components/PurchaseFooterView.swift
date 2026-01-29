@@ -1,11 +1,11 @@
 //
 //  PurchaseFooterView.swift
-//  AffinePaywall
+//  LoveNotesPaywall
 //
 //  Created by qaq on 9/18/25.
 //
 
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 struct PurchaseFooterView: View {
@@ -41,7 +41,7 @@ struct PurchaseFooterView: View {
           isPurchased: false
         ) {}
           .hidden()
-          .background(AffineColors.buttonPrimary.color)
+          .background(LoveNotesColors.buttonPrimary.color)
           .clipShape(RoundedRectangle(cornerRadius: 8))
           .overlay {
             ProgressView()
@@ -68,14 +68,14 @@ struct PurchaseFooterView: View {
       }
       .font(.system(size: 12))
       .buttonStyle(.plain)
-      .foregroundStyle(AffineColors.textSecondary.color)
+      .foregroundStyle(LoveNotesColors.textSecondary.color)
       .opacity(viewModel.products.isEmpty ? 0 : 1)
       .disabled(isPurchased)
       .disabled(viewModel.updating)
 
       Text("The Monthly and Annual plans renew automatically, but you’re free to cancel at any time if it’s not right for you.")
         .font(.system(size: 12))
-        .foregroundStyle(AffineColors.textSecondary.color)
+        .foregroundStyle(LoveNotesColors.textSecondary.color)
         .multilineTextAlignment(.center)
         .fixedSize(horizontal: false, vertical: true)
     }

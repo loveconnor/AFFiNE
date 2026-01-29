@@ -1,5 +1,5 @@
-import { insertEmbedCard } from '@blocksuite/affine-block-embed';
-import type { EmbedCardStyle, ReferenceParams } from '@blocksuite/affine-model';
+import { insertEmbedCard } from '@blocksuite/lovenotes-block-embed';
+import type { EmbedCardStyle, ReferenceParams } from '@blocksuite/lovenotes-model';
 import type { Command } from '@blocksuite/std';
 
 export const insertEmbedSyncedDocCommand: Command<
@@ -10,7 +10,7 @@ export const insertEmbedSyncedDocCommand: Command<
   { blockId: string }
 > = (ctx, next) => {
   const { docId, params, std } = ctx;
-  const flavour = 'affine:embed-synced-doc';
+  const flavour = 'lovenotes:embed-synced-doc';
   const targetStyle: EmbedCardStyle = 'syncedDoc';
   const props: Record<string, unknown> = { pageId: docId };
   if (params) props.params = params;

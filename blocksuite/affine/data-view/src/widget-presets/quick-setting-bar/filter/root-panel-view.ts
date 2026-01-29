@@ -3,7 +3,7 @@ import {
   popMenu,
   type PopupTarget,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import {
   ArrowDownSmallIcon,
@@ -42,7 +42,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
       font-size: 14px;
       font-weight: 600;
       line-height: 22px;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
     }
 
     .filter-root-op {
@@ -60,7 +60,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-root-op-clickable:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
 
     .filter-root-container {
@@ -81,24 +81,24 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
       line-height: 22px;
       border-radius: 4px;
       cursor: pointer;
-      color: var(--affine-text-secondary-color);
+      color: var(--lovenotes-text-secondary-color);
     }
 
     .filter-root-button svg {
-      fill: var(--affine-text-secondary-color);
-      color: var(--affine-text-secondary-color);
+      fill: var(--lovenotes-text-secondary-color);
+      color: var(--lovenotes-text-secondary-color);
       width: 20px;
       height: 20px;
     }
 
     .filter-root-button:hover {
-      background-color: var(--affine-hover-color);
-      color: var(--affine-text-primary-color);
+      background-color: var(--lovenotes-hover-color);
+      color: var(--lovenotes-text-primary-color);
     }
 
     .filter-root-button:hover svg {
-      fill: var(--affine-text-primary-color);
-      color: var(--affine-text-primary-color);
+      fill: var(--lovenotes-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
     }
 
     .filter-root-item {
@@ -115,7 +115,7 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
       line-height: 22px;
       display: flex;
       align-items: center;
-      color: var(--affine-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
       gap: 6px;
     }
 
@@ -129,32 +129,32 @@ export class FilterRootView extends SignalWatcher(ShadowlessElement) {
     }
 
     .filter-root-item-ops:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
 
     .filter-root-item-ops svg {
-      fill: var(--affine-text-secondary-color);
-      color: var(--affine-text-secondary-color);
+      fill: var(--lovenotes-text-secondary-color);
+      color: var(--lovenotes-text-secondary-color);
       width: 18px;
       height: 18px;
     }
 
     .filter-root-item-ops:hover svg {
-      fill: var(--affine-text-primary-color);
-      color: var(--affine-text-primary-color);
+      fill: var(--lovenotes-text-primary-color);
+      color: var(--lovenotes-text-primary-color);
     }
 
     .filter-root-grabber {
       cursor: grab;
       width: 4px;
       height: 12px;
-      background-color: var(--affine-placeholder-color);
+      background-color: var(--lovenotes-placeholder-color);
       border-radius: 1px;
     }
 
     .divider {
       height: 1px;
-      background-color: var(--affine-divider-color);
+      background-color: var(--lovenotes-divider-color);
       flex-shrink: 0;
       margin: 8px 0;
     }

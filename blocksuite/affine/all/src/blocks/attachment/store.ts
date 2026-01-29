@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-block-attachment/store';
+export * from '@blocksuite/lovenotes-block-attachment/store';

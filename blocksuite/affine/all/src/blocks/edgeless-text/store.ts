@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-block-edgeless-text/store';
+export * from '@blocksuite/lovenotes-block-edgeless-text/store';

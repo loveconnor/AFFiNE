@@ -44,7 +44,7 @@ const defaultImageProps: ImageBlockProps = {
 };
 
 export const ImageBlockSchema = defineBlockSchema({
-  flavour: 'affine:image',
+  flavour: 'lovenotes:image',
   props: () => defaultImageProps,
   metadata: {
     version: 1,

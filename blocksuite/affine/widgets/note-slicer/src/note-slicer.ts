@@ -1,18 +1,18 @@
-import type { NoteBlockComponent } from '@blocksuite/affine-block-note';
+import type { NoteBlockComponent } from '@blocksuite/lovenotes-block-note';
 import {
   EdgelessLegacySlotIdentifier,
   getSurfaceComponent,
   isNoteBlock,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   DEFAULT_NOTE_HEIGHT,
   type NoteBlockModel,
   type RootBlockModel,
-} from '@blocksuite/affine-model';
-import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/affine-shared/consts';
-import { TelemetryProvider } from '@blocksuite/affine-shared/services';
-import { getRectByBlockComponent } from '@blocksuite/affine-shared/utils';
-import type { EdgelessSelectedRectWidget } from '@blocksuite/affine-widget-edgeless-selected-rect';
+} from '@blocksuite/lovenotes-model';
+import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/lovenotes-shared/consts';
+import { TelemetryProvider } from '@blocksuite/lovenotes-shared/services';
+import { getRectByBlockComponent } from '@blocksuite/lovenotes-shared/utils';
+import type { EdgelessSelectedRectWidget } from '@blocksuite/lovenotes-widget-edgeless-selected-rect';
 import { DisposableGroup } from '@blocksuite/global/disposable';
 import { deserializeXYWH, Point, serializeXYWH } from '@blocksuite/global/gfx';
 import { ScissorsIcon } from '@blocksuite/icons/lit';
@@ -45,15 +45,15 @@ const styles = css`
     border-radius: 4px;
     justify-content: center;
     align-items: center;
-    color: var(--affine-icon-color);
-    border: 1px solid var(--affine-border-color);
-    background-color: var(--affine-background-overlay-panel-color);
-    box-shadow: var(--affine-menu-shadow);
+    color: var(--lovenotes-icon-color);
+    border: 1px solid var(--lovenotes-border-color);
+    background-color: var(--lovenotes-background-overlay-panel-color);
+    box-shadow: var(--lovenotes-menu-shadow);
     cursor: pointer;
     width: 24px;
     height: 24px;
     transform-origin: left top;
-    z-index: var(--affine-z-index-popover);
+    z-index: var(--lovenotes-z-index-popover);
     opacity: 0;
     transition: opacity 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
   }
@@ -72,10 +72,10 @@ const styles = css`
     display: block;
     height: 1px;
     width: 100%;
-    z-index: var(--affine-z-index-popover);
+    z-index: var(--lovenotes-z-index-popover);
     background-image: linear-gradient(
       to right,
-      var(--affine-black-10) 50%,
+      var(--lovenotes-black-10) 50%,
       transparent 50%
     );
     background-size: 4px 100%;
@@ -83,7 +83,7 @@ const styles = css`
   .note-slicer-dividing-line-container.active .note-slicer-dividing-line {
     background-image: linear-gradient(
       to right,
-      var(--affine-black-60) 50%,
+      var(--lovenotes-black-60) 50%,
       transparent 50%
     );
     animation: slide 0.3s linear infinite;
@@ -178,7 +178,7 @@ export class NoteSlicer extends WidgetComponent<RootBlockModel> {
       this._divingLinePositions[this._activeSlicerIndex].y;
     const newY = this.gfx.viewport.toModelCoord(x, sliceVerticalPos)[1];
     const newNoteId = this.store.addBlock(
-      'affine:note',
+      'lovenotes:note',
       {
         background,
         displayMode,
@@ -445,7 +445,7 @@ export class NoteSlicer extends WidgetComponent<RootBlockModel> {
 }
 
 export const noteSlicerWidget = WidgetViewExtension(
-  'affine:page',
+  'lovenotes:page',
   NOTE_SLICER_WIDGET,
   literal`${unsafeStatic(NOTE_SLICER_WIDGET)}`
 );

@@ -1,4 +1,4 @@
-import type { MenuConfig } from '@blocksuite/affine-components/context-menu';
+import type { MenuConfig } from '@blocksuite/lovenotes-components/context-menu';
 import type { BlockComponent } from '@blocksuite/std';
 import type { GfxController } from '@blocksuite/std/gfx';
 import type { TemplateResult } from 'lit';

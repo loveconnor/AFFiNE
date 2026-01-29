@@ -1,5 +1,5 @@
 {{- if .Values.global.ingress.enabled -}}
-{{- $fullName := include "affine.fullname" . -}}
+{{- $fullName := include "lovenotes.fullname" . -}}
 {{- if and .Values.global.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.global.ingress.annotations "kubernetes.io/ingress.class") }}
   {{- $_ := set .Values.global.ingress.annotations "kubernetes.io/ingress.class" .Values.ingress.className}}
@@ -16,7 +16,7 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    {{- include "affine.labels" . | nindent 4 }}
+    {{- include "lovenotes.labels" . | nindent 4 }}
   {{- with .Values.global.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -44,35 +44,35 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: affine-sync
+                name: lovenotes-sync
                 port:
                   number: {{ $.Values.sync.service.port }}
           - path: /graphql
             pathType: Prefix
             backend:
               service:
-                name: affine-graphql
+                name: lovenotes-graphql
                 port:
                   number: {{ $.Values.graphql.service.port }}
           - path: /api
             pathType: Prefix
             backend:
               service:
-                name: affine-graphql
+                name: lovenotes-graphql
                 port:
                   number: {{ $.Values.graphql.service.port }}
           - path: /workspace
             pathType: Prefix
             backend:
               service:
-                name: affine-renderer
+                name: lovenotes-renderer
                 port:
                   number: {{ $.Values.renderer.service.port }}
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: affine-web
+                name: lovenotes-web
                 port:
                   number: {{ $.Values.web.service.port }}
     {{- end }}

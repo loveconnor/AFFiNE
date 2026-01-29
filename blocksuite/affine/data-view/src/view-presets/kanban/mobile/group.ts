@@ -2,7 +2,7 @@ import {
   menu,
   popFilterableSimpleMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine-components/context-menu';
+} from '@blocksuite/lovenotes-components/context-menu';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -50,7 +50,7 @@ const styles = css`
     border-radius: 4px;
     font-size: var(--data-view-cell-text-size);
     line-height: var(--data-view-cell-text-line-height);
-    color: var(--affine-text-secondary-color);
+    color: var(--lovenotes-text-secondary-color);
   }
 `;
 

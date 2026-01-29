@@ -1,5 +1,5 @@
-import { WorkspaceImpl } from '@affine/core/modules/workspace/impls/workspace';
-import { getSurfaceBlock } from '@blocksuite/affine/blocks/surface';
+import { WorkspaceImpl } from '@lovenotes/core/modules/workspace/impls/workspace';
+import { getSurfaceBlock } from '@blocksuite/lovenotes/blocks/surface';
 import {
   DatabaseBlockModel,
   EmbedLinkedDocModel,
@@ -7,30 +7,30 @@ import {
   ImageBlockModel,
   NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine/model';
+} from '@blocksuite/lovenotes/model';
 import {
   embedSyncedDocMiddleware,
   MarkdownAdapter,
   titleMiddleware,
-} from '@blocksuite/affine/shared/adapters';
+} from '@blocksuite/lovenotes/shared/adapters';
 import {
   getImageSelectionsCommand,
   getSelectedBlocksCommand,
-} from '@blocksuite/affine/shared/commands';
-import { DocModeProvider } from '@blocksuite/affine/shared/services';
+} from '@blocksuite/lovenotes/shared/commands';
+import { DocModeProvider } from '@blocksuite/lovenotes/shared/services';
 import {
   getBlockProps,
   isInsideEdgelessEditor,
   matchModels,
-} from '@blocksuite/affine/shared/utils';
-import { BlockStdScope, type EditorHost } from '@blocksuite/affine/std';
+} from '@blocksuite/lovenotes/shared/utils';
+import { BlockStdScope, type EditorHost } from '@blocksuite/lovenotes/std';
 import {
   GfxControllerIdentifier,
   GfxPrimitiveElementModel,
-} from '@blocksuite/affine/std/gfx';
-import type { BlockModel, DocSnapshot, Store } from '@blocksuite/affine/store';
-import { Slice, toDraftModel } from '@blocksuite/affine/store';
-import { getElementProps } from '@blocksuite/affine-block-root';
+} from '@blocksuite/lovenotes/std/gfx';
+import type { BlockModel, DocSnapshot, Store } from '@blocksuite/lovenotes/store';
+import { Slice, toDraftModel } from '@blocksuite/lovenotes/store';
+import { getElementProps } from '@blocksuite/lovenotes-block-root';
 import { Doc as YDoc } from 'yjs';
 
 import { getStoreManager } from '../../manager/store';
@@ -88,9 +88,9 @@ async function extractEdgelessSelected(
       const fragment = fragmentDoc.getStore();
       fragmentDoc.load();
 
-      const rootId = fragment.addBlock('affine:page');
-      fragment.addBlock('affine:surface', {}, rootId);
-      const noteId = fragment.addBlock('affine:note', {}, rootId);
+      const rootId = fragment.addBlock('lovenotes:page');
+      fragment.addBlock('lovenotes:surface', {}, rootId);
+      const noteId = fragment.addBlock('lovenotes:note', {}, rootId);
       const surface = getSurfaceBlock(fragment);
       if (!surface) {
         throw new Error('Failed to get surface block');
@@ -224,7 +224,7 @@ export async function extractMarkdownFromDoc(doc: Store): Promise<string> {
 
 function getNoteBlockModels(doc: Store) {
   const notes = doc
-    .getBlocksByFlavour('affine:note')
+    .getBlocksByFlavour('lovenotes:note')
     .filter(
       note =>
         (note.model as NoteBlockModel).props.displayMode !==

@@ -2,7 +2,7 @@ import {
   DEFAULT_ROUGHNESS,
   LineWidth,
   StrokeStyle,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 
 export const SHAPE_OVERLAY_WIDTH = 100;
 export const SHAPE_OVERLAY_HEIGHT = 100;

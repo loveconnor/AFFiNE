@@ -1,4 +1,4 @@
-import { EditPropsStore } from '@blocksuite/affine-shared/services';
+import { EditPropsStore } from '@blocksuite/lovenotes-shared/services';
 import {
   type SurfaceMiddleware,
   SurfaceMiddlewareBuilder,

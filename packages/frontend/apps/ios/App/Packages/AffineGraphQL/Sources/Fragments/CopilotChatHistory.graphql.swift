@@ -3,7 +3,7 @@
 
 @_exported import ApolloAPI
 
-public struct CopilotChatHistory: AffineGraphQL.SelectionSet, Fragment {
+public struct CopilotChatHistory: LoveNotesGraphQL.SelectionSet, Fragment {
   public static var fragmentDefinition: StaticString {
     #"fragment CopilotChatHistory on CopilotHistories { __typename sessionId workspaceId docId parentSessionId promptName model optionalModels action pinned title tokens messages { __typename ...CopilotChatMessage } createdAt updatedAt }"#
   }
@@ -11,7 +11,7 @@ public struct CopilotChatHistory: AffineGraphQL.SelectionSet, Fragment {
   public let __data: DataDict
   public init(_dataDict: DataDict) { __data = _dataDict }
 
-  public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.CopilotHistories }
+  public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.CopilotHistories }
   public static var __selections: [ApolloAPI.Selection] { [
     .field("__typename", String.self),
     .field("sessionId", String.self),
@@ -26,8 +26,8 @@ public struct CopilotChatHistory: AffineGraphQL.SelectionSet, Fragment {
     .field("title", String?.self),
     .field("tokens", Int.self),
     .field("messages", [Message].self),
-    .field("createdAt", AffineGraphQL.DateTime.self),
-    .field("updatedAt", AffineGraphQL.DateTime.self),
+    .field("createdAt", LoveNotesGraphQL.DateTime.self),
+    .field("updatedAt", LoveNotesGraphQL.DateTime.self),
   ] }
 
   public var sessionId: String { __data["sessionId"] }
@@ -44,28 +44,28 @@ public struct CopilotChatHistory: AffineGraphQL.SelectionSet, Fragment {
   /// The number of tokens used in the session
   public var tokens: Int { __data["tokens"] }
   public var messages: [Message] { __data["messages"] }
-  public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
-  public var updatedAt: AffineGraphQL.DateTime { __data["updatedAt"] }
+  public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
+  public var updatedAt: LoveNotesGraphQL.DateTime { __data["updatedAt"] }
 
   /// Message
   ///
   /// Parent Type: `ChatMessage`
-  public struct Message: AffineGraphQL.SelectionSet {
+  public struct Message: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.ChatMessage }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.ChatMessage }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("__typename", String.self),
       .fragment(CopilotChatMessage.self),
     ] }
 
-    public var id: AffineGraphQL.ID? { __data["id"] }
+    public var id: LoveNotesGraphQL.ID? { __data["id"] }
     public var role: String { __data["role"] }
     public var content: String { __data["content"] }
     public var attachments: [String]? { __data["attachments"] }
     public var streamObjects: [StreamObject]? { __data["streamObjects"] }
-    public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
+    public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
 
     public struct Fragments: FragmentContainer {
       public let __data: DataDict

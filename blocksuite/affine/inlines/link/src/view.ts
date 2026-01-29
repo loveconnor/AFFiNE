@@ -1,14 +1,14 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import { effects } from './effects';
 import { LinkInlineSpecExtension } from './inline-spec';
 import { linkToolbar } from './toolbar';
 
 export class LinkViewExtension extends ViewExtensionProvider {
-  override name = 'affine-link-inline';
+  override name = 'lovenotes-link-inline';
 
   override effect(): void {
     super.effect();

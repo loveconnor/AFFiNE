@@ -1,4 +1,4 @@
-import { AttachmentBlockSchema } from '@blocksuite/affine-model';
+import { AttachmentBlockSchema } from '@blocksuite/lovenotes-model';
 import { BlockSuiteError, ErrorCode } from '@blocksuite/global/exceptions';
 import {
   type AssetsManager,
@@ -56,7 +56,7 @@ export class AttachmentAdapter extends BaseAdapter<Attachment> {
     for (const contentSlice of payload.snapshot.content) {
       if (contentSlice.type === 'block') {
         const { flavour, props } = contentSlice;
-        if (flavour === 'affine:attachment') {
+        if (flavour === 'lovenotes:attachment') {
           const { sourceId } = props;
           const file = payload.assets?.getAssets().get(sourceId as string) as
             | File

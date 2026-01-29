@@ -1,4 +1,4 @@
-import { ReferenceParamsSchema } from '@blocksuite/affine-model';
+import { ReferenceParamsSchema } from '@blocksuite/lovenotes-model';
 import { BaseSelection, SelectionExtension } from '@blocksuite/store';
 import z from 'zod';
 

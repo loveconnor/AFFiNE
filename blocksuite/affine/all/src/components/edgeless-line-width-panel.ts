@@ -1,1 +1,1 @@
-export * from '@blocksuite/affine-components/edgeless-line-width-panel';
+export * from '@blocksuite/lovenotes-components/edgeless-line-width-panel';

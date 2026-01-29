@@ -1,20 +1,20 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   importAttachment,
   importFile,
-} from '@affine-test/kit/utils/attachment';
+} from '@lovenotes-test/kit/utils/attachment';
 import {
   clickEdgelessModeButton,
   clickView,
   locateToolbar,
   toViewCoord,
-} from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/editor';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
@@ -31,10 +31,10 @@ test.describe('Replaces attachment', () => {
 
     await importAttachment(page, 'lorem-ipsum.pdf');
 
-    const attachment = page.locator('affine-attachment').first();
+    const attachment = page.locator('lovenotes-attachment').first();
     await attachment.click();
 
-    const name = attachment.locator('.affine-attachment-content-title-text');
+    const name = attachment.locator('.lovenotes-attachment-content-title-text');
 
     await expect(name).toHaveText('lorem-ipsum.pdf');
 
@@ -65,10 +65,10 @@ test.describe('Replaces attachment', () => {
       await clickView(page, [100, 250]);
     });
 
-    const attachment = page.locator('affine-edgeless-attachment').first();
+    const attachment = page.locator('lovenotes-edgeless-attachment').first();
     await attachment.click();
 
-    const name = attachment.locator('.affine-attachment-content-title-text');
+    const name = attachment.locator('.lovenotes-attachment-content-title-text');
 
     await expect(name).toHaveText('lorem-ipsum.pdf');
 
@@ -93,7 +93,7 @@ test.describe('Replaces attachment', () => {
 
     await importAttachment(page, 'lorem-ipsum.pdf');
 
-    const attachment = page.locator('affine-attachment').first();
+    const attachment = page.locator('lovenotes-attachment').first();
     await attachment.click();
 
     const toolbar = locateToolbar(page);
@@ -112,7 +112,7 @@ test.describe('Replaces attachment', () => {
 
     await expect(portal).toBeHidden();
 
-    const name = attachment.locator('.affine-attachment-content-title-text');
+    const name = attachment.locator('.lovenotes-attachment-content-title-text');
     await expect(name).toHaveText('v1-color-palettes-snapshot.zip');
   });
 });

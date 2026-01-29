@@ -15,7 +15,7 @@ export type LatexProps = {
 } & GfxCommonBlockProps;
 
 export const LatexBlockSchema = defineBlockSchema({
-  flavour: 'affine:latex',
+  flavour: 'lovenotes:latex',
   props: (): LatexProps => ({
     xywh: '[0,0,16,16]',
     index: 'a0',
@@ -29,10 +29,10 @@ export const LatexBlockSchema = defineBlockSchema({
     version: 1,
     role: 'content',
     parent: [
-      'affine:note',
-      'affine:edgeless-text',
-      'affine:paragraph',
-      'affine:list',
+      'lovenotes:note',
+      'lovenotes:edgeless-text',
+      'lovenotes:paragraph',
+      'lovenotes:list',
     ],
   },
   toModel: () => {

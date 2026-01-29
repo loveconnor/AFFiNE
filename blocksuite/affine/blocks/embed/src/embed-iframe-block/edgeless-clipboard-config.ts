@@ -1,8 +1,8 @@
-import { EdgelessClipboardConfig } from '@blocksuite/affine-block-surface';
+import { EdgelessClipboardConfig } from '@blocksuite/lovenotes-block-surface';
 import { type BlockSnapshot } from '@blocksuite/store';
 
 export class EdgelessClipboardEmbedIframeConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:embed-iframe';
+  static override readonly key = 'lovenotes:embed-iframe';
 
   override createBlock(embedIframe: BlockSnapshot): string | null {
     if (!this.surface) return null;
@@ -19,7 +19,7 @@ export class EdgelessClipboardEmbedIframeConfig extends EdgelessClipboardConfig 
     } = embedIframe.props;
 
     return this.crud.addBlock(
-      'affine:embed-iframe',
+      'lovenotes:embed-iframe',
       {
         url,
         iframeUrl,

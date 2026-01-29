@@ -1,13 +1,13 @@
-import { Switch } from '@affine/component';
+import { Switch } from '@lovenotes/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { ServerService } from '@affine/core/modules/cloud';
-import { WorkspacePermissionService } from '@affine/core/modules/permissions';
-import { WorkspaceShareSettingService } from '@affine/core/modules/share-setting';
-import { useI18n } from '@affine/i18n';
+} from '@lovenotes/component/setting-components';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { ServerService } from '@lovenotes/core/modules/cloud';
+import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions';
+import { WorkspaceShareSettingService } from '@lovenotes/core/modules/share-setting';
+import { useI18n } from '@lovenotes/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 export const AiSetting = () => {
@@ -35,11 +35,11 @@ export const AiSetting = () => {
 
   return (
     <SettingWrapper
-      title={t['com.affine.settings.workspace.affine-ai.title']()}
+      title={t['com.lovenotes.settings.workspace.lovenotes-ai.title']()}
     >
       <SettingRow
-        name={t['com.affine.settings.workspace.affine-ai.label']()}
-        desc={t['com.affine.settings.workspace.affine-ai.description']()}
+        name={t['com.lovenotes.settings.workspace.lovenotes-ai.label']()}
+        desc={t['com.lovenotes.settings.workspace.lovenotes-ai.description']()}
       >
         <Switch
           checked={!!workspaceEnableAi}

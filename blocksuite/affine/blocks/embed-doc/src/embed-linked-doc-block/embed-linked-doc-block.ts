@@ -1,21 +1,21 @@
 import {
   EmbedBlockComponent,
   RENDER_CARD_THROTTLE_MS,
-} from '@blocksuite/affine-block-embed';
-import { SurfaceBlockModel } from '@blocksuite/affine-block-surface';
-import { LoadingIcon } from '@blocksuite/affine-components/icons';
-import { isPeekable, Peekable } from '@blocksuite/affine-components/peek';
-import { RefNodeSlotsProvider } from '@blocksuite/affine-inline-reference';
+} from '@blocksuite/lovenotes-block-embed';
+import { SurfaceBlockModel } from '@blocksuite/lovenotes-block-surface';
+import { LoadingIcon } from '@blocksuite/lovenotes-components/icons';
+import { isPeekable, Peekable } from '@blocksuite/lovenotes-components/peek';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes-inline-reference';
 import type {
   DocMode,
   EmbedLinkedDocModel,
   EmbedLinkedDocStyles,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
   REFERENCE_NODE,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import {
   CitationProvider,
   DocDisplayMetaProvider,
@@ -23,7 +23,7 @@ import {
   OpenDocExtensionIdentifier,
   type OpenDocMode,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   cloneReferenceInfo,
   cloneReferenceInfoWithoutAliases,
@@ -31,7 +31,7 @@ import {
   isNewViewTrigger,
   matchModels,
   referenceToNode,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { Bound } from '@blocksuite/global/gfx';
 import { ResetIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@blocksuite/std';
@@ -145,7 +145,7 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
     const index = parent?.children.indexOf(this.model);
 
     const blockId = store.addBlock(
-      'affine:embed-synced-doc',
+      'lovenotes:embed-synced-doc',
       {
         caption,
         ...cloneReferenceInfoWithoutAliases(this.referenceInfo$.peek()),
@@ -180,7 +180,7 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
     const text = new Text(yText);
 
     store.addBlock(
-      'affine:paragraph',
+      'lovenotes:paragraph',
       {
         text,
       },
@@ -310,14 +310,14 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
         ...this.embedContainerStyle,
       })}
     >
-      <affine-citation-card
+      <lovenotes-citation-card
         .icon=${this.icon$.value}
         .citationTitle=${this.title$.value}
         .citationIdentifier=${footnoteIdentifier}
         .active=${this.selected$.value}
         .onClickCallback=${this._handleClick}
         .onDoubleClickCallback=${this._handleDoubleClick}
-      ></affine-citation-card>
+      ></lovenotes-citation-card>
     </div> `;
   };
 
@@ -388,17 +388,17 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
     return this.renderEmbed(
       () => html`
         <div
-          class="affine-embed-linked-doc-block ${cardClassMap}"
+          class="lovenotes-embed-linked-doc-block ${cardClassMap}"
           @click=${this._handleClick}
           @dblclick=${this._handleDoubleClick}
         >
-          <div class="affine-embed-linked-doc-content">
-            <div class="affine-embed-linked-doc-content-title">
-              <div class="affine-embed-linked-doc-content-title-icon">
+          <div class="lovenotes-embed-linked-doc-content">
+            <div class="lovenotes-embed-linked-doc-content-title">
+              <div class="lovenotes-embed-linked-doc-content-title-icon">
                 ${icon}
               </div>
 
-              <div class="affine-embed-linked-doc-content-title-text">
+              <div class="lovenotes-embed-linked-doc-content-title-text">
                 ${title}
               </div>
             </div>
@@ -406,7 +406,7 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
             ${when(
               hasDescriptionAlias,
               () =>
-                html`<div class="affine-embed-linked-doc-content-note alias">
+                html`<div class="lovenotes-embed-linked-doc-content-note alias">
                   ${repeat(
                     (description.value ?? '').split('\n'),
                     text => html`<p>${text}</p>`
@@ -416,22 +416,22 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
                 when(
                   showDefaultNoteContent,
                   () => html`
-                    <div class="affine-embed-linked-doc-content-note default">
+                    <div class="lovenotes-embed-linked-doc-content-note default">
                       ${defaultNoteContent}
                     </div>
                   `,
                   () => html`
                     <div
-                      class="affine-embed-linked-doc-content-note render"
+                      class="lovenotes-embed-linked-doc-content-note render"
                     ></div>
                   `
                 )
             )}
             ${isError
               ? html`
-                  <div class="affine-embed-linked-doc-card-content-reload">
+                  <div class="lovenotes-embed-linked-doc-card-content-reload">
                     <div
-                      class="affine-embed-linked-doc-card-content-reload-button"
+                      class="lovenotes-embed-linked-doc-card-content-reload-button"
                       @click=${this.refreshData}
                     >
                       ${ResetIcon()} <span>Reload</span>
@@ -439,7 +439,7 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
                   </div>
                 `
               : html`
-                  <div class="affine-embed-linked-doc-content-date">
+                  <div class="lovenotes-embed-linked-doc-content-date">
                     <span>Updated</span>
 
                     <span>${dateText}</span>
@@ -449,7 +449,7 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
 
           ${showDefaultBanner
             ? html`
-                <div class="affine-embed-linked-doc-banner default">
+                <div class="lovenotes-embed-linked-doc-banner default">
                   ${defaultBanner}
                 </div>
               `
@@ -626,6 +626,6 @@ export class EmbedLinkedDocBlockComponent extends EmbedBlockComponent<EmbedLinke
   @property({ attribute: false })
   accessor isNoteContentEmpty = false;
 
-  @queryAsync('.affine-embed-linked-doc-content-note.render')
+  @queryAsync('.lovenotes-embed-linked-doc-content-note.render')
   accessor noteContainer!: Promise<HTMLDivElement | null>;
 }

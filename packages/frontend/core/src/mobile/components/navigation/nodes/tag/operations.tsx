@@ -4,19 +4,19 @@ import {
   MenuSeparator,
   toast,
   useConfirmModal,
-} from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { DocsService } from '@affine/core/modules/doc';
-import { FavoriteService } from '@affine/core/modules/favorite';
-import { GlobalCacheService } from '@affine/core/modules/storage';
-import { TagService } from '@affine/core/modules/tag';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@lovenotes/component';
+import { usePageHelper } from '@lovenotes/core/blocksuite/block-suite-page-list/utils';
+import { IsFavoriteIcon } from '@lovenotes/core/components/pure/icons';
+import type { NodeOperation } from '@lovenotes/core/desktop/components/navigation-panel';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { DocsService } from '@lovenotes/core/modules/doc';
+import { FavoriteService } from '@lovenotes/core/modules/favorite';
+import { GlobalCacheService } from '@lovenotes/core/modules/storage';
+import { TagService } from '@lovenotes/core/modules/tag';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
+import { track } from '@lovenotes/track';
 import {
   DeleteIcon,
   FolderIcon,
@@ -76,7 +76,7 @@ export const useNavigationPanelTagNodeOperations = (
   const handleMoveToTrash = useCallback(() => {
     tagService.tagList.deleteTag(tagId);
     track.$.navigationPanel.organize.deleteOrganizeItem({ type: 'tag' });
-    toast(t['com.affine.tags.delete-tags.toast']());
+    toast(t['com.lovenotes.tags.delete-tags.toast']());
   }, [t, tagId, tagService.tagList]);
 
   const handleOpenInSplitView = useCallback(() => {
@@ -145,13 +145,13 @@ export const useNavigationPanelTagNodeOperations = (
             ) !== true
           ) {
             openConfirmModal({
-              title: t['com.affine.m.selector.remove-warning.title'](),
-              description: t['com.affine.m.selector.remove-warning.message']({
-                type: t['com.affine.m.selector.type-doc'](),
-                where: t['com.affine.m.selector.where-tag'](),
+              title: t['com.lovenotes.m.selector.remove-warning.title'](),
+              description: t['com.lovenotes.m.selector.remove-warning.message']({
+                type: t['com.lovenotes.m.selector.type-doc'](),
+                where: t['com.lovenotes.m.selector.where-tag'](),
               }),
-              cancelText: t['com.affine.m.selector.remove-warning.cancel'](),
-              confirmText: t['com.affine.m.selector.remove-warning.confirm'](),
+              cancelText: t['com.lovenotes.m.selector.remove-warning.cancel'](),
+              confirmText: t['com.lovenotes.m.selector.remove-warning.confirm'](),
               reverseFooter: true,
               onConfirm: () => {
                 globalCacheService.globalCache.set(
@@ -257,7 +257,7 @@ export const useNavigationPanelTagNodeOperationsMenu = (
         index: 12,
         view: (
           <MenuItem prefixIcon={<FolderIcon />} onClick={handleOpenDocSelector}>
-            {t['com.affine.m.explorer.tag.manage-docs']()}
+            {t['com.lovenotes.m.explorer.tag.manage-docs']()}
           </MenuItem>
         ),
       },
@@ -270,7 +270,7 @@ export const useNavigationPanelTagNodeOperationsMenu = (
                   prefixIcon={<SplitViewIcon />}
                   onClick={handleOpenInSplitView}
                 >
-                  {t['com.affine.workbench.split-view.page-menu-open']()}
+                  {t['com.lovenotes.workbench.split-view.page-menu-open']()}
                 </MenuItem>
               ),
             },
@@ -284,8 +284,8 @@ export const useNavigationPanelTagNodeOperationsMenu = (
             onClick={handleToggleFavoriteTag}
           >
             {favorite
-              ? t['com.affine.favoritePageOperation.remove']()
-              : t['com.affine.favoritePageOperation.add']()}
+              ? t['com.lovenotes.favoritePageOperation.remove']()
+              : t['com.lovenotes.favoritePageOperation.add']()}
           </MenuItem>
         ),
       },

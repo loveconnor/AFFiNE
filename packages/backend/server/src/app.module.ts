@@ -122,9 +122,9 @@ export const FunctionalityModules = [
 ];
 
 export class AppModuleBuilder {
-  private readonly modules: AFFiNEModule[] = [];
+  private readonly modules: LoveNotesModule[] = [];
 
-  use(...modules: AFFiNEModule[]): this {
+  use(...modules: LoveNotesModule[]): this {
     modules.forEach(m => {
       this.modules.push(m);
     });
@@ -132,7 +132,7 @@ export class AppModuleBuilder {
     return this;
   }
 
-  useIf(predicator: () => boolean, ...modules: AFFiNEModule[]): this {
+  useIf(predicator: () => boolean, ...modules: LoveNotesModule[]): this {
     if (predicator()) {
       this.use(...modules);
     }

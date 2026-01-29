@@ -1,20 +1,20 @@
-import { skipOnboarding, test } from '@affine-test/kit/playwright';
-import { importAttachment } from '@affine-test/kit/utils/attachment';
+import { skipOnboarding, test } from '@lovenotes-test/kit/playwright';
+import { importAttachment } from '@lovenotes-test/kit/utils/attachment';
 import {
   createRandomUser,
   enableCloudWorkspaceFromShareButton,
   enableShare,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
-import { getParagraphIds, locateToolbar } from '@affine-test/kit/utils/editor';
-import { copyByKeyboard } from '@affine-test/kit/utils/keyboard';
+} from '@lovenotes-test/kit/utils/cloud';
+import { getParagraphIds, locateToolbar } from '@lovenotes-test/kit/utils/editor';
+import { copyByKeyboard } from '@lovenotes-test/kit/utils/keyboard';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { setSelection } from '@affine-test/kit/utils/selection';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@lovenotes-test/kit/utils/page-logic';
+import { setSelection } from '@lovenotes-test/kit/utils/selection';
+import { createLocalWorkspace } from '@lovenotes-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 let user: {
@@ -81,7 +81,7 @@ test('The reference links in the shared page should be accessible normally and c
     await expect(title).toContainText('Test Page');
 
     // check linked page
-    const link = page2.locator('.affine-reference');
+    const link = page2.locator('.lovenotes-reference');
     await expect(link).toBeVisible();
     await expect(link).toContainText('Test linked doc');
     await link.click();
@@ -89,7 +89,7 @@ test('The reference links in the shared page should be accessible normally and c
     await expect(
       page2.locator('.doc-title-container:has-text("Test linked doc")')
     ).toBeVisible();
-    await expect(page2.locator('affine-paragraph').first()).toContainText(
+    await expect(page2.locator('lovenotes-paragraph').first()).toContainText(
       'Test linked content'
     );
 
@@ -105,7 +105,7 @@ test('The reference links in the shared page should be accessible normally and c
     await expect(
       page2.locator('.doc-title-container:has-text("Test linked doc")')
     ).toBeVisible();
-    await expect(page2.locator('affine-paragraph').first()).toContainText(
+    await expect(page2.locator('lovenotes-paragraph').first()).toContainText(
       'Test linked content'
     );
   }
@@ -144,7 +144,7 @@ test('Inline latex modal should be not shown in shared mode when clicking', asyn
   await page.keyboard.press('Space');
 
   // there should be a inline latex node
-  const latexLocator = page.locator('affine-latex-node');
+  const latexLocator = page.locator('lovenotes-latex-node');
   await expect(latexLocator).toBeVisible();
 
   // click the latex node
@@ -170,7 +170,7 @@ test('Inline latex modal should be not shown in shared mode when clicking', asyn
     await waitForEditorLoad(page2);
 
     // click the latex node
-    const latexLocator = page2.locator('affine-latex-node');
+    const latexLocator = page2.locator('lovenotes-latex-node');
     await latexLocator.click();
 
     // the latex editor should not be shown when the doc is readonly
@@ -246,7 +246,7 @@ test('should enable opening peek view with pdf viewer in readonly and sharing mo
   const switchViewButton = toolbar.getByLabel('Switch view');
   const embedViewButton = toolbar.getByLabel('Embed view');
 
-  const attachment = page.locator('affine-attachment');
+  const attachment = page.locator('lovenotes-attachment');
   await attachment.click();
 
   await switchViewButton.click();
@@ -270,7 +270,7 @@ test('should enable opening peek view with pdf viewer in readonly and sharing mo
     await page2.goto(url);
     await waitForEditorLoad(page2);
 
-    const attachment = page2.locator('affine-attachment');
+    const attachment = page2.locator('lovenotes-attachment');
 
     await expect(attachment.locator('lit-react-portal')).toBeVisible();
 

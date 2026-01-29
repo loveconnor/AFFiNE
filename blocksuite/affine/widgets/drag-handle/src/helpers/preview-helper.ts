@@ -1,10 +1,10 @@
-import { ViewExtensionManagerIdentifier } from '@blocksuite/affine-ext-loader';
+import { ViewExtensionManagerIdentifier } from '@blocksuite/lovenotes-ext-loader';
 import {
   DocModeExtension,
   DocModeProvider,
   EditorSettingExtension,
   EditorSettingProvider,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import { BlockStdScope, BlockViewIdentifier } from '@blocksuite/std';
 import type {
   BlockModel,
@@ -17,7 +17,7 @@ import { signal } from '@preact/signals-core';
 import { literal } from 'lit/static-html.js';
 
 import { EdgelessDndPreviewElement } from '../components/edgeless-preview/preview.js';
-import type { AffineDragHandleWidget } from '../drag-handle.js';
+import type { LoveNotesDragHandleWidget } from '../drag-handle.js';
 
 export class PreviewHelper {
   private readonly _calculateQuery = (selectedIds: string[]): Query => {
@@ -79,22 +79,22 @@ export class PreviewHelper {
       {
         setup(di) {
           di.override(
-            BlockViewIdentifier('affine:database'),
-            () => literal`affine-dnd-preview-database`
+            BlockViewIdentifier('lovenotes:database'),
+            () => literal`lovenotes-dnd-preview-database`
           );
         },
       } as ExtensionType,
       {
         setup(di) {
-          di.override(BlockViewIdentifier('affine:image'), () => {
+          di.override(BlockViewIdentifier('lovenotes:image'), () => {
             return (model: BlockModel) => {
               const parent = model.store.getParent(model.id);
 
-              if (parent?.flavour === 'affine:surface') {
-                return literal`affine-edgeless-placeholder-preview-image`;
+              if (parent?.flavour === 'lovenotes:surface') {
+                return literal`lovenotes-edgeless-placeholder-preview-image`;
               }
 
-              return literal`affine-placeholder-preview-image`;
+              return literal`lovenotes-placeholder-preview-image`;
             };
           });
         },
@@ -117,7 +117,7 @@ export class PreviewHelper {
     // oxlint-disable-next-line no-unassigned-vars
     let height;
 
-    const noteBlock = this.widget.host.querySelector('affine-note');
+    const noteBlock = this.widget.host.querySelector('lovenotes-note');
     width = noteBlock?.offsetWidth ?? noteBlock?.clientWidth ?? 500;
 
     return {
@@ -133,7 +133,7 @@ export class PreviewHelper {
     }[] = [];
 
     snapshot.content.forEach(block => {
-      if (block.flavour === 'affine:surface') {
+      if (block.flavour === 'lovenotes:surface') {
         Object.values(
           block.props.elements as Record<string, { id: string; type: string }>
         ).forEach(elem => {
@@ -204,5 +204,5 @@ export class PreviewHelper {
     };
   };
 
-  constructor(readonly widget: AffineDragHandleWidget) {}
+  constructor(readonly widget: LoveNotesDragHandleWidget) {}
 }

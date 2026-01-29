@@ -1,8 +1,8 @@
-import { CodeBlockSchema } from '@blocksuite/affine-model';
+import { CodeBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import type { DeltaInsert } from '@blocksuite/store';
 
 export const codeBlockPlainTextAdapterMatcher: BlockPlainTextAdapterMatcher = {

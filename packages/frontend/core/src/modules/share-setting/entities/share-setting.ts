@@ -1,5 +1,5 @@
-import { DebugLogger } from '@affine/debug';
-import type { GetWorkspaceConfigQuery, InviteLink } from '@affine/graphql';
+import { DebugLogger } from '@lovenotes/debug';
+import type { GetWorkspaceConfigQuery, InviteLink } from '@lovenotes/graphql';
 import {
   catchErrorInto,
   effect,
@@ -20,7 +20,7 @@ type EnableSharing = GetWorkspaceConfigQuery['workspace']['enableSharing'];
 type EnableUrlPreview =
   GetWorkspaceConfigQuery['workspace']['enableUrlPreview'];
 
-const logger = new DebugLogger('affine:workspace-permission');
+const logger = new DebugLogger('lovenotes:workspace-permission');
 
 export class WorkspaceShareSetting extends Entity {
   enableAi$ = new LiveData<EnableAi | null>(null);

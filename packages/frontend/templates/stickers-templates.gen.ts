@@ -484,7 +484,7 @@ function buildStickerTemplate(data) {
       blocks: {
         type: 'block',
         id: 'block:1VxnfD_8xb',
-        flavour: 'affine:page',
+        flavour: 'lovenotes:page',
         props: {
           title: {
             '$blocksuite:internal:text$': true,
@@ -499,7 +499,7 @@ function buildStickerTemplate(data) {
           {
             type: 'block',
             id: 'block:pcmYJQ63hX',
-            flavour: 'affine:surface',
+            flavour: 'lovenotes:surface',
             props: {
               elements: {},
             },
@@ -507,7 +507,7 @@ function buildStickerTemplate(data) {
               {
                 type: 'block',
                 id: 'block:N24al1Qgl7',
-                flavour: 'affine:image',
+                flavour: 'lovenotes:image',
                 props: {
                   caption: '',
                   sourceId: data.hash,

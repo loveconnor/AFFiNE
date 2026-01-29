@@ -1,8 +1,8 @@
-import { LatexBlockSchema } from '@blocksuite/affine-model';
+import { LatexBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockPlainTextAdapterExtension,
   type BlockPlainTextAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 
 const latexPrefix = 'LaTex, with value: ';
 

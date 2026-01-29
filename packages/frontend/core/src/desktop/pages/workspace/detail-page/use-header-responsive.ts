@@ -1,6 +1,6 @@
-import { EditorService } from '@affine/core/modules/editor';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { useViewPosition } from '@affine/core/modules/workbench/view/use-view-position';
+import { EditorService } from '@lovenotes/core/modules/editor';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { useViewPosition } from '@lovenotes/core/modules/workbench/view/use-view-position';
 import { useLiveData, useService } from '@toeverything/infra';
 
 export const useDetailPageHeaderResponsive = (availableWidth: number) => {

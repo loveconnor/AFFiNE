@@ -1,20 +1,20 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@lovenotes-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   dragView,
   locateToolbar,
   setEdgelessTool,
-} from '@affine-test/kit/utils/editor';
-import { importImage } from '@affine-test/kit/utils/image';
+} from '@lovenotes-test/kit/utils/editor';
+import { importImage } from '@lovenotes-test/kit/utils/image';
 import {
   selectAllByKeyboard,
   writeTextToClipboard,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/keyboard';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 function hexToRGB(hex: string) {
@@ -54,7 +54,7 @@ test('should toggle toolbar when dragging page area', async ({ page }) => {
   await expect(toolbar).toBeVisible();
   await expect(toolbar).toBeInViewport();
 
-  const paragraph = page.locator('affine-note affine-paragraph').nth(0);
+  const paragraph = page.locator('lovenotes-note lovenotes-paragraph').nth(0);
   const bounds = await paragraph.boundingBox();
 
   expect(bounds).toBeTruthy();
@@ -81,19 +81,19 @@ test.describe('Formatting', () => {
     await page.keyboard.press('Shift+ArrowLeft');
 
     const toolbar = locateToolbar(page);
-    const highlightButton = toolbar.locator('affine-highlight-duotone-icon');
+    const highlightButton = toolbar.locator('lovenotes-highlight-duotone-icon');
 
     await highlightButton.click();
 
     const fgGreenButton = toolbar.locator('[data-testid="foreground-green"]');
     await fgGreenButton.click();
     const fgColor = await fgGreenButton
-      .locator('affine-text-duotone-icon')
+      .locator('lovenotes-text-duotone-icon')
       .evaluate(e => window.getComputedStyle(e).getPropertyValue('--color'));
 
-    const paragraph = page.locator('affine-paragraph');
+    const paragraph = page.locator('lovenotes-paragraph');
     const textSpan = paragraph
-      .locator('affine-text:has-text("rld")')
+      .locator('lovenotes-text:has-text("rld")')
       .locator('span')
       .first();
 
@@ -111,7 +111,7 @@ test.describe('Formatting', () => {
     await page.keyboard.press('Shift+ArrowLeft');
 
     const toolbar = locateToolbar(page);
-    const highlightButton = toolbar.locator('affine-highlight-duotone-icon');
+    const highlightButton = toolbar.locator('lovenotes-highlight-duotone-icon');
 
     await highlightButton.click();
 
@@ -121,12 +121,12 @@ test.describe('Formatting', () => {
     await page.waitForTimeout(200);
 
     const fgColor = await fgGreenButton
-      .locator('affine-text-duotone-icon')
+      .locator('lovenotes-text-duotone-icon')
       .evaluate(e => window.getComputedStyle(e).getPropertyValue('--color'));
 
-    const paragraph = page.locator('affine-paragraph');
+    const paragraph = page.locator('lovenotes-paragraph');
     const textSpan1 = paragraph
-      .locator('affine-text:has-text("rld")')
+      .locator('lovenotes-text:has-text("rld")')
       .locator('span')
       .first();
 
@@ -140,12 +140,12 @@ test.describe('Formatting', () => {
 
     await highlightButton.click();
 
-    const yellow = 'var(--affine-text-highlight-yellow)';
+    const yellow = 'var(--lovenotes-text-highlight-yellow)';
     const bgYellowButton = toolbar.locator('[data-testid="background-yellow"]');
     await bgYellowButton.click();
 
     const textSpan2 = paragraph
-      .locator('affine-text:has-text("wo")')
+      .locator('lovenotes-text:has-text("wo")')
       .locator('span')
       .first();
 
@@ -158,7 +158,7 @@ test.describe('Formatting', () => {
     expect(yellow).toBe(bgColor2);
 
     const bgColor = await bgYellowButton
-      .locator('affine-text-duotone-icon')
+      .locator('lovenotes-text-duotone-icon')
       .evaluate(e =>
         window.getComputedStyle(e).getPropertyValue('--background')
       );
@@ -210,28 +210,28 @@ test('should not show inner toolbar of surface-ref in note under edgeless', asyn
 
   const toolbar = locateToolbar(page);
 
-  const surfaceRef = page.locator('affine-surface-ref');
+  const surfaceRef = page.locator('lovenotes-surface-ref');
   await surfaceRef.hover();
 
   await expect(toolbar).toBeVisible();
 
   await clickEdgelessModeButton(page);
 
-  const note = page.locator('affine-edgeless-note');
+  const note = page.locator('lovenotes-edgeless-note');
   await note.click();
   await note.click();
 
-  const edgelessSurfaceRef = note.locator('affine-edgeless-surface-ref');
+  const edgelessSurfaceRef = note.locator('lovenotes-edgeless-surface-ref');
   await edgelessSurfaceRef.hover();
 
   await expect(toolbar).toBeHidden();
 
-  const dragHandler = page.locator('.affine-drag-handle-grabber');
+  const dragHandler = page.locator('.lovenotes-drag-handle-grabber');
   await dragHandler.hover();
   await dragHandler.click();
 
   await expect(
-    edgelessSurfaceRef.locator('.affine-edgeless-surface-ref-container')
+    edgelessSurfaceRef.locator('.lovenotes-edgeless-surface-ref-container')
   ).toHaveClass(/focused$/);
 
   await expect(toolbar).toBeHidden();
@@ -242,9 +242,9 @@ test('should show toolbar when inline link is preceded by image or surface-ref',
 }) => {
   await page.keyboard.press('Enter');
 
-  await importImage(page, 'affine-preview.png');
+  await importImage(page, 'lovenotes-preview.png');
 
-  const image = page.locator('affine-image');
+  const image = page.locator('lovenotes-image');
   await image.click();
 
   await page.keyboard.press('Enter');
@@ -255,7 +255,7 @@ test('should show toolbar when inline link is preceded by image or surface-ref',
 
   const toolbar = locateToolbar(page);
 
-  const inlineLink = page.locator('affine-reference');
+  const inlineLink = page.locator('lovenotes-reference');
 
   await inlineLink.hover();
   await expect(toolbar).toBeVisible();
@@ -279,7 +279,7 @@ test('should focus on input of popover on toolbar', async ({ page }) => {
 
   await expect(toolbar).toBeHidden();
 
-  const note = page.locator('affine-edgeless-note').first();
+  const note = page.locator('lovenotes-edgeless-note').first();
 
   await note.click();
 
@@ -327,7 +327,7 @@ test('Dropdown menus should be closed automatically when toolbar is displayed', 
 
   const toolbar = locateToolbar(page);
 
-  const surfaceRef = page.locator('affine-surface-ref');
+  const surfaceRef = page.locator('lovenotes-surface-ref');
   await surfaceRef.hover();
 
   await expect(toolbar).toBeVisible();
@@ -374,7 +374,7 @@ test.describe('Toolbar More Actions', () => {
     await page.keyboard.press('Enter');
 
     await importImage(page, 'large-image.png');
-    const images = page.locator('affine-page-image');
+    const images = page.locator('lovenotes-page-image');
 
     const firstImage = images.first();
     const firstImageUrl = await firstImage.locator('img').getAttribute('src');

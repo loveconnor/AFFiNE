@@ -1,5 +1,5 @@
-import { EmbedFigmaBlockSchema } from '@blocksuite/affine-model';
-import { SlashMenuConfigExtension } from '@blocksuite/affine-widget-slash-menu';
+import { EmbedFigmaBlockSchema } from '@blocksuite/lovenotes-model';
+import { SlashMenuConfigExtension } from '@blocksuite/lovenotes-widget-slash-menu';
 import { BlockViewExtension, FlavourExtension } from '@blocksuite/std';
 import type { ExtensionType } from '@blocksuite/store';
 import { literal } from 'lit/static-html.js';
@@ -15,9 +15,9 @@ const flavour = EmbedFigmaBlockSchema.model.flavour;
 export const EmbedFigmaViewExtensions: ExtensionType[] = [
   FlavourExtension(flavour),
   BlockViewExtension(flavour, model => {
-    return model.parent?.flavour === 'affine:surface'
-      ? literal`affine-embed-edgeless-figma-block`
-      : literal`affine-embed-figma-block`;
+    return model.parent?.flavour === 'lovenotes:surface'
+      ? literal`lovenotes-embed-edgeless-figma-block`
+      : literal`lovenotes-embed-figma-block`;
   }),
   EmbedFigmaBlockOptionConfig,
   createBuiltinToolbarConfigExtension(flavour, EmbedFigmaBlockComponent),

@@ -38,7 +38,10 @@ export const Popover = ({
           )}
           sideOffset={5}
           align="start"
-          style={{ zIndex: 'var(--affine-z-index-popover)', ...contentStyle }}
+          style={{
+            zIndex: 'var(--lovenotes-z-index-popover, 1000)',
+            ...contentStyle,
+          }}
           {...otherContentOptions}
         >
           {content}

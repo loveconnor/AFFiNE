@@ -1,9 +1,9 @@
-import { NoteBlockModel } from '@blocksuite/affine-model';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
+import { NoteBlockModel } from '@blocksuite/lovenotes-model';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
 import {
   isInsideEdgelessEditor,
   matchModels,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import type { Constructor } from '@blocksuite/global/utils';
 import {
   GfxBlockElementModel,

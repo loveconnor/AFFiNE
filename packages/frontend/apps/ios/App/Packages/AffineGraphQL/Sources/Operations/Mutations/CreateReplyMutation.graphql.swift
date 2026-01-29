@@ -18,11 +18,11 @@ public class CreateReplyMutation: GraphQLMutation {
 
   public var __variables: Variables? { ["input": input] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("createReply", CreateReply.self, arguments: ["input": .variable("input")]),
     ] }
@@ -32,40 +32,40 @@ public class CreateReplyMutation: GraphQLMutation {
     /// CreateReply
     ///
     /// Parent Type: `ReplyObjectType`
-    public struct CreateReply: AffineGraphQL.SelectionSet {
+    public struct CreateReply: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.ReplyObjectType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.ReplyObjectType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("commentId", AffineGraphQL.ID.self),
-        .field("id", AffineGraphQL.ID.self),
-        .field("content", AffineGraphQL.JSONObject.self),
-        .field("createdAt", AffineGraphQL.DateTime.self),
-        .field("updatedAt", AffineGraphQL.DateTime.self),
+        .field("commentId", LoveNotesGraphQL.ID.self),
+        .field("id", LoveNotesGraphQL.ID.self),
+        .field("content", LoveNotesGraphQL.JSONObject.self),
+        .field("createdAt", LoveNotesGraphQL.DateTime.self),
+        .field("updatedAt", LoveNotesGraphQL.DateTime.self),
         .field("user", User.self),
       ] }
 
-      public var commentId: AffineGraphQL.ID { __data["commentId"] }
-      public var id: AffineGraphQL.ID { __data["id"] }
+      public var commentId: LoveNotesGraphQL.ID { __data["commentId"] }
+      public var id: LoveNotesGraphQL.ID { __data["id"] }
       /// The content of the reply
-      public var content: AffineGraphQL.JSONObject { __data["content"] }
+      public var content: LoveNotesGraphQL.JSONObject { __data["content"] }
       /// The created at time of the reply
-      public var createdAt: AffineGraphQL.DateTime { __data["createdAt"] }
+      public var createdAt: LoveNotesGraphQL.DateTime { __data["createdAt"] }
       /// The updated at time of the reply
-      public var updatedAt: AffineGraphQL.DateTime { __data["updatedAt"] }
+      public var updatedAt: LoveNotesGraphQL.DateTime { __data["updatedAt"] }
       /// The user who created the reply
       public var user: User { __data["user"] }
 
       /// CreateReply.User
       ///
       /// Parent Type: `PublicUserType`
-      public struct User: AffineGraphQL.SelectionSet {
+      public struct User: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.PublicUserType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.PublicUserType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", String.self),

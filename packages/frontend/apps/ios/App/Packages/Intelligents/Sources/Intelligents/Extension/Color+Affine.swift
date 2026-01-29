@@ -1,79 +1,79 @@
-import AffineResources
+import LoveNotesResources
 import SwiftUI
 
 extension Color {
   /// Primary icon color
-  static var affineIconPrimary: Color {
-    AffineColors.iconPrimary.color
+  static var lovenotesIconPrimary: Color {
+    LoveNotesColors.iconPrimary.color
   }
 
   /// Primary background layer color
-  static var affineLayerBackgroundPrimary: Color {
-    AffineColors.layerBackgroundPrimary.color
+  static var lovenotesLayerBackgroundPrimary: Color {
+    LoveNotesColors.layerBackgroundPrimary.color
   }
 
   /// Secondary background layer color
-  static var affineLayerBackgroundSecondary: Color {
-    AffineColors.layerBackgroundSecondary.color
+  static var lovenotesLayerBackgroundSecondary: Color {
+    LoveNotesColors.layerBackgroundSecondary.color
   }
 
   /// Border layer color
-  static var affineLayerBorder: Color {
-    AffineColors.layerBorder.color
+  static var lovenotesLayerBorder: Color {
+    LoveNotesColors.layerBorder.color
   }
 
   /// Pure white layer color
-  static var affineLayerPureWhite: Color {
-    AffineColors.layerPureWhite.color
+  static var lovenotesLayerPureWhite: Color {
+    LoveNotesColors.layerPureWhite.color
   }
 
   /// Primary button color
-  static var affineButtonPrimary: Color {
-    AffineColors.buttonPrimary.color
+  static var lovenotesButtonPrimary: Color {
+    LoveNotesColors.buttonPrimary.color
   }
 
   /// Activated icon color
-  static var affineIconActivated: Color {
-    AffineColors.iconActivated.color
+  static var lovenotesIconActivated: Color {
+    LoveNotesColors.iconActivated.color
   }
 
   /// Text emphasis color
-  static var affineTextEmphasis: Color {
-    AffineColors.textEmphasis.color
+  static var lovenotesTextEmphasis: Color {
+    LoveNotesColors.textEmphasis.color
   }
 
   /// Text link color
-  static var affineTextLink: Color {
-    AffineColors.textLink.color
+  static var lovenotesTextLink: Color {
+    LoveNotesColors.textLink.color
   }
 
   /// List dot and number color
-  static var affineTextListDotAndNumber: Color {
-    AffineColors.textListDotAndNumber.color
+  static var lovenotesTextListDotAndNumber: Color {
+    LoveNotesColors.textListDotAndNumber.color
   }
 
   /// Placeholder text color
-  static var affineTextPlaceholder: Color {
-    AffineColors.textPlaceholder.color
+  static var lovenotesTextPlaceholder: Color {
+    LoveNotesColors.textPlaceholder.color
   }
 
   /// Primary text color
-  static var affineTextPrimary: Color {
-    AffineColors.textPrimary.color
+  static var lovenotesTextPrimary: Color {
+    LoveNotesColors.textPrimary.color
   }
 
   /// Pure white text color
-  static var affineTextPureWhite: Color {
-    AffineColors.textPureWhite.color
+  static var lovenotesTextPureWhite: Color {
+    LoveNotesColors.textPureWhite.color
   }
 
   /// Secondary text color
-  static var affineTextSecondary: Color {
-    AffineColors.textSecondary.color
+  static var lovenotesTextSecondary: Color {
+    LoveNotesColors.textSecondary.color
   }
 
   /// Tertiary text color
-  static var affineTextTertiary: Color {
-    AffineColors.textTertiary.color
+  static var lovenotesTextTertiary: Color {
+    LoveNotesColors.textTertiary.color
   }
 }

@@ -1,13 +1,13 @@
-import { isFrameBlock } from '@blocksuite/affine-block-frame';
-import { getSurfaceBlock, isNoteBlock } from '@blocksuite/affine-block-surface';
+import { isFrameBlock } from '@blocksuite/lovenotes-block-frame';
+import { getSurfaceBlock, isNoteBlock } from '@blocksuite/lovenotes-block-surface';
 import {
   type FrameBlockModel,
   type NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine-model';
-import { replaceIdMiddleware } from '@blocksuite/affine-shared/adapters';
-import { DocModeProvider } from '@blocksuite/affine-shared/services';
-import { getBlockProps } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-model';
+import { replaceIdMiddleware } from '@blocksuite/lovenotes-shared/adapters';
+import { DocModeProvider } from '@blocksuite/lovenotes-shared/services';
+import { getBlockProps } from '@blocksuite/lovenotes-shared/utils';
 import type { EditorHost } from '@blocksuite/std';
 import { GfxBlockElementModel, type GfxModel } from '@blocksuite/std/gfx';
 import { type Store, Text } from '@blocksuite/store';
@@ -35,10 +35,10 @@ export function createLinkedDocFromNote(
   blockSnapshot.props.displayMode = NoteDisplayMode.DocAndEdgeless;
   const linkedDoc = _doc.getStore({ id: doc.id });
   linkedDoc.load(() => {
-    const rootId = linkedDoc.addBlock('affine:page', {
+    const rootId = linkedDoc.addBlock('lovenotes:page', {
       title: new Text(docTitle),
     });
-    linkedDoc.addBlock('affine:surface', {}, rootId);
+    linkedDoc.addBlock('lovenotes:surface', {}, rootId);
     transformer
       .snapshotToBlock(blockSnapshot, linkedDoc, rootId)
       .catch(console.error);
@@ -56,10 +56,10 @@ export function createLinkedDocFromEdgelessElements(
   const transformer = host.store.getTransformer();
   const linkedDoc = _doc.getStore();
   linkedDoc.load(() => {
-    const rootId = linkedDoc.addBlock('affine:page', {
+    const rootId = linkedDoc.addBlock('lovenotes:page', {
       title: new Text(docTitle),
     });
-    const surfaceId = linkedDoc.addBlock('affine:surface', {}, rootId);
+    const surfaceId = linkedDoc.addBlock('lovenotes:surface', {}, rootId);
     const surface = getSurfaceBlock(linkedDoc);
     if (!surface) return;
 

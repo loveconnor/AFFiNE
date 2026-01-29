@@ -1,5 +1,5 @@
-import type { TableBlockModel, TableCell } from '@blocksuite/affine-model';
-import { generateFractionalIndexingKeyBetween } from '@blocksuite/affine-shared/utils';
+import type { TableBlockModel, TableCell } from '@blocksuite/lovenotes-model';
+import { generateFractionalIndexingKeyBetween } from '@blocksuite/lovenotes-shared/utils';
 import { nanoid, Text } from '@blocksuite/store';
 import { computed, type ReadonlySignal, signal } from '@preact/signals-core';
 

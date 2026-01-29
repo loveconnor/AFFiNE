@@ -1,16 +1,16 @@
-import { test } from '@affine-test/kit/playwright';
-import { importFile } from '@affine-test/kit/utils/attachment';
+import { test } from '@lovenotes-test/kit/playwright';
+import { importFile } from '@lovenotes-test/kit/utils/attachment';
 import {
   clickEdgelessModeButton,
   dragView,
   locateToolbar,
-} from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@lovenotes-test/kit/utils/editor';
+import { openHomePage } from '@lovenotes-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@lovenotes-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
@@ -51,7 +51,7 @@ test('should keep color on custom color button', async ({ page }) => {
 
   // frame
   {
-    const frameTitle = page.locator('affine-frame-title');
+    const frameTitle = page.locator('lovenotes-frame-title');
 
     await frameTitle.click();
 

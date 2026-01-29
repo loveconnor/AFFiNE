@@ -1,8 +1,8 @@
 import {
   EmbedEdgelessIcon,
   EmbedPageIcon,
-} from '@blocksuite/affine-components/icons';
-import { ColorScheme } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-components/icons';
+import { ColorScheme } from '@blocksuite/lovenotes-model';
 import type { BlockComponent } from '@blocksuite/std';
 import type { TemplateResult } from 'lit';
 

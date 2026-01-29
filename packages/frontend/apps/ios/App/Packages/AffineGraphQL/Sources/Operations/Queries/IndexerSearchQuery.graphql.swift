@@ -26,11 +26,11 @@ public class IndexerSearchQuery: GraphQLQuery {
     "input": input
   ] }
 
-  public struct Data: AffineGraphQL.SelectionSet {
+  public struct Data: LoveNotesGraphQL.SelectionSet {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("workspace", Workspace.self, arguments: ["id": .variable("id")]),
     ] }
@@ -41,11 +41,11 @@ public class IndexerSearchQuery: GraphQLQuery {
     /// Workspace
     ///
     /// Parent Type: `WorkspaceType`
-    public struct Workspace: AffineGraphQL.SelectionSet {
+    public struct Workspace: LoveNotesGraphQL.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.WorkspaceType }
+      public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.WorkspaceType }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("search", Search.self, arguments: ["input": .variable("input")]),
@@ -57,11 +57,11 @@ public class IndexerSearchQuery: GraphQLQuery {
       /// Workspace.Search
       ///
       /// Parent Type: `SearchResultObjectType`
-      public struct Search: AffineGraphQL.SelectionSet {
+      public struct Search: LoveNotesGraphQL.SelectionSet {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.SearchResultObjectType }
+        public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.SearchResultObjectType }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("nodes", [Node].self),
@@ -74,31 +74,31 @@ public class IndexerSearchQuery: GraphQLQuery {
         /// Workspace.Search.Node
         ///
         /// Parent Type: `SearchNodeObjectType`
-        public struct Node: AffineGraphQL.SelectionSet {
+        public struct Node: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.SearchNodeObjectType }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.SearchNodeObjectType }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("fields", AffineGraphQL.JSONObject.self),
-            .field("highlights", AffineGraphQL.JSONObject?.self),
+            .field("fields", LoveNotesGraphQL.JSONObject.self),
+            .field("highlights", LoveNotesGraphQL.JSONObject?.self),
           ] }
 
           /// The search result fields, see UnionSearchItemObjectType
-          public var fields: AffineGraphQL.JSONObject { __data["fields"] }
+          public var fields: LoveNotesGraphQL.JSONObject { __data["fields"] }
           /// The search result fields, see UnionSearchItemObjectType
-          public var highlights: AffineGraphQL.JSONObject? { __data["highlights"] }
+          public var highlights: LoveNotesGraphQL.JSONObject? { __data["highlights"] }
         }
 
         /// Workspace.Search.Pagination
         ///
         /// Parent Type: `SearchResultPagination`
-        public struct Pagination: AffineGraphQL.SelectionSet {
+        public struct Pagination: LoveNotesGraphQL.SelectionSet {
           public let __data: DataDict
           public init(_dataDict: DataDict) { __data = _dataDict }
 
-          public static var __parentType: any ApolloAPI.ParentType { AffineGraphQL.Objects.SearchResultPagination }
+          public static var __parentType: any ApolloAPI.ParentType { LoveNotesGraphQL.Objects.SearchResultPagination }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("count", Int.self),

@@ -2,12 +2,12 @@ import {
   DefaultTool,
   EdgelessCRUDIdentifier,
   SurfaceBlockComponent,
-} from '@blocksuite/affine-block-surface';
-import type { EmbedCardStyle } from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-block-surface';
+import type { EmbedCardStyle } from '@blocksuite/lovenotes-model';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/affine-shared/consts';
+} from '@blocksuite/lovenotes-shared/consts';
 import { Bound, Vec } from '@blocksuite/global/gfx';
 import {
   BlockSelection,

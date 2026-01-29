@@ -1,8 +1,8 @@
-import { EdgelessClipboardConfig } from '@blocksuite/affine-block-surface';
+import { EdgelessClipboardConfig } from '@blocksuite/lovenotes-block-surface';
 import { type BlockSnapshot } from '@blocksuite/store';
 
 export class EdgelessClipboardAttachmentConfig extends EdgelessClipboardConfig {
-  static override readonly key = 'affine:attachment';
+  static override readonly key = 'lovenotes:attachment';
 
   override async createBlock(
     attachment: BlockSnapshot
@@ -16,7 +16,7 @@ export class EdgelessClipboardAttachmentConfig extends EdgelessClipboardConfig {
       return null;
     }
     const attachmentId = this.crud.addBlock(
-      'affine:attachment',
+      'lovenotes:attachment',
       {
         xywh,
         rotate,

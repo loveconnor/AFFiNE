@@ -1,17 +1,17 @@
-import { AttachmentBlockComponent } from '@blocksuite/affine-block-attachment';
-import { BookmarkBlockComponent } from '@blocksuite/affine-block-bookmark';
+import { AttachmentBlockComponent } from '@blocksuite/lovenotes-block-attachment';
+import { BookmarkBlockComponent } from '@blocksuite/lovenotes-block-bookmark';
 import {
   isExternalEmbedBlockComponent,
   notifyDocCreated,
   promptDocTitle,
-} from '@blocksuite/affine-block-embed';
-import { EdgelessFrameManagerIdentifier } from '@blocksuite/affine-block-frame';
-import { ImageBlockComponent } from '@blocksuite/affine-block-image';
+} from '@blocksuite/lovenotes-block-embed';
+import { EdgelessFrameManagerIdentifier } from '@blocksuite/lovenotes-block-frame';
+import { ImageBlockComponent } from '@blocksuite/lovenotes-block-image';
 import {
   EdgelessCRUDIdentifier,
   getSurfaceComponent,
-} from '@blocksuite/affine-block-surface';
-import { createGroupFromSelectedCommand } from '@blocksuite/affine-gfx-group';
+} from '@blocksuite/lovenotes-block-surface';
+import { createGroupFromSelectedCommand } from '@blocksuite/lovenotes-gfx-group';
 import {
   AttachmentBlockModel,
   BookmarkBlockModel,
@@ -24,15 +24,15 @@ import {
   isExternalEmbedModel,
   NoteBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import type {
   ToolbarActions,
   ToolbarContext,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/lovenotes-shared/services';
 import {
   matchModels,
   type ReorderingType,
-} from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/lovenotes-shared/utils';
 import { Bound, getCommonBoundWithRotation } from '@blocksuite/global/gfx';
 import {
   ArrowDownBigBottomIcon,

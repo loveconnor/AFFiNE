@@ -1,4 +1,4 @@
-import { createLitPortal } from '@blocksuite/affine-components/portal';
+import { createLitPortal } from '@blocksuite/lovenotes-components/portal';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import { ArrowDownSmallIcon, FlipDirectionIcon } from '@blocksuite/icons/lit';
 import { flip, offset } from '@floating-ui/dom';
@@ -8,7 +8,7 @@ import { property, query } from 'lit/decorators.js';
 
 import { type AdapterPanelContext, adapterPanelContext } from '../config';
 
-export const AFFINE_ADAPTER_PANEL_HEADER = 'affine-adapter-panel-header';
+export const AFFINE_ADAPTER_PANEL_HEADER = 'lovenotes-adapter-panel-header';
 
 export class AdapterPanelHeader extends SignalWatcher(LitElement) {
   static override styles = css`
@@ -17,7 +17,7 @@ export class AdapterPanelHeader extends SignalWatcher(LitElement) {
       align-items: center;
       justify-content: space-between;
       padding: 12px 16px;
-      background: var(--affine-background-primary-color);
+      background: var(--lovenotes-background-primary-color);
     }
     .adapter-selector {
       display: flex;
@@ -26,17 +26,17 @@ export class AdapterPanelHeader extends SignalWatcher(LitElement) {
       width: 100px;
       cursor: pointer;
       border-radius: 4px;
-      border: 1px solid var(--affine-border-color);
+      border: 1px solid var(--lovenotes-border-color);
       padding: 4px 8px;
     }
     .adapter-selector:hover {
-      background: var(--affine-hover-color);
+      background: var(--lovenotes-hover-color);
     }
     .adapter-selector-label {
       display: flex;
       align-items: center;
-      color: var(--affine-text-primary-color);
-      font-size: var(--affine-font-xs);
+      color: var(--lovenotes-text-primary-color);
+      font-size: var(--lovenotes-font-xs);
     }
     .update-button {
       height: 20px;
@@ -46,10 +46,10 @@ export class AdapterPanelHeader extends SignalWatcher(LitElement) {
       justify-content: center;
       border-radius: 4px;
       cursor: pointer;
-      color: var(--affine-icon-color);
+      color: var(--lovenotes-icon-color);
     }
     .update-button:hover {
-      background-color: var(--affine-hover-color);
+      background-color: var(--lovenotes-hover-color);
     }
   `;
 
@@ -65,11 +65,11 @@ export class AdapterPanelHeader extends SignalWatcher(LitElement) {
     this._adapterMenuAbortController = new AbortController();
 
     createLitPortal({
-      template: html`<affine-adapter-menu
+      template: html`<lovenotes-adapter-menu
         .abortController=${this._adapterMenuAbortController}
-      ></affine-adapter-menu>`,
+      ></lovenotes-adapter-menu>`,
       portalStyles: {
-        zIndex: 'var(--affine-z-index-popover)',
+        zIndex: 'var(--lovenotes-z-index-popover)',
       },
       container: this._adapterPanelHeader,
       computePosition: {

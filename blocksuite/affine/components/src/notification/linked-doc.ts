@@ -1,4 +1,4 @@
-import { NotificationProvider } from '@blocksuite/affine-shared/services';
+import { NotificationProvider } from '@blocksuite/lovenotes-shared/services';
 import { type BlockStdScope } from '@blocksuite/std';
 
 import { toast } from '../toast/toast.js';

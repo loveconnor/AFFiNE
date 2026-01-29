@@ -1,10 +1,10 @@
-import { CodeBlockSchema } from '@blocksuite/affine-model';
+import { CodeBlockSchema } from '@blocksuite/lovenotes-model';
 import {
   BlockNotionHtmlAdapterExtension,
   type BlockNotionHtmlAdapterMatcher,
   CODE_BLOCK_WRAP_KEY,
   HastUtils,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/lovenotes-shared/adapters';
 import { nanoid } from '@blocksuite/store';
 
 export const codeBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatcher =

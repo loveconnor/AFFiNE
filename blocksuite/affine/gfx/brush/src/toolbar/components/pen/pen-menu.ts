@@ -1,15 +1,15 @@
-import { adjustColorAlpha } from '@blocksuite/affine-components/color-picker';
+import { adjustColorAlpha } from '@blocksuite/lovenotes-components/color-picker';
 import {
   BRUSH_LINE_WIDTHS,
   DefaultTheme,
   HIGHLIGHTER_LINE_WIDTHS,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 import {
   FeatureFlagService,
   ThemeProvider,
-} from '@blocksuite/affine-shared/services';
-import type { ColorEvent } from '@blocksuite/affine-shared/utils';
-import { EdgelessToolbarToolMixin } from '@blocksuite/affine-widget-edgeless-toolbar';
+} from '@blocksuite/lovenotes-shared/services';
+import type { ColorEvent } from '@blocksuite/lovenotes-shared/utils';
+import { EdgelessToolbarToolMixin } from '@blocksuite/lovenotes-widget-edgeless-toolbar';
 import { SignalWatcher } from '@blocksuite/global/lit';
 import {
   computed,
@@ -130,10 +130,10 @@ export class EdgelessPenMenu extends EdgelessToolbarToolMixin(
         <div class="pens" slot="prefix">
           <edgeless-tool-icon-button
             class="edgeless-brush-button"
-            .tooltip=${html`<affine-tooltip-content-with-shortcut
+            .tooltip=${html`<lovenotes-tooltip-content-with-shortcut
               data-tip="${penInfoMap.brush.tip}"
               data-shortcut="${penInfoMap.brush.shortcut}"
-            ></affine-tooltip-content-with-shortcut>`}
+            ></lovenotes-tooltip-content-with-shortcut>`}
             .tooltipOffset=${20}
             .hover=${false}
             @click=${() => this._onPickPen('brush')}
@@ -149,10 +149,10 @@ export class EdgelessPenMenu extends EdgelessToolbarToolMixin(
 
           <edgeless-tool-icon-button
             class="edgeless-highlighter-button"
-            .tooltip=${html`<affine-tooltip-content-with-shortcut
+            .tooltip=${html`<lovenotes-tooltip-content-with-shortcut
               data-tip="${penInfoMap.highlighter.tip}"
               data-shortcut="${penInfoMap.highlighter.shortcut}"
-            ></affine-tooltip-content-with-shortcut>`}
+            ></lovenotes-tooltip-content-with-shortcut>`}
             .tooltipOffset=${20}
             .hover=${false}
             @click=${() => this._onPickPen('highlighter')}

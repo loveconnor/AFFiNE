@@ -1,24 +1,24 @@
-import { AffineSchemas } from '@blocksuite/affine/schemas';
-import { Schema, Text, type Workspace } from '@blocksuite/affine/store';
-import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
-export async function affineSnapshot(collection: Workspace, id: string) {
+import { LoveNotesSchemas } from '@blocksuite/lovenotes/schemas';
+import { Schema, Text, type Workspace } from '@blocksuite/lovenotes/store';
+import { ZipTransformer } from '@blocksuite/lovenotes/widgets/linked-doc';
+export async function lovenotesSnapshot(collection: Workspace, id: string) {
   const doc = collection.createDoc(id);
   doc.load();
   const store = doc.getStore();
   // Add root block and surface block at root level
-  const rootId = store.addBlock('affine:page', {
-    title: new Text('Affine Snapshot Test'),
+  const rootId = store.addBlock('lovenotes:page', {
+    title: new Text('LoveNotes Snapshot Test'),
   });
-  store.addBlock('affine:surface', {}, rootId);
+  store.addBlock('lovenotes:surface', {}, rootId);
 
-  const path = '/apps/starter/data/snapshots/affine-default.zip';
+  const path = '/apps/starter/data/snapshots/lovenotes-default.zip';
   const response = await fetch(path);
   const file = await response.blob();
   const schema = new Schema();
-  schema.register(AffineSchemas);
+  schema.register(LoveNotesSchemas);
   await ZipTransformer.importDocs(collection, schema, file);
 }
 
-affineSnapshot.id = 'affine-snapshot';
-affineSnapshot.displayName = 'Affine Snapshot Test';
-affineSnapshot.description = 'Affine Snapshot Test';
+lovenotesSnapshot.id = 'lovenotes-snapshot';
+lovenotesSnapshot.displayName = 'LoveNotes Snapshot Test';
+lovenotesSnapshot.description = 'LoveNotes Snapshot Test';

@@ -1,7 +1,7 @@
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/affine-ext-loader';
+} from '@blocksuite/lovenotes-ext-loader';
 
 import {
   brushToMarkdownAdapterMatcher,
@@ -9,7 +9,7 @@ import {
 } from './adapter';
 
 export class BrushStoreExtension extends StoreExtensionProvider {
-  override name = 'affine-brush-gfx';
+  override name = 'lovenotes-brush-gfx';
 
   override setup(context: StoreExtensionContext) {
     super.setup(context);

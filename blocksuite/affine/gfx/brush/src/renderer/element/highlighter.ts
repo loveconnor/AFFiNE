@@ -1,11 +1,11 @@
 import {
   type ElementRenderer,
   ElementRendererExtension,
-} from '@blocksuite/affine-block-surface';
+} from '@blocksuite/lovenotes-block-surface';
 import {
   DefaultTheme,
   type HighlighterElementModel,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/lovenotes-model';
 
 export const highlighter: ElementRenderer<HighlighterElementModel> = (
   model,
