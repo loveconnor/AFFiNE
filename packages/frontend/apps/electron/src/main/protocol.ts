@@ -27,7 +27,7 @@ const apiBaseByBuildType: Record<typeof buildType, string> = {
   stable: 'https://app.lovenotes.pro',
   beta: 'https://insider.lovenotes.pro',
   internal: 'https://insider.lovenotes.pro',
-  canary: 'https://lovenotes.fail',
+  canary: 'https://insider.lovenotes.pro',
 };
 
 function resolveApiBaseUrl() {
@@ -65,6 +65,19 @@ async function handleFileRequest(request: Request) {
     urlObject.host = mainHost;
   }
 
+  const isKnownHost = [mainHost, anotherHost, 'local-file', '.'].includes(
+    urlObject.host
+  );
+  if (!isKnownHost && urlObject.host) {
+    const hostAsPath = urlObject.host;
+    urlObject.host = '.';
+    const pathnameSuffix =
+      !urlObject.pathname || urlObject.pathname === '/'
+        ? ''
+        : urlObject.pathname;
+    urlObject.pathname = `/${hostAsPath}${pathnameSuffix}`;
+  }
+
   const isAbsolutePath = urlObject.host !== '.';
   const isApiRequest =
     !isAbsolutePath &&
@@ -96,7 +109,7 @@ async function handleFileRequest(request: Request) {
     if (urlObject.pathname.split('/').at(-1)?.includes('.')) {
       // Sanitize pathname to prevent path traversal attacks
       const decodedPath = decodeURIComponent(urlObject.pathname);
-      const normalizedPath = join(webStaticDir, decodedPath).normalize();
+      const normalizedPath = path.resolve(webStaticDir, `.${decodedPath}`);
       if (!normalizedPath.startsWith(webStaticDir)) {
         // Attempted path traversal - reject by using empty path
         filepath = join(webStaticDir, '');
@@ -133,6 +146,27 @@ const lovenotesDomains = [
   /^(?:[a-z0-9-]+\.)*lovenotes\.fail$/i,
   /^(?:[a-z0-9-]+\.)*lovenotes\.run$/i,
 ];
+
+function getContentTypeByPath(pathname: string) {
+  const ext = pathname.split('?')[0]?.split('#')[0]?.toLowerCase();
+  if (!ext) return undefined;
+  if (ext.endsWith('.css')) return 'text/css';
+  if (ext.endsWith('.js') || ext.endsWith('.mjs')) return 'text/javascript';
+  if (ext.endsWith('.json') || ext.endsWith('.map')) return 'application/json';
+  if (ext.endsWith('.wasm')) return 'application/wasm';
+  if (ext.endsWith('.svg')) return 'image/svg+xml';
+  if (ext.endsWith('.png')) return 'image/png';
+  if (ext.endsWith('.jpg') || ext.endsWith('.jpeg')) return 'image/jpeg';
+  if (ext.endsWith('.gif')) return 'image/gif';
+  if (ext.endsWith('.webp')) return 'image/webp';
+  if (ext.endsWith('.ico')) return 'image/x-icon';
+  if (ext.endsWith('.woff2')) return 'font/woff2';
+  if (ext.endsWith('.woff')) return 'font/woff';
+  if (ext.endsWith('.ttf')) return 'font/ttf';
+  if (ext.endsWith('.otf')) return 'font/otf';
+  if (ext.endsWith('.html')) return 'text/html';
+  return undefined;
+}
 
 function setHeader(
   headers: Record<string, string[]>,
@@ -242,6 +276,15 @@ export function registerProtocol() {
             delete responseHeaders['Access-Control-Allow-Headers'];
             setHeader(responseHeaders, 'X-Frame-Options', 'SAMEORIGIN');
             ensureFrameAncestors(responseHeaders, "'self'");
+            const existingContentTypeKey = Object.keys(responseHeaders).find(
+              key => key.toLowerCase() === 'content-type'
+            );
+            if (!existingContentTypeKey) {
+              const contentType = getContentTypeByPath(new URL(url).pathname);
+              if (contentType) {
+                setHeader(responseHeaders, 'Content-Type', contentType);
+              }
+            }
           } else if (
             (protocol === 'http:' || protocol === 'https:') &&
             lovenotesDomains.some(regex => regex.test(hostname))

@@ -3,16 +3,25 @@ import type { Framework } from '@toeverything/infra';
 import { AuthProvider } from '../provider/auth';
 import { ServerScope } from '../scopes/server';
 import { FetchService } from '../services/fetch';
+import { ServerService } from '../services/server';
 
 export function configureDefaultAuthProvider(framework: Framework) {
   framework.scope(ServerScope).override(AuthProvider, resolver => {
     const fetchService = resolver.get(FetchService);
+    const serverService = resolver.get(ServerService);
+
+    const isLocalAssetsBase = () =>
+      BUILD_CONFIG.isElectron &&
+      serverService.server.baseUrl.startsWith('assets://');
     return {
       async signInMagicLink(
         email: string,
         token: string,
         clientNonce?: string
       ) {
+        if (isLocalAssetsBase()) {
+          return;
+        }
         await fetchService.fetch('/api/auth/magic-link', {
           method: 'POST',
           headers: {
@@ -28,6 +37,9 @@ export function configureDefaultAuthProvider(framework: Framework) {
         _provider: string,
         clientNonce?: string
       ) {
+        if (isLocalAssetsBase()) {
+          return {};
+        }
         const res = await fetchService.fetch('/api/oauth/callback', {
           method: 'POST',
           body: JSON.stringify({ code, state, client_nonce: clientNonce }),
@@ -43,6 +55,9 @@ export function configureDefaultAuthProvider(framework: Framework) {
         verifyToken?: string;
         challenge?: string;
       }) {
+        if (isLocalAssetsBase()) {
+          return;
+        }
         const headers: Record<string, string> = {};
 
         if (credential.verifyToken) {
@@ -62,6 +77,9 @@ export function configureDefaultAuthProvider(framework: Framework) {
         });
       },
       async signOut() {
+        if (isLocalAssetsBase()) {
+          return;
+        }
         await fetchService.fetch('/api/auth/sign-out');
       },
     };

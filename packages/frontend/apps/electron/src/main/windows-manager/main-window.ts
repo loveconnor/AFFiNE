@@ -101,6 +101,7 @@ export class MainWindowManager {
         webgl: true,
       }),
     });
+    browserWindow.webContents.setZoomFactor(1);
     const helper = await ensureHelperProcess();
     helper.connectMain(browserWindow);
 

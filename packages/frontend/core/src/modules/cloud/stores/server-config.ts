@@ -4,6 +4,7 @@ import {
   oauthProvidersQuery,
   type ServerConfigQuery,
   serverConfigQuery,
+  ServerDeploymentType,
   ServerFeature,
 } from '@lovenotes/graphql';
 import { Store } from '@toeverything/infra';
@@ -20,6 +21,25 @@ export class ServerConfigStore extends Store {
     serverBaseUrl: string,
     abortSignal?: AbortSignal
   ): Promise<ServerConfigType> {
+    if (BUILD_CONFIG.isElectron && serverBaseUrl.startsWith('assets://')) {
+      return {
+        baseUrl: serverBaseUrl,
+        name: 'LoveNotes Local',
+        type: ServerDeploymentType.Selfhosted,
+        version: BUILD_CONFIG.appVersion,
+        initialized: true,
+        calendarProviders: [],
+        features: [ServerFeature.LocalWorkspace],
+        credentialsRequirement: {
+          password: {
+            minLength: 8,
+            maxLength: 32,
+          },
+        },
+        oauthProviders: [],
+      };
+    }
+
     const gql = gqlFetcherFactory(`${serverBaseUrl}/graphql`, globalThis.fetch);
     const serverConfigData = await gql({
       query: serverConfigQuery,

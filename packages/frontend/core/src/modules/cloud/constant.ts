@@ -159,9 +159,11 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
               ? [
                   {
                     id: 'lovenotes-cloud',
-                    baseUrl: BUILD_CONFIG.isNative
-                      ? 'https://lovenotes.fail'
-                      : location.origin,
+                    baseUrl: BUILD_CONFIG.isElectron
+                      ? location.origin
+                      : BUILD_CONFIG.isNative
+                        ? 'https://insider.lovenotes.pro'
+                        : location.origin,
                     config: {
                       serverName: 'LoveNotes Cloud',
                       features: [
@@ -199,7 +201,9 @@ const OFFICIAL_TELEMETRY_ENDPOINTS: Record<TelemetryChannel, string> = {
   stable: 'https://app.lovenotes.pro',
   beta: 'https://insider.lovenotes.pro',
   internal: 'https://insider.lovenotes.pro',
-  canary: 'https://lovenotes.fail',
+  canary: BUILD_CONFIG.isElectron
+    ? location.origin
+    : 'https://insider.lovenotes.pro',
   local: 'http://localhost:8080',
 };
 

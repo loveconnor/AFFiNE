@@ -179,19 +179,22 @@ export default {
     name: productName,
     appBundleId: fromBuildIdentifier(appIdMap),
     icon: icnsPath,
-    osxSign: {
-      identity: 'Developer ID Application: TOEVERYTHING PTE. LTD.',
-      'hardened-runtime': true,
-    },
+    dereference: true,
+    // osxSign: process.env.SKIP_OSX_SIGN
+    //   ? undefined
+    //   : {
+    //       identity: 'Developer ID Application: TOEVERYTHING PTE. LTD.',
+    //       'hardened-runtime': true,
+    //     },
     electronZipDir: process.env.ELECTRON_FORGE_ELECTRON_ZIP_DIR,
-    osxNotarize: process.env.APPLE_ID
-      ? {
-          tool: 'notarytool',
-          appleId: process.env.APPLE_ID,
-          appleIdPassword: process.env.APPLE_PASSWORD,
-          teamId: process.env.APPLE_TEAM_ID,
-        }
-      : undefined,
+    // osxNotarize: process.env.APPLE_ID
+    //   ? {
+    //       tool: 'notarytool',
+    //       appleId: process.env.APPLE_ID,
+    //       appleIdPassword: process.env.APPLE_PASSWORD,
+    //       teamId: process.env.APPLE_TEAM_ID,
+    //     }
+    //   : undefined,
     // We need the following line for updater
     extraResource: [
       './resources/app-update.yml',
@@ -238,7 +241,7 @@ export default {
         });
 
         await symlink(
-          path.join(__dirname, '..', '..', '..', 'node_modules'),
+          path.join(__dirname, '..', '..', '..', '..', 'node_modules'),
           path.join(__dirname, 'node_modules')
         );
       }

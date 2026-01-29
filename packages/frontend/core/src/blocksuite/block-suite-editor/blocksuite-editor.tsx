@@ -1,3 +1,17 @@
+import { appendParagraphCommand } from '@blocksuite/lovenotes/blocks/paragraph';
+import type { DocTitle } from '@blocksuite/lovenotes/fragments/doc-title';
+import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
+import { IS_LINUX } from '@blocksuite/lovenotes/global/env';
+import type { DocMode, RootBlockModel } from '@blocksuite/lovenotes/model';
+import {
+  customImageProxyMiddleware,
+  ImageProxyService,
+} from '@blocksuite/lovenotes/shared/adapters';
+import { focusBlockEnd } from '@blocksuite/lovenotes/shared/commands';
+import { StyleVariables } from '@blocksuite/lovenotes/shared/theme';
+import { getLastNoteBlock } from '@blocksuite/lovenotes/shared/utils';
+import type { BlockStdScope, EditorHost } from '@blocksuite/lovenotes/std';
+import { type Store,Text } from '@blocksuite/lovenotes/store';
 import { EditorLoading } from '@lovenotes/component/page-detail-skeleton';
 import type {
   EdgelessEditor,
@@ -11,19 +25,6 @@ import {
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import track from '@lovenotes/track';
-import { appendParagraphCommand } from '@blocksuite/lovenotes/blocks/paragraph';
-import type { DocTitle } from '@blocksuite/lovenotes/fragments/doc-title';
-import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
-import { IS_LINUX } from '@blocksuite/lovenotes/global/env';
-import type { DocMode, RootBlockModel } from '@blocksuite/lovenotes/model';
-import {
-  customImageProxyMiddleware,
-  ImageProxyService,
-} from '@blocksuite/lovenotes/shared/adapters';
-import { focusBlockEnd } from '@blocksuite/lovenotes/shared/commands';
-import { getLastNoteBlock } from '@blocksuite/lovenotes/shared/utils';
-import type { BlockStdScope, EditorHost } from '@blocksuite/lovenotes/std';
-import { Text, type Store } from '@blocksuite/lovenotes/store';
 import { Slot } from '@radix-ui/react-slot';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
@@ -308,6 +309,41 @@ export const BlockSuiteEditor = (props: EditorProps) => {
   }, [settings.customFontFamily, settings.fontFamily]);
 
   useEffect(() => {
+    if (typeof document === 'undefined') {
+      return;
+    }
+    const rootStyle = document.documentElement.style;
+    const computedStyle = window.getComputedStyle(document.documentElement);
+    const setVarIfMissing = (lovenotesVar: string, affineVar: string) => {
+      if (rootStyle.getPropertyValue(lovenotesVar)) {
+        return;
+      }
+      const value = computedStyle.getPropertyValue(affineVar).trim();
+      if (value) {
+        rootStyle.setProperty(lovenotesVar, value);
+      }
+    };
+
+    StyleVariables.forEach(lovenotesVar => {
+      if (!lovenotesVar.startsWith('--lovenotes-')) {
+        return;
+      }
+      const suffix = lovenotesVar.slice('--lovenotes-'.length);
+      const affineVar = `--affine-${suffix}`;
+      setVarIfMissing(lovenotesVar, affineVar);
+    });
+    if (!rootStyle.getPropertyValue('--lovenotes-editor-width')) {
+      rootStyle.setProperty('--lovenotes-editor-width', cssVar('editorWidth'));
+    }
+    if (!rootStyle.getPropertyValue('--lovenotes-editor-side-padding')) {
+      rootStyle.setProperty(
+        '--lovenotes-editor-side-padding',
+        cssVar('editorSidePadding')
+      );
+    }
+  }, []);
+
+  useEffect(() => {
     if (props.page.root) {
       setIsLoading(false);
       return;
@@ -353,34 +389,31 @@ export const BlockSuiteEditor = (props: EditorProps) => {
     let cancelled = false;
 
     const recover = async () => {
-      try {
-        await workspaceService.workspace.engine.doc.waitForSynced(
-          props.page.id
-        );
-        if (cancelled || props.page.root) {
-          return;
-        }
+      await workspaceService.workspace.engine.doc.waitForSynced(props.page.id);
+      if (cancelled || props.page.root) {
+        return;
+      }
 
-        const blocks = props.page.spaceDoc.getMap('blocks');
-        const hasPageBlock = Array.from(blocks.values()).some(
-          block => block.get('sys:flavour') === 'lovenotes:page'
-        );
+      const blocks = props.page.spaceDoc.getMap('blocks');
+      const hasPageBlock = Array.from(blocks.values()).some(block => {
+        const blockWithGet = block as { get: (key: string) => unknown };
+        return blockWithGet.get('sys:flavour') === 'lovenotes:page';
+      });
 
-        if (blocks.size === 0 || !hasPageBlock) {
-          if (!props.page.readonly) {
-            initDocFromProps(props.page, {
-              page: { title: new Text('') },
-            });
-          }
-        } else {
-          props.page.load(() => {});
+      if (blocks.size === 0 || !hasPageBlock) {
+        if (!props.page.readonly) {
+          initDocFromProps(props.page, {
+            page: { title: new Text('') },
+          });
         }
-      } catch (error) {
-        console.error('Failed to recover missing page root', error);
+      } else {
+        props.page.load(() => {});
       }
     };
 
-    recover();
+    recover().catch(error => {
+      console.error('Failed to recover missing page root', error);
+    });
 
     return () => {
       cancelled = true;

@@ -22,6 +22,17 @@ export interface AccountProfile {
   emailVerified: string | null;
 }
 
+const LOCAL_PRESEEDED_ACCOUNT: AccountProfile = {
+  id: 'local-user',
+  email: 'loveconnor2005@gmail.com',
+  name: 'Connor Love',
+  hasPassword: true,
+  avatarUrl: null,
+  emailVerified: null,
+};
+
+const LOCAL_PRESEEDED_PASSWORD = 'Cando145!';
+
 export class AuthStore extends Store {
   constructor(
     private readonly fetchService: FetchService,
@@ -58,6 +69,11 @@ export class AuthStore extends Store {
   }
 
   async fetchSession() {
+    const baseUrl = this.serverService.server.baseUrl;
+    if (BUILD_CONFIG.isElectron && baseUrl.startsWith('assets://')) {
+      return { user: LOCAL_PRESEEDED_ACCOUNT };
+    }
+
     const url = `/api/auth/session`;
     const options: RequestInit = {
       headers: {
@@ -97,6 +113,16 @@ export class AuthStore extends Store {
     verifyToken?: string;
     challenge?: string;
   }) {
+    const baseUrl = this.serverService.server.baseUrl;
+    if (BUILD_CONFIG.isElectron && baseUrl.startsWith('assets://')) {
+      if (
+        credential.email !== LOCAL_PRESEEDED_ACCOUNT.email ||
+        credential.password !== LOCAL_PRESEEDED_PASSWORD
+      ) {
+        throw new Error('Invalid email or password');
+      }
+      return;
+    }
     await this.authProvider.signInPassword(credential);
   }
 
@@ -131,6 +157,15 @@ export class AuthStore extends Store {
   }
 
   async checkUserByEmail(email: string) {
+    const baseUrl = this.serverService.server.baseUrl;
+    if (BUILD_CONFIG.isElectron && baseUrl.startsWith('assets://')) {
+      return {
+        registered: email === LOCAL_PRESEEDED_ACCOUNT.email,
+        hasPassword: true,
+        magicLink: true,
+      };
+    }
+
     const res = await this.fetchService.fetch('/api/auth/preflight', {
       method: 'POST',
       body: JSON.stringify({ email }),

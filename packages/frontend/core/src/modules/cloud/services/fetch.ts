@@ -31,6 +31,105 @@ export class FetchService extends Service {
    */
   fetch = async (input: string, init?: FetchInit): Promise<Response> => {
     logger.debug('fetch', input);
+    const baseUrl = this.serverService.server.serverMetadata.baseUrl;
+    if (
+      BUILD_CONFIG.isElectron &&
+      baseUrl.startsWith('assets://') &&
+      input.includes('/graphql')
+    ) {
+      const operationName = (() => {
+        const headers = init?.headers as
+          | Headers
+          | Record<string, string>
+          | undefined;
+        if (headers instanceof Headers) {
+          return headers.get('x-operation-name') ?? undefined;
+        }
+        return headers?.['x-operation-name'] ?? headers?.['X-Operation-Name'];
+      })();
+
+      const serverConfig = {
+        version: BUILD_CONFIG.appVersion,
+        baseUrl,
+        name: 'LoveNotes Local',
+        features: ['LocalWorkspace'],
+        type: 'Selfhosted',
+        initialized: true,
+        calendarProviders: [],
+        credentialsRequirement: {
+          password: {
+            minLength: 8,
+            maxLength: 32,
+          },
+        },
+      };
+
+      const currentUser = {
+        id: 'local-user',
+        name: 'Connor Love',
+        email: 'loveconnor2005@gmail.com',
+        avatarUrl: null,
+        emailVerified: false,
+        features: [],
+        settings: {
+          receiveInvitationEmail: false,
+          receiveMentionEmail: false,
+          receiveCommentEmail: false,
+        },
+        quota: {
+          name: 'Local',
+          blobLimit: 0,
+          storageQuota: 0,
+          historyPeriod: 0,
+          memberLimit: 1,
+          copilotActionLimit: 0,
+          usedStorageQuota: 0,
+          humanReadable: {
+            name: 'Local',
+            blobLimit: '0',
+            storageQuota: '0',
+            historyPeriod: '0',
+            memberLimit: '1',
+            copilotActionLimit: '0',
+            usedStorageQuota: '0',
+          },
+        },
+        quotaUsage: {
+          storageQuota: 0,
+        },
+        copilot: {
+          quota: {
+            limit: null,
+            used: 0,
+          },
+        },
+        token: {
+          sessionToken: '',
+        },
+      };
+
+      const data = (() => {
+        switch (operationName) {
+          case 'serverConfig':
+          case 'adminServerConfig':
+            return { serverConfig };
+          case 'oauthProviders':
+            return { serverConfig: { oauthProviders: [] } };
+          case 'getCurrentUserProfile':
+          case 'getCurrentUser':
+          case 'listUserAccessTokens':
+          case 'copilotQuotaQuery':
+            return { currentUser };
+          default:
+            return { currentUser };
+        }
+      })();
+
+      return new Response(JSON.stringify({ data }), {
+        status: 200,
+        headers: { 'content-type': 'application/json' },
+      });
+    }
     const externalSignal = init?.signal;
     if (externalSignal?.aborted) {
       throw externalSignal.reason;

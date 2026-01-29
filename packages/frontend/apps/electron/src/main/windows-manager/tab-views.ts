@@ -827,6 +827,7 @@ export class WebContentViewsManager {
         backgroundThrottling: true,
       }),
     });
+    view.webContents.setZoomFactor(1);
 
     view.webContents.on('context-menu', (_event, params) => {
       const menu = Menu.buildFromTemplate([
