@@ -1,3 +1,4 @@
+import { ArrowRightBigIcon } from '@blocksuite/icons/rc';
 import { Button, notify } from '@lovenotes/component';
 import {
   AuthContainer,
@@ -6,13 +7,12 @@ import {
   AuthHeader,
   AuthInput,
 } from '@lovenotes/component/auth-components';
-import { OAuth } from '@lovenotes/core/components/lovenotes/auth/oauth';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { OAuth } from '@lovenotes/core/components/lovenotes/auth/oauth';
 import { AuthService, ServerService } from '@lovenotes/core/modules/cloud';
 import type { AuthSessionStatus } from '@lovenotes/core/modules/cloud/entities/session';
 import { ServerDeploymentType } from '@lovenotes/graphql';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { ArrowRightBigIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { type Dispatch, type SetStateAction, useEffect, useState } from 'react';
@@ -32,7 +32,6 @@ function validateEmail(email: string) {
 export const SignInStep = ({
   state,
   changeState,
-  onSkip,
   onAuthenticated,
 }: {
   state: SignInState;
