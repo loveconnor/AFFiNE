@@ -17,7 +17,6 @@ import { useCallback } from 'react';
 import { Account } from './account';
 import { AccountMenu } from './account-menu';
 import { AIUsage } from './ai-usage';
-import { CloudUsage } from './cloud-usage';
 import * as styles from './index.css';
 import { TeamList } from './team-list';
 import { UnknownUserIcon } from './unknow-user';
@@ -78,7 +77,6 @@ const OperationMenu = () => {
     <>
       <Account />
       <Divider />
-      <CloudUsage />
       {serverFeatures?.copilot ? <AIUsage /> : null}
       <Divider />
       <TeamList />

@@ -3,7 +3,6 @@ import {
   AuthService,
   ServerService,
   UserCopilotQuotaService,
-  UserQuotaService,
 } from '@lovenotes/core/modules/cloud';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
@@ -75,39 +74,12 @@ const UsagePanel = () => {
   const serverFeatures = useLiveData(serverService.server.features$);
 
   return (
-    <SettingGroup title="Storage" contentStyle={{ padding: '10px 16px' }}>
-      <CloudUsage />
+    <SettingGroup title="Usage" contentStyle={{ padding: '10px 16px' }}>
       {serverFeatures?.copilot ? <AiUsage /> : null}
     </SettingGroup>
   );
 };
 
-const CloudUsage = () => {
-  const quota = useService(UserQuotaService).quota;
-
-  const color = useLiveData(quota.color$);
-  const usedFormatted = useLiveData(quota.usedFormatted$);
-  const maxFormatted = useLiveData(quota.maxFormatted$);
-  const percent = useLiveData(quota.percent$);
-
-  useEffect(() => {
-    // revalidate quota to get the latest status
-    quota.revalidate();
-  }, [quota]);
-
-  const loading = percent === null;
-
-  if (loading) return <Loading />;
-
-  return (
-    <Progress
-      name="Cloud"
-      percent={percent}
-      desc={`${usedFormatted}/${maxFormatted}`}
-      color={color}
-    />
-  );
-};
 const AiUsage = () => {
   const copilotQuotaService = useService(UserCopilotQuotaService);
 

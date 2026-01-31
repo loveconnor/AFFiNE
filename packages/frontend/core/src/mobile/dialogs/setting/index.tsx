@@ -9,7 +9,6 @@ import { useEffect } from 'react';
 
 import { AboutGroup } from './about';
 import { AppearanceGroup } from './appearance';
-import { ExperimentalFeatureSetting } from './experimental';
 import { OthersGroup } from './others';
 import * as styles from './style.css';
 import { UserSubscription } from './subscription';
@@ -28,7 +27,6 @@ const MobileSetting = () => {
       <UserUsage />
       <AppearanceGroup />
       <AboutGroup />
-      <ExperimentalFeatureSetting />
       <OthersGroup />
     </div>
   );

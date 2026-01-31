@@ -1,6 +1,5 @@
 import {
   AppearanceIcon,
-  ExperimentIcon,
   FolderIcon,
   KeyboardIcon,
   MeetingIcon,
@@ -20,7 +19,6 @@ import type { SettingSidebarItem, SettingState } from '../types';
 import { AppearanceSettings } from './appearance';
 import { BackupSettingPanel } from './backup';
 import { EditorSettings } from './editor';
-import { ExperimentalFeatures } from './experimental-features';
 import { MeetingsSettings } from './meetings';
 import { NotificationSettings } from './notifications';
 import { Shortcuts } from './shortcuts';
@@ -108,13 +106,6 @@ export const useGeneralSettingList = (): GeneralSettingList => {
         testId: 'backup-panel-trigger',
       });
     }
-
-    settings.push({
-      key: 'experimental-features',
-      title: t['com.lovenotes.settings.workspace.experimental-features'](),
-      icon: <ExperimentIcon />,
-      testId: 'experimental-features-trigger',
-    });
     return settings;
   }, [t, loggedIn, enableEditorSettings, meetingSettings?.enabled]);
 };
@@ -139,8 +130,6 @@ export const GeneralSetting = ({
       return <AppearanceSettings />;
     case 'meetings':
       return <MeetingsSettings />;
-    case 'experimental-features':
-      return <ExperimentalFeatures />;
     case 'backup':
       return <BackupSettingPanel />;
     default:
