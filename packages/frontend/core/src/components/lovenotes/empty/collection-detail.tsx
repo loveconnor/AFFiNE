@@ -1,8 +1,8 @@
+import { AllDocsIcon, FilterIcon } from '@blocksuite/icons/rc';
 import type { Collection } from '@lovenotes/core/modules/collection';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { useI18n } from '@lovenotes/i18n';
-import { AllDocsIcon, FilterIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import { ActionButton } from './action-button';

@@ -2,7 +2,7 @@ import { Loading } from '@lovenotes/component';
 import { DocsService } from '@lovenotes/core/modules/doc';
 import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
 import { i18nTime } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import type React from 'react';
 
 import type { IgnoredDoc } from '../types';

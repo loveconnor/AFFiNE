@@ -1,8 +1,8 @@
+import { CloseIcon } from '@blocksuite/icons/rc';
 import { Avatar, Skeleton } from '@lovenotes/component';
 import { PublicUserService } from '@lovenotes/core/modules/cloud';
 import { useI18n } from '@lovenotes/i18n';
-import { CloseIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { type MouseEventHandler, useCallback, useEffect } from 'react';
 
 import * as styles from './styles.css';

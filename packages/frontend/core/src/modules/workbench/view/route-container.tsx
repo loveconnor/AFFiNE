@@ -1,7 +1,7 @@
+import { RightSidebarIcon } from '@blocksuite/icons/rc';
 import { IconButton } from '@lovenotes/component';
 import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
-import { RightSidebarIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { Suspense, useCallback } from 'react';
 import { Outlet } from 'react-router-dom';
 

@@ -1,4 +1,4 @@
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 import { applyUpdate } from 'yjs';
 
 import { transformWorkspaceDBLocalToCloud } from '../../db/utils';

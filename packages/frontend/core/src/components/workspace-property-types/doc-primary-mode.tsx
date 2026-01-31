@@ -1,3 +1,5 @@
+import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import {
   MenuItem,
   notify,
@@ -7,9 +9,7 @@ import {
 import type { FilterParams } from '@lovenotes/core/modules/collection-rules';
 import { DocService } from '@lovenotes/core/modules/doc';
 import { useI18n } from '@lovenotes/i18n';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';

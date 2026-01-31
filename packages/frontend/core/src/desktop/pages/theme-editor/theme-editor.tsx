@@ -1,6 +1,6 @@
 import { RadioGroup, Scrollable } from '@lovenotes/component';
 import { ThemeEditorService } from '@lovenotes/core/modules/theme-editor';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { ThemeEmpty } from './components/empty';

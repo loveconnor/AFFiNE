@@ -6,7 +6,7 @@ import { UrlService } from '@lovenotes/core/modules/url';
 import { UserFriendlyError } from '@lovenotes/error';
 import { createCustomerPortalMutation } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 
 import * as styles from './styles.css';
 

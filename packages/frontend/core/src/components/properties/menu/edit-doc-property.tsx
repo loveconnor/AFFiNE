@@ -1,3 +1,4 @@
+import { DeleteIcon, InvisibleIcon, ViewIcon } from '@blocksuite/icons/rc';
 import {
   Input,
   MenuItem,
@@ -7,8 +8,7 @@ import {
 import type { DocCustomPropertyInfo } from '@lovenotes/core/modules/db';
 import { WorkspacePropertyService } from '@lovenotes/core/modules/workspace-property';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { DeleteIcon, InvisibleIcon, ViewIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import {
   type KeyboardEventHandler,
   type MouseEvent,
@@ -213,7 +213,9 @@ export const EditWorkspacePropertyMenuItems = ({
         onClick={() => {
           confirmModal.openConfirmModal({
             title:
-              t['com.lovenotes.settings.workspace.properties.delete-property'](),
+              t[
+                'com.lovenotes.settings.workspace.properties.delete-property'
+              ](),
             description: (
               <Trans
                 values={{

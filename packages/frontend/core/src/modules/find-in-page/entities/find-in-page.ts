@@ -1,5 +1,5 @@
 import { DebugLogger } from '@lovenotes/debug';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@lovenotes/infra';
 import {
   debounceTime,
   distinctUntilChanged,

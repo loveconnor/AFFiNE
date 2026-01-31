@@ -1,16 +1,15 @@
+import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import { RadioGroup, type RadioItem } from '@lovenotes/component';
 import { registerLoveNotesCommand } from '@lovenotes/core/commands';
 import { EditorService } from '@lovenotes/core/modules/editor';
-import { ViewService, WorkbenchService } from '@lovenotes/core/modules/workbench';
-import { useI18n } from '@lovenotes/i18n';
-import { track } from '@lovenotes/track';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
+  ViewService,
+  WorkbenchService,
+} from '@lovenotes/core/modules/workbench';
+import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
+import { track } from '@lovenotes/track';
 import { useCallback, useEffect, useMemo } from 'react';
 
 import { switchItem } from './style.css';

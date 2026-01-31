@@ -1,6 +1,6 @@
 import { EmptyCollections } from '@lovenotes/core/components/lovenotes/empty';
 import { CollectionService } from '@lovenotes/core/modules/collection';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import { CollectionListItem } from './item';
 import { list } from './styles.css';

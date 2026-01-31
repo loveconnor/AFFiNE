@@ -1,8 +1,4 @@
-import {
-  type DBSchemaBuilder,
-  Entity,
-  type TableMap,
-} from '@toeverything/infra';
+import { type DBSchemaBuilder, Entity, type TableMap } from '@lovenotes/infra';
 
 import { WorkspaceDBTable } from './table';
 

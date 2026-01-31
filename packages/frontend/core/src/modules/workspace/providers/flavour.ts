@@ -1,11 +1,11 @@
+import type { Workspace as BSWorkspace } from '@blocksuite/lovenotes/store';
+import { createIdentifier, type LiveData } from '@lovenotes/infra';
 import type {
   BlobStorage,
   DocStorage,
   ListedBlobRecord,
 } from '@lovenotes/nbstore';
 import type { WorkerInitOptions } from '@lovenotes/nbstore/worker/client';
-import type { Workspace as BSWorkspace } from '@blocksuite/lovenotes/store';
-import { createIdentifier, type LiveData } from '@toeverything/infra';
 
 import type { WorkspaceProfileInfo } from '../entities/profile';
 import type { Workspace } from '../entities/workspace';

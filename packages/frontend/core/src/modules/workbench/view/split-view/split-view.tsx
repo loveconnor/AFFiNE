@@ -2,8 +2,8 @@ import { Checkbox, notify, useDndMonitor } from '@lovenotes/component';
 import { useAppSettingHelper } from '@lovenotes/core/components/hooks/lovenotes/use-app-setting-helper';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
+import { useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useSetAtom } from 'jotai';
 import { nanoid } from 'nanoid';
@@ -130,7 +130,9 @@ export const SplitView = ({
                 message: (
                   <div className={styles.folderWarningMessage}>
                     <p>
-                      {t['com.lovenotes.split-view-folder-warning.description']()}
+                      {t[
+                        'com.lovenotes.split-view-folder-warning.description'
+                      ]()}
                     </p>
                     <p>
                       <Checkbox
@@ -165,7 +167,8 @@ export const SplitView = ({
           return;
         }
 
-        const dropTarget = candidate.data as LoveNotesDNDData['draggable']['from'];
+        const dropTarget =
+          candidate.data as LoveNotesDNDData['draggable']['from'];
         const entity = data.source.data.entity;
         const from = data.source.data.from;
 

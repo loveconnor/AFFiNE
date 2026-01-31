@@ -1,3 +1,4 @@
+import { PlusIcon } from '@blocksuite/icons/rc';
 import {
   Button,
   Divider,
@@ -19,8 +20,7 @@ import { DocDatabaseBacklinkInfo } from '@lovenotes/core/modules/doc-info';
 import { DocLinksService } from '@lovenotes/core/modules/doc-link';
 import { WorkspacePropertyService } from '@lovenotes/core/modules/workspace-property';
 import { useI18n } from '@lovenotes/i18n';
-import { PlusIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { Suspense, useCallback, useEffect, useState } from 'react';
 
 import * as styles from './doc-info.css';

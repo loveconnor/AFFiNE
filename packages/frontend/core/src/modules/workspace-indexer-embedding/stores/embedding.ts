@@ -11,7 +11,7 @@ import {
   removeWorkspaceEmbeddingIgnoredDocsMutation,
   setEnableDocEmbeddingMutation,
 } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 export class EmbeddingStore extends Store {
   constructor(private readonly workspaceServerService: WorkspaceServerService) {

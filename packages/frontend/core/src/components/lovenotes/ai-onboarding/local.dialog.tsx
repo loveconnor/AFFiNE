@@ -6,7 +6,7 @@ import {
 } from '@lovenotes/core/components/hooks/use-navigate-helper';
 import { AuthService } from '@lovenotes/core/modules/cloud';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVar } from '@toeverything/theme';
 import { useEffect, useMemo, useRef } from 'react';
 

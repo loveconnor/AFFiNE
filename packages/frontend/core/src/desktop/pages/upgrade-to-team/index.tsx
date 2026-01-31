@@ -1,3 +1,4 @@
+import { DoneIcon, NewPageIcon, SignOutIcon } from '@blocksuite/icons/rc';
 import {
   Avatar,
   Button,
@@ -26,8 +27,7 @@ import { buildShowcaseWorkspace } from '@lovenotes/core/utils/first-app-data';
 import { UNTITLED_WORKSPACE_NAME } from '@lovenotes/env/constant';
 import { SubscriptionPlan, SubscriptionRecurring } from '@lovenotes/graphql';
 import { type I18nString, Trans, useI18n } from '@lovenotes/i18n';
-import { DoneIcon, NewPageIcon, SignOutIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

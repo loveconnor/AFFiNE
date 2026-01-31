@@ -18,7 +18,7 @@ import {
 } from '@lovenotes/core/modules/url';
 import { configureDesktopWorkbenchModule } from '@lovenotes/core/modules/workbench';
 import { configureBrowserWorkspaceFlavours } from '@lovenotes/core/modules/workspace-engine';
-import { Framework } from '@toeverything/infra';
+import { Framework } from '@lovenotes/infra';
 
 export function setupModules() {
   const framework = new Framework();

@@ -4,7 +4,7 @@ import type {
   WORKSPACE_DIALOG_SCHEMA,
 } from '@lovenotes/core/modules/dialogs';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useEffect } from 'react';
 
 import { AboutGroup } from './about';

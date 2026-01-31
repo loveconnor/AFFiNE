@@ -1,6 +1,6 @@
 import { EmptyTags } from '@lovenotes/core/components/lovenotes/empty';
 import { TagService } from '@lovenotes/core/modules/tag';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import { TagItem } from './item';
 import { list } from './styles.css';

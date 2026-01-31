@@ -9,7 +9,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { exhaustMap } from 'rxjs';
 
 import type { ServerService } from '../services/server';

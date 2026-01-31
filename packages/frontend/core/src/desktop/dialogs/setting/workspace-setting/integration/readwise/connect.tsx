@@ -1,3 +1,4 @@
+import { ReadwiseLogoDuotoneIcon } from '@blocksuite/icons/rc';
 import {
   Button,
   type ButtonProps,
@@ -8,8 +9,7 @@ import {
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { IntegrationService } from '@lovenotes/core/modules/integration';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { ReadwiseLogoDuotoneIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import {
   type FormEvent,
@@ -73,7 +73,9 @@ const ConnectDialog = ({
         setStatus('error');
         notify.error({
           title:
-            t['com.lovenotes.integration.readwise.connect.error-notify-title'](),
+            t[
+              'com.lovenotes.integration.readwise.connect.error-notify-title'
+            ](),
           message:
             t['com.lovenotes.integration.readwise.connect.error-notify-desc'](),
         });
@@ -137,7 +139,9 @@ const ConnectDialog = ({
         ref={inputRef}
         value={token}
         onInput={handleInput}
-        placeholder={t['com.lovenotes.integration.readwise.connect.placeholder']()}
+        placeholder={t[
+          'com.lovenotes.integration.readwise.connect.placeholder'
+        ]()}
         type="password"
         className={connectInput}
         status={status === 'error' ? 'error' : 'default'}

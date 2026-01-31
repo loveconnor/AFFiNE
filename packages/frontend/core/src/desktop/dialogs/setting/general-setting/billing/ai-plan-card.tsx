@@ -3,7 +3,7 @@ import { SettingRow } from '@lovenotes/component/setting-components';
 import { SubscriptionService } from '@lovenotes/core/modules/cloud';
 import { SubscriptionStatus } from '@lovenotes/graphql';
 import { i18nTime, Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect, useMemo } from 'react';
 
 import { AICancel, AIResume, AISubscribe } from '../plans/ai/actions';

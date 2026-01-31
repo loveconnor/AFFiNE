@@ -1,10 +1,9 @@
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useEffect, useRef } from 'react';
 import {
   type LoaderFunction,
   redirect,
   useLoaderData,
-  // eslint-disable-next-line @typescript-eslint/no-restricted-imports
   useNavigate,
 } from 'react-router-dom';
 

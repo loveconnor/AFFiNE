@@ -8,7 +8,7 @@ import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions'
 import { WorkspaceShareSettingService } from '@lovenotes/core/modules/share-setting';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 export const SharingPanel = () => {
   const workspace = useService(WorkspaceService).workspace;
@@ -46,7 +46,9 @@ export const Sharing = () => {
   }
 
   return (
-    <SettingWrapper title={t['com.lovenotes.settings.workspace.sharing.title']()}>
+    <SettingWrapper
+      title={t['com.lovenotes.settings.workspace.sharing.title']()}
+    >
       <SettingRow
         name={t['com.lovenotes.settings.workspace.sharing.url-preview.title']()}
         desc={t[

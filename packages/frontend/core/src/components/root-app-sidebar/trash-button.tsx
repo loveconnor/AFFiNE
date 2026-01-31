@@ -11,7 +11,7 @@ import { GuardService } from '@lovenotes/core/modules/permissions';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { UserFriendlyError } from '@lovenotes/error';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 export const TrashButton = () => {
   const t = useI18n();
@@ -36,11 +36,11 @@ export const TrashButton = () => {
           if (docRecord) {
             openConfirmModal({
               title: t['com.lovenotes.moveToTrash.confirmModal.title'](),
-              description: t['com.lovenotes.moveToTrash.confirmModal.description'](
-                {
-                  title: docRecord.title$.value || t['Untitled'](),
-                }
-              ),
+              description: t[
+                'com.lovenotes.moveToTrash.confirmModal.description'
+              ]({
+                title: docRecord.title$.value || t['Untitled'](),
+              }),
               confirmText: t.Delete(),
               confirmButtonOptions: {
                 variant: 'error',

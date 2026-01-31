@@ -1,3 +1,5 @@
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
+import { sleep } from '@blocksuite/lovenotes/global/utils';
 import {
   Button,
   SafeArea,
@@ -12,14 +14,12 @@ import {
 import { TagService } from '@lovenotes/core/modules/tag';
 import { UserFriendlyError } from '@lovenotes/error';
 import { useI18n } from '@lovenotes/i18n';
-import { sleep } from '@blocksuite/lovenotes/global/utils';
-import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import {
   LiveData,
   useLiveData,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { bodyEmphasized } from '@toeverything/theme/typography';
 import { useCallback, useMemo } from 'react';
 

@@ -1,11 +1,11 @@
+import { LinkIcon } from '@blocksuite/icons/rc';
 import { PropertyValue } from '@lovenotes/component';
 import { LoveNotesPageReference } from '@lovenotes/core/components/lovenotes/reference-link';
 import { ConfigModal } from '@lovenotes/core/components/mobile';
 import { resolveLinkToDoc } from '@lovenotes/core/modules/navigation';
 import { useI18n } from '@lovenotes/i18n';
-import { LinkIcon } from '@blocksuite/icons/rc';
-import type { LiveData } from '@toeverything/infra';
-import { useLiveData } from '@toeverything/infra';
+import type { LiveData } from '@lovenotes/infra';
+import { useLiveData } from '@lovenotes/infra';
 import {
   type ChangeEventHandler,
   type KeyboardEvent,

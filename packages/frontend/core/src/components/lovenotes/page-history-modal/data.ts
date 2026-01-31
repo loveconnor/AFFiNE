@@ -1,3 +1,4 @@
+import type { Workspace } from '@blocksuite/lovenotes/store';
 import { useDocMetaHelper } from '@lovenotes/core/components/hooks/use-block-suite-page-meta';
 import { useDocCollectionPage } from '@lovenotes/core/components/hooks/use-block-suite-workspace-page';
 import { FetchService, GraphQLService } from '@lovenotes/core/modules/cloud';
@@ -11,8 +12,7 @@ import { DebugLogger } from '@lovenotes/debug';
 import type { ListHistoryQuery } from '@lovenotes/graphql';
 import { listHistoryQuery, recoverDocMutation } from '@lovenotes/graphql';
 import { i18nTime } from '@lovenotes/i18n';
-import type { Workspace } from '@blocksuite/lovenotes/store';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useEffect, useMemo } from 'react';
 import useSWRImmutable from 'swr/immutable';
 import {

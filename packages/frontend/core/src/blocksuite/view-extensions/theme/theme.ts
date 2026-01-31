@@ -1,5 +1,3 @@
-import { DocService, DocsService } from '@lovenotes/core/modules/doc';
-import { AppThemeService } from '@lovenotes/core/modules/theme';
 import type { Container } from '@blocksuite/lovenotes/global/di';
 import { ColorScheme } from '@blocksuite/lovenotes/model';
 import {
@@ -11,7 +9,9 @@ import {
   type Signal,
 } from '@blocksuite/lovenotes/shared/utils';
 import { LifeCycleWatcher, StdIdentifier } from '@blocksuite/lovenotes/std';
-import { type FrameworkProvider } from '@toeverything/infra';
+import { DocService, DocsService } from '@lovenotes/core/modules/doc';
+import { AppThemeService } from '@lovenotes/core/modules/theme';
+import { type FrameworkProvider } from '@lovenotes/infra';
 import type { Observable } from 'rxjs';
 import { combineLatest, map } from 'rxjs';
 

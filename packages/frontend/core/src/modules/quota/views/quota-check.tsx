@@ -2,7 +2,7 @@ import { InformationFillDuotoneIcon } from '@blocksuite/icons/rc';
 import { useConfirmModal } from '@lovenotes/component';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { type I18nString, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect } from 'react';
 
 import { type WorkspaceMetadata, WorkspacesService } from '../../workspace';

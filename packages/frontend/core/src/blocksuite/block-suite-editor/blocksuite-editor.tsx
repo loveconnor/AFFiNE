@@ -11,7 +11,7 @@ import { focusBlockEnd } from '@blocksuite/lovenotes/shared/commands';
 import { StyleVariables } from '@blocksuite/lovenotes/shared/theme';
 import { getLastNoteBlock } from '@blocksuite/lovenotes/shared/utils';
 import type { BlockStdScope, EditorHost } from '@blocksuite/lovenotes/std';
-import { type Store,Text } from '@blocksuite/lovenotes/store';
+import { type Store, Text } from '@blocksuite/lovenotes/store';
 import { EditorLoading } from '@lovenotes/component/page-detail-skeleton';
 import type {
   EdgelessEditor,
@@ -24,9 +24,9 @@ import {
 } from '@lovenotes/core/modules/editor-setting';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
 import { Slot } from '@radix-ui/react-slot';
-import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
 import type { CSSProperties, HTMLAttributes } from 'react';

@@ -1,7 +1,7 @@
 import { observeResize } from '@lovenotes/component';
 import { AppSidebarService } from '@lovenotes/core/modules/app-sidebar';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useRef } from 'react';
 
 let OBSERVED = false;

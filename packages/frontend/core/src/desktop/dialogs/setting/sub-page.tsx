@@ -1,8 +1,8 @@
+import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
 import { Button, Scrollable } from '@lovenotes/component';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { type Island } from '@lovenotes/core/utils/island';
-import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { eases, waapi } from 'animejs';
 import clsx from 'clsx';
 import {

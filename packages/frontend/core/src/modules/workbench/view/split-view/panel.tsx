@@ -1,4 +1,10 @@
 import {
+  CloseIcon,
+  ExpandFullIcon,
+  InsertLeftIcon,
+  InsertRightIcon,
+} from '@blocksuite/icons/rc';
+import {
   type DropTargetDragEvent,
   MenuItem,
   shallowUpdater,
@@ -7,14 +13,8 @@ import {
 } from '@lovenotes/component';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  CloseIcon,
-  ExpandFullIcon,
-  InsertLeftIcon,
-  InsertRightIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { useAtom } from 'jotai';
 import type { HTMLAttributes, PropsWithChildren } from 'react';

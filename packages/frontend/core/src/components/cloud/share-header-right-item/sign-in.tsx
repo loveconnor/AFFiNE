@@ -1,7 +1,7 @@
 import { Button } from '@lovenotes/component/ui/button';
 import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import * as styles from './styles.css';

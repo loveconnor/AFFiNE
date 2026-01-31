@@ -1,6 +1,6 @@
 import { I18nService } from '@lovenotes/core/modules/i18n';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useMemo } from 'react';
 
 import { SettingDropdownSelect } from '../dropdown-select';

@@ -2,7 +2,7 @@ import { DualLinkIcon } from '@blocksuite/icons/rc';
 import { Button } from '@lovenotes/component';
 import { MeetingSettingsService } from '@lovenotes/core/modules/media/services/meeting-settings';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useTheme } from 'next-themes';
 import { useCallback } from 'react';
 

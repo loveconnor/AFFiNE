@@ -1,7 +1,7 @@
-import { IconPicker, uniReactRoot } from '@lovenotes/component';
 // Import the identifier for internal use
 import { type IconPickerService as IIconPickerService } from '@blocksuite/lovenotes-shared/services';
-import { Service } from '@toeverything/infra';
+import { IconPicker, uniReactRoot } from '@lovenotes/component';
+import { Service } from '@lovenotes/infra';
 
 // Re-export types from BlockSuite shared services
 export type {

@@ -1,7 +1,7 @@
+import { DoneIcon } from '@blocksuite/icons/rc';
 import { Menu, MenuItem, MenuTrigger } from '@lovenotes/component/ui/menu';
 import { type I18n, I18nService } from '@lovenotes/core/modules/i18n';
-import { DoneIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import type { ReactElement } from 'react';
 import { memo } from 'react';
 

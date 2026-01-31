@@ -1,10 +1,10 @@
+import { ArrowDownSmallIcon } from '@blocksuite/icons/rc';
 import { Avatar } from '@lovenotes/component';
 import { useWorkspaceInfo } from '@lovenotes/core/components/hooks/use-workspace-info';
 import { WorkspaceAvatar } from '@lovenotes/core/components/workspace-avatar';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { UNTITLED_WORKSPACE_NAME } from '@lovenotes/env/constant';
-import { ArrowDownSmallIcon } from '@blocksuite/icons/rc';
-import { useServiceOptional } from '@toeverything/infra';
+import { useServiceOptional } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { forwardRef, type HTMLAttributes } from 'react';
 

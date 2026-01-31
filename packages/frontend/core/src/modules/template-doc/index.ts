@@ -1,4 +1,4 @@
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@lovenotes/infra';
 
 import { WorkspaceDBService } from '../db';
 import { DocsService } from '../doc';

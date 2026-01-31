@@ -14,7 +14,7 @@ import { CollectionRulesService } from '@lovenotes/core/modules/collection-rules
 import type { FilterParams } from '@lovenotes/core/modules/collection-rules/types';
 import { WorkspaceLocalState } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import {

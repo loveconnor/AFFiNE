@@ -1,5 +1,3 @@
-import { VirtualKeyboardProvider } from '@lovenotes/core/mobile/modules/virtual-keyboard';
-import { globalVars } from '@lovenotes/core/mobile/styles/variables.css';
 import type { Container } from '@blocksuite/lovenotes/global/di';
 import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
 import {
@@ -8,13 +6,17 @@ import {
 } from '@blocksuite/lovenotes/shared/services';
 import { LifeCycleWatcher } from '@blocksuite/lovenotes/std';
 import type { ExtensionType } from '@blocksuite/lovenotes/store';
+import { VirtualKeyboardProvider } from '@lovenotes/core/mobile/modules/virtual-keyboard';
+import { globalVars } from '@lovenotes/core/mobile/styles/variables.css';
+import type { FrameworkProvider } from '@lovenotes/infra';
 import { batch, signal } from '@preact/signals-core';
-import type { FrameworkProvider } from '@toeverything/infra';
 
 export function KeyboardToolbarExtension(
   framework: FrameworkProvider
 ): ExtensionType {
-  const lovenotesVirtualKeyboardProvider = framework.get(VirtualKeyboardProvider);
+  const lovenotesVirtualKeyboardProvider = framework.get(
+    VirtualKeyboardProvider
+  );
 
   class BSVirtualKeyboardService
     extends LifeCycleWatcher

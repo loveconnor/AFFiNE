@@ -23,8 +23,8 @@ import { ViewIcon, ViewTitle } from '@lovenotes/core/modules/workbench';
 import type { Workspace } from '@lovenotes/core/modules/workspace';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   forwardRef,

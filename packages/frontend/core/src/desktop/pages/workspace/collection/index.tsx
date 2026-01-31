@@ -16,7 +16,7 @@ import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 

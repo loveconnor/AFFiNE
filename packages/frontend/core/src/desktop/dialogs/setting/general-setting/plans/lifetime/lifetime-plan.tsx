@@ -1,8 +1,11 @@
 import { Button } from '@lovenotes/component';
-import { AuthService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import {
+  AuthService,
+  SubscriptionService,
+} from '@lovenotes/core/modules/cloud';
 import { SubscriptionPlan, SubscriptionRecurring } from '@lovenotes/graphql';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import { SignUpAction, Upgrade } from '../plan-card';
 import { BelieverCard } from './believer-card';

@@ -1,6 +1,6 @@
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { Trans } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useMemo, useRef, useState } from 'react';
 
 import {

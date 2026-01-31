@@ -34,7 +34,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
           {
             id: 'lovenotes-cloud',
             baseUrl: BUILD_CONFIG.isElectron
-              ? 'http://localhost:8080'
+              ? 'http://127.0.0.1:3010'
               : location.origin,
             config: {
               serverName: 'LoveNotes Cloud',
@@ -64,11 +64,13 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
         ? [
             {
               id: 'lovenotes-cloud',
-              baseUrl: BUILD_CONFIG.isNative
-                ? BUILD_CONFIG.isIOS
-                  ? 'https://apple.getlovenotesapp.com'
-                  : 'https://app.lovenotes.pro'
-                : location.origin,
+              baseUrl: BUILD_CONFIG.isElectron
+                ? 'http://127.0.0.1:3010'
+                : BUILD_CONFIG.isNative
+                  ? BUILD_CONFIG.isIOS
+                    ? 'https://apple.getlovenotesapp.com'
+                    : 'https://app.lovenotes.pro'
+                  : location.origin,
               config: {
                 serverName: 'LoveNotes Cloud',
                 features: [
@@ -97,11 +99,13 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
           ? [
               {
                 id: 'lovenotes-cloud',
-                baseUrl: BUILD_CONFIG.isNative
-                  ? BUILD_CONFIG.isIOS
-                    ? 'https://apple.getlovenotesapp.com'
-                    : 'https://insider.lovenotes.pro'
-                  : location.origin,
+                baseUrl: BUILD_CONFIG.isElectron
+                  ? 'http://127.0.0.1:3010'
+                  : BUILD_CONFIG.isNative
+                    ? BUILD_CONFIG.isIOS
+                      ? 'https://apple.getlovenotesapp.com'
+                      : 'https://insider.lovenotes.pro'
+                    : location.origin,
                 config: {
                   serverName: 'LoveNotes Cloud',
                   features: [
@@ -130,7 +134,9 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
             ? [
                 {
                   id: 'lovenotes-cloud',
-                  baseUrl: 'https://insider.lovenotes.pro',
+                  baseUrl: BUILD_CONFIG.isElectron
+                    ? 'http://127.0.0.1:3010'
+                    : 'https://insider.lovenotes.pro',
                   config: {
                     serverName: 'LoveNotes Cloud',
                     features: [
@@ -160,7 +166,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                   {
                     id: 'lovenotes-cloud',
                     baseUrl: BUILD_CONFIG.isElectron
-                      ? location.origin
+                      ? 'http://127.0.0.1:3010'
                       : BUILD_CONFIG.isNative
                         ? 'https://insider.lovenotes.pro'
                         : location.origin,

@@ -1,3 +1,5 @@
+import { LockIcon, PublishIcon } from '@blocksuite/icons/rc';
+import type { Store } from '@blocksuite/lovenotes/store';
 import { Tabs, Tooltip, useConfirmModal } from '@lovenotes/component';
 import { Button } from '@lovenotes/component/ui/button';
 import { Menu } from '@lovenotes/component/ui/menu';
@@ -9,9 +11,7 @@ import { ShareInfoService } from '@lovenotes/core/modules/share-doc';
 import type { WorkspaceMetadata } from '@lovenotes/core/modules/workspace';
 import { ServerDeploymentType, SubscriptionPlan } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import type { Store } from '@blocksuite/lovenotes/store';
-import { LockIcon, PublishIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import {
   forwardRef,
   type PropsWithChildren,

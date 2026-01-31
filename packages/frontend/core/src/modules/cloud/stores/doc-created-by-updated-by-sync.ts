@@ -1,5 +1,5 @@
 import { getDocCreatedByUpdatedByListQuery } from '@lovenotes/graphql';
-import { Store, yjsGetPath } from '@toeverything/infra';
+import { Store, yjsGetPath } from '@lovenotes/infra';
 import type { Observable } from 'rxjs';
 
 import type { WorkspaceService } from '../../workspace';

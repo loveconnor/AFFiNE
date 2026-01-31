@@ -3,7 +3,7 @@ import {
   GuardService,
   type WorkspacePermissionActions,
 } from '@lovenotes/core/modules/permissions';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect, useMemo } from 'react';
 
 export const useGuard = <

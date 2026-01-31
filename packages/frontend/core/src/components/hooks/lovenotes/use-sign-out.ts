@@ -3,11 +3,14 @@ import {
   notify,
   useConfirmModal,
 } from '@lovenotes/component';
-import { AuthService, DefaultServerService } from '@lovenotes/core/modules/cloud';
+import {
+  AuthService,
+  DefaultServerService,
+} from '@lovenotes/core/modules/cloud';
 import { UserFriendlyError } from '@lovenotes/error';
 import { ServerFeature } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useService, useServices } from '@toeverything/infra';
+import { useService, useServices } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import { useNavigateHelper } from '../use-navigate-helper';

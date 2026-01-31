@@ -1,4 +1,4 @@
-import type { MediaStats } from '@toeverything/infra';
+import type { MediaStats } from '@lovenotes/infra';
 import { app } from 'electron';
 
 import { logger } from './logger';

@@ -1,13 +1,13 @@
+import {
+  type ViewExtensionContext,
+  ViewExtensionProvider,
+} from '@blocksuite/lovenotes/ext-loader';
 import type { ElementOrFactory } from '@lovenotes/component';
 import {
   patchForEdgelessNoteConfig,
   patchForEmbedSyncedDocConfig,
 } from '@lovenotes/core/blocksuite/view-extensions/edgeless-block-header/patch';
-import {
-  type ViewExtensionContext,
-  ViewExtensionProvider,
-} from '@blocksuite/lovenotes/ext-loader';
-import { FrameworkProvider } from '@toeverything/infra';
+import { FrameworkProvider } from '@lovenotes/infra';
 import type { TemplateResult } from 'lit';
 import { z } from 'zod';
 

@@ -1,4 +1,4 @@
-import { Scope } from '@toeverything/infra';
+import { Scope } from '@lovenotes/infra';
 
 import type { View } from '../entities/view';
 

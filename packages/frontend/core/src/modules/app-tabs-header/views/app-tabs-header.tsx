@@ -1,4 +1,5 @@
 // credits: tab overlay impl inspired by Figma desktop
+import { CloseIcon, PlusIcon, RightSidebarIcon } from '@blocksuite/icons/rc';
 import {
   type DropTargetDropEvent,
   type DropTargetOptions,
@@ -11,13 +12,8 @@ import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-asy
 import { useCatchEventCallback } from '@lovenotes/core/components/hooks/use-catch-event-hook';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { CloseIcon, PlusIcon, RightSidebarIcon } from '@blocksuite/icons/rc';
-import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import { partition } from 'lodash-es';
@@ -44,7 +40,9 @@ import * as styles from './styles.css';
 const TabSupportType = new Set(['collection', 'tag', 'doc']);
 
 const tabCanDrop =
-  (tab?: TabStatus): NonNullable<DropTargetOptions<LoveNotesDNDData>['canDrop']> =>
+  (
+    tab?: TabStatus
+  ): NonNullable<DropTargetOptions<LoveNotesDNDData>['canDrop']> =>
   ctx => {
     if (
       ctx.source.data.from?.at === 'app-header:tabs' &&

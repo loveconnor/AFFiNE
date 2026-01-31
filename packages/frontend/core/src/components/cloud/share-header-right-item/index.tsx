@@ -1,6 +1,6 @@
-import { AuthService } from '@lovenotes/core/modules/cloud';
 import type { DocMode } from '@blocksuite/lovenotes/model';
-import { useLiveData, useService } from '@toeverything/infra';
+import { AuthService } from '@lovenotes/core/modules/cloud';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import { ImportTemplateButton } from './import-template';
 import { PresentButton } from './present';

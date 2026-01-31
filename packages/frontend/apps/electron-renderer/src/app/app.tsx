@@ -1,11 +1,11 @@
+import { CacheProvider } from '@emotion/react';
 import { LoveNotesContext } from '@lovenotes/core/components/context';
 import { WindowsAppControls } from '@lovenotes/core/components/pure/header/windows-app-controls';
 import { AppContainer } from '@lovenotes/core/desktop/components/app-container';
 import { router } from '@lovenotes/core/desktop/router';
 import { I18nProvider } from '@lovenotes/core/modules/i18n';
 import createEmotionCache from '@lovenotes/core/utils/create-emotion-cache';
-import { CacheProvider } from '@emotion/react';
-import { FrameworkRoot, getCurrentStore } from '@toeverything/infra';
+import { FrameworkRoot, getCurrentStore } from '@lovenotes/infra';
 import { Suspense, useEffect } from 'react';
 import { RouterProvider } from 'react-router-dom';
 

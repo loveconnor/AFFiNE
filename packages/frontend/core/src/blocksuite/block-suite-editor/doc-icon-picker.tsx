@@ -1,8 +1,8 @@
+import { SmileSolidIcon } from '@blocksuite/icons/rc';
 import { IconEditor, IconRenderer } from '@lovenotes/component';
 import { ExplorerIconService } from '@lovenotes/core/modules/explorer-icon/services/explorer-icon';
 import { useI18n } from '@lovenotes/i18n';
-import { SmileSolidIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import * as styles from './doc-icon-picker.css';
 

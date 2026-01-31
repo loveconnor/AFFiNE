@@ -1,5 +1,3 @@
-import { type CommentChangeAction, DocMode } from '@lovenotes/graphql';
-import { track } from '@lovenotes/track';
 import { InlineCommentManager } from '@blocksuite/lovenotes/inlines/comment';
 import type {
   BaseSelection,
@@ -7,6 +5,7 @@ import type {
   Store,
 } from '@blocksuite/lovenotes/store';
 import type { BlockStdScope } from '@blocksuite/std';
+import { type CommentChangeAction, DocMode } from '@lovenotes/graphql';
 import {
   effect,
   Entity,
@@ -14,7 +13,8 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
+import { track } from '@lovenotes/track';
 import { nanoid } from 'nanoid';
 import {
   catchError,

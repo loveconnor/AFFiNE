@@ -1,11 +1,11 @@
+import { AddCollectionIcon } from '@blocksuite/icons/rc';
 import { IconButton, usePromptModal } from '@lovenotes/component';
 import { CollectionService } from '@lovenotes/core/modules/collection';
 import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { AddCollectionIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { CollapsibleSection } from '../../layouts/collapsible-section';

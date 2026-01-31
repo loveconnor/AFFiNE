@@ -1,7 +1,7 @@
 import { Tooltip } from '@lovenotes/component/ui/tooltip';
 import { SubscriptionPlan } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { type SyntheticEvent, useEffect } from 'react';
 
 import { ServerService, SubscriptionService } from '../../../modules/cloud';

@@ -1,6 +1,6 @@
 import { DesktopApiService } from '@lovenotes/core/modules/desktop-api';
 import { I18nService } from '@lovenotes/core/modules/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect } from 'react';
 
 export const DesktopLanguageSync = () => {

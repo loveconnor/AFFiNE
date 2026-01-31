@@ -1,7 +1,7 @@
 import type { DocsService } from '@lovenotes/core/modules/doc';
 import type { TagService } from '@lovenotes/core/modules/tag';
 import type { WorkspacePropertyFilter } from '@lovenotes/core/modules/workspace-property';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 import { combineLatest, map, type Observable, of, switchMap } from 'rxjs';
 
 import type { FilterProvider } from '../../provider';

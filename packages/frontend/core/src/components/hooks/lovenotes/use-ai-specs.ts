@@ -2,7 +2,7 @@ import { useConfirmModal, useLitPortalFactory } from '@lovenotes/component';
 import { getViewManager } from '@lovenotes/core/blocksuite/manager/view';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { useFramework, useLiveData, useServices } from '@toeverything/infra';
+import { useFramework, useLiveData, useServices } from '@lovenotes/infra';
 import { useMemo } from 'react';
 
 import { useEnableAI } from './use-enable-ai';

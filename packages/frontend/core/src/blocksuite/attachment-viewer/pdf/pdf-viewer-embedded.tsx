@@ -1,3 +1,9 @@
+import {
+  ArrowDownSmallIcon,
+  ArrowUpSmallIcon,
+  AttachmentIcon,
+  CenterPeekIcon,
+} from '@blocksuite/icons/rc';
 import { IconButton, observeIntersection } from '@lovenotes/component';
 import {
   type PDF,
@@ -10,13 +16,7 @@ import type { PageSize } from '@lovenotes/core/modules/pdf/renderer/types';
 import { LoadingSvg, PDFPageCanvas } from '@lovenotes/core/modules/pdf/views';
 import { PeekViewService } from '@lovenotes/core/modules/peek-view/services/peek-view';
 import { stopPropagation } from '@lovenotes/core/utils';
-import {
-  ArrowDownSmallIcon,
-  ArrowUpSmallIcon,
-  AttachmentIcon,
-  CenterPeekIcon,
-} from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { debounce } from 'lodash-es';
 import {

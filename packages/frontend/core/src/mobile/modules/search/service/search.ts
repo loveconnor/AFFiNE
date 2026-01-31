@@ -4,7 +4,7 @@ import {
   RecentDocsQuickSearchSession,
   TagsQuickSearchSession,
 } from '@lovenotes/core/modules/quicksearch';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 
 export class MobileSearchService extends Service {
   readonly recentDocs = this.framework.createEntity(

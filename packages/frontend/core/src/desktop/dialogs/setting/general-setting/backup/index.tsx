@@ -1,4 +1,9 @@
 import {
+  DeleteIcon,
+  LocalWorkspaceIcon,
+  MoreVerticalIcon,
+} from '@blocksuite/icons/rc';
+import {
   IconButton,
   Loading,
   Menu,
@@ -16,13 +21,8 @@ import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-asy
 import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
 import { BackupService } from '@lovenotes/core/modules/backup/services';
 import { i18nTime, useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  DeleteIcon,
-  LocalWorkspaceIcon,
-  MoreVerticalIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import bytes from 'bytes';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
@@ -91,7 +91,9 @@ const BackupWorkspaceItem = ({ item }: { item: BackupWorkspaceItem }) => {
         {
           key: 'open',
           label:
-            t['com.lovenotes.settings.workspace.backup.import.success.action'](),
+            t[
+              'com.lovenotes.settings.workspace.backup.import.success.action'
+            ](),
           onClick: () => {
             jumpToPage(workspaceId, 'all');
           },
@@ -112,7 +114,8 @@ const BackupWorkspaceItem = ({ item }: { item: BackupWorkspaceItem }) => {
           track.$.settingsPanel.archivedWorkspaces.deleteArchivedWorkspace();
           await backupService.deleteBackupWorkspace(backupWorkspaceId);
           notify.success({
-            title: t['com.lovenotes.settings.workspace.backup.delete.success'](),
+            title:
+              t['com.lovenotes.settings.workspace.backup.delete.success'](),
           });
         },
         confirmText: t['Confirm'](),

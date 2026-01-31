@@ -1,13 +1,13 @@
-import { generateUrl } from '@lovenotes/core/components/hooks/lovenotes/use-share-url';
-import { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
-import { resolveLinkToDoc } from '@lovenotes/core/modules/navigation/utils';
-import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { type ReferenceParams } from '@blocksuite/lovenotes/model';
 import {
   GenerateDocUrlExtension,
   ParseDocUrlExtension,
 } from '@blocksuite/lovenotes/shared/services';
-import type { FrameworkProvider } from '@toeverything/infra';
+import { generateUrl } from '@lovenotes/core/components/hooks/lovenotes/use-share-url';
+import { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
+import { resolveLinkToDoc } from '@lovenotes/core/modules/navigation/utils';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import type { FrameworkProvider } from '@lovenotes/infra';
 
 function patchParseDocUrlExtension(framework: FrameworkProvider) {
   const workspaceService = framework.get(WorkspaceService);

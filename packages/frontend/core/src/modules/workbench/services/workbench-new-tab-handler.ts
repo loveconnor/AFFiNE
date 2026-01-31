@@ -1,4 +1,4 @@
-import { createIdentifier, Service } from '@toeverything/infra';
+import { createIdentifier, Service } from '@lovenotes/infra';
 import { parsePath, type To } from 'history';
 
 import type { DesktopApiService } from '../../desktop-api';

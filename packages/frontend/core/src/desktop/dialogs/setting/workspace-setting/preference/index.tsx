@@ -9,7 +9,7 @@ import { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { UNTITLED_WORKSPACE_NAME } from '@lovenotes/env/constant';
 import { useI18n } from '@lovenotes/i18n';
-import { FrameworkScope, useService } from '@toeverything/infra';
+import { FrameworkScope, useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import { DeleteLeaveWorkspace } from './delete-leave-workspace';

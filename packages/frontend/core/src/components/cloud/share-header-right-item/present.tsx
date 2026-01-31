@@ -1,8 +1,8 @@
+import { PresentationIcon } from '@blocksuite/icons/rc';
 import { Button } from '@lovenotes/component/ui/button';
 import { EditorService } from '@lovenotes/core/modules/editor';
 import { useI18n } from '@lovenotes/i18n';
-import { PresentationIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import * as styles from './styles.css';
 

@@ -19,8 +19,8 @@ import {
 import { UserFriendlyError } from '@lovenotes/error';
 import { DocRole } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 
@@ -154,7 +154,8 @@ const Options = ({
           });
         } else {
           notify.error({
-            title: t['com.lovenotes.share-menu.member-management.update-fail'](),
+            title:
+              t['com.lovenotes.share-menu.member-management.update-fail'](),
           });
         }
       } catch (error) {

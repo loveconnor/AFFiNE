@@ -1,4 +1,4 @@
-import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { type Container } from '@blocksuite/global/di';
 import { getSelectedBlocksCommand } from '@blocksuite/lovenotes/shared/commands';
 import type { CommentProvider } from '@blocksuite/lovenotes/shared/services';
 import { CommentProviderIdentifier } from '@blocksuite/lovenotes/shared/services';
@@ -6,7 +6,6 @@ import type { BlockStdScope } from '@blocksuite/lovenotes/std';
 import { StdIdentifier } from '@blocksuite/lovenotes/std';
 import type { BaseSelection, ExtensionType } from '@blocksuite/lovenotes/store';
 import { ImageSelection } from '@blocksuite/lovenotes-shared/selection';
-import { type Container } from '@blocksuite/global/di';
 import {
   BlockSelection,
   SurfaceSelection,
@@ -17,7 +16,8 @@ import {
   GfxControllerIdentifier,
   GfxPrimitiveElementModel,
 } from '@blocksuite/std/gfx';
-import type { FrameworkProvider } from '@toeverything/infra';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import type { FrameworkProvider } from '@lovenotes/infra';
 
 import { DocCommentManagerService } from '../../../modules/comment/services/doc-comment-manager';
 

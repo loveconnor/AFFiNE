@@ -1,6 +1,9 @@
-import { BrowserWarning, LocalDemoTips } from '@lovenotes/component/lovenotes-banner';
+import {
+  BrowserWarning,
+  LocalDemoTips,
+} from '@lovenotes/component/lovenotes-banner';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useState } from 'react';
 
 import { useEnableCloud } from '../components/hooks/lovenotes/use-enable-cloud';

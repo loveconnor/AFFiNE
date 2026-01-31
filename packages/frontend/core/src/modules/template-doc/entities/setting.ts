@@ -1,4 +1,4 @@
-import { LiveData } from '@toeverything/infra';
+import { LiveData } from '@lovenotes/infra';
 
 export class TemplateDocSetting {
   enablePageTemplate$ = new LiveData<boolean>(false);

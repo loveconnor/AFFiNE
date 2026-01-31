@@ -3,7 +3,7 @@ import {
   type WorkspaceMetadata,
   WorkspacesService,
 } from '@lovenotes/core/modules/workspace';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useEffect, useState } from 'react';
 
 /**

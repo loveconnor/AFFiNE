@@ -1,3 +1,7 @@
+import {
+  type ViewExtensionContext,
+  ViewExtensionProvider,
+} from '@blocksuite/lovenotes/ext-loader';
 import type { ConfirmModalProps, ElementOrFactory } from '@lovenotes/component';
 import {
   LoveNotesPageReference,
@@ -7,11 +11,7 @@ import { DocService, DocsService } from '@lovenotes/core/modules/doc';
 import { EditorService } from '@lovenotes/core/modules/editor';
 import { toDocSearchParams } from '@lovenotes/core/modules/navigation';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import {
-  type ViewExtensionContext,
-  ViewExtensionProvider,
-} from '@blocksuite/lovenotes/ext-loader';
-import { FrameworkProvider } from '@toeverything/infra';
+import { FrameworkProvider } from '@lovenotes/infra';
 import type { TemplateResult } from 'lit';
 import { z } from 'zod';
 

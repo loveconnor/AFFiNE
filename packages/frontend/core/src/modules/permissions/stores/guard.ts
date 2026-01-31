@@ -4,7 +4,7 @@ import {
   type GetWorkspaceInfoQuery,
   getWorkspaceInfoQuery,
 } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 import type { WorkspaceServerService } from '../../cloud';
 import type { WorkspaceService } from '../../workspace';

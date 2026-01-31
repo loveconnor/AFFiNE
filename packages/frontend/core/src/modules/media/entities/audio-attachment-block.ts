@@ -1,3 +1,6 @@
+import type { AttachmentBlockModel } from '@blocksuite/lovenotes/model';
+import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes/shared/types';
+import { type DeltaInsert, Text } from '@blocksuite/lovenotes/store';
 import {
   TranscriptionBlockFlavour,
   type TranscriptionBlockModel,
@@ -6,12 +9,9 @@ import { insertFromMarkdown } from '@lovenotes/core/blocksuite/utils';
 import { encodeAudioBlobToOpusSlices } from '@lovenotes/core/utils/opus-encoding';
 import { DebugLogger } from '@lovenotes/debug';
 import { AiJobStatus } from '@lovenotes/graphql';
+import { Entity, LiveData } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import type { AttachmentBlockModel } from '@blocksuite/lovenotes/model';
-import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes/shared/types';
-import { type DeltaInsert, Text } from '@blocksuite/lovenotes/store';
 import { computed } from '@preact/signals-core';
-import { Entity, LiveData } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 
 import type { WorkspaceService } from '../../workspace';

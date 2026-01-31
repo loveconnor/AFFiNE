@@ -1,12 +1,12 @@
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { ConfirmModal, notify, useConfirmModal } from '@lovenotes/component';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { AuthService } from '@lovenotes/core/modules/cloud';
 import { WorkspacesService } from '@lovenotes/core/modules/workspace';
 import { UserFriendlyError } from '@lovenotes/error';
 import { Trans, useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -109,11 +109,15 @@ const DeleteAccountModal = ({
         description: (
           <>
             <span>
-              {t['com.lovenotes.setting.account.delete.success-description-1']()}
+              {t[
+                'com.lovenotes.setting.account.delete.success-description-1'
+              ]()}
             </span>
             <br />
             <span>
-              {t['com.lovenotes.setting.account.delete.success-description-2']()}
+              {t[
+                'com.lovenotes.setting.account.delete.success-description-2'
+              ]()}
             </span>
           </>
         ),

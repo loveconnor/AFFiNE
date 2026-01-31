@@ -1,4 +1,4 @@
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 import type { WorkspaceDBService } from '../../db';
 import type { DocIntegrationRef } from '../../db/schema/schema';

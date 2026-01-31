@@ -9,7 +9,7 @@ import { LanguageMenu } from '@lovenotes/core/components/lovenotes/language-menu
 import { TraySettingService } from '@lovenotes/core/modules/editor-setting/services/tray-settings';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useTheme } from 'next-themes';
 import { useCallback, useMemo } from 'react';
 
@@ -167,7 +167,9 @@ export const AppearanceSettings = () => {
         subtitle={t['com.lovenotes.appearanceSettings.subtitle']()}
       />
 
-      <SettingWrapper title={t['com.lovenotes.appearanceSettings.theme.title']()}>
+      <SettingWrapper
+        title={t['com.lovenotes.appearanceSettings.theme.title']()}
+      >
         <SettingRow
           name={t['com.lovenotes.appearanceSettings.color.title']()}
           desc={t['com.lovenotes.appearanceSettings.color.description']()}
@@ -185,7 +187,9 @@ export const AppearanceSettings = () => {
         {BUILD_CONFIG.isElectron ? (
           <SettingRow
             name={t['com.lovenotes.appearanceSettings.clientBorder.title']()}
-            desc={t['com.lovenotes.appearanceSettings.clientBorder.description']()}
+            desc={t[
+              'com.lovenotes.appearanceSettings.clientBorder.description'
+            ]()}
             data-testid="client-border-style-trigger"
           >
             <Switch
@@ -197,9 +201,13 @@ export const AppearanceSettings = () => {
         {enableThemeEditor ? <ThemeEditorSetting /> : null}
       </SettingWrapper>
 
-      <SettingWrapper title={t['com.lovenotes.appearanceSettings.images.title']()}>
+      <SettingWrapper
+        title={t['com.lovenotes.appearanceSettings.images.title']()}
+      >
         <SettingRow
-          name={t['com.lovenotes.appearanceSettings.images.antialiasing.title']()}
+          name={t[
+            'com.lovenotes.appearanceSettings.images.antialiasing.title'
+          ]()}
           desc={t[
             'com.lovenotes.appearanceSettings.images.antialiasing.description'
           ]()}

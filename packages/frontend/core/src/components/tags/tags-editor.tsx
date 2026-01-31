@@ -1,3 +1,4 @@
+import { DoneIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
 import {
   Divider,
   IconButton,
@@ -7,10 +8,12 @@ import {
   RowInput,
   Scrollable,
 } from '@lovenotes/component';
-import { TagService, useDeleteTagConfirmModal } from '@lovenotes/core/modules/tag';
+import {
+  TagService,
+  useDeleteTagConfirmModal,
+} from '@lovenotes/core/modules/tag';
 import { useI18n } from '@lovenotes/i18n';
-import { DoneIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { clamp } from 'lodash-es';
 import type { KeyboardEvent, ReactNode } from 'react';

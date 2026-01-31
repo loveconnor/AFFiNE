@@ -1,4 +1,11 @@
 import {
+  DeleteIcon,
+  FilterIcon,
+  OpenInNewIcon,
+  PlusIcon,
+  SplitViewIcon,
+} from '@blocksuite/icons/rc';
+import {
   IconButton,
   MenuItem,
   MenuSeparator,
@@ -13,15 +20,8 @@ import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import {
-  DeleteIcon,
-  FilterIcon,
-  OpenInNewIcon,
-  PlusIcon,
-  SplitViewIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { CollectionRenameSubMenu } from './dialog';

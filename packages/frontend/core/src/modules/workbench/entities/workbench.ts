@@ -1,7 +1,7 @@
+import type { ReferenceParams } from '@blocksuite/lovenotes/model';
 import { toDocSearchParams } from '@lovenotes/core/modules/navigation/utils';
 import { Unreachable } from '@lovenotes/env/constant';
-import type { ReferenceParams } from '@blocksuite/lovenotes/model';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@lovenotes/infra';
 import { type To } from 'history';
 import { omit } from 'lodash-es';
 import { nanoid } from 'nanoid';

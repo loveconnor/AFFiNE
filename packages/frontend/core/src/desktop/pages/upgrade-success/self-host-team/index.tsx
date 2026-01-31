@@ -1,11 +1,11 @@
+import { CopyIcon } from '@blocksuite/icons/rc';
 import { Button, IconButton, Loading, notify } from '@lovenotes/component';
 import { AuthPageContainer } from '@lovenotes/component/auth-components';
 import { SelfhostGenerateLicenseService } from '@lovenotes/core/modules/cloud';
 import { OpenInAppService } from '@lovenotes/core/modules/open-in-app';
 import { copyTextToClipboard } from '@lovenotes/core/utils/clipboard';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { CopyIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

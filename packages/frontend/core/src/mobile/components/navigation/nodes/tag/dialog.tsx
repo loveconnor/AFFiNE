@@ -1,7 +1,10 @@
-import { type MenuSubProps, useMobileMenuController } from '@lovenotes/component';
+import {
+  type MenuSubProps,
+  useMobileMenuController,
+} from '@lovenotes/component';
 import { TagService } from '@lovenotes/core/modules/tag';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import {
   createContext,
   type Dispatch,
@@ -133,7 +136,8 @@ export const TagRenameDialog = ({
   ...props
 }: TagRenameDialogProps) => {
   const t = useI18n();
-  const title = propsTitle || t['com.lovenotes.m.explorer.tag.new-dialog-title']();
+  const title =
+    propsTitle || t['com.lovenotes.m.explorer.tag.new-dialog-title']();
   const confirmText =
     propsConfirmText || t['com.lovenotes.m.explorer.tag.rename-confirm']();
 

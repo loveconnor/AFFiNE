@@ -1,13 +1,16 @@
+import { Logo1Icon } from '@blocksuite/icons/rc';
 import { ScrollableContainer } from '@lovenotes/component';
 import { MenuItem } from '@lovenotes/component/ui/menu';
-import { AuthService, DefaultServerService } from '@lovenotes/core/modules/cloud';
+import {
+  AuthService,
+  DefaultServerService,
+} from '@lovenotes/core/modules/cloud';
 import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
 import { type WorkspaceMetadata } from '@lovenotes/core/modules/workspace';
 import { ServerFeature } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { Logo1Icon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import { AddWorkspace } from './add-workspace';

@@ -1,3 +1,4 @@
+import { DoneIcon, SearchIcon } from '@blocksuite/icons/rc';
 import {
   Loading,
   Menu,
@@ -33,8 +34,7 @@ import {
   SystemFontFamilyService,
 } from '@lovenotes/core/modules/system-font-family';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { DoneIcon, SearchIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import clsx from 'clsx';
 import {
   forwardRef,
@@ -337,7 +337,9 @@ const FontSizeSettings = () => {
 
   return (
     <SettingRow
-      name={t['com.lovenotes.settings.editorSettings.general.font-size.title']()}
+      name={t[
+        'com.lovenotes.settings.editorSettings.general.font-size.title'
+      ]()}
       desc={t[
         'com.lovenotes.settings.editorSettings.general.font-size.description'
       ]()}
@@ -449,7 +451,9 @@ const AISettings = () => {
       openConfirmModal({
         title: checked
           ? t['com.lovenotes.settings.editorSettings.general.ai.enable.title']()
-          : t['com.lovenotes.settings.editorSettings.general.ai.disable.title'](),
+          : t[
+              'com.lovenotes.settings.editorSettings.general.ai.disable.title'
+            ](),
         description: checked
           ? t[
               'com.lovenotes.settings.editorSettings.general.ai.enable.description'
@@ -458,7 +462,9 @@ const AISettings = () => {
               'com.lovenotes.settings.editorSettings.general.ai.disable.description'
             ](),
         confirmText: checked
-          ? t['com.lovenotes.settings.editorSettings.general.ai.enable.confirm']()
+          ? t[
+              'com.lovenotes.settings.editorSettings.general.ai.enable.confirm'
+            ]()
           : t[
               'com.lovenotes.settings.editorSettings.general.ai.disable.confirm'
             ](),
@@ -510,7 +516,9 @@ const SpellCheckSettings = () => {
 
   return (
     <SettingRow
-      name={t['com.lovenotes.settings.editorSettings.general.spell-check.title']()}
+      name={t[
+        'com.lovenotes.settings.editorSettings.general.spell-check.title'
+      ]()}
       desc={
         requireRestart ? (
           <div className={styles.spellCheckSettingDescription}>
@@ -567,7 +575,9 @@ export const General = () => {
   const t = useI18n();
 
   return (
-    <SettingWrapper title={t['com.lovenotes.settings.editorSettings.general']()}>
+    <SettingWrapper
+      title={t['com.lovenotes.settings.editorSettings.general']()}
+    >
       <AISettings />
       <FontFamilySettings />
       <CustomFontFamilySettings />

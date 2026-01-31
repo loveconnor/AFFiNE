@@ -1,6 +1,6 @@
 import type { DocMode, RootBlockModel } from '@blocksuite/lovenotes/model';
 import { Text } from '@blocksuite/lovenotes/store';
-import { Entity } from '@toeverything/infra';
+import { Entity } from '@lovenotes/infra';
 import { throttle } from 'lodash-es';
 import type { Transaction } from 'yjs';
 
@@ -137,8 +137,9 @@ export class Doc extends Entity {
   }
 
   changeDocTitle(newTitle: string) {
-    const pageBlock = this.blockSuiteDoc.getBlocksByFlavour('lovenotes:page').at(0)
-      ?.model as RootBlockModel | undefined;
+    const pageBlock = this.blockSuiteDoc
+      .getBlocksByFlavour('lovenotes:page')
+      .at(0)?.model as RootBlockModel | undefined;
     if (pageBlock) {
       this.blockSuiteDoc.transact(() => {
         const title = pageBlock.props.title;

@@ -5,7 +5,7 @@ import {
   PropertyRoot,
 } from '@lovenotes/component';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { type ReactNode, useMemo } from 'react';
 
 import { IntegrationPropertyService } from '../services/integration-property';

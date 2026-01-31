@@ -1,4 +1,4 @@
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 import { map, type Observable, switchMap } from 'rxjs';
 
 import type { ServersService } from '../../cloud';
@@ -19,7 +19,8 @@ export class CurrentUserDBEditorSettingProvider
   ) {
     super();
 
-    const lovenotesCloudServer = this.serversService.server$('lovenotes-cloud').value; // TODO: support multiple servers
+    const lovenotesCloudServer =
+      this.serversService.server$('lovenotes-cloud').value; // TODO: support multiple servers
     if (!lovenotesCloudServer) {
       throw new Error('lovenotes-cloud server not found');
     }

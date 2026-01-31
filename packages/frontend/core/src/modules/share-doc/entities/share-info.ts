@@ -1,4 +1,7 @@
-import type { GetWorkspacePageByIdQuery, PublicDocMode } from '@lovenotes/graphql';
+import type {
+  GetWorkspacePageByIdQuery,
+  PublicDocMode,
+} from '@lovenotes/graphql';
 import {
   catchErrorInto,
   effect,
@@ -9,7 +12,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { switchMap } from 'rxjs';
 
 import type { DocService } from '../../doc';

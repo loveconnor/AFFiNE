@@ -1,10 +1,10 @@
+import type { Store } from '@blocksuite/lovenotes/store';
 import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
 import { WorkspaceShareSettingService } from '@lovenotes/core/modules/share-setting';
 import type { Workspace } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import type { Store } from '@blocksuite/lovenotes/store';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 
 import { ShareMenu } from './share-menu';

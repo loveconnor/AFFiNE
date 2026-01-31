@@ -1,9 +1,9 @@
+import { CollaborationIcon } from '@blocksuite/icons/rc';
 import { MenuItem } from '@lovenotes/core/modules/app-sidebar/views';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { CollaborationIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 export const InviteMembersButton = () => {

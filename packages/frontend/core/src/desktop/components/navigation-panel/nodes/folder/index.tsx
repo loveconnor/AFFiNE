@@ -1,4 +1,13 @@
 import {
+  DeleteIcon,
+  FolderIcon,
+  PageIcon,
+  PlusIcon,
+  PlusThickIcon,
+  RemoveFolderIcon,
+  TagsIcon,
+} from '@blocksuite/icons/rc';
+import {
   AnimatedCollectionsIcon,
   AnimatedFolderIcon,
   type DropTargetDropEvent,
@@ -22,17 +31,8 @@ import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { Unreachable } from '@lovenotes/env/constant';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import {
-  DeleteIcon,
-  FolderIcon,
-  PageIcon,
-  PlusIcon,
-  PlusThickIcon,
-  RemoveFolderIcon,
-  TagsIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { difference } from 'lodash-es';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -62,7 +62,10 @@ export const NavigationPanelFolderNode = ({
 }: {
   defaultRenaming?: boolean;
   nodeId: string;
-  onDrop?: (data: DropTargetDropEvent<LoveNotesDNDData>, node: FolderNode) => void;
+  onDrop?: (
+    data: DropTargetDropEvent<LoveNotesDNDData>,
+    node: FolderNode
+  ) => void;
   operations?:
     | NodeOperation[]
     | ((type: string, node: FolderNode) => NodeOperation[]);
@@ -226,7 +229,8 @@ const NavigationPanelFolderNodeFolder = ({
       title: t['com.lovenotes.rootAppSidebar.organize.delete.notify-title']({
         name,
       }),
-      message: t['com.lovenotes.rootAppSidebar.organize.delete.notify-message'](),
+      message:
+        t['com.lovenotes.rootAppSidebar.organize.delete.notify-message'](),
     });
   }, [name, node, t]);
 
@@ -670,7 +674,9 @@ const NavigationPanelFolderNodeFolder = ({
         index: 100,
         view: (
           <MenuItem prefixIcon={<FolderIcon />} onClick={handleCreateSubfolder}>
-            {t['com.lovenotes.rootAppSidebar.organize.folder.create-subfolder']()}
+            {t[
+              'com.lovenotes.rootAppSidebar.organize.folder.create-subfolder'
+            ]()}
           </MenuItem>
         ),
       },
@@ -768,7 +774,9 @@ const NavigationPanelFolderNodeFolder = ({
                 data-event-args-type={node.type$.value}
                 onClick={() => node.delete()}
               >
-                {t['com.lovenotes.rootAppSidebar.organize.delete-from-folder']()}
+                {t[
+                  'com.lovenotes.rootAppSidebar.organize.delete-from-folder'
+                ]()}
               </MenuItem>
             ),
           },

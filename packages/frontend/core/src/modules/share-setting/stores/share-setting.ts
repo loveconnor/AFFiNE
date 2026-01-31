@@ -5,7 +5,7 @@ import {
   setEnableSharingMutation,
   setEnableUrlPreviewMutation,
 } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 export class WorkspaceShareSettingStore extends Store {
   constructor(private readonly workspaceServerService: WorkspaceServerService) {

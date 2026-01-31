@@ -1,5 +1,5 @@
 {
-  "name": "@toeverything/infra",
+  "name": "@lovenotes/infra",
   "type": "module",
   "private": true,
   "sideEffects": false,

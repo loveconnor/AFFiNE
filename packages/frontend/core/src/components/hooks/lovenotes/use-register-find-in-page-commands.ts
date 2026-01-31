@@ -3,8 +3,8 @@ import {
   registerLoveNotesCommand,
 } from '@lovenotes/core/commands';
 import { FindInPageService } from '@lovenotes/core/modules/find-in-page/services/find-in-page';
+import { useServiceOptional } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { useServiceOptional } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 
 export function useRegisterFindInPageCommands() {

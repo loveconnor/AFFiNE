@@ -1,7 +1,7 @@
 import { CategoryDivider } from '@lovenotes/core/modules/app-sidebar/views';
 import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
+import { useLiveData, useService } from '@lovenotes/infra';
 import * as Collapsible from '@radix-ui/react-collapsible';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   type CSSProperties,

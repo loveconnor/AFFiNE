@@ -1,6 +1,6 @@
 import { UserFriendlyError } from '@lovenotes/error';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 import { QuickSearchService } from '../services/quick-search';

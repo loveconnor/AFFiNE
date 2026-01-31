@@ -1,6 +1,6 @@
 import { Button, ErrorMessage, Skeleton, Tooltip } from '@lovenotes/component';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVar } from '@toeverything/theme';
 import { useEffect, useMemo } from 'react';
 

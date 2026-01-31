@@ -1,4 +1,3 @@
-import { getStoreManager } from '@lovenotes/core/blocksuite/manager/store';
 import { Container } from '@blocksuite/lovenotes/global/di';
 import {
   customImageProxyMiddleware,
@@ -12,7 +11,8 @@ import {
   Text,
   Transformer,
 } from '@blocksuite/lovenotes/store';
-import { Service } from '@toeverything/infra';
+import { getStoreManager } from '@lovenotes/core/blocksuite/manager/store';
+import { Service } from '@lovenotes/infra';
 import { Doc as YDoc } from 'yjs';
 
 import type { DefaultServerService, WorkspaceServerService } from '../../cloud';

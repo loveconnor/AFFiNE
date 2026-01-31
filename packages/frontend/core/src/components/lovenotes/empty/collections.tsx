@@ -1,10 +1,10 @@
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { usePromptModal } from '@lovenotes/component';
 import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
 import { CollectionService } from '@lovenotes/core/modules/collection';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import { ActionButton } from './action-button';

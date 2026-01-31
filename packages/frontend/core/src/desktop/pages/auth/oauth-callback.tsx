@@ -1,4 +1,4 @@
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useEffect, useRef } from 'react';
 import {
   type LoaderFunction,

@@ -1,4 +1,4 @@
-import { createIdentifier } from '@toeverything/infra';
+import { createIdentifier } from '@lovenotes/infra';
 
 export interface AuthProvider {
   signInMagicLink(

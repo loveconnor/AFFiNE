@@ -1,11 +1,14 @@
 import { Button, Loading } from '@lovenotes/component';
-import { Pagination, SettingRow } from '@lovenotes/component/setting-components';
+import {
+  Pagination,
+  SettingRow,
+} from '@lovenotes/component/setting-components';
 import { WorkspaceInvoicesService } from '@lovenotes/core/modules/cloud';
 import { UrlService } from '@lovenotes/core/modules/url';
 import { UserFriendlyError } from '@lovenotes/error';
 import { type InvoicesQuery, InvoiceStatus } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useEffect } from 'react';
 

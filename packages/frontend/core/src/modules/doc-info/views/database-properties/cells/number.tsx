@@ -1,5 +1,5 @@
 import { NumberValue } from '@lovenotes/core/components/workspace-property-types/number';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@lovenotes/infra';
 
 import type { DatabaseCellRendererProps } from '../../../types';
 

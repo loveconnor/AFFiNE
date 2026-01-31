@@ -5,7 +5,7 @@ import type {
 } from '@lovenotes/core/modules/dialogs';
 import { TagService } from '@lovenotes/core/modules/tag';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useMemo } from 'react';
 

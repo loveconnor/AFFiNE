@@ -1,10 +1,10 @@
 import { Button, Tooltip } from '@lovenotes/component';
 import { SettingRow } from '@lovenotes/component/setting-components';
-import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
 import { useWorkspaceInfo } from '@lovenotes/core/components/hooks/use-workspace-info';
+import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import type { ReactElement } from 'react';
 
 import type { SettingState } from '../../types';

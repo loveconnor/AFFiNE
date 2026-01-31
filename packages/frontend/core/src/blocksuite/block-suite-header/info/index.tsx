@@ -1,9 +1,9 @@
+import { InformationIcon } from '@blocksuite/icons/rc';
 import { IconButton } from '@lovenotes/component';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { useI18n } from '@lovenotes/i18n';
+import { useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { InformationIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 export const InfoButton = ({ docId }: { docId: string }) => {

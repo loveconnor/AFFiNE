@@ -1,4 +1,4 @@
-import { createEvent } from '@toeverything/infra';
+import { createEvent } from '@lovenotes/infra';
 
 import type { WorkspaceEngine } from '../entities/engine';
 import type { Workspace } from '../entities/workspace';

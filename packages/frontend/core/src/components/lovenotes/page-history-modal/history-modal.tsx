@@ -1,3 +1,6 @@
+import { CloseIcon, ToggleRightIcon } from '@blocksuite/icons/rc';
+import type { DocMode } from '@blocksuite/lovenotes/model';
+import type { Store, Workspace } from '@blocksuite/lovenotes/store';
 import { Avatar, Loading, Scrollable } from '@lovenotes/component';
 import { EditorLoading } from '@lovenotes/component/page-detail-skeleton';
 import { Button, IconButton } from '@lovenotes/component/ui/button';
@@ -9,13 +12,10 @@ import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions'
 import { WorkspaceQuotaService } from '@lovenotes/core/modules/quota';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { i18nTime, Trans, useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import type { Store, Workspace } from '@blocksuite/lovenotes/store';
-import { CloseIcon, ToggleRightIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import type { DialogContentProps } from '@radix-ui/react-dialog';
-import { useLiveData, useService } from '@toeverything/infra';
 import { atom, useAtom } from 'jotai';
 import type { PropsWithChildren } from 'react';
 import {

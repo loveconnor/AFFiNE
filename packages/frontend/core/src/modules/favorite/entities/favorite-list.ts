@@ -1,7 +1,4 @@
-import {
-  Entity,
-  generateFractionalIndexingKeyBetween,
-} from '@toeverything/infra';
+import { Entity, generateFractionalIndexingKeyBetween } from '@lovenotes/infra';
 
 import type { FavoriteSupportTypeUnion } from '../constant';
 import type { FavoriteRecord, FavoriteStore } from '../stores/favorite';

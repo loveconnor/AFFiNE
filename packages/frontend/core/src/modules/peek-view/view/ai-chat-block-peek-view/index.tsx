@@ -1,3 +1,4 @@
+import type { EditorHost } from '@blocksuite/lovenotes/std';
 import { toReactNode } from '@lovenotes/component';
 import { AIChatBlockPeekViewTemplate } from '@lovenotes/core/blocksuite/ai';
 import type { AIChatBlockModel } from '@lovenotes/core/blocksuite/ai/blocks/ai-chat-block/model/ai-chat-model';
@@ -9,11 +10,13 @@ import {
   AIToolsConfigService,
 } from '@lovenotes/core/modules/ai-button';
 import { AIModelService } from '@lovenotes/core/modules/ai-button/services/models';
-import { ServerService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import {
+  ServerService,
+  SubscriptionService,
+} from '@lovenotes/core/modules/cloud';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
-import type { EditorHost } from '@blocksuite/lovenotes/std';
-import { useFramework } from '@toeverything/infra';
+import { useFramework } from '@lovenotes/infra';
 import { useMemo } from 'react';
 
 registerAIAppEffects();

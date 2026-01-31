@@ -1,7 +1,7 @@
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { DocsService } from '@lovenotes/core/modules/doc';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import { useNavigateHelper } from '../use-navigate-helper';

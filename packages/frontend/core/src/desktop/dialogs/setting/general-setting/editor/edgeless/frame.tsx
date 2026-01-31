@@ -1,10 +1,10 @@
+import { DefaultTheme } from '@blocksuite/lovenotes/model';
+import type { Store } from '@blocksuite/lovenotes/store';
 import { MenuItem, MenuTrigger } from '@lovenotes/component';
 import { SettingRow } from '@lovenotes/component/setting-components';
 import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
 import { useI18n } from '@lovenotes/i18n';
-import { DefaultTheme } from '@blocksuite/lovenotes/model';
-import type { Store } from '@blocksuite/lovenotes/store';
-import { useFramework, useLiveData } from '@toeverything/infra';
+import { useFramework, useLiveData } from '@lovenotes/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
 

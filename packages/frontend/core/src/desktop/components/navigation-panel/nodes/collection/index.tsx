@@ -1,3 +1,4 @@
+import { FilterMinusIcon } from '@blocksuite/icons/rc';
 import {
   AnimatedCollectionsIcon,
   type DropTargetDropEvent,
@@ -14,9 +15,8 @@ import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { FilterMinusIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import {

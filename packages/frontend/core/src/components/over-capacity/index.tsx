@@ -3,8 +3,8 @@ import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import type { BlobSyncState } from '@lovenotes/nbstore';
-import { useLiveData, useService } from '@toeverything/infra';
 import { debounce } from 'lodash-es';
 import { useCallback, useEffect } from 'react';
 
@@ -42,7 +42,9 @@ export const OverCapacityNotification = () => {
             notify.warning({
               title: t['com.lovenotes.payment.storage-limit.new-title'](),
               message:
-                t['com.lovenotes.payment.storage-limit.new-description.owner'](),
+                t[
+                  'com.lovenotes.payment.storage-limit.new-description.owner'
+                ](),
               actions: [
                 {
                   key: 'upgrade',

@@ -1,5 +1,5 @@
 import { invoicesQuery, workspaceInvoicesQuery } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 import type { GraphQLService } from '../services/graphql';
 

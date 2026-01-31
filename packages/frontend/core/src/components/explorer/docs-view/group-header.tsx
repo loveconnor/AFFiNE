@@ -1,7 +1,7 @@
+import { ToggleRightIcon } from '@blocksuite/icons/rc';
 import { Button, IconButton } from '@lovenotes/component';
 import { useI18n } from '@lovenotes/i18n';
-import { ToggleRightIcon } from '@blocksuite/icons/rc';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@lovenotes/infra';
 import clsx from 'clsx';
 import {
   type HTMLAttributes,

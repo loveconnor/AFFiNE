@@ -7,8 +7,8 @@ import {
   SubscriptionVariant,
 } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
+import { useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { CheckoutSlot } from '../../checkout-slot';

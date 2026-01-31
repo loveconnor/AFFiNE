@@ -1,6 +1,6 @@
 import type { DocsService } from '@lovenotes/core/modules/doc';
 import type { FavoriteService } from '@lovenotes/core/modules/favorite';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 import { combineLatest, map, type Observable } from 'rxjs';
 
 import type { FilterProvider } from '../../provider';

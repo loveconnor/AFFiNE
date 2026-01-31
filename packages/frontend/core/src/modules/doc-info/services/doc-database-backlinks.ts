@@ -1,6 +1,6 @@
 import { DatabaseBlockDataSource } from '@blocksuite/lovenotes/blocks/database';
 import type { DatabaseBlockModel } from '@blocksuite/lovenotes/model';
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@lovenotes/infra';
 import { isEqual } from 'lodash-es';
 import { combineLatest, distinctUntilChanged, map, Observable } from 'rxjs';
 

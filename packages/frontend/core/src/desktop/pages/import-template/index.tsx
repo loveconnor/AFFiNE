@@ -1,6 +1,6 @@
-import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
 import type { DocMode } from '@blocksuite/lovenotes/model';
-import { useService } from '@toeverything/infra';
+import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
+import { useService } from '@lovenotes/infra';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

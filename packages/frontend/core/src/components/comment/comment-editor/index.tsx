@@ -1,22 +1,28 @@
-import { IconButton, notify, toast } from '@lovenotes/component';
-import { LitDocEditor, type PageEditor } from '@lovenotes/core/blocksuite/editors';
-import { SnapshotHelper } from '@lovenotes/core/modules/comment/services/snapshot-helper';
-import type { CommentAttachment } from '@lovenotes/core/modules/comment/types';
-import { PeekViewService } from '@lovenotes/core/modules/peek-view';
-import { downloadResourceWithUrl } from '@lovenotes/core/utils/resource';
-import { DebugLogger } from '@lovenotes/debug';
-import { getAttachmentFileIconRC } from '@blocksuite/lovenotes/components/icons';
-import { type RichText, selectTextModel } from '@blocksuite/lovenotes/rich-text';
-import { ViewportElementExtension } from '@blocksuite/lovenotes/shared/services';
-import { openFilesWith } from '@blocksuite/lovenotes/shared/utils';
-import { type DocSnapshot, nanoid, Store } from '@blocksuite/lovenotes/store';
 import {
   ArrowUpBigIcon,
   AttachmentIcon,
   CloseIcon,
 } from '@blocksuite/icons/rc';
+import { getAttachmentFileIconRC } from '@blocksuite/lovenotes/components/icons';
+import {
+  type RichText,
+  selectTextModel,
+} from '@blocksuite/lovenotes/rich-text';
+import { ViewportElementExtension } from '@blocksuite/lovenotes/shared/services';
+import { openFilesWith } from '@blocksuite/lovenotes/shared/utils';
+import { type DocSnapshot, nanoid, Store } from '@blocksuite/lovenotes/store';
 import type { TextSelection } from '@blocksuite/std';
-import { useFramework, useService } from '@toeverything/infra';
+import { IconButton, notify, toast } from '@lovenotes/component';
+import {
+  LitDocEditor,
+  type PageEditor,
+} from '@lovenotes/core/blocksuite/editors';
+import { SnapshotHelper } from '@lovenotes/core/modules/comment/services/snapshot-helper';
+import type { CommentAttachment } from '@lovenotes/core/modules/comment/types';
+import { PeekViewService } from '@lovenotes/core/modules/peek-view';
+import { downloadResourceWithUrl } from '@lovenotes/core/utils/resource';
+import { DebugLogger } from '@lovenotes/debug';
+import { useFramework, useService } from '@lovenotes/infra';
 import bytes from 'bytes';
 import clsx from 'clsx';
 import {

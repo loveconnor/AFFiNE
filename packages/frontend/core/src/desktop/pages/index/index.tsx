@@ -6,11 +6,7 @@ import {
   createFirstAppData,
 } from '@lovenotes/core/utils/first-app-data';
 import { ServerFeature } from '@lovenotes/graphql';
-import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
 import {
   type ReactNode,
   useCallback,
@@ -75,7 +71,11 @@ export const Component = ({
     if (createOnceRef.current) return;
     createOnceRef.current = true;
     // TODO: support selfhosted
-    buildShowcaseWorkspace(workspacesService, 'lovenotes-cloud', 'LoveNotes Cloud')
+    buildShowcaseWorkspace(
+      workspacesService,
+      'lovenotes-cloud',
+      'LoveNotes Cloud'
+    )
       .then(({ meta, defaultDocId }) => {
         if (defaultDocId) {
           jumpToPage(meta.id, defaultDocId);

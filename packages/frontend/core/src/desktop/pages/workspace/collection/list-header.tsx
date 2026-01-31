@@ -1,3 +1,5 @@
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import { Button, useConfirmModal } from '@lovenotes/component';
 import { usePageHelper } from '@lovenotes/core/blocksuite/block-suite-page-list/utils';
 import { PageListNewPageButton } from '@lovenotes/core/components/page-list';
@@ -10,10 +12,8 @@ import type { DocRecord } from '@lovenotes/core/modules/doc';
 import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import * as styles from './index.css';
@@ -55,7 +55,8 @@ export const CollectionListHeader = ({
     (createDocumentFn: () => DocRecord) => {
       openConfirmModal({
         title: t['com.lovenotes.collection.add-doc.confirm.title'](),
-        description: t['com.lovenotes.collection.add-doc.confirm.description'](),
+        description:
+          t['com.lovenotes.collection.add-doc.confirm.description'](),
         cancelText: t['Cancel'](),
         confirmText: t['Confirm'](),
         confirmButtonOptions: {

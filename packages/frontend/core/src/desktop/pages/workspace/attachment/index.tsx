@@ -1,8 +1,8 @@
+import { type AttachmentBlockModel } from '@blocksuite/lovenotes/model';
 import { Skeleton } from '@lovenotes/component';
 import { AttachmentViewerView } from '@lovenotes/core/blocksuite/attachment-viewer';
 import { type Doc, DocsService } from '@lovenotes/core/modules/doc';
-import { type AttachmentBlockModel } from '@blocksuite/lovenotes/model';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@lovenotes/infra';
 import { type ReactElement, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 

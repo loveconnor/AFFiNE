@@ -1,7 +1,7 @@
+import { PresentationIcon } from '@blocksuite/icons/rc';
 import { IconButton } from '@lovenotes/component';
 import { EditorService } from '@lovenotes/core/modules/editor';
-import { PresentationIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 
 export const DetailPageHeaderPresentButton = () => {
   const editorService = useService(EditorService);

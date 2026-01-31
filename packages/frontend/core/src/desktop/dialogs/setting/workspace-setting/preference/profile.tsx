@@ -1,3 +1,4 @@
+import { CameraIcon } from '@blocksuite/icons/rc';
 import { FlexWrapper, Input, notify, Wrapper } from '@lovenotes/component';
 import { Button } from '@lovenotes/component/ui/button';
 import { useCatchEventCallback } from '@lovenotes/core/components/hooks/use-catch-event-hook';
@@ -8,8 +9,7 @@ import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { validateAndReduceImage } from '@lovenotes/core/utils/reduce-image';
 import { UNTITLED_WORKSPACE_NAME } from '@lovenotes/env/constant';
 import { useI18n } from '@lovenotes/i18n';
-import { CameraIcon } from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@lovenotes/infra';
 import type { KeyboardEvent } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { map } from 'rxjs';

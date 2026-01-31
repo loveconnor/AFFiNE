@@ -1,6 +1,3 @@
-import { Menu, MenuItem } from '@lovenotes/component';
-import { type Server, ServersService } from '@lovenotes/core/modules/cloud';
-import { useI18n } from '@lovenotes/i18n';
 import {
   ArrowDownSmallIcon,
   CloudWorkspaceIcon,
@@ -8,7 +5,10 @@ import {
   LocalWorkspaceIcon,
   SelfhostIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { Menu, MenuItem } from '@lovenotes/component';
+import { type Server, ServersService } from '@lovenotes/core/modules/cloud';
+import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import {
   type HTMLAttributes,
@@ -129,7 +129,8 @@ const ServerSelectorItem = ({
 }) => {
   const name = useLiveData(server.config$.selector(c => c.serverName));
 
-  const Icon = server.id === 'lovenotes-cloud' ? CloudWorkspaceIcon : SelfhostIcon;
+  const Icon =
+    server.id === 'lovenotes-cloud' ? CloudWorkspaceIcon : SelfhostIcon;
 
   const handleSelect = useCallback(() => {
     onSelect?.(server.id);

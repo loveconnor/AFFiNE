@@ -9,11 +9,7 @@ import {
 import { AppTabsHeader } from '@lovenotes/core/modules/app-tabs-header';
 import { NavigationButtons } from '@lovenotes/core/modules/navigation';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
 import clsx from 'clsx';
 import {
   forwardRef,

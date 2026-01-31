@@ -1,3 +1,12 @@
+import {
+  AccountIcon,
+  CloudWorkspaceIcon,
+  DeleteIcon,
+  LocalWorkspaceIcon,
+  MoreHorizontalIcon,
+  SelfhostIcon,
+  SignOutIcon,
+} from '@blocksuite/icons/rc';
 import { IconButton, Menu, MenuItem } from '@lovenotes/component';
 import { Divider } from '@lovenotes/component/ui/divider';
 import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
@@ -15,20 +24,11 @@ import {
 } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
 import {
-  AccountIcon,
-  CloudWorkspaceIcon,
-  DeleteIcon,
-  LocalWorkspaceIcon,
-  MoreHorizontalIcon,
-  SelfhostIcon,
-  SignOutIcon,
-} from '@blocksuite/icons/rc';
-import {
   FrameworkScope,
   useLiveData,
   useService,
   useServiceOptional,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 import { WorkspaceCard } from '../../workspace-card';

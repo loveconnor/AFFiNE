@@ -1,7 +1,7 @@
 import { createReactComponentFromLit } from '@lovenotes/component';
 import { LitTranscriptionBlock } from '@lovenotes/core/blocksuite/ai/blocks/ai-chat-block/ai-transcription-block';
 import type { TranscriptionBlockModel } from '@lovenotes/core/blocksuite/ai/blocks/transcription-block/model';
-import { LiveData, useLiveData } from '@toeverything/infra';
+import { LiveData, useLiveData } from '@lovenotes/infra';
 import React, { useCallback, useMemo } from 'react';
 
 import * as styles from './transcription-block.css';

@@ -1,8 +1,8 @@
 import { Button, Divider } from '@lovenotes/component';
 import { WorkspacePropertyService } from '@lovenotes/core/modules/workspace-property';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { WorkspacePropertyName } from '../../properties';

@@ -1,4 +1,4 @@
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 
 import type { ClientSchemeProvider } from '../providers/client-schema';
 import type { PopupWindowProvider } from '../providers/popup-window';

@@ -1,16 +1,19 @@
 /* eslint-disable rxjs/finnish */
 
-import { PropertyValue } from '@lovenotes/component';
-import { type TagLike, TagsInlineEditor } from '@lovenotes/core/components/tags';
-import { TagService } from '@lovenotes/core/modules/tag';
-import {
-  lovenotesLabelToDatabaseTagColor,
-  databaseTagColorToV2,
-} from '@lovenotes/core/modules/tag/entities/utils';
-import type { DatabaseBlockDataSource } from '@blocksuite/lovenotes/blocks/database';
 import type { SelectTag } from '@blocksuite/data-view';
 import { MultiSelectIcon, SingleSelectIcon } from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import type { DatabaseBlockDataSource } from '@blocksuite/lovenotes/blocks/database';
+import { PropertyValue } from '@lovenotes/component';
+import {
+  type TagLike,
+  TagsInlineEditor,
+} from '@lovenotes/core/components/tags';
+import { TagService } from '@lovenotes/core/modules/tag';
+import {
+  databaseTagColorToV2,
+  lovenotesLabelToDatabaseTagColor,
+} from '@lovenotes/core/modules/tag/entities/utils';
+import { LiveData, useLiveData, useService } from '@lovenotes/infra';
 import { nanoid } from 'nanoid';
 import { useCallback, useMemo } from 'react';
 

@@ -1,5 +1,5 @@
 import { GlobalContextService } from '@lovenotes/core/modules/global-context';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 

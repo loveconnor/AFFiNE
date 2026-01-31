@@ -1,10 +1,10 @@
-import { KeyboardToolbarExtension } from '@lovenotes/core/blocksuite/view-extensions/mobile/keyboard-toolbar-extension';
-import { MobileFeatureFlagControl } from '@lovenotes/core/blocksuite/view-extensions/mobile/mobile-feature-flag-control';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
 } from '@blocksuite/lovenotes/ext-loader';
-import { FrameworkProvider } from '@toeverything/infra';
+import { KeyboardToolbarExtension } from '@lovenotes/core/blocksuite/view-extensions/mobile/keyboard-toolbar-extension';
+import { MobileFeatureFlagControl } from '@lovenotes/core/blocksuite/view-extensions/mobile/mobile-feature-flag-control';
+import { FrameworkProvider } from '@lovenotes/infra';
 import { z } from 'zod';
 
 const optionsSchema = z.object({

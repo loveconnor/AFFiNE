@@ -1,13 +1,3 @@
-import { notify } from '@lovenotes/component';
-import {
-  pushGlobalLoadingEventAtom,
-  resolveGlobalLoadingEventAtom,
-} from '@lovenotes/component/global-loading';
-import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor/blocksuite-editor';
-import { EditorService } from '@lovenotes/core/modules/editor';
-import { getLoveNotesWorkspaceSchema } from '@lovenotes/core/modules/workspace/global-schema';
-import { useI18n } from '@lovenotes/i18n';
-import { track } from '@lovenotes/track';
 import { ExportManager } from '@blocksuite/lovenotes/blocks/surface';
 import {
   docLinkBaseURLMiddleware,
@@ -27,7 +17,17 @@ import {
   PdfTransformer,
   ZipTransformer,
 } from '@blocksuite/lovenotes/widgets/linked-doc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { notify } from '@lovenotes/component';
+import {
+  pushGlobalLoadingEventAtom,
+  resolveGlobalLoadingEventAtom,
+} from '@lovenotes/component/global-loading';
+import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor/blocksuite-editor';
+import { EditorService } from '@lovenotes/core/modules/editor';
+import { getLoveNotesWorkspaceSchema } from '@lovenotes/core/modules/workspace/global-schema';
+import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
+import { track } from '@lovenotes/track';
 import { useSetAtom } from 'jotai';
 import { nanoid } from 'nanoid';
 

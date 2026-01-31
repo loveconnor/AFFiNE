@@ -32,7 +32,7 @@ import {
   type RequestOptions,
   updateCopilotSessionMutation,
 } from '@lovenotes/graphql';
-import { getCurrentStore } from '@toeverything/infra';
+import { getCurrentStore } from '@lovenotes/infra';
 
 import {
   GeneralNetworkError,
@@ -197,7 +197,7 @@ export class CopilotClient {
         },
         signal,
       });
-      return res.currentUser?.copilot?.chats.edges.map(e => e.node);
+      return res.currentUser?.copilot?.chats?.edges?.map?.(e => e.node) ?? [];
     } catch (err) {
       const parsed = toUserFriendlyError(err);
       if (isAbortError(parsed)) {
@@ -221,7 +221,7 @@ export class CopilotClient {
           offset,
         },
       });
-      return res.currentUser?.copilot?.chats.edges.map(e => e.node);
+      return res.currentUser?.copilot?.chats?.edges?.map?.(e => e.node) ?? [];
     } catch (err) {
       const parsed = toUserFriendlyError(err);
       if (isAbortError(parsed)) {
@@ -250,7 +250,7 @@ export class CopilotClient {
         },
       });
 
-      return res.currentUser?.copilot?.chats.edges.map(e => e.node);
+      return res.currentUser?.copilot?.chats?.edges?.map?.(e => e.node) ?? [];
     } catch (err) {
       const parsed = toUserFriendlyError(err);
       if (isAbortError(parsed)) {
@@ -279,7 +279,7 @@ export class CopilotClient {
         },
       });
 
-      return res.currentUser?.copilot?.chats.edges.map(e => e.node);
+      return res.currentUser?.copilot?.chats?.edges?.map?.(e => e.node) ?? [];
     } catch (err) {
       const parsed = toUserFriendlyError(err);
       if (isAbortError(parsed)) {
@@ -457,6 +457,9 @@ export class CopilotClient {
     toolsConfig?: AIToolsConfig;
     signal?: AbortSignal;
   }) {
+    if (!sessionId) {
+      throw new GeneralNetworkError('Missing session id for copilot chat');
+    }
     let url = `/api/copilot/chat/${sessionId}`;
     const queryString = this.paramsToQueryString({
       messageId,
@@ -488,6 +491,9 @@ export class CopilotClient {
     },
     endpoint = Endpoint.Stream
   ) {
+    if (!sessionId) {
+      throw new GeneralNetworkError('Missing session id for copilot chat');
+    }
     let url = `/api/copilot/chat/${sessionId}/${endpoint}`;
     const queryString = this.paramsToQueryString({
       messageId,
@@ -508,6 +514,9 @@ export class CopilotClient {
     seed?: string,
     endpoint = Endpoint.Images
   ) {
+    if (!sessionId) {
+      throw new GeneralNetworkError('Missing session id for copilot chat');
+    }
     let url = `/api/copilot/chat/${sessionId}/${endpoint}`;
     const queryString = this.paramsToQueryString({
       messageId,

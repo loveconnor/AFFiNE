@@ -4,7 +4,7 @@ import {
   ServerService,
   UserCopilotQuotaService,
 } from '@lovenotes/core/modules/cloud';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { type ReactNode, useEffect } from 'react';

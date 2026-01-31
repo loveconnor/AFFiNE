@@ -1,5 +1,5 @@
+import { AsyncLock } from '@lovenotes/infra/utils';
 import { type Page } from '@playwright/test';
-import { AsyncLock } from '@toeverything/infra/utils';
 
 const IS_MAC = process.platform === 'darwin';
 

@@ -3,7 +3,7 @@ import type { AllPageFilterOption } from '@lovenotes/core/components/atoms';
 import { allPageFilterSelectAtom } from '@lovenotes/core/components/atoms';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useAtom } from 'jotai';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

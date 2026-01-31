@@ -1,4 +1,4 @@
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@lovenotes/infra';
 
 import { configureMobileHapticsModule } from './haptics';
 import { configureMobileNavigationGestureModule } from './navigation-gesture';

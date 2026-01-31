@@ -1,5 +1,6 @@
 import '@lovenotes/core/bootstrap/browser';
 
+import { type MessageCommunicapable, OpConsumer } from '@lovenotes/infra/op';
 import { broadcastChannelStorages } from '@lovenotes/nbstore/broadcast-channel';
 import { cloudStorages } from '@lovenotes/nbstore/cloud';
 import { idbStorages } from '@lovenotes/nbstore/idb';
@@ -8,7 +9,6 @@ import {
   StoreManagerConsumer,
   type WorkerManagerOps,
 } from '@lovenotes/nbstore/worker/consumer';
-import { type MessageCommunicapable, OpConsumer } from '@toeverything/infra/op';
 
 const consumer = new StoreManagerConsumer([
   ...idbStorages,

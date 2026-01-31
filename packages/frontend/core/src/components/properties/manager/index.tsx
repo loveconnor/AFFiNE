@@ -1,3 +1,4 @@
+import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
 import {
   DropIndicator,
   IconButton,
@@ -11,8 +12,7 @@ import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { WorkspacePropertyService } from '@lovenotes/core/modules/workspace-property';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
-import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { type HTMLProps, useCallback, useState } from 'react';
 

@@ -1,12 +1,11 @@
 import { useI18n } from '@lovenotes/i18n';
-import { getCurrentStore } from '@toeverything/infra';
+import { getCurrentStore } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { Provider } from 'jotai/react';
 import type { FC } from 'react';
 import { useCallback, useMemo } from 'react';
 import { useRouteError } from 'react-router-dom';
 
-import * as styles from './lovenotes-error-fallback.css';
 import { ErrorDetail } from './error-basic/error-detail';
 import type { FallbackProps } from './error-basic/fallback-creator';
 import { ERROR_REFLECT_KEY } from './error-basic/fallback-creator';
@@ -14,6 +13,7 @@ import { DumpInfo } from './error-basic/info-logger';
 import { AnyErrorFallback } from './error-fallbacks/any-error-fallback';
 import { NoPageRootFallback } from './error-fallbacks/no-page-root-fallback';
 import { PageNotFoundDetail } from './error-fallbacks/page-not-found-fallback';
+import * as styles from './lovenotes-error-fallback.css';
 
 /**
  * Register all fallback components here.
@@ -36,7 +36,9 @@ export interface LoveNotesErrorFallbackProps extends FallbackProps {
   className?: string;
 }
 
-export const LoveNotesErrorFallback: FC<LoveNotesErrorFallbackProps> = props => {
+export const LoveNotesErrorFallback: FC<
+  LoveNotesErrorFallbackProps
+> = props => {
   const { error, resetError, height } = props;
   const Component = useMemo(() => getErrorFallbackComponent(error), [error]);
 

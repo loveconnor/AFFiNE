@@ -1,6 +1,6 @@
 import type { Workspace } from '@blocksuite/lovenotes/store';
+import { Service } from '@lovenotes/infra';
 import type { BlobStorage, DocStorage } from '@lovenotes/nbstore';
-import { Service } from '@toeverything/infra';
 
 import type { WorkspaceFlavoursService } from './flavours';
 

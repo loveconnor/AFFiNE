@@ -11,8 +11,8 @@ import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { inferOpenMode } from '@lovenotes/core/utils';
 import { useI18n } from '@lovenotes/i18n';
+import { useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import * as styles from './all-page-header.css';

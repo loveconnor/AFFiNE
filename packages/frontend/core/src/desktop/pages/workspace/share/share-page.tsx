@@ -1,3 +1,7 @@
+import { Logo1Icon } from '@blocksuite/icons/rc';
+import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
+import { type DocMode, DocModes } from '@blocksuite/lovenotes/model';
 import { Scrollable, uniReactRoot } from '@lovenotes/component';
 import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor';
 import { EditorOutlineViewer } from '@lovenotes/core/blocksuite/outline-viewer';
@@ -24,11 +28,7 @@ import {
   WorkspacesService,
 } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
-import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
-import { type DocMode, DocModes } from '@blocksuite/lovenotes/model';
-import { Logo1Icon } from '@blocksuite/icons/rc';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';

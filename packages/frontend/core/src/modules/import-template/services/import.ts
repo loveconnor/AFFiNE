@@ -1,6 +1,6 @@
 import type { DocMode } from '@blocksuite/lovenotes/model';
 import { ZipTransformer } from '@blocksuite/lovenotes/widgets/linked-doc';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 
 import { DocsService } from '../../doc';
 import {

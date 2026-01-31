@@ -1,3 +1,7 @@
+import { CenterPeekIcon, Logo1Icon } from '@blocksuite/icons/rc';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
+import { DocModeProvider } from '@blocksuite/lovenotes/shared/services';
+import { createSignalFromObservable } from '@blocksuite/lovenotes/shared/utils';
 import { useConfirmModal } from '@lovenotes/component';
 import { AIProvider } from '@lovenotes/core/blocksuite/ai';
 import type { AppSidebarConfig } from '@lovenotes/core/blocksuite/ai/chat-panel/chat-config';
@@ -23,7 +27,10 @@ import {
   AIToolsConfigService,
 } from '@lovenotes/core/modules/ai-button';
 import { AIModelService } from '@lovenotes/core/modules/ai-button/services/models';
-import { ServerService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import {
+  ServerService,
+  SubscriptionService,
+} from '@lovenotes/core/modules/cloud';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { useSignalValue } from '@lovenotes/core/modules/doc-info/utils';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
@@ -36,12 +43,8 @@ import type {
   UpdateChatSessionInput,
 } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
-import { DocModeProvider } from '@blocksuite/lovenotes/shared/services';
-import { createSignalFromObservable } from '@blocksuite/lovenotes/shared/utils';
-import { CenterPeekIcon, Logo1Icon } from '@blocksuite/icons/rc';
+import { useFramework, useService } from '@lovenotes/infra';
 import type { Signal } from '@preact/signals-core';
-import { useFramework, useService } from '@toeverything/infra';
 import { html } from 'lit';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
@@ -565,7 +568,9 @@ export const EditorChatPanel = ({ editor, onLoad }: SidebarTabProps) => {
         .lovenotesFeatureFlagService=${framework.get(FeatureFlagService)}
         .lovenotesThemeService=${framework.get(AppThemeService)}
         .notificationService=${notificationService}
-        .lovenotesWorkspaceDialogService=${framework.get(WorkspaceDialogService)}
+        .lovenotesWorkspaceDialogService=${framework.get(
+          WorkspaceDialogService
+        )}
         .aiToolsConfigService=${framework.get(AIToolsConfigService)}
         .subscriptionService=${framework.get(SubscriptionService)}
         .aiModelService=${framework.get(AIModelService)}

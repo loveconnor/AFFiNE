@@ -1,8 +1,11 @@
 import { useDraggable } from '@lovenotes/component';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
-import type { LoveNotesDNDData, LoveNotesDNDEntity } from '@lovenotes/core/types/dnd';
+import type {
+  LoveNotesDNDData,
+  LoveNotesDNDEntity,
+} from '@lovenotes/core/types/dnd';
 import { inferOpenMode as inferOpenAt } from '@lovenotes/core/utils';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { type To } from 'history';
 import { forwardRef, type MouseEvent } from 'react';
 

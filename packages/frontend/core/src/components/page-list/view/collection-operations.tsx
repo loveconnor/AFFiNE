@@ -1,10 +1,3 @@
-import type { MenuItemProps } from '@lovenotes/component';
-import { Menu, MenuItem, usePromptModal } from '@lovenotes/component';
-import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
-import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
-import { WorkbenchService } from '@lovenotes/core/modules/workbench';
-import { useI18n } from '@lovenotes/i18n';
-import track from '@lovenotes/track';
 import {
   DeleteIcon,
   EditIcon,
@@ -13,7 +6,14 @@ import {
   PlusIcon,
   SplitViewIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import type { MenuItemProps } from '@lovenotes/component';
+import { Menu, MenuItem, usePromptModal } from '@lovenotes/component';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
+import track from '@lovenotes/track';
 import type { PropsWithChildren, ReactElement } from 'react';
 import { useCallback, useMemo } from 'react';
 

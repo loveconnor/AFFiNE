@@ -1,5 +1,5 @@
 import { AppThemeService } from '@lovenotes/core/modules/theme';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { ThemeProvider as NextThemeProvider, useTheme } from 'next-themes';
 import type { PropsWithChildren } from 'react';
 import { useEffect } from 'react';

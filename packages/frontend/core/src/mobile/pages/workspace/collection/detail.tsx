@@ -1,7 +1,7 @@
 import { useThemeColorV2 } from '@lovenotes/component';
 import { CollectionService } from '@lovenotes/core/modules/collection';
 import { GlobalContextService } from '@lovenotes/core/modules/global-context';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 

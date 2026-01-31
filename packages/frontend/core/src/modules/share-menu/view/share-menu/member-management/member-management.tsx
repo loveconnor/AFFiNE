@@ -1,3 +1,4 @@
+import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
 import { Skeleton } from '@lovenotes/component';
 import { useGuard } from '@lovenotes/core/components/guard';
 import { DocService } from '@lovenotes/core/modules/doc';
@@ -6,8 +7,7 @@ import {
   type GrantedUser,
 } from '@lovenotes/core/modules/permissions';
 import { useI18n } from '@lovenotes/i18n';
-import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect } from 'react';
 import { Virtuoso } from 'react-virtuoso';
 
@@ -74,7 +74,9 @@ export const MemberManagement = ({
             className={styles.addCollaboratorsStyle}
             onClick={onClickInvite}
           >
-            {t['com.lovenotes.share-menu.member-management.add-collaborators']()}
+            {t[
+              'com.lovenotes.share-menu.member-management.add-collaborators'
+            ]()}
           </span>
         ) : null}
       </div>

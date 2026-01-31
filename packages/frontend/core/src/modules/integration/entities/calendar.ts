@@ -4,7 +4,7 @@ import type {
   WorkspaceCalendarItemInput,
   WorkspaceCalendarsQuery,
 } from '@lovenotes/graphql';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@lovenotes/infra';
 import dayjs, { type Dayjs } from 'dayjs';
 
 import type { CalendarStore } from '../store/calendar';

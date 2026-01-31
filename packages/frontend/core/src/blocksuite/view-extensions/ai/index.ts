@@ -1,3 +1,9 @@
+import {
+  type ViewExtensionContext,
+  ViewExtensionProvider,
+} from '@blocksuite/lovenotes/ext-loader';
+import { ToolbarModuleExtension } from '@blocksuite/lovenotes/shared/services';
+import { BlockFlavourIdentifier } from '@blocksuite/lovenotes/std';
 import { toolbarAIEntryConfig } from '@lovenotes/core/blocksuite/ai';
 import { AIChatBlockSpec } from '@lovenotes/core/blocksuite/ai/blocks';
 import { AITranscriptionBlockSpec } from '@lovenotes/core/blocksuite/ai/blocks/ai-chat-block/ai-transcription-block';
@@ -10,13 +16,7 @@ import { AiSlashMenuConfigExtension } from '@lovenotes/core/blocksuite/ai/extens
 import { CopilotTool } from '@lovenotes/core/blocksuite/ai/tool/copilot-tool';
 import { aiPanelWidget } from '@lovenotes/core/blocksuite/ai/widgets/ai-panel/ai-panel';
 import { edgelessCopilotWidget } from '@lovenotes/core/blocksuite/ai/widgets/edgeless-copilot';
-import {
-  type ViewExtensionContext,
-  ViewExtensionProvider,
-} from '@blocksuite/lovenotes/ext-loader';
-import { ToolbarModuleExtension } from '@blocksuite/lovenotes/shared/services';
-import { BlockFlavourIdentifier } from '@blocksuite/lovenotes/std';
-import { FrameworkProvider } from '@toeverything/infra';
+import { FrameworkProvider } from '@lovenotes/infra';
 import { z } from 'zod';
 
 import {
@@ -87,7 +87,6 @@ export class AIViewExtension extends ViewExtensionProvider<AIViewOptions> {
         BlockDiffService,
         BlockDiffWatcher,
       ]);
-
     }
   }
 }

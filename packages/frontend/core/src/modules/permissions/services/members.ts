@@ -2,7 +2,7 @@ import type {
   Permission,
   WorkspaceInviteLinkExpireTime,
 } from '@lovenotes/graphql';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 
 import type { WorkspaceService } from '../../workspace';
 import { WorkspaceMembers } from '../entities/members';

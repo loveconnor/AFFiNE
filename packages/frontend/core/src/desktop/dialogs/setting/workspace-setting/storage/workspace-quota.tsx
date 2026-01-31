@@ -2,7 +2,7 @@ import { ErrorMessage, Skeleton } from '@lovenotes/component';
 import { SettingRow } from '@lovenotes/component/setting-components';
 import { WorkspaceQuotaService } from '@lovenotes/core/modules/quota';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useEffect } from 'react';
 

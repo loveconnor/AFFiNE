@@ -23,7 +23,7 @@ import { CollectionRulesService } from '@lovenotes/core/modules/collection-rules
 import { DocsService } from '@lovenotes/core/modules/doc';
 import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
 import type { ReactNode } from 'react';

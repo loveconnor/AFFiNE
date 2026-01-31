@@ -5,7 +5,7 @@ import {
 } from '@lovenotes/core/modules/cloud';
 import { UrlService } from '@lovenotes/core/modules/url';
 import type { CreateCheckoutSessionInput } from '@lovenotes/graphql';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { nanoid } from 'nanoid';
 import {
   type PropsWithChildren,

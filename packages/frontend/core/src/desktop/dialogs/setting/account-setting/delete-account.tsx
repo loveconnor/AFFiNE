@@ -1,3 +1,4 @@
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { ConfirmModal, Input, notify } from '@lovenotes/component';
 import {
   SettingRow,
@@ -7,9 +8,8 @@ import { AuthService, ServerService } from '@lovenotes/core/modules/cloud';
 import { WorkspacesService } from '@lovenotes/core/modules/workspace';
 import { UserFriendlyError } from '@lovenotes/error';
 import { Trans, useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useCallback, useState } from 'react';
 
@@ -164,7 +164,9 @@ const DeleteAccountModal = ({
       />
       <Input
         type="text"
-        placeholder={t['com.lovenotes.setting.account.delete.input-placeholder']()}
+        placeholder={t[
+          'com.lovenotes.setting.account.delete.input-placeholder'
+        ]()}
         value={email}
         onChange={setEmail}
         className={styles.inputWrapper}

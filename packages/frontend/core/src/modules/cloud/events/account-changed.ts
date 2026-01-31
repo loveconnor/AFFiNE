@@ -1,4 +1,4 @@
-import { createEvent } from '@toeverything/infra';
+import { createEvent } from '@lovenotes/infra';
 
 import type { AuthAccountInfo } from '../entities/session';
 

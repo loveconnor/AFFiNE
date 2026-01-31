@@ -1,4 +1,4 @@
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@lovenotes/infra';
 import { map } from 'rxjs';
 
 import type { AppSidebarState } from '../providers/storage';

@@ -1,7 +1,10 @@
 import { Button } from '@lovenotes/component';
-import { AuthService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import {
+  AuthService,
+  SubscriptionService,
+} from '@lovenotes/core/modules/cloud';
 import { i18nTime, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect } from 'react';
 
 import { AICancel, AILogin, AIResume, AISubscribe } from './actions';
@@ -67,7 +70,11 @@ export const AIPlan = () => {
                 className={styles.purchaseButton}
                 displayedFrequency="monthly"
               />
-              <a href="https://ai.lovenotes.pro" target="_blank" rel="noreferrer">
+              <a
+                href="https://ai.lovenotes.pro"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className={styles.learnAIButton}>
                   {t['com.lovenotes.payment.ai.pricing-plan.learn']()}
                 </Button>

@@ -7,7 +7,7 @@ import {
 import { WorkspaceSubscriptionService } from '@lovenotes/core/modules/cloud';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { TeamResumeAction } from '../../general-setting/plans/actions';
@@ -57,7 +57,9 @@ export const WorkspaceSettingBilling = () => {
         ) : null}
       </SettingWrapper>
 
-      <SettingWrapper title={t['com.lovenotes.payment.billing-setting.history']()}>
+      <SettingWrapper
+        title={t['com.lovenotes.payment.billing-setting.history']()}
+      >
         <BillingHistory />
       </SettingWrapper>
     </>
@@ -74,11 +76,11 @@ const ResumeSubscription = ({ expirationDate }: { expirationDate: string }) => {
   return (
     <SettingRow
       name={t['com.lovenotes.payment.billing-setting.expiration-date']()}
-      desc={t['com.lovenotes.payment.billing-setting.expiration-date.description'](
-        {
-          expirationDate: new Date(expirationDate).toLocaleDateString(),
-        }
-      )}
+      desc={t[
+        'com.lovenotes.payment.billing-setting.expiration-date.description'
+      ]({
+        expirationDate: new Date(expirationDate).toLocaleDateString(),
+      })}
     >
       <TeamResumeAction open={open} onOpenChange={setOpen}>
         <Button onClick={handleClick} variant="primary">

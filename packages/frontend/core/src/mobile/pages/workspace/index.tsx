@@ -5,7 +5,7 @@ import { SharePage } from '@lovenotes/core/desktop/pages/workspace/share/share-p
 import { workbenchRoutes } from '@lovenotes/core/mobile/workbench-router';
 import { ServersService } from '@lovenotes/core/modules/cloud';
 import { WorkspacesService } from '@lovenotes/core/modules/workspace';
-import { FrameworkScope, useLiveData, useServices } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useServices } from '@lovenotes/infra';
 import {
   lazy as reactLazy,
   Suspense,

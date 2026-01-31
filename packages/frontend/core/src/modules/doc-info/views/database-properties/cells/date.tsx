@@ -1,6 +1,6 @@
 import { DateValue } from '@lovenotes/core/components/workspace-property-types/date';
-import type { LiveData } from '@toeverything/infra';
-import { useLiveData } from '@toeverything/infra';
+import type { LiveData } from '@lovenotes/infra';
+import { useLiveData } from '@lovenotes/infra';
 import dayjs from 'dayjs';
 
 import type { DatabaseCellRendererProps } from '../../../types';

@@ -1,4 +1,19 @@
 import {
+  DeleteIcon,
+  DeletePermanentlyIcon,
+  DuplicateIcon,
+  EditIcon,
+  FilterIcon,
+  FilterMinusIcon,
+  InformationIcon,
+  MoreVerticalIcon,
+  OpenInNewIcon,
+  PlusIcon,
+  ResetIcon,
+  SplitViewIcon,
+} from '@blocksuite/icons/rc';
+import type { DocMeta } from '@blocksuite/lovenotes/store';
+import {
   IconButton,
   Menu,
   MenuItem,
@@ -17,23 +32,8 @@ import {
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import type { DocMeta } from '@blocksuite/lovenotes/store';
-import {
-  DeleteIcon,
-  DeletePermanentlyIcon,
-  DuplicateIcon,
-  EditIcon,
-  FilterIcon,
-  FilterMinusIcon,
-  InformationIcon,
-  MoreVerticalIcon,
-  OpenInNewIcon,
-  PlusIcon,
-  ResetIcon,
-  SplitViewIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
 import type { MouseEvent } from 'react';
 import { useCallback, useState } from 'react';
 

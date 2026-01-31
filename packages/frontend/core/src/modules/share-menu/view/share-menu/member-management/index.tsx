@@ -1,9 +1,9 @@
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { Avatar, Skeleton, Tooltip } from '@lovenotes/component';
 import { DocGrantedUsersService } from '@lovenotes/core/modules/permissions';
 import { DocRole } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import clsx from 'clsx';
 import { useEffect, useMemo } from 'react';
@@ -56,7 +56,9 @@ export const MembersRow = ({ onClick }: { onClick: () => void }) => {
           member3: topThreeMembers[2].name,
         });
       default:
-        return t['com.lovenotes.share-menu.member-management.member-count-more']({
+        return t[
+          'com.lovenotes.share-menu.member-management.member-count-more'
+        ]({
           member1: topThreeMembers[0].name,
           member2: topThreeMembers[1].name,
           memberCount: (grantedUserCount - 2).toString(),
@@ -136,7 +138,9 @@ export const MembersRow = ({ onClick }: { onClick: () => void }) => {
           <div className={styles.OwnerStyle}>{t['Owner']()}</div>
         </>
       ) : (
-        <div>{t['com.lovenotes.share-menu.invite-editor.manage-members']()}</div>
+        <div>
+          {t['com.lovenotes.share-menu.invite-editor.manage-members']()}
+        </div>
       )}
       <div className={styles.IconButtonStyle}>
         <ArrowRightSmallIcon />

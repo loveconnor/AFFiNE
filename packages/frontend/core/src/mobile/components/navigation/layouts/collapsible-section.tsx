@@ -1,7 +1,7 @@
-import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
 import { ToggleRightIcon } from '@blocksuite/icons/rc';
+import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
+import { useLiveData, useService } from '@lovenotes/infra';
 import * as Collapsible from '@radix-ui/react-collapsible';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   forwardRef,

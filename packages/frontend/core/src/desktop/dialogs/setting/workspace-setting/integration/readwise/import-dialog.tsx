@@ -1,3 +1,4 @@
+import { InformationFillDuotoneIcon } from '@blocksuite/icons/rc';
 import {
   Button,
   Checkbox,
@@ -10,8 +11,7 @@ import {
 import { IntegrationService } from '@lovenotes/core/modules/integration';
 import type { ReadwiseHighlight } from '@lovenotes/core/modules/integration/type';
 import { i18nTime, Trans, useI18n } from '@lovenotes/i18n';
-import { InformationFillDuotoneIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import {
   type ChangeEvent,
@@ -423,7 +423,9 @@ const HighlightTable = ({
                   </span>
                 ) : (
                   <span className={styles.todoUpdate}>
-                    {t['com.lovenotes.integration.readwise.import.todo-update']()}
+                    {t[
+                      'com.lovenotes.integration.readwise.import.todo-update'
+                    ]()}
                   </span>
                 )}
               </div>

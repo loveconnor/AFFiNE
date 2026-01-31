@@ -17,7 +17,7 @@ import type { AuthSessionStatus } from '@lovenotes/core/modules/cloud/entities/s
 import { Unreachable } from '@lovenotes/env/constant';
 import { ServerDeploymentType } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 

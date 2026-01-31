@@ -1,9 +1,9 @@
+import { ImportIcon, PlusIcon } from '@blocksuite/icons/rc';
 import { MenuItem } from '@lovenotes/component/ui/menu';
 import { DefaultServerService } from '@lovenotes/core/modules/cloud';
 import { ServerFeature } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { ImportIcon, PlusIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import * as styles from './index.css';
 

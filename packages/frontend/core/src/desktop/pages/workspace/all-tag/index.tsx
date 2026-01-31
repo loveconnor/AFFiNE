@@ -5,9 +5,12 @@ import {
 } from '@lovenotes/core/components/page-list/tags';
 import { CreateOrEditTag } from '@lovenotes/core/components/page-list/tags/create-tag';
 import type { TagMeta } from '@lovenotes/core/components/page-list/types';
-import { TagService, useDeleteTagConfirmModal } from '@lovenotes/core/modules/tag';
+import {
+  TagService,
+  useDeleteTagConfirmModal,
+} from '@lovenotes/core/modules/tag';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useState } from 'react';
 
 import {

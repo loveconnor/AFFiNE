@@ -1,6 +1,9 @@
 import type { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
-import { getWorkspaceInfoQuery, leaveWorkspaceMutation } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import {
+  getWorkspaceInfoQuery,
+  leaveWorkspaceMutation,
+} from '@lovenotes/graphql';
+import { Store } from '@lovenotes/infra';
 
 import type { WorkspaceLocalState } from '../../workspace';
 

@@ -10,7 +10,7 @@ import {
   updateDocDefaultRoleMutation,
   updateDocUserRoleMutation,
 } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 export class DocGrantedUsersStore extends Store {
   constructor(private readonly workspaceServerService: WorkspaceServerService) {

@@ -1,13 +1,4 @@
 import {
-  MenuItem,
-  MenuTrigger,
-  RadioGroup,
-  type RadioItem,
-} from '@lovenotes/component';
-import { SettingRow } from '@lovenotes/component/setting-components';
-import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
-import { useI18n } from '@lovenotes/i18n';
-import {
   DefaultTheme,
   FontFamily,
   FontFamilyMap,
@@ -16,7 +7,16 @@ import {
   TextAlign,
 } from '@blocksuite/lovenotes/model';
 import type { Store } from '@blocksuite/lovenotes/store';
-import { useFramework, useLiveData } from '@toeverything/infra';
+import {
+  MenuItem,
+  MenuTrigger,
+  RadioGroup,
+  type RadioItem,
+} from '@lovenotes/component';
+import { SettingRow } from '@lovenotes/component/setting-components';
+import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
+import { useI18n } from '@lovenotes/i18n';
+import { useFramework, useLiveData } from '@lovenotes/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
 
@@ -219,7 +219,9 @@ export const TextSettings = () => {
         />
       </SettingRow>
       <SettingRow
-        name={t['com.lovenotes.settings.editorSettings.edgeless.text.alignment']()}
+        name={t[
+          'com.lovenotes.settings.editorSettings.edgeless.text.alignment'
+        ]()}
         desc={''}
       >
         <RadioGroup

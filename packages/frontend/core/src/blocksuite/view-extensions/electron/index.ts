@@ -2,7 +2,7 @@ import {
   type ViewExtensionContext,
   ViewExtensionProvider,
 } from '@blocksuite/lovenotes/ext-loader';
-import { FrameworkProvider } from '@toeverything/infra';
+import { FrameworkProvider } from '@lovenotes/infra';
 import { z } from 'zod';
 
 import { patchForClipboardInElectron } from './electron-clipboard';

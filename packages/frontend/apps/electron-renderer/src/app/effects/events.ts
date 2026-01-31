@@ -5,7 +5,7 @@ import { DocsService } from '@lovenotes/core/modules/doc';
 import { LifecycleService } from '@lovenotes/core/modules/lifecycle';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { apis, events } from '@lovenotes/electron-api';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@lovenotes/infra';
 
 import { setupRecordingEvents } from './recording';
 import { getCurrentWorkspace } from './utils';

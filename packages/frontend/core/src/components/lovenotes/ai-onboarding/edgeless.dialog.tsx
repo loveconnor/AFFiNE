@@ -1,12 +1,12 @@
+import { AiIcon } from '@blocksuite/icons/rc';
 import { notify } from '@lovenotes/component';
 import { type Notification } from '@lovenotes/component/ui/notification';
 import { SubscriptionService } from '@lovenotes/core/modules/cloud';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { EditorService } from '@lovenotes/core/modules/editor';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { AiIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import Lottie from 'lottie-react';
 import { useTheme } from 'next-themes';

@@ -1,5 +1,5 @@
 import type { Store } from '@blocksuite/lovenotes/store';
-import { Scope } from '@toeverything/infra';
+import { Scope } from '@lovenotes/infra';
 
 import type { DocRecord } from '../entities/record';
 

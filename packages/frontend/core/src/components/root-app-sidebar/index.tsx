@@ -21,8 +21,8 @@ import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { CMDKQuickSearchService } from '@lovenotes/core/modules/quicksearch/services/cmdk';
 import type { Workspace } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
 import type { ReactElement } from 'react';
 import { memo, useCallback } from 'react';
 

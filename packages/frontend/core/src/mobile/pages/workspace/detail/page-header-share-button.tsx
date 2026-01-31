@@ -1,10 +1,10 @@
+import { ShareiOsIcon } from '@blocksuite/icons/rc';
 import { IconButton, MobileMenu } from '@lovenotes/component';
 import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
 import { DocService } from '@lovenotes/core/modules/doc';
 import { ShareMenuContent } from '@lovenotes/core/modules/share-menu';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { ShareiOsIcon } from '@blocksuite/icons/rc';
-import { useServices } from '@toeverything/infra';
+import { useServices } from '@lovenotes/infra';
 
 import * as styles from './page-header-share-button.css';
 

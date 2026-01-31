@@ -1,9 +1,9 @@
+import { SignOutIcon } from '@blocksuite/icons/rc';
 import { Avatar } from '@lovenotes/component/ui/avatar';
 import { Menu, MenuItem, MenuSeparator } from '@lovenotes/component/ui/menu';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { useI18n } from '@lovenotes/i18n';
-import { SignOutIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect, useMemo } from 'react';
 
 import { AuthService, SubscriptionService } from '../../../modules/cloud';

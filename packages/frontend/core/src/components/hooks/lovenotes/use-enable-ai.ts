@@ -1,6 +1,6 @@
 import { ServerService } from '@lovenotes/core/modules/cloud';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 export const useEnableAI = () => {
   const featureFlagService = useService(FeatureFlagService);

@@ -1,5 +1,5 @@
 import type { IconData } from '@lovenotes/component';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 import type { WorkspaceDBService } from '../../db';
 

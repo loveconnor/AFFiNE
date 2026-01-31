@@ -1,9 +1,9 @@
+import { LocalWorkspaceIcon, Logo1Icon } from '@blocksuite/icons/rc';
 import { Button } from '@lovenotes/component/ui/button';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { appIconMap, appNames } from '@lovenotes/core/utils/channel';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { LocalWorkspaceIcon, Logo1Icon } from '@blocksuite/icons/rc';
-import { useServiceOptional } from '@toeverything/infra';
+import { useServiceOptional } from '@lovenotes/infra';
 import type { MouseEvent } from 'react';
 import { useCallback } from 'react';
 
@@ -19,7 +19,8 @@ interface OpenAppProps {
 }
 const channel = BUILD_CONFIG.appBuildType;
 const url =
-  'https://lovenotes.pro/download' + (channel !== 'stable' ? '/beta-canary' : '');
+  'https://lovenotes.pro/download' +
+  (channel !== 'stable' ? '/beta-canary' : '');
 
 export const OpenInAppPage = ({
   urlToOpen,

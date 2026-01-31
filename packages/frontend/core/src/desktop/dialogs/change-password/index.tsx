@@ -20,7 +20,7 @@ import {
   sendSetPasswordEmailMutation,
 } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect, useState } from 'react';
 
 export const ChangePasswordDialog = ({

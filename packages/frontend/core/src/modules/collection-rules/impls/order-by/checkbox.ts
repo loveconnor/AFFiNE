@@ -1,5 +1,5 @@
 import type { DocsService } from '@lovenotes/core/modules/doc';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 import { combineLatest, map, type Observable } from 'rxjs';
 
 import type { OrderByProvider } from '../../provider';

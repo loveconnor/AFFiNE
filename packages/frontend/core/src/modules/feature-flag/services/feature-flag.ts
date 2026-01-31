@@ -1,4 +1,4 @@
-import { OnEvent, Service } from '@toeverything/infra';
+import { OnEvent, Service } from '@lovenotes/infra';
 import { distinctUntilChanged, skip } from 'rxjs';
 
 import { ApplicationStarted } from '../../lifecycle';

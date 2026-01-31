@@ -1,6 +1,7 @@
 import '@lovenotes/core/bootstrap/electron';
 
 import { apis } from '@lovenotes/electron-api';
+import { OpConsumer } from '@lovenotes/infra/op';
 import { broadcastChannelStorages } from '@lovenotes/nbstore/broadcast-channel';
 import { cloudStorages } from '@lovenotes/nbstore/cloud';
 import { bindNativeDBApis, sqliteStorages } from '@lovenotes/nbstore/sqlite';
@@ -12,7 +13,6 @@ import {
   StoreManagerConsumer,
   type WorkerManagerOps,
 } from '@lovenotes/nbstore/worker/consumer';
-import { OpConsumer } from '@toeverything/infra/op';
 
 // oxlint-disable-next-line no-non-null-assertion
 bindNativeDBApis(apis!.nbstore);

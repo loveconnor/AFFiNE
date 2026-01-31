@@ -1,11 +1,11 @@
+import { InformationIcon, LinkIcon } from '@blocksuite/icons/rc';
+import { type DocMode } from '@blocksuite/lovenotes/model';
 import { IconButton } from '@lovenotes/component';
 import { useSharingUrl } from '@lovenotes/core/components/hooks/lovenotes/use-share-url';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { type DocMode } from '@blocksuite/lovenotes/model';
-import { InformationIcon, LinkIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import * as styles from './edgeless-block-header.css';

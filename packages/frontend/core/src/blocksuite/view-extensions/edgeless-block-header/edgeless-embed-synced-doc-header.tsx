@@ -1,11 +1,3 @@
-import { Button, IconButton, Menu, MenuItem } from '@lovenotes/component';
-import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
-import { WorkbenchService } from '@lovenotes/core/modules/workbench';
-import { stopPropagation } from '@lovenotes/core/utils';
-import { useI18n } from '@lovenotes/i18n';
-import { EmbedSyncedDocBlockComponent } from '@blocksuite/lovenotes/blocks/embed-doc';
-import { isPeekable, peek } from '@blocksuite/lovenotes/components/peek';
-import type { EmbedSyncedDocModel } from '@blocksuite/lovenotes-model';
 import {
   ArrowDownSmallIcon,
   CenterPeekIcon,
@@ -16,9 +8,17 @@ import {
   ToggleDownIcon,
   ToggleRightIcon,
 } from '@blocksuite/icons/rc';
+import { EmbedSyncedDocBlockComponent } from '@blocksuite/lovenotes/blocks/embed-doc';
+import { isPeekable, peek } from '@blocksuite/lovenotes/components/peek';
+import type { EmbedSyncedDocModel } from '@blocksuite/lovenotes-model';
 import type { BlockStdScope } from '@blocksuite/std';
+import { Button, IconButton, Menu, MenuItem } from '@lovenotes/component';
+import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { stopPropagation } from '@lovenotes/core/utils';
+import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { batch } from '@preact/signals-core';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CopyLinkButton, DocInfoButton } from './common';

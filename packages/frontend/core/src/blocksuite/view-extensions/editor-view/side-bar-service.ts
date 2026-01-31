@@ -1,6 +1,6 @@
-import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { SidebarExtension } from '@blocksuite/lovenotes/shared/services';
-import type { FrameworkProvider } from '@toeverything/infra';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import type { FrameworkProvider } from '@lovenotes/infra';
 
 export function patchSideBarService(framework: FrameworkProvider) {
   const { workbench } = framework.get(WorkbenchService);

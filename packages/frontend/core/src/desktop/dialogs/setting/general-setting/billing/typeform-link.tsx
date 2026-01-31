@@ -1,10 +1,13 @@
 import { SettingRow } from '@lovenotes/component/setting-components';
 import { Button } from '@lovenotes/component/ui/button';
 import { getUpgradeQuestionnaireLink } from '@lovenotes/core/components/hooks/lovenotes/use-subscription-notify';
-import { AuthService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import {
+  AuthService,
+  SubscriptionService,
+} from '@lovenotes/core/modules/cloud';
 import { SubscriptionPlan, SubscriptionRecurring } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import * as styles from './style.css';
 

@@ -1,3 +1,5 @@
+import { ResetIcon } from '@blocksuite/icons/rc';
+import type { AttachmentBlockModel } from '@blocksuite/lovenotes/model';
 import {
   AnimatedTranscribeIcon,
   Button,
@@ -14,10 +16,8 @@ import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
 import type { AudioAttachmentBlock } from '@lovenotes/core/modules/media/entities/audio-attachment-block';
 import { AudioAttachmentService } from '@lovenotes/core/modules/media/services/audio-attachment';
 import { Trans, useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import type { AttachmentBlockModel } from '@blocksuite/lovenotes/model';
-import { ResetIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import bytes from 'bytes';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

@@ -5,7 +5,7 @@ import {
   fromPromise,
   LiveData,
   Service,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import {
   combineLatest,
   exhaustMap,

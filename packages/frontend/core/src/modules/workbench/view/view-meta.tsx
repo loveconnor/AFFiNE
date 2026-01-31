@@ -1,4 +1,4 @@
-import { useServiceOptional } from '@toeverything/infra';
+import { useServiceOptional } from '@lovenotes/infra';
 import { useEffect } from 'react';
 
 import { DesktopApiService } from '../../desktop-api';

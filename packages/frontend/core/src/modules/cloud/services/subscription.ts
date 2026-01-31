@@ -1,6 +1,6 @@
 import { type CreateCheckoutSessionInput } from '@lovenotes/graphql';
+import { OnEvent, Service } from '@lovenotes/infra';
 import { tracker } from '@lovenotes/track';
-import { OnEvent, Service } from '@toeverything/infra';
 
 import { Subscription } from '../entities/subscription';
 import { SubscriptionPrices } from '../entities/subscription-prices';

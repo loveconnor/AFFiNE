@@ -12,7 +12,7 @@ export {
   type WorkspacePermissionActions,
 } from './stores/guard';
 
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@lovenotes/infra';
 
 import { WorkspaceServerService } from '../cloud';
 import { DocScope, DocService } from '../doc';

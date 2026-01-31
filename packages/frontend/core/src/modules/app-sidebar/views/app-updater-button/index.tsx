@@ -1,15 +1,15 @@
-import { Tooltip } from '@lovenotes/component';
-import { useCatchEventCallback } from '@lovenotes/core/components/hooks/use-catch-event-hook';
-import { UrlService } from '@lovenotes/core/modules/url';
-import { Unreachable } from '@lovenotes/env/constant';
-import { useI18n } from '@lovenotes/i18n';
 import {
   CloseIcon,
   DownloadIcon,
   NewIcon,
   ResetIcon,
 } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { Tooltip } from '@lovenotes/component';
+import { useCatchEventCallback } from '@lovenotes/core/components/hooks/use-catch-event-hook';
+import { UrlService } from '@lovenotes/core/modules/url';
+import { Unreachable } from '@lovenotes/env/constant';
+import { useI18n } from '@lovenotes/i18n';
+import { useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 
@@ -83,7 +83,9 @@ function UpdateReady({ updateAvailable, appQuitting }: ButtonContentProps) {
       <div className={styles.installLabelHover}>
         <ResetIcon className={styles.icon} />
         <span className={styles.ellipsisTextOverflow}>
-          {t[appQuitting ? 'Loading' : 'com.lovenotes.appUpdater.installUpdate']()}
+          {t[
+            appQuitting ? 'Loading' : 'com.lovenotes.appUpdater.installUpdate'
+          ]()}
         </span>
       </div>
     </div>

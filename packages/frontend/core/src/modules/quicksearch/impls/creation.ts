@@ -1,6 +1,6 @@
-import type { DocMode } from '@blocksuite/lovenotes/model';
 import { NewXxxEdgelessIcon, NewXxxPageIcon } from '@blocksuite/icons/rc';
-import { Entity, LiveData } from '@toeverything/infra';
+import type { DocMode } from '@blocksuite/lovenotes/model';
+import { Entity, LiveData } from '@lovenotes/infra';
 
 import type { QuickSearchSession } from '../providers/quick-search-provider';
 import type { QuickSearchGroup } from '../types/group';

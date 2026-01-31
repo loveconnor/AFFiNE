@@ -1,11 +1,11 @@
+import { AddTagIcon } from '@blocksuite/icons/rc';
 import { IconButton } from '@lovenotes/component';
 import { RenameModal } from '@lovenotes/component/rename-modal';
 import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
 import { TagService } from '@lovenotes/core/modules/tag';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { AddTagIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CollapsibleSection } from '../../layouts/collapsible-section';

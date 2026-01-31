@@ -7,7 +7,7 @@ import {
 import { WorkspaceQuotaService } from '@lovenotes/core/modules/quota';
 import { SubscriptionRecurring } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CancelTeamAction } from '../../general-setting/plans/actions';

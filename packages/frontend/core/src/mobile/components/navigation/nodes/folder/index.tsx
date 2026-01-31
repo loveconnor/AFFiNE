@@ -1,4 +1,14 @@
 import {
+  DeleteIcon,
+  FolderIcon,
+  LayerIcon,
+  PageIcon,
+  PlusIcon,
+  PlusThickIcon,
+  RemoveFolderIcon,
+  TagsIcon,
+} from '@blocksuite/icons/rc';
+import {
   AnimatedFolderIcon,
   IconButton,
   MenuItem,
@@ -21,18 +31,8 @@ import {
 } from '@lovenotes/core/modules/organize';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  DeleteIcon,
-  FolderIcon,
-  LayerIcon,
-  PageIcon,
-  PlusIcon,
-  PlusThickIcon,
-  RemoveFolderIcon,
-  TagsIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { difference } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
 
@@ -175,7 +175,8 @@ const NavigationPanelFolderNodeFolder = ({
       title: t['com.lovenotes.rootAppSidebar.organize.delete.notify-title']({
         name,
       }),
-      message: t['com.lovenotes.rootAppSidebar.organize.delete.notify-message'](),
+      message:
+        t['com.lovenotes.rootAppSidebar.organize.delete.notify-message'](),
     });
   }, [name, node, t]);
 
@@ -403,7 +404,9 @@ const NavigationPanelFolderNodeFolder = ({
                 data-event-args-type={node.type$.value}
                 onClick={() => node.delete()}
               >
-                {t['com.lovenotes.rootAppSidebar.organize.delete-from-folder']()}
+                {t[
+                  'com.lovenotes.rootAppSidebar.organize.delete-from-folder'
+                ]()}
               </MenuItem>
             ),
           },

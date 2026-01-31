@@ -6,8 +6,8 @@ import {
   SubscriptionRecurring,
   SubscriptionVariant,
 } from '@lovenotes/graphql';
+import { effect, fromPromise, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { effect, fromPromise, useServices } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';

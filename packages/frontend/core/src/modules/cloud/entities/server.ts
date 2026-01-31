@@ -7,7 +7,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { exhaustMap, map, tap } from 'rxjs';
 
 import { ServerScope } from '../scopes/server';

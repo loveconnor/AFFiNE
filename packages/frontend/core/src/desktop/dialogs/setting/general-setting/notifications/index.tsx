@@ -10,7 +10,7 @@ import {
 } from '@lovenotes/core/modules/cloud';
 import { UserFriendlyError } from '@lovenotes/error';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import * as styles from './style.css';
@@ -73,7 +73,9 @@ export const NotificationSettings = () => {
         )}
         <SettingRow
           name={t['com.lovenotes.setting.notifications.email.mention.title']()}
-          desc={t['com.lovenotes.setting.notifications.email.mention.subtitle']()}
+          desc={t[
+            'com.lovenotes.setting.notifications.email.mention.subtitle'
+          ]()}
         >
           <Switch
             data-testid="notification-email-mention-trigger"
@@ -84,7 +86,9 @@ export const NotificationSettings = () => {
         </SettingRow>
         <SettingRow
           name={t['com.lovenotes.setting.notifications.email.invites.title']()}
-          desc={t['com.lovenotes.setting.notifications.email.invites.subtitle']()}
+          desc={t[
+            'com.lovenotes.setting.notifications.email.invites.subtitle'
+          ]()}
         >
           <Switch
             data-testid="notification-email-invites-trigger"
@@ -97,7 +101,9 @@ export const NotificationSettings = () => {
         </SettingRow>
         <SettingRow
           name={t['com.lovenotes.setting.notifications.email.comments.title']()}
-          desc={t['com.lovenotes.setting.notifications.email.comments.subtitle']()}
+          desc={t[
+            'com.lovenotes.setting.notifications.email.comments.subtitle'
+          ]()}
         >
           <Switch
             data-testid="notification-email-comments-trigger"

@@ -4,7 +4,7 @@ import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel
 import type { Tag } from '@lovenotes/core/modules/tag';
 import { TagService } from '@lovenotes/core/modules/tag';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 

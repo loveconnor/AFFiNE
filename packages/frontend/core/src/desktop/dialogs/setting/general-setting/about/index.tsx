@@ -9,7 +9,7 @@ import { useAppUpdater } from '@lovenotes/core/components/hooks/use-app-updater'
 import { UrlService } from '@lovenotes/core/modules/url';
 import { appIconMap, appNames } from '@lovenotes/core/utils/channel';
 import { useI18n } from '@lovenotes/i18n';
-import { useServices } from '@toeverything/infra';
+import { useServices } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import { useAppSettingHelper } from '../../../../../components/hooks/lovenotes/use-app-setting-helper';

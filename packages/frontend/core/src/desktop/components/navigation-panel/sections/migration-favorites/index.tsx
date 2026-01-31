@@ -1,10 +1,10 @@
+import { BroomIcon, HelpIcon } from '@blocksuite/icons/rc';
 import { IconButton, useConfirmModal } from '@lovenotes/component';
 import { DocsService } from '@lovenotes/core/modules/doc';
 import { MigrationFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
 import { Trans, useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { BroomIcon, HelpIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { CollapsibleSection } from '../../layouts/collapsible-section';
@@ -76,7 +76,8 @@ export const NavigationPanelMigrationFavorites = () => {
           }}
         />
       ),
-      confirmText: t['com.lovenotes.rootAppSidebar.migration-data.help.confirm'](),
+      confirmText:
+        t['com.lovenotes.rootAppSidebar.migration-data.help.confirm'](),
       confirmButtonOptions: {
         variant: 'primary',
       },

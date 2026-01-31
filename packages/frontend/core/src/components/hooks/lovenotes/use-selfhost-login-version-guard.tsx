@@ -1,5 +1,5 @@
 import type { Server } from '@lovenotes/core/modules/cloud';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@lovenotes/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import semver from 'semver';
 

@@ -1,8 +1,3 @@
-import { Divider, Loading, toast } from '@lovenotes/component';
-import { Button, IconButton } from '@lovenotes/component/ui/button';
-import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
-import type { ImageBlockModel } from '@blocksuite/lovenotes/model';
-import type { BlockModel, Workspace } from '@blocksuite/lovenotes/store';
 import {
   ArrowLeftSmallIcon,
   ArrowRightSmallIcon,
@@ -14,7 +9,12 @@ import {
   PlusIcon,
   ViewBarIcon,
 } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import type { ImageBlockModel } from '@blocksuite/lovenotes/model';
+import type { BlockModel, Workspace } from '@blocksuite/lovenotes/store';
+import { Divider, Loading, toast } from '@lovenotes/component';
+import { Button, IconButton } from '@lovenotes/component/ui/button';
+import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
+import { useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import type { ImgHTMLAttributes, ReactElement } from 'react';
 import {

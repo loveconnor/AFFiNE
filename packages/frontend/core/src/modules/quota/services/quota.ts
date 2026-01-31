@@ -1,4 +1,4 @@
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 
 import { WorkspaceQuota } from '../entities/quota';
 

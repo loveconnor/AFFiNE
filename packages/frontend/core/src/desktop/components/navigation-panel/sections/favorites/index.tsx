@@ -1,3 +1,4 @@
+import { PlusIcon } from '@blocksuite/icons/rc';
 import {
   type DropTargetDropEvent,
   IconButton,
@@ -14,9 +15,8 @@ import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { inferOpenMode } from '@lovenotes/core/utils';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { PlusIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { type MouseEventHandler, useCallback, useMemo } from 'react';
 
 import { CollapsibleSection } from '../../layouts/collapsible-section';

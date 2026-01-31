@@ -121,6 +121,9 @@ export function textToText({
   modelId,
   toolsConfig,
 }: TextToTextOptions) {
+  if (!sessionId) {
+    throw new Error('Copilot session is missing. Please start a new chat.');
+  }
   let messageId: string | undefined;
 
   if (stream) {

@@ -1,12 +1,12 @@
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import {
   RadioGroup,
   type RadioItem,
   useMobileMenuController,
 } from '@lovenotes/component';
 import { EditorService } from '@lovenotes/core/modules/editor';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import * as styles from './mode-switch.css';

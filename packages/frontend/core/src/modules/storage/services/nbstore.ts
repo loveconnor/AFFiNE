@@ -1,5 +1,5 @@
+import { Service } from '@lovenotes/infra';
 import type { WorkerInitOptions } from '@lovenotes/nbstore/worker/client';
-import { Service } from '@toeverything/infra';
 
 import type { NbstoreProvider } from '../providers/nbstore';
 

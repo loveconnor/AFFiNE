@@ -1,4 +1,4 @@
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@lovenotes/infra';
 import { animate as anime, eases } from 'animejs';
 import clsx from 'clsx';
 import {

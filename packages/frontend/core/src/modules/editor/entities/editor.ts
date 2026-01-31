@@ -1,5 +1,3 @@
-import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor';
-import type { DefaultOpenProperty } from '@lovenotes/core/components/properties';
 import { PresentTool } from '@blocksuite/lovenotes/blocks/frame';
 import { DefaultTool } from '@blocksuite/lovenotes/blocks/surface';
 import type { DocTitle } from '@blocksuite/lovenotes/fragments/doc-title';
@@ -13,8 +11,10 @@ import {
 } from '@blocksuite/lovenotes/shared/services';
 import { GfxControllerIdentifier } from '@blocksuite/lovenotes/std/gfx';
 import type { InlineEditor } from '@blocksuite/std/inline';
+import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor';
+import type { DefaultOpenProperty } from '@lovenotes/core/components/properties';
+import { Entity, LiveData } from '@lovenotes/infra';
 import { effect } from '@preact/signals-core';
-import { Entity, LiveData } from '@toeverything/infra';
 import { defaults, isEqual, omit } from 'lodash-es';
 import { skip } from 'rxjs';
 
@@ -37,7 +37,9 @@ export class Editor extends Entity {
   readonly doc = this.docService.doc;
   readonly isSharedMode =
     this.workspaceService.workspace.openOptions.isSharedMode;
-  readonly editorContainer$ = new LiveData<LoveNotesEditorContainer | null>(null);
+  readonly editorContainer$ = new LiveData<LoveNotesEditorContainer | null>(
+    null
+  );
   readonly defaultOpenProperty$ = new LiveData<DefaultOpenProperty | undefined>(
     undefined
   );

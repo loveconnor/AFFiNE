@@ -45,13 +45,13 @@ import {
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { isNewTabTrigger } from '@lovenotes/core/utils';
 import { ServerFeature } from '@lovenotes/graphql';
-import track from '@lovenotes/track';
 import {
   FrameworkScope,
   useLiveData,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
+import track from '@lovenotes/track';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
 import { memo, useCallback, useEffect, useRef, useState } from 'react';

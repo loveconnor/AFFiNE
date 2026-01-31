@@ -1,3 +1,4 @@
+import { FilterMinusIcon, ViewLayersIcon } from '@blocksuite/icons/rc';
 import { MenuItem, notify } from '@lovenotes/component';
 import type { NodeOperation } from '@lovenotes/core/desktop/components/navigation-panel';
 import {
@@ -9,9 +10,8 @@ import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
 import { ShareDocsListService } from '@lovenotes/core/modules/share-doc';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { FilterMinusIcon, ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';

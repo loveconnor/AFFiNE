@@ -2,7 +2,7 @@ import {
   WorkbenchLink,
   WorkbenchService,
 } from '@lovenotes/core/modules/workbench';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import * as styles from './style.css';
 

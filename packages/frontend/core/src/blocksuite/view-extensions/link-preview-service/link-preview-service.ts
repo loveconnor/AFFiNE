@@ -1,3 +1,4 @@
+import type { Container } from '@blocksuite/global/di';
 import { DEFAULT_LINK_PREVIEW_ENDPOINT } from '@blocksuite/lovenotes/shared/consts';
 import {
   LinkPreviewCacheIdentifier,
@@ -6,8 +7,7 @@ import {
   LinkPreviewServiceIdentifier,
 } from '@blocksuite/lovenotes/shared/services';
 import { type ExtensionType } from '@blocksuite/lovenotes/store';
-import type { Container } from '@blocksuite/global/di';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@lovenotes/infra';
 
 import { ServerService } from '../../../modules/cloud/services/server';
 

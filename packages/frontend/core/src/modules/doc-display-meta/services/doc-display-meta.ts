@@ -20,7 +20,7 @@ import {
   TomorrowIcon,
   YesterdayIcon,
 } from '@blocksuite/icons/rc';
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@lovenotes/infra';
 
 import type { DocRecord, DocsService } from '../../doc';
 import type { ExplorerIconService } from '../../explorer-icon/services/explorer-icon';

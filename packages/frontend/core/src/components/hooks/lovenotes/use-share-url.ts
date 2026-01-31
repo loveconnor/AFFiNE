@@ -1,9 +1,3 @@
-import { notify } from '@lovenotes/component';
-import { ServerService } from '@lovenotes/core/modules/cloud';
-import { toDocSearchParams } from '@lovenotes/core/modules/navigation';
-import { copyTextToClipboard } from '@lovenotes/core/utils/clipboard';
-import { useI18n } from '@lovenotes/i18n';
-import { track } from '@lovenotes/track';
 import type { SerializedXYWH } from '@blocksuite/lovenotes/global/gfx';
 import { type DocMode } from '@blocksuite/lovenotes/model';
 import {
@@ -17,7 +11,13 @@ import {
   GfxBlockElementModel,
   GfxControllerIdentifier,
 } from '@blocksuite/lovenotes/std/gfx';
-import { useService } from '@toeverything/infra';
+import { notify } from '@lovenotes/component';
+import { ServerService } from '@lovenotes/core/modules/cloud';
+import { toDocSearchParams } from '@lovenotes/core/modules/navigation';
+import { copyTextToClipboard } from '@lovenotes/core/utils/clipboard';
+import { useI18n } from '@lovenotes/i18n';
+import { useService } from '@lovenotes/infra';
+import { track } from '@lovenotes/track';
 import { useCallback } from 'react';
 
 export type UseSharingUrl = {

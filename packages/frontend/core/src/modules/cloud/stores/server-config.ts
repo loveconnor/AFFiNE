@@ -7,7 +7,7 @@ import {
   ServerDeploymentType,
   ServerFeature,
 } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 export type ServerConfigType = ServerConfigQuery['serverConfig'] &
   OauthProvidersQuery['serverConfig'];

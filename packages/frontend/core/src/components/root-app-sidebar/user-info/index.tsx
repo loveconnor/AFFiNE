@@ -11,7 +11,7 @@ import {
   ServerService,
 } from '@lovenotes/core/modules/cloud';
 import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import { Account } from './account';

@@ -1,8 +1,3 @@
-import { IconButton, notify } from '@lovenotes/component';
-import { copyTextToClipboard } from '@lovenotes/core/utils/clipboard';
-import { useI18n } from '@lovenotes/i18n';
-import track from '@lovenotes/track';
-import type { DocMode } from '@blocksuite/lovenotes/model';
 import {
   CloseIcon,
   ExpandFullIcon,
@@ -11,7 +6,12 @@ import {
   OpenInNewIcon,
   SplitViewIcon,
 } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import type { DocMode } from '@blocksuite/lovenotes/model';
+import { IconButton, notify } from '@lovenotes/component';
+import { copyTextToClipboard } from '@lovenotes/core/utils/clipboard';
+import { useI18n } from '@lovenotes/i18n';
+import { useService } from '@lovenotes/infra';
+import track from '@lovenotes/track';
 import { clsx } from 'clsx';
 import {
   type HTMLAttributes,
@@ -249,7 +249,9 @@ export const AttachmentPeekViewControls = ({
       },
       {
         nameKey: 'new-tab',
-        name: t['com.lovenotes.peek-view-controls.open-attachment-in-new-tab'](),
+        name: t[
+          'com.lovenotes.peek-view-controls.open-attachment-in-new-tab'
+        ](),
         icon: <OpenInNewIcon />,
         onClick: () => {
           workbench.openAttachment(docId, blockId, { at: 'new-tab' });

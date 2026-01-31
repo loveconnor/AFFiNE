@@ -1,3 +1,4 @@
+import { CloseIcon } from '@blocksuite/icons/rc';
 import { Button, Checkbox, IconButton } from '@lovenotes/component';
 import {
   OpenInAppService,
@@ -5,8 +6,7 @@ import {
 } from '@lovenotes/core/modules/open-in-app';
 import { appIconMap } from '@lovenotes/core/utils';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { CloseIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useState } from 'react';
 
 import * as styles from './open-in-app-card.css';

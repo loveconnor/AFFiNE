@@ -1,10 +1,10 @@
+import { LongerIcon } from '@blocksuite/icons/rc';
 import { MenuItem, PropertyValue, type RadioItem } from '@lovenotes/component';
 import type { FilterParams } from '@lovenotes/core/modules/collection-rules';
 import { type DocRecord, DocService } from '@lovenotes/core/modules/doc';
 import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
 import { useI18n } from '@lovenotes/i18n';
-import { LongerIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';

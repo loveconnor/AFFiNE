@@ -1,7 +1,7 @@
 import { PropertyValue, Tooltip } from '@lovenotes/component';
 import { type DocRecord, DocService } from '@lovenotes/core/modules/doc';
 import { i18nTime, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';
 import type { GroupHeaderProps } from '../explorer/types';

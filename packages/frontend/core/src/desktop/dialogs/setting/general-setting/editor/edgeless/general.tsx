@@ -3,7 +3,7 @@ import { SettingRow } from '@lovenotes/component/setting-components';
 import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
 import type { EdgelessDefaultTheme } from '@lovenotes/core/modules/editor-setting/schema';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 import { menuTrigger } from '../style.css';

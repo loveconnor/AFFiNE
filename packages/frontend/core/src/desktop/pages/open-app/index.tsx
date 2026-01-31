@@ -8,7 +8,7 @@ import {
 } from '@lovenotes/core/utils/channel';
 import type { GetCurrentUserQuery } from '@lovenotes/graphql';
 import { getCurrentUserQuery } from '@lovenotes/graphql';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 

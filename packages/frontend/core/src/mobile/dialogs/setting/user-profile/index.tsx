@@ -1,9 +1,9 @@
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { Avatar } from '@lovenotes/component';
 import { useSignOut } from '@lovenotes/core/components/hooks/lovenotes/use-sign-out';
 import { AuthService } from '@lovenotes/core/modules/cloud';
 import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
-import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { type ReactNode } from 'react';
 
 import { UserPlanTag } from '../../../components';

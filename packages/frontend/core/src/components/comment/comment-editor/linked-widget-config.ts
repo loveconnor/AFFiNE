@@ -1,16 +1,16 @@
-import { MemberSearchService } from '@lovenotes/core/modules/permissions';
-import { highlighter } from '@lovenotes/core/modules/quicksearch/utils/highlighter';
-import { I18n } from '@lovenotes/i18n';
-import track from '@lovenotes/track';
+import { UserIcon } from '@blocksuite/icons/lit';
 import type { LoveNotesInlineEditor } from '@blocksuite/lovenotes/shared/types';
 import type {
   LinkedMenuItem,
   LinkedWidgetConfig,
 } from '@blocksuite/lovenotes/widgets/linked-doc';
-import { UserIcon } from '@blocksuite/icons/lit';
 import { BLOCK_ID_ATTR, type BlockComponent } from '@blocksuite/std';
+import { MemberSearchService } from '@lovenotes/core/modules/permissions';
+import { highlighter } from '@lovenotes/core/modules/quicksearch/utils/highlighter';
+import { I18n } from '@lovenotes/i18n';
+import type { FrameworkProvider } from '@lovenotes/infra';
+import track from '@lovenotes/track';
 import { computed } from '@preact/signals-core';
-import type { FrameworkProvider } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import Fuse, { type FuseResultMatch } from 'fuse.js';
 import { html } from 'lit';

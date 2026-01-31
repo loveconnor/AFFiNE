@@ -1,7 +1,7 @@
+import type { Container } from '@blocksuite/global/di';
 import { IconPickerServiceIdentifier } from '@blocksuite/lovenotes/shared/services';
 import { type ExtensionType } from '@blocksuite/lovenotes/store';
-import type { Container } from '@blocksuite/global/di';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@lovenotes/infra';
 
 import { IconPickerService } from '../../../modules/icon-picker/services/icon-picker';
 

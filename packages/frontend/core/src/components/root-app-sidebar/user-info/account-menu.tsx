@@ -1,10 +1,13 @@
+import { AccountIcon, AdminIcon, SignOutIcon } from '@blocksuite/icons/rc';
 import { MenuItem } from '@lovenotes/component';
-import { ServerService, UserFeatureService } from '@lovenotes/core/modules/cloud';
+import {
+  ServerService,
+  UserFeatureService,
+} from '@lovenotes/core/modules/cloud';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { AccountIcon, AdminIcon, SignOutIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 
 import { useSignOut } from '../../hooks/lovenotes/use-sign-out';

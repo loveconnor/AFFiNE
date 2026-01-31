@@ -1,16 +1,16 @@
-import { DebugLogger } from '@lovenotes/debug';
-import { Unreachable } from '@lovenotes/env/constant';
 import { replaceIdMiddleware } from '@blocksuite/lovenotes/shared/adapters';
 import type { LoveNotesTextAttributes } from '@blocksuite/lovenotes/shared/types';
 import type { DeltaInsert } from '@blocksuite/lovenotes/store';
 import { Slice, Text, Transformer } from '@blocksuite/lovenotes/store';
-import { ObjectPool, Service } from '@toeverything/infra';
-import { encodeStateAsUpdate } from 'yjs';
+import { DebugLogger } from '@lovenotes/debug';
+import { Unreachable } from '@lovenotes/env/constant';
+import { ObjectPool, Service } from '@lovenotes/infra';
 import { combineLatest, map } from 'rxjs';
+import { encodeStateAsUpdate } from 'yjs';
 
 import { initDocFromProps } from '../../../blocksuite/initialization';
-import { getLoveNotesWorkspaceSchema } from '../../workspace';
 import type { WorkspaceService } from '../../workspace';
+import { getLoveNotesWorkspaceSchema } from '../../workspace';
 import type { Doc } from '../entities/doc';
 import { DocRecordList } from '../entities/record-list';
 import { DocCreated, DocInitialized } from '../events';

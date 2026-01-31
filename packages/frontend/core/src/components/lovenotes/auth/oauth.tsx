@@ -1,3 +1,9 @@
+import {
+  AppleIcon,
+  GithubIcon,
+  GoogleIcon,
+  LockIcon,
+} from '@blocksuite/icons/rc';
 import { Button } from '@lovenotes/component/ui/button';
 import { notify } from '@lovenotes/component/ui/notification';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
@@ -5,14 +11,8 @@ import { AuthService, ServerService } from '@lovenotes/core/modules/cloud';
 import { UrlService } from '@lovenotes/core/modules/url';
 import { UserFriendlyError } from '@lovenotes/error';
 import { OAuthProviderType } from '@lovenotes/graphql';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  AppleIcon,
-  GithubIcon,
-  GoogleIcon,
-  LockIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { type ReactElement, type SVGAttributes, useCallback } from 'react';
 
 const OAuthProviderMap: Record<

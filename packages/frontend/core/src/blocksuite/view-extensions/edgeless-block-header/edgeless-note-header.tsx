@@ -1,19 +1,19 @@
+import {
+  ExpandFullIcon,
+  ToggleDownIcon,
+  ToggleRightIcon,
+} from '@blocksuite/icons/rc';
+import { Bound } from '@blocksuite/lovenotes/global/gfx';
+import { type NoteBlockModel } from '@blocksuite/lovenotes/model';
+import { GfxControllerIdentifier } from '@blocksuite/lovenotes/std/gfx';
 import { IconButton } from '@lovenotes/component';
 import { DocService } from '@lovenotes/core/modules/doc';
 import { EditorService } from '@lovenotes/core/modules/editor';
 import { useInsidePeekView } from '@lovenotes/core/modules/peek-view/view/modal-container';
 import { extractEmojiIcon } from '@lovenotes/core/utils';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { Bound } from '@blocksuite/lovenotes/global/gfx';
-import { type NoteBlockModel } from '@blocksuite/lovenotes/model';
-import { GfxControllerIdentifier } from '@blocksuite/lovenotes/std/gfx';
-import {
-  ExpandFullIcon,
-  ToggleDownIcon,
-  ToggleRightIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CopyLinkButton, DocInfoButton } from './common';
@@ -87,7 +87,9 @@ const EdgelessNoteToggleButton = ({ note }: { note: NoteBlockModel }) => {
       <IconButton
         className={styles.button}
         size={styles.iconSize}
-        tooltip={t['com.lovenotes.editor.edgeless-note-header.fold-page-block']()}
+        tooltip={t[
+          'com.lovenotes.editor.edgeless-note-header.fold-page-block'
+        ]()}
         data-testid="edgeless-note-toggle-button"
         onClick={toggle}
       >

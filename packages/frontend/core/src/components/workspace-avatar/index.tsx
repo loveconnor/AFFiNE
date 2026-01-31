@@ -3,7 +3,7 @@ import {
   type WorkspaceMetadata,
   WorkspacesService,
 } from '@lovenotes/core/modules/workspace';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect, useLayoutEffect, useState } from 'react';
 
 const cache = new Map<string, { imageBitmap: ImageBitmap; key: string }>();

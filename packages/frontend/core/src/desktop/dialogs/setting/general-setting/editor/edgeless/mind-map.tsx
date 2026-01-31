@@ -1,3 +1,6 @@
+import { getSurfaceBlock } from '@blocksuite/lovenotes/blocks/surface';
+import { LayoutType, MindmapStyle } from '@blocksuite/lovenotes/model';
+import type { Store } from '@blocksuite/lovenotes/store';
 import {
   MenuItem,
   MenuTrigger,
@@ -7,10 +10,7 @@ import {
 import { SettingRow } from '@lovenotes/component/setting-components';
 import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
 import { useI18n } from '@lovenotes/i18n';
-import { getSurfaceBlock } from '@blocksuite/lovenotes/blocks/surface';
-import { LayoutType, MindmapStyle } from '@blocksuite/lovenotes/model';
-import type { Store } from '@blocksuite/lovenotes/store';
-import { useFramework, useLiveData } from '@toeverything/infra';
+import { useFramework, useLiveData } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 import { DropdownMenu } from '../menu';

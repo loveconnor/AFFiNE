@@ -1,5 +1,5 @@
 import type { DocsSearchService } from '@lovenotes/core/modules/docs-search';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 import { map, type Observable } from 'rxjs';
 
 import type { FilterProvider } from '../../provider';

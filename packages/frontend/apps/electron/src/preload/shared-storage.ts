@@ -1,4 +1,4 @@
-import { MemoryMemento } from '@toeverything/infra';
+import { MemoryMemento } from '@lovenotes/infra';
 import { ipcRenderer } from 'electron';
 
 import {

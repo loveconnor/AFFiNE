@@ -1,5 +1,5 @@
 import type { DatabaseBlockDataSource } from '@blocksuite/lovenotes/blocks/database';
-import type { LiveData } from '@toeverything/infra';
+import type { LiveData } from '@lovenotes/infra';
 
 import type { Doc } from '../doc';
 

@@ -9,7 +9,7 @@ import {
   type WorkspaceCalendarsQuery,
   workspaceCalendarsQuery,
 } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 import type { WorkspaceServerService } from '../../cloud';
 import type { WorkspaceService } from '../../workspace';

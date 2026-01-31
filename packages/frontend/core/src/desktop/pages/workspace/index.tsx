@@ -1,3 +1,4 @@
+import { ZipTransformer } from '@blocksuite/lovenotes/widgets/linked-doc';
 import { DNDContext } from '@lovenotes/component';
 import { LoveNotesOtherPageLayout } from '@lovenotes/component/lovenotes-other-page-layout';
 import { workbenchRoutes } from '@lovenotes/core/desktop/workbench-router';
@@ -15,14 +16,13 @@ import {
   type WorkspaceMetadata,
   WorkspacesService,
 } from '@lovenotes/core/modules/workspace';
-import { ZipTransformer } from '@blocksuite/lovenotes/widgets/linked-doc';
 import {
   FrameworkScope,
   LiveData,
   useLiveData,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import type { PropsWithChildren, ReactElement } from 'react';
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {

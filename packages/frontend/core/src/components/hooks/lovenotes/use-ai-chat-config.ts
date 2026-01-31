@@ -1,4 +1,5 @@
 // packages/frontend/core/src/blocksuite/ai/hooks/useChatPanelConfig.ts
+import { createSignalFromObservable } from '@blocksuite/lovenotes/shared/utils';
 import { AIPlaygroundService } from '@lovenotes/core/modules/ai-button/services/playground';
 import { AIReasoningService } from '@lovenotes/core/modules/ai-button/services/reasoning';
 import { CollectionService } from '@lovenotes/core/modules/collection';
@@ -13,8 +14,7 @@ import {
 } from '@lovenotes/core/modules/search-menu/services';
 import { TagService } from '@lovenotes/core/modules/tag';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { createSignalFromObservable } from '@blocksuite/lovenotes/shared/utils';
-import { useFramework } from '@toeverything/infra';
+import { useFramework } from '@lovenotes/infra';
 
 export function useAIChatConfig() {
   const framework = useFramework();

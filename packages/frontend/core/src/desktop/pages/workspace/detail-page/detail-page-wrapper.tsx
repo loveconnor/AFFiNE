@@ -3,7 +3,7 @@ import type { Editor } from '@lovenotes/core/modules/editor';
 import { EditorsService } from '@lovenotes/core/modules/editor';
 import { ViewService } from '@lovenotes/core/modules/workbench/services/view';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@lovenotes/infra';
 import {
   type PropsWithChildren,
   type ReactNode,

@@ -6,12 +6,8 @@ import {
   type WorkspaceMetadata,
   WorkspacesService,
 } from '@lovenotes/core/modules/workspace';
+import { useLiveData, useServiceOptional, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import {
-  useLiveData,
-  useServiceOptional,
-  useServices,
-} from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { UserWithWorkspaceList } from './user-with-workspace-list';

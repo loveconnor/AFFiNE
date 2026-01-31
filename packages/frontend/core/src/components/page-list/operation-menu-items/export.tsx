@@ -1,7 +1,3 @@
-import { MenuItem, MenuSeparator, MenuSub } from '@lovenotes/component';
-import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
-import { useI18n } from '@lovenotes/i18n';
-import { track } from '@lovenotes/track';
 import {
   ExportIcon,
   ExportToHtmlIcon,
@@ -10,7 +6,11 @@ import {
   PageIcon,
   PrinterIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { MenuItem, MenuSeparator, MenuSub } from '@lovenotes/component';
+import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
+import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
+import { track } from '@lovenotes/track';
 import type { ReactNode } from 'react';
 import { useCallback } from 'react';
 

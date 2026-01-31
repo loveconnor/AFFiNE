@@ -1,3 +1,4 @@
+import type { DocMeta } from '@blocksuite/lovenotes/store';
 import { IconButton, Skeleton } from '@lovenotes/component';
 import { useCatchEventCallback } from '@lovenotes/core/components/hooks/use-catch-event-hook';
 import { PagePreview } from '@lovenotes/core/components/page-list/page-content-preview';
@@ -8,8 +9,7 @@ import {
   WorkbenchLink,
   type WorkbenchLinkProps,
 } from '@lovenotes/core/modules/workbench';
-import type { DocMeta } from '@blocksuite/lovenotes/store';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { forwardRef, type ReactNode, useMemo, useRef } from 'react';
 

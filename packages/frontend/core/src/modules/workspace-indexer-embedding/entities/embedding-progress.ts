@@ -1,5 +1,4 @@
 import type { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { logger } from '@sentry/react';
 import {
   catchErrorInto,
   effect,
@@ -9,7 +8,8 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
+import { logger } from '@sentry/react';
 import { EMPTY, interval, Subject } from 'rxjs';
 import { exhaustMap, mergeMap, switchMap, takeUntil } from 'rxjs/operators';
 

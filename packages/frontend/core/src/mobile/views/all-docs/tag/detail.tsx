@@ -8,7 +8,7 @@ import { EmptyDocs } from '@lovenotes/core/components/lovenotes/empty';
 import { Page } from '@lovenotes/core/mobile/components/page';
 import { CollectionRulesService } from '@lovenotes/core/modules/collection-rules';
 import type { Tag } from '@lovenotes/core/modules/tag';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect, useState } from 'react';
 
 import { TagDetailHeader } from './detail-header';

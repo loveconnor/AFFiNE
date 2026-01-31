@@ -1,15 +1,15 @@
+import { Logo1Icon } from '@blocksuite/icons/rc';
 import { Scrollable } from '@lovenotes/component';
 import { Avatar } from '@lovenotes/component/ui/avatar';
-import { UserPlanButton } from '@lovenotes/core/components/lovenotes/auth/user-plan-button';
 import { useCatchEventCallback } from '@lovenotes/core/components/hooks/use-catch-event-hook';
+import { UserPlanButton } from '@lovenotes/core/components/lovenotes/auth/user-plan-button';
 import { AuthService } from '@lovenotes/core/modules/cloud';
 import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
 import type { SettingTab } from '@lovenotes/core/modules/dialogs/constant';
 import { type WorkspaceMetadata } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { Logo1Icon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   type HTMLAttributes,
@@ -98,7 +98,10 @@ export const SignInButton = () => {
         <div className="name" title={t['com.lovenotes.settings.sign']()}>
           {t['com.lovenotes.settings.sign']()}
         </div>
-        <div className="email" title={t['com.lovenotes.setting.sign.message']()}>
+        <div
+          className="email"
+          title={t['com.lovenotes.setting.sign.message']()}
+        >
           {t['com.lovenotes.setting.sign.message']()}
         </div>
       </div>

@@ -1,12 +1,12 @@
+import { type DocMode } from '@blocksuite/lovenotes/model';
+import type { Workspace } from '@blocksuite/lovenotes/store';
 import { toast } from '@lovenotes/component';
 import { getStoreManager } from '@lovenotes/core/blocksuite/manager/store';
 import { AppSidebarService } from '@lovenotes/core/modules/app-sidebar';
 import { DocsService } from '@lovenotes/core/modules/doc';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { getLoveNotesWorkspaceSchema } from '@lovenotes/core/modules/workspace';
-import { type DocMode } from '@blocksuite/lovenotes/model';
-import type { Workspace } from '@blocksuite/lovenotes/store';
-import { useServices } from '@toeverything/infra';
+import { useServices } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 export const usePageHelper = (docCollection: Workspace) => {

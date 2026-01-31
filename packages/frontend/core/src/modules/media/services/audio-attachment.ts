@@ -4,7 +4,7 @@ import {
   type AudioMediaKey,
   ObjectPool,
   Service,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 
 import { AudioAttachmentBlock } from '../entities/audio-attachment-block';
 

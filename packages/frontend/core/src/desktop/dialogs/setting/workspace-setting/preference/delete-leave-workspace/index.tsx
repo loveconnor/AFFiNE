@@ -1,3 +1,4 @@
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { notify } from '@lovenotes/component';
 import { SettingRow } from '@lovenotes/component/setting-components';
 import { ConfirmModal } from '@lovenotes/component/ui/modal';
@@ -9,8 +10,7 @@ import {
   WorkspacesService,
 } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -129,7 +129,9 @@ export const DeleteLeaveWorkspace = ({
           onConfirm={onDeleteConfirm}
           onOpenChange={setShowLeave}
           title={`${t['com.lovenotes.deleteLeaveWorkspace.leave']()}?`}
-          description={t['com.lovenotes.deleteLeaveWorkspace.leaveDescription']()}
+          description={t[
+            'com.lovenotes.deleteLeaveWorkspace.leaveDescription'
+          ]()}
           confirmText={t['Leave']()}
           confirmButtonOptions={{
             variant: 'error',

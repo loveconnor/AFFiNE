@@ -1,3 +1,9 @@
+import {
+  EdgelessIcon,
+  HistoryIcon,
+  LocalWorkspaceIcon,
+  PageIcon,
+} from '@blocksuite/icons/rc';
 import { toast, useConfirmModal } from '@lovenotes/component';
 import {
   PreconditionStrategy,
@@ -13,18 +19,8 @@ import { GuardService } from '@lovenotes/core/modules/permissions';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { UserFriendlyError } from '@lovenotes/error';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import {
-  EdgelessIcon,
-  HistoryIcon,
-  LocalWorkspaceIcon,
-  PageIcon,
-} from '@blocksuite/icons/rc';
-import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
 import { useSetAtom } from 'jotai';
 import { useCallback, useEffect } from 'react';
 
@@ -162,7 +158,9 @@ export function useRegisterBlocksuiteEditorCommands(
 
           toast(
             favorite
-              ? t['com.lovenotes.cmdk.lovenotes.editor.remove-from-favourites']()
+              ? t[
+                  'com.lovenotes.cmdk.lovenotes.editor.remove-from-favourites'
+                ]()
               : t['com.lovenotes.cmdk.lovenotes.editor.add-to-favourites']()
           );
         },
@@ -204,8 +202,12 @@ export function useRegisterBlocksuiteEditorCommands(
         category: `editor:page`,
         icon: <PageIcon />,
         label: checked
-          ? t['com.lovenotes.cmdk.lovenotes.current-page-width-layout.standard']()
-          : t['com.lovenotes.cmdk.lovenotes.current-page-width-layout.full-width'](),
+          ? t[
+              'com.lovenotes.cmdk.lovenotes.current-page-width-layout.standard'
+            ]()
+          : t[
+              'com.lovenotes.cmdk.lovenotes.current-page-width-layout.full-width'
+            ](),
         async run() {
           const canEdit = await guardService.can('Doc_Update', docId);
           if (!canEdit) {
@@ -347,7 +349,10 @@ export function useRegisterBlocksuiteEditorCommands(
           id: `editor:${mode}-page-history`,
           category: `editor:${mode}`,
           icon: <HistoryIcon />,
-          label: t['com.lovenotes.cmdk.lovenotes.editor.reveal-page-history-modal'](),
+          label:
+            t[
+              'com.lovenotes.cmdk.lovenotes.editor.reveal-page-history-modal'
+            ](),
           run() {
             track.$.cmdk.docHistory.open();
 

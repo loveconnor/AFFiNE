@@ -1,7 +1,7 @@
 import { EditorService } from '@lovenotes/core/modules/editor';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { useViewPosition } from '@lovenotes/core/modules/workbench/view/use-view-position';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 export const useDetailPageHeaderResponsive = (availableWidth: number) => {
   const mode = useLiveData(useService(EditorService).editor.mode$);

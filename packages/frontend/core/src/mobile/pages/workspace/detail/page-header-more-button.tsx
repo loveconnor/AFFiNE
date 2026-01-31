@@ -28,8 +28,8 @@ import { EditorService } from '@lovenotes/core/modules/editor';
 import { ViewService } from '@lovenotes/core/modules/workbench/services/view';
 import { preventDefault } from '@lovenotes/core/utils';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { EditorModeSwitch } from './menu/mode-switch';

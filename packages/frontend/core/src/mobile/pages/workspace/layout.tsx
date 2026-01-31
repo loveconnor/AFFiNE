@@ -1,6 +1,6 @@
 import { uniReactRoot } from '@lovenotes/component';
-import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
 import { AiLoginRequiredModal } from '@lovenotes/core/components/lovenotes/auth/ai-login-required';
+import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
 import { SWRConfigProvider } from '@lovenotes/core/components/providers/swr-config-provider';
 import { WorkspaceSideEffects } from '@lovenotes/core/components/providers/workspace-side-effects';
 import {
@@ -19,7 +19,7 @@ import {
   LiveData,
   useLiveData,
   useServices,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import {
   type PropsWithChildren,
   useEffect,

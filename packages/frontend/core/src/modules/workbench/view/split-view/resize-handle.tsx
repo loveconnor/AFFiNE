@@ -1,6 +1,6 @@
 import { useDropTarget } from '@lovenotes/component';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useAtomValue } from 'jotai';
 import type { HTMLAttributes } from 'react';
 import { useCallback } from 'react';

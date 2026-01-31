@@ -1,6 +1,6 @@
 import { apis } from '@lovenotes/electron-api';
-import type { AppConfigSchema } from '@toeverything/infra';
-import { AppConfigStorage, defaultAppConfig } from '@toeverything/infra';
+import type { AppConfigSchema } from '@lovenotes/infra';
+import { AppConfigStorage, defaultAppConfig } from '@lovenotes/infra';
 import type { Dispatch } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 

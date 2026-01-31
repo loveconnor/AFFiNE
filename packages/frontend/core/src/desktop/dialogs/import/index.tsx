@@ -1,3 +1,22 @@
+import {
+  ExportToHtmlIcon,
+  ExportToMarkdownIcon,
+  FileIcon,
+  HelpIcon,
+  NotionIcon,
+  PageIcon,
+  SaveIcon,
+  ZipIcon,
+} from '@blocksuite/icons/rc';
+import { openFilesWith } from '@blocksuite/lovenotes/shared/utils';
+import type { Workspace } from '@blocksuite/lovenotes/store';
+import {
+  DocxTransformer,
+  HtmlTransformer,
+  MarkdownTransformer,
+  NotionHtmlTransformer,
+  ZipTransformer,
+} from '@blocksuite/lovenotes/widgets/linked-doc';
 import { Button, IconButton, IconType, Modal } from '@lovenotes/component';
 import { getStoreManager } from '@lovenotes/core/blocksuite/manager/store';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
@@ -17,27 +36,8 @@ import {
 } from '@lovenotes/core/modules/workspace';
 import { DebugLogger } from '@lovenotes/debug';
 import { useI18n } from '@lovenotes/i18n';
+import { useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { openFilesWith } from '@blocksuite/lovenotes/shared/utils';
-import type { Workspace } from '@blocksuite/lovenotes/store';
-import {
-  DocxTransformer,
-  HtmlTransformer,
-  MarkdownTransformer,
-  NotionHtmlTransformer,
-  ZipTransformer,
-} from '@blocksuite/lovenotes/widgets/linked-doc';
-import {
-  ExportToHtmlIcon,
-  ExportToMarkdownIcon,
-  FileIcon,
-  HelpIcon,
-  NotionIcon,
-  PageIcon,
-  SaveIcon,
-  ZipIcon,
-} from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import {

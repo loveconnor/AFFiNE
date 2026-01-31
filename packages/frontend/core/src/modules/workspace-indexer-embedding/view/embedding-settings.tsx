@@ -7,8 +7,8 @@ import { Upload } from '@lovenotes/core/components/pure/file-upload';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { UserFriendlyError } from '@lovenotes/error';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { useLiveData, useService } from '@toeverything/infra';
 import type React from 'react';
 import { useCallback, useEffect } from 'react';
 

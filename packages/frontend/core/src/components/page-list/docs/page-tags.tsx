@@ -1,6 +1,6 @@
 import { TagItem as TagItemComponent } from '@lovenotes/core/components/tags';
 import type { Tag } from '@lovenotes/core/modules/tag';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@lovenotes/infra';
 
 export interface PageTagsProps {
   tags: Tag[];

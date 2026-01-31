@@ -5,7 +5,7 @@ import { FavoriteService } from '@lovenotes/core/modules/favorite';
 import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';

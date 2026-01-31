@@ -1,3 +1,5 @@
+import { AllDocsIcon } from '@blocksuite/icons/rc';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import { Button, Modal } from '@lovenotes/component';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
@@ -17,9 +19,7 @@ import {
   WorkspacesService,
 } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import { AllDocsIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useEffect, useState } from 'react';
 

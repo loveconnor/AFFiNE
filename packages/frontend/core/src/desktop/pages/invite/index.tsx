@@ -10,7 +10,7 @@ import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-asy
 import { WorkspacesService } from '@lovenotes/core/modules/workspace';
 import { UserFriendlyError } from '@lovenotes/error';
 import { WorkspaceMemberStatus } from '@lovenotes/graphql';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 

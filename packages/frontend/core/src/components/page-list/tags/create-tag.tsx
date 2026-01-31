@@ -1,7 +1,7 @@
 import { Button, Input, Menu, toast } from '@lovenotes/component';
 import { TagService } from '@lovenotes/core/modules/tag';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import type { MouseEvent } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';

@@ -2,7 +2,7 @@ import { Button } from '@lovenotes/component';
 import { AuthService, ServerService } from '@lovenotes/core/modules/cloud';
 import { NativePaywallService } from '@lovenotes/core/modules/paywall';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import * as styles from './styles.css';
 

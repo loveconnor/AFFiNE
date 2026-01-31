@@ -1,6 +1,6 @@
 import { AuthService } from '@lovenotes/core/modules/cloud';
 import { OAuthProviderType } from '@lovenotes/graphql';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useEffect } from 'react';
 import {
   type LoaderFunction,

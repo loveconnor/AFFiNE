@@ -1,11 +1,11 @@
+import { CloseIcon, NewIcon } from '@blocksuite/icons/rc';
 import { Tooltip } from '@lovenotes/component/ui/tooltip';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import type { SettingTab } from '@lovenotes/core/modules/dialogs/constant';
 import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { UrlService } from '@lovenotes/core/modules/url';
 import { useI18n } from '@lovenotes/i18n';
-import { CloseIcon, NewIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import { useCallback, useState } from 'react';
 
 import { ContactIcon, HelpIcon, KeyboardIcon } from './icons';
@@ -71,7 +71,10 @@ export const HelpIsland = () => {
         style={{ height: spread ? `${showList.length * 40 + 4}px` : 0 }}
       >
         {showList.includes('whatNew') && (
-          <Tooltip content={t['com.lovenotes.appUpdater.whatsNew']()} side="left">
+          <Tooltip
+            content={t['com.lovenotes.appUpdater.whatsNew']()}
+            side="left"
+          >
             <StyledIconWrapper
               data-testid="right-bottom-change-log-icon"
               onClick={() => {
@@ -83,7 +86,10 @@ export const HelpIsland = () => {
           </Tooltip>
         )}
         {showList.includes('contact') && (
-          <Tooltip content={t['com.lovenotes.helpIsland.contactUs']()} side="left">
+          <Tooltip
+            content={t['com.lovenotes.helpIsland.contactUs']()}
+            side="left"
+          >
             <StyledIconWrapper
               data-testid="right-bottom-contact-us-icon"
               onClick={openAbout}

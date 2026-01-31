@@ -1,3 +1,4 @@
+import { CloudWorkspaceIcon } from '@blocksuite/icons/rc';
 import { Button, Modal, notify } from '@lovenotes/component';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
@@ -14,8 +15,7 @@ import {
 } from '@lovenotes/core/modules/dialogs';
 import { WorkspacesService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { CloudWorkspaceIcon } from '@blocksuite/icons/rc';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useState } from 'react';
 
 import * as styles from './dialog.css';
@@ -106,7 +106,9 @@ const Dialog = ({
           })}
         </div>
         <div className={styles.description}>
-          {t['com.lovenotes.enableLoveNotesCloudModal.custom-server.description']()}
+          {t[
+            'com.lovenotes.enableLoveNotesCloudModal.custom-server.description'
+          ]()}
         </div>
       </div>
       <div className={styles.serverSelector}>

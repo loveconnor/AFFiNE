@@ -5,7 +5,7 @@ import {
   WorkspaceDialogService,
 } from '@lovenotes/core/modules/dialogs';
 import type { WORKSPACE_DIALOG_SCHEMA } from '@lovenotes/core/modules/dialogs/constant';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import { CollectionSelectorDialog } from './selectors/collection-selector';
 import { DateSelectorDialog } from './selectors/date-selector';

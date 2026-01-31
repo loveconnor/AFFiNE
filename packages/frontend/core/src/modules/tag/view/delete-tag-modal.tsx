@@ -1,6 +1,6 @@
 import { toast, useConfirmModal } from '@lovenotes/component';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import { TagService } from '../service/tag';

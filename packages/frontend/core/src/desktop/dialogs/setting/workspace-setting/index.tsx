@@ -13,7 +13,7 @@ import type { SettingTab } from '@lovenotes/core/modules/dialogs/constant';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { ServerDeploymentType } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useMemo } from 'react';
 
 import type { SettingSidebarItem, SettingState } from '../types';

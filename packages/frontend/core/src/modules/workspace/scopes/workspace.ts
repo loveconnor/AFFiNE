@@ -1,5 +1,5 @@
+import { Scope } from '@lovenotes/infra';
 import type { WorkerInitOptions } from '@lovenotes/nbstore/worker/client';
-import { Scope } from '@toeverything/infra';
 
 import type { WorkspaceOpenOptions } from '../open-options';
 

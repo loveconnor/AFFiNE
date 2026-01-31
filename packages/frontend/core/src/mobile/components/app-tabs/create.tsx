@@ -1,12 +1,12 @@
+import { EditIcon } from '@blocksuite/icons/rc';
 import { usePageHelper } from '@lovenotes/core/blocksuite/block-suite-page-list/utils';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { DocsService } from '@lovenotes/core/modules/doc';
 import { TemplateDocService } from '@lovenotes/core/modules/template-doc';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { EditIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 
 import { TabItem } from './tab-item';
 import type { AppTabCustomFCProps } from './type';

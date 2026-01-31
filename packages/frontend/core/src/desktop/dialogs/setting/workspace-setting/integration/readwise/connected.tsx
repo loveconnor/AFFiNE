@@ -2,7 +2,7 @@ import { Button, Modal } from '@lovenotes/component';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { IntegrationService } from '@lovenotes/core/modules/integration';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback, useState } from 'react';
 
 import * as styles from './connected.css';

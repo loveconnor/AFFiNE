@@ -3496,33 +3496,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@capacitor/android@npm:^7.0.0":
-  version: 7.2.0
-  resolution: "@capacitor/android@npm:7.2.0"
-  peerDependencies:
-    "@capacitor/core": ^7.2.0
-  checksum: 10/a5176e743ff741f5ef6a5c24e5fff225d4dc3d744655a2df433adf3742279148b241b4c58d977ebe33625278b0280a4c06e7e0660a642edc8b3573f9cefe52d7
-  languageName: node
-  linkType: hard
-
-"@capacitor/app@npm:^7.0.0":
-  version: 7.0.1
-  resolution: "@capacitor/app@npm:7.0.1"
-  peerDependencies:
-    "@capacitor/core": ">=7.0.0"
-  checksum: 10/c260e141005b19499df255729a2b76a6e4f6662d3eaee2b3b46de577c0be6fa2ec61f1a45d9b52c1791a1b855f4a04ef81f3422b3c07c99e6b24d400be71a64f
-  languageName: node
-  linkType: hard
-
-"@capacitor/browser@npm:^7.0.0":
-  version: 7.0.1
-  resolution: "@capacitor/browser@npm:7.0.1"
-  peerDependencies:
-    "@capacitor/core": ">=7.0.0"
-  checksum: 10/0d15b5e94f7c753f4fc0c1a4c719ad4af67b31aac458a5dc0919cb80024a92813b7e84b8fddc21301b0c64e19b3568202f484265a40454c1e1560884d2415beb
-  languageName: node
-  linkType: hard
-
 "@capacitor/cli@npm:^7.0.0":
   version: 7.2.0
   resolution: "@capacitor/cli@npm:7.2.0"
@@ -3548,60 +3521,6 @@ __metadata:
     cap: bin/capacitor
     capacitor: bin/capacitor
   checksum: 10/850f59382deebac1f9f3933f77bea66cdc16d404de76d2aa497222764dafa1a748c24d9395571fd74f9e8fe1b26855e77366f13e62f0a3606b67a0218ee32b4f
-  languageName: node
-  linkType: hard
-
-"@capacitor/core@npm:^7.0.0":
-  version: 7.2.0
-  resolution: "@capacitor/core@npm:7.2.0"
-  dependencies:
-    tslib: "npm:^2.1.0"
-  checksum: 10/cee78b8ff80e370ca497b49ae098d6fd9677f911214ba8a3bde73c03f5cf897c06ced5df759e52c059f047d82ed9e0b9426d549688b4cfb83db6d0da4e56842c
-  languageName: node
-  linkType: hard
-
-"@capacitor/haptics@npm:^7.0.0":
-  version: 7.0.1
-  resolution: "@capacitor/haptics@npm:7.0.1"
-  peerDependencies:
-    "@capacitor/core": ">=7.0.0"
-  checksum: 10/fdca811657067aa70cafcc91967f59850b042392d28fc66066e8418659f557d99ec02feb2bacd66c21fffca7e9c37dda61fb9bf8f2ba8826c4c6feae12cf20b3
-  languageName: node
-  linkType: hard
-
-"@capacitor/ios@npm:^7.0.0":
-  version: 7.2.0
-  resolution: "@capacitor/ios@npm:7.2.0"
-  peerDependencies:
-    "@capacitor/core": ^7.2.0
-  checksum: 10/641c098e7483e57dc641b7b855d8bee6717c2e88f3531502a199963685ea42958be384c01ccbc892548f561915bf216a16b8a5b7b4def2747c70aa4c5345a281
-  languageName: node
-  linkType: hard
-
-"@capacitor/keyboard@npm:^7.0.0":
-  version: 7.0.1
-  resolution: "@capacitor/keyboard@npm:7.0.1"
-  peerDependencies:
-    "@capacitor/core": ">=7.0.0"
-  checksum: 10/4e7aa25edb02189d39ed4c80444a5a9cd632c959f7bc119a2d899cf43375d7acf38e06f359d4ff16d332fa214861a0d594707de4e9f0a349f72e72f21f0a85d1
-  languageName: node
-  linkType: hard
-
-"@capacitor/status-bar@npm:^7.0.0":
-  version: 7.0.1
-  resolution: "@capacitor/status-bar@npm:7.0.1"
-  peerDependencies:
-    "@capacitor/core": ">=7.0.0"
-  checksum: 10/b634f7b98f38fa411a928923a7898ad4b04a3cce0d669a1af2ac32800f4d6a7ae3a8712d92da8f4db1e556a3e704a3c2bab8436332ebbab91082d3551ba0202d
-  languageName: node
-  linkType: hard
-
-"@capgo/inappbrowser@npm:^7.1.0":
-  version: 7.9.3
-  resolution: "@capgo/inappbrowser@npm:7.9.3"
-  peerDependencies:
-    "@capacitor/core": ">=7.0.0"
-  checksum: 10/2265f5bf7e4431c69a3053cced5438b12309e36313b690af9fd4d3f70f428d7cec949f76380926ba9f850d549edbb871c2937bc34214273301e27a24e2f20f2a
   languageName: node
   linkType: hard
 
@@ -7707,9 +7626,9 @@ __metadata:
   dependencies:
     "@blocksuite/lovenotes": "workspace:*"
     "@lovenotes-tools/utils": "workspace:*"
+    "@lovenotes/infra": "workspace:*"
     "@node-rs/argon2": "npm:^2.0.2"
     "@playwright/test": "npm:=1.52.0"
-    "@toeverything/infra": "workspace:*"
     express: "npm:^5.0.0"
     http-proxy-middleware: "npm:^3.0.3"
   peerDependencies:
@@ -7851,6 +7770,7 @@ __metadata:
     "@lovenotes/core": "workspace:*"
     "@lovenotes/error": "workspace:*"
     "@lovenotes/graphql": "workspace:*"
+    "@lovenotes/infra": "workspace:*"
     "@lovenotes/routes": "workspace:*"
     "@queuedash/ui": "npm:^3.14.0"
     "@radix-ui/react-accordion": "npm:^1.2.2"
@@ -7882,7 +7802,6 @@ __metadata:
     "@radix-ui/react-tooltip": "npm:^1.1.5"
     "@sentry/react": "npm:^9.47.1"
     "@tanstack/react-table": "npm:^8.20.5"
-    "@toeverything/infra": "workspace:*"
     "@toeverything/theme": "npm:^1.1.23"
     "@types/lodash-es": "npm:^4.17.12"
     class-variance-authority: "npm:^0.7.1"
@@ -7908,40 +7827,6 @@ __metadata:
     tailwindcss-animate: "npm:^1.0.7"
     vaul: "npm:^1.1.2"
     zod: "npm:^3.25.76"
-  languageName: unknown
-  linkType: soft
-
-"@lovenotes/android@workspace:packages/frontend/apps/android":
-  version: 0.0.0-use.local
-  resolution: "@lovenotes/android@workspace:packages/frontend/apps/android"
-  dependencies:
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/lovenotes": "workspace:*"
-    "@capacitor/android": "npm:^7.0.0"
-    "@capacitor/app": "npm:^7.0.0"
-    "@capacitor/cli": "npm:^7.0.0"
-    "@capacitor/core": "npm:^7.0.0"
-    "@capacitor/keyboard": "npm:^7.0.0"
-    "@capacitor/status-bar": "npm:^7.0.0"
-    "@capgo/inappbrowser": "npm:^7.1.0"
-    "@lovenotes/component": "workspace:*"
-    "@lovenotes/core": "workspace:*"
-    "@lovenotes/env": "workspace:*"
-    "@lovenotes/i18n": "workspace:*"
-    "@lovenotes/nbstore": "workspace:*"
-    "@lovenotes/track": "workspace:*"
-    "@sentry/react": "npm:^9.47.1"
-    "@toeverything/infra": "workspace:*"
-    "@types/react": "npm:^19.0.1"
-    "@types/react-dom": "npm:^19.0.2"
-    async-call-rpc: "npm:^6.4.2"
-    cross-env: "npm:^10.1.0"
-    idb: "npm:^8.0.0"
-    next-themes: "npm:^0.4.4"
-    react: "npm:^19.2.1"
-    react-dom: "npm:^19.2.1"
-    react-router-dom: "npm:^6.30.3"
-    typescript: "npm:^5.7.2"
   languageName: unknown
   linkType: soft
 
@@ -8082,6 +7967,7 @@ __metadata:
     "@lovenotes/error": "workspace:*"
     "@lovenotes/graphql": "workspace:*"
     "@lovenotes/i18n": "workspace:*"
+    "@lovenotes/infra": "workspace:*"
     "@lovenotes/nbstore": "workspace:*"
     "@lovenotes/reader": "workspace:*"
     "@lovenotes/templates": "workspace:*"
@@ -8101,7 +7987,6 @@ __metadata:
     "@sentry/react": "npm:^9.47.1"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
-    "@toeverything/infra": "workspace:*"
     "@toeverything/pdf-viewer": "npm:^0.1.1"
     "@toeverything/theme": "npm:^1.1.23"
     "@types/animejs": "npm:^3.1.12"
@@ -8205,10 +8090,10 @@ __metadata:
     "@lovenotes/debug": "workspace:*"
     "@lovenotes/electron-api": "workspace:*"
     "@lovenotes/i18n": "workspace:*"
+    "@lovenotes/infra": "workspace:*"
     "@lovenotes/nbstore": "workspace:*"
     "@lovenotes/track": "workspace:*"
     "@sentry/react": "npm:^9.47.1"
-    "@toeverything/infra": "workspace:*"
     "@toeverything/theme": "npm:^1.1.23"
     "@types/react": "npm:^19.0.1"
     "@types/react-dom": "npm:^19.0.2"
@@ -8242,13 +8127,13 @@ __metadata:
     "@electron-forge/shared-types": "npm:^7.10.2"
     "@lovenotes-tools/utils": "workspace:*"
     "@lovenotes/i18n": "workspace:*"
+    "@lovenotes/infra": "workspace:*"
     "@lovenotes/native": "workspace:*"
     "@lovenotes/nbstore": "workspace:*"
     "@pengx17/electron-forge-maker-appimage": "npm:^1.2.1"
     "@sentry/electron": "npm:^7.0.0"
     "@sentry/esbuild-plugin": "npm:^3.0.0"
     "@sentry/react": "npm:^9.47.1"
-    "@toeverything/infra": "workspace:*"
     "@types/set-cookie-parser": "npm:^2.4.10"
     "@types/uuid": "npm:^10.0.0"
     "@vitejs/plugin-react-swc": "npm:^3.7.2"
@@ -8344,43 +8229,38 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lovenotes/ios@workspace:packages/frontend/apps/ios":
+"@lovenotes/infra@workspace:*, @lovenotes/infra@workspace:packages/common/infra":
   version: 0.0.0-use.local
-  resolution: "@lovenotes/ios@workspace:packages/frontend/apps/ios"
+  resolution: "@lovenotes/infra@workspace:packages/common/infra"
   dependencies:
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/lovenotes": "workspace:*"
-    "@capacitor/app": "npm:^7.0.0"
-    "@capacitor/browser": "npm:^7.0.0"
-    "@capacitor/cli": "npm:^7.0.0"
-    "@capacitor/core": "npm:^7.0.0"
-    "@capacitor/haptics": "npm:^7.0.0"
-    "@capacitor/ios": "npm:^7.0.0"
-    "@capacitor/keyboard": "npm:^7.0.0"
-    "@lovenotes-tools/cli": "workspace:*"
-    "@lovenotes-tools/utils": "workspace:*"
-    "@lovenotes/component": "workspace:*"
-    "@lovenotes/core": "workspace:*"
+    "@emotion/react": "npm:^11.14.0"
+    "@lovenotes/debug": "workspace:*"
     "@lovenotes/env": "workspace:*"
-    "@lovenotes/graphql": "workspace:*"
-    "@lovenotes/i18n": "workspace:*"
-    "@lovenotes/native": "workspace:*"
-    "@lovenotes/nbstore": "workspace:*"
-    "@lovenotes/track": "workspace:*"
-    "@sentry/react": "npm:^9.47.1"
-    "@toeverything/infra": "workspace:^"
+    "@lovenotes/error": "workspace:*"
+    "@lovenotes/templates": "workspace:*"
+    "@preact/signals-core": "npm:^1.8.0"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/react": "npm:^16.1.0"
     "@types/react": "npm:^19.0.1"
-    "@types/react-dom": "npm:^19.0.2"
-    async-call-rpc: "npm:^6.4.2"
-    capacitor-plugin-app-tracking-transparency: "npm:^2.0.5"
-    cross-env: "npm:^10.1.0"
+    eventemitter2: "npm:^6.4.9"
+    fake-indexeddb: "npm:^6.0.0"
+    foxact: "npm:^0.2.49"
+    fractional-indexing: "npm:^3.2.0"
+    fuse.js: "npm:^7.0.0"
+    graphemer: "npm:^1.4.0"
     idb: "npm:^8.0.0"
-    next-themes: "npm:^0.4.4"
+    jotai: "npm:^2.10.3"
+    jotai-effect: "npm:^2.0.0"
+    lodash-es: "npm:^4.17.21"
+    nanoid: "npm:^5.1.6"
     react: "npm:^19.2.1"
-    react-dom: "npm:^19.2.1"
-    react-router-dom: "npm:^6.30.3"
-    typescript: "npm:^5.7.2"
+    rxjs: "npm:^7.8.2"
+    vitest: "npm:^3.2.4"
     yjs: "npm:^13.6.27"
+    zod: "npm:^3.25.76"
+  peerDependencies:
+    electron: "*"
+    react-dom: ^19.0.0
   languageName: unknown
   linkType: soft
 
@@ -8416,30 +8296,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lovenotes/mobile@workspace:packages/frontend/apps/mobile":
-  version: 0.0.0-use.local
-  resolution: "@lovenotes/mobile@workspace:packages/frontend/apps/mobile"
-  dependencies:
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/lovenotes": "workspace:*"
-    "@lovenotes/component": "workspace:*"
-    "@lovenotes/core": "workspace:*"
-    "@lovenotes/env": "workspace:*"
-    "@lovenotes/i18n": "workspace:*"
-    "@lovenotes/nbstore": "workspace:*"
-    "@lovenotes/track": "workspace:*"
-    "@sentry/react": "npm:^9.47.1"
-    "@toeverything/infra": "workspace:*"
-    "@types/react": "npm:^19.0.1"
-    "@types/react-dom": "npm:^19.0.2"
-    cross-env: "npm:^10.1.0"
-    react: "npm:^19.2.1"
-    react-dom: "npm:^19.2.1"
-    react-router-dom: "npm:^6.30.3"
-    typescript: "npm:^5.7.2"
-  languageName: unknown
-  linkType: soft
-
 "@lovenotes/monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "@lovenotes/monorepo@workspace:."
@@ -8449,11 +8305,11 @@ __metadata:
     "@faker-js/faker": "npm:^10.1.0"
     "@istanbuljs/schema": "npm:^0.1.3"
     "@lovenotes-tools/cli": "workspace:*"
+    "@lovenotes/infra": "workspace:*"
     "@magic-works/i18n-codegen": "npm:^0.6.1"
     "@playwright/test": "npm:=1.52.0"
     "@smarttools/eslint-plugin-rxjs": "npm:^1.0.8"
     "@taplo/cli": "npm:^0.7.0"
-    "@toeverything/infra": "workspace:*"
     "@types/eslint": "npm:^9.6.1"
     "@types/node": "npm:^22.0.0"
     "@typescript-eslint/parser": "npm:^8.18.0"
@@ -8509,8 +8365,8 @@ __metadata:
     "@blocksuite/lovenotes": "workspace:*"
     "@lovenotes/error": "workspace:*"
     "@lovenotes/graphql": "workspace:*"
+    "@lovenotes/infra": "workspace:*"
     "@lovenotes/reader": "workspace:*"
-    "@toeverything/infra": "workspace:*"
     eventemitter2: "npm:^6.4.9"
     fake-indexeddb: "npm:^6.0.0"
     graphemer: "npm:^1.4.0"
@@ -8759,10 +8615,10 @@ __metadata:
     "@lovenotes/core": "workspace:*"
     "@lovenotes/env": "workspace:*"
     "@lovenotes/i18n": "workspace:*"
+    "@lovenotes/infra": "workspace:*"
     "@lovenotes/nbstore": "workspace:*"
     "@lovenotes/track": "workspace:*"
     "@sentry/react": "npm:^9.47.1"
-    "@toeverything/infra": "workspace:*"
     "@types/react": "npm:^19.0.1"
     "@types/react-dom": "npm:^19.0.2"
     cross-env: "npm:^10.1.0"
@@ -17529,41 +17385,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@toeverything/infra@workspace:*, @toeverything/infra@workspace:^, @toeverything/infra@workspace:packages/common/infra":
-  version: 0.0.0-use.local
-  resolution: "@toeverything/infra@workspace:packages/common/infra"
-  dependencies:
-    "@emotion/react": "npm:^11.14.0"
-    "@lovenotes/debug": "workspace:*"
-    "@lovenotes/env": "workspace:*"
-    "@lovenotes/error": "workspace:*"
-    "@lovenotes/templates": "workspace:*"
-    "@preact/signals-core": "npm:^1.8.0"
-    "@testing-library/dom": "npm:^10.4.0"
-    "@testing-library/react": "npm:^16.1.0"
-    "@types/react": "npm:^19.0.1"
-    eventemitter2: "npm:^6.4.9"
-    fake-indexeddb: "npm:^6.0.0"
-    foxact: "npm:^0.2.49"
-    fractional-indexing: "npm:^3.2.0"
-    fuse.js: "npm:^7.0.0"
-    graphemer: "npm:^1.4.0"
-    idb: "npm:^8.0.0"
-    jotai: "npm:^2.10.3"
-    jotai-effect: "npm:^2.0.0"
-    lodash-es: "npm:^4.17.21"
-    nanoid: "npm:^5.1.6"
-    react: "npm:^19.2.1"
-    rxjs: "npm:^7.8.2"
-    vitest: "npm:^3.2.4"
-    yjs: "npm:^13.6.27"
-    zod: "npm:^3.25.76"
-  peerDependencies:
-    electron: "*"
-    react-dom: ^19.0.0
-  languageName: unknown
-  linkType: soft
-
 "@toeverything/pdf-viewer-types@npm:0.1.1":
   version: 0.1.1
   resolution: "@toeverything/pdf-viewer-types@npm:0.1.1"
@@ -21360,15 +21181,6 @@ __metadata:
   version: 1.0.30001754
   resolution: "caniuse-lite@npm:1.0.30001754"
   checksum: 10/6061032b8e799913f6db01ad190bc6885369c0be7853fbe542a36f0d114f193fac6e812d73657526b4d5a6b7add8c56bb629913237f9097b6e6438dcac703965
-  languageName: node
-  linkType: hard
-
-"capacitor-plugin-app-tracking-transparency@npm:^2.0.5":
-  version: 2.0.5
-  resolution: "capacitor-plugin-app-tracking-transparency@npm:2.0.5"
-  peerDependencies:
-    "@capacitor/core": ">= 3.0.0"
-  checksum: 10/dc43c3f7e3241067ef960416a53681b44ecf9ac9c9e22aef3a4fe81afd692bc466fe517cf85a260cf1b0ad4e7f8c961ad2660485ff5fb0bdee74f42ad660e4e2
   languageName: node
   linkType: hard
 

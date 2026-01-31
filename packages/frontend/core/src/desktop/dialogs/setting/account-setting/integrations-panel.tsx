@@ -1,3 +1,4 @@
+import { GoogleIcon, LinkIcon, TodayIcon } from '@blocksuite/icons/rc';
 import { Button, Loading, Menu, MenuItem, notify } from '@lovenotes/component';
 import { GraphQLService } from '@lovenotes/core/modules/cloud';
 import { UrlService } from '@lovenotes/core/modules/url';
@@ -11,8 +12,7 @@ import {
   unlinkCalendarAccountMutation,
 } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { GoogleIcon, LinkIcon, TodayIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import {
   type ReactNode,
   useCallback,
@@ -68,8 +68,8 @@ export const IntegrationsPanel = () => {
             context: { signal },
           }),
         ]);
-        setAccounts(accountsData.currentUser?.calendarAccounts ?? []);
-        setProviders(providersData.serverConfig.calendarProviders ?? []);
+        setAccounts(accountsData?.currentUser?.calendarAccounts ?? []);
+        setProviders(providersData?.serverConfig?.calendarProviders ?? []);
       } catch (error) {
         if (
           signal?.aborted ||

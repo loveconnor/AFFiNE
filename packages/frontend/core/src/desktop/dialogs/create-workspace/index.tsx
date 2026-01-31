@@ -13,8 +13,8 @@ import {
 import { WorkspacesService } from '@lovenotes/core/modules/workspace';
 import { buildShowcaseWorkspace } from '@lovenotes/core/utils/first-app-data';
 import { useI18n } from '@lovenotes/i18n';
+import { FrameworkScope, useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
 import * as styles from './index.css';

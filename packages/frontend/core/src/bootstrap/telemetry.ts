@@ -1,5 +1,5 @@
+import { APP_SETTINGS_STORAGE_KEY } from '@lovenotes/infra/atom';
 import { sentry, tracker } from '@lovenotes/track';
-import { APP_SETTINGS_STORAGE_KEY } from '@toeverything/infra/atom';
 
 tracker.init();
 sentry.init();

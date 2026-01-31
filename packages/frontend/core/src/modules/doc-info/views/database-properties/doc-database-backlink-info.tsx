@@ -1,3 +1,5 @@
+import { DatabaseTableViewIcon, PageIcon } from '@blocksuite/icons/rc';
+import type { DatabaseBlockDataSource } from '@blocksuite/lovenotes/blocks/database';
 import {
   Divider,
   PropertyCollapsibleContent,
@@ -8,9 +10,7 @@ import { LoveNotesPageReference } from '@lovenotes/core/components/lovenotes/ref
 import { DocService } from '@lovenotes/core/modules/doc';
 import { TemplateDocService } from '@lovenotes/core/modules/template-doc';
 import { useI18n } from '@lovenotes/i18n';
-import type { DatabaseBlockDataSource } from '@blocksuite/lovenotes/blocks/database';
-import { DatabaseTableViewIcon, PageIcon } from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@lovenotes/infra';
 import { useMemo } from 'react';
 import type { Observable } from 'rxjs';
 

@@ -1,3 +1,4 @@
+import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
 import {
   Button,
   Loading,
@@ -17,9 +18,8 @@ import {
 import { UserFriendlyError } from '@lovenotes/error';
 import { DocRole, WorkspaceMemberStatus } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { debounce } from 'lodash-es';
 import {

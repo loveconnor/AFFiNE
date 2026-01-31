@@ -1,9 +1,12 @@
+import { AfFiNeIcon } from '@blocksuite/icons/rc';
 import { Switch } from '@lovenotes/component';
-import { AuthService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import {
+  AuthService,
+  SubscriptionService,
+} from '@lovenotes/core/modules/cloud';
 import { SubscriptionPlan, SubscriptionRecurring } from '@lovenotes/graphql';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { AfFiNeIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import {
   type ReactNode,
   type RefObject,
@@ -56,11 +59,11 @@ export interface DynamicPrice extends BasePrice {
 }
 
 const freeBenefits: BenefitsGetter = t => ({
-  [t['com.lovenotes.payment.cloud.free.benefit.g1']()]: ([1, 2, 3] as const).map(
-    i => ({
-      title: t[`com.lovenotes.payment.cloud.free.benefit.g1-${i}`](),
-    })
-  ),
+  [t['com.lovenotes.payment.cloud.free.benefit.g1']()]: (
+    [1, 2, 3] as const
+  ).map(i => ({
+    title: t[`com.lovenotes.payment.cloud.free.benefit.g1-${i}`](),
+  })),
   [t['com.lovenotes.payment.cloud.free.benefit.g2']()]: (
     [1, 2, 3, 4, 5] as const
   ).map(i => ({
@@ -145,7 +148,8 @@ export function getPlanDetail(t: T) {
         price: '2',
         yearlyPrice: '2',
         name: t['com.lovenotes.payment.cloud.team-workspace.name'](),
-        description: t['com.lovenotes.payment.cloud.team-workspace.description'](),
+        description:
+          t['com.lovenotes.payment.cloud.team-workspace.description'](),
         titleRenderer: (recurring, detail) => {
           const price =
             recurring === SubscriptionRecurring.Yearly
@@ -153,11 +157,11 @@ export function getPlanDetail(t: T) {
               : detail.price;
           return (
             <>
-              {t['com.lovenotes.payment.cloud.team-workspace.title.price-monthly'](
-                {
-                  price: '$' + price,
-                }
-              )}
+              {t[
+                'com.lovenotes.payment.cloud.team-workspace.title.price-monthly'
+              ]({
+                price: '$' + price,
+              })}
               {recurring === SubscriptionRecurring.Yearly ? (
                 <span className={planTitleTitleCaption}>
                   {t[
@@ -306,7 +310,9 @@ export const CloudPlans = () => {
       <div>
         <div className={styles.recurringToggleRecurring}>
           <span>
-            {t['com.lovenotes.payment.cloud.pricing-plan.toggle-billed-yearly']()}
+            {t[
+              'com.lovenotes.payment.cloud.pricing-plan.toggle-billed-yearly'
+            ]()}
           </span>
         </div>
         {yearlyDiscount ? (
@@ -341,7 +347,9 @@ export const CloudPlans = () => {
   const cloudSelect = (
     <div className={styles.cloudSelect}>
       <b>{t['com.lovenotes.payment.cloud.pricing-plan.select.title']()}</b>
-      <span>{t['com.lovenotes.payment.cloud.pricing-plan.select.caption']()}</span>
+      <span>
+        {t['com.lovenotes.payment.cloud.pricing-plan.select.caption']()}
+      </span>
     </div>
   );
 

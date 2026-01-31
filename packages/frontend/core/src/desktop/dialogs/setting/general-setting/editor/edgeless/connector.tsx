@@ -1,13 +1,3 @@
-import {
-  MenuItem,
-  MenuTrigger,
-  RadioGroup,
-  type RadioItem,
-  Slider,
-} from '@lovenotes/component';
-import { SettingRow } from '@lovenotes/component/setting-components';
-import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
-import { useI18n } from '@lovenotes/i18n';
 import { getSurfaceBlock } from '@blocksuite/lovenotes/blocks/surface';
 import {
   ConnectorMode,
@@ -21,7 +11,17 @@ import {
   TextAlign,
 } from '@blocksuite/lovenotes/model';
 import type { Store } from '@blocksuite/lovenotes/store';
-import { useFramework, useLiveData } from '@toeverything/infra';
+import {
+  MenuItem,
+  MenuTrigger,
+  RadioGroup,
+  type RadioItem,
+  Slider,
+} from '@lovenotes/component';
+import { SettingRow } from '@lovenotes/component/setting-components';
+import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
+import { useI18n } from '@lovenotes/i18n';
+import { useFramework, useLiveData } from '@lovenotes/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
 
@@ -64,7 +64,8 @@ export const ConnectorSettings = () => {
     () => [
       {
         value: ConnecterStyle.General,
-        label: t['com.lovenotes.settings.editorSettings.edgeless.style.general'](),
+        label:
+          t['com.lovenotes.settings.editorSettings.edgeless.style.general'](),
       },
       {
         value: ConnecterStyle.Scribbled,
@@ -128,12 +129,16 @@ export const ConnectorSettings = () => {
       {
         value: StrokeStyle.Solid,
         label:
-          t['com.lovenotes.settings.editorSettings.edgeless.note.border.solid'](),
+          t[
+            'com.lovenotes.settings.editorSettings.edgeless.note.border.solid'
+          ](),
       },
       {
         value: StrokeStyle.Dash,
         label:
-          t['com.lovenotes.settings.editorSettings.edgeless.note.border.dash'](),
+          t[
+            'com.lovenotes.settings.editorSettings.edgeless.note.border.dash'
+          ](),
       },
     ],
     [t]

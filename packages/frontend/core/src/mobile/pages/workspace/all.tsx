@@ -6,7 +6,7 @@ import {
 import { DocsExplorer } from '@lovenotes/core/components/explorer/docs-view/docs-list';
 import { EmptyDocs } from '@lovenotes/core/components/lovenotes/empty';
 import { CollectionRulesService } from '@lovenotes/core/modules/collection-rules';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect, useState } from 'react';
 
 import { Page } from '../../components/page';

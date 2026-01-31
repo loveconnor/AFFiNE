@@ -1,9 +1,9 @@
+import { AllDocsIcon } from '@blocksuite/icons/rc';
 import { TagService } from '@lovenotes/core/modules/tag';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { inferOpenMode } from '@lovenotes/core/utils';
 import { useI18n } from '@lovenotes/i18n';
-import { AllDocsIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { type MouseEvent, useCallback } from 'react';
 
 import { usePageHelper } from '../../../blocksuite/block-suite-page-list/utils';

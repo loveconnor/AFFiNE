@@ -1,18 +1,18 @@
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { Wrapper } from '@lovenotes/component';
-import {
-  EmptyCollectionDetail,
-  EmptyDocs,
-} from '@lovenotes/core/components/lovenotes/empty';
 import {
   createDocExplorerContext,
   DocExplorerContext,
 } from '@lovenotes/core/components/explorer/context';
 import { DocsExplorer } from '@lovenotes/core/components/explorer/docs-view/docs-list';
+import {
+  EmptyCollectionDetail,
+  EmptyDocs,
+} from '@lovenotes/core/components/lovenotes/empty';
 import { PageHeader } from '@lovenotes/core/mobile/components';
 import { Page } from '@lovenotes/core/mobile/components/page';
 import type { Collection } from '@lovenotes/core/modules/collection';
-import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@lovenotes/infra';
 import { useEffect, useState } from 'react';
 
 import * as styles from './detail.css';

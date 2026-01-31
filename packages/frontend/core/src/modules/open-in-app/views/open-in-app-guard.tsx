@@ -1,4 +1,4 @@
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { Fragment, useCallback, useEffect } from 'react';
 
 import { OpenInAppService } from '../services';

@@ -22,7 +22,7 @@ import {
 } from '@lovenotes/core/modules/workspace';
 import { UNTITLED_WORKSPACE_NAME } from '@lovenotes/env/constant';
 import { useI18n } from '@lovenotes/i18n';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@lovenotes/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';

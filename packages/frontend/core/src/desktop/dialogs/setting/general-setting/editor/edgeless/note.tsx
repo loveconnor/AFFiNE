@@ -1,4 +1,12 @@
 import {
+  createEnumMap,
+  DefaultTheme,
+  NoteShadow,
+  NoteShadowMap,
+  StrokeStyle,
+} from '@blocksuite/lovenotes/model';
+import type { Store } from '@blocksuite/lovenotes/store';
+import {
   MenuItem,
   MenuTrigger,
   RadioGroup,
@@ -8,15 +16,7 @@ import {
 import { SettingRow } from '@lovenotes/component/setting-components';
 import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
 import { useI18n } from '@lovenotes/i18n';
-import {
-  createEnumMap,
-  DefaultTheme,
-  NoteShadow,
-  NoteShadowMap,
-  StrokeStyle,
-} from '@blocksuite/lovenotes/model';
-import type { Store } from '@blocksuite/lovenotes/store';
-import { useFramework, useLiveData } from '@toeverything/infra';
+import { useFramework, useLiveData } from '@lovenotes/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
 
@@ -59,17 +59,23 @@ export const NoteSettings = () => {
       {
         value: StrokeStyle.Solid,
         label:
-          t['com.lovenotes.settings.editorSettings.edgeless.note.border.solid'](),
+          t[
+            'com.lovenotes.settings.editorSettings.edgeless.note.border.solid'
+          ](),
       },
       {
         value: StrokeStyle.Dash,
         label:
-          t['com.lovenotes.settings.editorSettings.edgeless.note.border.dash'](),
+          t[
+            'com.lovenotes.settings.editorSettings.edgeless.note.border.dash'
+          ](),
       },
       {
         value: StrokeStyle.None,
         label:
-          t['com.lovenotes.settings.editorSettings.edgeless.note.border.none'](),
+          t[
+            'com.lovenotes.settings.editorSettings.edgeless.note.border.none'
+          ](),
       },
     ],
     [t]
@@ -204,7 +210,9 @@ export const NoteSettings = () => {
         ) : null}
       </SettingRow>
       <SettingRow
-        name={t['com.lovenotes.settings.editorSettings.edgeless.note.corners']()}
+        name={t[
+          'com.lovenotes.settings.editorSettings.edgeless.note.corners'
+        ]()}
         desc={''}
       >
         <DropdownMenu
@@ -229,7 +237,11 @@ export const NoteSettings = () => {
           items={shadowItems}
           trigger={
             <MenuTrigger className={menuTrigger}>
-              {NoteShadowMap[settings['lovenotes:note'].edgeless.style.shadowType]}
+              {
+                NoteShadowMap[
+                  settings['lovenotes:note'].edgeless.style.shadowType
+                ]
+              }
             </MenuTrigger>
           }
         />

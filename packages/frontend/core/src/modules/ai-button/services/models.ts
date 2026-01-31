@@ -1,10 +1,10 @@
-import { getPromptModelsQuery, SubscriptionStatus } from '@lovenotes/graphql';
 import {
   createSignalFromObservable,
   type Signal,
 } from '@blocksuite/lovenotes/shared/utils';
+import { getPromptModelsQuery, SubscriptionStatus } from '@lovenotes/graphql';
+import { LiveData, Service } from '@lovenotes/infra';
 import { signal } from '@preact/signals-core';
-import { LiveData, Service } from '@toeverything/infra';
 
 import type { GraphQLService, SubscriptionService } from '../../cloud';
 import type { GlobalStateService } from '../../storage';

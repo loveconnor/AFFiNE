@@ -5,7 +5,7 @@ import {
   type FieldSchemaBuilder,
   type ORMEntity,
   t,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { nanoid } from 'nanoid';
 
 import type { WorkspacePropertyType } from '../../workspace-property';
@@ -57,7 +57,9 @@ export const LoveNotes_WORKSPACE_DB_SCHEMA = {
 } as const satisfies DBSchemaBuilder;
 export type LoveNotesWorkspaceDbSchema = typeof LoveNotes_WORKSPACE_DB_SCHEMA;
 
-export type DocProperties = ORMEntity<LoveNotesWorkspaceDbSchema['docProperties']>;
+export type DocProperties = ORMEntity<
+  LoveNotesWorkspaceDbSchema['docProperties']
+>;
 export type DocCustomPropertyInfo = ORMEntity<
   LoveNotesWorkspaceDbSchema['docCustomPropertyInfo']
 >;

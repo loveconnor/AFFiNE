@@ -1,5 +1,5 @@
-import { generateUrl } from '@lovenotes/core/components/hooks/lovenotes/use-share-url';
 import { AttachmentBlockModel } from '@blocksuite/lovenotes/model';
+import { generateUrl } from '@lovenotes/core/components/hooks/lovenotes/use-share-url';
 import {
   attachmentBlockAudioMediaKey,
   type AudioMediaDescriptor,
@@ -9,7 +9,7 @@ import {
   parseAudioMediaKey,
   type PlaybackState,
   Service,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { clamp } from 'lodash-es';
 import { distinctUntilChanged } from 'rxjs';
 

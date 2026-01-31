@@ -6,7 +6,7 @@ import {
 import type { DialogComponentProps } from '@lovenotes/core/modules/dialogs';
 import type { WORKSPACE_DIALOG_SCHEMA } from '@lovenotes/core/modules/dialogs/constant';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import { EditCollection } from './edit-collection';

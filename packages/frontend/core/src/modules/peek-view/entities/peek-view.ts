@@ -10,7 +10,7 @@ import type {
 } from '@blocksuite/lovenotes/model';
 import type { BlockComponent, EditorHost } from '@blocksuite/lovenotes/std';
 import type { Block, BlockModel } from '@blocksuite/lovenotes/store';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@lovenotes/infra';
 import type { TemplateResult } from 'lit';
 import { firstValueFrom, map, race } from 'rxjs';
 

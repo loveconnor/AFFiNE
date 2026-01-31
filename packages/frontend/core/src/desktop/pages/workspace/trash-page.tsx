@@ -1,3 +1,4 @@
+import { DeleteIcon } from '@blocksuite/icons/rc';
 import { toast, useConfirmModal } from '@lovenotes/component';
 import {
   createDocExplorerContext,
@@ -10,8 +11,7 @@ import { CollectionRulesService } from '@lovenotes/core/modules/collection-rules
 import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions';
 import { useI18n } from '@lovenotes/i18n';
-import { DeleteIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import {

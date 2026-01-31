@@ -1,3 +1,8 @@
+import { ToggleDownIcon } from '@blocksuite/icons/rc';
+import type {
+  ExtensionType,
+  TransformerMiddleware,
+} from '@blocksuite/lovenotes/store';
 import {
   Button,
   Divider,
@@ -23,19 +28,14 @@ import { GlobalSessionStateService } from '@lovenotes/core/modules/storage';
 import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import track from '@lovenotes/track';
-import type {
-  ExtensionType,
-  TransformerMiddleware,
-} from '@blocksuite/lovenotes/store';
-import { ToggleDownIcon } from '@blocksuite/icons/rc';
-import * as Collapsible from '@radix-ui/react-collapsible';
 import {
   LiveData,
   useFramework,
   useLiveData,
   useServices,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
+import track from '@lovenotes/track';
+import * as Collapsible from '@radix-ui/react-collapsible';
 import { debounce } from 'lodash-es';
 import {
   Fragment,
@@ -458,7 +458,10 @@ export const BiDirectionalLinkPanel = () => {
                 key={`${link.docId}-${link.params?.toString()}-${i}`}
                 className={styles.link}
               >
-                <LoveNotesPageReference pageId={link.docId} params={link.params} />
+                <LoveNotesPageReference
+                  pageId={link.docId}
+                  params={link.params}
+                />
               </div>
             ))}
           </div>

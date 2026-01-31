@@ -1,6 +1,6 @@
+import type { ByteKVBehavior } from '@lovenotes/infra/storage';
 import type { InsertRow } from '@lovenotes/native';
 import { SqliteConnection } from '@lovenotes/native';
-import type { ByteKVBehavior } from '@toeverything/infra/storage';
 
 import { logger } from '../../logger';
 

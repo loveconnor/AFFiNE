@@ -1,4 +1,4 @@
-import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
+import { LinkedPageIcon, PageIcon } from '@blocksuite/icons/lit';
 import type { Container } from '@blocksuite/lovenotes/global/di';
 import type {
   DocDisplayMetaExtension,
@@ -10,9 +10,9 @@ import {
   referenceToNode,
 } from '@blocksuite/lovenotes/shared/utils';
 import { LifeCycleWatcher, StdIdentifier } from '@blocksuite/lovenotes/std';
-import { LinkedPageIcon, PageIcon } from '@blocksuite/icons/lit';
+import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta';
+import { type FrameworkProvider } from '@lovenotes/infra';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
-import { type FrameworkProvider } from '@toeverything/infra';
 import type { TemplateResult } from 'lit';
 
 export function buildDocDisplayMetaExtension(framework: FrameworkProvider) {

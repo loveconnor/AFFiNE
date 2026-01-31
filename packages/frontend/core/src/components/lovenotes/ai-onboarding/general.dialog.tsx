@@ -1,11 +1,14 @@
+import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
 import { Button, IconButton, Modal } from '@lovenotes/component';
 import { useBlurRoot } from '@lovenotes/core/components/hooks/use-blur-root';
-import { AuthService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import {
+  AuthService,
+  SubscriptionService,
+} from '@lovenotes/core/modules/cloud';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { Trans, useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 

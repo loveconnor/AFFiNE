@@ -22,8 +22,8 @@ import {
   RecentDocsQuickSearchSession,
 } from '@lovenotes/core/modules/quicksearch';
 import { ExternalLinksQuickSearchSession } from '@lovenotes/core/modules/quicksearch/impls/external-links';
+import type { FrameworkProvider } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import type { FrameworkProvider } from '@toeverything/infra';
 import { pick } from 'lodash-es';
 
 export function patchQuickSearchService(framework: FrameworkProvider) {

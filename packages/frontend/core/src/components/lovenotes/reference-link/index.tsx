@@ -5,8 +5,8 @@ import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta'
 import { PeekViewService } from '@lovenotes/core/modules/peek-view/services/peek-view';
 import { useInsidePeekView } from '@lovenotes/core/modules/peek-view/view/modal-container';
 import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
+import { LiveData, useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
 import {

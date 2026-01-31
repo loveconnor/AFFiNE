@@ -17,7 +17,7 @@ import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { createIsland, type Island } from '@lovenotes/core/utils/island';
 import { ServerDeploymentType } from '@lovenotes/graphql';
 import { Trans } from '@lovenotes/i18n';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@lovenotes/infra';
 import { debounce } from 'lodash-es';
 import {
   Suspense,

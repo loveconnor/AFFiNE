@@ -3,7 +3,7 @@ import { BlocksuiteHeaderTitle } from '@lovenotes/core/blocksuite/block-suite-he
 import type { DialogComponentProps } from '@lovenotes/core/modules/dialogs';
 import type { WORKSPACE_DIALOG_SCHEMA } from '@lovenotes/core/modules/dialogs/constant';
 import { type Doc, DocsService } from '@lovenotes/core/modules/doc';
-import { FrameworkScope, useService } from '@toeverything/infra';
+import { FrameworkScope, useService } from '@lovenotes/infra';
 import { useEffect, useState } from 'react';
 
 import { InfoTable } from './info-modal';

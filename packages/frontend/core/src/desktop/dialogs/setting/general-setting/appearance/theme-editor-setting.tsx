@@ -1,15 +1,11 @@
+import { DeleteIcon } from '@blocksuite/icons/rc';
 import { Button } from '@lovenotes/component';
 import { SettingRow } from '@lovenotes/component/setting-components';
 import { DesktopApiService } from '@lovenotes/core/modules/desktop-api';
 import { ThemeEditorService } from '@lovenotes/core/modules/theme-editor';
 import { UrlService } from '@lovenotes/core/modules/url';
 import { useI18n } from '@lovenotes/i18n';
-import { DeleteIcon } from '@blocksuite/icons/rc';
-import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback } from 'react';
 

@@ -19,14 +19,14 @@ import { GuardService } from '@lovenotes/core/modules/permissions';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
-import { track } from '@lovenotes/track';
 import {
   LiveData,
   MANUALLY_STOP,
   useLiveData,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
+import { track } from '@lovenotes/track';
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 import { NEVER } from 'rxjs';
 
@@ -289,7 +289,9 @@ export const NavigationPanelDocNode = ({
         referencesLoading &&
         !isCollapsed && (
           <Tooltip
-            content={t['com.lovenotes.rootAppSidebar.docs.references-loading']()}
+            content={t[
+              'com.lovenotes.rootAppSidebar.docs.references-loading'
+            ]()}
           >
             <div className={styles.loadingIcon}>
               <Loading />

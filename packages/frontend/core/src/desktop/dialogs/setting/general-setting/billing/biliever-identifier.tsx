@@ -1,6 +1,6 @@
 import { SubscriptionService } from '@lovenotes/core/modules/cloud';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import { BelieverCard } from '../plans/lifetime/believer-card';
 import { BelieverBenefits } from '../plans/lifetime/benefits';
@@ -40,7 +40,9 @@ export const BelieverIdentifier = ({
         <div className={styles.believerPriceWrapper}>
           <div className={styles.believerPrice}>{readableLifetimePrice}</div>
           <div className={styles.believerPriceCaption}>
-            {t['com.lovenotes.payment.billing-setting.believer.price-caption']()}
+            {t[
+              'com.lovenotes.payment.billing-setting.believer.price-caption'
+            ]()}
           </div>
         </div>
       </header>

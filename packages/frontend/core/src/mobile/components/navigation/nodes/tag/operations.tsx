@@ -1,4 +1,10 @@
 import {
+  DeleteIcon,
+  FolderIcon,
+  PlusIcon,
+  SplitViewIcon,
+} from '@blocksuite/icons/rc';
+import {
   IconButton,
   MenuItem,
   MenuSeparator,
@@ -16,14 +22,8 @@ import { TagService } from '@lovenotes/core/modules/tag';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import {
-  DeleteIcon,
-  FolderIcon,
-  PlusIcon,
-  SplitViewIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { TagRenameSubMenu } from './dialog';
@@ -146,12 +146,15 @@ export const useNavigationPanelTagNodeOperations = (
           ) {
             openConfirmModal({
               title: t['com.lovenotes.m.selector.remove-warning.title'](),
-              description: t['com.lovenotes.m.selector.remove-warning.message']({
-                type: t['com.lovenotes.m.selector.type-doc'](),
-                where: t['com.lovenotes.m.selector.where-tag'](),
-              }),
+              description: t['com.lovenotes.m.selector.remove-warning.message'](
+                {
+                  type: t['com.lovenotes.m.selector.type-doc'](),
+                  where: t['com.lovenotes.m.selector.where-tag'](),
+                }
+              ),
               cancelText: t['com.lovenotes.m.selector.remove-warning.cancel'](),
-              confirmText: t['com.lovenotes.m.selector.remove-warning.confirm'](),
+              confirmText:
+                t['com.lovenotes.m.selector.remove-warning.confirm'](),
               reverseFooter: true,
               onConfirm: () => {
                 globalCacheService.globalCache.set(

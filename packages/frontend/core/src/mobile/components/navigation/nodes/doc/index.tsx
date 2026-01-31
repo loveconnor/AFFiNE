@@ -16,7 +16,7 @@ import {
   useLiveData,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';
@@ -187,7 +187,9 @@ export const NavigationPanelDocNode = ({
         {canEdit =>
           canEdit ? (
             <AddItemPlaceholder
-              label={t['com.lovenotes.rootAppSidebar.explorer.doc-add-tooltip']()}
+              label={t[
+                'com.lovenotes.rootAppSidebar.explorer.doc-add-tooltip'
+              ]()}
               onClick={handleAddLinkedPage}
             />
           ) : null

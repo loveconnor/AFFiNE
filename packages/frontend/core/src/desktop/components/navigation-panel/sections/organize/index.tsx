@@ -1,3 +1,4 @@
+import { AddOrganizeIcon } from '@blocksuite/icons/rc';
 import {
   type DropTargetDropEvent,
   type DropTargetOptions,
@@ -11,9 +12,8 @@ import {
 } from '@lovenotes/core/modules/organize';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { AddOrganizeIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CollapsibleSection } from '../../layouts/collapsible-section';

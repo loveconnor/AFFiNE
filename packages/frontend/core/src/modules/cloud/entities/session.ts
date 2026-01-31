@@ -8,7 +8,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { isEqual } from 'lodash-es';
 import { tap } from 'rxjs';
 

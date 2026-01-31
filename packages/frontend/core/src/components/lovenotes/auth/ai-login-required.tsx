@@ -1,7 +1,7 @@
 import { useConfirmModal } from '@lovenotes/component';
 import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { atom, useAtom } from 'jotai';
 import { useCallback, useEffect } from 'react';
 

@@ -1,5 +1,5 @@
 import { getMembersByWorkspaceIdQuery } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 import type { WorkspaceServerService } from '../../cloud';
 

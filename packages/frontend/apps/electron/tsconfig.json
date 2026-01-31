@@ -9,8 +9,8 @@
   "references": [
     { "path": "../../../../tools/utils" },
     { "path": "../../i18n" },
+    { "path": "../../../common/infra" },
     { "path": "../../native" },
-    { "path": "../../../common/nbstore" },
-    { "path": "../../../common/infra" }
+    { "path": "../../../common/nbstore" }
   ]
 }

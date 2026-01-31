@@ -7,7 +7,7 @@ import {
   SubscriptionStatus,
 } from '@lovenotes/graphql';
 import { type I18nString, i18nTime, Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect } from 'react';
 
 import { RedeemCode } from '../plans/plan-card';
@@ -19,7 +19,8 @@ const DescriptionI18NKey = {
   Basic: 'com.lovenotes.payment.billing-setting.current-plan.description',
   Monthly:
     'com.lovenotes.payment.billing-setting.current-plan.description.monthly',
-  Yearly: 'com.lovenotes.payment.billing-setting.current-plan.description.yearly',
+  Yearly:
+    'com.lovenotes.payment.billing-setting.current-plan.description.yearly',
   Lifetime:
     'com.lovenotes.payment.billing-setting.current-plan.description.lifetime',
 } as const satisfies { [key: string]: I18nString };
@@ -68,7 +69,9 @@ export const ProPlanCard = ({
           spreadCol={false}
           name={
             <CardNameLabelRow
-              cardName={t['com.lovenotes.payment.billing-setting.current-plan']()}
+              cardName={t[
+                'com.lovenotes.payment.billing-setting.current-plan'
+              ]()}
               status={proSubscription?.status}
             />
           }

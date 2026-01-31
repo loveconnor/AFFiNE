@@ -8,7 +8,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { EMPTY } from 'rxjs';
 import { exhaustMap, mergeMap } from 'rxjs/operators';
 

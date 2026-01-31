@@ -1,4 +1,10 @@
-import { Button, ConfirmModal, Input, Modal, notify } from '@lovenotes/component';
+import {
+  Button,
+  ConfirmModal,
+  Input,
+  Modal,
+  notify,
+} from '@lovenotes/component';
 import { SettingRow } from '@lovenotes/component/setting-components';
 import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
@@ -17,7 +23,7 @@ import {
   SubscriptionVariant,
 } from '@lovenotes/graphql';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import clsx from 'clsx';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -380,7 +386,9 @@ const ActionModal = ({
       width={480}
       open={open}
       onOpenChange={handleOpenChange}
-      title={t['com.lovenotes.settings.workspace.license.activate-modal.title']()}
+      title={t[
+        'com.lovenotes.settings.workspace.license.activate-modal.title'
+      ]()}
       description={t[
         'com.lovenotes.settings.workspace.license.activate-modal.description'
       ]()}

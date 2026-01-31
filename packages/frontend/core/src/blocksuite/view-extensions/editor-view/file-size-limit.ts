@@ -1,12 +1,12 @@
-import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
-import track from '@lovenotes/track';
 import type { Container } from '@blocksuite/lovenotes/global/di';
 import {
   FileSizeLimitProvider,
   type IFileSizeLimitService,
 } from '@blocksuite/lovenotes/shared/services';
 import { Extension } from '@blocksuite/lovenotes/store';
-import type { FrameworkProvider } from '@toeverything/infra';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import type { FrameworkProvider } from '@lovenotes/infra';
+import track from '@lovenotes/track';
 
 export function patchFileSizeLimitExtension(framework: FrameworkProvider) {
   const workspaceDialogService = framework.get(WorkspaceDialogService);

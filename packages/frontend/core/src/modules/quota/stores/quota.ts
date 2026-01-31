@@ -1,6 +1,6 @@
 import type { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
 import { workspaceQuotaQuery } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 export class WorkspaceQuotaStore extends Store {
   constructor(private readonly workspaceServerService: WorkspaceServerService) {

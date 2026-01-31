@@ -2,8 +2,8 @@ import {
   PreconditionStrategy,
   registerLoveNotesCommand,
 } from '@lovenotes/core/commands';
+import { useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 
 import { NavigatorService } from '../services/navigator';

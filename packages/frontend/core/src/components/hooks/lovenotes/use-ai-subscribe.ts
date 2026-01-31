@@ -1,8 +1,11 @@
 import { generateSubscriptionCallbackLink } from '@lovenotes/core/components/hooks/lovenotes/use-subscription-notify';
-import { AuthService, SubscriptionService } from '@lovenotes/core/modules/cloud';
+import {
+  AuthService,
+  SubscriptionService,
+} from '@lovenotes/core/modules/cloud';
 import { UrlService } from '@lovenotes/core/modules/url';
 import { SubscriptionPlan, SubscriptionRecurring } from '@lovenotes/graphql';
-import { useFramework } from '@toeverything/infra';
+import { useFramework } from '@lovenotes/infra';
 import { nanoid } from 'nanoid';
 import { useCallback } from 'react';
 

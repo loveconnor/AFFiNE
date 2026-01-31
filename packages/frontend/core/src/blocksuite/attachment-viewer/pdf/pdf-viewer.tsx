@@ -1,5 +1,14 @@
+import {
+  CollapseIcon,
+  ExpandIcon,
+  InformationIcon,
+} from '@blocksuite/icons/rc';
 import { IconButton, Menu, observeResize } from '@lovenotes/component';
-import type { PDF, PDFMeta, PDFRendererState } from '@lovenotes/core/modules/pdf';
+import type {
+  PDF,
+  PDFMeta,
+  PDFRendererState,
+} from '@lovenotes/core/modules/pdf';
 import { PDFService, PDFStatus } from '@lovenotes/core/modules/pdf';
 import { cacheBitmap } from '@lovenotes/core/modules/pdf/cache/bitmap-cache';
 import {
@@ -14,13 +23,8 @@ import {
   Scroller,
   ScrollSeekPlaceholder,
 } from '@lovenotes/core/modules/pdf/views';
+import { LiveData, useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  CollapseIcon,
-  ExpandIcon,
-  InformationIcon,
-} from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';

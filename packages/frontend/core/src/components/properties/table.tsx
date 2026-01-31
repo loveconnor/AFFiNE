@@ -1,3 +1,4 @@
+import { PlusIcon, PropertyIcon, ToggleDownIcon } from '@blocksuite/icons/rc';
 import {
   Button,
   Menu,
@@ -16,18 +17,16 @@ import type {
   DatabaseValueCell,
 } from '@lovenotes/core/modules/doc-info/types';
 import { DocIntegrationPropertiesTable } from '@lovenotes/core/modules/integration';
-import { ViewService, WorkbenchService } from '@lovenotes/core/modules/workbench';
+import {
+  ViewService,
+  WorkbenchService,
+} from '@lovenotes/core/modules/workbench';
 import { WorkspacePropertyService } from '@lovenotes/core/modules/workspace-property';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { PlusIcon, PropertyIcon, ToggleDownIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
-import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
 import clsx from 'clsx';
 import type React from 'react';
 import { forwardRef, useCallback, useMemo, useState } from 'react';

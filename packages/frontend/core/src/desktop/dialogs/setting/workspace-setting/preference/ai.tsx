@@ -8,7 +8,7 @@ import { ServerService } from '@lovenotes/core/modules/cloud';
 import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions';
 import { WorkspaceShareSettingService } from '@lovenotes/core/modules/share-setting';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 export const AiSetting = () => {
   const t = useI18n();

@@ -4,4 +4,4 @@ This document is intended for developers who want to contribute to LoveNotes. It
 
 ### The Infrastructure of LoveNotes
 
-see {@link @toeverything/infra!}
+see {@link @lovenotes/infra!}

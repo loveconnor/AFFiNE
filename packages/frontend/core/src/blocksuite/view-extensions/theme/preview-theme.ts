@@ -1,4 +1,4 @@
-import { AppThemeService } from '@lovenotes/core/modules/theme';
+import type { Container } from '@blocksuite/global/di';
 import { ColorScheme } from '@blocksuite/lovenotes/model';
 import {
   type ThemeExtension,
@@ -13,8 +13,8 @@ import {
   LifeCycleWatcher,
   StdIdentifier,
 } from '@blocksuite/lovenotes/std';
-import type { Container } from '@blocksuite/global/di';
-import type { FrameworkProvider } from '@toeverything/infra';
+import { AppThemeService } from '@lovenotes/core/modules/theme';
+import type { FrameworkProvider } from '@lovenotes/infra';
 import type { Observable } from 'rxjs';
 
 export function getPreviewThemeExtension(framework: FrameworkProvider) {
@@ -30,9 +30,11 @@ export function getPreviewThemeExtension(framework: FrameworkProvider) {
 
     static override setup(di: Container) {
       super.setup(di);
-      di.override(ThemeExtensionIdentifier, LoveNotesPagePreviewThemeExtension, [
-        StdIdentifier,
-      ]);
+      di.override(
+        ThemeExtensionIdentifier,
+        LoveNotesPagePreviewThemeExtension,
+        [StdIdentifier]
+      );
     }
 
     constructor(std: BlockStdScope) {

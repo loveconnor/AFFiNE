@@ -1,11 +1,11 @@
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import {
+  type CommandCategory,
   type LoveNotesCommand,
   LoveNotesCommandRegistry,
-  type CommandCategory,
   PreconditionStrategy,
 } from '@lovenotes/core/commands';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@lovenotes/infra';
 import Fuse from 'fuse.js';
 
 import type { GlobalContextService } from '../../global-context';
@@ -17,7 +17,9 @@ import { highlighter } from '../utils/highlighter';
 const categories = {
   'lovenotes:recent': {
     id: 'command:lovenotes:recent',
-    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.recent' },
+    label: {
+      i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.recent',
+    },
     score: 10,
   },
   'lovenotes:navigation': {
@@ -29,17 +31,23 @@ const categories = {
   },
   'lovenotes:creation': {
     id: 'command:lovenotes:creation',
-    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.creation' },
+    label: {
+      i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.creation',
+    },
     score: 10,
   },
   'lovenotes:general': {
     id: 'command:lovenotes:general',
-    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.general' },
+    label: {
+      i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.general',
+    },
     score: 10,
   },
   'lovenotes:layout': {
     id: 'command:lovenotes:layout',
-    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.layout' },
+    label: {
+      i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.layout',
+    },
     score: 10,
   },
   'lovenotes:pages': {
@@ -49,7 +57,9 @@ const categories = {
   },
   'lovenotes:edgeless': {
     id: 'command:lovenotes:edgeless',
-    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.edgeless' },
+    label: {
+      i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.edgeless',
+    },
     score: 10,
   },
   'lovenotes:collections': {
@@ -61,12 +71,16 @@ const categories = {
   },
   'lovenotes:settings': {
     id: 'command:lovenotes:settings',
-    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.settings' },
+    label: {
+      i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.settings',
+    },
     score: 10,
   },
   'lovenotes:updates': {
     id: 'command:lovenotes:updates',
-    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.updates' },
+    label: {
+      i18nKey: 'com.lovenotes.cmdk.lovenotes.category.lovenotes.updates',
+    },
     score: 10,
   },
   'lovenotes:help': {
@@ -81,7 +95,9 @@ const categories = {
   },
   'editor:insert-object': {
     id: 'command:editor:insert-object',
-    label: { i18nKey: 'com.lovenotes.cmdk.lovenotes.category.editor.insert-object' },
+    label: {
+      i18nKey: 'com.lovenotes.cmdk.lovenotes.category.editor.insert-object',
+    },
     score: 10,
   },
   'editor:page': {

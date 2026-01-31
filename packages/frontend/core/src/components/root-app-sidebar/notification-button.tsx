@@ -1,10 +1,10 @@
+import { NotificationIcon } from '@blocksuite/icons/rc';
 import { Menu } from '@lovenotes/component';
 import { MenuItem } from '@lovenotes/core/modules/app-sidebar/views';
 import { NotificationCountService } from '@lovenotes/core/modules/notification';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { NotificationIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
 import { NotificationList } from '../notification/list';

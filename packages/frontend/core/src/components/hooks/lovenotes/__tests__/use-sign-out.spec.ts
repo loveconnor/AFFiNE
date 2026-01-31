@@ -17,7 +17,7 @@ vi.mock('@lovenotes/core/modules/cloud', () => ({
   DefaultServerService: class {},
 }));
 
-vi.mock('@toeverything/infra', () => {
+vi.mock('@lovenotes/infra', () => {
   return {
     useService: () => ({ signOut: signOutFn }),
     useServices: () => ({

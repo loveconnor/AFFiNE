@@ -2,7 +2,7 @@ import {
   createSignalFromObservable,
   type Signal,
 } from '@blocksuite/lovenotes/shared/utils';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 
 import type { FeatureFlagService } from '../../feature-flag';
 

@@ -1,3 +1,9 @@
+import { LinkIcon } from '@blocksuite/icons/lit';
+import {
+  menu,
+  type MenuOptions,
+} from '@blocksuite/lovenotes/components/context-menu';
+import type { DatabaseBlockModel } from '@blocksuite/lovenotes/model';
 import { notify } from '@lovenotes/component';
 import {
   generateUrl,
@@ -7,14 +13,8 @@ import { ServerService } from '@lovenotes/core/modules/cloud';
 import { EditorService } from '@lovenotes/core/modules/editor';
 import { copyLinkToBlockStdScopeClipboard } from '@lovenotes/core/utils/clipboard';
 import { I18n } from '@lovenotes/i18n';
+import type { FrameworkProvider } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import {
-  menu,
-  type MenuOptions,
-} from '@blocksuite/lovenotes/components/context-menu';
-import type { DatabaseBlockModel } from '@blocksuite/lovenotes/model';
-import { LinkIcon } from '@blocksuite/icons/lit';
-import type { FrameworkProvider } from '@toeverything/infra';
 
 export function createDatabaseOptionsConfig(framework: FrameworkProvider) {
   return {

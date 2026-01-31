@@ -2,7 +2,7 @@ import { Button } from '@lovenotes/component';
 import { DocCreatedByUpdatedBySyncService } from '@lovenotes/core/modules/cloud';
 import { UserFriendlyError } from '@lovenotes/error';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useTheme } from 'next-themes';
 import { useCallback, useMemo } from 'react';
 

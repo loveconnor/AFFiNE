@@ -5,11 +5,7 @@ import {
   WorkspacesService,
 } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { memo, useCallback, useMemo } from 'react';
 

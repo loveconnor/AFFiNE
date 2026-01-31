@@ -1,6 +1,6 @@
-import { AtMenuConfigService } from '@lovenotes/core/modules/at-menu-config/services';
 import type { LinkedWidgetConfig } from '@blocksuite/lovenotes/widgets/linked-doc';
-import { type FrameworkProvider } from '@toeverything/infra';
+import { AtMenuConfigService } from '@lovenotes/core/modules/at-menu-config/services';
+import { type FrameworkProvider } from '@lovenotes/infra';
 
 export function createLinkedWidgetConfig(
   framework: FrameworkProvider

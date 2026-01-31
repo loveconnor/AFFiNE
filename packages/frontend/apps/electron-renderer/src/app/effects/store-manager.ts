@@ -1,9 +1,9 @@
 import { NbstoreProvider } from '@lovenotes/core/modules/storage';
 import { apis } from '@lovenotes/electron-api';
+import type { Framework } from '@lovenotes/infra';
+import { OpClient } from '@lovenotes/infra/op';
 import { StoreManagerClient } from '@lovenotes/nbstore/worker/client';
 import { setTelemetryTransport } from '@lovenotes/track';
-import type { Framework } from '@toeverything/infra';
-import { OpClient } from '@toeverything/infra/op';
 import { v4 as uuid } from 'uuid';
 
 function createStoreManagerClient() {

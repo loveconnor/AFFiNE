@@ -1,10 +1,10 @@
+import { DeleteIcon, ResetIcon } from '@blocksuite/icons/rc';
 import { Button } from '@lovenotes/component/ui/button';
 import { ConfirmModal } from '@lovenotes/component/ui/modal';
 import { DocService } from '@lovenotes/core/modules/doc';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { DeleteIcon, ResetIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback, useState } from 'react';
 
 import { useAppSettingHelper } from '../../../components/hooks/lovenotes/use-app-setting-helper';

@@ -1,4 +1,15 @@
-import { IconButton, MenuItem, MenuSeparator, toast } from '@lovenotes/component';
+import {
+  DeleteIcon,
+  OpenInNewIcon,
+  PlusIcon,
+  SplitViewIcon,
+} from '@blocksuite/icons/rc';
+import {
+  IconButton,
+  MenuItem,
+  MenuSeparator,
+  toast,
+} from '@lovenotes/component';
 import { usePageHelper } from '@lovenotes/core/blocksuite/block-suite-page-list/utils';
 import { IsFavoriteIcon } from '@lovenotes/core/components/pure/icons';
 import { DocsService } from '@lovenotes/core/modules/doc';
@@ -7,14 +18,8 @@ import { TagService } from '@lovenotes/core/modules/tag';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import {
-  DeleteIcon,
-  OpenInNewIcon,
-  PlusIcon,
-  SplitViewIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import type { NodeOperation } from '../../tree/types';
@@ -92,7 +97,9 @@ export const useNavigationPanelTagNodeOperations = (
             size="16"
             onClick={handleNewDoc}
             data-testid="tag-add-doc-button"
-            tooltip={t['com.lovenotes.rootAppSidebar.explorer.tag-add-tooltip']()}
+            tooltip={t[
+              'com.lovenotes.rootAppSidebar.explorer.tag-add-tooltip'
+            ]()}
           >
             <PlusIcon />
           </IconButton>

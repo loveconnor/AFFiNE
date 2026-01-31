@@ -25,8 +25,8 @@ import { UserFriendlyError } from '@lovenotes/error';
 import type { WorkspaceInviteLinkExpireTime } from '@lovenotes/graphql';
 import { ServerDeploymentType, SubscriptionPlan } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { useLiveData, useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

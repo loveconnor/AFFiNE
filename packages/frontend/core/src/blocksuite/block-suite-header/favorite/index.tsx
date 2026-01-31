@@ -2,8 +2,8 @@ import { FavoriteTag } from '@lovenotes/core/components/page-list';
 import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
 import { toast } from '@lovenotes/core/utils';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 export interface FavoriteButtonProps {

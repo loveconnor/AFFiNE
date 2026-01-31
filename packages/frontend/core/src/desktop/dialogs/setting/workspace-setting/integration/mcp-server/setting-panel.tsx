@@ -1,10 +1,13 @@
 import { Button, ErrorMessage, notify, Skeleton } from '@lovenotes/component';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
-import { AccessTokenService, ServerService } from '@lovenotes/core/modules/cloud';
+import {
+  AccessTokenService,
+  ServerService,
+} from '@lovenotes/core/modules/cloud';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { UserFriendlyError } from '@lovenotes/error';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { type ReactNode, useEffect, useMemo, useState } from 'react';
 
 import { IntegrationSettingHeader } from '../setting';

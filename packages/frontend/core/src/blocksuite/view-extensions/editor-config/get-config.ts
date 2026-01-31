@@ -1,13 +1,13 @@
+import { ToolbarMoreMenuConfigExtension } from '@blocksuite/lovenotes/components/toolbar';
+import { EditorSettingExtension } from '@blocksuite/lovenotes/shared/services';
+import type { ExtensionType } from '@blocksuite/store';
 import {
   createCustomToolbarExtension,
   createToolbarMoreMenuConfig,
 } from '@lovenotes/core/blocksuite/view-extensions/editor-config/toolbar';
 import { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
 import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
-import { ToolbarMoreMenuConfigExtension } from '@blocksuite/lovenotes/components/toolbar';
-import { EditorSettingExtension } from '@blocksuite/lovenotes/shared/services';
-import type { ExtensionType } from '@blocksuite/store';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@lovenotes/infra';
 
 export function getEditorConfigExtension(
   framework: FrameworkProvider

@@ -9,11 +9,7 @@ import { UrlService } from '@lovenotes/core/modules/url';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import {
-  useService,
-  useServiceOptional,
-  useServices,
-} from '@toeverything/infra';
+import { useService, useServiceOptional, useServices } from '@lovenotes/infra';
 import { useStore } from 'jotai';
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';

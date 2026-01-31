@@ -1,14 +1,10 @@
-import { notify } from '@lovenotes/component';
 import {
-  generateUrl,
-  type UseSharingUrl,
-} from '@lovenotes/core/components/hooks/lovenotes/use-share-url';
-import { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
-import { EditorService } from '@lovenotes/core/modules/editor';
-import type { EditorSettingExt } from '@lovenotes/core/modules/editor-setting/entities/editor-setting';
-import { copyLinkToBlockStdScopeClipboard } from '@lovenotes/core/utils/clipboard';
-import { I18n, i18nTime } from '@lovenotes/i18n';
-import { track } from '@lovenotes/track';
+  CopyAsImgaeIcon,
+  CopyIcon,
+  EditIcon,
+  LinkIcon,
+  OpenInNewIcon,
+} from '@blocksuite/icons/lit';
 import { BookmarkBlockComponent } from '@blocksuite/lovenotes/blocks/bookmark';
 import {
   EmbedFigmaBlockComponent,
@@ -72,15 +68,19 @@ import {
   GfxPrimitiveElementModel,
 } from '@blocksuite/lovenotes/std/gfx';
 import type { ExtensionType } from '@blocksuite/lovenotes/store';
+import { notify } from '@lovenotes/component';
 import {
-  CopyAsImgaeIcon,
-  CopyIcon,
-  EditIcon,
-  LinkIcon,
-  OpenInNewIcon,
-} from '@blocksuite/icons/lit';
+  generateUrl,
+  type UseSharingUrl,
+} from '@lovenotes/core/components/hooks/lovenotes/use-share-url';
+import { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
+import { EditorService } from '@lovenotes/core/modules/editor';
+import type { EditorSettingExt } from '@lovenotes/core/modules/editor-setting/entities/editor-setting';
+import { copyLinkToBlockStdScopeClipboard } from '@lovenotes/core/utils/clipboard';
+import { I18n, i18nTime } from '@lovenotes/i18n';
+import type { FrameworkProvider } from '@lovenotes/infra';
+import { track } from '@lovenotes/track';
 import { computed } from '@preact/signals-core';
-import type { FrameworkProvider } from '@toeverything/infra';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { keyed } from 'lit/directives/keyed.js';
@@ -601,7 +601,9 @@ function createSurfaceRefToolbarConfig(baseUrl?: string): ToolbarModuleConfig {
             .map(action => {
               if (action.id.endsWith('open-in-active-view')) {
                 action.label =
-                  I18n['com.lovenotes.peek-view-controls.open-doc-in-edgeless']();
+                  I18n[
+                    'com.lovenotes.peek-view-controls.open-doc-in-edgeless'
+                  ]();
               }
               return action;
             });

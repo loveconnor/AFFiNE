@@ -1,5 +1,5 @@
+import { appSettingAtom } from '@lovenotes/infra';
 import { enableAutoTrack, sentry, tracker } from '@lovenotes/track';
-import { appSettingAtom } from '@toeverything/infra';
 import { useAtomValue } from 'jotai/react';
 import { useEffect } from 'react';
 

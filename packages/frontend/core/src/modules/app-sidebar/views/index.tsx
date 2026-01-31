@@ -5,11 +5,7 @@ import { NavigateContext } from '@lovenotes/core/components/hooks/use-navigate-h
 import { WorkspaceNavigator } from '@lovenotes/core/components/workspace-selector';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
-import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
 import clsx from 'clsx';
 import type { PropsWithChildren, ReactElement } from 'react';
 import { useCallback, useContext, useEffect, useMemo } from 'react';
@@ -199,8 +195,12 @@ const ResizeHandleTooltipContent = () => {
   const t = useI18n();
   return (
     <div>
-      <div>{t['com.lovenotes.rootAppSidebar.resize-handle.tooltip.drag']()}</div>
-      <div>{t['com.lovenotes.rootAppSidebar.resize-handle.tooltip.click']()}</div>
+      <div>
+        {t['com.lovenotes.rootAppSidebar.resize-handle.tooltip.drag']()}
+      </div>
+      <div>
+        {t['com.lovenotes.rootAppSidebar.resize-handle.tooltip.click']()}
+      </div>
     </div>
   );
 };

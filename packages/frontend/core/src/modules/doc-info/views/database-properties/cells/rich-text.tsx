@@ -1,11 +1,11 @@
-import { PropertyValue } from '@lovenotes/component';
-import { ConfigModal } from '@lovenotes/core/components/mobile';
+import { TextIcon } from '@blocksuite/icons/rc';
 import { DefaultInlineManagerExtension } from '@blocksuite/lovenotes/inlines/preset';
 import { RichText } from '@blocksuite/lovenotes/rich-text';
 import type { BlockStdScope } from '@blocksuite/lovenotes/std';
 import type { Store } from '@blocksuite/lovenotes/store';
-import { TextIcon } from '@blocksuite/icons/rc';
-import { type LiveData, useLiveData } from '@toeverything/infra';
+import { PropertyValue } from '@lovenotes/component';
+import { ConfigModal } from '@lovenotes/core/components/mobile';
+import { type LiveData, useLiveData } from '@lovenotes/infra';
 import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import type * as Y from 'yjs';
 

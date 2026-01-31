@@ -1,10 +1,10 @@
 import { DesktopApiService } from '@lovenotes/core/modules/desktop-api';
-import { useServiceOptional } from '@toeverything/infra';
+import { useServiceOptional } from '@lovenotes/infra';
 import { useCallback } from 'react';
 import { redirect } from 'react-router-dom';
 
-import { Onboarding } from '../../../components/lovenotes/onboarding/onboarding';
 import { appConfigStorage } from '../../../components/hooks/use-app-config-storage';
+import { Onboarding } from '../../../components/lovenotes/onboarding/onboarding';
 
 /**
  * /onboarding page

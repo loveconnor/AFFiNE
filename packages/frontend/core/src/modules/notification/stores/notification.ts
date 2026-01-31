@@ -9,7 +9,7 @@ import {
   readNotificationMutation,
   type UnionNotificationBodyType,
 } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 import { map } from 'rxjs';
 
 import type { GraphQLService, ServerService } from '../../cloud';

@@ -1,7 +1,7 @@
 // the adapter is to bridge the workspace rootdoc & native js bindings
 import { createYProxy } from '@blocksuite/lovenotes/store';
 import type { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@lovenotes/infra';
 import { defaultsDeep } from 'lodash-es';
 import { Observable } from 'rxjs';
 import type * as Y from 'yjs';

@@ -1,3 +1,4 @@
+import { NotificationIcon, SettingsIcon } from '@blocksuite/icons/rc';
 import {
   IconButton,
   Menu,
@@ -9,8 +10,7 @@ import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { NotificationCountService } from '@lovenotes/core/modules/notification';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { useI18n } from '@lovenotes/i18n';
-import { NotificationIcon, SettingsIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import clsx from 'clsx';
 import { useCallback, useRef, useState } from 'react';

@@ -1,4 +1,4 @@
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@lovenotes/infra';
 
 export type MaybeDate = Date | string | number;
 

@@ -1198,7 +1198,7 @@ export const PackageList = [
   },
   {
     location: 'packages/common/infra',
-    name: '@toeverything/infra',
+    name: '@lovenotes/infra',
     workspaceDependencies: [
       'packages/common/debug',
       'packages/common/env',
@@ -1210,8 +1210,8 @@ export const PackageList = [
     location: 'packages/common/nbstore',
     name: '@lovenotes/nbstore',
     workspaceDependencies: [
-      'packages/common/reader',
       'packages/common/infra',
+      'packages/common/reader',
       'blocksuite/affine/all',
       'packages/common/error',
       'packages/common/graphql',
@@ -1230,22 +1230,8 @@ export const PackageList = [
       'packages/frontend/core',
       'packages/common/error',
       'packages/common/graphql',
+      'packages/common/infra',
       'packages/frontend/routes',
-      'packages/common/infra',
-    ],
-  },
-  {
-    location: 'packages/frontend/apps/android',
-    name: '@lovenotes/android',
-    workspaceDependencies: [
-      'blocksuite/affine/all',
-      'packages/frontend/component',
-      'packages/frontend/core',
-      'packages/common/env',
-      'packages/frontend/i18n',
-      'packages/common/nbstore',
-      'packages/frontend/track',
-      'packages/common/infra',
     ],
   },
   {
@@ -1254,9 +1240,9 @@ export const PackageList = [
     workspaceDependencies: [
       'tools/utils',
       'packages/frontend/i18n',
+      'packages/common/infra',
       'packages/frontend/native',
       'packages/common/nbstore',
-      'packages/common/infra',
     ],
   },
   {
@@ -1269,42 +1255,10 @@ export const PackageList = [
       'packages/common/debug',
       'packages/frontend/electron-api',
       'packages/frontend/i18n',
+      'packages/common/infra',
       'packages/common/nbstore',
       'packages/frontend/track',
-      'packages/common/infra',
       'tools/utils',
-    ],
-  },
-  {
-    location: 'packages/frontend/apps/ios',
-    name: '@lovenotes/ios',
-    workspaceDependencies: [
-      'blocksuite/affine/all',
-      'packages/frontend/component',
-      'packages/frontend/core',
-      'packages/common/env',
-      'packages/common/graphql',
-      'packages/frontend/i18n',
-      'packages/common/nbstore',
-      'packages/frontend/track',
-      'packages/common/infra',
-      'tools/cli',
-      'tools/utils',
-      'packages/frontend/native',
-    ],
-  },
-  {
-    location: 'packages/frontend/apps/mobile',
-    name: '@lovenotes/mobile',
-    workspaceDependencies: [
-      'blocksuite/affine/all',
-      'packages/frontend/component',
-      'packages/frontend/core',
-      'packages/common/env',
-      'packages/frontend/i18n',
-      'packages/common/nbstore',
-      'packages/frontend/track',
-      'packages/common/infra',
     ],
   },
   {
@@ -1315,9 +1269,9 @@ export const PackageList = [
       'packages/frontend/core',
       'packages/common/env',
       'packages/frontend/i18n',
+      'packages/common/infra',
       'packages/common/nbstore',
       'packages/frontend/track',
-      'packages/common/infra',
     ],
   },
   {
@@ -1350,11 +1304,11 @@ export const PackageList = [
       'packages/common/error',
       'packages/common/graphql',
       'packages/frontend/i18n',
+      'packages/common/infra',
       'packages/common/nbstore',
       'packages/common/reader',
       'packages/frontend/templates',
       'packages/frontend/track',
-      'packages/common/infra',
       'blocksuite/affine/ext-loader',
     ],
   },
@@ -1572,15 +1526,12 @@ export type PackageName =
   | '@lovenotes/env'
   | '@lovenotes/error'
   | '@lovenotes/graphql'
-  | '@toeverything/infra'
+  | '@lovenotes/infra'
   | '@lovenotes/nbstore'
   | '@lovenotes/reader'
   | '@lovenotes/admin'
-  | '@lovenotes/android'
   | '@lovenotes/electron'
   | '@lovenotes/electron-renderer'
-  | '@lovenotes/ios'
-  | '@lovenotes/mobile'
   | '@lovenotes/web'
   | '@lovenotes/component'
   | '@lovenotes/core'

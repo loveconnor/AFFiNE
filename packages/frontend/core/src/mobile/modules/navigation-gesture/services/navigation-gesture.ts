@@ -5,7 +5,7 @@ import {
   fromPromise,
   LiveData,
   Service,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { catchError, distinctUntilChanged, EMPTY } from 'rxjs';
 
 import type { NavigationGestureProvider } from '../providers/navigation-gesture';

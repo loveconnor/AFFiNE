@@ -4,7 +4,7 @@ import {
   retryAudioTranscriptionMutation,
   submitAudioTranscriptionMutation,
 } from '@lovenotes/graphql';
-import { Entity } from '@toeverything/infra';
+import { Entity } from '@lovenotes/infra';
 
 import type { DefaultServerService, WorkspaceServerService } from '../../cloud';
 import { GraphQLService } from '../../cloud/services/graphql';

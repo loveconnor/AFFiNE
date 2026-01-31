@@ -6,7 +6,7 @@ import {
 } from '@lovenotes/core/modules/permissions';
 import { Permission, WorkspaceMemberStatus } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 export const MemberOptions = ({
@@ -35,8 +35,11 @@ export const MemberOptions = ({
         description:
           t['com.lovenotes.payment.member.team.remove.confirm.description'](),
         confirmText:
-          t['com.lovenotes.payment.member.team.remove.confirm.confirm-button'](),
-        cancelText: t['com.lovenotes.payment.member.team.remove.confirm.cancel'](),
+          t[
+            'com.lovenotes.payment.member.team.remove.confirm.confirm-button'
+          ](),
+        cancelText:
+          t['com.lovenotes.payment.member.team.remove.confirm.cancel'](),
         confirmButtonOptions: {
           variant: 'error',
         },
@@ -82,12 +85,13 @@ export const MemberOptions = ({
       .then(result => {
         if (result) {
           notify.success({
-            title: t['com.lovenotes.payment.member.team.approve.notify.title'](),
-            message: t['com.lovenotes.payment.member.team.approve.notify.message'](
-              {
-                name: member.name || member.email || member.id,
-              }
-            ),
+            title:
+              t['com.lovenotes.payment.member.team.approve.notify.title'](),
+            message: t[
+              'com.lovenotes.payment.member.team.approve.notify.message'
+            ]({
+              name: member.name || member.email || member.id,
+            }),
           });
           membersService.members.revalidate();
         }

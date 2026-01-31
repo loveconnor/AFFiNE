@@ -1,7 +1,7 @@
 import type { DocCustomPropertyInfo } from '@lovenotes/core/modules/db';
 import { type DocRecord, DocsService } from '@lovenotes/core/modules/doc';
 import { WorkspacePropertyService } from '@lovenotes/core/modules/workspace-property';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { useContext, useMemo } from 'react';
 

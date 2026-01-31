@@ -1,7 +1,3 @@
-import { CloudViewExtension } from '@lovenotes/core/blocksuite/view-extensions/cloud';
-import { LoveNotesEditorViewExtension } from '@lovenotes/core/blocksuite/view-extensions/editor-view/editor-view';
-import { LoveNotesThemeViewExtension } from '@lovenotes/core/blocksuite/view-extensions/theme';
-import { I18n } from '@lovenotes/i18n';
 import { CodeBlockViewExtension } from '@blocksuite/lovenotes/blocks/code/view';
 import { DividerViewExtension } from '@blocksuite/lovenotes/blocks/divider/view';
 import { LatexViewExtension as LatexBlockViewExtension } from '@blocksuite/lovenotes/blocks/latex/view';
@@ -54,7 +50,11 @@ import { InlineManagerExtension } from '@blocksuite/lovenotes/std/inline';
 import { LinkedDocViewExtension } from '@blocksuite/lovenotes/widgets/linked-doc/view';
 import { ToolbarViewExtension } from '@blocksuite/lovenotes/widgets/toolbar/view';
 import { ViewportOverlayViewExtension } from '@blocksuite/lovenotes/widgets/viewport-overlay/view';
-import type { FrameworkProvider } from '@toeverything/infra';
+import { CloudViewExtension } from '@lovenotes/core/blocksuite/view-extensions/cloud';
+import { LoveNotesEditorViewExtension } from '@lovenotes/core/blocksuite/view-extensions/editor-view/editor-view';
+import { LoveNotesThemeViewExtension } from '@lovenotes/core/blocksuite/view-extensions/theme';
+import { I18n } from '@lovenotes/i18n';
+import type { FrameworkProvider } from '@lovenotes/infra';
 import { z } from 'zod';
 
 import { createCommentLinkedWidgetConfig } from './linked-widget-config';

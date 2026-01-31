@@ -6,7 +6,7 @@ import {
 } from '@lovenotes/core/modules/workspace-property';
 import { generateUniqueNameInSequence } from '@lovenotes/core/utils/unique-name';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import {

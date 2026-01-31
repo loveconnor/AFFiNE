@@ -1,4 +1,11 @@
 import {
+  CloseIcon,
+  CollectionsIcon,
+  EditIcon,
+  FilterIcon,
+  PlusIcon,
+} from '@blocksuite/icons/rc';
+import {
   Divider,
   IconButton,
   Menu,
@@ -14,15 +21,8 @@ import {
 import type { FilterParams } from '@lovenotes/core/modules/collection-rules';
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  CloseIcon,
-  CollectionsIcon,
-  EditIcon,
-  FilterIcon,
-  PlusIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useMemo, useState } from 'react';
 
 import * as styles from './pinned-collections.css';

@@ -5,8 +5,8 @@ import {
 } from '@lovenotes/component/setting-components';
 import { SubscriptionService } from '@lovenotes/core/modules/cloud';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 
 import type { SettingState } from '../../types';
@@ -36,7 +36,9 @@ export const BillingSettings = ({
       >
         <SubscriptionSettings onChangeSettingState={onChangeSettingState} />
       </SettingWrapper>
-      <SettingWrapper title={t['com.lovenotes.payment.billing-setting.history']()}>
+      <SettingWrapper
+        title={t['com.lovenotes.payment.billing-setting.history']()}
+      >
         <BillingHistory />
       </SettingWrapper>
     </>

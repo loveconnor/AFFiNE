@@ -2,7 +2,7 @@ import { MenuItem } from '@lovenotes/component';
 import { IsFavoriteIcon } from '@lovenotes/core/components/pure/icons';
 import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useMemo } from 'react';
 
 export const FavoriteFolderOperation = ({ id }: { id: string }) => {

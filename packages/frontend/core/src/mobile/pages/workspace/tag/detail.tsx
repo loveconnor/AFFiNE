@@ -2,7 +2,7 @@ import { useThemeColorV2 } from '@lovenotes/component';
 import { PageNotFound } from '@lovenotes/core/desktop/pages/404';
 import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { TagService } from '@lovenotes/core/modules/tag';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 

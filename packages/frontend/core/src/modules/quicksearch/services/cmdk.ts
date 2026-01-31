@@ -1,5 +1,5 @@
+import { Service } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { Service } from '@toeverything/infra';
 
 import type { DocsService } from '../../doc';
 import type { WorkbenchService } from '../../workbench';

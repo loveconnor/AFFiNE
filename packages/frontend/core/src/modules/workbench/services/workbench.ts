@@ -1,5 +1,5 @@
+import { createEvent, Service } from '@lovenotes/infra';
 import { tracker } from '@lovenotes/track';
-import { createEvent, Service } from '@toeverything/infra';
 import { combineLatest, distinctUntilChanged, map, skip } from 'rxjs';
 
 import { Workbench } from '../entities/workbench';

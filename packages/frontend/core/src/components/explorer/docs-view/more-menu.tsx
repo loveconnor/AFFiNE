@@ -1,4 +1,12 @@
 import {
+  DeleteIcon,
+  DuplicateIcon,
+  InformationIcon,
+  MoreVerticalIcon,
+  OpenInNewIcon,
+  SplitViewIcon,
+} from '@blocksuite/icons/rc';
+import {
   IconButton,
   type IconButtonProps,
   Menu,
@@ -12,16 +20,8 @@ import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite
 import { GuardService } from '@lovenotes/core/modules/permissions';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  DeleteIcon,
-  DuplicateIcon,
-  InformationIcon,
-  MoreVerticalIcon,
-  OpenInNewIcon,
-  SplitViewIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useContext } from 'react';
 
 import { useBlockSuiteMetaHelper } from '../../hooks/lovenotes/use-block-suite-meta-helper';

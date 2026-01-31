@@ -1,6 +1,6 @@
 import { DebugLogger } from '@lovenotes/debug';
 import { UserFriendlyError } from '@lovenotes/error';
-import { fromPromise, Service } from '@toeverything/infra';
+import { fromPromise, Service } from '@lovenotes/infra';
 
 import type { ServerService } from './server';
 
@@ -31,10 +31,19 @@ export class FetchService extends Service {
    */
   fetch = async (input: string, init?: FetchInit): Promise<Response> => {
     logger.debug('fetch', input);
-    const baseUrl = this.serverService.server.serverMetadata.baseUrl;
+    const rawBaseUrl = this.serverService.server.serverMetadata.baseUrl;
+    // Electron packaged app serves assets:// but backend runs on http(s).
+    // Prefer a real backend URL when assets:// is detected.
+    const effectiveBaseUrl =
+      BUILD_CONFIG.isElectron && rawBaseUrl.startsWith('assets://')
+        ? 'http://127.0.0.1:3010'
+        : rawBaseUrl;
+
     if (
       BUILD_CONFIG.isElectron &&
-      baseUrl.startsWith('assets://') &&
+      rawBaseUrl.startsWith('assets://') &&
+      // Only stub when we truly have no real backend target
+      !effectiveBaseUrl.startsWith('http') &&
       input.includes('/graphql')
     ) {
       const operationName = (() => {
@@ -120,6 +129,28 @@ export class FetchService extends Service {
           case 'listUserAccessTokens':
           case 'copilotQuotaQuery':
             return { currentUser };
+          case 'createCopilotSession':
+            return { createCopilotSession: 'local-session' };
+          case 'createCopilotMessage':
+            return {
+              createCopilotMessage: {
+                messageId: 'local-message',
+                sessionId: 'local-session',
+              },
+            };
+          case 'getCopilotSession':
+          case 'getCopilotSessions':
+          case 'getCopilotHistories':
+          case 'getCopilotHistoryIds':
+          case 'getCopilotRecentSessions':
+            return {
+              currentUser: {
+                copilot: {
+                  chats: { edges: [] },
+                  contexts: [],
+                },
+              },
+            };
           default:
             return { currentUser };
         }
@@ -139,7 +170,7 @@ export class FetchService extends Service {
       abortController.abort(reason);
     });
 
-    const timeout = init?.timeout ?? 15000;
+    const timeout = init?.timeout ?? 30000;
     const timeoutId =
       timeout > 0
         ? setTimeout(() => {
@@ -150,17 +181,14 @@ export class FetchService extends Service {
     let res: Response;
 
     try {
-      res = await globalThis.fetch(
-        new URL(input, this.serverService.server.serverMetadata.baseUrl),
-        {
-          ...init,
-          signal: abortController.signal,
-          headers: {
-            ...init?.headers,
-            'x-lovenotes-version': BUILD_CONFIG.appVersion,
-          },
-        }
-      );
+      res = await globalThis.fetch(new URL(input, effectiveBaseUrl), {
+        ...init,
+        signal: abortController.signal,
+        headers: {
+          ...init?.headers,
+          'x-lovenotes-version': BUILD_CONFIG.appVersion,
+        },
+      });
     } catch (err: any) {
       const isAbort =
         err?.name === 'AbortError' ||

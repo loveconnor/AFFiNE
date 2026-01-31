@@ -1,6 +1,6 @@
 import { NotificationCountService } from '@lovenotes/core/modules/notification';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect } from 'react';
 
 export const DocumentTitle = () => {
@@ -12,7 +12,8 @@ export const DocumentTitle = () => {
 
   useEffect(() => {
     const prefix = notificationCount > 0 ? `(${notificationCount}) ` : '';
-    document.title = prefix + (viewTitle ? `${viewTitle} · LoveNotes` : 'LoveNotes');
+    document.title =
+      prefix + (viewTitle ? `${viewTitle} · LoveNotes` : 'LoveNotes');
 
     return () => {
       document.title = 'LoveNotes';

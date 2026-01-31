@@ -1,5 +1,5 @@
 import type { DocMode } from '@lovenotes/graphql';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 
 import type { NotificationStore } from '../stores/notification';
 

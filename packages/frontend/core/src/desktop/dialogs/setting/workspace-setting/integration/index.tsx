@@ -1,7 +1,7 @@
 import { SettingHeader } from '@lovenotes/component/setting-components';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { type ReactNode, useCallback, useMemo, useState } from 'react';
 
 import { SubPageProvider, useSubPageIsland } from '../../sub-page';

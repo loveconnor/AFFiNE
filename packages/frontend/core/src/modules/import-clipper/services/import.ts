@@ -1,6 +1,6 @@
-import { getStoreManager } from '@lovenotes/core/blocksuite/manager/store';
 import { MarkdownTransformer } from '@blocksuite/lovenotes/widgets/linked-doc';
-import { Service } from '@toeverything/infra';
+import { getStoreManager } from '@lovenotes/core/blocksuite/manager/store';
+import { Service } from '@lovenotes/infra';
 
 import { DocsService } from '../../doc';
 import {

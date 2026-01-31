@@ -1,5 +1,8 @@
 import { toggleGeneralAIOnboarding } from '@lovenotes/core/components/lovenotes/ai-onboarding/apis';
-import type { AuthAccountInfo, AuthService } from '@lovenotes/core/modules/cloud';
+import type {
+  AuthAccountInfo,
+  AuthService,
+} from '@lovenotes/core/modules/cloud';
 import type { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
 import {
   type AddContextFileInput,
@@ -60,15 +63,24 @@ export function setupAIProvider(
     reuseLatestChat,
   }: BlockSuitePresets.AICreateSessionOptions) {
     if (sessionId) return sessionId;
-    if (retry) return AIProvider.LAST_ACTION_SESSIONID;
+    if (retry && AIProvider.LAST_ACTION_SESSIONID) {
+      return AIProvider.LAST_ACTION_SESSIONID;
+    }
 
-    return client.createSession({
+    const createdSessionId = await client.createSession({
       workspaceId,
       docId,
       promptName,
       pinned,
       reuseLatestChat,
     });
+
+    if (!createdSessionId) {
+      throw new Error('Failed to create Copilot session.');
+    }
+
+    AIProvider.LAST_ACTION_SESSIONID = createdSessionId;
+    return createdSessionId;
   }
 
   AIProvider.provide('userInfo', () => {

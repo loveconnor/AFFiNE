@@ -4,7 +4,7 @@ import {
   getLicenseQuery,
   installLicenseMutation,
 } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 import type { WorkspaceServerService } from '../services/workspace-server';
 

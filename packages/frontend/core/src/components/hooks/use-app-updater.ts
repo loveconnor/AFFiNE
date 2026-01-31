@@ -2,8 +2,8 @@
 import { UrlService } from '@lovenotes/core/modules/url';
 import type { UpdateMeta } from '@lovenotes/electron-api';
 import { apis, events } from '@lovenotes/electron-api';
+import { appSettingAtom, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { appSettingAtom, useService } from '@toeverything/infra';
 import { atom, useAtom, useAtomValue } from 'jotai';
 import { atomWithObservable, atomWithStorage } from 'jotai/utils';
 import { useCallback, useState } from 'react';

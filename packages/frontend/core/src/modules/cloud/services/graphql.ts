@@ -5,7 +5,7 @@ import {
   type QueryOptions,
   type QueryResponse,
 } from '@lovenotes/graphql';
-import { fromPromise, Service } from '@toeverything/infra';
+import { fromPromise, Service } from '@lovenotes/infra';
 import type { Observable } from 'rxjs';
 
 import { AuthService } from './auth';

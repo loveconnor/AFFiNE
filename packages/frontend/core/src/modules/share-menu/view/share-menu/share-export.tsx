@@ -5,7 +5,7 @@ import {
 } from '@lovenotes/core/components/page-list';
 import { EditorService } from '@lovenotes/core/modules/editor';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import * as styles from './index.css';
 

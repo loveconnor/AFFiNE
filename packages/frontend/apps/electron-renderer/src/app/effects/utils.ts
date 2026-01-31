@@ -2,7 +2,7 @@ import { ServersService } from '@lovenotes/core/modules/cloud';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { GlobalContextService } from '@lovenotes/core/modules/global-context';
 import { WorkspacesService } from '@lovenotes/core/modules/workspace';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@lovenotes/infra';
 
 export function getCurrentWorkspace(frameworkProvider: FrameworkProvider) {
   const currentWorkspaceId = frameworkProvider

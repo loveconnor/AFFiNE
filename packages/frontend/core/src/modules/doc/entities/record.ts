@@ -1,6 +1,6 @@
 import type { DocMode } from '@blocksuite/lovenotes/model';
 import type { DocMeta } from '@blocksuite/lovenotes/store';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@lovenotes/infra';
 
 import type { DocProperties } from '../../db';
 import type { DocPropertiesStore } from '../stores/doc-properties';

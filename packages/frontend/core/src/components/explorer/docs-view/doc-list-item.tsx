@@ -1,4 +1,9 @@
 import {
+  AutoTidyUpIcon,
+  PropertyIcon,
+  ResizeTidyUpIcon,
+} from '@blocksuite/icons/rc';
+import {
   Checkbox,
   ContextMenu,
   DragHandle as DragHandleIcon,
@@ -10,13 +15,8 @@ import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta'
 import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  AutoTidyUpIcon,
-  PropertyIcon,
-  ResizeTidyUpIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import {
   type HTMLProps,
   memo,

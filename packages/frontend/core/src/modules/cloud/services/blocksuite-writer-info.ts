@@ -1,5 +1,5 @@
 import { WriterInfoServiceExtension } from '@blocksuite/lovenotes/shared/services';
-import { OnEvent, Service } from '@toeverything/infra';
+import { OnEvent, Service } from '@lovenotes/infra';
 
 import { type Workspace, WorkspaceInitialized } from '../../workspace';
 import type { DocImpl } from '../../workspace/impls/doc';

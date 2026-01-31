@@ -1,5 +1,5 @@
 import { type WorkbenchService } from '@lovenotes/core/modules/workbench';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 
 import type { DocCommentEntity } from '../entities/doc-comment';
 

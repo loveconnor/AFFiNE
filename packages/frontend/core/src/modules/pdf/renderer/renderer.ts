@@ -1,5 +1,5 @@
 import { getWorkerUrl } from '@lovenotes/env/worker';
-import { OpClient } from '@toeverything/infra/op';
+import { OpClient } from '@lovenotes/infra/op';
 
 import type { ClientOps } from './ops';
 

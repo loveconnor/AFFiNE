@@ -1,6 +1,6 @@
 import { DebugLogger } from '@lovenotes/debug';
+import { ObjectPool, Service } from '@lovenotes/infra';
 import type { WorkerInitOptions } from '@lovenotes/nbstore/worker/client';
-import { ObjectPool, Service } from '@toeverything/infra';
 
 import type { Workspace } from '../entities/workspace';
 import { WorkspaceInitialized } from '../events';

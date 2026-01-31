@@ -1,8 +1,8 @@
+import { ProgressIcon } from '@blocksuite/icons/rc';
 import { Progress, PropertyValue } from '@lovenotes/component';
 import { ConfigModal } from '@lovenotes/core/components/mobile';
-import { ProgressIcon } from '@blocksuite/icons/rc';
-import type { LiveData } from '@toeverything/infra';
-import { useLiveData } from '@toeverything/infra';
+import type { LiveData } from '@lovenotes/infra';
+import { useLiveData } from '@lovenotes/infra';
 import { useEffect, useState } from 'react';
 
 import type { DatabaseCellRendererProps } from '../../../types';

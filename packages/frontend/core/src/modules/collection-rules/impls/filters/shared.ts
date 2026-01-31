@@ -1,6 +1,6 @@
 import type { DocsService } from '@lovenotes/core/modules/doc';
 import type { ShareDocsListService } from '@lovenotes/core/modules/share-doc';
-import { onStart, Service } from '@toeverything/infra';
+import { onStart, Service } from '@lovenotes/infra';
 import { combineLatest, map, type Observable, of } from 'rxjs';
 
 import type { FilterProvider } from '../../provider';

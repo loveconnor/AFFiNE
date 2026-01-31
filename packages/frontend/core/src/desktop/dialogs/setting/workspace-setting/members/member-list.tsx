@@ -1,6 +1,16 @@
-import { Avatar, IconButton, Loading, Menu, notify } from '@lovenotes/component';
+import { MoreVerticalIcon } from '@blocksuite/icons/rc';
+import {
+  Avatar,
+  IconButton,
+  Loading,
+  Menu,
+  notify,
+} from '@lovenotes/component';
 import { Pagination } from '@lovenotes/component/setting-components';
-import { type AuthAccountInfo, AuthService } from '@lovenotes/core/modules/cloud';
+import {
+  type AuthAccountInfo,
+  AuthService,
+} from '@lovenotes/core/modules/cloud';
 import {
   type Member,
   WorkspaceMembersService,
@@ -9,8 +19,7 @@ import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { UserFriendlyError } from '@lovenotes/error';
 import { Permission, WorkspaceMemberStatus } from '@lovenotes/graphql';
 import { type I18nString, useI18n } from '@lovenotes/i18n';
-import { MoreVerticalIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { clamp } from 'lodash-es';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -170,7 +179,9 @@ const MemberItem = ({
           setOpen(false);
           notify.success({
             title: t['com.lovenotes.payment.member.team.assign.notify.title'](),
-            message: t['com.lovenotes.payment.member.team.assign.notify.message']({
+            message: t[
+              'com.lovenotes.payment.member.team.assign.notify.message'
+            ]({
               name: member.name || member.email || member.id,
             }),
           });

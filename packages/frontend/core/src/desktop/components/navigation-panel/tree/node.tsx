@@ -1,4 +1,9 @@
 import {
+  ArrowDownSmallIcon,
+  EditIcon,
+  MoreHorizontalIcon,
+} from '@blocksuite/icons/rc';
+import {
   ContextMenu,
   DropIndicator,
   type DropTargetDropEvent,
@@ -21,13 +26,8 @@ import type { DocPermissionActions } from '@lovenotes/core/modules/permissions';
 import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
 import { useI18n } from '@lovenotes/i18n';
-import {
-  ArrowDownSmallIcon,
-  EditIcon,
-  MoreHorizontalIcon,
-} from '@blocksuite/icons/rc';
+import { useLiveData, useService } from '@lovenotes/infra';
 import * as Collapsible from '@radix-ui/react-collapsible';
-import { useLiveData, useService } from '@toeverything/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import type { To } from 'history';

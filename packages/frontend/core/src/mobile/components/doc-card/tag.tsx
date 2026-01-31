@@ -1,7 +1,7 @@
+import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
 import type { Tag } from '@lovenotes/core/modules/tag';
 import { TagService } from '@lovenotes/core/modules/tag';
-import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 
 import * as styles from './tag.css';

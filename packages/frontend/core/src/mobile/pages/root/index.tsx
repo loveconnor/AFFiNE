@@ -1,6 +1,6 @@
 import { NotificationCenter } from '@lovenotes/component';
 import { DefaultServerService } from '@lovenotes/core/modules/cloud';
-import { FrameworkScope, useService } from '@toeverything/infra';
+import { FrameworkScope, useService } from '@lovenotes/infra';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 

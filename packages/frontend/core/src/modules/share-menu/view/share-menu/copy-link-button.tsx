@@ -1,3 +1,5 @@
+import { BlockIcon, EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
+import type { DocMode } from '@blocksuite/lovenotes/model';
 import { Button, Menu, MenuItem, MenuTrigger } from '@lovenotes/component';
 import {
   getSelectedNodes,
@@ -5,9 +7,7 @@ import {
 } from '@lovenotes/core/components/hooks/lovenotes/use-share-url';
 import { EditorService } from '@lovenotes/core/modules/editor';
 import { useI18n } from '@lovenotes/i18n';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import { BlockIcon, EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 

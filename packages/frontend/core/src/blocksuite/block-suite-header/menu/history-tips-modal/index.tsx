@@ -2,7 +2,7 @@ import { OverlayModal } from '@lovenotes/component';
 import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import TopSvg from './top-svg';

@@ -4,7 +4,7 @@ import type {
   QueryOptions,
   QueryResponse,
 } from '@lovenotes/graphql';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import type { GraphQLError } from 'graphql';
 import { useCallback, useMemo } from 'react';
 import type { SWRConfiguration, SWRResponse } from 'swr';

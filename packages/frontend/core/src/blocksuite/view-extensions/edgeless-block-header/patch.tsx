@@ -8,7 +8,7 @@ import {
 } from '@blocksuite/lovenotes/shared/services';
 import { GfxControllerIdentifier } from '@blocksuite/lovenotes/std/gfx';
 import type { ReactToLit } from '@lovenotes/component';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@lovenotes/infra';
 import { html } from 'lit';
 
 import { EdgelessEmbedSyncedDocHeader } from './edgeless-embed-synced-doc-header';

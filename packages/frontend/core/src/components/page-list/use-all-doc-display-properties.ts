@@ -1,5 +1,5 @@
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { useCallback } from 'react';

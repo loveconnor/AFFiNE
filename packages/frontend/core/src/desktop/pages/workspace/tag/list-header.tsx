@@ -1,3 +1,4 @@
+import { ArrowDownSmallIcon, DoneIcon, SearchIcon } from '@blocksuite/icons/rc';
 import {
   Divider,
   Menu,
@@ -9,8 +10,7 @@ import {
 import { type Tag, TagService } from '@lovenotes/core/modules/tag';
 import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
 import { useI18n } from '@lovenotes/i18n';
-import { ArrowDownSmallIcon, DoneIcon, SearchIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import {
   forwardRef,

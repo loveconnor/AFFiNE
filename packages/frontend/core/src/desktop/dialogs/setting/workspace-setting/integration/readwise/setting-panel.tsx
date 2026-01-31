@@ -1,3 +1,4 @@
+import { PlusIcon } from '@blocksuite/icons/rc';
 import { Button } from '@lovenotes/component';
 import { WorkspaceTagsInlineEditor } from '@lovenotes/core/components/tags';
 import {
@@ -7,8 +8,7 @@ import {
 import type { ReadwiseConfig } from '@lovenotes/core/modules/integration/type';
 import { TagService } from '@lovenotes/core/modules/tag';
 import { useI18n } from '@lovenotes/i18n';
-import { PlusIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { type ReactNode, useCallback, useMemo, useState } from 'react';
 
 import {

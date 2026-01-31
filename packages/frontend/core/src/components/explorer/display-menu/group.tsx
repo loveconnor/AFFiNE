@@ -1,10 +1,10 @@
+import { DoneIcon } from '@blocksuite/icons/rc';
 import { Divider, MenuItem } from '@lovenotes/component';
 import type { GroupByParams } from '@lovenotes/core/modules/collection-rules/types';
 import { WorkspacePropertyService } from '@lovenotes/core/modules/workspace-property';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { DoneIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useMemo } from 'react';
 

@@ -3,7 +3,7 @@ import type { TranscriptionBlockProps } from '@lovenotes/core/blocksuite/ai/bloc
 import { DebugLogger } from '@lovenotes/debug';
 import { UserFriendlyError } from '@lovenotes/error';
 import { AiJobStatus } from '@lovenotes/graphql';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@lovenotes/infra';
 
 import type { DefaultServerService, WorkspaceServerService } from '../../cloud';
 import { AuthService } from '../../cloud/services/auth';

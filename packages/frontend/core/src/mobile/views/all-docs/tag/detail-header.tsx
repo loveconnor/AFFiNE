@@ -1,6 +1,6 @@
 import { PageHeader } from '@lovenotes/core/mobile/components';
 import type { Tag } from '@lovenotes/core/modules/tag';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@lovenotes/infra';
 
 import * as styles from './detail.css';
 

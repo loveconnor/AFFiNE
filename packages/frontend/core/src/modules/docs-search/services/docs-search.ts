@@ -1,7 +1,10 @@
-import { toDocSearchParams } from '@lovenotes/core/modules/navigation';
-import type { IndexerPreferOptions, IndexerSyncState } from '@lovenotes/nbstore';
 import type { ReferenceParams } from '@blocksuite/lovenotes/model';
-import { fromPromise, LiveData, Service } from '@toeverything/infra';
+import { toDocSearchParams } from '@lovenotes/core/modules/navigation';
+import { fromPromise, LiveData, Service } from '@lovenotes/infra';
+import type {
+  IndexerPreferOptions,
+  IndexerSyncState,
+} from '@lovenotes/nbstore';
 import { isEmpty, omit } from 'lodash-es';
 import { map, type Observable, of, switchMap } from 'rxjs';
 import { z } from 'zod';

@@ -22,7 +22,7 @@ import {
   SubscriptionVariant,
 } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { EnableCloudPanel } from '../preference/enable-cloud';

@@ -1,5 +1,5 @@
 import { DesktopApiService } from '@lovenotes/core/modules/desktop-api';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useTheme } from 'next-themes';
 import { useRef } from 'react';
 

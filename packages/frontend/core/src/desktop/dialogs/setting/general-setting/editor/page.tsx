@@ -5,7 +5,7 @@ import {
 } from '@lovenotes/component/setting-components';
 import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 import { settingWrapper } from './style.css';

@@ -1,6 +1,9 @@
 import { NotificationCenter } from '@lovenotes/component';
-import { AuthService, DefaultServerService } from '@lovenotes/core/modules/cloud';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import {
+  AuthService,
+  DefaultServerService,
+} from '@lovenotes/core/modules/cloud';
+import { FrameworkScope, useLiveData, useService } from '@lovenotes/infra';
 import { useEffect, useMemo, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
@@ -60,8 +63,7 @@ const RootContent = ({ isServerReady }: { isServerReady: boolean }) => {
       return;
     }
     if (sessionStatus === 'unauthenticated' && !isAuthRoute) {
-      const redirect =
-        location.pathname + location.search + location.hash;
+      const redirect = location.pathname + location.search + location.hash;
       const search = new URLSearchParams({
         redirect_uri: redirect || '/',
       });

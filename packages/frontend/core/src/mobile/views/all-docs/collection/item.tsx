@@ -1,10 +1,10 @@
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { IconButton } from '@lovenotes/component';
 import { IsFavoriteIcon } from '@lovenotes/core/components/pure/icons';
 import type { CollectionMeta } from '@lovenotes/core/modules/collection';
 import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
 import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
-import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { type MouseEvent, useCallback } from 'react';
 
 import { item, name, prefixIcon, suffixIcon } from './styles.css';

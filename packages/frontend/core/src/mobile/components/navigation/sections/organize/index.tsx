@@ -1,11 +1,11 @@
+import { AddOrganizeIcon } from '@blocksuite/icons/rc';
 import { Skeleton } from '@lovenotes/component';
 import { NavigationPanelTreeRoot } from '@lovenotes/core/desktop/components/navigation-panel';
 import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
 import { OrganizeService } from '@lovenotes/core/modules/organize';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { AddOrganizeIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo, useState } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';

@@ -1,3 +1,4 @@
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { notify } from '@lovenotes/component';
 import { SettingRow } from '@lovenotes/component/setting-components';
 import {
@@ -11,8 +12,7 @@ import { UrlService } from '@lovenotes/core/modules/url';
 import { UserFriendlyError } from '@lovenotes/error';
 import { createCustomerPortalMutation } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { useMutation } from '../../../../../components/hooks/use-mutation';
@@ -63,7 +63,9 @@ export const PaymentMethod = () => {
               setOpenCancelModal(true);
             }}
             className="dangerous-setting"
-            name={t['com.lovenotes.payment.billing-setting.cancel-subscription']()}
+            name={t[
+              'com.lovenotes.payment.billing-setting.cancel-subscription'
+            ]()}
             desc={t[
               'com.lovenotes.payment.billing-setting.cancel-subscription.description'
             ]()}

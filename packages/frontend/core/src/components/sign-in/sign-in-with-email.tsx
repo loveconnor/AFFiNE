@@ -13,7 +13,7 @@ import type { AuthSessionStatus } from '@lovenotes/core/modules/cloud/entities/s
 import { Unreachable } from '@lovenotes/env/constant';
 import { UserFriendlyError } from '@lovenotes/error';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import {
   type Dispatch,
   type SetStateAction,

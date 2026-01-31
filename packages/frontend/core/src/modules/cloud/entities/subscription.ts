@@ -15,7 +15,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { map, tap } from 'rxjs';
 
 import type { AuthService } from '../services/auth';

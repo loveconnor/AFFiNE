@@ -15,7 +15,7 @@ import {
   ViewIcon,
   ViewTitle,
 } from '@lovenotes/core/modules/workbench';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 

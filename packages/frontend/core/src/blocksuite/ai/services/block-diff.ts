@@ -1,8 +1,8 @@
-import { parsePageDoc } from '@lovenotes/reader';
+import { type Container, createIdentifier } from '@blocksuite/global/di';
 import { LifeCycleWatcher } from '@blocksuite/lovenotes/std';
 import { Extension, type Store } from '@blocksuite/lovenotes/store';
-import { type Container, createIdentifier } from '@blocksuite/global/di';
-import { LiveData } from '@toeverything/infra';
+import { LiveData } from '@lovenotes/infra';
+import { parsePageDoc } from '@lovenotes/reader';
 import type { Subscription } from 'rxjs';
 
 import { applyPatchToDoc } from '../utils/apply-model/apply-patch-to-doc';

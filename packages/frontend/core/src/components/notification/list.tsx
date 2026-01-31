@@ -1,4 +1,12 @@
 import {
+  CollaborationIcon,
+  DeleteIcon,
+  EdgelessIcon,
+  MoreHorizontalIcon,
+  NotificationIcon,
+  PageIcon,
+} from '@blocksuite/icons/rc';
+import {
   Avatar,
   Button,
   IconButton,
@@ -28,16 +36,8 @@ import type {
   MentionNotificationBodyType,
 } from '@lovenotes/graphql';
 import { i18nTime, Trans, useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  CollaborationIcon,
-  DeleteIcon,
-  EdgelessIcon,
-  MoreHorizontalIcon,
-  NotificationIcon,
-  PageIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   useCallback,
@@ -264,7 +264,8 @@ const MentionNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.lovenotes.inactive-member'](),
+                body.createdByUser?.name ??
+                t['com.lovenotes.inactive-member'](),
               docTitle: body.doc.title || t['Untitled'](),
             }}
           />
@@ -327,7 +328,8 @@ const InvitationReviewRequestNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.lovenotes.inactive-member'](),
+                body.createdByUser?.name ??
+                t['com.lovenotes.inactive-member'](),
               workspaceName:
                 body.workspace?.name ?? t['com.lovenotes.inactive-workspace'](),
             }}
@@ -377,7 +379,8 @@ const InvitationReviewDeclinedNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.lovenotes.inactive-member'](),
+                body.createdByUser?.name ??
+                t['com.lovenotes.inactive-member'](),
               workspaceName:
                 body.workspace?.name ?? t['com.lovenotes.inactive-workspace'](),
             }}
@@ -444,7 +447,8 @@ const InvitationReviewApprovedNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.lovenotes.inactive-member'](),
+                body.createdByUser?.name ??
+                t['com.lovenotes.inactive-member'](),
               workspaceName:
                 body.workspace?.name ?? t['com.lovenotes.inactive-workspace'](),
             }}
@@ -513,7 +517,8 @@ const InvitationAcceptedNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.lovenotes.inactive-member'](),
+                body.createdByUser?.name ??
+                t['com.lovenotes.inactive-member'](),
             }}
           />
         </span>
@@ -687,7 +692,8 @@ const InvitationNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.lovenotes.inactive-member'](),
+                body.createdByUser?.name ??
+                t['com.lovenotes.inactive-member'](),
               workspaceName:
                 body.workspace?.name ?? t['com.lovenotes.inactive-workspace'](),
             }}
@@ -858,7 +864,8 @@ const CommentNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.lovenotes.inactive-member'](),
+                body.createdByUser?.name ??
+                t['com.lovenotes.inactive-member'](),
               docTitle: body.doc?.title || t['Untitled'](),
             }}
           />
@@ -928,7 +935,8 @@ const CommentMentionNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.lovenotes.inactive-member'](),
+                body.createdByUser?.name ??
+                t['com.lovenotes.inactive-member'](),
               docTitle: body.doc?.title || t['Untitled'](),
             }}
           />

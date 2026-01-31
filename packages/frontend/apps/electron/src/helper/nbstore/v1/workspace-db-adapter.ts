@@ -1,5 +1,5 @@
+import { AsyncLock } from '@lovenotes/infra/utils';
 import type { SpaceType } from '@lovenotes/nbstore';
-import { AsyncLock } from '@toeverything/infra/utils';
 import { Subject } from 'rxjs';
 import { applyUpdate, Doc as YDoc } from 'yjs';
 

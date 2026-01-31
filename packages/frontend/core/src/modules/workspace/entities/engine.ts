@@ -1,8 +1,8 @@
+import { Entity } from '@lovenotes/infra';
 import type {
   StoreClient,
   WorkerInitOptions,
 } from '@lovenotes/nbstore/worker/client';
-import { Entity } from '@toeverything/infra';
 
 import type { FeatureFlagService } from '../../feature-flag';
 import type { NbstoreService } from '../../storage';

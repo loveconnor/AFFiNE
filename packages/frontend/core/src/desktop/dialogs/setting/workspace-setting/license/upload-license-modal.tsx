@@ -1,3 +1,4 @@
+import { CopyIcon, FileIcon } from '@blocksuite/icons/rc';
 import { Button, Modal, notify, useConfirmModal } from '@lovenotes/component';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { Upload } from '@lovenotes/core/components/pure/file-upload';
@@ -11,8 +12,7 @@ import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { copyTextToClipboard } from '@lovenotes/core/utils/clipboard';
 import { UserFriendlyError } from '@lovenotes/error';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { CopyIcon, FileIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import * as styles from './upload-license-modal.css';

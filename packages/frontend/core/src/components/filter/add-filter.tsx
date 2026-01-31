@@ -1,4 +1,10 @@
 import {
+  ArrowLeftBigIcon,
+  CloudWorkspaceIcon,
+  FavoriteIcon,
+  PlusIcon,
+} from '@blocksuite/icons/rc';
+import {
   Button,
   IconButton,
   Menu,
@@ -8,13 +14,7 @@ import {
 import type { FilterParams } from '@lovenotes/core/modules/collection-rules';
 import { WorkspacePropertyService } from '@lovenotes/core/modules/workspace-property';
 import { useI18n } from '@lovenotes/i18n';
-import {
-  ArrowLeftBigIcon,
-  CloudWorkspaceIcon,
-  FavoriteIcon,
-  PlusIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useMemo } from 'react';
 
 import { generateExplorerPropertyList } from '../explorer/properties';

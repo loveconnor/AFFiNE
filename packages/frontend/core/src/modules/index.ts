@@ -1,5 +1,5 @@
 import { configureQuotaModule } from '@lovenotes/core/modules/quota';
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@lovenotes/infra';
 
 import {
   configureAIButtonModule,

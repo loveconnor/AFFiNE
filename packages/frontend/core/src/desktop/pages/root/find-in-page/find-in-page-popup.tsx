@@ -1,13 +1,13 @@
-import { IconButton, observeResize, RowInput } from '@lovenotes/component';
-import { FindInPageService } from '@lovenotes/core/modules/find-in-page';
 import {
   ArrowDownSmallIcon,
   ArrowUpSmallIcon,
   CloseIcon,
   SearchIcon,
 } from '@blocksuite/icons/rc';
+import { IconButton, observeResize, RowInput } from '@lovenotes/component';
+import { FindInPageService } from '@lovenotes/core/modules/find-in-page';
+import { useLiveData, useService } from '@lovenotes/infra';
 import * as Popover from '@radix-ui/react-popover';
-import { useLiveData, useService } from '@toeverything/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import {

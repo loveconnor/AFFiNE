@@ -1,4 +1,10 @@
 import {
+  DeleteIcon,
+  OpenInNewIcon,
+  ResetIcon,
+  SplitViewIcon,
+} from '@blocksuite/icons/rc';
+import {
   Checkbox,
   IconButton,
   type IconButtonProps,
@@ -11,14 +17,8 @@ import { GuardService } from '@lovenotes/core/modules/permissions';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { UserFriendlyError } from '@lovenotes/error';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  DeleteIcon,
-  OpenInNewIcon,
-  ResetIcon,
-  SplitViewIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { memo, useCallback, useContext } from 'react';
 
 import { useBlockSuiteMetaHelper } from '../../hooks/lovenotes/use-block-suite-meta-helper';

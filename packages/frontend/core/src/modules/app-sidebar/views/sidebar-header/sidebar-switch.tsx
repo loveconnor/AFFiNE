@@ -1,8 +1,8 @@
+import { SidebarIcon } from '@blocksuite/icons/rc';
 import { IconButton } from '@lovenotes/component';
 import { NotificationCountService } from '@lovenotes/core/modules/notification';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { SidebarIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useRef } from 'react';
 

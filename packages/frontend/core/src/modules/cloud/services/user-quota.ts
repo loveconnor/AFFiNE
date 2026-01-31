@@ -1,5 +1,5 @@
+import { OnEvent, Service } from '@lovenotes/infra';
 import { tracker } from '@lovenotes/track';
-import { OnEvent, Service } from '@toeverything/infra';
 
 import { UserQuota } from '../entities/user-quota';
 import { AccountChanged } from '../events/account-changed';

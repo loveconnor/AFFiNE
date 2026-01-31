@@ -1,3 +1,5 @@
+import { DoneIcon, FilterIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
+import type { DocSnapshot, Store } from '@blocksuite/lovenotes/store';
 import {
   Avatar,
   IconButton,
@@ -23,13 +25,7 @@ import { toDocSearchParams } from '@lovenotes/core/modules/navigation';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { copyTextToClipboard } from '@lovenotes/core/utils/clipboard';
 import { i18nTime, useI18n } from '@lovenotes/i18n';
-import type { DocSnapshot, Store } from '@blocksuite/lovenotes/store';
-import { DoneIcon, FilterIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
-import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
@@ -815,7 +811,8 @@ const ReplyItem = ({
   const handleDelete = useAsyncCallback(async () => {
     openConfirmModal({
       title: t['com.lovenotes.comment.reply.delete.confirm.title'](),
-      description: t['com.lovenotes.comment.reply.delete.confirm.description'](),
+      description:
+        t['com.lovenotes.comment.reply.delete.confirm.description'](),
       confirmText: t['Delete'](),
       cancelText: t['Cancel'](),
       confirmButtonOptions: {

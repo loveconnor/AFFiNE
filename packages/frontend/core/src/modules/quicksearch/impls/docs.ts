@@ -1,12 +1,12 @@
-import { ServerFeature } from '@lovenotes/graphql';
 import { SearchIcon } from '@blocksuite/icons/rc';
+import { ServerFeature } from '@lovenotes/graphql';
 import {
   effect,
   Entity,
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import { truncate } from 'lodash-es';
 import { catchError, EMPTY, map, of, switchMap, tap, throttleTime } from 'rxjs';
 

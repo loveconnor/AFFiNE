@@ -3,7 +3,7 @@ import { IsFavoriteIcon } from '@lovenotes/core/components/pure/icons';
 import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
 import type { Tag } from '@lovenotes/core/modules/tag';
 import { WorkbenchLink } from '@lovenotes/core/modules/workbench';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { type MouseEvent, useCallback } from 'react';
 
 import { content, item, prefixIcon, suffixIcon } from './styles.css';

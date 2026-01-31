@@ -1,7 +1,7 @@
 import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { ThemeEditorService } from '@lovenotes/core/modules/theme-editor';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';
 

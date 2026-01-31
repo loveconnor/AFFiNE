@@ -12,7 +12,7 @@ import {
   subscriptionQuery,
   updateSubscriptionMutation,
 } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 import type { GlobalCache } from '../../storage';
 import type { UrlService } from '../../url';

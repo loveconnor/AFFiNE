@@ -1,6 +1,6 @@
 import type { DocMeta, Workspace } from '@blocksuite/lovenotes/store';
 import { DocsService } from '@lovenotes/core/modules/doc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 import { useAsyncCallback } from './lovenotes-async-hooks';

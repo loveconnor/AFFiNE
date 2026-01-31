@@ -1,5 +1,5 @@
 import { GlobalCacheService } from '@lovenotes/core/modules/storage';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@lovenotes/infra';
 import { type PropsWithChildren, useCallback, useMemo } from 'react';
 
 import { cacheKey } from './constants';

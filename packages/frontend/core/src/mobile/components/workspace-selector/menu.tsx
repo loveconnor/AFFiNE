@@ -1,3 +1,12 @@
+import {
+  AccountIcon,
+  CloseIcon,
+  CollaborationIcon,
+  DeleteIcon,
+  MoreHorizontalIcon,
+  SelfhostIcon,
+  SignOutIcon,
+} from '@blocksuite/icons/rc';
 import { Divider, IconButton, Menu, MenuItem } from '@lovenotes/component';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { useNavigateHelper } from '@lovenotes/core/components/hooks/use-navigate-helper';
@@ -16,16 +25,7 @@ import {
   WorkspacesService,
 } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import {
-  AccountIcon,
-  CloseIcon,
-  CollaborationIcon,
-  DeleteIcon,
-  MoreHorizontalIcon,
-  SelfhostIcon,
-  SignOutIcon,
-} from '@blocksuite/icons/rc';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import { type HTMLAttributes, useCallback, useMemo } from 'react';
 

@@ -1,23 +1,23 @@
+import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
+import { Bound } from '@blocksuite/lovenotes/global/gfx';
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
+import { GfxControllerIdentifier } from '@blocksuite/lovenotes/std/gfx';
 import { Scrollable } from '@lovenotes/component';
 import { PageDetailLoading } from '@lovenotes/component/page-detail-skeleton';
 import { type AIChatParams, AIProvider } from '@lovenotes/core/blocksuite/ai';
 import type { LoveNotesEditorContainer } from '@lovenotes/core/blocksuite/block-suite-editor';
 import { EditorOutlineViewer } from '@lovenotes/core/blocksuite/outline-viewer';
-import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
 import { useGuard } from '@lovenotes/core/components/guard';
+import { LoveNotesErrorBoundary } from '@lovenotes/core/components/lovenotes/lovenotes-error-boundary';
 import { PageNotFound } from '@lovenotes/core/desktop/pages/404';
 import { EditorService } from '@lovenotes/core/modules/editor';
 import { DebugLogger } from '@lovenotes/debug';
-import { DisposableGroup } from '@blocksuite/lovenotes/global/disposable';
-import { Bound } from '@blocksuite/lovenotes/global/gfx';
-import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
-import { GfxControllerIdentifier } from '@blocksuite/lovenotes/std/gfx';
 import {
   FrameworkScope,
   useLiveData,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
 import clsx from 'clsx';
 import { lazy, Suspense, useCallback, useEffect } from 'react';
 import type { Subscription } from 'rxjs';
@@ -161,7 +161,10 @@ function DocPeekPreviewEditor({
     <LoveNotesErrorBoundary>
       <Scrollable.Root>
         <Scrollable.Viewport
-          className={clsx('lovenotes-page-viewport', styles.lovenotesDocViewport)}
+          className={clsx(
+            'lovenotes-page-viewport',
+            styles.lovenotesDocViewport
+          )}
         >
           <Suspense fallback={<PageDetailLoading />}>
             <BlockSuiteEditor

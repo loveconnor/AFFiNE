@@ -1,4 +1,6 @@
 import { DebugLogger } from '@lovenotes/debug';
+import type { FrameworkProvider } from '@lovenotes/infra';
+import { LiveData, Service } from '@lovenotes/infra';
 import {
   type BlobStorage,
   type DocStorage,
@@ -30,8 +32,6 @@ import {
   SqliteV1DocStorage,
 } from '@lovenotes/nbstore/sqlite/v1';
 import type { WorkerInitOptions } from '@lovenotes/nbstore/worker/client';
-import type { FrameworkProvider } from '@toeverything/infra';
-import { LiveData, Service } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import { Observable } from 'rxjs';

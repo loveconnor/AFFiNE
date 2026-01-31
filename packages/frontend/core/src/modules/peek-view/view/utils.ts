@@ -1,6 +1,6 @@
-import type { DefaultOpenProperty } from '@lovenotes/core/components/properties';
 import type { DocMode } from '@blocksuite/lovenotes/model';
-import { useLiveData, useService } from '@toeverything/infra';
+import type { DefaultOpenProperty } from '@lovenotes/core/components/properties';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import type { Doc } from '../../doc';

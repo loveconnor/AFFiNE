@@ -14,10 +14,10 @@
     "@lovenotes/core": "workspace:*",
     "@lovenotes/env": "workspace:*",
     "@lovenotes/i18n": "workspace:*",
+    "@lovenotes/infra": "workspace:*",
     "@lovenotes/nbstore": "workspace:*",
     "@lovenotes/track": "workspace:*",
     "@sentry/react": "^9.47.1",
-    "@toeverything/infra": "workspace:*",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-router-dom": "^6.30.3"

@@ -5,7 +5,7 @@ import {
 import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import { EnableCloudPanel } from '../preference/enable-cloud';
 import { BlobManagementPanel } from './blob-management';

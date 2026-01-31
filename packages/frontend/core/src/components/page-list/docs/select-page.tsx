@@ -6,7 +6,7 @@ import {
 } from '@lovenotes/core/modules/collection-rules';
 import { ShareDocsListService } from '@lovenotes/core/modules/share-doc';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { memo, type ReactNode, useCallback, useEffect, useState } from 'react';
 
 import {

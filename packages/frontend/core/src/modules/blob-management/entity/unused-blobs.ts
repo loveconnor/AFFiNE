@@ -1,4 +1,3 @@
-import type { ListedBlobRecord } from '@lovenotes/nbstore';
 import {
   effect,
   Entity,
@@ -6,7 +5,8 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@lovenotes/infra';
+import type { ListedBlobRecord } from '@lovenotes/nbstore';
 import { fileTypeFromBuffer } from 'file-type';
 import { switchMap, tap } from 'rxjs';
 

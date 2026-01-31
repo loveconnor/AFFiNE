@@ -1,6 +1,6 @@
 import { observeIntersection } from '@lovenotes/component';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@lovenotes/infra';
 import { debounce } from 'lodash-es';
 import { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 

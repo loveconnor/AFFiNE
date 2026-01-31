@@ -1,6 +1,6 @@
 import { Avatar } from '@lovenotes/component';
 import { AuthService } from '@lovenotes/core/modules/cloud';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 
 import * as styles from './index.css';
 

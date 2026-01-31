@@ -10,7 +10,7 @@ import {
 } from '@lovenotes/core/modules/workbench/view/view-meta';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useState } from 'react';
 
 import { CollectionService } from '../../../../modules/collection';

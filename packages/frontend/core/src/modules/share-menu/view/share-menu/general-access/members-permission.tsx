@@ -1,3 +1,4 @@
+import { InformationIcon } from '@blocksuite/icons/rc';
 import {
   Menu,
   MenuItem,
@@ -11,9 +12,8 @@ import { ShareInfoService } from '@lovenotes/core/modules/share-doc';
 import { UserFriendlyError } from '@lovenotes/error';
 import { DocRole } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { InformationIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 
@@ -159,7 +159,9 @@ export const MembersPermission = ({
               >
                 <div className={styles.publicItemRowStyle}>
                   <div className={styles.tagContainerStyle}>
-                    {t['com.lovenotes.share-menu.option.permission.no-access']()}
+                    {t[
+                      'com.lovenotes.share-menu.option.permission.no-access'
+                    ]()}
                     {hittingPaywall ? <PlanTag /> : null}
                   </div>
                 </div>

@@ -9,7 +9,7 @@ import { UrlService } from '@lovenotes/core/modules/url';
 import { UserFriendlyError } from '@lovenotes/error';
 import { type InvoicesQuery, InvoiceStatus } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useEffect } from 'react';
 
@@ -111,7 +111,9 @@ const InvoiceLine = ({
 const BillingHistorySkeleton = () => {
   const t = useI18n();
   return (
-    <SettingWrapper title={t['com.lovenotes.payment.billing-setting.history']()}>
+    <SettingWrapper
+      title={t['com.lovenotes.payment.billing-setting.history']()}
+    >
       <div className={styles.billingHistorySkeleton}>
         <Loading />
       </div>

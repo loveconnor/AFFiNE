@@ -1,10 +1,10 @@
+import { FavoritedIcon, FavoriteIcon } from '@blocksuite/icons/rc';
+import type { DocMeta } from '@blocksuite/lovenotes/store';
 import { CompatibleFavoriteItemsAdapter } from '@lovenotes/core/modules/favorite';
 import type { Tag } from '@lovenotes/core/modules/tag';
 import { TagService } from '@lovenotes/core/modules/tag';
 import { useI18n } from '@lovenotes/i18n';
-import type { DocMeta } from '@blocksuite/lovenotes/store';
-import { FavoritedIcon, FavoriteIcon } from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@lovenotes/infra';
 import { type ReactNode, useMemo } from 'react';
 
 import * as styles from './group-definitions.css';
@@ -144,7 +144,9 @@ export const useTagGroupDefinitions = (): ItemGroupDefinition<ListItem>[] => {
       label: (count: number) => (
         <GroupLabel
           id="Untagged"
-          label={t['com.lovenotes.page.display.grouping.group-by-tag.untagged']()}
+          label={t[
+            'com.lovenotes.page.display.grouping.group-by-tag.untagged'
+          ]()}
           count={count}
         />
       ),

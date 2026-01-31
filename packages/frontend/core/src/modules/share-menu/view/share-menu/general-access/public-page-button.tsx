@@ -1,16 +1,16 @@
+import {
+  LockIcon,
+  SingleSelectCheckSolidIcon,
+  ViewIcon,
+} from '@blocksuite/icons/rc';
 import { Menu, MenuItem, MenuTrigger, notify } from '@lovenotes/component';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { ShareInfoService } from '@lovenotes/core/modules/share-doc';
 import { UserFriendlyError } from '@lovenotes/error';
 import { PublicDocMode } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import {
-  LockIcon,
-  SingleSelectCheckSolidIcon,
-  ViewIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
 import { useEffect } from 'react';
@@ -124,7 +124,9 @@ export const PublicDoc = ({ disabled }: { disabled?: boolean }) => {
                 selected={!!isSharedPage}
               >
                 <div className={styles.publicItemRowStyle}>
-                  <div>{t['com.lovenotes.share-menu.option.link.readonly']()}</div>
+                  <div>
+                    {t['com.lovenotes.share-menu.option.link.readonly']()}
+                  </div>
                 </div>
               </MenuItem>
             </>

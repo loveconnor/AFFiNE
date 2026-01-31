@@ -8,7 +8,7 @@ import { _addLocalWorkspace } from '@lovenotes/core/modules/workspace-engine';
 import { DebugLogger } from '@lovenotes/debug';
 import { apis } from '@lovenotes/electron-api';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useLayoutEffect, useRef } from 'react';
 
 const logger = new DebugLogger('ImportWorkspaceDialog');

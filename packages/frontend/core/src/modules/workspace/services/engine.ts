@@ -1,4 +1,4 @@
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 
 import { WorkspaceEngine } from '../entities/engine';
 import type { WorkspaceScope } from '../scopes/workspace';

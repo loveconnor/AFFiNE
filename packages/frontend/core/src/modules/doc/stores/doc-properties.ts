@@ -1,9 +1,4 @@
-import {
-  LiveData,
-  Store,
-  yjsGetPath,
-  yjsObserveDeep,
-} from '@toeverything/infra';
+import { LiveData, Store, yjsGetPath, yjsObserveDeep } from '@lovenotes/infra';
 import { isNil, omitBy } from 'lodash-es';
 import { combineLatest, map, switchMap } from 'rxjs';
 import { AbstractType as YAbstractType } from 'yjs';

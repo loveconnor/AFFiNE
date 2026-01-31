@@ -6,8 +6,8 @@ import { CreatePropertyMenuItems } from '@lovenotes/core/components/properties/m
 import type { DocCustomPropertyInfo } from '@lovenotes/core/modules/db';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { Trans, useI18n } from '@lovenotes/i18n';
+import { FrameworkScope, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { FrameworkScope, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import * as styles from './styles.css';

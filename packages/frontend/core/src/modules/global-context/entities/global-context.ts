@@ -1,5 +1,5 @@
 import type { DocMode } from '@blocksuite/lovenotes/model';
-import { Entity, LiveData, MemoryMemento } from '@toeverything/infra';
+import { Entity, LiveData, MemoryMemento } from '@lovenotes/infra';
 
 export class GlobalContext extends Entity {
   memento = new MemoryMemento();

@@ -1,7 +1,7 @@
 import { Button, type ButtonProps } from '@lovenotes/component';
 import { GlobalDialogService } from '@lovenotes/core/modules/dialogs';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 export const AILogin = (btnProps: ButtonProps) => {

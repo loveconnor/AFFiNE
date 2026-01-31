@@ -1,3 +1,6 @@
+import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
+import { BlockStdScope } from '@blocksuite/lovenotes/std';
+import type { Workspace } from '@blocksuite/lovenotes/store';
 import { observeResize, useConfirmModal } from '@lovenotes/component';
 import { CopilotClient } from '@lovenotes/core/blocksuite/ai';
 import {
@@ -42,11 +45,8 @@ import {
 } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { useI18n } from '@lovenotes/i18n';
-import { RefNodeSlotsProvider } from '@blocksuite/lovenotes/inlines/reference';
-import { BlockStdScope } from '@blocksuite/lovenotes/std';
-import type { Workspace } from '@blocksuite/lovenotes/store';
+import { useFramework, useService } from '@lovenotes/infra';
 import { type Signal, signal } from '@preact/signals-core';
-import { useFramework, useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 

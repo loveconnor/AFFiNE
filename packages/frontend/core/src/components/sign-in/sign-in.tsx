@@ -13,7 +13,7 @@ import { AuthService, ServerService } from '@lovenotes/core/modules/cloud';
 import type { AuthSessionStatus } from '@lovenotes/core/modules/cloud/entities/session';
 import { ServerDeploymentType } from '@lovenotes/graphql';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { cssVar } from '@toeverything/theme';
 import { type Dispatch, type SetStateAction, useEffect, useState } from 'react';
 

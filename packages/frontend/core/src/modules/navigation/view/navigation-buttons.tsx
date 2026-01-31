@@ -1,7 +1,7 @@
+import { ArrowLeftSmallIcon, ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { IconButton } from '@lovenotes/component';
 import { useI18n } from '@lovenotes/i18n';
-import { ArrowLeftSmallIcon, ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect } from 'react';
 
 import { NavigatorService } from '../services/navigator';

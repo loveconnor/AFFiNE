@@ -1,8 +1,8 @@
+import { createIdentifier } from '@lovenotes/infra';
 import type {
   StoreClient,
   WorkerInitOptions,
 } from '@lovenotes/nbstore/worker/client';
-import { createIdentifier } from '@toeverything/infra';
 
 export interface NbstoreProvider {
   /**

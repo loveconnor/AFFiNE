@@ -1,4 +1,4 @@
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 
 export class TemplateDownloaderStore extends Store {
   constructor() {

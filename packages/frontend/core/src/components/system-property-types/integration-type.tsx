@@ -1,3 +1,4 @@
+import { IntegrationsIcon, ReadwiseIcon } from '@blocksuite/icons/rc';
 import { MenuItem } from '@lovenotes/component';
 import type { FilterParams } from '@lovenotes/core/modules/collection-rules';
 import type { DocRecord } from '@lovenotes/core/modules/doc';
@@ -5,8 +6,7 @@ import { IntegrationTypeIcon } from '@lovenotes/core/modules/integration';
 import { INTEGRATION_TYPE_NAME_MAP } from '@lovenotes/core/modules/integration/constant';
 import type { IntegrationType } from '@lovenotes/core/modules/integration/type';
 import { useI18n } from '@lovenotes/i18n';
-import { IntegrationsIcon, ReadwiseIcon } from '@blocksuite/icons/rc';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@lovenotes/infra';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';
 import { StackProperty } from '../explorer/docs-view/stack-property';

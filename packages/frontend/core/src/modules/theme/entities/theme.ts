@@ -1,7 +1,7 @@
 import { ColorScheme } from '@blocksuite/lovenotes/model';
 import { createSignalFromObservable } from '@blocksuite/lovenotes-shared/utils';
+import { Entity, LiveData } from '@lovenotes/infra';
 import type { Signal } from '@preact/signals-core';
-import { Entity, LiveData } from '@toeverything/infra';
 
 export class AppTheme extends Entity {
   theme$ = new LiveData<string | undefined>(undefined);

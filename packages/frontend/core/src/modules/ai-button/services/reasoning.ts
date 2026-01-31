@@ -2,7 +2,7 @@ import {
   createSignalFromObservable,
   type Signal,
 } from '@blocksuite/lovenotes/shared/utils';
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@lovenotes/infra';
 
 import type { GlobalStateService } from '../../storage';
 

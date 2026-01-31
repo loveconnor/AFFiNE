@@ -1,5 +1,5 @@
 import { getDocSummaryQuery } from '@lovenotes/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@lovenotes/infra';
 import { map, Observable } from 'rxjs';
 
 import type { WorkspaceServerService } from '../../cloud';

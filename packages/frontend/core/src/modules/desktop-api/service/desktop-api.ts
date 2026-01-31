@@ -1,6 +1,6 @@
 import { notify } from '@lovenotes/component';
 import { I18n } from '@lovenotes/i18n';
-import { OnEvent, Service } from '@toeverything/infra';
+import { OnEvent, Service } from '@lovenotes/infra';
 import type { To } from 'history';
 import { debounce } from 'lodash-es';
 

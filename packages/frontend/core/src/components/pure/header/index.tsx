@@ -1,5 +1,5 @@
 import { AppSidebarService } from '@lovenotes/core/modules/app-sidebar';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import clsx from 'clsx';
 import type { ReactNode } from 'react';
 

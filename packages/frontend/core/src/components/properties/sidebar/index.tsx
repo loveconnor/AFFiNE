@@ -1,3 +1,4 @@
+import { PlusIcon } from '@blocksuite/icons/rc';
 import { Divider, IconButton, Tooltip } from '@lovenotes/component';
 import type { DocCustomPropertyInfo } from '@lovenotes/core/modules/db';
 import {
@@ -6,13 +7,12 @@ import {
 } from '@lovenotes/core/modules/workspace-property';
 import { generateUniqueNameInSequence } from '@lovenotes/core/utils/unique-name';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { PlusIcon } from '@blocksuite/icons/rc';
 import {
   Content as CollapsibleContent,
   Root as CollapsibleRoot,
 } from '@radix-ui/react-collapsible';
-import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
 import { useGuard } from '../../guard';

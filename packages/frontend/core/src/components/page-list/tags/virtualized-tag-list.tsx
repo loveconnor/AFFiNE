@@ -1,7 +1,7 @@
 import type { Tag } from '@lovenotes/core/modules/tag';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { Trans } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { ListFloatingToolbar } from '../components/list-floating-toolbar';

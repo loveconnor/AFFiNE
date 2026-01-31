@@ -1,4 +1,9 @@
 import {
+  ArrowRightSmallIcon,
+  DoneIcon,
+  InformationFillDuotoneIcon,
+} from '@blocksuite/icons/rc';
+import {
   Button,
   IconButton,
   Menu,
@@ -16,12 +21,7 @@ import { DesktopApiService } from '@lovenotes/core/modules/desktop-api';
 import { MeetingSettingsService } from '@lovenotes/core/modules/media/services/meeting-settings';
 import type { MeetingSettingsSchema } from '@lovenotes/electron/main/shared-state-schema';
 import { Trans, useI18n } from '@lovenotes/i18n';
-import {
-  ArrowRightSmallIcon,
-  DoneIcon,
-  InformationFillDuotoneIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import * as styles from './styles.css';
@@ -41,7 +41,8 @@ const RecordingModeMenu = () => {
 
   const options = useMemo(() => {
     return RecordingModes.map(mode => ({
-      label: t[`com.lovenotes.settings.meetings.record.recording-mode.${mode}`](),
+      label:
+        t[`com.lovenotes.settings.meetings.record.recording-mode.${mode}`](),
       value: mode,
     }));
   }, [t]);
@@ -245,7 +246,9 @@ const MeetingsSettingsMain = () => {
             title={t['com.lovenotes.settings.meetings.record.header']()}
           >
             <SettingRow
-              name={t['com.lovenotes.settings.meetings.record.recording-mode']()}
+              name={t[
+                'com.lovenotes.settings.meetings.record.recording-mode'
+              ]()}
               desc={t[
                 'com.lovenotes.settings.meetings.record.recording-mode.description'
               ]()}
@@ -253,7 +256,9 @@ const MeetingsSettingsMain = () => {
               <RecordingModeMenu />
             </SettingRow>
             <SettingRow
-              name={t['com.lovenotes.settings.meetings.record.open-saved-file']()}
+              name={t[
+                'com.lovenotes.settings.meetings.record.open-saved-file'
+              ]()}
               desc={t[
                 'com.lovenotes.settings.meetings.record.open-saved-file.description'
               ]()}
@@ -283,7 +288,9 @@ const MeetingsSettingsMain = () => {
               />
             </SettingRow>
             <SettingRow
-              name={t['com.lovenotes.settings.meetings.transcription.auto-todo']()}
+              name={t[
+                'com.lovenotes.settings.meetings.transcription.auto-todo'
+              ]()}
               desc={t[
                 'com.lovenotes.settings.meetings.transcription.auto-todo.description'
               ]()}

@@ -1,6 +1,6 @@
-import type { ReferenceParams } from '@blocksuite/lovenotes/model';
 import { BlockLinkIcon, EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
-import { Entity, LiveData } from '@toeverything/infra';
+import type { ReferenceParams } from '@blocksuite/lovenotes/model';
+import { Entity, LiveData } from '@lovenotes/infra';
 import { omit, truncate } from 'lodash-es';
 
 import type { DocsService } from '../../doc';

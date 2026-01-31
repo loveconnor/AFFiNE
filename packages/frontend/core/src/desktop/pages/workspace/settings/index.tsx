@@ -1,7 +1,7 @@
 import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
 import type { SettingTab } from '@lovenotes/core/modules/dialogs/constant';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

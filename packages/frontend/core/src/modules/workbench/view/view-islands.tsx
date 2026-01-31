@@ -33,7 +33,7 @@
  */
 
 import { createIsland, type Island } from '@lovenotes/core/utils/island';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import type React from 'react';
 import {
   createContext,

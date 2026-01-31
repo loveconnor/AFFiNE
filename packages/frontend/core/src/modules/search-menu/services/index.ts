@@ -1,15 +1,15 @@
-import type { TagMeta } from '@lovenotes/core/components/page-list';
-import { UserFriendlyError } from '@lovenotes/error';
-import { I18n } from '@lovenotes/i18n';
+import { CollectionsIcon, WarningIcon } from '@blocksuite/icons/lit';
 import { createSignalFromObservable } from '@blocksuite/lovenotes/shared/utils';
 import type { DocMeta } from '@blocksuite/lovenotes/store';
 import type {
   LinkedMenuGroup,
   LinkedMenuItem,
 } from '@blocksuite/lovenotes/widgets/linked-doc';
-import { CollectionsIcon, WarningIcon } from '@blocksuite/icons/lit';
+import type { TagMeta } from '@lovenotes/core/components/page-list';
+import { UserFriendlyError } from '@lovenotes/error';
+import { I18n } from '@lovenotes/i18n';
+import { Service } from '@lovenotes/infra';
 import { computed, signal } from '@preact/signals-core';
-import { Service } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import Fuse, { type FuseResultMatch } from 'fuse.js';
 import { html } from 'lit';

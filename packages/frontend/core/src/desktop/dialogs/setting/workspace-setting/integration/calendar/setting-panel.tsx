@@ -1,9 +1,9 @@
+import { TodayIcon } from '@blocksuite/icons/rc';
 import { Button, notify } from '@lovenotes/component';
 import { WorkspaceServerService } from '@lovenotes/core/modules/cloud';
 import { IntegrationService } from '@lovenotes/core/modules/integration';
 import { useI18n } from '@lovenotes/i18n';
-import { TodayIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { IntegrationSettingHeader } from '../setting';

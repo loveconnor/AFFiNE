@@ -1,8 +1,4 @@
-import { notify } from '@lovenotes/component';
-import { isMindmapChild, isMindMapRoot } from '@lovenotes/core/blocksuite/ai';
-import { EditorService } from '@lovenotes/core/modules/editor';
-import { apis } from '@lovenotes/electron-api';
-import { I18n } from '@lovenotes/i18n';
+import { CopyAsImgaeIcon } from '@blocksuite/icons/lit';
 import type { MenuContext } from '@blocksuite/lovenotes/components/toolbar';
 import { Bound, getCommonBound } from '@blocksuite/lovenotes/global/gfx';
 import type { BlockStdScope } from '@blocksuite/lovenotes/std';
@@ -13,8 +9,12 @@ import {
   GfxPrimitiveElementModel,
   isGfxGroupCompatibleModel,
 } from '@blocksuite/lovenotes/std/gfx';
-import { CopyAsImgaeIcon } from '@blocksuite/icons/lit';
-import type { FrameworkProvider } from '@toeverything/infra';
+import { notify } from '@lovenotes/component';
+import { isMindmapChild, isMindMapRoot } from '@lovenotes/core/blocksuite/ai';
+import { EditorService } from '@lovenotes/core/modules/editor';
+import { apis } from '@lovenotes/electron-api';
+import { I18n } from '@lovenotes/i18n';
+import type { FrameworkProvider } from '@lovenotes/infra';
 
 const snapshotStyle = `
   lovenotes-edgeless-root .widgets-container,

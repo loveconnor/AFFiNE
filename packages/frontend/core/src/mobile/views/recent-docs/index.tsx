@@ -1,6 +1,6 @@
 import { useBlockSuiteDocMeta } from '@lovenotes/core/components/hooks/use-block-suite-page-meta';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { useMemo } from 'react';
 
 import { DocCard } from '../../components/doc-card';

@@ -1,3 +1,4 @@
+import { SingleSelectCheckSolidIcon } from '@blocksuite/icons/rc';
 import {
   Button,
   type ButtonProps,
@@ -8,9 +9,8 @@ import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-asy
 import { SubscriptionService } from '@lovenotes/core/modules/cloud';
 import { SubscriptionPlan } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
+import { useService } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { SingleSelectCheckSolidIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';

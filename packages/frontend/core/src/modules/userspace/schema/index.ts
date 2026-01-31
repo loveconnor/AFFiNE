@@ -1,4 +1,4 @@
-import { type DBSchemaBuilder, f } from '@toeverything/infra';
+import { type DBSchemaBuilder, f } from '@lovenotes/infra';
 
 export const USER_DB_SCHEMA = {
   editorSetting: {

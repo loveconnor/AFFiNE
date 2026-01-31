@@ -1,4 +1,3 @@
-import { ServerService } from '@lovenotes/core/modules/cloud';
 import { AdapterPanel } from '@blocksuite/lovenotes/fragments/adapter-panel';
 import {
   customImageProxyMiddleware,
@@ -8,7 +7,8 @@ import {
 } from '@blocksuite/lovenotes/shared/adapters';
 import type { EditorHost } from '@blocksuite/lovenotes/std';
 import type { TransformerMiddleware } from '@blocksuite/lovenotes/store';
-import { useService } from '@toeverything/infra';
+import { ServerService } from '@lovenotes/core/modules/cloud';
+import { useService } from '@lovenotes/infra';
 import { useCallback, useEffect, useRef } from 'react';
 
 import * as styles from './adapter.css';

@@ -1,11 +1,14 @@
 import { ServerDeploymentType } from '@lovenotes/graphql';
+import { Entity } from '@lovenotes/infra';
 import {
   IndexedDBDocStorage,
   IndexedDBDocSyncStorage,
 } from '@lovenotes/nbstore/idb';
-import { SqliteDocStorage, SqliteDocSyncStorage } from '@lovenotes/nbstore/sqlite';
+import {
+  SqliteDocStorage,
+  SqliteDocSyncStorage,
+} from '@lovenotes/nbstore/sqlite';
 import type { StoreClient } from '@lovenotes/nbstore/worker/client';
-import { Entity } from '@toeverything/infra';
 
 import type { ServerService } from '../../cloud';
 import type { NbstoreService } from '../../storage';

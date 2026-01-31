@@ -11,7 +11,7 @@ import type { SettingTab } from '@lovenotes/core/modules/dialogs/constant';
 import { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
 import { MeetingSettingsService } from '@lovenotes/core/modules/media/services/meeting-settings';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { useEffect, useMemo } from 'react';
 
 import { AuthService, ServerService } from '../../../../modules/cloud';

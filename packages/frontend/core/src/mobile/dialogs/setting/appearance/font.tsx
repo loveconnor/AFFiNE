@@ -4,7 +4,7 @@ import {
   type FontFamily,
 } from '@lovenotes/core/modules/editor-setting';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback, useMemo } from 'react';
 
 import { SettingDropdownSelect } from '../dropdown-select';

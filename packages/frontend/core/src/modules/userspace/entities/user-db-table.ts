@@ -1,9 +1,6 @@
+import type { Table as OrmTable, TableSchemaBuilder } from '@lovenotes/infra';
+import { Entity, LiveData } from '@lovenotes/infra';
 import type { DocFrontendDocState } from '@lovenotes/nbstore';
-import type {
-  Table as OrmTable,
-  TableSchemaBuilder,
-} from '@toeverything/infra';
-import { Entity, LiveData } from '@toeverything/infra';
 
 import type { UserDBEngine } from './user-db-engine';
 

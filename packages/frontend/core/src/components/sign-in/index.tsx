@@ -1,6 +1,9 @@
-import { DefaultServerService, type Server } from '@lovenotes/core/modules/cloud';
+import {
+  DefaultServerService,
+  type Server,
+} from '@lovenotes/core/modules/cloud';
 import type { AuthSessionStatus } from '@lovenotes/core/modules/cloud/entities/session';
-import { FrameworkScope, useService } from '@toeverything/infra';
+import { FrameworkScope, useService } from '@lovenotes/infra';
 import { useState } from 'react';
 
 import { AddSelfhostedStep } from './add-selfhosted';

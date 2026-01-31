@@ -1,4 +1,11 @@
 import {
+  DeleteIcon,
+  DuplicateIcon,
+  InformationIcon,
+  LinkedPageIcon,
+  OpenInNewIcon,
+} from '@blocksuite/icons/rc';
+import {
   MenuItem,
   MenuSeparator,
   MenuSub,
@@ -17,15 +24,8 @@ import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { preventDefault } from '@lovenotes/core/utils';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import {
-  DeleteIcon,
-  DuplicateIcon,
-  InformationIcon,
-  LinkedPageIcon,
-  OpenInNewIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { DocFrameScope, DocInfoSheet } from '../../../doc-info';

@@ -1,4 +1,4 @@
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@lovenotes/infra';
 
 import { DocsSearchService } from '../docs-search';
 import { WorkspaceScope, WorkspaceService } from '../workspace';

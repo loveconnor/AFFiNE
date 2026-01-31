@@ -1,6 +1,6 @@
 import type { Workspace as WorkspaceInterface } from '@blocksuite/lovenotes/store';
 import type { FeatureFlagService } from '@lovenotes/core/modules/feature-flag';
-import { Entity, LiveData, yjsGetPath } from '@toeverything/infra';
+import { Entity, LiveData, yjsGetPath } from '@lovenotes/infra';
 import type { Observable } from 'rxjs';
 import { Doc as YDoc, transact } from 'yjs';
 

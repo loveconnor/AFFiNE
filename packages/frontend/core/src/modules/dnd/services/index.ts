@@ -1,4 +1,11 @@
 import {
+  DNDAPIExtension,
+  DndApiExtensionIdentifier,
+} from '@blocksuite/lovenotes/shared/services';
+import { BlockStdScope } from '@blocksuite/lovenotes/std';
+import type { SliceSnapshot } from '@blocksuite/lovenotes/store';
+import type { DragBlockPayload } from '@blocksuite/lovenotes/widgets/drag-handle';
+import {
   type ExternalGetDataFeedbackArgs,
   type fromExternalData,
   type MonitorDragEvent,
@@ -7,14 +14,7 @@ import {
   type toExternalData,
 } from '@lovenotes/component';
 import type { LoveNotesDNDData } from '@lovenotes/core/types/dnd';
-import {
-  DNDAPIExtension,
-  DndApiExtensionIdentifier,
-} from '@blocksuite/lovenotes/shared/services';
-import { BlockStdScope } from '@blocksuite/lovenotes/std';
-import type { SliceSnapshot } from '@blocksuite/lovenotes/store';
-import type { DragBlockPayload } from '@blocksuite/lovenotes/widgets/drag-handle';
-import { Service } from '@toeverything/infra';
+import { Service } from '@lovenotes/infra';
 
 import type { DocsService } from '../../doc';
 import type { EditorSettingService } from '../../editor-setting';

@@ -1,8 +1,8 @@
+import { DoneIcon } from '@blocksuite/icons/rc';
 import { Button } from '@lovenotes/component';
 import { WorkspacePermissionService } from '@lovenotes/core/modules/permissions';
 import { useI18n } from '@lovenotes/i18n';
-import { DoneIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import * as styles from './self-host-team-plan.css';
@@ -32,7 +32,9 @@ export const SelfHostTeamPlan = () => {
           {t['com.lovenotes.settings.workspace.license.benefit.team.title']()}
         </div>
         <div className={styles.planCardSubtitle}>
-          {t['com.lovenotes.settings.workspace.license.benefit.team.subtitle']()}
+          {t[
+            'com.lovenotes.settings.workspace.license.benefit.team.subtitle'
+          ]()}
         </div>
       </div>
 

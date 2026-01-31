@@ -20,10 +20,10 @@
     { "path": "../../common/error" },
     { "path": "../../common/graphql" },
     { "path": "../i18n" },
+    { "path": "../../common/infra" },
     { "path": "../../common/nbstore" },
     { "path": "../../common/reader" },
     { "path": "../track" },
-    { "path": "../../common/infra" },
     { "path": "../../../blocksuite/affine/ext-loader" }
   ]
 }

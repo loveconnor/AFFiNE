@@ -1,3 +1,4 @@
+import { PlusIcon } from '@blocksuite/icons/rc';
 import {
   Button,
   Divider,
@@ -18,9 +19,8 @@ import { DocLinksService } from '@lovenotes/core/modules/doc-link';
 import { GuardService } from '@lovenotes/core/modules/permissions';
 import { WorkspacePropertyService } from '@lovenotes/core/modules/workspace-property';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { PlusIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import * as styles from './info-modal.css';

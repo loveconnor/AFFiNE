@@ -1,4 +1,18 @@
-import { Button, IconButton, Menu, MenuItem, MenuSub } from '@lovenotes/component';
+import {
+  ArrowDownSmallIcon,
+  EdgelessIcon,
+  PageIcon,
+  PlusIcon,
+  TemplateIcon,
+} from '@blocksuite/icons/rc';
+import type { DocMode } from '@blocksuite/lovenotes/model';
+import {
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+  MenuSub,
+} from '@lovenotes/component';
 import { usePageHelper } from '@lovenotes/core/blocksuite/block-suite-page-list/utils';
 import { useAsyncCallback } from '@lovenotes/core/components/hooks/lovenotes-async-hooks';
 import { DocsService } from '@lovenotes/core/modules/doc';
@@ -9,16 +23,8 @@ import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { WorkspaceService } from '@lovenotes/core/modules/workspace';
 import { inferOpenMode } from '@lovenotes/core/utils';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import type { DocMode } from '@blocksuite/lovenotes/model';
-import {
-  ArrowDownSmallIcon,
-  EdgelessIcon,
-  PageIcon,
-  PlusIcon,
-  TemplateIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import type React from 'react';
 import { type MouseEvent, useCallback } from 'react';

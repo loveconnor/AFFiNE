@@ -1,4 +1,4 @@
-import { createIdentifier } from '@toeverything/infra';
+import { createIdentifier } from '@lovenotes/infra';
 import type { Observable } from 'rxjs';
 
 export interface EditorSettingProvider {

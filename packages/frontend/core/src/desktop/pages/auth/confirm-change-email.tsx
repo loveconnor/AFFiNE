@@ -5,7 +5,7 @@ import { GraphQLService } from '@lovenotes/core/modules/cloud';
 import { UserFriendlyError } from '@lovenotes/error';
 import { changeEmailMutation } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@lovenotes/infra';
 import { type FC, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

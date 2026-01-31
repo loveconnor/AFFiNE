@@ -1,29 +1,3 @@
-import { notify, toast, useConfirmModal } from '@lovenotes/component';
-import {
-  Menu,
-  MenuItem,
-  MenuSeparator,
-  MenuSub,
-} from '@lovenotes/component/ui/menu';
-import { PageHistoryModal } from '@lovenotes/core/components/lovenotes/page-history-modal';
-import { useGuard } from '@lovenotes/core/components/guard';
-import { useBlockSuiteMetaHelper } from '@lovenotes/core/components/hooks/lovenotes/use-block-suite-meta-helper';
-import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
-import { useExportPage } from '@lovenotes/core/components/hooks/lovenotes/use-export-page';
-import { Export, MoveToTrash } from '@lovenotes/core/components/page-list';
-import { IsFavoriteIcon } from '@lovenotes/core/components/pure/icons';
-import { useDetailPageHeaderResponsive } from '@lovenotes/core/desktop/pages/workspace/detail-page/use-header-responsive';
-import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
-import { EditorService } from '@lovenotes/core/modules/editor';
-import { OpenInAppService } from '@lovenotes/core/modules/open-in-app/services';
-import { GuardService } from '@lovenotes/core/modules/permissions';
-import { ShareMenuContent } from '@lovenotes/core/modules/share-menu';
-import { WorkbenchService } from '@lovenotes/core/modules/workbench';
-import { ViewService } from '@lovenotes/core/modules/workbench/services/view';
-import { WorkspaceService } from '@lovenotes/core/modules/workspace';
-import { useI18n } from '@lovenotes/i18n';
-import { track } from '@lovenotes/track';
-import type { Store } from '@blocksuite/lovenotes/store';
 import {
   DuplicateIcon,
   EdgelessIcon,
@@ -39,11 +13,33 @@ import {
   SplitViewIcon,
   TocIcon,
 } from '@blocksuite/icons/rc';
+import type { Store } from '@blocksuite/lovenotes/store';
+import { notify, toast, useConfirmModal } from '@lovenotes/component';
 import {
-  useLiveData,
-  useService,
-  useServiceOptional,
-} from '@toeverything/infra';
+  Menu,
+  MenuItem,
+  MenuSeparator,
+  MenuSub,
+} from '@lovenotes/component/ui/menu';
+import { useGuard } from '@lovenotes/core/components/guard';
+import { useBlockSuiteMetaHelper } from '@lovenotes/core/components/hooks/lovenotes/use-block-suite-meta-helper';
+import { useEnableCloud } from '@lovenotes/core/components/hooks/lovenotes/use-enable-cloud';
+import { useExportPage } from '@lovenotes/core/components/hooks/lovenotes/use-export-page';
+import { PageHistoryModal } from '@lovenotes/core/components/lovenotes/page-history-modal';
+import { Export, MoveToTrash } from '@lovenotes/core/components/page-list';
+import { IsFavoriteIcon } from '@lovenotes/core/components/pure/icons';
+import { useDetailPageHeaderResponsive } from '@lovenotes/core/desktop/pages/workspace/detail-page/use-header-responsive';
+import { WorkspaceDialogService } from '@lovenotes/core/modules/dialogs';
+import { EditorService } from '@lovenotes/core/modules/editor';
+import { OpenInAppService } from '@lovenotes/core/modules/open-in-app/services';
+import { GuardService } from '@lovenotes/core/modules/permissions';
+import { ShareMenuContent } from '@lovenotes/core/modules/share-menu';
+import { WorkbenchService } from '@lovenotes/core/modules/workbench';
+import { ViewService } from '@lovenotes/core/modules/workbench/services/view';
+import { WorkspaceService } from '@lovenotes/core/modules/workspace';
+import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService, useServiceOptional } from '@lovenotes/infra';
+import { track } from '@lovenotes/track';
 import { useCallback, useState } from 'react';
 
 import { HeaderDropDownButton } from '../../../components/pure/header-drop-down-button';

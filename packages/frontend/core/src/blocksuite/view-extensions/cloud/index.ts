@@ -1,10 +1,10 @@
-import { AuthService, PublicUserService } from '@lovenotes/core/modules/cloud';
-import { MemberSearchService } from '@lovenotes/core/modules/permissions';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
 } from '@blocksuite/lovenotes/ext-loader';
-import { FrameworkProvider } from '@toeverything/infra';
+import { AuthService, PublicUserService } from '@lovenotes/core/modules/cloud';
+import { MemberSearchService } from '@lovenotes/core/modules/permissions';
+import { FrameworkProvider } from '@lovenotes/infra';
 import { z } from 'zod';
 
 import { patchUserExtensions } from './user';

@@ -14,7 +14,7 @@ import { DocDisplayMetaService } from '@lovenotes/core/modules/doc-display-meta'
 import { TemplateDocService } from '@lovenotes/core/modules/template-doc';
 import { TemplateListMenu } from '@lovenotes/core/modules/template-doc/view/template-list-menu';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 
 import * as styles from './template.css';

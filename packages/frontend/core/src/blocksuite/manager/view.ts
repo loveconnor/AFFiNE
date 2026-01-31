@@ -1,3 +1,15 @@
+import { DatabaseViewExtension } from '@blocksuite/lovenotes/blocks/database/view';
+import { ParagraphViewExtension } from '@blocksuite/lovenotes/blocks/paragraph/view';
+import type {
+  PeekOptions,
+  PeekViewService as BSPeekViewService,
+} from '@blocksuite/lovenotes/components/peek';
+import { ViewExtensionManager } from '@blocksuite/lovenotes/ext-loader';
+import { getInternalViewExtensions } from '@blocksuite/lovenotes/extensions/view';
+import { FoundationViewExtension } from '@blocksuite/lovenotes/foundation/view';
+import { InlineCommentViewExtension } from '@blocksuite/lovenotes/inlines/comment';
+import { LoveNotesCanvasTextFonts } from '@blocksuite/lovenotes/shared/services';
+import { LinkedDocViewExtension } from '@blocksuite/lovenotes/widgets/linked-doc/view';
 import type { ReactToLit } from '@lovenotes/component';
 import { AIViewExtension } from '@lovenotes/core/blocksuite/view-extensions/ai';
 import { CloudViewExtension } from '@lovenotes/core/blocksuite/view-extensions/cloud';
@@ -24,20 +36,8 @@ import { LoveNotesThemeViewExtension } from '@lovenotes/core/blocksuite/view-ext
 import { TurboRendererViewExtension } from '@lovenotes/core/blocksuite/view-extensions/turbo-renderer';
 import { PeekViewService } from '@lovenotes/core/modules/peek-view';
 import { DebugLogger } from '@lovenotes/debug';
+import type { FrameworkProvider } from '@lovenotes/infra';
 import { tracker } from '@lovenotes/track';
-import { DatabaseViewExtension } from '@blocksuite/lovenotes/blocks/database/view';
-import { ParagraphViewExtension } from '@blocksuite/lovenotes/blocks/paragraph/view';
-import type {
-  PeekOptions,
-  PeekViewService as BSPeekViewService,
-} from '@blocksuite/lovenotes/components/peek';
-import { ViewExtensionManager } from '@blocksuite/lovenotes/ext-loader';
-import { getInternalViewExtensions } from '@blocksuite/lovenotes/extensions/view';
-import { FoundationViewExtension } from '@blocksuite/lovenotes/foundation/view';
-import { InlineCommentViewExtension } from '@blocksuite/lovenotes/inlines/comment';
-import { LoveNotesCanvasTextFonts } from '@blocksuite/lovenotes/shared/services';
-import { LinkedDocViewExtension } from '@blocksuite/lovenotes/widgets/linked-doc/view';
-import type { FrameworkProvider } from '@toeverything/infra';
 import type { TemplateResult } from 'lit';
 
 type Configure = {

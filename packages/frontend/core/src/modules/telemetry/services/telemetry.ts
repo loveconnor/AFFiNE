@@ -1,8 +1,8 @@
 import { shallowEqual } from '@lovenotes/component';
 import { DebugLogger } from '@lovenotes/debug';
 import { ServerDeploymentType } from '@lovenotes/graphql';
+import { LiveData, OnEvent, Service } from '@lovenotes/infra';
 import { flushTelemetry, setTelemetryContext, tracker } from '@lovenotes/track';
-import { LiveData, OnEvent, Service } from '@toeverything/infra';
 
 import type { AuthAccountInfo, Server, ServersService } from '../../cloud';
 import { getOfficialTelemetryEndpoint } from '../../cloud/constant';

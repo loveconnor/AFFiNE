@@ -1,3 +1,5 @@
+import { DeleteIcon } from '@blocksuite/icons/rc';
+import { getAttachmentFileIcon } from '@blocksuite/lovenotes/components/icons';
 import {
   Button,
   Checkbox,
@@ -9,11 +11,9 @@ import {
 import { Pagination } from '@lovenotes/component/setting-components';
 import { BlobManagementService } from '@lovenotes/core/modules/blob-management/services';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import type { ListedBlobRecord } from '@lovenotes/nbstore';
 import track from '@lovenotes/track';
-import { getAttachmentFileIcon } from '@blocksuite/lovenotes/components/icons';
-import { DeleteIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import bytes from 'bytes';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 

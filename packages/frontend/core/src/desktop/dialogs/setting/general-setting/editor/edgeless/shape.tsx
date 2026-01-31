@@ -1,14 +1,4 @@
 import {
-  MenuItem,
-  MenuTrigger,
-  RadioGroup,
-  type RadioItem,
-  Slider,
-} from '@lovenotes/component';
-import { SettingRow } from '@lovenotes/component/setting-components';
-import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
-import { useI18n } from '@lovenotes/i18n';
-import {
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
 } from '@blocksuite/lovenotes/blocks/surface';
@@ -27,7 +17,17 @@ import {
 } from '@blocksuite/lovenotes/model';
 import type { EditorHost } from '@blocksuite/lovenotes/std';
 import type { Store } from '@blocksuite/lovenotes/store';
-import { useFramework, useLiveData } from '@toeverything/infra';
+import {
+  MenuItem,
+  MenuTrigger,
+  RadioGroup,
+  type RadioItem,
+  Slider,
+} from '@lovenotes/component';
+import { SettingRow } from '@lovenotes/component/setting-components';
+import { EditorSettingService } from '@lovenotes/core/modules/editor-setting';
+import { useI18n } from '@lovenotes/i18n';
+import { useFramework, useLiveData } from '@lovenotes/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -82,7 +82,8 @@ export const ShapeSettings = () => {
     () => [
       {
         value: ShapeStyle.General,
-        label: t['com.lovenotes.settings.editorSettings.edgeless.style.general'](),
+        label:
+          t['com.lovenotes.settings.editorSettings.edgeless.style.general'](),
       },
       {
         value: ShapeStyle.Scribbled,
@@ -108,17 +109,23 @@ export const ShapeSettings = () => {
       {
         value: StrokeStyle.Solid,
         label:
-          t['com.lovenotes.settings.editorSettings.edgeless.note.border.solid'](),
+          t[
+            'com.lovenotes.settings.editorSettings.edgeless.note.border.solid'
+          ](),
       },
       {
         value: StrokeStyle.Dash,
         label:
-          t['com.lovenotes.settings.editorSettings.edgeless.note.border.dash'](),
+          t[
+            'com.lovenotes.settings.editorSettings.edgeless.note.border.dash'
+          ](),
       },
       {
         value: StrokeStyle.None,
         label:
-          t['com.lovenotes.settings.editorSettings.edgeless.note.border.none'](),
+          t[
+            'com.lovenotes.settings.editorSettings.edgeless.note.border.none'
+          ](),
       },
     ],
     [t]
@@ -175,15 +182,18 @@ export const ShapeSettings = () => {
     () => [
       {
         value: ShapeType.Rect,
-        label: t['com.lovenotes.settings.editorSettings.edgeless.shape.square'](),
+        label:
+          t['com.lovenotes.settings.editorSettings.edgeless.shape.square'](),
       },
       {
         value: ShapeType.Ellipse,
-        label: t['com.lovenotes.settings.editorSettings.edgeless.shape.ellipse'](),
+        label:
+          t['com.lovenotes.settings.editorSettings.edgeless.shape.ellipse'](),
       },
       {
         value: ShapeType.Diamond,
-        label: t['com.lovenotes.settings.editorSettings.edgeless.shape.diamond'](),
+        label:
+          t['com.lovenotes.settings.editorSettings.edgeless.shape.diamond'](),
       },
       {
         value: ShapeType.Triangle,

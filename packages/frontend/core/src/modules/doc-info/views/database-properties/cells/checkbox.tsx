@@ -1,6 +1,6 @@
 import { CheckboxValue } from '@lovenotes/core/components/workspace-property-types/checkbox';
-import type { LiveData } from '@toeverything/infra';
-import { useLiveData } from '@toeverything/infra';
+import type { LiveData } from '@lovenotes/infra';
+import { useLiveData } from '@lovenotes/infra';
 
 import type { DatabaseCellRendererProps } from '../../../types';
 

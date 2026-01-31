@@ -1,12 +1,12 @@
+import { AddCollectionIcon } from '@blocksuite/icons/rc';
 import { usePromptModal } from '@lovenotes/component';
 import { NavigationPanelTreeRoot } from '@lovenotes/core/desktop/components/navigation-panel';
 import { CollectionService } from '@lovenotes/core/modules/collection';
 import { NavigationPanelService } from '@lovenotes/core/modules/navigation-panel';
 import { WorkbenchService } from '@lovenotes/core/modules/workbench';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useServices } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { AddCollectionIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';

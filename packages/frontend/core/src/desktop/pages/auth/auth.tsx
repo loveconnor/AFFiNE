@@ -12,7 +12,7 @@ import {
   sendVerifyChangeEmailMutation,
 } from '@lovenotes/graphql';
 import { useI18n } from '@lovenotes/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@lovenotes/infra';
 import { useCallback } from 'react';
 import type { LoaderFunction } from 'react-router-dom';
 import { redirect, useParams, useSearchParams } from 'react-router-dom';
@@ -107,7 +107,9 @@ export const Component = () => {
   switch (authType) {
     case 'onboarding':
       return (
-        account && <OnboardingPage user={account} onOpenLoveNotes={onOpenLoveNotes} />
+        account && (
+          <OnboardingPage user={account} onOpenLoveNotes={onOpenLoveNotes} />
+        )
       );
     case 'signUp': {
       return (

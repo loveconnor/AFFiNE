@@ -1,7 +1,7 @@
-import type { useI18n } from '@lovenotes/i18n';
-import { track } from '@lovenotes/track';
 import { SettingsIcon } from '@blocksuite/icons/rc';
-import { appSettingAtom } from '@toeverything/infra';
+import type { useI18n } from '@lovenotes/i18n';
+import { appSettingAtom } from '@lovenotes/infra';
+import { track } from '@lovenotes/track';
 import type { createStore } from 'jotai';
 import type { useTheme } from 'next-themes';
 
@@ -148,11 +148,12 @@ export function registerLoveNotesSettingsCommands({
   unsubs.push(
     registerLoveNotesCommand({
       id: `lovenotes:change-client-border-style`,
-      label: () => `${t['com.lovenotes.cmdk.lovenotes.client-border-style.to']()} ${t[
-        store.get(appSettingAtom).clientBorder
-          ? 'com.lovenotes.cmdk.lovenotes.switch-state.off'
-          : 'com.lovenotes.cmdk.lovenotes.switch-state.on'
-      ]()}
+      label:
+        () => `${t['com.lovenotes.cmdk.lovenotes.client-border-style.to']()} ${t[
+          store.get(appSettingAtom).clientBorder
+            ? 'com.lovenotes.cmdk.lovenotes.switch-state.off'
+            : 'com.lovenotes.cmdk.lovenotes.switch-state.on'
+        ]()}
         `,
       category: 'lovenotes:settings',
       icon: <SettingsIcon />,

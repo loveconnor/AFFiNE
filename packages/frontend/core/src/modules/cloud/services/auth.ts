@@ -1,7 +1,7 @@
 import { UserFriendlyError } from '@lovenotes/error';
 import type { OAuthProviderType } from '@lovenotes/graphql';
+import { OnEvent, Service } from '@lovenotes/infra';
 import { track } from '@lovenotes/track';
-import { OnEvent, Service } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { distinctUntilChanged, map, skip } from 'rxjs';
 

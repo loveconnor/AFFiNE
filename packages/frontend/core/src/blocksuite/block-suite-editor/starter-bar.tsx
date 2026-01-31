@@ -1,3 +1,10 @@
+import {
+  AiIcon,
+  EdgelessIcon,
+  TemplateColoredIcon,
+} from '@blocksuite/icons/rc';
+import { PageRootBlockComponent } from '@blocksuite/lovenotes/blocks/root';
+import type { Store } from '@blocksuite/lovenotes/store';
 import { MenuSeparator } from '@lovenotes/component';
 import {
   handleInlineAskAIAction,
@@ -12,15 +19,8 @@ import {
   TemplateListMenuAdd,
 } from '@lovenotes/core/modules/template-doc/view/template-list-menu';
 import { useI18n } from '@lovenotes/i18n';
+import { useLiveData, useService } from '@lovenotes/infra';
 import track from '@lovenotes/track';
-import { PageRootBlockComponent } from '@blocksuite/lovenotes/blocks/root';
-import type { Store } from '@blocksuite/lovenotes/store';
-import {
-  AiIcon,
-  EdgelessIcon,
-  TemplateColoredIcon,
-} from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   forwardRef,
